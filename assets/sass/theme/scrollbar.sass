@@ -1,0 +1,52 @@
+//
+// Theme: main-scrollbar-theme
+//
+.main-scrollbar-theme> .os-scrollbar-horizontal
+  right: 0
+  height: $scrollbar-rail-size
+.main-scrollbar-theme> .os-scrollbar-vertical
+  bottom: 0
+  width: $scrollbar-rail-size
+.os-theme-dark.os-host-rtl > .os-scrollbar-horizontal,
+  left: 0
+  right: 0
+.main-scrollbar-theme> .os-scrollbar-corner
+  height: 0
+  width: 0
+.main-scrollbar-theme> .os-scrollbar-corner
+  background-color: transparent
+.main-scrollbar-theme> .os-scrollbar
+  padding: 0
+  box-sizing: border-box
+  background: transparent
+.main-scrollbar-theme> .os-scrollbar.os-scrollbar-unusable,
+  background: transparent
+.main-scrollbar-theme> .os-scrollbar > .os-scrollbar-track
+  background: transparent
+.main-scrollbar-theme> .os-scrollbar-horizontal > .os-scrollbar-track > .os-scrollbar-handle
+  min-width: $scrollbar-rail-size
+.main-scrollbar-theme> .os-scrollbar-vertical > .os-scrollbar-track > .os-scrollbar-handle
+  min-height: $scrollbar-rail-size
+.main-scrollbar-theme.os-host-transition > .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle
+  transition: background-color 0.3s
+.main-scrollbar-theme> .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle,
+.main-scrollbar-theme> .os-scrollbar > .os-scrollbar-track
+  border-radius: $scrollbar-border-radius
+.main-scrollbar-theme> .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle
+  background: $scrollbar-color
+.main-scrollbar-theme> .os-scrollbar:hover > .os-scrollbar-track > .os-scrollbar-handle
+  background: $scrollbar-color-hover
+.main-scrollbar-theme> .os-scrollbar > .os-scrollbar-track > .os-scrollbar-handle.active
+  background: $scrollbar-color-action
+.main-scrollbar-theme> .os-scrollbar-horizontal .os-scrollbar-handle:before,
+.main-scrollbar-theme> .os-scrollbar-vertical .os-scrollbar-handle:before
+  position: absolute
+  display: block
+  content: ''
+  bottom: 0
+  right: 0
+  left: 0
+  top: 0
+.os-theme-dark.os-host-scrollbar-horizontal-hidden > .os-scrollbar-horizontal .os-scrollbar-handle:before,
+.os-theme-dark.os-host-scrollbar-vertical-hidden > .os-scrollbar-vertical .os-scrollbar-handle:before
+  display: none

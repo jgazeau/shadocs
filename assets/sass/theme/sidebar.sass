@@ -1,0 +1,84 @@
+//
+// Sidebar styles
+//
+#sidebar
+  background: linear-gradient($sidebar-background, smooth-color($sidebar-background, 5))
+  border-right: $theme-gap-small-size solid smooth-color($theme-color, 20)
+  border-left: $theme-gap-small-size solid smooth-color($theme-color, 20)
+  border-bottom: $theme-border-width solid smooth-color($theme-color, 20)
+  @extend %sidebar-effects
+  @extend %sidebar
+  .is-tree-active
+    background: smooth-color($sidebar-background, 7.5)
+  ul.is-tree-active
+    border-radius: 0 $theme-border-radius $theme-border-radius 0
+  li
+    &.is-tree-active
+      border-radius: $theme-border-radius $theme-border-radius $theme-border-radius 0
+    &.is-entries-shrinked
+      li
+        display: none !important
+    .is-icon-expandable
+      .icon
+        position: relative
+        span
+          border-radius: $theme-border-radius
+          transform-origin: center center
+          height: $theme-border-width
+          position: absolute
+          background: white
+          width: 60%
+    .is-icon-shrinked
+      .icon
+        span:nth-child(2)
+          transform: rotate(90deg)
+#sidebarCollapsible
+  background: linear-gradient(smooth-color($sidebar-background, 5), $sidebar-background)
+  +static-size-height(calc(#{$sidebar-entry-height} + (2 * #{$theme-gap-medium-size}) + #{$theme-gap-small-size}))
+  border-bottom: $theme-gap-small-size solid smooth-color($theme-color, 20)
+  border-right: $theme-gap-small-size solid smooth-color($theme-color, 20)
+  border-left: $theme-gap-small-size solid smooth-color($theme-color, 20)
+  @extend %sidebar-effects
+  @extend %sidebar
+  a
+    @extend %unselectable
+#sidebar
+  +static-size-height(calc(100vh - #{$navbar-height} - (#{$sidebar-entry-height} + (2 * #{$theme-gap-medium-size}) + #{$theme-gap-small-size})))
+#sidebar,
+#sidebarContainer,
+#sidebarCollapsible
+  min-width: $sidebar-width-collapsed
+  transition: width 0.2s ease
+  max-width: 100vw
+#sidebarContainer
+  +static-size-height(calc(100vh - #{$navbar-height}))
+  font-size: $content-font-size
+  width: $sidebar-width
+  z-index: 20
+  &.is-sidebar-collapsed
+    width: $sidebar-width-collapsed
+    #sidebar,
+    #sidebarCollapsible
+      +sidebar-touch
+  &:not(.is-sidebar-collapsed):not(.is-sidebar-uncollapsed)
+    +touch
+      width: $sidebar-width-collapsed
+      #sidebar,
+      #sidebarCollapsible
+        +sidebar-touch
+  +touch
+    position: fixed
+  @media (hover: none)
+    position: fixed
+#sidebarMobileWrapper
+  +static-size-height(calc(100vh - #{$navbar-height}))
+  +static-size-width(#{$sidebar-width-collapsed})
+  position: fixed
+  +touch
+    +static-size-width(#{$sidebar-width-collapsed})
+    position: relative
+    display: block
+  @media (hover: none)
+    +static-size-width(#{$sidebar-width-collapsed})
+    position: relative
+    display: block

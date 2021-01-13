@@ -1,0 +1,14 @@
+@function shade($color, $percent)
+  @return mix(black, $color, $percent)
+@function tint($color, $percent)
+  @return mix(white, $color, $percent)
+@function smooth-color($color, $percent)
+  @if colorLuminance($color)>0.55
+    @return shade($color, $percent)
+  @else
+    @return tint($color, $percent)
+@function str-replace($string, $search, $replace: "")
+  $index: str-index($string, $search)
+  @if $index
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace)
+  @return $string

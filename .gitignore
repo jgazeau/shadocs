@@ -1,0 +1,9 @@
+# Common Hugo files to ignore
+/public/
+/resources/_gen/
+exampleSite/public
+exampleSite/resources/_gen/
+
+# Ignore npm files during Tag workflow
+node_modules/
+package-lock.json

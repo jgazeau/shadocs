@@ -1,0 +1,13 @@
+<div id='toc'>
+  <div id='tocHeader' class='is-sticky'>
+    <h6 id='tocTitle' class='is-marginless'>{{i18n "toc_title"}}</h6>
+    <i title='{{i18n "toc_backtotop"}}' id='tocBackToTop' class='fas fa-arrow-circle-up'></i>
+  </div>
+  {{if in (string .TableOfContents) "<ul>"}}
+    {{.TableOfContents}}
+  {{else}}
+  <nav id="TableOfContents">
+    <p><strong>{{i18n "no_data"}}</strong></p>
+  </nav>
+  {{end}}
+</div>

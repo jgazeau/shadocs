@@ -1,0 +1,7 @@
+{{$begin := "<ul>"}}
+{{$end := "</ul>"}}
+{{$items := ""}}
+{{range $item := .this}}
+  {{$items = printf "%s\n<li>%s</li>" $items $item}}
+{{end}}
+{{return (printf "%s%s\n%s" $begin $items $end | safeHTML)}}

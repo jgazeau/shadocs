@@ -1,0 +1,21 @@
+<div class='sc-mermaid-wrapper is-loading helper-loading-container'>
+  <div class='sc-mermaid-container '>
+    {{.Page.Scratch.Add "mermaidUid" 1}}
+    {{with (.Get "id")}}
+      {{$.Scratch.Set "mermaidId" (replace . "'" "")}}
+    {{else}}
+      {{$.Scratch.Set "mermaidId" (printf "%s%s" "mermaid-" (string (.Page.Scratch.Get "mermaidUid")))}}
+    {{end}}
+    <div id='{{$.Scratch.Get "mermaidId"}}' mermaid-data='{{.Inner | safeJS | base64Encode}}' class='sc-mermaid{{with (.Get "class")}} {{.}}{{else}} has-text-centered{{end}}'>
+      <div>
+        <a id='{{$.Scratch.Get "mermaidId"}}-export-svg' class='is-action-button' title='{{i18n "download_as_svg"}}'>
+          <i class='fas fa-download'></i>
+        </a>
+        <a id='{{$.Scratch.Get "mermaidId"}}-reload' class='is-action-button' title='{{i18n "reload_svg"}}'>
+          <i class='fas fa-redo-alt'></i>
+        </a>
+      </div>
+    </div>
+  </div>
+  {{partial "theme/loading.html" .}}
+</div>

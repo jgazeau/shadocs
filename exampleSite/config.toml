@@ -1,0 +1,69 @@
+#
+# Standard configuration
+#
+baseURL                = "/"
+copyright              = "The MIT License (MIT) Copyright © 2020 Jordan GAZEAU"
+defaultContentLanguage = "fr"
+enableEmoji            = false
+enableGitInfo          = true
+metaDataFormat         = "yaml"
+publishDir             = "public"
+title                  = "Shadocs theme for Hugo"
+theme                  = "shadocs"
+themesdir              = "../.."
+
+[Author]
+  name = "Jordan GAZEAU"
+
+[taxonomies]
+  category = "categories"
+
+[outputs]
+  home = ["HTML", "JSON"]
+
+[markup]
+  defaultMarkdownHandler = "goldmark"
+  [markup.tableOfContents]
+    ordered    = false
+    startLevel = 1
+    endLevel   = 6
+  [markup.goldmark.renderer]
+    unsafe = false
+
+[Languages]
+  [Languages.en]
+    contentDir   = "content/english"
+    title        = "Shadocs theme documentation"
+    weight       = 1
+    languageName = "English"
+
+  [Languages.fr]
+    contentDir   = "content/french"
+    title        = "Documentation du thème Shadocs"
+    weight       = 2
+    languageName = "Français"
+
+#
+# Specific configuration
+#
+[params]
+  logo             = "images/logo.png"
+  image404         = "images/404.gif"
+  favicon          = "images/favicon.png"
+  homeLayout       = "onboarding"
+  siteOrderContent = "weight"
+  [params.navbar.shortcuts]
+    [params.navbar.shortcuts.example]
+      keys     = ["Shift","1"]
+      function = "scExample"
+  [params.taxonomies]
+    [params.taxonomies.categories]
+      icon = "fas fa-th"
+  [params.includes]
+    jsModules = [
+        "js/shortcuts.js"
+      ]
+    js = []
+    css = [
+        "css/shortcuts.css"
+      ]

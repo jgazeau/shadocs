@@ -1,0 +1,13 @@
+.shortcut-example {
+  box-shadow: 0 0 0 0.25rem steelblue;
+  background-color: white;
+  max-width: 50vw;
+  padding: 1rem;
+}
+.shortcut-example::first-letter {
+  padding-right: 0.25rem;
+  color: steelblue;
+  font-weight: bold;
+  font-size: 3rem;
+  float: left;
+}

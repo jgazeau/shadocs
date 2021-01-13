@@ -1,0 +1,30 @@
+<div id='sidebarContainer' class='column is-narrow is-paddingless is-marginless'>
+  <div id='sidebarWrapper' class='is-fixed'>
+    <div id='sidebar' class='is-marginless'>
+      <aside class='menu is-paddingless is-marginless'>
+        <ul class='menu-list is-marginless'>
+          {{partial "theme/sidebar-content.html" .}}
+        </ul>
+      </aside>
+    </div>
+    <div id='sidebarCollapsible' class='is-marginless'>
+      <div class='card is-uncollapse-action'>
+        <div id='sidebarUncollapse' class='card-header is-single-link'>
+          <a class='card-header-title'>
+            <i class='fas fa-angle-double-right fa-lg'></i>
+          </a>
+        </div>
+      </div>
+      <div class='card is-collapse-action'>
+        <div id='sidebarCollapse' class='card-header is-single-link'>
+          <a class='card-header-title'>
+            <i class='fas fa-angle-double-left fa-lg'></i>
+            <p>{{i18n "sidebar_collapse"}}</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id='sidebarMobileWrapper' class='column is-narrow is-hidden-desktop'>
+</div>

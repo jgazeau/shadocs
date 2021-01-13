@@ -1,0 +1,21 @@
+{{$pagesArray := slice}}
+{{if eq .this.Site.Params.siteOrderContent "weight"}}
+  {{$pagesArray = .input.ByWeight}}
+{{else if eq .this.Site.Params.siteOrderContent "date"}}
+  {{$pagesArray = .input.ByDate}}
+{{else if eq .this.Site.Params.siteOrderContent "publishdate"}}
+  {{$pagesArray = .input.ByPublishDate}}
+{{else if eq .this.Site.Params.siteOrderContent "expirationdate"}}
+  {{$pagesArray = .input.ByExpiryDate}}
+{{else if eq .this.Site.Params.siteOrderContent "lastmodifieddate"}}
+  {{$pagesArray = .input.ByLastmod}}
+{{else if eq .this.Site.Params.siteOrderContent "length"}}
+  {{$pagesArray = .input.ByLength}}
+{{else if eq .this.Site.Params.siteOrderContent "title"}}
+  {{$pagesArray = .input.ByTitle}}
+{{else if eq .this.Site.Params.siteOrderContent "linktitle"}}
+  {{$pagesArray = .input.ByLinkTitle}}
+{{else}}
+  {{$pagesArray = .input}}
+{{end}}
+{{return $pagesArray}}

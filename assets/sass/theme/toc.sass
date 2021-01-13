@@ -1,0 +1,60 @@
+#tocContainer
+  +static-size-width($toc-width)
+  #tocHeader
+    border-bottom: $theme-border-width solid smooth-color($content-writing-color, 80)
+    color: smooth-color($content-writing-color, 50)
+    +static-size-height($navbar-height)
+    padding: $theme-gap-medium-size
+    justify-content: space-between
+    align-content: center
+    align-items: center
+    display: flex
+    #tocTitle
+      color: smooth-color($content-writing-color, 50)
+    #tocBackToTop
+      font-size: $theme-icon-size
+    #tocBackToTop
+      transition: all 0.2s ease
+      visibility: hidden
+      opacity: 0
+      &.is-active
+        visibility: visible
+        opacity: 1
+        &:hover
+          color: $content-link-color
+          cursor: pointer
+  #toc
+    border-left: $theme-border-width solid smooth-color($content-writing-color, 80)
+    +static-size-height(calc(100vh - #{$navbar-height}))
+    #TableOfContents
+      +static-size-height(calc(100vh - (2 * #{$navbar-height})))
+      padding: $theme-gap-medium-size 0 0 $theme-gap-medium-size
+      +responsive-size(font-size, $toc-font-size)
+      overflow-x: hidden
+      overflow-y: auto
+      ul
+        list-style-type: none
+        padding: 0
+        li
+          border-left: 1px solid smooth-color($content-writing-color, 85)
+          ul
+            padding: $toc-padding
+          a
+            justify-content: space-between
+            color: $content-writing-color
+            transition: all 0.2s ease
+            @extend %toc-link-effect
+            align-content: center
+            padding: $toc-padding
+            align-items: center
+            font-weight: 700
+            display: flex
+            &.is-past
+              color: smooth-color($content-writing-color, 50)
+            &.is-current,
+            &:hover
+              color: $content-link-color
+            &.is-current
+              + ul
+                > li
+                  border-left: 1px solid smooth-color($content-link-color, 50)

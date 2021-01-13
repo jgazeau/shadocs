@@ -1,0 +1,11 @@
+<div class='sc-collapsible-container'>
+  <div class='sc-collapsible-header'>{{ with .Get "title"}}{{.}}{{else}}{{i18n "shortcode_collapsible"}}{{end}}</div>
+  <div class='sc-collapsible-content'>
+    {{with (.Scratch.Get "isNestedShortcode")}}
+      {{$.Inner | safeHTML}}
+    {{else}}
+      {{$optMd := dict "markup" "goldmark"}}
+      {{.Inner | .Page.RenderString $optMd}}
+    {{end}}
+  </div>
+</div>

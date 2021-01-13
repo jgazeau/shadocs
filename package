@@ -1,0 +1,15 @@
+archetypes/
+assets/bulma/bulma.sass
+assets/bulma/sass/
+assets/css/
+assets/js/
+assets/sass/
+data/
+exampleSite/
+i18n/
+layouts/
+static/
+CHANGELOG.md
+LICENSE
+README.md
+theme.toml

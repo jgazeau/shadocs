@@ -1,0 +1,26 @@
+//
+// Mermaid
+//
+.sc-mermaid-wrapper
+  max-width: 100%
+  display: block
+  .sc-mermaid-container
+    justify-content: center
+    align-content: center
+    align-items: center
+    display: flex
+    .sc-mermaid
+      justify-content: center
+      align-items: center
+      display: flex
+      width: 100%
+      svg
+        width: auto
+  &.is-loading
+    .sc-mermaid-container
+      > *
+        display: none
+.sc-mermaid-svg
+  .label
+    +responsive-size(font-size, $mermaid-label-font-size)
+    font-weight: 400

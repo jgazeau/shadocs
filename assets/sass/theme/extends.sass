@@ -1,0 +1,486 @@
+%sidebar
+  color: findColorInvert($sidebar-background)
+  padding: $theme-gap-medium-size
+  width: $sidebar-width
+  .is-fs-expandable-icon,
+  .is-uncollapse-action
+    display: none
+    .card-header-title
+      border-radius: $theme-border-radius !important
+  .card
+    color: findColorInvert($sidebar-background)
+    +static-size-height($sidebar-entry-height)
+    width: 100%
+    .card-header
+      color: findColorInvert($sidebar-background)
+      border-radius: $theme-border-radius
+      transition: width 0.2s ease
+      align-items: center
+      text-align: center
+      .card-header-title
+        color: findColorInvert($sidebar-background)
+        +static-size-height($sidebar-entry-height)
+        padding: $theme-gap-medium-size 0
+        white-space: nowrap
+        overflow: hidden
+        border-radius: 0
+        max-width: 100%
+        flex-shrink: 0
+        display: flex
+        i
+          +static-size-width(calc((#{$sidebar-width} / 10) + (2 * #{$theme-gap-small-size})))
+          line-height: $theme-icon-line-height
+        p
+          text-overflow: ellipsis
+          white-space: nowrap
+          text-align: left
+          overflow: hidden
+      .card-header-icon
+        @extend %unselectable
+        +static-size-width(calc(#{$sidebar-width} / 10))
+        color: findColorInvert($sidebar-background)
+        +static-size-height($sidebar-entry-height)
+        border-radius: 0
+        display: flex
+    &.is-sidebar-active
+      .card-header
+        background: smooth-color(findColorInvert($sidebar-background), 25)
+        .card-header-title,
+        .card-header-icon
+          color: $sidebar-background
+    .is-sidebar-disable
+      .card-header-title
+        color: smooth-color($sidebar-background, 35)
+%sidebar-effects
+  @media (hover: hover)
+    .card:not(.is-sidebar-active)
+      .card-header
+        &:not(.is-sidebar-disable):hover
+          background: smooth-color($sidebar-background, 15)
+  .is-icon-expandable
+    .icon
+      &:after
+        font-family: "Font Awesome 5 Free"
+        font-weight: 900
+        content: "\f107"
+      &:hover:after
+        content: "\f103"
+    &.is-icon-expanded
+      .icon
+        &:after,
+        &:hover:after
+          transform: rotate(180deg)
+%navbar-item-standard
+  background-color: transparent !important
+  border-radius: $theme-gap-small-size
+  color: findColorInvert($theme-color)
+  @extend %navbar-item-generic
+  @extend %navbar-item-hover
+  &:focus
+    box-shadow: unset
+    border: unset
+%navbar-item-generic
+  transition: all 0.2s ease
+  box-shadow: unset
+  border: unset
+%navbar-item-hover
+  &:hover:not([disabled])
+    background-color: smooth-color($theme-color, 40) !important
+    color: findColorInvert(smooth-color($theme-color, 40))
+    box-shadow: unset
+    border: unset
+    &::placeholder
+      color: smooth-color(findColorInvert(smooth-color($theme-color, 40)), 30)
+      font-style: italic
+%navbar-content-border
+  box-shadow: -$theme-gap-small-half-size $theme-gap-small-half-size 0 $theme-gap-small-half-size smooth-color($theme-color, 50), $theme-gap-small-half-size $theme-gap-small-half-size 0 $theme-gap-small-half-size smooth-color($theme-color, 50)
+  +touch
+    box-shadow: 0 0 0.1rem 1px smooth-color($content-background, 25)
+%search-content-colors
+  border-color: $content-background
+  background: $content-background
+  color: $content-writing-color
+%unselectable
+  user-select: none
+%disable
+  pointer-events: none
+%clean
+  @extend %unselectable
+  text-decoration: none
+  outline: none
+%transparent
+  opacity: 0
+%opaque
+  opacity: 1
+%sticky
+  position: sticky
+  top: 0
+%close
+  right: calc((#{$navbar-height} / 2) - (#{$theme-icon-size} / 2))
+  top: calc((#{$navbar-height} / 2) - (#{$theme-icon-size} / 2))
+  +static-size-height($theme-icon-size)
+  +static-size-width($theme-icon-size)
+  transition: all 0.4s ease
+  display: inline-block
+  border-radius: 100%
+  position: absolute
+  background: red
+  &:before,
+  &:after
+    border-radius: $theme-gap-small-size
+    height: $theme-gap-small-size
+    position: absolute
+    background: white
+    margin: auto
+    content: ''
+    width: 75%
+    bottom: 0
+    right: 0
+    left: 0
+    top: 0
+  &:before
+    transform-origin: center center
+    transition: all 0.2s linear
+    transform: rotate(45deg)
+    transition-delay: 0.1s
+  &:after
+    transform-origin: center center
+    transition: all 0.2s linear
+    transform: rotate(-45deg)
+    transition-delay: 0s
+  &:hover
+    box-shadow: 0 0 0 $theme-border-width white
+  &:hover:before
+    transform: rotate(225deg)
+    transition-delay: 0s
+  &:hover:after
+    transform: rotate(135deg)
+    transition-delay: 0.1s
+%toc-link-effect
+  &:after
+    transition: transform 0.3s, opacity 0.2s
+    font-family: "Font Awesome 5 Free"
+    margin: 0 $theme-gap-medium-size
+    transform: translateX(0.5rem)
+    display: inline-block
+    font-weight: 900
+    content: "\f060"
+    opacity: 0
+  &:hover:after
+    transform: translateX(0)
+    opacity: 1
+%pretty-link-effect
+  background-image: linear-gradient(currentColor, currentColor)
+  padding-right: $theme-gap-size !important
+  color: $content-link-color !important
+  text-decoration: none !important
+  background-position: 0% 100%
+  background-repeat: no-repeat
+  transition: all 0.2s ease
+  background-size: 0% 1px
+  padding-bottom: 1px
+  position: relative
+  &:after
+    font-size: calc(#{$theme-gap-large-size} / 2)
+    bottom: calc(#{$theme-gap-large-size} / 2)
+    margin-left: $theme-gap-small-half-size
+    font-family: "Font Awesome 5 Free"
+    color: $content-link-color
+    font-style: normal
+    position: absolute
+    font-weight: 900
+    content: '\f35d'
+  &:hover
+    color: $content-link-color
+    background-size: 100% 1px
+%itext-link-effect
+  color: $content-link-color
+  justify-content: center
+  align-content: center
+  display: inline-flex
+  align-items: center
+  text-align: center
+  position: relative
+  flex-wrap: nowrap
+  div
+    padding: $theme-gap-medium-size
+    justify-content: center
+    align-content: center
+    align-items: center
+    position: relative
+    flex-wrap: nowrap
+    display: flex
+    i
+      padding: 0 $theme-gap-medium-size
+    p
+      transition: flex 0.4s ease-out
+      white-space: nowrap
+      overflow: hidden
+      flex-basis: 0
+    &:before,
+    &:after
+      transition: left 0.4s ease, right 0.4s ease
+      background: $content-link-color
+      height: $theme-border-width
+      position: absolute
+      content: ''
+      right: 50%
+      left: 50%
+    &:before
+      top: 0
+    &:after
+      bottom: 0
+  &:before,
+  &:after
+    transition: top 0.4s ease, bottom 0.4s ease
+    background: $content-link-color
+    width: $theme-border-width
+    position: absolute
+    content: ''
+    bottom: 50%
+    top: 50%
+  &:before
+    left: 0
+  &:after
+    right: 0
+  @media (hover: hover)
+    &:hover
+      color: $content-link-color
+      &:before,
+      &:after
+        bottom: 0
+        top: 0
+      div
+        &:before,
+        &:after
+          right: 0
+          left: 0
+        p
+          flex-basis: 100%
+  @media (hover: none)
+    color: $content-link-color
+    &:before,
+    &:after
+      bottom: 0
+      top: 0
+    div
+      &:before,
+      &:after
+        right: 0
+        left: 0
+      p
+        flex-basis: 100%
+%action-button
+  font-size: $theme-action-button-size
+  height: $theme-gap-extra-large-size
+  width: $theme-gap-extra-large-size
+  color: $content-writing-color
+  justify-content: center
+  align-items: center
+  text-align: center
+  cursor: pointer
+  display: flex
+  &:hover
+    color: forestgreen
+%themeContent
+  h1
+    +responsive-size(font-size, $theme-h1-font-size)
+  h2
+    +responsive-size(font-size, $theme-h2-font-size)
+  h3
+    +responsive-size(font-size, $theme-h3-font-size)
+  h4
+    +responsive-size(font-size, $theme-h4-font-size)
+  h5
+    +responsive-size(font-size, $theme-h5-font-size)
+  h6
+    +responsive-size(font-size, $theme-h6-font-size)
+  h1,h2,h3,h4,h5,h6
+    margin: $theme-gap-large-size 0
+    color: $content-writing-color
+    align-content: center
+    +font-family(oswald)
+    flex-direction: row
+    align-items: center
+    flex-wrap: nowrap
+    font-weight: 700
+    display: flex
+    padding: 0
+    + hr
+      margin-top: -$theme-gap-large-size
+    .anchor
+      transition: transform 0.3s, opacity 0.2s, color 0.2s
+      color: smooth-color($content-writing-color, 50)
+      transform: translateX($theme-gap-medium-size)
+      margin-left: $theme-gap-small-size
+      font-weight: 700
+      opacity: 0
+      &:hover
+        color: $content-link-color
+      @media (hover: none)
+        transform: translateX(0)
+        opacity: 1
+    &:hover
+      .anchor
+        transform: translateX(0)
+        opacity: 1
+  hr
+    background: linear-gradient(90deg, $theme-color 0%, $content-background 100%)
+    border-radius: $theme-border-radius
+    margin: $theme-gap-large-size 0
+    height: $theme-gap-small-size
+  p,
+  dl,
+  ul,
+  ol
+    margin: $content-item-margin
+  li > ul,
+  li + ul,
+  li > ol,
+  li + ol
+    margin: 0
+  ul,
+  ol,
+  dd
+    padding-left: $content-list-padding
+  ol
+    list-style-type: decimal
+  ul,
+  ul ul ul ul
+    list-style-type: disc
+  ul ul,
+  ul ul ul ul ul
+    list-style-type: circle
+  ul ul ul,
+  ul ul ul ul ul ul
+    list-style-type: square
+  strong,
+  dt
+    font-weight: 900
+  .footnote-ref,
+  .footnote-backref
+    color: $content-footnote-color
+    &:before
+      content: '['
+    &:after
+      content: ']'
+  input[type="checkbox"],
+  input[type="radio"]
+    vertical-align: middle
+  .highlight
+    margin: $content-item-margin
+    position: relative
+    pre
+      margin: 0
+    table
+      td:nth-child(1)
+        pre
+          position: relative
+          padding-right: 0
+          overflow: hidden
+          &:after
+            height: calc(100% - (2 * #{$theme-gap-extra-large-size}))
+            right: $theme-gap-small-size
+            background: darkgrey
+            position: absolute
+            margin: auto
+            content: ''
+            width: 1px
+            bottom: 0
+            top: 0
+          code
+            span
+              display: inline-block
+      td:nth-child(2)
+        pre
+          padding-left: 0
+  pre
+    padding: $theme-gap-extra-large-size
+    margin: $content-item-margin
+    +font-family(roboto-mono)
+    background: black
+    code
+      color: white
+    .copy-code
+      box-shadow: inset 0 0 $theme-border-width $theme-border-small-width black
+      position: absolute
+      background: white
+      right: 0
+      top: 0
+      &:after
+        box-shadow: inset 0 0 $theme-border-width $theme-border-small-width black
+        +responsive-size(font-size, $theme-font-medium-size)
+        height: $theme-gap-extra-large-size
+        right: $theme-gap-extra-large-size
+        padding: $theme-gap-medium-size
+        content: attr(title-after)
+        +font-family(roboto-mono)
+        text-overflow: ellipsis
+        white-space: nowrap
+        transform: scale(0)
+        align-items: center
+        max-width: inherit
+        position: absolute
+        background: white
+        overflow: hidden
+        color: darkgreen
+        display: inline
+        opacity: 0
+        top: 0
+      &:not(:active):after
+        transition: transform 1.5s step-end
+        animation: copied 1.5s ease-in-out
+      &:active:after
+        transition: transform 1.5s step-start
+        transform: scale(1)
+  *:not(pre)
+    > code
+      box-shadow: 0 0 1px 0 smooth-color($content-background, 50)
+      background: smooth-color($theme-color, 80)
+      padding: 0 $theme-border-width
+      color: $content-code-color
+      +font-family(roboto-mono)
+      font-weight: 700
+      font-size: 90%
+  img
+    display: block
+    margin: auto
+  blockquote
+    border-left: $theme-gap-small-size solid $content-blockquote-color
+    padding: $theme-gap-medium-size $theme-gap-large-size
+    background: smooth-color($content-background,10)
+    position: relative
+    .author
+      font-size: 90%
+  table:not([style])
+    margin: $content-item-margin
+    border-collapse: collapse
+    table-layout: fixed
+    border-spacing: 0
+    width: 100%
+    blockquote
+      background: smooth-color($content-background,10)
+      blockquote
+        background: smooth-color($content-background,20)
+    th
+      color: findColorInvert($content-table-color)
+      background: $content-table-color
+    th,
+    td
+      border: 1px solid smooth-color($content-table-color, 50)
+      padding: $theme-gap-medium-size $theme-gap-large-size
+      vertical-align: middle
+      overflow: auto
+    td
+      color: $content-writing-color
+    tbody
+      tr
+        &:nth-of-type(odd)
+          background: smooth-color($content-background, 10)
+  .footnotes
+    font-size: 80% !important
+    hr
+      background: $content-footnote-color
+      border-radius: 0
+    p
+      margin: 0

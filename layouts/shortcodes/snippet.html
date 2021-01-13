@@ -1,0 +1,33 @@
+{{with .Parent}}
+  {{.Scratch.Set "isNestedShortcode" true}}
+{{else}}
+  {{.Scratch.Set "isNestedShortcode" false}}
+{{end}}
+{{$content := ""}}
+{{$optMd := dict "markup" "goldmark"}}
+{{$caption := .Get "caption"}}
+{{$codelang := .Get "codelang"}}
+{{$codeparam := .Get "codeparam"}}
+{{with .Get "file"}}
+  {{if eq ($.Get "type") "md"}}
+    {{readFile . | $.Page.RenderString $optMd}}
+  {{else if eq ($.Get "type") "plaintext"}}
+    <p class='sc-snippet-plaintext'>{{readFile . | safeHTML}}</p>
+  {{else}}
+    {{$content = (readFile .)}}
+  {{end}}
+{{else}}
+  {{with .Inner}}
+    {{$content = (trim . "\r\n")}}
+  {{end}}
+{{end}}
+{{with $content}}
+  {{with $caption}}
+    <div class='sc-snippet'>
+      <div class='sc-snippet-caption'>{{$caption}}</div>
+      {{printf "%s%s {%s}\n%s\n%s\n" "~~~" $codelang $codeparam $content "~~~" | $.Page.RenderString $optMd}}
+    </div>
+  {{else}}
+    {{printf "%s%s {%s}\n%s\n%s\n" "~~~" $codelang $codeparam $content "~~~" | $.Page.RenderString $optMd}}
+  {{end}}
+{{end}}

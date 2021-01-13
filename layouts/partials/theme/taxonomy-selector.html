@@ -1,0 +1,37 @@
+<div class='dropdown is-right'>
+  <div class='dropdown-trigger'>
+    <button id='tagsSelector' class='button navbar-item-standard' aria-haspopup='true' aria-controls='dropdown-menu'>
+      <span class='icon'>
+        <i class='fas fa-tags fa-lg'></i>
+      </span>
+    </button>
+  </div>
+  <div class='dropdown-menu' id='dropdown-menu' role='menu'>
+    <div class='dropdown-content is-paddingless'>
+      {{range $taxonomyname, $taxonomy := .Site.Taxonomies}}
+        {{if gt (len $taxonomy) 0}}
+          {{$.Scratch.Set "taxonomyUrl" (printf "%s%s%s" ("/" | relLangURL) ($taxonomyname | urlize) "/")}}
+          {{if eq $.Page.RelPermalink ($.Scratch.Get "taxonomyUrl")}}
+            <div class='dropdown-item is-selected has-text-weight-bold'>
+              {{with $.Site.Params.taxonomies}}
+                {{with (index . $taxonomyname).icon}}
+                  <i class='{{.}}'></i>
+                {{end}}
+              {{end}}
+              {{humanize $taxonomyname}}
+            </div>
+          {{else}}
+            <a href='{{$.Scratch.Get "taxonomyUrl"}}' class='dropdown-item has-text-weight-bold'>
+              {{with $.Site.Params.taxonomies}}
+                {{with (index . $taxonomyname).icon}}
+                  <i class='{{.}}'></i>
+                {{end}}
+              {{end}}
+              {{humanize $taxonomyname}}
+            </a>
+          {{end}}
+        {{end}}
+      {{end}}
+    </div>
+  </div>
+</div>

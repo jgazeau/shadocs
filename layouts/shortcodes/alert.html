@@ -1,0 +1,4 @@
+<div class='sc-alert {{ with .Get "type"}}sc-alert-{{.}}{{else}}sc-alert-info{{end}}'>
+  {{$optMd := dict "markup" "goldmark"}}
+  {{.Inner | .Page.RenderString $optMd}}
+</div>

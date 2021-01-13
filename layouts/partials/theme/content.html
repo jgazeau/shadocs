@@ -1,0 +1,23 @@
+<div class='columns is-mobile is-marginless' id='contentContainer'>
+  {{$.Scratch.Set "contentId" "content"}}
+  {{$.Scratch.Set "titleId" "contentTitle"}}
+  {{$.Scratch.Set "isToc" true}}
+  {{if .IsHome}}
+    {{if eq .Site.Params.homeLayout "onboarding"}}
+      {{$.Scratch.Set "contentId" "contentHome"}}
+      {{$.Scratch.Set "titleId" "contentHomeTitle"}}
+      {{$.Scratch.Set "isToc" false}}
+    {{end}}
+  {{end}}
+  <div class='column' id='{{$.Scratch.Get "contentId"}}'>
+    {{with .Title}}
+      {{partial "theme/content-title.html" (dict "titleId" ($.Scratch.Get "titleId") "title" .)}}
+    {{end}}
+    {{.Content}}
+  </div>
+  {{if ($.Scratch.Get "isToc")}}
+    <div class='column is-sticky is-hidden-touch is-paddingless' id='tocContainer'>
+      {{partial "theme/toc.html" .}}
+    </div>
+  {{end}}
+</div>

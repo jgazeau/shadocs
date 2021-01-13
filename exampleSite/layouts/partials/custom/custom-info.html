@@ -1,0 +1,37 @@
+{{$optMd := dict "markup" "goldmark"}}
+<div class='columns is-marginless is-multiline is-centered'>
+  <div class='column'>
+    <a class='is-itext-link' href='{{.Site.Data.themeParams.github.main}}' target='_blank'>
+      <div>
+        <i class='fab fa-github fa-2x'></i>
+        <p>{{i18n "navbarinfo_github_main"}}</p>
+      </div>
+    </a>
+  </div>
+  <div class='column'>
+    <a class='is-itext-link' href='{{.Site.Data.themeParams.github.download}}' target='_blank'>
+      <div>
+        <i class='fas fa-download fa-2x'></i>
+        <p>{{i18n "navbarinfo_github_download"}}</p>
+      </div>
+    </a>
+  </div>
+  <div class='column'>
+    <a class='is-itext-link' href='{{.Site.Data.themeParams.github.issue}}' target='_blank'>
+      <div>
+        <i class='fas fa-info-circle fa-2x'></i>
+        <p>{{i18n "navbarinfo_github_issue"}}</p>
+      </div>
+    </a>
+  </div>
+  <div class='column'>
+    <a class='is-itext-link' href='{{.Site.Data.themeParams.github.fork}}' target='_blank'>
+      <div>
+        <i class='fas fa-code-branch fa-2x'></i>
+        <p>{{i18n "navbarinfo_github_fork"}}</p>
+      </div>
+    </a>
+  </div>
+</div>
+<p>{{i18n "navbarinfo_content" | .RenderString $optMd}} ({{hugo.Version}})</p>
+<p>{{.Site.Copyright}} ({{with .GitInfo}}{{.AbbreviatedHash}}{{end}})</p>

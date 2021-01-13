@@ -1,0 +1,83 @@
+//
+// Global theme styles
+//
+// Font styles
+//
++font-face('lato', '../fonts/lato/lato-v16-latin-regular', 400, normal, eot svg ttf woff woff2)
++font-face('lato', '../fonts/lato/lato-v16-latin-italic', 400, italic, eot svg ttf woff woff2)
++font-face('lato', '../fonts/lato/lato-v16-latin-700', 700, normal, eot svg ttf woff woff2)
++font-face('lato', '../fonts/lato/lato-v16-latin-700italic', 700, italic, eot svg ttf woff woff2)
++font-face('lato', '../fonts/lato/lato-v16-latin-900', 900, normal, eot svg ttf woff woff2)
++font-face('lato', '../fonts/lato/lato-v16-latin-900italic', 900, italic, eot svg ttf woff woff2)
++font-face('oswald', '../fonts/oswald/oswald-v31-latin-700', 700, normal, eot svg ttf woff woff2)
++font-face('roboto-mono', '../fonts/roboto-mono/roboto-mono-v7-latin-regular', 400, normal, eot svg ttf woff woff2)
++font-face('permanent-marker', '../fonts/permanent-marker/permanent-marker-v10-latin-regular', 400, normal, eot svg ttf woff woff2)
+//
+body
+  +responsive-size(font-size, $content-font-size)
+  +font-family(lato)
+html
+  overflow-x: hidden !important
+  overflow-y: auto !important
+#unsupportedBrowser
+  +static-size-height(100%)
+  +static-size-width(100%)
+  flex-direction: column
+  align-items: center
+  background: black
+  position: fixed
+  display: table
+  z-index: 100
+  color: white
+  .is-compatibility-alert
+    vertical-align: middle
+    word-break: break-word
+    display: table-cell
+    height: fit-content
+    width: fit-content
+    text-align: center
+    div
+      border: solid $theme-gap-small-size $yellow
+      padding: $theme-gap-medium-size
+      h2
+        font-size: x-large
+        color: white
+kbd
+  box-shadow: inset 0 0.1rem 0.2rem tint($grey-light, 80), inset 0 -0.1rem 0.2rem tint($grey-light, 20)
+  background: linear-gradient(tint($grey-light, 20), tint($grey-light, 80))
+  padding: $theme-gap-small-size $theme-gap-medium-size
+  border-radius: $theme-border-radius
+  border: 1px solid $grey-light
+  @extend %unselectable
+  color: $grey-dark
+.is-sticky
+  @extend %sticky
+.is-disabled
+  @extend %disable
+.is-close
+  @extend %close
+.is-pretty-link
+  @extend %pretty-link-effect
+.is-itext-link
+  @extend %itext-link-effect
+.is-transparent
+  @extend %transparent
+.is-opaque
+  @extend %opaque
+.is-action-button
+  @extend %action-button
+.message
+  box-shadow: $content-box-shadow
+.is-hover-hidden
+  @media (hover: none)
+    display: none !important
+.has-line-break
+  white-space: pre-wrap
+.is-transition-disabled
+  transition: none !important
+.is-fixed
+  position: fixed
+.is-scroll-smooth
+  scroll-behavior: smooth
+.is-modal
+  cursor: zoom-in
