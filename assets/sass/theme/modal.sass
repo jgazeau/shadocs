@@ -1,0 +1,59 @@
+//
+// Modal styles
+//
+.modal-container
+  +modal-container(rgba(0,0,0,0.9))
+  cursor: zoom-out
+  img
+    @extend %unselectable
+    max-height: 100vh
+    max-width: 100vw
+  #modal
+    display: flex
+  .modal-content-box
+    cursor: auto
+  .modal-text-box
+    box-shadow: 0 0 0 $theme-gap-small-size $theme-color
+    +static-size-width($modal-width)
+    background: $content-background
+    max-height: $modal-max-height
+    flex-direction: column
+    transition: all 0.3s
+    position: absolute
+    display: flex
+    .modal-title
+      display: contents
+      .card-header-title
+        +responsive-size(font-size, $theme-h3-font-size)
+        background: findColorInvert($content-background)
+        color: findColorInvert($content-writing-color)
+        justify-content: center
+      .card-header-icon
+        background: findColorInvert($content-background)
+        color: findColorInvert($content-writing-color)
+        cursor: unset
+    .modal-content-container
+      overflow-x: hidden
+      overflow-y: auto
+      .modal-content-block,
+      .modal-content
+        justify-content: center
+        align-content: center
+        flex-direction: row
+        flex-basis: 50%
+        flex-wrap: wrap
+        display: flex
+        flex-grow: 0
+        margin: 0
+      .modal-content-block
+        word-break: break-word
+        align-items: stretch
+        text-align: center
+      .modal-content
+        box-shadow: inset 0 0 $theme-border-width findColorInvert($content-background), inset 0 0 $theme-border-width findColorInvert($content-background)
+        padding: $theme-gap-medium-size
+        align-items: center
+        p
+          padding: $theme-gap-medium-size
+      +touch
+        +static-size-width(100%)

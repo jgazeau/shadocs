@@ -1,0 +1,110 @@
+[
+  {{- $.Scratch.Set "pageArray" (partial "theme/helpers/sortedPagesArray.html" (dict "input" .Site.Pages "this" .)) -}}
+  {{- $.Scratch.Add "index" 1 -}}
+  {{- range $index, $tempPage := ($.Scratch.Get "pageArray") -}}
+    {{- if and (eq .FirstSection .) (not .IsHome) -}}
+      {{- with .File -}}
+        {{- $.Scratch.Set .UniqueID ($.Scratch.Get "index") -}}
+        {{- $.Scratch.Add "index" 1 -}}
+      {{- else -}}
+        {{- range first 1 .FirstSection.Pages -}}
+          {{- with .File -}}
+            {{- $.Scratch.Set .UniqueID ($.Scratch.Get "index") -}}
+            {{- $.Scratch.Add "index" 1 -}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if .IsHome -}}
+      {{- with .File -}}
+        {{- $.Scratch.Set .UniqueID 0 -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  {{- range $index, $tempPage := ($.Scratch.Get "pageArray") -}}
+    {{- $.Scratch.Set "isStandardPage" true -}}
+    {{- range $taxonomyName, $taxonomy := .Site.Taxonomies -}}
+      {{- with (hasPrefix ($tempPage.RelPermalink | relLangURL) ($taxonomyName | relLangURL)) -}}
+        {{- $.Scratch.Set "isStandardPage" false -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if $.Scratch.Get "isStandardPage" -}}
+      {{- $.Scratch.Add "tempIndex" 1 -}}
+      {{- if .IsHome -}}
+        {{- $.Scratch.Set "rootTitleIcon" (print .Site.Data.themeParams.sidebar.homeSectionIconDefault " fa-lg") -}}
+      {{- else -}}
+        {{- if .FirstSection.Params.titleIcon -}}
+          {{- $.Scratch.Set "rootTitleIcon" (print .FirstSection.Params.titleIcon " fa-lg") -}}
+        {{- else -}}
+          {{- $.Scratch.Set "rootTitleIcon" (print .Site.Data.themeParams.sidebar.firstSectionIconDefault " fa-lg") -}}
+        {{- end -}}
+      {{- end -}}
+      {{if and ($.Scratch.Get "tempIndex") (gt ($.Scratch.Get "tempIndex") 1)}},{{end}}{
+      "id": "{{- $index -}}",
+      "rootTitleIndex": "{{- with .FirstSection.File -}}{{- $.Scratch.Get .UniqueID -}}
+        {{- else -}}
+          {{- range first 1 .FirstSection.Pages -}}
+            {{- with .File -}}
+              {{- $.Scratch.Get .UniqueID -}}
+            {{- end -}}
+          {{- end -}}
+        {{- end -}}",
+      "rootTitle": "{{- if .IsHome -}}
+          {{- i18n "homepage_title" -}}
+        {{- else -}}
+          {{- htmlEscape .FirstSection.Title -}}
+        {{- end -}}",
+      "rootTitleIcon": "{{htmlEscape ($.Scratch.Get "rootTitleIcon")}}",
+      "rootTitlePath": "{{.FirstSection.RelPermalink | relLangURL}}",
+      "rootTitleTitle": "{{- if .IsHome -}}
+          {{- i18n "homepage_title" -}}
+        {{- else -}}
+          {{- printf "%s / %s" (i18n "homepage_title") (htmlEscape .FirstSection.Title) -}}
+        {{- end -}}",
+      "permalink": "{{.RelPermalink | relLangURL}}",
+      "permalinkTitle": "{{template "permalinkTitle" dict "currentPage" . "value" ""}}",
+      "title": "{{- if .IsHome -}}
+          {{- i18n "homepage_title" -}}
+        {{- else -}}
+          {{- htmlEscape .Title -}}
+        {{- end -}}",
+      "content": {{.Plain | jsonify}}
+    }
+    {{- end -}}
+  {{- end -}}
+  ]
+  {{- define "permalinkTitle" -}}
+    {{- $value := "" -}}
+    {{- $title := "N/A" -}}
+    {{- $tempTitle := "N/A" -}}
+    {{- if .currentPage.IsHome -}}
+      {{- $title = (i18n "homepage_title") -}}
+    {{- else -}}
+      {{- with .currentPage.Title -}}
+        {{- $title = . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $parent := .currentPage.Parent -}}
+    {{- if $parent -}}
+      {{- if $parent.IsHome -}}
+        {{- $tempTitle = (i18n "homepage_title") -}}
+      {{- else -}}
+        {{- with $parent.Title -}}
+          {{- $tempTitle = $parent.Title -}}
+        {{- end -}}
+      {{- end -}}
+      {{- if eq .value "" -}}
+        {{- $value = (printf "%s / %s" $tempTitle $title) -}}
+      {{- else -}}
+        {{- $value = (printf "%s / %s" $tempTitle .value) -}}
+      {{- end -}}
+      {{- template "permalinkTitle" dict "currentPage" $parent "value" $value -}}
+    {{- else -}}
+      {{- if eq .value "" -}}
+        {{$title | safeHTML -}}
+      {{- else -}}
+        {{.value | safeHTML -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  

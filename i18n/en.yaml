@@ -1,0 +1,80 @@
+- id: homepage_title
+  translation: "Homepage"
+- id: search_placeholder
+  translation: "Search..."
+- id: search_no_results
+  translation: "No result found"
+- id: sidebar_collapse
+  translation: "Collapse sidebar"
+- id: toc_title
+  translation: "On this page:"
+- id: toc_backtotop
+  translation: "Back to top"
+- id: navbarinfo_title
+  translation: "About"
+- id: navbarshortcuts_title
+  translation: "Keyboard shortcuts"
+- id: 1_info_keys_wording
+  translation: "Shift,i"
+- id: 1_info_wording
+  translation: "Show website information"
+- id: 2_shortcuts_keys_wording
+  translation: "Shift,k"
+- id: 2_shortcuts_wording
+  translation: "Show shortcuts"
+- id: 3_home_keys_wording
+  translation: "Shift,h"
+- id: 3_home_wording
+  translation: "Go to homepage"
+- id: 4_search_keys_wording
+  translation: "Shift,f"
+- id: 4_search_wording
+  translation: "Find on website"
+- id: 5_togglesidebar_keys_wording
+  translation: "Shift,m"
+- id: 5_togglesidebar_wording
+  translation: "Collapse/Uncollapse sidebar"
+- id: 6_backtotop_keys_wording
+  translation: "Shift,↑"
+- id: 6_backtotop_wording
+  translation: "Back to the top of the page"
+- id: 7_gotobottom_keys_wording
+  translation: "Shift,↓"
+- id: 7_gotobottom_wording
+  translation: "Go to the bottom of the page"
+- id: shortcode_collapsible
+  translation: "Expand/Collapse"
+- id: no_data
+  translation: "No data available"
+- id: empty_description
+  translation: "No description available"
+- id: read_more
+  translation: "Read more"
+- id: helper_loading
+  translation: "Loading"
+- id: code_copy_before
+  translation: "Copy to clipboard"
+- id: code_copy_after
+  translation: "Copied to clipboard"
+- id: download_as_svg
+  translation: "Download as SVG"
+- id: reload_svg
+  translation: "Reload SVG"
+- id: 404_title
+  translation: "Oops, we can't find the page you're looking for."
+- id: 404_footer
+  translation: "Back to homepage"
+- id: intro_error_title
+  translation: "Error !!"
+- id: intro_error
+  translation: "Invalid JSON. Please check the Intro shortcode definition."
+- id: intro_empty
+  translation: "Attribute <strong><i>steps</i></strong> not found. Please check the Intro shortcode definition"
+- id: intro_prevlabel
+  translation: "Previous"
+- id: intro_nextlabel
+  translation: "Next"
+- id: intro_skiplabel
+  translation: "✗"
+- id: intro_donelabel
+  translation: "Done"

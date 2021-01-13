@@ -1,0 +1,123 @@
+{{with .Parent}}
+  {{.Scratch.Set "isNestedShortcode" true}}
+{{else}}
+  {{.Scratch.Set "isNestedShortcode" false}}
+{{end}}
+{{$pages := slice}}
+{{with .Get "rootpath"}}
+  {{$rootpath := .}}
+  {{range (partial "theme/helpers/sortedPagesArray.html" (dict "input" $.Site.Pages "this" $))}}
+    {{$tempPage := .}}
+    {{if .IsNode}}
+      {{with .File}}
+        {{if eq (path.Join "/" (path.Dir .Dir)) $rootpath}}
+          {{$pages = $pages | append $tempPage}}
+        {{end}}
+      {{end}}
+    {{end}}
+  {{end}}
+{{else}}
+  {{with .Page.Pages}}
+    {{$pages = (partial "theme/helpers/sortedPagesArray.html" (dict "input" . "this" $))}}
+  {{end}}
+{{end}}
+<div class='sc-treeview'>
+  {{with $pages}}
+    {{template "pathList" dict "this" . "context" $}}
+  {{else}}
+    {{with .Inner}}
+      {{template "innerList" dict "this" (. | transform.Unmarshal) "context" $}}
+    {{else}}
+      <div class='sc-alert sc-alert-warning'>
+        {{i18n "no_data"}}
+      </div>
+    {{end}}
+  {{end}}
+</div>
+<!-- TEMPLATES -->
+{{define "pathList"}}
+  {{$scratch := newScratch}}
+  {{with (.context.Get "display")}}
+    {{if or (eq . "graph") (eq . "tree")}}
+      {{$scratch.Set "displayClass" (printf "%s%s" "sc-treeview-" .)}}
+    {{end}}
+  {{end}}
+  {{with .this}}
+    <ul {{with $scratch.Get "displayClass"}}class='{{.}}'{{end}}>
+    {{range $page := .}}
+      {{if eq ($.context.Get "display") "tree"}}
+        {{with $page.Params.titleIcon}}
+          {{$scratch.Set "kind" .}}
+        {{else}}
+          {{with $page.Kind}}
+            {{with (index $.context.Site.Data.themeParams.shortcodes.treeview.kinds .)}}
+              {{$scratch.Set "kind" .}}
+            {{else}}
+              {{$scratch.Set "kind" $.context.Site.Data.themeParams.shortcodes.treeview.kinds.default}}
+            {{end}}
+          {{else}}
+            {{$scratch.Set "kind" $.context.Site.Data.themeParams.shortcodes.treeview.kinds.default}}
+          {{end}}
+        {{end}}
+      {{end}}
+      <li {{with $page.Page.Pages}}class='sc-treeview-coll{{if eq ($.context.Get "init") "collapse"}} is-collapsed{{end}}'{{end}}>
+        <div class='sc-treeview-label'>
+          {{with $scratch.Get "kind"}}
+          <div class='sc-treeview-icon{{with $page.Page.Pages}} sc-treeview-coll-trigger{{end}}'>
+            <i class='{{.}}'></i>
+          </div>
+          {{end}}
+          <p class='is-marginless'><a href='{{with $page.RelPermalink}}{{.}}{{end}}' class='is-pretty-link'>{{with $page.LinkTitle}}{{.}}{{else}}{{i18n "empty_description"}}{{end}}</a></p>
+        </div>
+        {{with $page.Page.Pages}}
+          {{template "pathList" dict "this" . "context" $.context}}
+        {{end}}
+      </li>
+    {{end}}
+    </ul>
+  {{end}}
+{{end}}
+{{define "innerList"}}
+  {{$scratch := newScratch}}
+  {{with (.context.Get "display")}}
+    {{if or (eq . "graph") (eq . "tree")}}
+      {{$scratch.Set "displayClass" (printf "%s%s" "sc-treeview-" .)}}
+    {{end}}
+  {{end}}
+  {{$optMd := dict "markup" "goldmark"}}
+  {{with .this}}
+    <ul {{with $scratch.Get "displayClass"}}class='{{.}}'{{end}}>
+    {{range $element := .}}
+      {{with .kind}}
+        {{with (index $.context.Site.Data.themeParams.shortcodes.treeview.kinds .)}}
+          {{$scratch.Set "kind" .}}
+        {{else}}
+          {{$scratch.Set "kind" $.context.Site.Data.themeParams.shortcodes.treeview.kinds.default}}
+        {{end}}
+      {{else}}
+        {{with .content}}
+          {{$scratch.Set "kind" $.context.Site.Data.themeParams.shortcodes.treeview.kinds.defaultDir}}
+        {{else}}
+          {{$scratch.Set "kind" $.context.Site.Data.themeParams.shortcodes.treeview.kinds.defaultFile}}
+        {{end}}
+      {{end}}
+      {{with $element.label}}
+        {{$scratch.Set "label" (. | $.context.Page.RenderString $optMd)}}
+      {{else}}
+        {{$scratch.Set "label" (i18n "empty_description")}}
+      {{end}}
+      <li {{with $element.content}}class='sc-treeview-coll{{if eq ($.context.Get "init") "collapse"}} is-collapsed{{end}}'{{end}}>
+        <div class='sc-treeview-label'>
+          <div class='sc-treeview-icon{{with $element.content}} sc-treeview-coll-trigger{{end}}'>
+            <i class='{{$scratch.Get "kind"}}'></i>
+          </div>
+          <p class='is-marginless'>{{$scratch.Get "label"}}</p>
+        </div>
+        {{with $element.content}}
+          {{template "innerList" dict "this" . "context" $.context}}
+        {{end}}
+      </li>
+    {{end}}
+    </ul>
+  {{end}}
+{{end}}

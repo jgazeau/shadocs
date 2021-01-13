@@ -1,0 +1,136 @@
+#search
+  max-height: calc(#{$navbar-height} - (2 * #{$theme-gap-medium-size}))
+  background-color: smooth-color($theme-color, 30) !important
+  color: findColorInvert(smooth-color($theme-color, 30))
+  max-width: $navbar-search-width
+  @extend %navbar-item-generic
+  @extend %navbar-item-hover
+  &:focus
+    background-color: $content-background !important
+    color: $content-writing-color
+    box-shadow: unset
+    border: unset
+    &::placeholder
+      color: smooth-color($content-writing-color, 30)
+      font-style: italic
+  &::placeholder
+    color: smooth-color(findColorInvert(smooth-color($theme-color, 30)), 30)
+    font-style: italic
+#searchInput
+  +responsive-size(font-size, $content-font-size)
+  width: $navbar-search-width
+  display: block
+#searchList[hidden]
+  +navbar-content-effects-hidden(top left, top right)
+#searchList
+  margin: $theme-gap-medium-size 0 0 0
+  +navbar-content-effects-visible(top left, top right)
+  +responsive-size(font-size, $content-font-size)
+  max-height: $navbar-search-results-height
+  @extend %navbar-content-border
+  overflow-x: hidden
+  position: absolute
+  border-radius: 0
+  overflow-y: auto
+  min-width: 100%
+  z-index: 1
+  strong
+    color: $navbar-search-highlight-color !important
+    font-weight: 900
+  .search-delimiter
+    color: smooth-color($content-background, 30)
+    font-weight: 900
+  li
+    @extend %search-content-colors
+    min-height: $control-height
+    position: relative
+    cursor: pointer
+    &:hover:not(.no-result),
+    &:hover.is-selected:not(.no-result)
+      a:not(.is-title)
+        background: smooth-color($content-background, 15) !important
+      a.is-title
+        background: smooth-color($navbar-search-title-color, 15) !important
+    &.is-selected:not(.no-result)
+      a:not(.is-title)
+        background: smooth-color($content-background, 10) !important
+      a.is-title
+        background: smooth-color($navbar-search-title-color, 10) !important
+    &.no-result
+      background: $content-background !important
+      padding: $theme-gap-small-size
+      text-align: center
+      font-weight: 900
+      cursor: unset
+    a
+      max-width: $navbar-search-results-width
+      @extend %search-content-colors
+      min-height: $control-height
+      width: max-content
+      min-width: 100%
+      +touch
+        max-width: $navbar-search-results-width-touch
+      .level-left
+        width: calc((#{$navbar-search-results-width} * 75) / 100)
+        min-height: $control-height
+        position: relative
+        +touch
+          width: calc((#{$navbar-search-results-width-touch} * 75) / 100)
+        .scontent
+          width: calc((#{$navbar-search-results-width} * 75) / 100)
+          padding: $theme-gap-medium-size
+          word-break: break-word
+          justify-content: left
+          flex-wrap: wrap
+          display: block
+          +touch
+            width: calc((#{$navbar-search-results-width-touch} * 75) / 100)
+        &:after
+          background: smooth-color(findColorInvert($content-background), 50)
+          position: absolute
+          height: 75%
+          content: ''
+          width: 1px
+          right: 0
+      .level-right
+        width: calc((#{$navbar-search-results-width} * 25) / 100)
+        min-height: $control-height
+        +touch
+          width: calc((#{$navbar-search-results-width-touch} * 25) / 100)
+        .spath
+          width: calc((#{$navbar-search-results-width} * 25) / 100)
+          padding: $theme-gap-medium-size
+          justify-content: right
+          word-break: break-word
+          flex-wrap: wrap
+          +touch
+            width: calc((#{$navbar-search-results-width-touch} * 25) / 100)
+      .level-item
+        min-height: $control-height
+        &.spre
+          margin-right: $theme-gap-medium-size
+          margin-left: $theme-gap-medium-size
+          width: $theme-icon-size
+        &.stitle
+          width: calc(100% - #{$theme-icon-size} - (2 * #{$theme-gap-medium-size}))
+          justify-content: left
+          font-weight: 900
+      &.is-title
+        color: findColorInvert($navbar-search-title-color)
+        background: $navbar-search-title-color
+        &:after
+          background: smooth-color($navbar-search-title-color, 50)
+          position: absolute
+          content: ''
+          height: 1px
+          width: 100%
+          bottom: 0
+          left: 0
+        &:not(.is-first-title):before
+          background: smooth-color($navbar-search-title-color, 50)
+          position: absolute
+          content: ''
+          height: 1px
+          width: 100%
+          left: 0
+          top: 0

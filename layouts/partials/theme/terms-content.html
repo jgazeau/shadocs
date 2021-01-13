@@ -1,0 +1,36 @@
+<div class='column is-marginless' id='contentContainer'>
+  {{with .LinkTitle}}
+    {{partial "theme/content-title.html" (dict "titleId" "contentTitle" "title" .)}}
+  {{end}}
+  {{range .Data.Pages}}
+    {{$.Scratch.Add "taxonomyInPagesCount" (len .Data.Pages)}}
+  {{end}}
+  {{if eq ($.Scratch.Get "taxonomyInPagesCount") 0}}
+    <div class='sc-alert sc-alert-warning has-text-centered'>
+      <p class='has-text-weight-bold'>{{i18n "no_data"}}</p>
+    </div>
+  {{else}}
+    {{$.Scratch.Set "taxonomy" .Data.Plural}}
+    <div class='tabs-container'>
+      <nav class='tabs-triggers'>
+        <ul>
+          {{range $key, $value := .Data.Terms.Alphabetical}}
+            <li><a id='tabs-{{.Term}}' class='tabs-trigger{{with (eq $key 0)}} is-active{{end}}'>{{humanize .Term}}</a></li>
+          {{end}}
+        </ul>
+      </nav>
+      <div class='tabs-results'>
+        {{range $key, $value := .Data.Terms.Alphabetical}}
+          <div id='tabs-{{.Term}}-results' class='tabs-results-list{{with (eq $key 0)}} is-active{{end}}'>
+            <a class='tabs-title' href='{{.Page.Permalink}}'>{{humanize .Term}}</a>
+            <ul>
+              {{range (index $.Site.Taxonomies ($.Scratch.Get "taxonomy") .Term)}}
+                <li><a class='is-pretty-link' href='{{.Permalink}}'>{{.LinkTitle}}</a></li>
+              {{end}}
+            </ul>
+          </div>
+        {{end}}
+      </div>
+    </div>
+  {{end}}
+</div>

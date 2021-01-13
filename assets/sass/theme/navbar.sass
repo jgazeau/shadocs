@@ -1,0 +1,91 @@
+//
+// Navbar styles
+//
+.navbar
+  background: linear-gradient($theme-color, smooth-color($theme-color, 20))
+  +static-size-height($navbar-height)
+  .navbar-logo
+    #globalLogo
+      width: calc(#{$sidebar-width} - (2 * #{$theme-gap-medium-size}))
+      border-radius: $theme-border-radius
+      margin: $theme-gap-medium-size
+      img
+        max-width: calc(#{$sidebar-width} - (2 * #{$theme-gap-medium-size}))
+        max-height: $control-height
+        margin: auto
+  .navbar-menu
+    &.is-active
+      +touch
+        background: linear-gradient(-45deg, $theme-color, smooth-color($theme-color, 20))
+        border: $theme-gap-small-size solid $theme-color
+        position: absolute
+        width: 100%
+        .navbar-item
+          justify-content: flex-end
+          align-items: flex-end
+          display: flex
+          .dropdown-menu,
+          #searchList
+            left: auto
+            right: 0
+    .navbar-item
+      padding: $theme-gap-medium-size $theme-gap-small-size
+    +desktop
+      .navbar-end
+        .navbar-item
+          &:nth-last-of-type(1)
+            padding-right: $theme-gap-medium-size
+  .navbar-burger
+    @extend %unselectable
+    margin-bottom: $theme-gap-medium-size
+    margin-right: $theme-gap-medium-size
+    margin-top: $theme-gap-medium-size
+    height: $control-height
+    width: $control-height
+    margin-left: auto
+  .navbar-item-standard
+    @extend %navbar-item-standard
+  .navbar-item
+    .dropdown
+      .button
+        height: $control-height
+        width: $control-height
+      .dropdown-menu
+        +navbar-content-effects-hidden(100% $navbar-item-padding, 100% $navbar-item-padding)
+        padding: $navbar-item-padding 0 0 0
+      .dropdown-content
+        @extend %navbar-content-border
+        padding: $theme-gap-small-size 0 $theme-gap-small-size 0
+        border-radius: 0
+        .dropdown-item
+          font-size: $theme-gap-large-size
+          padding: $theme-gap-medium-size
+          font-style: italic
+          &:not(.is-selected)
+            color: smooth-color($content-writing-color, 50)
+            background: $content-background
+            &:hover
+              background: smooth-color($content-background,10)
+              color: $content-writing-color
+          &.is-selected
+            background: $content-background
+            color: $content-writing-color
+            @extend %unselectable
+            @extend %disable
+          i
+            width: $theme-icon-size
+            text-align: center
+      &:hover
+        .dropdown-menu
+          +navbar-content-effects-visible(100% $navbar-item-padding, 100% $navbar-item-padding)
+#navbar.is-navbar-uncollapsed + #navbarOverlay
+  +touch
+    display: block
+    opacity: 0.5
+#navbarOverlay
+  background: $black
+  position: fixed
+  display: none
+  height: 100%
+  width: 100%
+  z-index: 25

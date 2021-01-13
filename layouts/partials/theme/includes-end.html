@@ -1,0 +1,72 @@
+<script type='text/javascript'>
+  const baseUrl = '{{.Site.BaseURL}}{{.Site.LanguagePrefix}}';
+  const codeCopyBefore = '{{i18n "code_copy_before"}}';
+  const codeCopyAfter = '{{i18n "code_copy_after"}}';
+  const searchNoResults = '{{i18n "search_no_results"}}';
+  const introNextLabel = '{{i18n "intro_nextlabel"}}';
+  const introPrevLabel = '{{i18n "intro_prevlabel"}}';
+  const introSkipLabel = '{{i18n "intro_skiplabel"}}';
+  const introDoneLabel = '{{i18n "intro_donelabel"}}';
+</script>
+<!-- JS Modules includes -->
+{{$jsModulesFiles := slice}}
+{{with .Site.Data.themeParams.includes.jsModules}}
+  {{range .}}{{$jsModulesFiles = $jsModulesFiles | append .}}{{end}}
+{{end}}
+{{with .Site.Params.includes.jsModules}}
+  {{range .}}{{$jsModulesFiles = $jsModulesFiles | append .}}{{end}}
+{{end}}
+{{with .Page.Params.includes.jsModules}}
+  {{range .}}{{$jsModulesFiles = $jsModulesFiles | append .}}{{end}}
+{{end}}
+{{range $key, $value := .Site.Data.themeParams.includes.shortcodes.jsModules}}
+  {{with len (findRE (printf "%s%s%s" "{{(<|%)(.|\n|\r)*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
+    {{range $value}}{{$jsModulesFiles = $jsModulesFiles | append .}}{{end}}
+  {{end}}
+{{end}}
+{{range $key, $value := .Site.Params.includes.shortcodes.jsModules}}
+  {{with len (findRE (printf "%s%s%s" "{{(<|%)(.|\n|\r)*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
+    {{range $value}}{{$jsModulesFiles = $jsModulesFiles | append .}}{{end}}
+  {{end}}
+{{end}}
+{{if gt (len $jsModulesFiles) 0}}
+  {{template "includeJs" dict "this" $jsModulesFiles "context" $ "type" "module"}}
+{{end}}
+<!-- JS includes -->
+{{$jsFiles := slice}}
+{{with .Site.Data.themeParams.includes.js}}
+  {{range .}}{{$jsFiles = $jsFiles | append .}}{{end}}
+{{end}}
+{{with .Site.Params.includes.js}}
+  {{range .}}{{$jsFiles = $jsFiles | append .}}{{end}}
+{{end}}
+{{with .Page.Params.includes.js}}
+  {{range .}}{{$jsFiles = $jsFiles | append .}}{{end}}
+{{end}}
+{{range $key, $value := .Site.Data.themeParams.includes.shortcodes.js}}
+  {{with len (findRE (printf "%s%s%s" "{{(<|%)(.|\n|\r)*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
+    {{range $value}}{{$jsFiles = $jsFiles | append .}}{{end}}
+  {{end}}
+{{end}}
+{{range $key, $value := .Site.Params.includes.shortcodes.js}}
+  {{with len (findRE (printf "%s%s%s" "{{(<|%)(.|\n|\r)*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
+    {{range $value}}{{$jsFiles = $jsFiles | append .}}{{end}}
+  {{end}}
+{{end}}
+{{if gt (len $jsFiles) 0}}
+  {{template "includeJs" dict "this" $jsFiles "context" $ "type" "text/javascript"}}
+{{end}}
+<!-- TEMPLATES -->
+{{define "includeJs"}}
+  {{$context := .context}}
+  {{$type := .type}}
+  {{$scratch := newScratch}}
+  {{range .this}}
+    {{ if in . ".min." }}
+      {{$scratch.Set "script" (resources.Get . | resources.ExecuteAsTemplate . $context)}}
+    {{else}}
+      {{$scratch.Set "script" (resources.Get . | resources.ExecuteAsTemplate . $context | minify)}}
+    {{end}}
+    <script type='{{$type}}' src='{{($scratch.Get "script").RelPermalink}}'></script>
+  {{end}}
+{{end}}

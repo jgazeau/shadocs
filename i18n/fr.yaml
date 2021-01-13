@@ -1,0 +1,80 @@
+- id: homepage_title
+  translation: "Page d'accueil"
+- id: search_placeholder
+  translation: "Rechercher..."
+- id: search_no_results
+  translation: "Aucun résultat trouvé"
+- id: sidebar_collapse
+  translation: "Réduire le menu latéral"
+- id: toc_title
+  translation: "Sur cette page:"
+- id: toc_backtotop
+  translation: "Retour en haut"
+- id: navbarinfo_title
+  translation: "À propos"
+- id: navbarshortcuts_title
+  translation: "Raccourcis clavier"
+- id: 1_info_keys_wording
+  translation: "Maj,i"
+- id: 1_info_wording
+  translation: "Afficher les informations du site"
+- id: 2_shortcuts_keys_wording
+  translation: "Maj,k"
+- id: 2_shortcuts_wording
+  translation: "Afficher les raccourcis"
+- id: 3_home_keys_wording
+  translation: "Maj,h"
+- id: 3_home_wording
+  translation: "Aller à la page d'accueil"
+- id: 4_search_keys_wording
+  translation: "Maj,f"
+- id: 4_search_wording
+  translation: "Rechercher sur le site"
+- id: 5_togglesidebar_keys_wording
+  translation: "Maj,m"
+- id: 5_togglesidebar_wording
+  translation: "Réduire/Développer le menu latéral"
+- id: 6_backtotop_keys_wording
+  translation: "Maj,↑"
+- id: 6_backtotop_wording
+  translation: "Retour en haut de la page"
+- id: 7_gotobottom_keys_wording
+  translation: "Maj,↓"
+- id: 7_gotobottom_wording
+  translation: "Aller tout en bas de la page"
+- id: shortcode_collapsible
+  translation: "Développer/Réduire"
+- id: no_data
+  translation: "Aucune donnée disponible"
+- id: empty_description
+  translation: "Aucune description disponible"
+- id: read_more
+  translation: "Lire plus"
+- id: helper_loading
+  translation: "Chargement"
+- id: code_copy_before
+  translation: "Copier dans le presse-papiers"
+- id: code_copy_after
+  translation: "Copié dans le presse-papiers"
+- id: download_as_svg
+  translation: "Télécharger en tant que SVG"
+- id: reload_svg
+  translation: "Recharger le SVG"
+- id: 404_title
+  translation: "Oups, nous n'arrivons pas à trouver la page que vous cherchez."
+- id: 404_footer
+  translation: "Retour à la page d'accueil"
+- id: intro_error_title
+  translation: "Erreur !!"
+- id: intro_error
+  translation: "JSON invalide. Veuillez vérifier la définition du shortcode Intro."
+- id: intro_empty
+  translation: "Attribut <strong><i>steps</i></strong> introuvable. Veuillez vérifier la définition du shortcode Intro."
+- id: intro_prevlabel
+  translation: "Précédent"
+- id: intro_nextlabel
+  translation: "Suivant"
+- id: intro_skiplabel
+  translation: "✗"
+- id: intro_donelabel
+  translation: "Terminer"

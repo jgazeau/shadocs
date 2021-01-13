@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <script type='text/javascript'>
+    let text404 = '{{with .Site.Params.text404}}{{.}}{{else}}404{{end}}';
+  </script>
+  {{partial "theme/meta.html" .}}
+  {{$404sass := resources.Get "sass/404.sass"}}
+  {{$options := (dict "outputStyle" "compressed" "includePaths" (slice "assets/bulma" "assets/sass"))}}
+  {{$main    := $404sass | resources.ExecuteAsTemplate "css/404.sass" . | resources.ToCSS $options}}
+  <link rel='stylesheet' type='text/css' href='{{$main.RelPermalink}}'/>
+  <body>
+    <section>
+      <div id='content404'>
+        <div id='errorCode404' data-text="404"><span>404</span></div>
+        <p id='title404'>{{i18n "404_title"}}</p>
+        <img src='{{with .Site.Params.image404}}{{. | relURL}}{{else}}{{"images/404.gif" | relURL}}{{end}}'>
+        <a id='footer404' href='{{.Site.Home.RelPermalink | relLangURL}}'>
+          {{i18n "404_footer"}}
+        </a>
+      </div>
+  </section>
+  </body>
+</html>
+
+
+
+

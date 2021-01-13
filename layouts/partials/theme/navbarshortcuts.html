@@ -1,0 +1,72 @@
+<div id='navbarShortcuts' class='is-hidden modal-container'>
+  <div class='modal-content-box modal-text-box'>
+    {{with $.Site.Data.themeParams.navbar.shortcuts}}
+      {{$.Scratch.Set "isThemeShortcuts" true}}
+    {{else}}
+      {{$.Scratch.Set "isThemeShortcuts" false}}
+    {{end}}
+    {{with $.Site.Params.navbar.shortcuts}}
+      {{$.Scratch.Set "isParamShortcuts" true}}
+    {{else}}
+      {{$.Scratch.Set "isParamShortcuts" false}}
+    {{end}}
+    {{if or ($.Scratch.Get "isThemeShortcuts") ($.Scratch.Get "isParamShortcuts")}}
+      <div class='card modal-title is-radiusless'>
+        <div class='card-header'>
+          <p class='card-header-title'>
+            {{i18n "navbarshortcuts_title"}}
+          </p>
+        </div>
+      </div>
+      <div class='modal-content-container'>
+        <div class='modal-content-block'>
+          {{with $.Site.Data.themeParams.navbar.shortcuts}}
+            {{range $shortcutName, $parameters := .}}
+              {{- with $parameters.function -}}
+                {{template "shortcuts" dict "shortcutName" $shortcutName "parameters" $parameters}}
+              {{end}}
+            {{end}}
+          {{end}}
+          {{with $.Site.Params.navbar.shortcuts}}
+            {{range $shortcutName, $parameters := .}}
+              {{- with $parameters.function -}}
+                {{template "shortcuts" dict "shortcutName" $shortcutName "parameters" $parameters}}
+              {{end}}
+            {{end}}
+          {{end}}
+        </div>
+      </div>
+    {{end}}
+  </div>
+</div>
+<!-- TEMPLATES -->
+{{define "shortcuts"}}
+  {{$shortcutName := .shortcutName}}
+  {{$parameters := .parameters}}
+  {{$scratch := newScratch}}
+  {{with (i18n (printf "%s%s" $shortcutName "_keys_wording"))}}
+    {{$scratch.Set "keysWording" (split . ",")}}
+  {{else}}
+    {{with $parameters.keys}}
+      {{$scratch.Set "keysWording" .}}
+    {{else}}
+      {{$scratch.Set "keysWording" $shortcutName}}
+    {{end}}
+  {{end}}
+  {{with (i18n (printf "%s%s" $shortcutName "_wording"))}}
+    {{$scratch.Set "wording" .}}
+  {{else}}
+    {{$scratch.Set "wording" $shortcutName}}
+  {{end}}
+  <div class='modal-content'>
+    {{range $index, $keyWording := ($scratch.Get "keysWording")}}
+      {{if ne $index 0}}
+        <p>+</p>
+      {{end}}
+      <kbd>{{$keyWording}}</kbd>
+    {{end}}
+  </div>
+  <div class='modal-content'>
+    <p class='has-text-weight-normal'>{{$scratch.Get "wording"}}</p>
+  </div>
+{{end}}

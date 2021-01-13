@@ -1,0 +1,17 @@
+//
+// Snippet
+//
+.sc-snippet
+  margin: $content-item-margin
+  .sc-snippet-caption
+    box-shadow: inset 0 0 $theme-border-width $theme-border-small-width smooth-color($code-caption-color, 50)
+    border-radius: $theme-border-radius $theme-border-radius 0 0
+    color: findColorInvert($code-caption-color)
+    padding: $theme-gap-small-size 0
+    background: $code-caption-color
+    +font-family(roboto-mono)
+    text-align: center
+  .highlight
+    margin: 0 !important
+.sc-snippet-plaintext
+  white-space: pre-wrap

@@ -1,0 +1,21 @@
+---
+  dataSource: "prs"
+  onlyMilestones: false
+  changelogFilename: "CHANGELOG.md"
+  includeMessages: "all"
+  ignoreIssuesWith:
+    - "help wanted"
+  ignoreLabels:
+    - "duplicate"
+    - "wontfix"
+  groupBy:
+    New features:
+      - "feature"
+    Bug Fixes:
+      - "bug"
+    Enhancements:
+      - "enhancement"
+    Documentation:
+      - "documentation"
+    Uncategorised:
+      - "closed"

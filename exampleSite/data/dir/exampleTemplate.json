@@ -1,0 +1,6 @@
+{
+  "exampleMap": {
+    "exampleArray": ["VAR1","VAR2","VAR3"],
+    "exampleString": "STRING"
+  }
+}

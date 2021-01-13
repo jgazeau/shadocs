@@ -1,0 +1,11 @@
+<meta charset="UTF-8">
+<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+<!-- Hugo head information -->
+{{hugo.Generator}}
+<!-- User specific information -->
+<meta name='viewport' content='width=device-width, initial-scale=1'>
+{{with .Description}}<meta name='description' content='{{.}}'>{{end}}
+<!-- Title -->
+<title>{{.Title}}{{if not .IsHome}} | {{.Site.Title}}{{end}}</title>
+<!-- Favicon -->
+<link rel='icon' href='{{with .Site.Params.favicon}}{{. | relURL}}{{else}}{{"images/favicon.png" | relURL}}{{end}}' type='image/x-icon'>

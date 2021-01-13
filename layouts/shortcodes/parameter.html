@@ -1,0 +1,40 @@
+{{$keyRange := ""}}
+{{$keyValues := ""}}
+{{ if .IsNamedParams }}
+  {{with .Get "path"}}
+    {{$keyRange = (split . ".")}}
+    {{$keyValues = $.Site.Data}}
+  {{end}}
+{{else}}
+  {{with .Get 0}}
+    {{$keyRange = (split . ".")}}
+    {{$keyValues = $.Site.Params}}
+  {{end}}
+{{end}}
+{{with $keyRange}}
+  {{range $key := .}}
+    {{with isset $keyValues $key}}
+      {{$keyValues = (index $keyValues $key)}}
+    {{else}}
+      {{$keyValues = ""}}
+    {{end}}
+  {{end}}
+  {{with $keyValues}}
+    <div class='sc-parameter'>
+      {{template "displayResults" dict "this" . "context" $}}
+    </div>
+  {{end}}
+{{end}}
+<!-- TEMPLATES -->
+{{define "displayResults"}}
+  {{$this := .this}}
+  {{with reflect.IsMap $this}}
+    {{partial "theme/helpers/printMap.html" (dict "this" $this "context" $.context)}}
+  {{else}}
+    {{with reflect.IsSlice $this}}
+      {{partial "theme/helpers/printSlice.html" (dict "this" $this "context" $.context)}}
+    {{else}}
+      <div>{{$this}}</div>
+    {{end}}
+  {{end}}
+{{end}}

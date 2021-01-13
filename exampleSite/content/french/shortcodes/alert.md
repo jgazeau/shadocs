@@ -1,0 +1,92 @@
+---
+title: "{{< alert >}}"
+description: "Shortcode {{< alert >}}."
+categories: ["Shortcode"]
+---
+
+# Description
+---
+
+Le shortcode **alert** permet de mettre en valeur du texte suivant différents types.
+
+# Paramètres
+---
+
+| Nom | Type(nommé/positionnel) | Description |
+| --- | ----------------------- | ----------- |
+| type| nommé |{{< md >}}
+Différents designs possibles:
+* info
+* success
+* warning
+* error
+
+*NB: Si non renseigné, par défaut le design est **info**.*
+{{< /md >}}|
+
+# Exemples
+---
+
+| Markdown | Rendu |
+| -------- | ----- |
+|{{< md >}}
+```
+{{</* alert */>}}
+Je suis une alerte de type **info** par défaut
+{{</* /alert */>}}
+```
+{{< /md >}}|{{< alert >}}
+Je suis une alerte de type **info** par défaut
+{{< /alert >}}|
+|{{< md >}}
+```
+{{</* alert
+    type="info"
+*/>}}
+Je suis une alerte de type **info**
+{{</* /alert */>}}
+```
+{{< /md >}}|{{< alert
+    type="info"
+>}}
+Je suis une alerte de type **info**
+{{< /alert >}}|
+|{{< md >}}
+```
+{{</* alert
+    type="success"
+*/>}}
+Je suis une alerte de type **success**
+{{</* /alert */>}}
+```
+{{< /md >}}|{{< alert
+    type="success"
+>}}
+Je suis une alerte de type **success**
+{{< /alert >}}|
+|{{< md >}}
+```
+{{</* alert
+    type="warning"
+*/>}}
+Je suis une alerte de type **warning**
+{{</* /alert */>}}
+```
+{{< /md >}}|{{< alert
+    type="warning"
+>}}
+Je suis une alerte de type **warning**
+{{< /alert >}}|
+|{{< md >}}
+```
+{{</* alert
+    type="error"
+*/>}}
+Je suis une alerte de type **error**
+{{</* /alert */>}}
+```
+{{< /md >}}|{{< alert
+    type="error"
+>}}
+Je suis une alerte de type **error**
+{{< /alert >}}|

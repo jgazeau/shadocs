@@ -1,0 +1,52 @@
+name: Main
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Release:
+    name: Publish release
+    runs-on: ubuntu-18.04
+    env:
+      COMMIT_MESSAGE: ${{github.event.head_commit.message}}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        with:
+          submodules: recursive
+          fetch-depth: 1
+      - name: Check release status
+        id: check_release
+        run: |
+          if [[ "${COMMIT_MESSAGE}" =~ ^tag\/[0-9]+\.[0-9]+\.[0-9]$ ]]; then
+            TAG_NAME=${COMMIT_MESSAGE##*/}
+            echo "::set-output name=status::true"
+            echo "::set-output name=tag_name::${TAG_NAME}"
+            echo "::set-output name=zip_name::${GITHUB_REPOSITORY##*/}-${TAG_NAME}.zip"
+            awk '/#+\s+'"${TAG_NAME}"'\s+\([0-9]{2}\/[0-9]{2}\/[0-9]{4}\)/,/---/' CHANGELOG.md > CHANGELOG.md.tmp
+          fi
+      - name: Create archive
+        if: steps.check_release.outputs.status
+        run: cat package | zip -r -@ ${{steps.check_release.outputs.zip_name}}
+      - name: Create release
+        if: steps.check_release.outputs.status
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          tag_name: ${{steps.check_release.outputs.tag_name}}
+          release_name: v${{steps.check_release.outputs.tag_name}}
+          body_path: CHANGELOG.md.tmp
+          draft: false
+          prerelease: false
+      - name: Upload release asset
+        if: steps.check_release.outputs.status
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        with:
+          upload_url: ${{steps.create_release.outputs.upload_url}}
+          asset_path: ./${{steps.check_release.outputs.zip_name}}
+          asset_name: ${{steps.check_release.outputs.zip_name}}
+          asset_content_type: application/zip

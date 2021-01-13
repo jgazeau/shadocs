@@ -1,0 +1,17 @@
+[build]
+publish = "exampleSite/public"
+command = "hugo -s exampleSite"
+
+[build.environment]
+HUGO_VERSION       = "0.71.0"
+HUGO_THEME         = "repo"
+HUGO_ENABLEGITINFO = "true"
+
+[context.production.environment]
+  HUGO_BASEURL = "https://shadocs.netlify.app/"
+
+[context.deploy-preview]
+command = "hugo -s exampleSite -b $DEPLOY_PRIME_URL"
+
+[context.branch-deploy]
+command = "hugo -s exampleSite -b $DEPLOY_PRIME_URL"

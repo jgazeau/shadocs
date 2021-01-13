@@ -1,0 +1,48 @@
+name: Pull Requests
+on:
+  pull_request:
+    branches:
+      - main
+jobs:
+  Verify:
+    name: Check theme
+    runs-on: ubuntu-18.04
+    env:
+      HUGO_PATH_BIN: "${GITHUB_WORKSPACE}/bin"
+      HUGO_TEST_VERSIONS: "0.71.0 0.79.0"
+    steps:
+      - name: Checkout hugoBasicExample repository
+        uses: actions/checkout@v2
+        with:
+          repository: gohugoio/HugoBasicExample
+          fetch-depth: 1
+      - name: Checkout theme repository
+        uses: actions/checkout@v2
+        with:
+          path: themes/shadocs
+          submodules: recursive
+          fetch-depth: 1
+      - name: Add temporary binaries to PATH
+        run: |
+          mkdir -p ${HUGO_PATH_BIN}
+          echo "${HUGO_PATH_BIN}" >> ${GITHUB_PATH}
+      - name: Check theme against Hugo versions
+        run: |
+          for hugoVersion in ${HUGO_TEST_VERSIONS[@]}; do
+            printf "%70s\n" | tr ' ' '-'
+            printf "%-60s%10s\n" "-> Checking theme against Hugo version:" "${hugoVersion}"
+            printf "%70s\n" | tr ' ' '-'
+            HUGO_BIN="hugo_extended_${hugoVersion}_Linux-64bit.tar.gz"
+            HUGO_URL_BIN="https://github.com/gohugoio/hugo/releases/download/v${hugoVersion}/${HUGO_BIN}"
+            (cd ${HUGO_PATH_BIN} && curl -sLO -H "Accept: application/octet-stream" ${HUGO_URL_BIN})
+            tar -xf ${HUGO_PATH_BIN}/${HUGO_BIN} -C ${HUGO_PATH_BIN}
+            hugo version
+            hugo -s themes/${GITHUB_REPOSITORY##*/}/exampleSite
+          done
+      - name: Check theme against hugoBasicExample
+        run: |
+          printf "%70s\n" | tr ' ' '-'
+          printf "%-70s\n" "-> Checking theme against hugoBasicExample"
+          printf "%70s\n" | tr ' ' '-'
+          hugo version
+          hugo -t ${GITHUB_REPOSITORY##*/}

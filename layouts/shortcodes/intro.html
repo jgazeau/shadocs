@@ -1,0 +1,19 @@
+{{with .Inner}}
+  {{$.Page.Scratch.Add "introUid" 1}}
+  {{with ($.Get "id")}}
+    {{$.Scratch.Set "introId" (replace . "'" "")}}
+  {{else}}
+    {{$.Scratch.Set "introId" (printf "%s%s" "intro-" (string ($.Page.Scratch.Get "introUid")))}}
+  {{end}}
+  {{with $.Get "introtitle"}}
+    {{$.Scratch.Set "introtitle" .}}
+  {{else}}
+    {{$.Scratch.Set "introtitle" (i18n "no_data")}}
+  {{end}}
+  {{if eq ($.Page.Scratch.Get "introUid") 1}}
+    <div id='intro-error-title' data='{{i18n "intro_error_title" | safeJS | base64Encode}}' class='is-hidden'></div>
+    <div id='intro-error' data='{{i18n "intro_error" | safeJS | base64Encode}}' class='is-hidden'></div>
+    <div id='intro-empty' data='{{i18n "intro_empty" | safeJS | base64Encode}}' class='is-hidden'></div>
+  {{end}}
+  <div class='sc-intro' id='{{$.Scratch.Get "introId"}}' intro-data='{{. | safeJS | base64Encode}}'>{{$.Scratch.Get "introtitle"}}</div>
+{{end}}

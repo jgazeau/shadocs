@@ -1,0 +1,206 @@
+---
+title: "{{< treeview >}}"
+description: "Shortcode {{< treeview >}}."
+categories: ["Shortcode"]
+---
+
+# Description
+---
+
+Le shortcode **treeview** permet d'afficher l'arborescence du site sous forme de liste hiérarchique.
+
+# Paramètres
+---
+
+| Nom | Type(nommé/positionnel) | Description |
+| --- | ----------------------- | ----------- |
+| rootpath | nommé |{{< md >}}
+Chemin du haut niveau de l'arborescence.  
+*NB: Si non renseigné, par défaut le chemin est celui de la page actuelle (**.**).*
+{{< /md >}}|
+| display | nommé |{{< md >}}
+Différents designs possibles:
+* list
+* graph
+* tree
+
+*NB: Si non renseigné, par défaut le design est **list**.*
+{{< /md >}}|
+| init | nommé |{{< md >}}
+Comportement de l'arborescence à l'initialisation.  
+Valeurs possibles:
+* collapse
+* uncollapse
+
+*NB: Si non renseigné, par défaut le comportement est **uncollapse**.*
+{{< /md >}}|
+
+# Exemples
+---
+
+| Markdown | Rendu |
+| -------- | ----- |
+|{{< md >}}
+```
+{{</* treeview /*/>}}
+```
+{{< /md >}}|{{< treeview />}}|
+|{{< md >}}
+```
+{{</* treeview
+    rootpath="/shortcodes"
+/*/>}}
+```
+{{< /md >}}|{{< treeview 
+    rootpath="/shortcodes"
+/>}}|
+|{{< md >}}
+```
+{{</* treeview
+    rootpath="/shortcodes"
+    display="graph"
+/*/>}}
+```
+{{< /md >}}|{{< treeview 
+    rootpath="/shortcodes"
+    display="graph"
+/>}}|
+|{{< md >}}
+```
+{{</* treeview
+    rootpath="/shortcodes"
+    display="tree"
+/*/>}}
+```
+{{< /md >}}|{{< treeview 
+    rootpath="/shortcodes"
+    display="tree"
+/>}}|
+|{{< md >}}
+```
+{{</* treeview
+    rootpath="/shortcodes"
+    display="tree"
+    init="collapse"
+/*/>}}
+```
+{{< /md >}}|{{< treeview 
+    rootpath="/shortcodes"
+    display="tree"
+    init="collapse"
+/>}}|
+|{{< md >}}
+```
+{{</* treeview
+    display="tree"
+*/>}}
+[{
+    "kind": "dir",
+    "label": "***Répertoire***",
+    "content": [{
+            "kind": "archive",
+            "label": "***Archive***",
+            "content": [{
+                    "kind": "dir",
+                    "label": "***Répertoire** dans une archive*",
+                    "content": [{
+                            "kind": "file",
+                            "label": "***Fichier plat** dans un répertoire dans une archive*"
+                        }]
+                },{
+                    "kind": "file",
+                    "label": "***Fichier plat** dans une archive*"
+                }]
+        },{
+            "kind": "file",
+            "label": "***Fichier plat** dans un répertoire*"
+        }]
+},{
+    "kind": "file",
+    "label": "***Fichier plat***"
+},{
+    "kind": "image",
+    "label": "***Fichier image***"
+},{
+    "kind": "video",
+    "label": "***Fichier vidéo***"
+},{
+    "kind": "script",
+    "label": "***Script***"
+},{
+    "kind": "dockerfile",
+    "label": "***Dockerfile***"
+},{
+    "kind": "pdf",
+    "label": "***Fichier PDF***"
+},{
+    "kind": "powerpoint",
+    "label": "***Fichier PowerPoint***"
+},{
+    "kind": "excel",
+    "label": "***Fichier Excel***"
+},{
+    "kind": "csv",
+    "label": "***Fichier CSV***"
+},{
+    "kind": "word",
+    "label": "***Fichier Word***"
+}]
+{{</* /treeview */>}}
+```
+{{< /md >}}|{{< treeview
+    display="tree"
+>}}
+[{
+    "kind": "dir",
+    "label": "***Répertoire***",
+    "content": [{
+            "kind": "archive",
+            "label": "***Archive***",
+            "content": [{
+                    "kind": "dir",
+                    "label": "***Répertoire** dans une archive*",
+                    "content": [{
+                            "kind": "file",
+                            "label": "***Fichier plat** dans un répertoire dans une archive*"
+                        }]
+                },{
+                    "kind": "file",
+                    "label": "***Fichier plat** dans une archive*"
+                }]
+        },{
+            "kind": "file",
+            "label": "***Fichier plat** dans un répertoire*"
+        }]
+},{
+    "kind": "file",
+    "label": "***Fichier plat***"
+},{
+    "kind": "image",
+    "label": "***Fichier image***"
+},{
+    "kind": "video",
+    "label": "***Fichier vidéo***"
+},{
+    "kind": "script",
+    "label": "***Script***"
+},{
+    "kind": "dockerfile",
+    "label": "***Dockerfile***"
+},{
+    "kind": "pdf",
+    "label": "***Fichier PDF***"
+},{
+    "kind": "powerpoint",
+    "label": "***Fichier PowerPoint***"
+},{
+    "kind": "excel",
+    "label": "***Fichier Excel***"
+},{
+    "kind": "csv",
+    "label": "***Fichier CSV***"
+},{
+    "kind": "word",
+    "label": "***Fichier Word***"
+}]
+{{< /treeview >}}|

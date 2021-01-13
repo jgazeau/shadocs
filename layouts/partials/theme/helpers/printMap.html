@@ -1,0 +1,18 @@
+{{$begin := "<table><thead><tr>"}}
+{{$middle := "</tr></thead><tbody><tr>"}}
+{{$end := "</tr></tbody></table>"}}
+{{$keys := ""}}
+{{$values := ""}}
+{{range $key, $value := .this}}
+  {{$keys = printf "%s\n<th>%s</th>" $keys $key}}
+  {{with reflect.IsMap $value}}
+    {{$values = (printf "%s\n<td>%s</td>" $values (partial "theme/helpers/printMap.html" (dict "this" $value "context" $.context)))}}
+  {{else}}
+    {{with reflect.IsSlice $value}}
+      {{$values = (printf "%s\n<td>%s</td>" $values (partial "theme/helpers/printSlice" (dict "this" $value "context" $.context)))}}
+    {{else}}
+    {{$values = (printf "%s\n<td>%s</td>" $values $value)}}
+    {{end}}
+  {{end}}
+{{end}}
+{{return (printf "%s%s\n%s%s\n%s" $begin $keys $middle $values $end | safeHTML)}}

@@ -1,0 +1,41 @@
+---
+title: "{{< plaintext >}}"
+description: "Shortcode {{< plaintext >}}."
+categories: ["Shortcode"]
+---
+
+# Description
+---
+
+Le shortcode **plaintext** permet de forcer l'affichage du texte brut, sans conversion markdown, et sans échappement des caractères.  
+Ce shortcode est notamment utile pour afficher du code html, ou du code markdown sans conversion.
+
+# Paramètres
+---
+
+| Nom | Type(nommé/positionnel) | Description |
+| --- | ----------------------- | ----------- |
+
+# Exemples
+---
+
+| Markdown | Rendu |
+| -------- | ----- |
+|{{< md >}}
+```
+{{</* plaintext */>}}
+<p>Je suis du code html</p>
+{{</* /plaintext */>}}
+```
+{{< /md >}}|{{< plaintext >}}
+<p>Je suis du code html</p>
+{{< /plaintext >}}|
+|{{< md >}}
+```
+{{</* plaintext */>}}
+**Je suis du code markdown**
+{{</* /plaintext */>}}
+```
+{{< /md >}}|{{< plaintext >}}
+**Je suis du code markdown**
+{{< /plaintext >}}|
