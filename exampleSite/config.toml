@@ -1,7 +1,7 @@
 #
 # Standard configuration
 #
-baseURL                = "/"
+baseURL                = "https://example.com"
 copyright              = "The MIT License (MIT) Copyright © 2020 Jordan GAZEAU"
 defaultContentLanguage = "fr"
 enableEmoji            = false
