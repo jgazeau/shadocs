@@ -50,6 +50,7 @@ themesdir              = "../.."
   logo             = "images/logo.png"
   image404         = "images/404.gif"
   favicon          = "images/favicon.png"
+  faviconmd        = "![](images/favicon.png)"
   homeLayout       = "onboarding"
   siteOrderContent = "weight"
   [params.navbar.shortcuts]
@@ -63,7 +64,15 @@ themesdir              = "../.."
     jsModules = [
         "js/shortcuts.js"
       ]
-    js = []
-    css = [
+    js        = []
+    css       = [
         "css/shortcuts.css"
       ]
+  [params.versions]
+    hugo_min         = "[0.71.0](https://github.com/gohugoio/hugo/releases/tag/v0.71.0)"
+    bulma            = "[0.9.1](https://github.com/jgthms/bulma/releases/tag/0.9.1)"
+    fontawesome      = "[5.15.2](https://github.com/FortAwesome/Font-Awesome/releases/tag/5.15.2)"
+    overlayscrollbar = "[1.12.0](https://github.com/KingSora/OverlayScrollbars/releases/tag/v1.12.0)"
+    flexsearch       = "[0.6.30](https://www.npmjs.com/package/flexsearch/v/0.6.30)"
+    mermaid          = "[8.8.4](https://github.com/mermaid-js/mermaid/releases/tag/v8.8.4)"
+    intro            = "[3.2.1](https://github.com/usablica/intro.js/releases/tag/v3.2.1)"

@@ -1,5 +1,6 @@
 {{$keyRange := ""}}
 {{$keyValues := ""}}
+{{$null := .Inner}}
 {{ if .IsNamedParams }}
   {{with .Get "path"}}
     {{$keyRange = (split . ".")}}
@@ -27,6 +28,7 @@
 {{end}}
 <!-- TEMPLATES -->
 {{define "displayResults"}}
+  {{$optMd := dict "markup" "goldmark"}}
   {{$this := .this}}
   {{with reflect.IsMap $this}}
     {{partial "theme/helpers/printMap.html" (dict "this" $this "context" $.context)}}
@@ -34,7 +36,7 @@
     {{with reflect.IsSlice $this}}
       {{partial "theme/helpers/printSlice.html" (dict "this" $this "context" $.context)}}
     {{else}}
-      <div>{{$this}}</div>
+      <div>{{$this | $.context.Page.RenderString $optMd}}</div>
     {{end}}
   {{end}}
 {{end}}

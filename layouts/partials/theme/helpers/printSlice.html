@@ -1,7 +1,8 @@
 {{$begin := "<ul>"}}
 {{$end := "</ul>"}}
 {{$items := ""}}
+{{$optMd := dict "markup" "goldmark"}}
 {{range $item := .this}}
-  {{$items = printf "%s\n<li>%s</li>" $items $item}}
+  {{$items = printf "%s\n<li>%s</li>" $items ($item | $.context.Page.RenderString $optMd)}}
 {{end}}
 {{return (printf "%s%s\n%s" $begin $items $end | safeHTML)}}
