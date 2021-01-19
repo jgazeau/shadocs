@@ -3,6 +3,7 @@
 {{$end := "</tr></tbody></table>"}}
 {{$keys := ""}}
 {{$values := ""}}
+{{$optMd := dict "markup" "goldmark"}}
 {{range $key, $value := .this}}
   {{$keys = printf "%s\n<th>%s</th>" $keys $key}}
   {{with reflect.IsMap $value}}
@@ -11,7 +12,7 @@
     {{with reflect.IsSlice $value}}
       {{$values = (printf "%s\n<td>%s</td>" $values (partial "theme/helpers/printSlice" (dict "this" $value "context" $.context)))}}
     {{else}}
-    {{$values = (printf "%s\n<td>%s</td>" $values $value)}}
+    {{$values = (printf "%s\n<td>%s</td>" $values ($value | $.context.Page.RenderString $optMd))}}
     {{end}}
   {{end}}
 {{end}}
