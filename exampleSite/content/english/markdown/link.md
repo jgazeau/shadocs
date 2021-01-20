@@ -1,0 +1,396 @@
+---
+weight: 2090
+linkTitle: "Link"
+title: "Markdown: Link"
+description: "How to define a link?"
+categories: ["Markdown"]
+---
+
+# Link
+---
+
+## Classic syntax
+
+To define a link, **match the following syntax**:
+
+* **\[Link_text\]\(Link_URL\)**
+
+| Markdown | HTML | Rendering |
+| -------- | ---- | --------- |
+|{{< md >}}
+```
+[I'm a link](./)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="./">I'm a link</a>
+{{< /plaintext >}}|{{< md >}}
+[I'm a link](./)
+{{< /md >}}|
+|{{< md >}}
+```
+[I'm a link to a title ID](./#link)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="./#link">I'm a link to a title ID</a>
+{{< /plaintext >}}|{{< md >}}
+[I'm a link to a title ID](./#link)
+{{< /md >}}|
+
+## Classic syntax with title
+
+To define a link with a title, **match the following syntax**:
+
+* **\[Link_text\]\(Link_URL \"Link_title\"\)**
+
+| Markdown | HTML | Rendering |
+| -------- | ---- | --------- |
+|{{< md >}}
+```
+[I'm a link](./ "And I'm its title")
+```
+{{< /md >}}|{{< plaintext >}}
+<a title="And I'm its title" href="./">I'm a link</a>
+{{< /plaintext >}}|{{< md >}}
+[I'm a link](./ "And I'm its title")
+{{< /md >}}|
+
+## Alternative syntax
+
+To define a link it is possible to use alternative syntaxes:
+
+* **Write the link URL** (rendering will be automatically made by the markdown converter).
+* **Surround the link URL between the lower than and greater than characters**.
+
+| Markdown | HTML | Rendering |
+| -------- | ---- | --------- |
+|{{< md >}}
+```
+https://www.google.com
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="https://www.google.com">https://www.google.com</a>
+{{< /plaintext >}}|{{< md >}}
+https://www.google.com
+{{< /md >}}|
+|{{< md >}}
+```
+<https://www.google.com>
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="https://www.google.com">https://www.google.com</a>
+{{< /plaintext >}}|{{< md >}}
+<https://www.google.com>
+{{< /md >}}|
+|{{< md >}}
+```
+<foo@bar.com>
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="mailto:foo@bar.com">foo@bar.com</a>
+{{< /plaintext >}}|{{< md >}}
+<foo@bar.com>
+{{< /md >}}|
+
+{{< alert type="warning" >}}
+Warning, for a suer-firendly rendering (using [Markdown Render Hooks](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks)) it is recommended to **use the classic syntax**.
+{{< /alert >}}
+
+## Escape a link
+
+To escape a link (display a URL as a text) and avoid its automatic rendering by the markdown converter, it is possible to use alternative syntaxes:
+
+* **Add a backtick (`) before and after the link URL (Define link as a code fragment)**.
+* **Escape the first slash (/) of the link URL**.
+
+| Markdown | HTML | Rendering |
+| -------- | ---- | --------- |
+|{{< md >}}
+```
+`https://www.google.com`
+```
+{{< /md >}}|{{< plaintext >}}
+<p>https://www.google.com</p>
+{{< /plaintext >}}|{{< md >}}
+`https://www.google.com`
+{{< /md >}}|
+|{{< md >}}
+```
+https:\//www.google.com
+```
+{{< /md >}}|{{< plaintext >}}
+<p>https://www.google.com</p>
+{{< /plaintext >}}|{{< md >}}
+https:\//www.google.com
+{{< /md >}}|
+
+## Emphasize a link
+
+To emphasize a link, **surround the markdown code of the link with the chosen emphasis code**. In case of a code fragment link, **place backticks inside the link text** (between the brackets).
+
+| Markdown | HTML | Rendering |
+| -------- | ---- | --------- |
+|{{< md >}}
+```
+*[I'm an italic link](./)*
+```
+{{< /md >}}|{{< plaintext >}}
+<em><br><a href="./">I'm an italic link</a>
+</em>
+{{< /plaintext >}}|{{< md >}}
+*[I'm an italic link](./)*
+{{< /md >}}|
+|{{< md >}}
+```
+**[I'm a bold link](./)**
+```
+{{< /md >}}|{{< plaintext >}}
+<strong><br><a href="./">I'm a bold link</a>
+</strong>
+{{< /plaintext >}}|{{< md >}}
+**[I'm a bold link](./)**
+{{< /md >}}|
+|{{< md >}}
+```
+***[I'm an italic and bold link](./)***
+```
+{{< /md >}}|{{< plaintext >}}
+<em><strong><br><a href="./">I'm an italic and bold link</a>
+</strong></em>
+{{< /plaintext >}}|{{< md >}}
+***[I'm an italic and bold link](./)***
+{{< /md >}}|
+|{{< md >}}
+```
+[`I'm a code fragment link`](./)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="./">
+<code>I'm a code fragment link</code>
+</a>
+{{< /plaintext >}}|{{< md >}}
+[`I'm a code fragment link`](./)
+{{< /md >}}|
+
+## Referenced link
+
+To define a link whose URL is referenced (therefore reusable), it must **be formated in 2 parts**.
+
+* **First part** (link text)
+
+    To define the first part of the link, which corresponds to the text that will be rendered and a reference to be defined in the second part, **match the following syntax**:
+
+    * **\[Link_text\]\[Link_URL_reference\]**
+
+    The link URL reference is not case sensitive and may contain alphanumeric characters, spaces, and punctuation.
+
+* **Second part** (link reference)
+
+    To define the second part of the link, which is the link between the link URL reference defined in the first part, and the value of the URL, **match one of the following syntaxes**:
+
+    * **\[Link_URL_reference\]: Link_URL**
+    * **\[Link_URL_reference\]: Link_URL \"Link_title\"**
+    * **\[Link_URL_reference\]: Link_URL \'Link_title\'**
+    * **\[Link_URL_reference\]: Link_URL \(Link_title\)**
+    * **\<\[Link_URL_reference\]\>: Link_URL \"Link_title\"**
+    * **\<\[Link_URL_reference\]\>: Link_URL \'Link_title\'**
+    * **\<\[Link_URL_reference\]\>: Link_URL \(Link_title\)**
+
+    The second part of the link can be placed anywhere in the document. For example all references of a document can be grouped together at the end of a document for readability and simplicity reasons.
+
+| Markdown | HTML | Rendering |
+| -------- | ---- | --------- |
+|{{< md >}}
+```
+[I'm a link][Reference A]
+
+[I'm a second link][Reference A]
+
+I'm a lonely text
+
+[Reference A]: ./
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="./">I'm a link</a>
+<a href="./">I'm a second link</a>
+<p>I'm a lonely text</p>
+{{< /plaintext >}}|{{< md >}}
+[I'm a link][Reference A]
+
+[I'm a second link][Reference A]
+
+I'm a lonely text
+
+[Reference A]: ./
+{{< /md >}}|
+|{{< md >}}
+```
+[I'm a link][Reference A]
+
+[I'm a second link][Reference A]
+
+I'm a lonely text
+
+[Reference A]: ./ "And I'm its title"
+```
+{{< /md >}}|{{< plaintext >}}
+<a title="And I'm its title" href="./">I'm a link</a>
+<a title="And I'm its title" href="./">I'm a second link</a>
+<p>I'm a lonely text</p>
+{{< /plaintext >}}|{{< md >}}
+[I'm a link][Reference A]
+
+[I'm a second link][Reference A]
+
+I'm a lonely text
+
+[Reference A]: ./ "And I'm its title"
+{{< /md >}}|
+|{{< md >}}
+```
+[I'm a link][Reference A]
+
+[I'm a second link][Reference A]
+
+I'm a lonely text
+
+[Reference A]: ./ 'And I'm its title'
+```
+{{< /md >}}|{{< plaintext >}}
+<a title="And I'm its title" href="./">I'm a link</a>
+<a title="And I'm its title" href="./">I'm a second link</a>
+<p>I'm a lonely text</p>
+{{< /plaintext >}}|{{< md >}}
+[I'm a link][Reference A]
+
+[I'm a second link][Reference A]
+
+I'm a lonely text
+
+[Reference A]: ./ 'And I'm its title'
+{{< /md >}}|
+|{{< md >}}
+```
+[I'm a link][Reference A]
+
+[I'm a second link][Reference A]
+
+I'm a lonely text
+
+[Reference A]: ./ (And I'm its title)
+```
+{{< /md >}}|{{< plaintext >}}
+<a title="And I'm its title" href="./">I'm a link</a>
+<a title="And I'm its title" href="./">I'm a second link</a>
+<p>I'm a lonely text</p>
+{{< /plaintext >}}|{{< md >}}
+[I'm a link][Reference A]
+
+[I'm a second link][Reference A]
+
+I'm a lonely text
+
+[Reference A]: ./ (And I'm its title)
+{{< /md >}}|
+|{{< md >}}
+```
+[I'm a link][Reference A]
+
+[I'm a second link][Reference A]
+
+I'm a lonely text
+
+[Reference A]: <./> "And I'm its title"
+```
+{{< /md >}}|{{< plaintext >}}
+<a title="And I'm its title" href="./">I'm a link</a>
+<a title="And I'm its title" href="./">I'm a second link</a>
+<p>I'm a lonely text</p>
+{{< /plaintext >}}|{{< md >}}
+[I'm a link][Reference A]
+
+[I'm a second link][Reference A]
+
+I'm a lonely text
+
+[Reference A]: <./> "And I'm its title"
+{{< /md >}}|
+|{{< md >}}
+```
+[I'm a link][Reference A]
+
+[I'm a second link][Reference A]
+
+I'm a lonely text
+
+[Reference A]: <./> 'And I'm its title'
+```
+{{< /md >}}|{{< plaintext >}}
+<a title="And I'm its title" href="./">I'm a link</a>
+<a title="And I'm its title" href="./">I'm a second link</a>
+<p>I'm a lonely text</p>
+{{< /plaintext >}}|{{< md >}}
+[I'm a link][Reference A]
+
+[I'm a second link][Reference A]
+
+I'm a lonely text
+
+[Reference A]: <./> 'And I'm its title'
+{{< /md >}}|
+|{{< md >}}
+```
+[I'm a link][Reference A]
+
+[I'm a second link][Reference A]
+
+I'm a lonely text
+
+[Reference A]: <./> (And I'm its title)
+```
+{{< /md >}}|{{< plaintext >}}
+<a title="And I'm its title" href="./">I'm a link</a>
+<a title="And I'm its title" href="./">I'm a second link</a>
+<p>I'm a lonely text</p>
+{{< /plaintext >}}|{{< md >}}
+[I'm a link][Reference A]
+
+[I'm a second link][Reference A]
+
+I'm a lonely text
+
+[Reference A]: <./> (And I'm its title)
+{{< /md >}}|
+
+## Link with space
+
+To define a link whose URL contains spaces, **encode the URL with the associated percentage code of the space character (%20)**.
+
+| Markdown | HTML | Rendering |
+| -------- | ---- | --------- |
+|{{< md >}}
+```
+[Hugo themes](https://www.google.com/?query=Hugo%20themes)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="https://www.google.com/?query=Hugo%20themes">Hugo themes</a>
+{{< /plaintext >}}|{{< md >}}
+[Hugo themes](https://www.google.com/?query=Hugo%20themes)
+{{< /md >}}|
+
+## Link ID (Theme specific)
+
+To define a link ID, **write a link following the [classic syntax with title](markdown/link/#classic-syntax-with-title)**. The ID is automatically added to the link (using the theme) and its value is the output of Hugo's [anchorize](https://gohugo.io/functions/anchorize/) function with the link title as input value:
+
+* **\[Link_text\]\(Link_URL \"Link_title\"\)**
+
+| Markdown | HTML | Rendering |
+| -------- | ---- | --------- |
+|{{< md >}}
+```
+[I'm a link](./ "And I'm its title")
+```
+{{< /md >}}|{{< plaintext >}}
+<a id="and-i-m-its-title" title="And I'm its title" href="./">I'm a link</a>
+{{< /plaintext >}}|{{< md >}}
+[I'm a link](./ "And I'm its title")
+{{< /md >}}|

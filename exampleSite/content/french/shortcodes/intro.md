@@ -11,7 +11,7 @@ Le shortcode **intro** permet d'utiliser la librairie [intro.js](https://introjs
 
 ## Configuration de intro.js
 
-Le contenu du shortcode représente la configuration en **format JSON** de l'intro. De plus, des paramètres ont été ajoutés dans le thème afin de permettre un paramétrage simplifié et adapté.
+Le contenu du shortcode définit la configuration au **format JSON** de l'intro. De plus, des paramètres ont été ajoutés dans le thème afin de permettre un paramétrage simplifié et adapté.
 
 {{< snippet
     caption="Configuration JSON du contenu du shortcode intro"
@@ -21,18 +21,18 @@ Le contenu du shortcode représente la configuration en **format JSON** de l'int
   "[...]",
   "[Options standard intro.js]": "https://introjs.com/docs/intro/options (Cf. liste des options par défaut du thème ci-dessous)",
   "[...]",
-  "onbeforeexit": "Code javascript a executer avant la sortie de l'intro (en relation avec l'API onbeforeexit standard de intro.js",
-  "onexit": "Code javascript a executer à la sortie de l'intro (en relation avec l'API onexit standard de intro.js",
-  "oncomplete": "Code javascript a executer à la complétion de l'intro (en relation avec l'API oncomplete standard de intro.js",
+  "onbeforeexit": "Code javascript a executer avant la sortie de l'intro (lié à l'API onbeforeexit standard de intro.js)",
+  "onexit": "Code javascript a executer à la sortie de l'intro (lié à l'API onexit standard de intro.js)",
+  "oncomplete": "Code javascript a executer à la complétion de l'intro (lié à l'API oncomplete standard de intro.js)",
   "steps": [
     {
-      "title": "Titre de l'étape (en relation avec l'option title standard de intro.js)",
-      "element": "Element à surligner (en relation avec l'option element standard de intro.js (⚠ seule la sélection d'un élément par id est disponible))",
-      "intro": "Texte de l'étape (en relation avec l'option intro standard de intro.js)",
-      "position": "Position de la fenêtre d'aide de l'étape (en relation avec l'option position standard de intro.js)",
-      "onchange": "Code javascript a executer au changement de l'étape (en relation avec l'API onchange standard de intro.js",
-      "onbeforechange": "Code javascript a executer avant le changement de l'étape (en relation avec l'API onbeforechange standard de intro.js",
-      "onafterchange": "Code javascript a executer après le changement de l'étape (en relation avec l'API onafterchange standard de intro.js",
+      "title": "Titre de l'étape (lié à l'option title standard de intro.js)",
+      "element": "Element à surligner (lié à l'option element standard de intro.js (⚠ seule la sélection d'un élément par id est disponible))",
+      "intro": "Contenu de l'étape (lié à l'option intro standard de intro.js)",
+      "position": "Position de la fenêtre d'aide de l'étape (lié à l'option position standard de intro.js)",
+      "onchange": "Code javascript a executer au changement de l'étape (lié à l'API onchange standard de intro.js)",
+      "onbeforechange": "Code javascript a executer avant le changement de l'étape (lié à l'API onbeforechange standard de intro.js)",
+      "onafterchange": "Code javascript a executer après le changement de l'étape (lié à l'API onafterchange standard de intro.js)",
       "triggeronly": "Liste des déclencheurs permettant l'execution de l'étape (Cf. liste des déclencheurs ci-dessous)",
       "triggerexcept": "Liste des déclencheurs ne permettant pas l'execution de l'étape (Cf. liste des déclencheurs ci-dessous)"
     }]
@@ -46,37 +46,37 @@ Si un des déclencheurs est défini dans l'étape et que celui-ci est aussi acti
 
 | Nom | Description |
 | --- | ----------- |
-| desktop | Actif si la fenêtre est supérieure ou égale à 1024 pixels de large |
-| touch | Actif si la fenêtre est inférieure à 1024 pixels de large et supérieur ou égale à 769 pixels de large |
-| mobile | Actif si la fenêtre est inférieure à 769 pixels de large |
-| hover | Actif si l'appareil permet le survol d'élément (via un dispositif de pointage) |
-| nohover | Actif si l'appareil ne permet pas le survol d'élément (appareils tactiles) |
+| desktop | Activé si la fenêtre est supérieure ou égale à 1024 pixels de large |
+| touch | Activé si la fenêtre est inférieure à 1024 pixels de large et supérieur ou égale à 769 pixels de large |
+| mobile | Activé si la fenêtre est inférieure à 769 pixels de large |
+| hover | Activé si l'appareil permet le survol d'élément (via un dispositif de pointage) |
+| nohover | Activé si l'appareil ne permet pas le survol d'élément (appareils tactiles) |
 
 ## Fonctions d'aide javascript
 
-Afin de faciliter l'utilisation de intro.js, des fonctions javascripts sont mises à disposition par le thème dans le fichier **assets/js/theme/modules/helpers.js**.
+Afin de faciliter l'utilisation de intro.js, des fonctions javascripts sont mises à disposition par le thème et définies dans le fichier **assets/js/theme/modules/helpers.js**.
 
 | Code | Description |
 | ---- | ----------- |
 | toggleNavbarMenu(force); |{{< md >}}
 Fonction qui gère le comportement du menu burger:
 * force
-    * true: force le menu burger à être developpé
-    * false: force le menu burger à être réduit
+    * true: le menu burger est developpé
+    * false: le menu burger est réduit
 {{< /md >}}|
 | toggleSidebar(force, noTransition); |{{< md >}}
 Fonction qui gère le comportement du menu latéral:
 * force
-    * true: force le menu latéral à être developpé
-    * false: force le menu latéral à être réduit
+    * true: le menu latéral est developpé
+    * false: le menu latéral est réduit
 * noTransition
     * true: désactive l'animation de transition du menu
     * false: active l'animation de transition du menu (comportement par défaut)
 {{< /md >}}|
 | manageDefaultCollapsibleSidebar(); |{{< md >}}
 Fonction qui gère le comportement par défaut du menu latéral:
-* Si la fenêtre est supérieure ou égale à 1024 pixels de large le menu est développé
-* Si la fenêtre est inférieure à 1024 pixels de large le menu est réduit
+* Si la fenêtre est supérieure ou égale à 1024 pixels de large, le menu est développé
+* Si la fenêtre est inférieure à 1024 pixels de large, le menu est réduit
 {{< /md >}}|
 
 {{< alert type="warning" >}}

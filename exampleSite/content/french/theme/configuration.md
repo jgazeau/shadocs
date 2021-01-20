@@ -32,11 +32,11 @@ Pour configurer un site Hugo utilisant le thème, il existe trois type de config
   # Chemin du fichier du favicon du site
   favicon          = "images/favicon.png"
   # Ordre du contenu du site (https://gohugo.io/templates/lists/#order-content)
-  siteOrderContent = "weight"
+  siteContentOrder = "weight"
   # Liste des raccourcis clavier
   # Pour chaque raccourci il faut renseigner les clés suivantes:
-  # - keys     = [Table des touches de clavier du raccourci] (https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values)
-  # - function = "Nom de la fonction javascript à appeler pour le raccourci"
+  # - keys     = [Table des touches de clavier du raccourci](https://developer.mozilla.org/fr/docs/Web/API/KeyboardEvent/key/Key_Values)
+  # - function = "Nom de la fonction javascript à appeler par le raccourci"
   [params.navbar.shortcuts]
     # Définition du raccourci d'exemple
     [params.navbar.shortcuts.example]
@@ -88,7 +88,7 @@ Pour configurer un site Hugo utilisant le thème, il existe trois type de config
 #
 # Liste des raccourcis clavier du thème
 # Pour chaque raccourci les clés suivantes sont renseignées:
-# - keys     = [Table des touches de clavier du raccourci] (https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values)
+# - keys     = [Table des touches de clavier du raccourci] (https://developer.mozilla.org/fr/docs/Web/API/KeyboardEvent/key/Key_Values)
 # - function = "Nom de la fonction javascript à appeler pour le raccourci"
 #
 [navbar]

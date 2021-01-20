@@ -222,9 +222,6 @@ Pour définir une liste de tache, il faut **respecter une des syntaxes suivantes
 * **- \[ \] Texte_de_la_tache** (Pour une tache non réalisée)
 * **- \[x\] Texte_de_la_tache** (Pour une tache réalisée)
 
-- [ ] Tache 1 non réalisée
-- [x] Tache 2 réalisée
-
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |
 |{{< md >}}
@@ -252,7 +249,7 @@ Pour ajouter un élément à une liste, il faut **considérer l'élément comme 
 ```
 * Premier
 * Second
-    > Je suis une citation
+    > Je suis une citation  
     Je suis un paragraphe
 * Troisième
 ```
@@ -261,6 +258,7 @@ Pour ajouter un élément à une liste, il faut **considérer l'élément comme 
   <li>Premier</li>
   <li>Second
     <blockquote><p>Je suis une citation
+      <br>
       Je suis un paragraphe</p>
     </blockquote>
   </li>
@@ -269,7 +267,7 @@ Pour ajouter un élément à une liste, il faut **considérer l'élément comme 
 {{< /plaintext >}}|{{< md >}}
 * Premier
 * Second
-    > Je suis une citation
+    > Je suis une citation  
     Je suis un paragraphe
 * Troisième
 {{< /md >}}|

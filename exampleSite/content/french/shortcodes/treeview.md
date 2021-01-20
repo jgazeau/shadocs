@@ -7,7 +7,7 @@ categories: ["Shortcode"]
 # Description
 ---
 
-Le shortcode **treeview** permet d'afficher l'arborescence du site sous forme de liste hiérarchique.
+Le shortcode **treeview** permet d'afficher une arborescence sous diverses formes.
 
 # Paramètres
 ---
@@ -16,15 +16,15 @@ Le shortcode **treeview** permet d'afficher l'arborescence du site sous forme de
 | --- | ----------------------- | ----------- |
 | rootpath | nommé |{{< md >}}
 Chemin du haut niveau de l'arborescence.  
-*NB: Si non renseigné, par défaut le chemin est celui de la page actuelle (**.**).*
+*NB: Si non renseigné, le chemin utilisé est celui de la page actuelle (**.**).*
 {{< /md >}}|
 | display | nommé |{{< md >}}
-Différents designs possibles:
+Styles disponibles:
 * list
 * graph
 * tree
 
-*NB: Si non renseigné, par défaut le design est **list**.*
+*NB: Si non renseigné, le style par défaut est **list**.*
 {{< /md >}}|
 | init | nommé |{{< md >}}
 Comportement de l'arborescence à l'initialisation.  
@@ -32,7 +32,7 @@ Valeurs possibles:
 * collapse
 * uncollapse
 
-*NB: Si non renseigné, par défaut le comportement est **uncollapse**.*
+*NB: Si non renseigné, le comportement par défaut est **uncollapse**.*
 {{< /md >}}|
 
 # Exemples

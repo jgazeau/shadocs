@@ -31,7 +31,7 @@ categories: ["Thème"]
 
 ## Création d'un site Hugo
 
-Pour créer un site Hugo, la documentation Hugo propose un [Quickstart](https://gohugo.io/getting-started/quick-start/) complet qui reprend l'ensemble des étapes necessaires afin de créer facilement et rapidement un premier site Hugo.
+Pour créer un site Hugo, la documentation Hugo propose un [Quickstart](https://gohugo.io/getting-started/quick-start/) complet qui reprend l'ensemble des étapes necessaires afin de créer facilement et rapidement un site Hugo.
 
 ## Ajout du thème
 

@@ -6,7 +6,7 @@ titleIcon: "fas fa-file-code"
 categories: ["Shortcode"]
 ---
 
-# Un shortcode qu’est ce que c’est ?
+# Un shortcode, qu’est ce que c’est ?
 ---
 
 De manière simple, un shortcode est un fragment de code qui se base sur un template et qu'il est possible d'utiliser dans le contenu markdown d'une page.
@@ -18,13 +18,13 @@ Plus d'information sur les [shortcodes dans la documentation Hugo](https://gohug
 # Utilisation
 ---
 
-La documentation fournie les informations pour pouvoir utiliser facilement les différents shortcodes fournis par le thème:
+La documentation fournie les informations pour pouvoir utiliser facilement les différents shortcodes ajoutés par le thème:
 * Description du shortcode
 * Paramètres du shortcode décrit sous la forme du tableau suivant:
 
     | Nom | Type(nommé/positionnel) | Description |
     | --- | ----------------------- | ----------- |
-* Exemples d'application
+* Exemples d'utilisation
 
 # Les shortcodes du thème
 ---
