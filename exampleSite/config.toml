@@ -52,7 +52,7 @@ themesdir              = "../.."
   favicon          = "images/favicon.png"
   faviconmd        = "![](images/favicon.png)"
   homeLayout       = "onboarding"
-  siteOrderContent = "weight"
+  siteContentOrder = "weight"
   [params.navbar.shortcuts]
     [params.navbar.shortcuts.example]
       keys     = ["Shift","1"]

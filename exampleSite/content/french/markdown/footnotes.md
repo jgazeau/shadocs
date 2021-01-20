@@ -25,7 +25,7 @@ Pour définir une note de bas de page, il faut **la formater en 2 parties**.
 
     * **\[\^Référence_de_la_note_de_bas_de_page\]: Contenu_de_la_note_de_bas_de_page**
 
-    La deuxième partie du lien peut-être placée à n'importe quel endroit dans le document, toutes les notes de bas de page seront automatiquement ajoutées en bas de la page courante. Il ne faut cependant pas placer le contenu des notes de bas de page dans d'autre élément markdown (Liste, Extrait de code, tableau, ...).
+    La deuxième partie de la note de bas de page peut-être placée à n'importe quel endroit dans le document, toutes les notes de bas de page seront automatiquement ajoutées en bas de la page courante. Il ne faut cependant pas placer le contenu des notes de bas de page dans d'autre élément markdown (Liste, Extrait de code, tableau, ...).
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |

@@ -57,12 +57,12 @@ Pour définir un texte en italique et en gras, il faut l'inclure entre 3 étoile
 | -------- | ---- | ----- |
 |{{< md >}}
 ```
-Je suis en ***gras et en italique***
+Je suis en ***italique et en gras***
 ```
 {{< /md >}}|{{< plaintext >}}
-Je suis en <em><strong>gras et en italique</strong></em>
+Je suis en <em><strong>italique et en gras</strong></em>
 {{< /plaintext >}}|{{< md >}}
-Je suis en ***gras et en italique***
+Je suis en ***italique et en gras***
 {{< /md >}}|
 
 {{< alert type="warning" >}}

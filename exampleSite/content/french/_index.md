@@ -48,8 +48,8 @@ categories: ["Thème"]
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleNavbarMenu(true);"
     },{
-      "title": "Multilangue",
-      "intro": "Le bouton multilangue permet d'accéder aux différentes traductions de la page courante.<br><i>NB: Ce bouton est visible uniquement si une traduction existe pour la page courante.</i>",
+      "title": "Multilingue",
+      "intro": "Le bouton multilingue permet d'accéder aux différentes traductions de la page courante.<br><i>NB: Ce bouton est visible uniquement si une traduction existe pour la page courante.</i>",
       "element": "#langsSelector",
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleNavbarMenu(true);"
@@ -68,7 +68,7 @@ categories: ["Thème"]
       "onbeforechange": "toggleSidebar(false,true);toggleNavbarMenu(true);"
     },{
       "title": "À propos du site",
-      "intro": "Le bouton d'information générale permet d'obtenir les informations générales du site.",
+      "intro": "Le bouton d'information permet d'obtenir les informations générales du site.",
       "element": "#siteInfo",
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleNavbarMenu(true);"

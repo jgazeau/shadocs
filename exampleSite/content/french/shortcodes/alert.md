@@ -7,7 +7,7 @@ categories: ["Shortcode"]
 # Description
 ---
 
-Le shortcode **alert** permet de mettre en valeur du texte suivant différents types.
+Le shortcode **alert** permet de mettre en valeur du texte suivant différents styles.
 
 # Paramètres
 ---
@@ -15,13 +15,13 @@ Le shortcode **alert** permet de mettre en valeur du texte suivant différents t
 | Nom | Type(nommé/positionnel) | Description |
 | --- | ----------------------- | ----------- |
 | type| nommé |{{< md >}}
-Différents designs possibles:
+Styles disponibles:
 * info
 * success
 * warning
 * error
 
-*NB: Si non renseigné, par défaut le design est **info**.*
+*NB: Si non renseigné, le style par défaut est **info**.*
 {{< /md >}}|
 
 # Exemples

@@ -92,14 +92,14 @@ https://www.google.com
 {{< /md >}}|
 
 {{< alert type="warning" >}}
-Attention, pour permettre un rendu plus agréable (à l'aide des [Markdown Render Hooks](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks)) il est recommandé d'**utiliser la syntaxe classique**. Celle-ci permet en effet de gérer certaines classes css permettant un rendu plus agréable des liens.
+Attention, pour permettre un rendu plus agréable (à l'aide des [Markdown Render Hooks](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks)) il est recommandé d'**utiliser la syntaxe classique**.
 {{< /alert >}}
 
 ## Echapper un lien
 
 Pour échapper un lien (faire apparaitre une URL en tant que texte) et éviter son rendu automatique par le convertisseur markdown, il est possible d'utiliser des syntaxes alternatives:
 
-* **Ajouter une apostrophe inversée (`) avant et après l'URL du lien (Définir le lien en extrait de code)**.
+* **Ajouter une apostrophe inversée (`) avant et après l'URL du lien (Définir le lien en fragment de code)**.
 * **Echapper le premier slash (/) de l'URL du lien**.
 
 | Markdown | HTML | Rendu |
@@ -181,11 +181,11 @@ Pour définir un lien dont l'URL est référencée (donc réutilisable), il faut
 
     * **\[Texte_du_lien\]\[Référence_de_l'URL_du_lien\]**
 
-    La référence de l'URL du lien n'est pas sensible à la casse, peut contenir des caractères alphanumériques, des espaces et de la ponctuation.
+    La référence de l'URL du lien n'est pas sensible à la casse et peut contenir des caractères alphanumériques, des espaces et de la ponctuation.
 
 * **Deuxième partie** (référence du lien)
 
-    Pour définir la deuxième partie du lien, qui fait le lien entre la référence d'une URL utilisée dans la première partie, et la valeur de l'URL, il faut **respecter une des syntaxes suivantes**:
+    Pour définir la deuxième partie du lien, qui fait le lien entre la référence de l'URL du lien définie dans la première partie, et la valeur de l'URL, il faut **respecter une des syntaxes suivantes**:
 
     * **\[Référence_de_l'URL_du_lien\]: URL_du_lien**
     * **\[Référence_de_l'URL_du_lien\]: URL_du_lien \"Titre_du_lien\"**
@@ -363,7 +363,7 @@ Je suis un texte tout seul
 
 ## Lien avec espace
 
-Pour définir un lien dont l'URL contient des espaces, il faut **encoder l'URL avec le code en pourcentage associé (%20)**.
+Pour définir un lien dont l'URL contient des espaces, il faut **encoder l'URL avec le code en pourcentage associé au caractère espace (%20)**.
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |
@@ -377,9 +377,9 @@ Pour définir un lien dont l'URL contient des espaces, il faut **encoder l'URL a
 [Themes Hugo](https://www.google.com/?query=Themes%20Hugo)
 {{< /md >}}|
 
-## Id d'un lien (Spécificité du thème)
+## ID d'un lien (Spécificité du thème)
 
-Pour définir l'Id d'un lien, il faut **écrire un lien en suivant la [syntaxe classique avec titre](markdown/link/#syntaxe-classique-avec-titre)**. L'Id est rajouté au lien automatiquement (à l'aide du thème) et aura pour valeur la sortie de la fonction [anchorize](https://gohugo.io/functions/anchorize/) de Hugo avec en entrée la valeur du titre du lien:
+Pour définir l'ID d'un lien, il faut **écrire un lien en suivant la [syntaxe classique avec titre](markdown/link/#syntaxe-classique-avec-titre)**. L'ID est rajouté au lien automatiquement (à l'aide du thème) et aura pour valeur la sortie de la fonction [anchorize](https://gohugo.io/functions/anchorize/) de Hugo avec en entrée la valeur du titre du lien:
 
 * **\[Texte_du_lien\]\(URL_du_lien \"Titre_du_lien\"\)**
 

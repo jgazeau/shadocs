@@ -23,7 +23,7 @@ Pour définir un tableau, il faut **respecter les règles suivantes**:
 ```
 | Variable | Valeur | Description |
 | -------- | ------ | ----------- |
-| A        | 1      | Integer     |
+| A        | 1      | Entier      |
 | B        | 2      |             |
 ```
 {{< /md >}}|{{< plaintext >}}
@@ -39,7 +39,7 @@ Pour définir un tableau, il faut **respecter les règles suivantes**:
     <tr>
       <td>A</td>
       <td>1</td>
-      <td>Integer</td>
+      <td>Entier</td>
     </tr>
     <tr>
       <td>B</td>
@@ -51,14 +51,14 @@ Pour définir un tableau, il faut **respecter les règles suivantes**:
 {{< /plaintext >}}|{{< md >}}
 | Variable | Valeur | Description |
 | -------- | ------ | ----------- |
-| A        | 1      | Integer     |
+| A        | 1      | Entier      |
 | B        | 2      |             |
 {{< /md >}}|
 |{{< md >}}
 ```
 |Variable|Valeur|Description|
 |---|---|---|
-|A|1|Integer|
+|A|1|Entier|
 |B|2||
 ```
 {{< /md >}}|{{< plaintext >}}
@@ -74,7 +74,7 @@ Pour définir un tableau, il faut **respecter les règles suivantes**:
     <tr>
       <td>A</td>
       <td>1</td>
-      <td>Integer</td>
+      <td>Entier</td>
     </tr>
     <tr>
       <td>B</td>
@@ -86,7 +86,7 @@ Pour définir un tableau, il faut **respecter les règles suivantes**:
 {{< /plaintext >}}|{{< md >}}
 |Variable|Valeur|Description|
 |---|---|---|
-|A|1|Integer|
+|A|1|Entier|
 |B|2||
 {{< /md >}}|
 
@@ -99,7 +99,7 @@ Attention, il est possible de formater le texte d'un tableau en utilisant *l'acc
 
 ## Alignement
 
-Pour aligner le contenu d'une colonne, il faut **ajouter un caractère double point (:) du côté souhaité de l'alignement au traits d'union de la ligne de démarcation (des deux côtés pour centrer le contenu)**.
+Pour aligner le contenu d'une colonne, il faut **ajouter un caractère double point (:) au traits d'union de la ligne de démarcation du côté souhaité de l'alignement (des deux côtés pour centrer le contenu)**.
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |
@@ -107,7 +107,7 @@ Pour aligner le contenu d'une colonne, il faut **ajouter un caractère double po
 ```
 | Variable | Valeur | Description |
 | :------- | :----: | ----------: |
-| A        | 1      | Integer     |
+| A        | 1      | Entier      |
 | B        | 2      |             |
 ```
 {{< /md >}}|{{< plaintext >}}
@@ -123,7 +123,7 @@ Pour aligner le contenu d'une colonne, il faut **ajouter un caractère double po
     <tr>
       <td align="left">A</td>
       <td align="center">1</td>
-      <td align="right">Integer</td>
+      <td align="right">Entier</td>
     </tr>
     <tr>
       <td align="left">B</td>
@@ -135,14 +135,14 @@ Pour aligner le contenu d'une colonne, il faut **ajouter un caractère double po
 {{< /plaintext >}}|{{< md >}}
 | Variable | Valeur | Description |
 | :------- | :----: | ----------: |
-| A        | 1      | Integer     |
+| A        | 1      | Entier      |
 | B        | 2      |             |
 {{< /md >}}|
 |{{< md >}}
 ```
 |Variable|Valeur|Description|
 |:---|:---:|---:|
-|A|1|Integer|
+|A|1|Entier|
 |B|2||
 ```
 {{< /md >}}|{{< plaintext >}}
@@ -158,7 +158,7 @@ Pour aligner le contenu d'une colonne, il faut **ajouter un caractère double po
     <tr>
       <td align="left">A</td>
       <td align="center">1</td>
-      <td align="right">Integer</td>
+      <td align="right">Entier</td>
     </tr>
     <tr>
       <td align="left">B</td>
@@ -170,6 +170,6 @@ Pour aligner le contenu d'une colonne, il faut **ajouter un caractère double po
 {{< /plaintext >}}|{{< md >}}
 |Variable|Valeur|Description|
 |:---|:---:|---:|
-|A|1|Integer|
+|A|1|Entier|
 |B|2||
 {{< /md >}}|
