@@ -8,7 +8,7 @@ categories: ["Shortcode"]
 ---
 
 Le shortcode **md** permet de forcer la conversion d'un bloc de texte écrit en markdown.  
-Ce shortcode est notamment utile pour rajouter du contenu écrit en syntaxes markdown complexes (listes, extrait de code, ...) dans un tableau, ou dans le cas de shortcodes imbriqués.
+Ce shortcode est notamment utile pour rajouter du contenu écrit en syntaxes markdown complexes (listes, extrait de code, ...), dans un tableau, ou dans le cas de shortcodes imbriqués.
 {{< alert type="warning" >}}
 L'auto-imbrication de ce shortcode n'est pas possible.
 {{< /alert >}}

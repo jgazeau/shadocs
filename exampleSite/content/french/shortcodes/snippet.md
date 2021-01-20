@@ -7,7 +7,7 @@ categories: ["Shortcode"]
 # Description
 ---
 
-Le shortcode **snippet** permet d'écrire un fragment de code, défini soit depuis le [contenu du shortcode](https://gohugo.io/templates/shortcode-templates/#inner), soit depuis un fichier template à placer dans les fichiers du site à l'endroit souhaité.
+Le shortcode **snippet** permet d'écrire un fragment de code, défini soit depuis le [contenu du shortcode](https://gohugo.io/templates/shortcode-templates/#inner), soit depuis un fichier template.
 
 # Paramètres
 ---
@@ -19,12 +19,12 @@ Chemin du fichier à inclure.
 *NB: Le paramètre file est prépondérant par rapport au contenu du shortcode.*
 {{< /md >}}|
 | type | nommé |{{< md >}}
-Type du fichier à inclure.  
+Format du fichier à inclure.  
 Valeurs possibles:
   * md
   * plaintext
 
-*NB: Si non renseigné, par défaut le contenu du fichier est affiché en tant qu'extrait de code.
+*NB: Si non renseigné, le contenu du fichier est affiché en tant qu'extrait de code (Paramètre uniquement applicable si le paramètre fichier est renseigné).*
 {{< /md >}}|
 | caption | nommé |{{< md >}}
 Légende de l'extrait de code.  

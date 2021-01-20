@@ -1,0 +1,53 @@
+---
+weight: 2120
+linkTitle: "Footnotes"
+title: "Markdown: Footnotes"
+description: "How to define footnotes?"
+categories: ["Markdown"]
+---
+
+# Footnotes
+---
+
+To define a footnote, it must **be formated in 2 parts**.
+
+* **First part** (footnote reference)
+
+    To define the footnote first part, which corresponds to a reference to be defined in the second part, **match the following syntax**:
+
+    * **Text_associated_to_a_footnote\[\^Footnote_reference\]**
+
+    The footnote reference can contain only alphanumeric characters (no spaces nor tabs).
+
+* **Second part** (footnote content)
+
+    To define the footnote second part, which corresponds to the content of the footnote, **match the following syntax**:
+
+    * **\[\^Footnote_reference\]: Footnote_content**
+
+    The footnote second part can be placed anywhere in the document, all footnotes will be automatically added at the bottom of the current page. However, footnotes content should not be placed in another markdown element (List, code snippet, table, ...).
+
+| Markdown | HTML | Rendering |
+| -------- | ---- | --------- |
+|{{< md >}}
+```
+I come from there[^1]
+
+[^1]: I'm a footnote
+```
+{{< /md >}}|{{< plaintext >}}
+<p>I come from there<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></p>
+[…]
+<section class="footnotes" role="doc-endnotes">
+  <hr>
+  <ol>
+    <li id="fn:1" role="doc-endnote">
+      <p>I'm a footnote<a href="#fnref:1" class="footnote-backref" role="doc-backlink">↩︎</a></p>
+    </li>
+  </ol>
+</section>
+{{< /plaintext >}}|{{< md >}}
+I come from there[^1]
+
+[^1]: I'm a footnote
+{{< /md >}}|

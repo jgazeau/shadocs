@@ -1,0 +1,226 @@
+---
+title: "{{< intro >}}"
+description: "Shortcode {{< intro >}}."
+categories: ["Shortcode"]
+---
+
+# Description
+---
+
+The **intro** shortcode allows to use the [intro.js](https://introjs.com/) library to generate a demo intro.
+
+## Configuration of intro.js
+
+The content of the shortcode sets the configuration in **JSON format** of the intro. In addition, parameters have been added into the theme to allow simplified and adapted settings.
+
+{{< snippet
+    caption="JSON configuration of intro shortcode content"
+    codelang="json"
+>}}
+{
+  "[...]",
+  "[Standard intro.js options]": "https://introjs.com/docs/intro/options (See default theme options list below)",
+  "[...]",
+  "onbeforeexit": "JavaScript code to execute before exiting the intro (linked to the standard onbeforeexit API of intro.js)",
+  "onexit": "JavaScript code to execute when exiting the intro (linked to the standard onexit API of intro.js)",
+  "oncomplete": "JavaScript code to execute when completing the intro (linked to the standard oncomplete API of intro.js)",
+  "steps": [
+    {
+      "title": "Step title (linked to the standard title option of intro.js)",
+      "element": "Element to highlight (linked to the standard element option of intro.js (⚠ only selection by id of an element is available))",
+      "intro": "Step content (linked to the standard intro option of intro.js)",
+      "position": "Helper step position (linked to the standard position option of intro.js)",
+      "onchange": "JavaScript code to execute when changing the step (linked to the standard onchange API of intro.js)",
+      "onbeforechange": "JavaScript code to execute before changing the step (linked to the standard onbeforechange API of intro.js)",
+      "onafterchange": "JavaScript code to execute after changing the step (linked to the standard onafterchange API of intro.js)",
+      "triggeronly": "Step triggers list allowing execution of the step (See step triggers list below)",
+      "triggerexcept": "Step triggers list not allowing execution of the step (See step triggers list below)"
+    }]
+}
+{{< /snippet >}}
+
+## Step triggers
+
+Step triggers allow to execute or not a step of the intro.  
+If one of the triggers is defined in the step and is also active on the website, then the step is executed or not depending on the configuration.
+
+| Name | Description |
+| ---- | ----------- |
+| desktop | Enabled if the window is greater than or equal to 1024 pixels wide |
+| touch | Enabled if the window is less than 1024 pixels wide and greater than or equal to 769 pixels wide |
+| mobile | Enabled if the window is less than 769 pixels wide |
+| hover | Enabled if device allows item hover (by means of pointing devices) |
+| nohover | Enabled if the device does not allow item hovering (touch devices) |
+
+## JavaScript helper functions
+
+
+In order to ease the use of intro.js, some javascript functions are available in the theme and defined in the file **assets/js/theme/modules/helpers.js**.
+
+| Code | Description |
+| ---- | ----------- |
+| toggleNavbarMenu(force); |{{< md >}}
+Function that manages the burger menu behavior:
+* force
+    * true: the burger menu is uncollapsed
+    * false: the burger menu is collapsed
+{{< /md >}}|
+| toggleSidebar(force, noTransition); |{{< md >}}
+Function that manages the sidebar behavior:
+* force
+    * true: the sidebar is uncollapsed
+    * false: the sidebar is uncollapsed
+* noTransition
+    * true: turn off menu transition animation
+    * false: turn on menu transition animation (default behavior)
+{{< /md >}}|
+| manageDefaultCollapsibleSidebar(); |{{< md >}}
+Function that manages the default behavior of the sidebar:
+* If the window is greater than or equal to 1024 pixels wide, sidebar is uncollapsed
+* If the window is less than 1024 pixels wide, sidebar is collapsed
+{{< /md >}}|
+
+{{< alert type="warning" >}}
+The provided list is non-exhaustive and only describe the main functions used by the theme in the home page intro.
+{{< /alert >}}
+
+## Default options
+
+{{< snippet
+    caption="Theme default intro.js options"
+    codelang="javascript"
+>}}
+const themeCommonOptions = {
+  nextLabel:          {{i18n "intro_nextlabel"}},
+  prevLabel:          {{i18n "intro_prevlabel"}},
+  skipLabel:          {{i18n "intro_skiplabel"}},
+  doneLabel:          {{i18n "intro_donelabel"}},
+  hidePrev:           false,
+  hideNext:           false,
+  nextToDone:         true,
+  exitOnEsc:          true,
+  exitOnOverlayClick: true,
+  showStepNumbers:    false,
+  keyboardNavigation: true,
+  showButtons:        true,
+  showBullets:        true,
+  showProgress:       true,
+  scrollToElement:    true,
+  scrollTo:           "element",
+  scrollPadding:      30,
+  overlayOpacity:     0.8,
+  disableInteraction: true
+{{< /snippet >}}
+
+# Parameters
+---
+
+| Name | Type(named/positional) | Description |
+| ---- | ---------------------- | ----------- |
+| introtitle| named |{{< md >}}
+Intro launch button title.  
+*NB: If not specified, the title is a default text defined by the theme.*
+{{< /md >}}|
+
+# Examples
+---
+
+| Markdown | Rendering |
+| -------- | --------- |
+|{{< md >}}
+```
+{{</* intro
+  introtitle="I'm an intro"
+*/>}}
+{
+  "showBullets": false,
+  "showStepNumbers": true,
+  "onexit": "console.log(\"I'm exiting the intro\");",
+  "oncomplete": "console.log(\"I'm exiting the intro after completing it\");",
+  "steps": [
+    {
+      "title": "Step 1",
+      "intro": "I'm step 1 for everyone",
+      "onchange": "console.log(\"I'm entering step 1 for everyone\");"
+    },{
+      "title": "Step 2",
+      "intro": "I'm step 2 for the desktop trigger",
+      "onchange": "console.log(\"I'm entering step 2 for the desktop trigger\");",
+      "triggeronly": ["desktop"]
+    },{
+      "title": "Step 2",
+      "intro": "I'm step 2 for the mobile and touch triggers",
+      "onchange": "console.log(\"I'm entering step 2 for the mobile and touch triggers\");",
+      "triggeronly": ["mobile","touch"]
+    },{
+      "title": "Step 3",
+      "intro": "I'm step 3 for everyone except the hover trigger",
+      "onchange": "console.log(\"I'm entering step 3 for everyone except the hover trigger\");",
+      "triggerexcept": ["hover"]
+    },{
+      "title": "Step 3",
+      "intro": "I'm step 3 for everyone except the nohover trigger",
+      "onchange": "console.log(\"I'm entering step 3 for everyone except the nohover trigger\");",
+      "triggerexcept": ["nohover"]
+    },{
+      "title": "Step 4",
+      "element": "#globalLogo",
+      "intro": "I'm step 4 for everyone on the #globalLogo element",
+      "onchange": "console.log(\"I'm entering step 4 for everyone on the #globalLogo element\");"
+    },{
+      "title": "Step 5",
+      "element": "#globalLogo",
+      "intro": "I'm step 5 for everyone on the #globalLogo element on right position",
+      "position": "right",
+      "onchange": "console.log(\"I'm entering step 5 for everyone on the #globalLogo element on right position\");"
+    }]
+}
+{{</* /intro */>}}
+```
+{{< /md >}}|{{< intro
+  introtitle="I'm an intro"
+>}}
+{
+  "showBullets": false,
+  "showStepNumbers": true,
+  "onexit": "console.log(\"I'm exiting the intro\");",
+  "oncomplete": "console.log(\"I'm exiting the intro after completing it\");",
+  "steps": [
+    {
+      "title": "Step 1",
+      "intro": "I'm step 1 for everyone",
+      "onchange": "console.log(\"I'm entering step 1 for everyone\");"
+    },{
+      "title": "Step 2",
+      "intro": "I'm step 2 for the desktop trigger",
+      "onchange": "console.log(\"I'm entering step 2 for the desktop trigger\");",
+      "triggeronly": ["desktop"]
+    },{
+      "title": "Step 2",
+      "intro": "I'm step 2 for the mobile and touch triggers",
+      "onchange": "console.log(\"I'm entering step 2 for the mobile and touch triggers\");",
+      "triggeronly": ["mobile","touch"]
+    },{
+      "title": "Step 3",
+      "intro": "I'm step 3 for everyone except the hover trigger",
+      "onchange": "console.log(\"I'm entering step 3 for everyone except the hover trigger\");",
+      "triggerexcept": ["hover"]
+    },{
+      "title": "Step 3",
+      "intro": "I'm step 3 for everyone except the nohover trigger",
+      "onchange": "console.log(\"I'm entering step 3 for everyone except the nohover trigger\");",
+      "triggerexcept": ["nohover"]
+    },{
+      "title": "Step 4",
+      "element": "#globalLogo",
+      "intro": "I'm step 4 for everyone on the #globalLogo element",
+      "onchange": "console.log(\"I'm entering step 4 for everyone on the #globalLogo element\");"
+    },{
+      "title": "Step 5",
+      "element": "#globalLogo",
+      "intro": "I'm step 5 for everyone on the #globalLogo element on right position",
+      "position": "right",
+      "onchange": "console.log(\"I'm entering step 5 for everyone on the #globalLogo element on right position\");"
+    }]
+}
+{{< /intro >}}|

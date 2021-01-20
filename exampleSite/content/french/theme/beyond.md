@@ -2,28 +2,27 @@
 weight: 1030
 linkTitle: "Vers l'infini et au-delà !"
 title: "Installation: Vers l'infini et au-delà !"
-description: "Tout savoir sur le thème."
+description: "Tout ce qu'il faut savoir sur le thème."
 categories: ["Thème"]
 ---
 
 # Aller plus loin
 ---
 
-# Futures fonctionnalités et améliorations
+# Fonctionnalités et améliorations à venir
 ---
 
-## Contenu
+## Contenu du site
 * Enrichissement de la documentation
-* Traduction de la documentation en anglais
 
 ## Idées de nouvelles fonctionnalités
 * Dark mode
-* Paramétrage de la barre de navigation
-* Téléchargement du contenu d'une page en pdf
+* Barre de navigation paramétrable
+* Page HTML téléchargeable en pdf
 
 ## Shortcodes
-* Extrait de code avec onglets languages
+* Extrait de code avec onglets language
 
 ## Optimisations techniques du site
 * Utilisation de purgeCSS en PostCSS
-* Tests avant release
+* Tests avant releases

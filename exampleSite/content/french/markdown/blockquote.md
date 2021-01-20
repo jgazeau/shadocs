@@ -41,7 +41,7 @@ Pour définir une citation sur plusieurs paragraphes, il faut **ajouter un carac
 ```
 {{< /md >}}|{{< plaintext >}}
 <blockquote>
-  <p>Je suis une citation</p>
+  <p>Je suis une citation.</p>
   <p>Et voilà la suite !</p>
 </blockquote>
 {{< /plaintext >}}|{{< md >}}
@@ -58,19 +58,19 @@ Pour définir des citations imbriquées, il faut **ajouter un caractère supéri
 | -------- | ---- | ----- |
 |{{< md >}}
 ```
-> Je suis une citation
+> Je suis une citation.
 >
 >> Et moi une cita(ception) !
 ```
 {{< /md >}}|{{< plaintext >}}
 <blockquote>
-  <p>Je suis une citation</p>
+  <p>Je suis une citation.</p>
   <blockquote>
     <p>Et moi une cita(ception) !</p>
   </blockquote>
 </blockquote>
 {{< /plaintext >}}|{{< md >}}
-> Je suis une citation
+> Je suis une citation.
 >
 >> Et moi une cita(ception) !
 {{< /md >}}|
@@ -83,19 +83,19 @@ Pour définir une citation contenant d'autres éléments markdown, il faut écri
 | -------- | ---- | ----- |
 |{{< md >}}
 ```
-> ### Je suis le titre de la citation
+> ### Je suis le titre de la citation.
 >
 > > Et moi une cita(ception) en **gras** !
 ```
 {{< /md >}}|{{< plaintext >}}
 <blockquote>
-  <h3>Je suis le titre de la citation</h3>
+  <h3>Je suis le titre de la citation.</h3>
   <blockquote>
     <p>Et moi une cita(ception) en <strong>gras</strong> !</p>
   </blockquote>
 </blockquote>
 {{< /plaintext >}}|{{< md >}}
-> ### Je suis le titre de la citation
+> ### Je suis le titre de la citation.
 >
 > > Et moi une cita(ception) en **gras** !
 {{< /md >}}|
