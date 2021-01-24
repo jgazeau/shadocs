@@ -1,7 +1,8 @@
 import {
   atou,
   addFunctionToResizeEvent,
-  getTriggers
+  getTriggers,
+  disableSmoothScroll
 } from '../theme/modules/helpers.min.js'
 
 // VARS //
@@ -10,12 +11,30 @@ const INTRO_EXIT_BOOL = 'isExiting';
 const INTRO_TRIGGER_ONLY = 'triggeronly';
 const INTRO_TRIGGER_EXCEPT = 'triggerexcept';
 const INTRO_THEME_FUNCTIONS = {
-  oncomplete:     { applyOnStep: false },
-  onexit:         { applyOnStep: false },
-  onbeforeexit:   { applyOnStep: false },
-  onchange:       { applyOnStep: true },
-  onbeforechange: { applyOnStep: true },
-  onafterchange:  { applyOnStep: true }
+  oncomplete:     {
+    applyOnStep: false,
+    callBack: ""
+  },
+  onexit:         {
+    applyOnStep: false,
+    callBack: "enableSmoothScroll();"
+  },
+  onbeforeexit:   {
+    applyOnStep: false,
+    callBack: ""
+  },
+  onchange:       {
+    applyOnStep: true,
+    callBack: ""
+  },
+  onbeforechange: {
+    applyOnStep: true,
+    callBack: ""
+  },
+  onafterchange:  {
+    applyOnStep: true,
+    callBack: ""
+  }
 }
 const themeCommonOptions = {
   nextLabel:          introNextLabel,
@@ -56,6 +75,7 @@ const introEmptyStep = {
 const divi = document.getElementsByClassName('sc-intro');
 for (let i = 0; i < divi.length; i++) {
   divi[i].addEventListener('click', function() {
+    disableSmoothScroll();
     let introOptions = parseIntroOptions(atou(divi[i].getAttribute('intro-data')));
     introOptions.steps = manageTriggeredSteps(introOptions.steps, getTriggers());
     let intro = introJs();
@@ -65,10 +85,12 @@ for (let i = 0; i < divi.length; i++) {
       if (typeof intro[key] === 'function') {
         intro[key](function() {
           if (INTRO_THEME_FUNCTIONS[key].applyOnStep) {
+            Function(INTRO_THEME_FUNCTIONS[key].callBack)();
             if (this._introItems[this.currentStep()].hasOwnProperty(key)) {
               Function(this._introItems[this.currentStep()][key])();
             }
           } else {
+            Function(INTRO_THEME_FUNCTIONS[key].callBack)();
             if (introOptions.hasOwnProperty(key)) {
               Function(introOptions[key])();
             }
