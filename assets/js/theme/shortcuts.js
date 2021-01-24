@@ -37,16 +37,12 @@ function scToggleSidebar() {
 window.scBackToTop = scBackToTop;
 function scBackToTop() {
   let cc = document.getElementById('contentContainer');
-  cc.classList.toggle('is-scroll-smooth', true);
   cc.scrollTop = 0;
-  cc.classList.toggle('is-scroll-smooth', false);
 }
 // Function to go to the bottom of the current page
 window.scGoToBottom = scGoToBottom;
 function scGoToBottom() {
   let cc = document.getElementById('contentContainer');
-  cc.classList.toggle('is-scroll-smooth', true);
   cc.scrollTop = cc.scrollHeight;
-  cc.classList.toggle('is-scroll-smooth', false);
 }
 

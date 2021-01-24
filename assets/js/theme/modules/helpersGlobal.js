@@ -1,4 +1,6 @@
 import {
+  disableSmoothScroll,
+  enableSmoothScroll,
   toggleNavbarMenu,
   toggleSidebar,
   manageDefaultCollapsibleSidebar
@@ -6,6 +8,8 @@ import {
 
 // VARS //
 // MAIN //
+window.disableSmoothScroll = disableSmoothScroll;
+window.enableSmoothScroll = enableSmoothScroll;
 window.toggleNavbarMenu = toggleNavbarMenu;
 window.toggleSidebar = toggleSidebar;
 window.manageDefaultCollapsibleSidebar = manageDefaultCollapsibleSidebar;

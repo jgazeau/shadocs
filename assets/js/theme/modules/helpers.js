@@ -238,3 +238,11 @@ export function manageDefaultCollapsibleSidebar() {
     toggleSidebar(true);
   };
 };
+export function disableSmoothScroll() {
+  let cc = document.getElementById('contentContainer');
+  cc.classList.toggle('is-scroll-smooth', false);
+}
+export function enableSmoothScroll() {
+  let cc = document.getElementById('contentContainer');
+  cc.classList.toggle('is-scroll-smooth', true);
+}
