@@ -14,6 +14,13 @@
       </div>
     </div>
     <div class='navbar-end'>
+      <div class='navbar-item'>
+        <a id='printButton' class='button navbar-item-standard'>
+          <span class='icon'>
+            <i class='fas fa-print fa-lg'></i>
+          </span>
+        </a>
+      </div>
       {{range $.Page.Translations}}
         {{if reflect.IsMap .Data.Terms}}
           {{$.Scratch.Add "taxnomyTranslatedCount" (len .Data.Terms)}}

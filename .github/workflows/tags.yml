@@ -39,7 +39,7 @@ jobs:
           GREN_GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         run: |
           npm install github-release-notes
-          npx gren changelog --generate --override
+          npx gren changelog --generate --override --tags=all
           git add ${CHANGELOG_FILE}
           git config --local user.name "GitHub Action"
           git config --local user.email "action@github.com"

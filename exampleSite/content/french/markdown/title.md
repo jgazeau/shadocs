@@ -70,7 +70,6 @@ Pour définir un titre, il faut **ajouter un nombre de croisillon (\#) correspon
 ###### Titre de niveau 6
 {{< /md >}}|
 
-
 ## Syntaxe alternative
 
 Pour les **niveaux 1 et 2 uniquement**, il est possible d'utiliser une syntaxe alternative:

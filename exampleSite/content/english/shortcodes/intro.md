@@ -54,7 +54,6 @@ If one of the triggers is defined in the step and is also active on the website,
 
 ## JavaScript helper functions
 
-
 In order to ease the use of intro.js, some javascript functions are available in the theme and defined in the file **assets/js/theme/modules/helpers.js**.
 
 | Code | Description |

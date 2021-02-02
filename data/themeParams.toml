@@ -41,6 +41,9 @@
   [navbar.shortcuts.7_gotobottom]
     keys = ["Shift","ArrowDown"]
     function = "scGoToBottom"
+  [navbar.shortcuts.8_print]
+    keys = ["Shift","p"]
+    function = "scPrint"
 #
 # List of assets (https://gohugo.io/hugo-pipes/resource-from-template/) to include
 # Managed assets:
@@ -63,6 +66,7 @@
       "js/theme/modules/helpersGlobal.js",
       "js/theme/init.js",
       "js/theme/navbar.js",
+      "js/theme/print.js",
       "js/theme/search.js",
       "js/theme/shortcuts.js",
       "js/theme/sidebar.js"

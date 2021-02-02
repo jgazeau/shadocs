@@ -42,6 +42,10 @@
   translation: "Maj,↓"
 - id: 7_gotobottom_wording
   translation: "Aller tout en bas de la page"
+- id: 8_print_keys_wording
+  translation: "Maj,p"
+- id: 8_print_wording
+  translation: "Imprimer la page courante"
 - id: shortcode_collapsible
   translation: "Développer/Réduire"
 - id: no_data
@@ -78,3 +82,5 @@
   translation: "✗"
 - id: intro_donelabel
   translation: "Terminer"
+- id: na_common
+  translation: "Non disponible"
