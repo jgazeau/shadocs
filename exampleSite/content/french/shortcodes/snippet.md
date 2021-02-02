@@ -150,33 +150,33 @@ func main() {
 |{{< md >}}
 ```
 {{</* snippet
-    file="templates/snippet.md"
+    file="templates/snippet.fr.md"
     type="md"
 /*/>}}
 ```
 {{< /md >}}|{{< snippet
-    file="templates/snippet.md"
+    file="templates/snippet.fr.md"
     type="md"
 />}}|
 |{{< md >}}
 ```
 {{</* snippet
-    file="templates/snippet.md"
+    file="templates/snippet.fr.md"
     type="plaintext"
 /*/>}}
 ```
 {{< /md >}}|{{< snippet
-    file="templates/snippet.md"
+    file="templates/snippet.fr.md"
     type="plaintext"
 />}}|
 |{{< md >}}
 ```
 {{</* snippet
-    file="templates/snippet.md"
+    file="templates/snippet.fr.md"
 /*/>}}
 ```
 {{< /md >}}|{{< snippet
-    file="templates/snippet.md"
+    file="templates/snippet.fr.md"
 />}}|
 |{{< md >}}
 ```

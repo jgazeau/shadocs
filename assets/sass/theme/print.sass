@@ -1,0 +1,26 @@
+//
+// Print styles
+//
+@media print
+  html
+    overflow-x: hidden !important
+    overflow-y: auto !important
+  #sidebarMobileWrapper,
+  #sidebarContainer,
+  #tocContainer,
+  #navbar,
+  .copy-code
+    display: none !important
+  #mainContainer,
+  #contentContainer
+    display: block !important
+  #contentContainer
+    overflow: unset !important
+  body
+    overflow: visible !important
+    display: block !important
+  table:not([style])
+    tr
+      break-inside: avoid
+    thead
+      display: table-row-group

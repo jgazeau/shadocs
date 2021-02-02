@@ -70,7 +70,6 @@ To define a title, **add a corresponding number of crosses (\ #) to the desired 
 ###### Level 6 title
 {{< /md >}}|
 
-
 ## Alternative syntax
 
 For **levels 1 and 2 only**, it is possible to use an alternative syntax:

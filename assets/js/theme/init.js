@@ -173,7 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
           return Promise.reject("Cannot reach end of scroll");
         }
       }).catch(err => {
-          console.log("Error managing click event for " + this + ": " + err);
+          console.error("Error managing click event for " + this + ": " + err);
           isTocClicked = false;
       });
     });
@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function() {
           return Promise.reject("Cannot reach end of scroll");
         }
       }).catch(err => {
-          console.log("Error managing click event for " + this + ": " + err);
+          console.error("Error managing click event for " + this + ": " + err);
           isTocClicked = false;
       });
     });
