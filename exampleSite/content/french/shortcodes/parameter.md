@@ -25,7 +25,6 @@ Le paramètre à afficher peut être déclaré de deux manières différentes:
 Le paramètre à afficher est interprété en markdown et converti en conséquence.
 {{< /alert >}}
 
-
 # Paramètres
 ---
 

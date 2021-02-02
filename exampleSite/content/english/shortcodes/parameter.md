@@ -25,7 +25,6 @@ The parameter to display can be set using two different ways:
 The parameter to display is read as a markdown and converted accordingly.
 {{< /alert >}}
 
-
 # Parameters
 ---
 

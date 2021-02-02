@@ -33,6 +33,7 @@ import {
   // Function to disable search in case the input json file search is not found
   function disableSearch() {
     searchInput.setAttribute('disabled','');
+    searchInput.setAttribute('title',naCommonLabel);
   }
   // Function to init actions for search
   function initSearch() {

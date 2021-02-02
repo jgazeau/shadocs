@@ -45,4 +45,8 @@ function scGoToBottom() {
   let cc = document.getElementById('contentContainer');
   cc.scrollTop = cc.scrollHeight;
 }
-
+// Function to print the current page
+window.scPrint = scPrint;
+function scPrint() {
+  document.getElementById('printButton').click();
+}

@@ -42,6 +42,10 @@
   translation: "Shift,↓"
 - id: 7_gotobottom_wording
   translation: "Go to the bottom of the page"
+- id: 8_print_keys_wording
+  translation: "Shift,p"
+- id: 8_print_wording
+  translation: "Print current page"
 - id: shortcode_collapsible
   translation: "Expand/Collapse"
 - id: no_data
@@ -78,3 +82,5 @@
   translation: "✗"
 - id: intro_donelabel
   translation: "Done"
+- id: na_common
+  translation: "Not available"
