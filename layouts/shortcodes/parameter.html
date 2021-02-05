@@ -6,6 +6,9 @@
     {{$keyRange = (split . ".")}}
     {{$keyValues = $.Site.Data}}
   {{end}}
+  {{with .Get "i18n"}}
+    {{$keyValues = i18n .}}
+  {{end}}
 {{else}}
   {{with .Get 0}}
     {{$keyRange = (split . ".")}}
@@ -20,11 +23,11 @@
       {{$keyValues = ""}}
     {{end}}
   {{end}}
-  {{with $keyValues}}
-    <div class='sc-parameter'>
-      {{template "displayResults" dict "this" . "context" $}}
-    </div>
-  {{end}}
+{{end}}
+{{with $keyValues}}
+  <div class='sc-parameter'>
+    {{template "displayResults" dict "this" . "context" $}}
+  </div>
 {{end}}
 <!-- TEMPLATES -->
 {{define "displayResults"}}

@@ -7,7 +7,7 @@ categories: ["Shortcode"]
 # Description
 ---
 
-Le shortcode **parameter** permet d'afficher un paramètre de la configuration du site suivant son type.
+Le shortcode **parameter** permet d'afficher un paramètre du site suivant son type.
 
 | Type | Affichage |
 | ---- | --------- |
@@ -16,8 +16,8 @@ Le shortcode **parameter** permet d'afficher un paramètre de la configuration d
 | String | Texte |
 
 Le paramètre à afficher peut être déclaré de deux manières différentes:
-* Paramètres standard du site (variables [.Site.Params](https://gohugo.io/variables/site/#the-siteparams-variable)), en utilisant **uniquement le paramètre positionnel** du shortcode.
-* [Fichier de données spécifique du site](https://gohugo.io/templates/data-templates/), en utilisant **uniquement le paramètre nommé** du shortcode.
+* Paramètres standard du site (variables [.Site.Params](https://gohugo.io/variables/site/#the-siteparams-variable)), en utilisant **le paramètre positionnel** du shortcode.
+* [Fichier de données spécifique du site](https://gohugo.io/templates/data-templates/), en utilisant **le paramètre nommé** du shortcode.
 
 {{< alert
     type="warning"
@@ -31,7 +31,11 @@ Le paramètre à afficher est interprété en markdown et converti en conséquen
 | Nom | Type(nommé/positionnel) | Description |
 | --- | ----------------------- | ----------- |
 | | positionnel | Chemin du paramètre standard du site à afficher. |
-| path | nommé | Chemin du paramètre spécifique à afficher. |
+| path | nommé |{{< md >}}
+Chemin du paramètre spécifique à afficher.  
+*NB: Le paramètre path est prépondérant par rapport au paramètre i18n.*
+{{< /md >}}|
+| i18n | nommé | Clé du paramètre i18n à afficher. |
 
 # Exemples
 ---
@@ -88,4 +92,13 @@ Le paramètre à afficher est interprété en markdown et converti en conséquen
 ```
 {{< /md >}}|{{< parameter
     path="themeParams.navbar.shortcuts.1_info"
+/>}}|
+|{{< md >}}
+```
+{{</* parameter
+    i18n="homepage_title"
+/*/>}}
+```
+{{< /md >}}|{{< parameter
+    i18n="homepage_title"
 />}}|
