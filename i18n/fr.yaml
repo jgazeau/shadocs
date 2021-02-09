@@ -37,15 +37,19 @@
 - id: 6_backtotop_keys_wording
   translation: "Maj,↑"
 - id: 6_backtotop_wording
-  translation: "Retour en haut de la page"
+  translation: "Aller en haut de la page"
 - id: 7_gotobottom_keys_wording
   translation: "Maj,↓"
 - id: 7_gotobottom_wording
-  translation: "Aller tout en bas de la page"
+  translation: "Aller en bas de la page"
 - id: 8_print_keys_wording
   translation: "Maj,p"
 - id: 8_print_wording
   translation: "Imprimer la page courante"
+- id: 9_closemodals_keys_wording
+  translation: "Echap"
+- id: 9_closemodals_wording
+  translation: "Fermer les fenêtres modales"
 - id: shortcode_collapsible
   translation: "Développer/Réduire"
 - id: no_data

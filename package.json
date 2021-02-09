@@ -1,0 +1,42 @@
+{
+  "name": "shadocs",
+  "version": "0.0.2",
+  "description": "Shadocs Hugo theme",
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "cypress": "^6.6.0",
+    "start-server-and-test": "^1.12.0"
+  },
+  "config": {
+    "HUGO_BIN": "hugo",
+    "HUGO_PORT": 1313
+  },
+  "scripts": {
+    "start": "cross-env HUGO_PORT=${npm_package_config_HUGO_PORT} HUGO_BIN=${npm_package_config_HUGO_BIN} npm run start:child",
+    "start:child": "cross-env-shell \"${HUGO_BIN} -s exampleSite serve --port ${HUGO_PORT} --disableLiveReload\"",
+    "cypress:info": "cypress info",
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run",
+    "cypress:run:chrome": "cypress run --headless --browser chrome",
+    "cypress:run:firefox": "cypress run --headless --browser firefox",
+    "cypress:run:edge": "cypress run --headless --browser edge",
+    "cy:open": "cross-env-shell HUGO_PORT=${npm_package_config_HUGO_PORT} \"start-server-and-test ${HUGO_PORT} cypress:open\"",
+    "cy:run": "cross-env-shell HUGO_PORT=${npm_package_config_HUGO_PORT} \"start-server-and-test ${HUGO_PORT} cypress:run\"",
+    "cy:run:chrome": "cross-env HUGO_PORT=${npm_package_config_HUGO_PORT} npm run cy:run:chrome:child",
+    "cy:run:chrome:child": "cross-env-shell \"start-server-and-test ${HUGO_PORT} 'cypress:run:chrome'\"",
+    "cy:run:firefox": "cross-env HUGO_PORT=${npm_package_config_HUGO_PORT} npm run cy:run:firefox:child",
+    "cy:run:firefox:child": "cross-env-shell \"start-server-and-test ${HUGO_PORT} cypress:run:firefox\"",
+    "cy:run:edge": "cross-env HUGO_PORT=${npm_package_config_HUGO_PORT} npm run cy:run:edge:child",
+    "cy:run:edge:child": "cross-env-shell \"start-server-and-test ${HUGO_PORT} cypress:run:edge\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgazeau/shadocs.git"
+  },
+  "author": "jgazeau",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jgazeau/shadocs/issues"
+  },
+  "homepage": "https://github.com/jgazeau/shadocs"
+}

@@ -5,7 +5,8 @@ import {
   getScrollMiddleOffset,
   getScrollOffset,
   manageClickCollapsibleSidebar,
-  manageDefaultCollapsibleSidebar
+  manageDefaultCollapsibleSidebar,
+  toggleSidebarEntry
 } from './modules/helpers.min.js'
 import {
   overlayOptions
@@ -22,11 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
   let iie = document.getElementsByClassName('is-icon-expandable');
   for (let i = 0; i < iie.length; i++) {
     iie[i].addEventListener('click', function(e) {
-      let entriesTitle = getFirstAncestorByClass(this, 'is-entries-expandable');
-      entriesTitle.classList.toggle('is-entries-shrinked');
-      entriesTitle.classList.toggle('is-entries-expanded');
-      this.classList.toggle('is-icon-shrinked');
-      this.classList.toggle('is-icon-expanded');
+      toggleSidebarEntry(this);
     });
   };
   //Manage hover function for sidebar entries when collapsed

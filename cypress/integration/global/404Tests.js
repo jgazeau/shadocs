@@ -1,0 +1,15 @@
+describe('for: 404Tests', () => {
+  beforeEach(() => {
+    cy.visit(Cypress.env('404_URL'))
+  })
+  it('link back to homepage should be displayed', () => {
+    cy.get('#footer404')
+      .should('be.visible')
+  })
+  it('link back to homepage should redirect to homepage', () => {
+    cy.get('#footer404')
+      .click()
+    cy.location('pathname')
+      .should('eq', Cypress.env('HOMEPAGE_URL'))
+  })
+})

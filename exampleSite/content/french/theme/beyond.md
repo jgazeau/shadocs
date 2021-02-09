@@ -18,11 +18,9 @@ categories: ["Thème"]
 ## Idées de nouvelles fonctionnalités
 * Dark mode
 * Barre de navigation paramétrable
-* Page HTML téléchargeable en pdf
 
 ## Shortcodes
 * Extrait de code avec onglets language
 
 ## Optimisations techniques du site
 * Utilisation de purgeCSS en PostCSS
-* Tests avant releases

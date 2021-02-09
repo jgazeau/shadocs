@@ -1,4 +1,5 @@
 import {
+  closeModals,
   isFocusable
 } from './modules/helpers.min.js'
 
@@ -7,12 +8,14 @@ import {
 // Function to display info modal
 window.scShowInfo = scShowInfo;
 function scShowInfo() {
+  closeModals();
   document.getElementById('navbarInfo').classList.toggle('is-hidden', false);
   document.getElementById('search').blur();
 }
 // Function to display shortcuts modal
 window.scShowShortcuts = scShowShortcuts;
 function scShowShortcuts() {
+  closeModals();
   document.getElementById('navbarShortcuts').classList.toggle('is-hidden', false);
   document.getElementById('search').blur();
 }
@@ -24,29 +27,40 @@ function scGoHome() {
 // Function to focus on search function
 window.scGoSearch = scGoSearch;
 function scGoSearch() {
-  if (isFocusable(document.getElementById('searchInput'))) {
-    document.getElementById('search').focus();
+  closeModals();
+  let searchInput = document.getElementById('search');
+  if (isFocusable(searchInput)) {
+    searchInput.focus();
   }
 }
 // Function to toggle the sidebar
 window.scToggleSidebar = scToggleSidebar;
 function scToggleSidebar() {
+  closeModals();
   document.getElementById('sidebarCollapse').click();
 }
 // Function to back to top of the current page
 window.scBackToTop = scBackToTop;
 function scBackToTop() {
+  closeModals();
   let cc = document.getElementById('contentContainer');
   cc.scrollTop = 0;
 }
 // Function to go to the bottom of the current page
 window.scGoToBottom = scGoToBottom;
 function scGoToBottom() {
+  closeModals();
   let cc = document.getElementById('contentContainer');
   cc.scrollTop = cc.scrollHeight;
 }
 // Function to print the current page
 window.scPrint = scPrint;
 function scPrint() {
+  closeModals();
   document.getElementById('printButton').click();
+}
+// Function to close all modals
+window.scCloseModals = scCloseModals;
+function scCloseModals() {
+  closeModals();
 }

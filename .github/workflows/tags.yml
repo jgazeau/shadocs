@@ -40,6 +40,8 @@ jobs:
         run: |
           npm install github-release-notes
           npx gren changelog --generate --override --tags=all
+          npm version ${{steps.check_tag.outputs.tag_name}} --no-git-tag-version
+          git add package.json
           git add ${CHANGELOG_FILE}
           git config --local user.name "GitHub Action"
           git config --local user.email "action@github.com"
