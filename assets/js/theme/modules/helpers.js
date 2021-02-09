@@ -12,6 +12,25 @@ import {
 // VARS //
 let isManualCollapsedSidebar = false;
 // MAIN //
+// Function that manage modals closing
+// If an element is given as input, we only close the modal associated
+export function closeModals(e) {
+  if (e) {
+    closeModal(e);
+  } else {
+    let modals = document.getElementsByClassName('modal-container');
+    for (const modal of modals) {
+      closeModal(modal)
+    }
+  }
+}
+// Function that close a single modal
+function closeModal(modal) {
+  if (modal.id === 'modalContainer') {
+    document.getElementById('modal').innerHTML = "";
+  }
+  modal.classList.toggle('is-hidden', true);
+}
 // Decode Base64 to original data from Hugo (safeJS | base64Encode)
 export function atou(b64) {
   return decodeURIComponent(escape(atob(b64)));
@@ -133,8 +152,8 @@ export function sortByProperties() {
 };
 // Check if an element is focusable
 export function isFocusable(e) {
-  const x = e.getBoundingClientRect().left;
-  const y = e.getBoundingClientRect().top;
+  const x = e.getBoundingClientRect().left + (e.getBoundingClientRect().width / 2);
+  const y = e.getBoundingClientRect().top + (e.getBoundingClientRect().height / 2);
   return (
     e === document.elementFromPoint(x,y)
   );
@@ -238,11 +257,33 @@ export function manageDefaultCollapsibleSidebar() {
     toggleSidebar(true);
   };
 };
+// Function to disable animation on scroll
 export function disableSmoothScroll() {
   let cc = document.getElementById('contentContainer');
   cc.classList.toggle('is-scroll-smooth', false);
 }
+// Function to enable smooth animation on scroll
 export function enableSmoothScroll() {
   let cc = document.getElementById('contentContainer');
   cc.classList.toggle('is-scroll-smooth', true);
 }
+// Function to toggle the sidebar entry at desired state
+// - force (true to shrink entry, false to expand entry)
+export function toggleSidebarEntry(e, force) {
+  if (typeof force === 'undefined') {
+    force = e.classList.contains('is-icon-expanded');
+  }
+  let entriesTitle = getFirstAncestorByClass(e, 'is-entries-expandable');
+  entriesTitle.classList.toggle('is-entries-shrinked', force);
+  entriesTitle.classList.toggle('is-entries-expanded', !force);
+  e.classList.toggle('is-icon-shrinked', force);
+  e.classList.toggle('is-icon-expanded', !force);
+};
+// Function to toggle the sidebar entries at desired state
+// - force (true to shrink all entries, false to expand all entries)
+export function toggleSidebarEntries(force) {
+  let iie = document.getElementsByClassName('is-icon-expandable');
+  for (let i = 0; i < iie.length; i++) {
+    toggleSidebarEntry(iie[i], force);
+  };
+};

@@ -1,4 +1,4 @@
-<div class='dropdown is-right'>
+<div id='tagsSelectorContainer' class='dropdown is-right'>
   <div class='dropdown-trigger'>
     <button id='tagsSelector' class='button navbar-item-standard' aria-haspopup='true' aria-controls='dropdown-menu'>
       <span class='icon'>
@@ -6,7 +6,7 @@
       </span>
     </button>
   </div>
-  <div class='dropdown-menu' id='dropdown-menu' role='menu'>
+  <div class='dropdown-menu' id='dropdown-menu-tags' role='menu'>
     <div class='dropdown-content is-paddingless'>
       {{range $taxonomyname, $taxonomy := .Site.Taxonomies}}
         {{if gt (len $taxonomy) 0}}

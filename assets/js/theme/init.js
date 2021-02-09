@@ -1,5 +1,6 @@
 import {
   addElementToModal,
+  closeModals,
   displayModal,
   getFirstAncestorByClass,
   isPreCopyToEnable,
@@ -41,10 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
   // Manage modals closing
   document.addEventListener('click', function(e) {
     if (e.target.classList.contains('modal-container')) {
-      if (e.target.id === 'modalContainer') {
-        document.getElementById('modal').innerHTML = "";
-      }
-      e.target.classList.toggle('is-hidden', true);
+      closeModals(e.target);
     }
   });
   // Manage copy for blocks code
@@ -88,13 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
         displayModal();
       });
     };
-  };
-  // Manage collapsibles in content
-  let c = document.getElementsByClassName('sc-collapsible-header');
-  for (let i = 0; i < c.length; i++) {
-    c[i].addEventListener('click', function(e) {
-      this.classList.toggle('sc-uncollapsed');
-    });
   };
   // Manage tabs in content
   let tt = document.getElementsByClassName('tabs-trigger');

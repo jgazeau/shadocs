@@ -120,6 +120,10 @@ const themeCommonOptions = {
 Titre du bouton de lancement de l'intro.  
 *NB: Si non renseigné, le titre est un texte par défaut défini par le thème.*
 {{< /md >}}|
+| id | nommé |{{< md >}}
+Identifiant donné à l'élément HTML du bouton de lancement de l'intro.  
+*NB: Si non renseigné, l'identifiant est généré par défaut par le thème et est incrémenté à chaque nouveau shortcode intro défini dans la page (intro-X).*
+{{< /md >}}|
 
 # Exemples
 ---
@@ -130,6 +134,7 @@ Titre du bouton de lancement de l'intro.
 ```
 {{</* intro
   introtitle="Je suis une intro"
+  id="introTest"
 */>}}
 {
   "showBullets": false,
@@ -178,6 +183,7 @@ Titre du bouton de lancement de l'intro.
 ```
 {{< /md >}}|{{< intro
   introtitle="Je suis une intro"
+  id="introTest"
 >}}
 {
   "showBullets": false,

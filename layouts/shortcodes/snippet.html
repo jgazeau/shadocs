@@ -8,11 +8,17 @@
 {{$caption := .Get "caption"}}
 {{$codelang := .Get "codelang"}}
 {{$codeparam := .Get "codeparam"}}
+{{$snippetHtmlCodeHead := "<div class='sc-snippet-container'>" | safeHTML}}
+{{$snippetHtmlCodeEnd := "</div>" | safeHTML}}
 {{with .Get "file"}}
   {{if eq ($.Get "type") "md"}}
+    {{$snippetHtmlCodeHead}}
     {{readFile . | $.Page.RenderString $optMd}}
+    {{$snippetHtmlCodeEnd}}
   {{else if eq ($.Get "type") "plaintext"}}
-    <p class='sc-snippet-plaintext'>{{readFile . | safeHTML}}</p>
+    {{$snippetHtmlCodeHead}}
+    <div class='sc-snippet-plaintext'>{{readFile . | safeHTML}}</div>
+    {{$snippetHtmlCodeEnd}}
   {{else}}
     {{$content = (readFile .)}}
   {{end}}
@@ -22,6 +28,7 @@
   {{end}}
 {{end}}
 {{with $content}}
+  {{$snippetHtmlCodeHead}}
   {{with $caption}}
     <div class='sc-snippet'>
       <div class='sc-snippet-caption'>{{$caption}}</div>
@@ -30,4 +37,5 @@
   {{else}}
     {{printf "%s%s {%s}\n%s\n%s\n" "~~~" $codelang $codeparam $content "~~~" | $.Page.RenderString $optMd}}
   {{end}}
+  {{$snippetHtmlCodeEnd}}
 {{end}}

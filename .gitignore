@@ -4,6 +4,9 @@
 exampleSite/public
 exampleSite/resources/_gen/
 
-# Ignore npm files during Tag workflow
+# Ignore npm files
 node_modules/
-package-lock.json
+
+# Cypress files to ignore
+/cypress/downloads/
+debug.log

@@ -6,6 +6,7 @@ categories: ["Theme"]
 
 {{< intro
   introtitle="Theme onboarding"
+  id="introHome"
 >}}
 {
   "onexit": "toggleNavbarMenu(false);manageDefaultCollapsibleSidebar();",

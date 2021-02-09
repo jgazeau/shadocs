@@ -1,4 +1,4 @@
-<div class='dropdown is-right'>
+<div id='langsSelectorContainer' class='dropdown is-right'>
   <div class='dropdown-trigger'>
     <button id='langsSelector' class='button navbar-item-standard' aria-haspopup='true' aria-controls='dropdown-menu'>
       <span class='icon'>
@@ -6,7 +6,7 @@
       </span>
     </button>
   </div>
-  <div class='dropdown-menu' id='dropdown-menu' role='menu'>
+  <div class='dropdown-menu' id='dropdown-menu-langs' role='menu'>
     <div class='dropdown-content is-paddingless'>
       {{range $.Site.Home.AllTranslations}}
         {{$.Scratch.Set "translatedLang" .Language.Lang}}

@@ -2,10 +2,10 @@
   dataSource: "prs"
   onlyMilestones: false
   changelogFilename: "CHANGELOG.md"
-  includeMessages: "all"
   ignoreIssuesWith:
     - "help wanted"
   ignoreLabels:
+    - "tags/releases"
     - "duplicate"
     - "wontfix"
   groupBy:
