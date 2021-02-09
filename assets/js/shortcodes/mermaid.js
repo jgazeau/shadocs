@@ -46,7 +46,7 @@ function renderMermaid(md) {
     if (mermaid.mermaidAPI.parse(graphDefinition)) {
       mermaid.mermaidAPI.render(mermaidSvgId, graphDefinition, insertSvg);
       let mermaidRendered = document.getElementById(mermaidSvgId);
-      let svgBlob = new Blob([mermaidRendered.outerHTML], {type:"image/svg+xml;charset=utf-8"});
+      let svgBlob = new Blob([mermaidRendered.outerHTML], {type: 'image/svg+xml;charset=utf-8'});
       URL.revokeObjectURL(exportSvgLink.href);
       exportSvgLink.href = URL.createObjectURL(svgBlob);
       exportSvgLink.download = md.id;

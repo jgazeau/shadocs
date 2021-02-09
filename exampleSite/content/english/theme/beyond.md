@@ -18,11 +18,9 @@ categories: ["Theme"]
 ## Ideas for new features
 * Dark mode
 * Configurable navigation bar
-* HTML page downloadable as pdf
 
 ## Shortcodes
 * Code snippet with language ​​tabs
 
 ## Technical website improvements
 * Use of purgeCSS in PostCSS
-* Tests before releases

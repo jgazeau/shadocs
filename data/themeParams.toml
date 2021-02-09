@@ -44,6 +44,9 @@
   [navbar.shortcuts.8_print]
     keys = ["Shift","p"]
     function = "scPrint"
+  [navbar.shortcuts.9_closemodals]
+    keys = ["Escape"]
+    function = "scCloseModals"
 #
 # List of assets (https://gohugo.io/hugo-pipes/resource-from-template/) to include
 # Managed assets:
@@ -77,6 +80,9 @@
       "js/external/OverlayScrollbars.min.js"
     ]
   [includes.shortcodes.jsModules]
+    collapsible = [
+        "js/shortcodes/collapsible.js"
+      ]
     mermaid = [
         "js/external/mermaid.min.js",
         "js/shortcodes/mermaid.js"

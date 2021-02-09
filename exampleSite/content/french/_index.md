@@ -6,6 +6,7 @@ categories: ["Thème"]
 
 {{< intro
   introtitle="Découvrir le thème"
+  id="introHome"
 >}}
 {
   "onexit": "toggleNavbarMenu(false);manageDefaultCollapsibleSidebar();",

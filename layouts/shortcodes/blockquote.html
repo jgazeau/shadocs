@@ -1,9 +1,9 @@
-<blockquote>
+<blockquote class='sc-blockquote'>
   {{$optMd := dict "markup" "goldmark"}}
   <p>
     {{.Inner | .Page.RenderString $optMd}}
   </p>
   {{with .Get "source"}}
-    <p class='author'><em><strong>~ {{. | $.Page.RenderString $optMd}}</strong></em></p>
+    <p class='sc-blockquote-source'><em><strong>~ {{. | $.Page.RenderString $optMd}}</strong></em></p>
   {{end}}
 </blockquote>
