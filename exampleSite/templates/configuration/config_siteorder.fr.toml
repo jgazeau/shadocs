@@ -1,0 +1,12 @@
+...
+[params]
+  # Ordre du contenu du menu latéral du site (https://gohugo.io/templates/lists/#order-content)
+  siteContentOrder = "weight"
+  siteContentOrder = "date"
+  siteContentOrder = "publishdate"
+  siteContentOrder = "expirationdate"
+  siteContentOrder = "lastmodifieddate"
+  siteContentOrder = "length"
+  siteContentOrder = "title"
+  siteContentOrder = "linktitle"
+...

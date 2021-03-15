@@ -1,4 +1,4 @@
-describe('for: logoTests', () => {
+describe('for: logo', () => {
   beforeEach(() => {
     cy.visit(Cypress.env('SITEMAP_URL'))
   })

@@ -50,10 +50,14 @@
 #
 # List of assets (https://gohugo.io/hugo-pipes/resource-from-template/) to include
 # Managed assets:
-# - jsModules             = [List of javascript modules]
-# - js                    = [List of common javascript files]
+# - sass                  = [List of sass files]
 # - css                   = [List of css files]
-# - shortcodes.javascript = [List of javascript files to includes when the associated shortcode is present in the page content]
+# - js                    = [List of javascript files]
+# - jsModules             = [List of javascript modules]
+# - shortcodes.sass       = [List of sass files to includes when the associated shortcode exist in the page content]
+# - shortcodes.css        = [List of css files to includes when the associated shortcode exist in the page content]
+# - shortcodes.js         = [List of javascript files to includes when the associated shortcode exist in the page content]
+# - shortcodes.jsModules  = [List of javascript module files to includes when the associated shortcode exist in the page content]
 #
 [includes]
   sass = [
@@ -62,6 +66,11 @@
   css = [
       "css/external/fontawesome.all.min.css",
       "css/external/OverlayScrollbars.min.css"
+    ]
+  js = [
+      "js/theme/browserCompatibility.js",
+      "js/external/flexsearch.min.js",
+      "js/external/OverlayScrollbars.min.js"
     ]
   jsModules = [
       "js/theme/modules/const.js",
@@ -73,11 +82,6 @@
       "js/theme/search.js",
       "js/theme/shortcuts.js",
       "js/theme/sidebar.js"
-    ]
-  js = [
-      "js/theme/browserCompatibility.js",
-      "js/external/flexsearch.min.js",
-      "js/external/OverlayScrollbars.min.js"
     ]
   [includes.shortcodes.jsModules]
     collapsible = [

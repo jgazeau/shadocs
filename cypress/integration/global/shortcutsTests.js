@@ -1,6 +1,6 @@
 const testCases = ['desktop','touch']
 for (const testCase of testCases) {
-  describe('for: shortcutsTests' + ' on ' + testCase, () => {
+  describe('for: shortcuts' + ' on ' + testCase, () => {
     beforeEach(() => {
       cy[testCase + 'ShortcutsBeforeEach']()
     })

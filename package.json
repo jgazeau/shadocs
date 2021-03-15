@@ -4,8 +4,8 @@
   "description": "Shadocs Hugo theme",
   "devDependencies": {
     "cross-env": "^7.0.3",
-    "cypress": "^6.6.0",
-    "start-server-and-test": "^1.12.0"
+    "cypress": "^6.8.0",
+    "start-server-and-test": "^1.12.1"
   },
   "config": {
     "HUGO_BIN": "hugo",

@@ -52,37 +52,6 @@ Si un des déclencheurs est défini dans l'étape et que celui-ci est aussi acti
 | hover | Activé si l'appareil permet le survol d'élément (via un dispositif de pointage) |
 | nohover | Activé si l'appareil ne permet pas le survol d'élément (appareils tactiles) |
 
-## Fonctions d'aide javascript
-
-Afin de faciliter l'utilisation de intro.js, des fonctions javascripts sont mises à disposition par le thème et définies dans le fichier **assets/js/theme/modules/helpers.js**.
-
-| Code | Description |
-| ---- | ----------- |
-| toggleNavbarMenu(force); |{{< md >}}
-Fonction qui gère le comportement du menu burger:
-* force
-    * true: le menu burger est developpé
-    * false: le menu burger est réduit
-{{< /md >}}|
-| toggleSidebar(force, noTransition); |{{< md >}}
-Fonction qui gère le comportement du menu latéral:
-* force
-    * true: le menu latéral est developpé
-    * false: le menu latéral est réduit
-* noTransition
-    * true: désactive l'animation de transition du menu
-    * false: active l'animation de transition du menu (comportement par défaut)
-{{< /md >}}|
-| manageDefaultCollapsibleSidebar(); |{{< md >}}
-Fonction qui gère le comportement par défaut du menu latéral:
-* Si la fenêtre est supérieure ou égale à 1024 pixels de large, le menu est développé
-* Si la fenêtre est inférieure à 1024 pixels de large, le menu est réduit
-{{< /md >}}|
-
-{{< alert type="warning" >}}
-La liste fournie est non-exhaustive et présente uniquement les fonctions principales utilisées par le thème dans l'intro de la page d'accueil.
-{{< /alert >}}
-
 ## Options par défaut
 
 {{< snippet

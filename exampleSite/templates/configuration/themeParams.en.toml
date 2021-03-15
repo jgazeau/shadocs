@@ -1,0 +1,121 @@
+#
+# GitHub links displayed in the information modal
+#
+[github]
+  main = "https://github.com/jgazeau/shadocs"
+  download = "https://github.com/jgazeau/shadocs/archive/main.zip"
+  issue = "https://github.com/jgazeau/shadocs/issues"
+  fork = "https://github.com/jgazeau/shadocs/fork"
+#
+# Miscellaneous sidebar settings
+#
+[sidebar]
+  homeSectionIconDefault = "fas fa-home"
+  firstSectionIconDefault = "fas fa-ban"
+  nestedSectionIconDefault = "fas fa-level-up-alt fa-rotate-90 fa-xs"
+#
+# Keyboard shortcuts list of the theme
+# For each shortcut following keys must be sets:
+# - keys     = [Keyboard shortcuts table] (https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values)
+# - function = "Javascript function name to call by the shortcut"
+#
+[navbar]
+  [navbar.shortcuts.1_info]
+    keys = ["Shift","i"]
+    function = "scShowInfo"
+  [navbar.shortcuts.2_shortcuts]
+    keys = ["Shift","k"]
+    function = "scShowShortcuts"
+  [navbar.shortcuts.3_home]
+    keys = ["Shift","h"]
+    function = "scGoHome"
+  [navbar.shortcuts.4_search]
+    keys = ["Shift","f"]
+    function = "scGoSearch"
+  [navbar.shortcuts.5_togglesidebar]
+    keys = ["Shift","m"]
+    function = "scToggleSidebar"
+  [navbar.shortcuts.6_backtotop]
+    keys = ["Shift","ArrowUp"]
+    function = "scBackToTop"
+  [navbar.shortcuts.7_gotobottom]
+    keys = ["Shift","ArrowDown"]
+    function = "scGoToBottom"
+#
+# Assets list (https://gohugo.io/hugo-pipes/resource-from-template/) to include
+# Les assets gérés:
+# Managed assets:
+# - sass                  = [List of SASS files]
+# - css                   = [List of CSS files]
+# - js                    = [List of javascript files]
+# - jsModules             = [List of javascript modules]
+# - shortcodes.sass       = [List of SASS files to includes when the associated shortcode exist in the page content]
+# - shortcodes.css        = [List of CSS files to includes when the associated shortcode exist in the page content]
+# - shortcodes.js         = [List of javascript files to includes when the associated shortcode exist in the page content]
+# - shortcodes.jsModules  = [List of javascript module files to includes when the associated shortcode exist in the page content]
+#
+[includes]
+  sass = [
+      "sass/main.sass"
+    ]
+  css = [
+      "css/external/fontawesome.all.min.css",
+      "css/external/OverlayScrollbars.min.css"
+    ]
+  js = [
+      "js/theme/browserCompatibility.js",
+      "js/external/flexsearch.min.js",
+      "js/external/OverlayScrollbars.min.js"
+    ]
+  jsModules = [
+      "js/theme/modules/const.js",
+      "js/theme/modules/helpers.js",
+      "js/theme/modules/helpersGlobal.js",
+      "js/theme/init.js",
+      "js/theme/navbar.js",
+      "js/theme/print.js",
+      "js/theme/search.js",
+      "js/theme/shortcuts.js",
+      "js/theme/sidebar.js"
+    ]
+  [includes.shortcodes.jsModules]
+    collapsible = [
+        "js/shortcodes/collapsible.js"
+      ]
+    mermaid = [
+        "js/external/mermaid.min.js",
+        "js/shortcodes/mermaid.js"
+      ]
+    intro = [
+        "js/external/intro.min.js",
+        "js/shortcodes/intro.js"
+      ]
+    treeview = [
+        "js/shortcodes/treeview.js"
+      ]
+#
+# Miscellaneous shortcodes parameters
+#
+[shortcodes]
+  [shortcodes.treeview]
+    [shortcodes.treeview.kinds]
+      default     = "fas fa-exclamation-circle"
+      defaultDir  = "fas fa-folder"
+      defaultFile = "fas fa-file"
+      home        = "fas fa-home"
+      page        = "fas fa-file-alt"
+      section     = "fas fa-list-alt"
+      taxonomy    = "fas fa-tags"
+      term        = "fas fa-tag"
+      dir         = "fas fa-folder"
+      archive     = "fas fa-file-archive"
+      file        = "fas fa-file"
+      image       = "fas fa-file-image"
+      video       = "fas fa-file-video"
+      script      = "fas fa-file-code"
+      dockerfile  = "fab fa-docker"
+      pdf         = "fas fa-file-pdf"
+      powerpoint  = "fas fa-file-powerpoint"
+      excel       = "fas fa-file-excel"
+      csv         = "fas fa-file-csv"
+      word        = "fas fa-file-word"

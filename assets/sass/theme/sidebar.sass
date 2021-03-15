@@ -50,9 +50,11 @@
   min-width: $sidebar-width-collapsed
   transition: width 0.2s ease
   max-width: 100vw
+#sidebarContainer,
+.menu
+  font-size: $sidebar-font-size
 #sidebarContainer
   +static-size-height(calc(100vh - #{$navbar-height}))
-  font-size: $content-font-size
   width: $sidebar-width
   z-index: 20
   &.is-sidebar-collapsed

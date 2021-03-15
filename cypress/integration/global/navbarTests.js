@@ -1,6 +1,6 @@
 const testCases = ['desktop','touch']
 for (const testCase of testCases) {
-  describe('for: navbarTests' + ' on ' + testCase, () => {
+  describe('for: navbar' + ' on ' + testCase, () => {
     beforeEach(() => {
       cy[testCase + 'NavbarBeforeEach']()
     })
