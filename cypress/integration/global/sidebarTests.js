@@ -1,4 +1,4 @@
-describe('for: sidebarTests', () => {
+describe('for: sidebar', () => {
   describe('when onload', () => {
     beforeEach(() => {
       cy.visit(Cypress.env('HOMEPAGE_URL'))
@@ -36,16 +36,20 @@ describe('for: sidebarTests', () => {
         .should('have.class', 'is-sidebar-collapsed')
       })
     it('expandable entries should expand', () => {
-      cy.toggleSidebarEntries(true)
-      cy.get('.is-icon-expandable')
-        .click({multiple:true})
-        .should('have.class', 'is-icon-expanded')
-    })
-    it('expandable entries should shrink', () => {
       cy.toggleSidebarEntries(false)
       cy.get('.is-icon-expandable')
-        .click({multiple:true})
-        .should('have.class', 'is-icon-shrinked')
+        .each(($elem) => {
+          cy.scrollAndClickElem($elem)
+            .should('have.class', 'is-icon-expanded')
+        })
+    })
+    it('expandable entries should shrink', () => {
+      cy.toggleSidebarEntries(true)
+      cy.get('.is-icon-expandable')
+        .each(($elem) => {
+          cy.scrollAndClickElem($elem)
+            .should('have.class', 'is-icon-shrinked')
+        })
     })
     it('sidebar should collapse when resized from desktop to touch', () => {
       cy.viewportDesktop('min')

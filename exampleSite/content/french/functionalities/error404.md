@@ -1,9 +1,17 @@
 ---
-weight: 3080
+weight: 3100
 title: "404"
 description: "Comment gérér la page 404 ?"
 titleIcon: "far fa-times-circle"
 categories: ["Fonctionnalités"]
 ---
 
+# Description
 ---
+
+Par défaut une page d'erreur 404 est fournie par le thème, mais il est possible d'en définir une spécifique en suivant la [documentation Hugo](https://gohugo.io/templates/404/).
+
+# Page 404 du thème
+---
+
+* [404](/404.html)

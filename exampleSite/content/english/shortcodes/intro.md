@@ -52,37 +52,6 @@ If one of the triggers is defined in the step and is also active on the website,
 | hover | Enabled if device allows item hover (by means of pointing devices) |
 | nohover | Enabled if the device does not allow item hovering (touch devices) |
 
-## JavaScript helper functions
-
-In order to ease the use of intro.js, some javascript functions are available in the theme and defined in the file **assets/js/theme/modules/helpers.js**.
-
-| Code | Description |
-| ---- | ----------- |
-| toggleNavbarMenu(force); |{{< md >}}
-Function that manages the burger menu behavior:
-* force
-    * true: the burger menu is uncollapsed
-    * false: the burger menu is collapsed
-{{< /md >}}|
-| toggleSidebar(force, noTransition); |{{< md >}}
-Function that manages the sidebar behavior:
-* force
-    * true: the sidebar is uncollapsed
-    * false: the sidebar is collapsed
-* noTransition
-    * true: turn off menu transition animation
-    * false: turn on menu transition animation (default behavior)
-{{< /md >}}|
-| manageDefaultCollapsibleSidebar(); |{{< md >}}
-Function that manages the default behavior of the sidebar:
-* If the window is greater than or equal to 1024 pixels wide, sidebar is uncollapsed
-* If the window is less than 1024 pixels wide, sidebar is collapsed
-{{< /md >}}|
-
-{{< alert type="warning" >}}
-The provided list is non-exhaustive and only describe the main functions used by the theme in the home page intro.
-{{< /alert >}}
-
 ## Default options
 
 {{< snippet

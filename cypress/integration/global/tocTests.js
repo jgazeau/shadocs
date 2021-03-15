@@ -1,6 +1,6 @@
 describe('for: table of content', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('THEME_URL'))
+    cy.visit(Cypress.env('FUNC_TOC_URL'))
   })
   it('toc should be displayed on desktop', () => {
     cy.viewportDesktop()
@@ -32,8 +32,9 @@ describe('for: table of content', () => {
     cy.get('#tocContainer')
       .should('not.exist')
   })
-  it('toc should contain all titles and they should be visible', () => {
-    cy.get('h1')
+  it('toc should contain all titles types and they should be visible', () => {
+    cy.get('#content')
+      .children('h1,h2,h3,h4,h5,h6')
       .each(($title) => {
         cy.get('#tocContainer a[href="#' + $title[0].id + '"]')
           .should('be.visible')

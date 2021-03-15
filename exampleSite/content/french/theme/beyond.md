@@ -13,11 +13,10 @@ categories: ["Thème"]
 ---
 
 ## Contenu du site
-* Enrichissement de la documentation
+* Enrichissement de la documentation constant
 
 ## Idées de nouvelles fonctionnalités
 * Dark mode
-* Barre de navigation paramétrable
 
 ## Shortcodes
 * Extrait de code avec onglets language
