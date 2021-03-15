@@ -1,0 +1,80 @@
+[params]
+  # Chemin du fichier du logo du site
+  logo             = "images/logo.png"
+  # Chemin du fichier de l'image affichée en cas d'erreur 404
+  image404         = "images/404.gif"
+  # Chemin du fichier du favicon du site
+  favicon          = "images/favicon.png"
+  # Ordre du contenu du site (https://gohugo.io/templates/lists/#order-content)
+  siteContentOrder = "weight"
+  # Liste des raccourcis clavier
+  # Pour chaque raccourci il faut renseigner les clés suivantes:
+  # - keys     = [Table des touches de clavier du raccourci](https://developer.mozilla.org/fr/docs/Web/API/KeyboardEvent/key/Key_Values)
+  # - function = "Nom de la fonction javascript à appeler par le raccourci"
+  [params.navbar.shortcuts]
+    # Définition du raccourci d'exemple
+    [params.navbar.shortcuts.example]
+      keys     = ["Shift","1"]
+      function = "scExample"
+  # Liste des taxonomies
+  # Pour chaque taxonomie il est possible de renseigner les clés suivantes:
+  # - icon = "Classes fontawesome associées à la taxonomie"
+  [params.taxonomies]
+    [params.taxonomies.categories]
+      icon = "fas fa-th"
+  # Liste des assets (https://gohugo.io/hugo-pipes/resource-from-template/) à inclures
+  # Les assets gérés:
+  # - sass                  = [Liste des fichiers SASS]
+  # - css                   = [Liste des fichiers CSS]
+  # - js                    = [Liste des fichiers javascript]
+  # - jsModules             = [Liste des fichiers modules javascript]
+  # - shortcodes.sass       = [Liste des fichiers SASS à inclure quand le shortcode associé est présent dans le contenu de la page]
+  # - shortcodes.css        = [Liste des fichiers CSS à inclure quand le shortcode associé est présent dans le contenu de la page]
+  # - shortcodes.js         = [Liste des fichiers javascript à inclure quand le shortcode associé est présent dans le contenu de la page]
+  # - shortcodes.jsModules  = [Liste des fichiers modules javascript à inclure quand le shortcode associé est présent dans le contenu de la page]
+  #
+  [params.includes]
+    sass = [
+      "sass/file1.sass",
+      "sass/fileX.sass"
+    ]
+    css = [
+      "css/file1.css",
+      "css/fileX.css"
+    ]
+    js = [
+      "js/file1.js",
+      "js/fileX.js"
+    ]
+    jsModules = [
+      "js/modules/file1.js",
+      "js/modules/fileX.js"
+    ]
+  [params.includes.shortcodes.sass]
+    shortcode1 = [
+        "sass/shortcodes/shortcode1.sass"
+      ]
+    shortcodeX = [
+        "sass/shortcodes/shortcodeX.sass"
+      ]
+  [params.includes.shortcodes.css]
+    shortcode1 = [
+        "css/shortcodes/shortcode1.css"
+      ]
+    shortcodeX = [
+        "css/shortcodes/shortcodeX.css"
+      ]
+  [params.includes.shortcodes.js]
+    shortcode1 = [
+        "js/shortcodes/shortcode1.js"
+      ]
+    shortcodeX = [
+        "js/shortcodes/shortcodeX.js"
+      ]
+  [params.includes.shortcodes.jsModules]
+    shortcode1 = [
+        "js/shortcodes/modules/shortcode1.js"
+      ]
+    shortcodeX = [
+        "js/shortcodes/modules/shortcodeX.js"
+      ]

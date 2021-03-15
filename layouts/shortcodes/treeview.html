@@ -22,11 +22,11 @@
   {{end}}
 {{end}}
 <div class='sc-treeview'>
-  {{with $pages}}
-    {{template "pathList" dict "this" . "context" $}}
+  {{with .Inner}}
+    {{template "innerList" dict "this" (. | transform.Unmarshal) "context" $}}
   {{else}}
-    {{with .Inner}}
-      {{template "innerList" dict "this" (. | transform.Unmarshal) "context" $}}
+    {{with $pages}}
+      {{template "pathList" dict "this" . "context" $}}
     {{else}}
       <div class='sc-alert sc-alert-warning'>
         {{i18n "no_data"}}

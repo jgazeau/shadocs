@@ -22,12 +22,12 @@
   {{range .}}{{$jsModulesFiles = $jsModulesFiles | append .}}{{end}}
 {{end}}
 {{range $key, $value := .Site.Data.themeParams.includes.shortcodes.jsModules}}
-  {{with len (findRE (printf "%s%s%s" "{{(<|%)(.|\n|\r)*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
+  {{with len (findRE (printf "%s%s%s" "{{(<|%)[[:space:]]*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
     {{range $value}}{{$jsModulesFiles = $jsModulesFiles | append .}}{{end}}
   {{end}}
 {{end}}
 {{range $key, $value := .Site.Params.includes.shortcodes.jsModules}}
-  {{with len (findRE (printf "%s%s%s" "{{(<|%)(.|\n|\r)*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
+  {{with len (findRE (printf "%s%s%s" "{{(<|%)[[:space:]]*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
     {{range $value}}{{$jsModulesFiles = $jsModulesFiles | append .}}{{end}}
   {{end}}
 {{end}}
@@ -46,12 +46,12 @@
   {{range .}}{{$jsFiles = $jsFiles | append .}}{{end}}
 {{end}}
 {{range $key, $value := .Site.Data.themeParams.includes.shortcodes.js}}
-  {{with len (findRE (printf "%s%s%s" "{{(<|%)(.|\n|\r)*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
+  {{with len (findRE (printf "%s%s%s" "{{(<|%)[[:space:]]*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
     {{range $value}}{{$jsFiles = $jsFiles | append .}}{{end}}
   {{end}}
 {{end}}
 {{range $key, $value := .Site.Params.includes.shortcodes.js}}
-  {{with len (findRE (printf "%s%s%s" "{{(<|%)(.|\n|\r)*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
+  {{with len (findRE (printf "%s%s%s" "{{(<|%)[[:space:]]*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
     {{range $value}}{{$jsFiles = $jsFiles | append .}}{{end}}
   {{end}}
 {{end}}

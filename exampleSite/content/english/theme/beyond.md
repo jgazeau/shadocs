@@ -13,11 +13,10 @@ categories: ["Theme"]
 ---
 
 ## Website content
-* Documentation enhancement
+* Continuous documentation enhancement
 
 ## Ideas for new features
 * Dark mode
-* Configurable navigation bar
 
 ## Shortcodes
 * Code snippet with language ​​tabs

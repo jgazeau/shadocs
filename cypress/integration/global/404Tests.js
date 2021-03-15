@@ -1,4 +1,4 @@
-describe('for: 404Tests', () => {
+describe('for: 404 page', () => {
   beforeEach(() => {
     cy.visit(Cypress.env('404_URL'))
   })
