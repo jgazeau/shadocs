@@ -44,7 +44,10 @@
   [navbar.shortcuts.8_print]
     keys = ["Shift","p"]
     function = "scPrint"
-  [navbar.shortcuts.9_closemodals]
+  [navbar.shortcuts.9_qrcode]
+    keys = ["Shift","q"]
+    function = "scQrCode"
+  [navbar.shortcuts.10_closemodals]
     keys = ["Escape"]
     function = "scCloseModals"
 #
@@ -70,7 +73,8 @@
   js = [
       "js/theme/browserCompatibility.js",
       "js/external/flexsearch.min.js",
-      "js/external/OverlayScrollbars.min.js"
+      "js/external/OverlayScrollbars.min.js",
+      "js/external/qrious.min.js"
     ]
   jsModules = [
       "js/theme/modules/const.js",
@@ -79,6 +83,7 @@
       "js/theme/init.js",
       "js/theme/navbar.js",
       "js/theme/print.js",
+      "js/theme/qrcode.js",
       "js/theme/search.js",
       "js/theme/shortcuts.js",
       "js/theme/sidebar.js"

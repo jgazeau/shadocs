@@ -9,13 +9,13 @@ categories: ["Fonctionnalités"]
 # Description
 ---
 
-Dans le thème, il est possible d'imprimer (ou exporter en PDF) une page, afin de diffuser son contenu.
+Dans le thème, il est possible d'imprimer (ou exporter en PDF) la page courante, afin de diffuser son contenu.
 
 # Caractéristiques
 ---
 
-Le thème permet d'imprimer chaque page de contenu suivant les caractéristiques suivantes:
-* l'impression ne contient que le contenu principal de la page:
+Le thème permet d'imprimer une page de contenu suivant les caractéristiques suivantes:
+* l'impression ne contient que le contenu principal de la page courante:
     * le menu latéral n'est pas imprimé
     * la barre de navigation n'est pas imprimée
     * la table des matières n'est pas imprimée

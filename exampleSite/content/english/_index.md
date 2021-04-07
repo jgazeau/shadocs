@@ -49,6 +49,18 @@ categories: ["Theme"]
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleNavbarMenu(true);"
     },{
+      "title": "Print",
+      "intro": "The print function allows to print the current page content.",
+      "element": "#printButton",
+      "position": "left",
+      "onbeforechange": "toggleSidebar(false,true);toggleNavbarMenu(true);"
+    },{
+      "title": "QR code",
+      "intro": "The QR code function allows to display the QR code associated to the current page URL.",
+      "element": "#qrCodeButton",
+      "position": "left",
+      "onbeforechange": "toggleSidebar(false,true);toggleNavbarMenu(true);"
+    },{
       "title": "Multilingual",
       "intro": "The multilingual button provides access to the several translations of the current page.<br><i>NB: This button is only visible if a translation exists for the current page.</i>",
       "element": "#langsSelector",
