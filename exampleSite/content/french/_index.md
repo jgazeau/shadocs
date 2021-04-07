@@ -49,6 +49,18 @@ categories: ["Thème"]
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleNavbarMenu(true);"
     },{
+      "title": "Impression",
+      "intro": "La fonction d'impression permet d'imprimer le contenu de la page courante.",
+      "element": "#printButton",
+      "position": "left",
+      "onbeforechange": "toggleSidebar(false,true);toggleNavbarMenu(true);"
+    },{
+      "title": "QR code",
+      "intro": "La fonction QR code permet de d'afficher le QR code associé à l'URL de la page courante.",
+      "element": "#qrCodeButton",
+      "position": "left",
+      "onbeforechange": "toggleSidebar(false,true);toggleNavbarMenu(true);"
+    },{
       "title": "Multilingue",
       "intro": "Le bouton multilingue permet d'accéder aux différentes traductions de la page courante.<br><i>NB: Ce bouton est visible uniquement si une traduction existe pour la page courante.</i>",
       "element": "#langsSelector",

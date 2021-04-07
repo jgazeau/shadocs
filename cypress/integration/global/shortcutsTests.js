@@ -8,15 +8,13 @@ for (const testCase of testCases) {
       cy.window().its('scShowInfo')
       cy.get('body')
         .type('{shift+i}', {delay:0})
-      cy.get('#navbarInfo')
-        .should('be.visible')
+      cy.scShowInfoResults()
     })
     it('[shift+k] should open shortcuts panel', () => {
       cy.window().its('scShowShortcuts')
       cy.get('body')
         .type('{shift+k}', {delay:0})
-      cy.get('#navbarShortcuts')
-        .should('be.visible')
+      cy.scShowShortcutsResults()
     })
     it('[shift+h] should redirect to homepage', () => {
       cy.window().its('scGoHome')
@@ -75,16 +73,10 @@ for (const testCase of testCases) {
     })
     it('[shift+p] should open print preview', () => {
       cy.window().its('scPrint')
-      cy.window()
-        .then((win) => {
-          cy.stub(win, 'print')
-        })
+      cy.scPrintStub()
       cy.get('body')
         .type('{shift+p}', {delay:0})
-      cy.window()
-        .then((win) => {
-          expect(win.print).to.be.calledOnce
-        })
+      cy.scPrintResults()
     })
     it('[escape] should close modal', () => {
       cy.window().its('scCloseModals')
@@ -93,6 +85,12 @@ for (const testCase of testCases) {
         .type('{esc}')
       cy.get('#modalContainer')
         .should('be.not.visible')
+    })
+    it('[shift+q] should open QR code panel', () => {
+      cy.window().its('scQrCode')
+      cy.get('body')
+        .type('{shift+q}', {delay:0})
+      cy.scQrCodeResults()
     })
     it('[shift+1] should open the example panel', () => {
       cy.window().its('scExample')

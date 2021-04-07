@@ -23,3 +23,4 @@ categories: ["Thème"]
 
 ## Optimisations techniques du site
 * Utilisation de purgeCSS en PostCSS
+* Mise à jour automatique des dépendances

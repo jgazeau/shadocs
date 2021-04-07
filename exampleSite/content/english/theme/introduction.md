@@ -24,6 +24,7 @@ categories: ["Theme"]
 | [Overlay Scrollbar](https://kingsora.github.io/OverlayScrollbars/#!overview) | {{< parameter "versions.overlayscrollbar" />}} | css/js |
 | [FlexSearch](https://github.com/nextapps-de/flexsearch) | {{< parameter "versions.flexsearch" />}} | js |
 | [Mermaid](https://mermaid-js.github.io/mermaid/) | {{< parameter "versions.mermaid" />}} | js |
+| [QRious](https://github.com/neocotic/qrious/) | {{< parameter "versions.qrious" />}} | js |
 | [Intro](https://introjs.com/docs/) | {{< parameter "versions.intro" />}} | js |
 
 # Installation
