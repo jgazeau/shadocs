@@ -15,7 +15,7 @@ categories: ["Theme"]
 ## Website content
 * Continuous documentation enhancement
 
-## Ideas for new features
+## New features ideas
 * Dark mode
 
 ## Shortcodes
@@ -23,3 +23,4 @@ categories: ["Theme"]
 
 ## Technical website improvements
 * Use of purgeCSS in PostCSS
+* Automatic dependencies update

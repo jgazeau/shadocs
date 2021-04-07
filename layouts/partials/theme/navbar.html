@@ -21,6 +21,13 @@
           </span>
         </a>
       </div>
+      <div class='navbar-item'>
+        <a id='qrCodeButton' class='button navbar-item-standard'>
+          <span class='icon'>
+            <i class='fas fa-qrcode fa-lg'></i>
+          </span>
+        </a>
+      </div>
       {{range $.Page.Translations}}
         {{if reflect.IsMap .Data.Terms}}
           {{$.Scratch.Add "taxnomyTranslatedCount" (len .Data.Terms)}}
@@ -39,7 +46,7 @@
           {{partial "theme/taxonomy-selector.html" .}}
         </div>
       {{end}}
-      <div class='navbar-item is-hover-hidden'>
+      <div class='navbar-item'>
         <a id='shortcutsInfo' trigger='navbarShortcuts' class='button navbar-item-standard navbar-trigger' title='{{i18n "navbarshortcuts_title"}}'>
           <span class='icon'>
             <i class='fas fa-keyboard fa-lg'></i>

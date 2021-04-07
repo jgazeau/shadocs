@@ -9,7 +9,6 @@
     "ENGLISH_URL_PREFIX"        : "/en",
     "FUNC_TOC_URL"              : "/functionalities/toc/",
     "HOMEPAGE_URL"              : "/",
-    "HOME_INTRO_STEPS"          : 12,
     "NULL_STRING"               : "bnVsbFN0cmluZw==",
     "SEARCH_TEST_INPUT"         : "theme",
     "SC_URL"                    : "/shortcodes/",

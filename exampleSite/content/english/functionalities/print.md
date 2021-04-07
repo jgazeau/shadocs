@@ -9,13 +9,13 @@ categories: ["Functionalities"]
 # Description
 ---
 
-In the theme, it is possible to print (or export as PDF) a page, to share its content.
+In the theme, it is possible to print (or export as PDF) the current page, to share its content.
 
 # Characteristics
 ---
 
 The theme makes it possible to print a page content with the following characteristics:
-* The print only contains the main page content
+* the print only contains the current main page content:
     * sidebar is not printed
     * navigation bar is not printed
     * table of contents is not printed

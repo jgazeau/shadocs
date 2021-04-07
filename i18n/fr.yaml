@@ -46,9 +46,13 @@
   translation: "Maj,p"
 - id: 8_print_wording
   translation: "Imprimer la page courante"
-- id: 9_closemodals_keys_wording
+- id: 9_qrcode_keys_wording
+  translation: "Maj,q"
+- id: 9_qrcode_wording
+  translation: "Obtenir le QR code de la page courante"
+- id: 10_closemodals_keys_wording
   translation: "Echap"
-- id: 9_closemodals_wording
+- id: 10_closemodals_wording
   translation: "Fermer les fenêtres modales"
 - id: shortcode_collapsible
   translation: "Développer/Réduire"

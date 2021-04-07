@@ -59,6 +59,12 @@ function scPrint() {
   closeModals();
   document.getElementById('printButton').click();
 }
+// Function to get current page QR code
+window.scQrCode = scQrCode;
+function scQrCode() {
+  closeModals();
+  document.getElementById('qrCodeButton').click();
+}
 // Function to close all modals
 window.scCloseModals = scCloseModals;
 function scCloseModals() {

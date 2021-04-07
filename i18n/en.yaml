@@ -46,9 +46,13 @@
   translation: "Shift,p"
 - id: 8_print_wording
   translation: "Print current page"
-- id: 9_closemodals_keys_wording
+- id: 9_qrcode_keys_wording
+  translation: "Shift,q"
+- id: 9_qrcode_wording
+  translation: "Get current page QR code"
+- id: 10_closemodals_keys_wording
   translation: "Escape"
-- id: 9_closemodals_wording
+- id: 10_closemodals_wording
   translation: "Close modals"
 - id: shortcode_collapsible
   translation: "Expand/Collapse"
