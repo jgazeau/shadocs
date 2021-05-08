@@ -1,4 +1,5 @@
 ---
+weight: 4060
 title: "{{< mermaid >}}"
 description: "Shortcode {{< mermaid >}}."
 categories: ["Shortcode"]

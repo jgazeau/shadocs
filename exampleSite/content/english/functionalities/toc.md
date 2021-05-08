@@ -1,5 +1,5 @@
 ---
-weight: 3040
+weight: 3180
 title: "Table of contents"
 description: "How to manage table of contents?"
 titleIcon: "fas fa-list-ul"

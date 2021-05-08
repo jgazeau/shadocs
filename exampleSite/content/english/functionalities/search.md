@@ -1,5 +1,5 @@
 ---
-weight: 3060
+weight: 3200
 title: "Search"
 description: "How to manage search?"
 titleIcon: "fas fa-search"

@@ -1,0 +1,232 @@
+[
+  {
+    "name": "flexsearch_js",
+    "localPath": "assets/js/external/flexsearch.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "FlexSearch",
+      "fileName": "flexsearch.bundle.min.js"
+    },
+    "currentVersion": "0.7.2"
+  },
+  {
+    "name": "mermaid_js",
+    "localPath": "assets/js/external/mermaid.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "mermaid",
+      "fileName": "mermaid.min.js"
+    },
+    "currentVersion": "8.12.1"
+  },
+  {
+    "name": "qrious_js",
+    "localPath": "assets/js/external/qrious.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "qrious",
+      "fileName": "qrious.min.js"
+    },
+    "currentVersion": "4.0.2"
+  },
+  {
+    "name": "overlayscrollbars_js",
+    "localPath": "assets/js/external/OverlayScrollbars.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "overlayscrollbars",
+      "fileName": "js/OverlayScrollbars.min.js"
+    },
+    "currentVersion": "1.13.1"
+  },
+  {
+    "name": "overlayscrollbars_css",
+    "localPath": "assets/css/external/OverlayScrollbars.min.css",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "overlayscrollbars",
+      "fileName": "css/OverlayScrollbars.min.css"
+    },
+    "currentVersion": "1.13.1"
+  },
+  {
+    "name": "intro_js",
+    "localPath": "assets/js/external/intro.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "intro.js",
+      "fileName": "intro.min.js"
+    },
+    "currentVersion": "4.2.2"
+  },
+  {
+    "name": "intro_css",
+    "localPath": "assets/css/external/intro.min.css",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "intro.js",
+      "fileName": "introjs.min.css"
+    },
+    "currentVersion": "4.2.2"
+  },
+  {
+    "name": "fa_all",
+    "localPath": "assets/css/external/fontawesome.all.min.css",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "css/all.min.css"
+    },
+    "currentVersion": "5.15.4"
+  },
+  {
+    "name": "fa_brands-400.eot",
+    "localPath": "static/css/webfonts/fa-brands-400.eot",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-brands-400.eot"
+    },
+    "currentVersion": "5.15.4"
+  },
+  {
+    "name": "fa_brands-400.svg",
+    "localPath": "static/css/webfonts/fa-brands-400.svg",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-brands-400.svg"
+    },
+    "currentVersion": "5.15.4"
+  },
+  {
+    "name": "fa_brands-400.ttf",
+    "localPath": "static/css/webfonts/fa-brands-400.ttf",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-brands-400.ttf"
+    },
+    "currentVersion": "5.15.4"
+  },
+  {
+    "name": "fa_brands-400.woff",
+    "localPath": "static/css/webfonts/fa-brands-400.woff",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-brands-400.woff"
+    },
+    "currentVersion": "5.15.4"
+  },
+  {
+    "name": "fa_brands-400.woff2",
+    "localPath": "static/css/webfonts/fa-brands-400.woff2",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-brands-400.woff2"
+    },
+    "currentVersion": "5.15.4"
+  },
+  {
+    "name": "fa_regular-400.eot",
+    "localPath": "static/css/webfonts/fa-regular-400.eot",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-regular-400.eot"
+    },
+    "currentVersion": "5.15.4"
+  },
+  {
+    "name": "fa_regular-400.svg",
+    "localPath": "static/css/webfonts/fa-regular-400.svg",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-regular-400.svg"
+    },
+    "currentVersion": "5.15.4"
+  },
+  {
+    "name": "fa_regular-400.ttf",
+    "localPath": "static/css/webfonts/fa-regular-400.ttf",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-regular-400.ttf"
+    },
+    "currentVersion": "5.15.4"
+  },
+  {
+    "name": "fa_regular-400.woff",
+    "localPath": "static/css/webfonts/fa-regular-400.woff",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-regular-400.woff"
+    },
+    "currentVersion": "5.15.4"
+  },
+  {
+    "name": "fa_regular-400.woff2",
+    "localPath": "static/css/webfonts/fa-regular-400.woff2",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-regular-400.woff2"
+    },
+    "currentVersion": "5.15.4"
+  },
+  {
+    "name": "fa_solid-900.eot",
+    "localPath": "static/css/webfonts/fa-solid-900.eot",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-solid-900.eot"
+    },
+    "currentVersion": "5.15.4"
+  },
+  {
+    "name": "fa_solid-900.svg",
+    "localPath": "static/css/webfonts/fa-solid-900.svg",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-solid-900.svg"
+    },
+    "currentVersion": "5.15.4"
+  },
+  {
+    "name": "fa_solid-900.ttf",
+    "localPath": "static/css/webfonts/fa-solid-900.ttf",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-solid-900.ttf"
+    },
+    "currentVersion": "5.15.4"
+  },
+  {
+    "name": "fa_solid-900.woff",
+    "localPath": "static/css/webfonts/fa-solid-900.woff",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-solid-900.woff"
+    },
+    "currentVersion": "5.15.4"
+  },
+  {
+    "name": "fa_solid-900.woff2",
+    "localPath": "static/css/webfonts/fa-solid-900.woff2",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-solid-900.woff2"
+    },
+    "currentVersion": "5.15.4"
+  }
+]

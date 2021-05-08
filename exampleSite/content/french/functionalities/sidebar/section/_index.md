@@ -1,5 +1,5 @@
 ---
-weight: 20
+weight: 3030
 title: "Section"
 description: "Menu latéral: Section"
 categories: ["Fonctionnalités"]

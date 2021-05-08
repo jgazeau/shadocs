@@ -1,5 +1,5 @@
 ---
-weight: 40
+weight: 3070
 title: "Disabled pages"
 description: "Sidebar: Disabled pages"
 categories: ["Functionalities"]

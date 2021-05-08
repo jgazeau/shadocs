@@ -1,4 +1,5 @@
 ---
+weight: 3040
 title: "Page simple de section"
 description: "Menu latéral: Page simple de section"
 categories: ["Fonctionnalités"]
