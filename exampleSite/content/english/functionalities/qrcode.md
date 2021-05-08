@@ -1,5 +1,5 @@
 ---
-weight: 3100
+weight: 3240
 title: "Page QR code"
 description: "How to manage page QR code?"
 titleIcon: "fas fa-qrcode"

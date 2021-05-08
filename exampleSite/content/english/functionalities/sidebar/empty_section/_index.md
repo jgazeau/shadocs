@@ -1,5 +1,5 @@
 ---
-weight: 10
+weight: 3020
 title: "Empty section"
 description: "Sidebar: Empty section"
 categories: ["Functionalities"]

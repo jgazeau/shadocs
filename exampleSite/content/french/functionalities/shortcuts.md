@@ -1,5 +1,5 @@
 ---
-weight: 3070
+weight: 3210
 title: "Raccourcis"
 description: "Comment gérér les raccourcis clavier ?"
 titleIcon: "fas fa-keyboard"

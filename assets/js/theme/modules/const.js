@@ -13,11 +13,12 @@ export const flexSearchThemeOptions = {
   emptyLineDelimiter: '<span class="search-delimiter">[···]</span><br>'
 }
 export const flexSearchOptions = {
-  encode: "simple",
-  tokenize: "forward",
-  doc: {
+  charset: "latin:simple",
+  tokenize: 'forward',
+  optimize: true,
+  document: {
     id: 'id',
-    field: ['title','content'],
+    index: ['title','content'],
     store: ['title','content','rootTitleIndex','rootTitle','rootTitleIcon','rootTitlePath','rootTitleTitle','permalink','permalinkTitle']
   }
 }

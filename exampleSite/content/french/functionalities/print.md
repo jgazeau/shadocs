@@ -1,5 +1,5 @@
 ---
-weight: 3090
+weight: 3230
 title: "Impression"
 description: "Comment gérér l'impression d'une page ?"
 titleIcon: "fas fa-print"

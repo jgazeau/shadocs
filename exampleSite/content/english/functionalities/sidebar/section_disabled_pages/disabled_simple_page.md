@@ -1,4 +1,5 @@
 ---
+weight: 3080
 title: "Disabled simple page"
 description: "Sidebar: Disabled simple page"
 categories: ["Functionalities"]

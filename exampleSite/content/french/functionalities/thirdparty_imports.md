@@ -1,5 +1,5 @@
 ---
-weight: 3050
+weight: 3190
 title: "Imports tiers"
 description: "Comment gérér l'importation de librairies ou code tiers ?"
 titleIcon: "fas fa-sign-in-alt fa-rotate-90"

@@ -1,5 +1,5 @@
 ---
-weight: 3080
+weight: 3220
 title: "Javascript helpers functions"
 description: "How to use javascript helpers functions?"
 titleIcon: "fab fa-js-square"

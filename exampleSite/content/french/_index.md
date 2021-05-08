@@ -1,4 +1,5 @@
 ---
+weight: 1
 title: "Documentation du thème Shadocs"
 description: "Page d'accueil du thème Shadocs"
 categories: ["Thème"]

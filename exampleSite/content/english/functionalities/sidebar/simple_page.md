@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 3140
 title: "Simple page"
 description: "Sidebar: Simple page"
 categories: ["Functionalities"]

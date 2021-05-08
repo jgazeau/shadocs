@@ -1,5 +1,5 @@
 ---
-weight: 70
+weight: 3150
 title: "Page simple avec icone"
 description: "Menu latéral: Page simple avec icone"
 titleIcon: "fas fa-icons"

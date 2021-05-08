@@ -1,5 +1,5 @@
 ---
-weight: 60
+weight: 3140
 title: "Page simple"
 description: "Menu latéral: Page simple"
 categories: ["Fonctionnalités"]

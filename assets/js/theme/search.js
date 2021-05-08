@@ -18,7 +18,7 @@ import {
   let currentFocus = 0;
   let searchInput = document.getElementById('search');
   let searchList = document.getElementById('searchList');
-  const flexSearch = new FlexSearch(flexSearchOptions);
+  const flexSearch = new FlexSearch.Document(flexSearchOptions);
   // FUNCTIONS //
   // Function to retrieve the input json file search
   function buildIndex(url) {
@@ -27,7 +27,7 @@ import {
     };
     fetch(url + 'index.json')
       .then((response) => response.json())
-      .then((data) => flexSearch.add(data))
+      .then((data) => data.forEach(entry => flexSearch.add(entry)))
       .catch(() => disableSearch());
   }
   // Function to disable search in case the input json file search is not found
@@ -78,15 +78,32 @@ import {
       if (newSearch) {
         emptyList();
         currentFocus = -1;
-        const results = flexSearch.search({
-          query: query
-        }).sort(sortByProperties('rootTitleIndex'));
+        const flexResults = flexSearch.search(query, { enrich: true });
+        const results = manageSearchResults(flexResults)
         showResults(results, query);
       }
       showSearchList();
     } else {
       hideSearchList();
     }
+  }
+  // Function to organize and extract results from flex results
+  function manageSearchResults(flexResults) {
+    let flexResultsConcat = []
+    let flexResultsFiltered = []
+    flexResults.forEach((entry) => {
+      flexResultsConcat = flexResultsConcat.concat(entry.result);
+    })
+    flexResultsConcat.filter((entry, index) => {
+      return index === flexResultsConcat.findIndex(e => {
+        return e.id === entry.id;
+      });
+    }).sort((a, b) => {
+      a.id - b.id;
+    }).forEach((entry) => {
+      flexResultsFiltered.push(entry.doc);
+    });
+    return flexResultsFiltered.sort(sortByProperties('rootTitleIndex'));
   }
   // Function to add results to the search list
   function showResults(items, query) {
