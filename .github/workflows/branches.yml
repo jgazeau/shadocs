@@ -1,8 +1,15 @@
 name: Pull Requests
 on:
-  pull_request:
+  push:
     branches:
-      - main
+      - '**'
+    tags-ignore:
+      - '**'
+    paths:
+      - '**'
+      - '!CHANGELOG.md'
+      - '!package.json'
+      - '!package-lock.json'
 env:
   HUGO_BASIC_EXAMPLE_REPO: "gohugoio/hugoBasicExample"
   HUGO_BIN_NAME: "hugo"
@@ -21,8 +28,8 @@ jobs:
       - name: Cache Hugo binaries
         uses: actions/cache@v2
         with:
-          path: ${{env.HUGO_PATH_BIN}}
-          key: ${{env.HUGO_CACHE_NAME}}-${{hashFiles(format('{0}', env.HUGO_CACHE_NAME))}}
+          path: ${{ env.HUGO_PATH_BIN }}
+          key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
       - name: Add temporary binaries to PATH
         run: echo "${HUGO_PATH_BIN}" >> ${GITHUB_PATH}
       - name: Download Hugo binaries
@@ -58,16 +65,16 @@ jobs:
       - name: Checkout hugoBasicExample repository
         uses: actions/checkout@v2
         with:
-          repository: ${{env.HUGO_BASIC_EXAMPLE_REPO}}
-          path: ${{env.HUGO_BASIC_EXAMPLE_REPO}}
+          repository: ${{ env.HUGO_BASIC_EXAMPLE_REPO }}
+          path: ${{ env.HUGO_BASIC_EXAMPLE_REPO }}
           fetch-depth: 1
       - name: Manage Hugo cache key
         run: echo ${HUGO_TESTS_VERSIONS} > ${HUGO_CACHE_NAME}
       - name: Cache Hugo binaries
         uses: actions/cache@v2
         with:
-          path: ${{env.HUGO_PATH_BIN}}
-          key: ${{env.HUGO_CACHE_NAME}}-${{hashFiles(format('{0}', env.HUGO_CACHE_NAME))}}
+          path: ${{ env.HUGO_PATH_BIN }}
+          key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
       - name: Add temporary binaries to PATH
         run: echo "${HUGO_PATH_BIN}" >> ${GITHUB_PATH}
       - name: Build theme against Hugo versions
@@ -103,13 +110,13 @@ jobs:
       - name: Cache Hugo binaries
         uses: actions/cache@v2
         with:
-          path: ${{env.HUGO_PATH_BIN}}
-          key: ${{env.HUGO_CACHE_NAME}}-${{hashFiles(format('{0}', env.HUGO_CACHE_NAME))}}
+          path: ${{ env.HUGO_PATH_BIN }}
+          key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
       - name: Cache node modules
         uses: actions/cache@v2
         with:
-          path: ${{env.NPM_CACHE_PATH}}
-          key: ${{env.NPM_CACHE_NAME}}-${{hashFiles('package-lock.json')}}
+          path: ${{ env.NPM_CACHE_PATH }}
+          key: ${{ env.NPM_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
       - name: Add temporary binaries to PATH
         run: echo "${HUGO_PATH_BIN}" >> ${GITHUB_PATH}
       - name: Prepare e2e tests
@@ -140,13 +147,13 @@ jobs:
       - name: Cache Hugo binaries
         uses: actions/cache@v2
         with:
-          path: ${{env.HUGO_PATH_BIN}}
-          key: ${{env.HUGO_CACHE_NAME}}-${{hashFiles(format('{0}', env.HUGO_CACHE_NAME))}}
+          path: ${{ env.HUGO_PATH_BIN }}
+          key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
       - name: Cache node modules
         uses: actions/cache@v2
         with:
-          path: ${{env.NPM_CACHE_PATH}}
-          key: ${{env.NPM_CACHE_NAME}}-${{hashFiles('package-lock.json')}}
+          path: ${{ env.NPM_CACHE_PATH }}
+          key: ${{ env.NPM_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
       - name: Add temporary binaries to PATH
         run: echo "${HUGO_PATH_BIN}" >> ${GITHUB_PATH}
       - name: Prepare e2e tests
@@ -177,13 +184,13 @@ jobs:
       - name: Cache Hugo binaries
         uses: actions/cache@v2
         with:
-          path: ${{env.HUGO_PATH_BIN}}
-          key: ${{env.HUGO_CACHE_NAME}}-${{hashFiles(format('{0}', env.HUGO_CACHE_NAME))}}
+          path: ${{ env.HUGO_PATH_BIN }}
+          key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
       - name: Cache node modules
         uses: actions/cache@v2
         with:
-          path: ${{env.NPM_CACHE_PATH}}
-          key: ${{env.NPM_CACHE_NAME}}-${{hashFiles('package-lock.json')}}
+          path: ${{ env.NPM_CACHE_PATH }}
+          key: ${{ env.NPM_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
       - name: Add temporary binaries to PATH
         run: echo "${HUGO_PATH_BIN}" >> ${GITHUB_PATH}
       - name: Prepare e2e tests

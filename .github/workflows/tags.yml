@@ -1,11 +1,10 @@
 name: Tags
 on:
-  push:
-    branches:
-      - tag/[0-9]+.[0-9]+.[0-9]+
+  release:
+    types: [created]
 jobs:
-  Changelog:
-    name: Changelog
+  Publish:
+    name: Publish
     runs-on: ubuntu-18.04
     env:
       CHANGELOG_FILE: CHANGELOG.md
@@ -13,48 +12,40 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
         with:
+          ref: 'main'
           submodules: recursive
           fetch-depth: 1
-      - name: Check tag status
-        id: check_tag
-        run: |
-          if [[ ! -f ${CHANGELOG_FILE} ]] || ! egrep '#+\s+'"${GITHUB_REF##*/}"'\s+\([0-9]{2}/[0-9]{2}/[0-9]{4}\)' ${CHANGELOG_FILE}; then
-            echo "::set-output name=status::true"
-            echo "::set-output name=tag_name::${GITHUB_REF##*/}"
-          fi
-      - name: Create pre-release
-        if: steps.check_tag.outputs.status
-        id: create_pre_release
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      - uses: actions/setup-node@v2
         with:
-          tag_name: ${{steps.check_tag.outputs.tag_name}}
-          release_name: v${{steps.check_tag.outputs.tag_name}}
-          draft: false
-          prerelease: false
+          node-version: '16'
+          cache: 'npm'
       - name: Generate changelog
-        if: steps.check_tag.outputs.status
+        id: changelog
         env:
-          GREN_GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GREN_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          export TAG_NAME=${GITHUB_REF##*/}
           npm install github-release-notes
           npx gren changelog --generate --override --tags=all
-          npm version ${{steps.check_tag.outputs.tag_name}} --no-git-tag-version
+          npm version ${TAG_NAME} --no-git-tag-version
           git add package.json
+          git add package-lock.json
           git add ${CHANGELOG_FILE}
           git config --local user.name "GitHub Action"
           git config --local user.email "action@github.com"
-          git commit -m "tag/${{steps.check_tag.outputs.tag_name}}"
+          git commit -m "tag/${TAG_NAME}"
+          git tag ${TAG_NAME}
           git push
-          git push origin :${{steps.check_tag.outputs.tag_name}}
-      - name: Delete pre-release
-        if: steps.check_tag.outputs.status
-        uses: octokit/request-action@v2.x
+          git push -f origin ${TAG_NAME}
+          echo "::set-output name=zip_name::${GITHUB_REPOSITORY##*/}-${TAG_NAME}.zip"
+      - name: Create archive
+        run: cat package | zip -r -@ ${{ steps.changelog.outputs.zip_name }}
+      - name: Upload release asset
+        uses: actions/upload-release-asset@v1
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          route: DELETE /repos/${{github.repository}}/releases/${{steps.create_pre_release.outputs.id}}
-          owner: ${{github.actor}}
-          repo: 'shadocs'
-          release_id: ${{steps.create_pre_release.outputs.id}}
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./${{ steps.changelog.outputs.zip_name }}
+          asset_name: ${{ steps.changelog.outputs.zip_name }}
+          asset_content_type: application/zip
