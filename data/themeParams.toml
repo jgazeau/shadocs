@@ -64,45 +64,57 @@
 #
 [includes]
   sass = [
-      "sass/main.sass"
-    ]
+    "sass/main.sass"
+  ]
   css = [
-      "css/external/fontawesome.all.min.css",
-      "css/external/OverlayScrollbars.min.css"
-    ]
+    "css/external/fontawesome.all.min.css",
+    "css/external/OverlayScrollbars.min.css"
+  ]
   js = [
-      "js/theme/browserCompatibility.js",
-      "js/external/flexsearch.min.js",
-      "js/external/OverlayScrollbars.min.js",
-      "js/external/qrious.min.js"
-    ]
+    "js/theme/browserCompatibility.js",
+    "js/external/flexsearch.min.js",
+    "js/external/OverlayScrollbars.min.js",
+    "js/external/qrious.min.js"
+  ]
   jsModules = [
-      "js/theme/modules/const.js",
-      "js/theme/modules/helpers.js",
-      "js/theme/modules/helpersGlobal.js",
-      "js/theme/init.js",
-      "js/theme/navbar.js",
-      "js/theme/print.js",
-      "js/theme/qrcode.js",
-      "js/theme/search.js",
-      "js/theme/shortcuts.js",
-      "js/theme/sidebar.js"
-    ]
+    "js/theme/modules/const.js",
+    "js/theme/modules/helpers.js",
+    "js/theme/modules/helpersGlobal.js",
+    "js/theme/init.js",
+    "js/theme/navbar.js",
+    "js/theme/print.js",
+    "js/theme/qrcode.js",
+    "js/theme/search.js",
+    "js/theme/shortcuts.js",
+    "js/theme/sidebar.js"
+  ]
   [includes.shortcodes.jsModules]
     collapsible = [
-        "js/shortcodes/collapsible.js"
-      ]
+      "js/shortcodes/collapsible.js"
+    ]
     mermaid = [
-        "js/external/mermaid.min.js",
-        "js/shortcodes/mermaid.js"
-      ]
+      "js/external/mermaid.min.js",
+      "js/shortcodes/mermaid.js"
+    ]
     intro = [
-        "js/external/intro.min.js",
-        "js/shortcodes/intro.js"
-      ]
+      "js/external/intro.min.js",
+      "js/shortcodes/intro.js"
+    ]
     treeview = [
-        "js/shortcodes/treeview.js"
-      ]
+      "js/shortcodes/treeview.js"
+    ]
+    openapi = [
+      "js/shortcodes/openapi.js",
+    ]
+  [includes.shortcodes.js]
+    openapi = [
+      "js/external/swagger-ui-bundle.min.js",
+      "js/external/swagger-ui-preset.min.js"
+    ]
+  [includes.shortcodes.css]
+    openapi = [
+      "css/external/swagger-ui.min.css"
+    ]
 #
 # Miscellaneous shortcodes parameters
 #

@@ -67,7 +67,7 @@ function renderMermaid(md) {
   } catch (error) {
     const ed = document.createElement('div');
     ed.classList.add('sc-alert', 'sc-alert-error');
-    ed.innerHTML = error.str;
+    ed.innerHTML = error;
     ed.id = mermaidErrorId;
     setTimeout(function() {
       exportSvgLink.classList.toggle('is-hidden', true);

@@ -1,0 +1,89 @@
+import {
+  addFunctionToResizeEvent,
+  getFirstAncestorByClass
+} from '../theme/modules/helpers.min.js'
+
+// VARS //
+// MAIN //
+document.addEventListener('DOMContentLoaded', function() {
+  renderAllOpenAPI();
+});
+function renderAllOpenAPI() {
+  let divo = document.getElementsByClassName('sc-openapi-container');
+  for (let i = 0; i < divo.length; i++) {
+    renderOpenAPI(divo[i]);
+  }
+  if (divo.length) {
+    addFunctionToResizeEvent(function hideSearch() {
+      let divi = document.getElementsByClassName('sc-openapi-iframe');
+      for (let i = 0; i < divi.length; i++) {
+        console.log(divi[i])
+        resizeOpenAPI(divi[i]);
+      }
+    });
+  }
+}
+function renderOpenAPI(oc) {
+  const openapiId = oc.getAttribute('openapi-id');
+  const openapiErrorId = openapiId + '-error';
+  const openapiError = document.getElementById(openapiErrorId);
+  if (openapiError) {
+    openapiError.remove();
+  }
+  const oi = document.createElement('iframe');
+  const cssRef = '/css/external/swagger-ui.min.css';
+  const cssRel = 'stylesheet';
+  const cssType = 'text/css';
+  const oiCss = 'html,body { overflow: hidden; }'
+  oi.classList.toggle('sc-openapi-iframe', true);
+  oi.srcdoc = `
+    <html>
+      <head>
+        <style type='${cssType}'>${oiCss}</style>
+        <link rel='${cssRel}' type='${cssType}' href='${cssRef}'>
+      </head>
+      <body>
+        <div id='${openapiId}'></div>
+      </body>
+    </html>`;
+  oi.height = '100%';
+  oi.width = '100%';
+  oi.onload = () => {
+    const openapiWrapper = getFirstAncestorByClass(oc, 'sc-openapi-wrapper');
+    try {
+      SwaggerUIBundle({
+        url: oc.getAttribute('openapi-url'),
+        domNode: oi.contentWindow.document.getElementById(openapiId),
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ]
+      });
+      let observerCallback = function(mutationList) {
+        resizeOpenAPI(oi);
+      }
+      let observer = new MutationObserver(observerCallback);
+      observer.observe(oi.contentWindow.document.documentElement, { childList: true, subtree: true });
+      setTimeout(function() {
+        openapiWrapper.classList.toggle('is-loading', false);
+        resizeOpenAPI(oi);
+      }, 600);
+    } catch (error) {
+      const ed = document.createElement('div');
+      ed.classList.add('sc-alert', 'sc-alert-error');
+      ed.innerHTML = error;
+      ed.id = openapiErrorId;
+      setTimeout(function() {
+        while (oi.lastChild) {
+          oi.removeChild(oi.lastChild);
+        }
+        openapiWrapper.classList.toggle('is-loading', false);
+        openapiWrapper.insertAdjacentElement('afterbegin', ed);
+      }, 600);
+    }
+  }
+  oc.appendChild(oi);
+}
+function resizeOpenAPI(oi) {
+  oi.style.height = oi.contentWindow.document.documentElement.getBoundingClientRect().height + 'px';
+}
