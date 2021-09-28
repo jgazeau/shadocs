@@ -41,14 +41,6 @@ html
       h2
         font-size: x-large
         color: white
-kbd
-  box-shadow: inset 0 0.1rem 0.2rem tint($grey-light, 80), inset 0 -0.1rem 0.2rem tint($grey-light, 20)
-  background: linear-gradient(tint($grey-light, 20), tint($grey-light, 80))
-  padding: $theme-gap-small-size $theme-gap-medium-size
-  border-radius: $theme-border-radius
-  border: 1px solid $grey-light
-  @extend %unselectable
-  color: $grey-dark
 .is-sticky
   @extend %sticky
 .is-disabled
@@ -80,3 +72,210 @@ kbd
   scroll-behavior: smooth
 .is-modal
   cursor: zoom-in
+kbd
+  box-shadow: inset 0 0.1rem 0.2rem tint($grey-light, 80), inset 0 -0.1rem 0.2rem tint($grey-light, 20)
+  background: linear-gradient(tint($grey-light, 20), tint($grey-light, 80))
+  padding: $theme-gap-small-size $theme-gap-medium-size
+  border-radius: $theme-border-radius
+  border: 1px solid $grey-light
+  @extend %unselectable
+  color: $grey-dark
+h1
+  +responsive-size(font-size, $theme-h1-font-size)
+h2
+  +responsive-size(font-size, $theme-h2-font-size)
+h3
+  +responsive-size(font-size, $theme-h3-font-size)
+h4
+  +responsive-size(font-size, $theme-h4-font-size)
+h5
+  +responsive-size(font-size, $theme-h5-font-size)
+h6
+  +responsive-size(font-size, $theme-h6-font-size)
+h1,h2,h3,h4,h5,h6
+  margin: $theme-gap-large-size 0
+  color: $content-writing-color
+  align-content: center
+  +font-family(oswald)
+  flex-direction: row
+  align-items: center
+  flex-wrap: nowrap
+  font-weight: 700
+  display: flex
+  padding: 0
+  + hr
+    margin-top: -$theme-gap-large-size
+  .anchor
+    transition: transform 0.3s, opacity 0.2s, color 0.2s
+    color: smooth-color($content-writing-color, 50)
+    transform: translateX($theme-gap-medium-size)
+    margin-left: $theme-gap-small-size
+    font-weight: 700
+    opacity: 0
+    &:hover
+      color: $content-link-color
+    @media (hover: none)
+      transform: translateX(0)
+      opacity: 1
+  &:hover
+    .anchor
+      transform: translateX(0)
+      opacity: 1
+hr
+  background: linear-gradient(90deg, $theme-color 0%, $content-background 100%)
+  border-radius: $theme-border-radius
+  margin: $theme-gap-large-size 0
+  height: $theme-gap-small-size
+p,
+dl,
+ul,
+ol
+  margin: $content-item-margin
+li > ul,
+li + ul,
+li > ol,
+li + ol
+  margin: 0
+ul,
+ol,
+dd
+  padding-left: $content-list-padding
+ol
+  list-style-type: decimal
+ul,
+ul ul ul ul
+  list-style-type: disc
+ul ul,
+ul ul ul ul ul
+  list-style-type: circle
+ul ul ul,
+ul ul ul ul ul ul
+  list-style-type: square
+strong,
+dt
+  font-weight: 900
+.footnote-ref,
+.footnote-backref
+  color: $content-footnote-color
+  &:before
+    content: '['
+  &:after
+    content: ']'
+input[type="checkbox"],
+input[type="radio"]
+  vertical-align: middle
+.highlight
+  margin: $content-item-margin
+  position: relative
+  pre
+    margin: 0
+  table
+    td:nth-child(1)
+      pre
+        position: relative
+        padding-right: 0
+        overflow: hidden
+        &:after
+          height: calc(100% - (2 * #{$theme-gap-extra-large-size}))
+          right: $theme-gap-small-size
+          background: darkgrey
+          position: absolute
+          margin: auto
+          content: ''
+          width: 1px
+          bottom: 0
+          top: 0
+        code
+          span
+            display: inline-block
+    td:nth-child(2)
+      pre
+        padding-left: 0
+pre
+  padding: $theme-gap-extra-large-size
+  margin: $content-item-margin
+  +font-family(roboto-mono)
+  background: black
+  code
+    color: white
+  .copy-code
+    box-shadow: inset 0 0 $theme-border-width $theme-border-small-width black
+    position: absolute
+    background: white
+    right: 0
+    top: 0
+    &:after
+      box-shadow: inset 0 0 $theme-border-width $theme-border-small-width black
+      +responsive-size(font-size, $theme-font-medium-size)
+      height: $theme-gap-extra-large-size
+      right: $theme-gap-extra-large-size
+      padding: $theme-gap-medium-size
+      content: attr(title-after)
+      +font-family(roboto-mono)
+      text-overflow: ellipsis
+      white-space: nowrap
+      transform: scale(0)
+      align-items: center
+      max-width: inherit
+      position: absolute
+      background: white
+      overflow: hidden
+      color: darkgreen
+      display: inline
+      opacity: 0
+      top: 0
+    &:not(:active):after
+      transition: transform 1.5s step-end
+      animation: copied 1.5s ease-in-out
+    &:active:after
+      transition: transform 1.5s step-start
+      transform: scale(1)
+*:not(pre)
+  > code
+    box-shadow: 0 0 1px 0 smooth-color($content-background, 50)
+    background: smooth-color($theme-color, 80)
+    padding: 0 $theme-border-width
+    color: $content-code-color
+    +font-family(roboto-mono)
+    font-weight: 700
+    font-size: 90%
+img
+  display: block
+  margin: auto
+blockquote
+  border-left: $theme-gap-small-size solid $content-blockquote-color
+  padding: $theme-gap-medium-size $theme-gap-large-size
+  background: smooth-color($content-background,10)
+  position: relative
+table:not([style])
+  margin: $content-item-margin
+  border-collapse: collapse
+  table-layout: fixed
+  border-spacing: 0
+  width: 100%
+  blockquote
+    background: smooth-color($content-background,10)
+    blockquote
+      background: smooth-color($content-background,20)
+  th
+    color: findColorInvert($content-table-color)
+    background: $content-table-color
+  th,
+  td
+    border: 1px solid smooth-color($content-table-color, 50)
+    padding: $theme-gap-medium-size $theme-gap-large-size
+    vertical-align: middle
+    overflow: auto
+  td
+    color: $content-writing-color
+  tbody
+    tr
+      &:nth-of-type(odd)
+        background: smooth-color($content-background, 10)
+.footnotes
+  font-size: 80% !important
+  hr
+    background: $content-footnote-color
+    border-radius: 0
+  p
+    margin: 0

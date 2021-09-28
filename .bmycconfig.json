@@ -1,5 +1,35 @@
 [
   {
+    "name": "swagger-ui_js_bundle",
+    "localPath": "assets/js/external/swagger-ui-bundle.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "swagger-ui",
+      "fileName": "swagger-ui-bundle.min.js"
+    },
+    "currentVersion": "3.52.2"
+  },
+  {
+    "name": "swagger-ui_js_preset",
+    "localPath": "assets/js/external/swagger-ui-preset.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "swagger-ui",
+      "fileName": "swagger-ui-standalone-preset.min.js"
+    },
+    "currentVersion": "3.52.2"
+  },
+  {
+    "name": "swagger-ui_css",
+    "localPath": "assets/css/external/swagger-ui.min.css",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "swagger-ui",
+      "fileName": "swagger-ui.min.css"
+    },
+    "currentVersion": "3.52.2"
+  },
+  {
     "name": "flexsearch_js",
     "localPath": "assets/js/external/flexsearch.min.js",
     "assetManager": {
@@ -56,16 +86,6 @@
       "name": "cdnjs",
       "library": "intro.js",
       "fileName": "intro.min.js"
-    },
-    "currentVersion": "4.2.2"
-  },
-  {
-    "name": "intro_css",
-    "localPath": "assets/css/external/intro.min.css",
-    "assetManager": {
-      "name": "cdnjs",
-      "library": "intro.js",
-      "fileName": "introjs.min.css"
     },
     "currentVersion": "4.2.2"
   },

@@ -1,0 +1,10 @@
+<div class='sc-openapi-wrapper is-loading helper-loading-container'>
+  {{.Page.Scratch.Add "openapiUid" 1}}
+  {{with (.Get "id")}}
+    {{$.Scratch.Set "openapiId" (replace . "'" "")}}
+  {{else}}
+    {{$.Scratch.Set "openapiId" (printf "%s%s" "openapi-" (string (.Page.Scratch.Get "openapiUid")))}}
+  {{end}}
+  <div class='sc-openapi-container' openapi-id='{{$.Scratch.Get "openapiId"}}' openapi-url='{{.Get "source"}}'></div>
+  {{partial "theme/loading.html" .}}
+</div>

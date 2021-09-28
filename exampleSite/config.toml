@@ -15,6 +15,15 @@ themesdir              = "../.."
 [Author]
   name = "Jordan GAZEAU"
 
+[module]
+  [module.hugoVersion]
+    extended = true
+    min = '0.71.0'
+    max = ''
+  [[module.mounts]]
+    source = 'openapi'
+    target = 'static/openapi'
+
 [taxonomies]
   category = "categories"
 
