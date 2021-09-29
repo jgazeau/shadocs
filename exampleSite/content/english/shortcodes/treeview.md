@@ -1,5 +1,5 @@
 ---
-weight: 4110
+weight: 4120
 title: "{{< treeview >}}"
 description: "Shortcode {{< treeview >}}."
 categories: ["Shortcode"]

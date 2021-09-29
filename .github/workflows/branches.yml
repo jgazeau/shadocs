@@ -1,4 +1,4 @@
-name: Pull Requests
+name: Check
 on:
   push:
     branches:
