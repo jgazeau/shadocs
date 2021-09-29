@@ -17,6 +17,7 @@
     "SC_COLLAPSIBLE_URL"        : "/collapsible/",
     "SC_INTRO_URL"              : "/intro/",
     "SC_MERMAID_URL"            : "/mermaid/",
+    "SC_OPENAPI_URL"            : "/openapi/",
     "SC_PAGEBREAK_URL"          : "/pagebreak/",
     "SC_PARAMETER_URL"          : "/parameter/",
     "SC_SNIPPET_URL"            : "/snippet/",
