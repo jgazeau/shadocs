@@ -6,6 +6,7 @@ license = "MIT"
 licenselink = "https://github.com/jgazeau/shadocs/blob/master/LICENSE"
 description = "Multipurpose Theme for sharing documentation"
 homepage = "https://shadocs.netlify.app/"
+demosite = "https://shadocs.netlify.app/"
 tags = ["Bulma", "Search", "Simple", "Documentation", "Fontawesome", "Intro"]
 features = ["Menu", "Nested sections", "Search", "Shortcuts", "Netlify", "Intro"]
 min_version = "0.71.0"

@@ -15,7 +15,7 @@ env:
   HUGO_BIN_NAME: "hugo"
   HUGO_CACHE_NAME: "hugo-bin-cache"
   HUGO_PATH_BIN: "${GITHUB_WORKSPACE}/bin"
-  HUGO_TESTS_VERSIONS: "0.71.0 0.81.0"
+  HUGO_TESTS_VERSIONS: "0.71.0 0.88.1"
   NPM_CACHE_NAME: "npm-cache"
   NPM_CACHE_PATH: "~/.npm"
 jobs:
