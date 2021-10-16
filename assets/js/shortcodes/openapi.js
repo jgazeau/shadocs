@@ -14,13 +14,13 @@ function renderAllOpenAPI() {
     renderOpenAPI(divo[i]);
   }
   if (divo.length) {
-    addFunctionToResizeEvent(function hideSearch() {
+    const resizeOpenAPI = function() {
       let divi = document.getElementsByClassName('sc-openapi-iframe');
       for (let i = 0; i < divi.length; i++) {
-        console.log(divi[i])
-        resizeOpenAPI(divi[i]);
+        setOpenAPIHeight(divi[i]);
       }
-    });
+    }
+    addFunctionToResizeEvent(resizeOpenAPI);
   }
 }
 function renderOpenAPI(oc) {
@@ -60,13 +60,13 @@ function renderOpenAPI(oc) {
         ]
       });
       let observerCallback = function(mutationList) {
-        resizeOpenAPI(oi);
+        setOpenAPIHeight(oi);
       }
       let observer = new MutationObserver(observerCallback);
       observer.observe(oi.contentWindow.document.documentElement, { childList: true, subtree: true });
       setTimeout(function() {
         openapiWrapper.classList.toggle('is-loading', false);
-        resizeOpenAPI(oi);
+        setOpenAPIHeight(oi);
       }, 600);
     } catch (error) {
       const ed = document.createElement('div');
@@ -84,6 +84,6 @@ function renderOpenAPI(oc) {
   }
   oc.appendChild(oi);
 }
-function resizeOpenAPI(oi) {
+function setOpenAPIHeight(oi) {
   oi.style.height = oi.contentWindow.document.documentElement.getBoundingClientRect().height + 'px';
 }

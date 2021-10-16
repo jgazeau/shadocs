@@ -417,11 +417,12 @@ import {
     return new RegExp(stringRegExp, 'gi');
   };
   // MAIN //
-  addFunctionToResizeEvent(function hideSearch() {
+  const hideSearch = function() {
     if (!isSearchListHidden()) {
       hideSearchList();
     }
-  });
+  }
+  addFunctionToResizeEvent(hideSearch);
   buildIndex(baseUrl);
   initSearch();
 })();

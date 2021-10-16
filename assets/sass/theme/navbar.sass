@@ -1,61 +1,78 @@
 //
 // Navbar styles
 //
-.navbar
+#navbar
   background: linear-gradient($theme-color, smooth-color($theme-color, 20))
   +static-size-height($navbar-height)
-  .navbar-logo
-    #globalLogo
+  #navbarItemsContainer
+    width: 100%
+  #globalLogoContainer
+    padding: $theme-gap-medium-size
+    .navbar-item
       width: calc(#{$sidebar-width} - (2 * #{$theme-gap-medium-size}))
       border-radius: $theme-border-radius
-      margin: $theme-gap-medium-size
       img
         max-width: calc(#{$sidebar-width} - (2 * #{$theme-gap-medium-size}))
+        padding: $theme-border-width
         max-height: $control-height
         margin: auto
-  .navbar-menu
-    &.is-active
+    #globalLogo
       +touch
-        background: linear-gradient(-45deg, $theme-color, smooth-color($theme-color, 20))
-        border: $theme-gap-small-size solid $theme-color
-        position: absolute
-        width: 100%
-        .navbar-item
-          justify-content: flex-end
-          align-items: flex-end
-          display: flex
-          .dropdown-menu,
-          #searchList
-            left: auto
-            right: 0
-    .navbar-item
-      padding: $theme-gap-medium-size $theme-gap-small-size
-    +desktop
-      .navbar-end
-        .navbar-item
-          &:nth-last-of-type(1)
-            padding-right: $theme-gap-medium-size
-  .navbar-burger
-    @extend %unselectable
-    margin-bottom: $theme-gap-medium-size
-    margin-right: $theme-gap-medium-size
-    margin-top: $theme-gap-medium-size
-    height: $control-height
-    width: $control-height
-    margin-left: auto
+        display: none
+    #globalTouchLogo
+      display: none
+      +touch
+        max-width: calc(#{$sidebar-width-collapsed} - (2 * #{$theme-gap-medium-size}))
+        display: flex
+        img
+          max-width: calc(#{$sidebar-width-collapsed} - (2 * #{$theme-gap-medium-size}))
+  #navbarItems
+    justify-content: space-between
+    flex-flow: row nowrap
+    width: 100%
+  #navbarItemsEnd
+    justify-content: flex-end
+    min-width: $navbar-height
+    > .navbar-item
+      padding: $theme-gap-medium-size $theme-gap-medium-size $theme-gap-medium-size 0
+      &:first-of-type
+        padding-left: $theme-gap-small-size
+  #navbarExtend
+    #navbarExtendWrapper
+      position: relative
+      &.is-hovered,
+      &:hover
+        #navbarExtendItemsContainer
+          display: block
+          +navbar-content-effects-visible(100% $navbar-item-padding)
+    #navbarExtendItemsContainer
+      padding: $navbar-item-padding 0 0 0
+      right: -$theme-gap-small-size
+      position: absolute
+      display: none
+      top: 100%
+      +navbar-content-effects-hidden(100% $navbar-item-padding)
+    #navbarExtendItemsWrapper
+      background: linear-gradient(45deg, $theme-color, smooth-color($theme-color, 20))
+      @extend %navbar-content-partial-border
+      .dropdown-content
+        @extend %navbar-content-full-border
+      > .navbar-item
+        padding: $theme-gap-medium-size $theme-gap-small-size
   .navbar-item-standard
     @extend %navbar-item-standard
   .navbar-item
+    justify-content: center
     .dropdown
       .button
         height: $control-height
         width: $control-height
       .dropdown-menu
-        +navbar-content-effects-hidden(100% $navbar-item-padding, 100% $navbar-item-padding)
+        +navbar-content-effects-hidden(100% $navbar-item-padding)
         padding: $navbar-item-padding 0 0 0
       .dropdown-content
-        @extend %navbar-content-border
         padding: $theme-gap-small-size 0 $theme-gap-small-size 0
+        @extend %navbar-content-partial-border
         border-radius: 0
         .dropdown-item
           font-size: $theme-gap-large-size
@@ -75,18 +92,7 @@
           i
             width: $theme-icon-size
             text-align: center
-      &.hovered,
+      &.is-hovered,
       &:hover
         .dropdown-menu
-          +navbar-content-effects-visible(100% $navbar-item-padding, 100% $navbar-item-padding)
-#navbar.is-navbar-uncollapsed + #navbarOverlay
-  +touch
-    display: block
-    opacity: 0.5
-#navbarOverlay
-  background: $black
-  position: fixed
-  display: none
-  height: 100%
-  width: 100%
-  z-index: 25
+          +navbar-content-effects-visible(100% $navbar-item-padding)

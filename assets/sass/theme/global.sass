@@ -14,7 +14,7 @@
 +font-face('permanent-marker', '../fonts/permanent-marker/permanent-marker-v10-latin-regular', 400, normal, eot svg ttf woff woff2)
 //
 body
-  +responsive-size(font-size, $content-font-size)
+  +responsive-size(font-size, $content-font-size, 3px)
   +font-family(lato)
 html
   overflow: hidden !important
@@ -81,17 +81,17 @@ kbd
   @extend %unselectable
   color: $grey-dark
 h1
-  +responsive-size(font-size, $theme-h1-font-size)
+  +responsive-size(font-size, $theme-h1-font-size, 3px)
 h2
-  +responsive-size(font-size, $theme-h2-font-size)
+  +responsive-size(font-size, $theme-h2-font-size, 3px)
 h3
-  +responsive-size(font-size, $theme-h3-font-size)
+  +responsive-size(font-size, $theme-h3-font-size, 3px)
 h4
-  +responsive-size(font-size, $theme-h4-font-size)
+  +responsive-size(font-size, $theme-h4-font-size, 3px)
 h5
-  +responsive-size(font-size, $theme-h5-font-size)
+  +responsive-size(font-size, $theme-h5-font-size, 3px)
 h6
-  +responsive-size(font-size, $theme-h6-font-size)
+  +responsive-size(font-size, $theme-h6-font-size, 3px)
 h1,h2,h3,h4,h5,h6
   margin: $theme-gap-large-size 0
   color: $content-writing-color
@@ -206,7 +206,7 @@ pre
     top: 0
     &:after
       box-shadow: inset 0 0 $theme-border-width $theme-border-small-width black
-      +responsive-size(font-size, $theme-font-medium-size)
+      +responsive-size(font-size, $theme-font-medium-size, 3px)
       height: $theme-gap-extra-large-size
       right: $theme-gap-extra-large-size
       padding: $theme-gap-medium-size

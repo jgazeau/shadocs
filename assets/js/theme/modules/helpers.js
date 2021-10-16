@@ -52,9 +52,9 @@ export function addFunctionToResizeEvent(f) {
 // Get the actual size and return associated triggers
 export function getTriggers() {
   let triggers = [];
-  if (window.innerWidth >= desktopSize) {
+  if (document.body.clientWidth >= desktopSize) {
     triggers.push(sizeTriggerDesktop);
-  } else if (window.innerWidth >= tabletSize) {
+  } else if (document.body.clientWidth >= tabletSize) {
     triggers.push(sizeTriggerTouch);
   } else {
     triggers.push(sizeTriggerMobile);
@@ -161,24 +161,24 @@ export function isFocusable(e) {
 // Function to hide search list
 export function hideSearchList() {
   let searchList = document.getElementById('searchList');
-  searchList.setAttribute('hidden', '');
+  searchList.classList.toggle('is-hidden', true);
   searchList.scrollTop = 0;
   removeActive(searchList.getElementsByTagName('li'));
 };
 // Function to show all the lists
 export function showSearchList() {
   let searchList = document.getElementById('searchList');
-  searchList.removeAttribute('hidden');
+  searchList.classList.toggle('is-hidden', false);
   searchList.scrollTop = 0;
 };
 // Function to check the state of the search list
 export function isSearchListHidden() {
-  return document.getElementById('searchList').hasAttribute('hidden');
+  return document.getElementById('searchList').classList.contains('is-hidden');
 };
 // Function to make a list item inactive for arrow keys management
-export function removeActive(item) {
-  for (let i = 0; i < item.length; i++) {
-    item[i].classList.remove('is-selected');
+export function removeActive(items) {
+  for (let i = 0; i < items.length; i++) {
+    items[i].classList.toggle('is-selected', false);
   }
 };
 // Function to get a random int based on a max value
@@ -212,16 +212,6 @@ function waitFor(d) {
     setTimeout(resolve, d);
   });
 };
-// Function to toggle the navbar at desired state
-// - force (true is visible, false is hidden)
-export function toggleNavbarMenu(force) {
-  if (!getTriggers().includes(sizeTriggerDesktop)) {
-    const navbarBurger = document.getElementById('navbarBurger');
-    navbarBurger.classList.toggle('is-active', force);
-    document.getElementById(navbarBurger.dataset.target).classList.toggle('is-active', force);
-    document.getElementById('navbar').classList.toggle('is-navbar-uncollapsed', force);
-  }
-}
 // Function to toggle the sidebar at desired state
 // - force (true is uncollapsed, false is collapsed)
 // - noTransition (true to disable transition, false by default)
@@ -257,6 +247,26 @@ export function manageDefaultCollapsibleSidebar() {
     toggleSidebar(true);
   };
 };
+// Function to toggle the extend menu at desired state only if menu is displayed
+// - force (true is uncollapsed, false is collapsed)
+export function toggleExtendMenu(force) {
+  if (typeof force === 'undefined') {
+    force = !document.getElementById('navbarExtend').classList.contains('is-hovered');
+  }
+  if (!document.getElementById('navbarExtend').classList.contains('is-hidden')) {
+    document.getElementById('navbarExtendWrapper').classList.toggle('is-hovered', force)
+    document.getElementById('navbarExtendItemsContainer').classList.toggle('is-transition-disabled', force)
+  };
+};
+// Function to get the first visible element from a CSS selector
+// - selector (css element selector)
+export function getFirstVisibleElement(selector) {
+  for (const elem of document.querySelectorAll(selector)) {
+    if (elem.offsetParent !== null) {
+      return elem;
+    };
+  }
+};
 // Function to disable animation on scroll
 export function disableSmoothScroll() {
   let cc = document.getElementById('contentContainer');
@@ -287,3 +297,9 @@ export function toggleSidebarEntries(force) {
     toggleSidebarEntry(iie[i], force);
   };
 };
+// Function to add a variable to the global scope
+export function addGlobalVariable(name, value) {
+  if (!window[name]) {
+    window[name] = value;
+  };
+}

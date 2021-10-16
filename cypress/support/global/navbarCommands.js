@@ -2,10 +2,13 @@ Cypress.Commands.add('desktopNavbarBeforeEach', () => {
   cy.visit(Cypress.env('HOMEPAGE_URL'))
   cy.viewportDesktop()
 })
-Cypress.Commands.add('touchNavbarBeforeEach', () => {
+Cypress.Commands.add('mobileNavbarBeforeEach', () => {
   cy.visit(Cypress.env('HOMEPAGE_URL'))
-  cy.viewportTouch()
-  cy.toggleNavbarMenu(true)
+  cy.viewportMobile('min')
+  cy.get('#navbarExtendWrapper')
+    .then(($elem) => {
+      $elem.get(0).classList.toggle('is-hovered', true)
+    })
 })
 Cypress.Commands.add('scShowInfoResults', () => {
   cy.get('#navbarInfo')

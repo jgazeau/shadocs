@@ -2,8 +2,9 @@ import {
   closeModals,
   disableSmoothScroll,
   enableSmoothScroll,
+  getFirstVisibleElement,
   manageDefaultCollapsibleSidebar,
-  toggleNavbarMenu,
+  toggleExtendMenu,
   toggleSidebar,
   toggleSidebarEntry,
   toggleSidebarEntries
@@ -14,8 +15,9 @@ import {
 window.closeModals = closeModals;
 window.disableSmoothScroll = disableSmoothScroll;
 window.enableSmoothScroll = enableSmoothScroll;
+window.getFirstVisibleElement = getFirstVisibleElement;
 window.manageDefaultCollapsibleSidebar = manageDefaultCollapsibleSidebar;
-window.toggleNavbarMenu = toggleNavbarMenu;
+window.toggleExtendMenu = toggleExtendMenu;
 window.toggleSidebar = toggleSidebar;
 window.toggleSidebarEntry = toggleSidebarEntry;
 window.toggleSidebarEntries = toggleSidebarEntries;

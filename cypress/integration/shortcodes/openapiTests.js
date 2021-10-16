@@ -34,7 +34,6 @@ describe('for: openapi shortcode', () => {
       .click({force:true})
       .then(($openapiLink) => {
         const fileName = $openapiLink[0].href.substring($openapiLink[0].href.lastIndexOf('/') + 1)
-        console.log(fileName)
         cy.readFile(path.join(Cypress.config('downloadsFolder'), fileName)).then((fileContent) => {
           cy.fixture('openapi/example.yaml', 'utf8').should('be.equal', fileContent)
         })

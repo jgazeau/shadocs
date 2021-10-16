@@ -1,10 +1,14 @@
+#searchContainer
+  width: 100%
 #search
   max-height: calc(#{$navbar-height} - (2 * #{$theme-gap-medium-size}))
   background-color: smooth-color($theme-color, 30) !important
   color: findColorInvert(smooth-color($theme-color, 30))
+  min-width: $navbar-search-min-width
   max-width: $navbar-search-width
   @extend %navbar-item-generic
   @extend %navbar-item-hover
+  text-overflow: ellipsis
   &:focus
     background-color: $content-background !important
     color: $content-writing-color
@@ -17,17 +21,15 @@
     color: smooth-color(findColorInvert(smooth-color($theme-color, 30)), 30)
     font-style: italic
 #searchInput
-  +responsive-size(font-size, $content-font-size)
-  width: $navbar-search-width
+  +responsive-size(font-size, $content-font-size, 3px)
+  min-width: $navbar-search-min-width
+  max-width: $navbar-search-width
   display: block
-#searchList[hidden]
-  +navbar-content-effects-hidden(top left, top right)
 #searchList
-  margin: $theme-gap-medium-size 0 0 0
-  +navbar-content-effects-visible(top left, top right)
-  +responsive-size(font-size, $content-font-size)
+  +responsive-size(font-size, $content-font-size, 3px)
   max-height: $navbar-search-results-height
-  @extend %navbar-content-border
+  @extend %navbar-content-partial-border
+  margin: $theme-gap-medium-size 0 0 0
   overflow-x: hidden
   position: absolute
   border-radius: 0

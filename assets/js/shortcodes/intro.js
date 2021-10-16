@@ -57,18 +57,21 @@ const themeCommonOptions = {
   overlayOpacity:     0.8,
   disableInteraction: true
 };
+const introErrorTitle = atou(document.getElementById('intro-error-title').getAttribute('data'));
+const introError = atou(document.getElementById('intro-error').getAttribute('data'));
+const introEmpty = atou(document.getElementById('intro-empty').getAttribute('data'));
 const introErrorStep = {
   showBullets: false,
   steps: [{
-    title: atou(document.getElementById('intro-error-title').getAttribute('data')),
-    intro: atou(document.getElementById('intro-error').getAttribute('data'))
+    title: introErrorTitle,
+    intro: introError
   }]
 };
 const introEmptyStep = {
   showBullets: false,
   steps: [{
-    title: atou(document.getElementById('intro-error-title').getAttribute('data')),
-    intro: atou(document.getElementById('intro-empty').getAttribute('data'))
+    title: introErrorTitle,
+    intro: introEmpty
   }]
 };
 // MAIN //
@@ -98,23 +101,42 @@ for (let i = 0; i < divi.length; i++) {
         });
       }
     }
-    addFunctionToResizeEvent(function exitIntro() {
+    const exitIntro = function() {
       if (!intro[INTRO_EXIT_BOOL]) {
         intro.isExiting = true;
         intro.exit(true);
       }
-    });
+    }
+    addFunctionToResizeEvent(exitIntro);
     intro.start();
   });
 };
 function parseIntroOptions(input) {
   try {
     let output = JSON.parse(input);
-    return manageEmptySteps(output);
+    return manageElements(manageEmptySteps(output));
   } catch (error) {
+    introErrorStep.steps[0].intro = introError
     return introErrorStep;
   }
 };
+function manageElements(input) {
+  for (let i = 0; i < input.steps.length ; i++) {
+    if (input.steps[i].element) {
+      try {
+        input.steps[i].element = document.querySelector(input.steps[i].element);
+      } catch {
+        try {
+          input.steps[i].element = Function('return ' + input.steps[i].element)();
+        } catch {
+          introErrorStep.steps[0].intro = introError + `<br><i>(Step${i}:${input.steps[i].element})</i>`
+          return introErrorStep;
+        }
+      }
+    }
+  }
+  return input;
+}
 function manageEmptySteps(input) {
   if (input.hasOwnProperty(INTRO_STEPS) && input[INTRO_STEPS].length > 0) {
     return input;
