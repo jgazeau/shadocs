@@ -28,16 +28,21 @@ Fonction deactivating smooth scrolling on main content.
 | enableSmoothScroll(); |{{< md >}}
 Fonction activating smooth scrolling on main content.
 {{< /md >}}|
+| getFirstVisibleElement(selector); |{{< md >}}
+Function getting the first visible element from a CSS selector:
+* selector
+    * [CSS selector](https://developer.mozilla.org/docs/Web/CSS/CSS_Selectors)
+{{< /md >}}|
 | manageDefaultCollapsibleSidebar(); |{{< md >}}
 Function managing the default behavior of the sidebar:
 * If the window is greater than or equal to 1024 pixels wide, sidebar is uncollapsed
 * If the window is less than 1024 pixels wide, sidebar is collapsed
 {{< /md >}}|
-| toggleNavbarMenu(force); |{{< md >}}
-Function managing the burger menu behavior:
+| toggleExtendMenu(force); |{{< md >}}
+Function managing the extend menu of the navigation bar (only if it is displayed):
 * force
-    * true: the burger menu is uncollapsed
-    * false: the burger menu is collapsed
+    * true: the extend menu is displayed
+    * false: the extend menu is hidden
 {{< /md >}}|
 | toggleSidebar(force, noTransition); |{{< md >}}
 Function managing the sidebar behavior:

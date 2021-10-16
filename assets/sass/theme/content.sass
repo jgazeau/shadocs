@@ -57,7 +57,7 @@
           display: flex
           flex-grow: 1
           a
-            +responsive-size(font-size, $theme-h3-font-size)
+            +responsive-size(font-size, $theme-h3-font-size, 3px)
             padding: $theme-gap-medium-size
             color: $content-writing-color
             transition: all 0.3s
@@ -118,7 +118,7 @@
         &.is-active
           display: block
         .tabs-title
-          +responsive-size(font-size, $theme-h4-font-size)
+          +responsive-size(font-size, $theme-h4-font-size, 3px)
           color: $content-writing-color
           transition: all 0.2s
           display: inline-flex

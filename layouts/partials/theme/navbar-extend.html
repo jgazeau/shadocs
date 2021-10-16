@@ -1,0 +1,15 @@
+<div id='navbarExtend' class='navbar-item'>
+  <div id='navbarExtendWrapper'>
+    <a id='navbarExtendButton' class='button navbar-item-standard'>
+      <span class='icon'>
+        <i class='fas fa-ellipsis-h fa-lg'></i>
+      </span>
+    </a>
+    <div id='navbarExtendItemsContainer'>
+      <div id='navbarExtendItemsWrapper'>
+        {{$.Scratch.Add "navbarExtendIdSuffix" "Extend"}}
+        {{partial "theme/navbar-items.html" .}}
+      </div>
+    </div>
+  </div>
+</div>

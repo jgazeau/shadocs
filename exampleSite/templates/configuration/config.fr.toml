@@ -1,6 +1,7 @@
 [params]
-  # Chemin du fichier du logo du site
+  # Chemin des fichiers logo du site
   logo             = "images/logo.png"
+  logoTouch        = "images/logoTouch.png"
   # Chemin du fichier de l'image affichée en cas d'erreur 404
   image404         = "images/404.gif"
   # Chemin du fichier du favicon du site

@@ -19,10 +19,6 @@ Cypress.Commands.add('viewportMobile', ($size) => {
   else
     cy.viewport(Cypress.env('VIEWPORT_MOBILE_MAXWIDTH'), Cypress.env('VIEWPORT_COMMON_HEIGHT'), true)
 })
-Cypress.Commands.add('toggleNavbarMenu', ($force) => {
-  cy.window()
-    .then((window) => window.toggleNavbarMenu($force))
-})
 Cypress.Commands.add('toggleSidebar', ($force, $noTransition) => {
   cy.window()
     .then((window) => window.toggleSidebar($force, $noTransition))

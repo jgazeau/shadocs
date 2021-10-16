@@ -28,16 +28,21 @@ Fonction désactivant le défilement doux du contenu principal.
 | enableSmoothScroll(); |{{< md >}}
 Fonction activant le défilement doux du contenu principal.
 {{< /md >}}|
+| getFirstVisibleElement(selector); |{{< md >}}
+Function récupérant le premier élement visible d'un sélecteur CSS:
+* selector
+    * [sélecteur CSS](https://developer.mozilla.org/docs/Web/CSS/CSS_Selectors)
+{{< /md >}}|
 | manageDefaultCollapsibleSidebar(); |{{< md >}}
 Fonction qui gère le comportement par défaut du menu latéral:
 * Si la fenêtre est supérieure ou égale à 1024 pixels de large, le menu est développé
 * Si la fenêtre est inférieure à 1024 pixels de large, le menu est réduit
 {{< /md >}}|
-| toggleNavbarMenu(force); |{{< md >}}
-Fonction qui gère le comportement du menu burger:
+| toggleExtendMenu(force); |{{< md >}}
+Fonction qui gère le comportement du menu d'extension de la barre de navigation (uniquement si celui-ci est visible):
 * force
-    * true: le menu burger est developpé
-    * false: le menu burger est réduit
+    * true: le menu d'extension est affiché
+    * false: le menu d'extension est caché
 {{< /md >}}|
 | toggleSidebar(force, noTransition); |{{< md >}}
 Fonction qui gère le comportement du menu latéral:

@@ -1,7 +1,7 @@
-=responsive-size($prop, $size)
+=responsive-size($prop, $size, $gap)
   #{$prop}: $size
   +touch
-    #{$prop}: calc(#{$size} - 3px)
+    #{$prop}: calc(#{$size} - #{$gap})
 =static-size-height($size)
   max-height: $size
   min-height: $size
@@ -28,21 +28,17 @@
   font-family: $name,$family-sans-serif !important
 =sc-alert-background-color($color)
   background: smooth-color($color, 10)
-=navbar-content-effects-hidden($origin, $touch-origin)
+=navbar-content-effects-hidden($origin)
   transform-origin: $origin
   transition: all 0.2s ease
   transform: scale(0)
   display: block
   opacity: 0
-  +touch
-    transform-origin: $touch-origin
-=navbar-content-effects-visible($origin, $touch-origin)
+=navbar-content-effects-visible($origin)
   transition: 0.3s cubic-bezier(.4,.2,.5,1.4)
   transform-origin: $origin
   transform: scale(1)
   opacity: 1
-  +touch
-    transform-origin: $touch-origin
 =modal-container($background)
   +static-size-height(100%)
   +static-size-width(100%)

@@ -1,7 +1,7 @@
 - id: homepage_title
   translation: "Homepage"
 - id: search_placeholder
-  translation: "Search..."
+  translation: "Search"
 - id: search_no_results
   translation: "No result found"
 - id: sidebar_collapse

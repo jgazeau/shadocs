@@ -1,0 +1,46 @@
+<div class='navbar-item'>
+  <a id='printButton{{$.Scratch.Get "navbarExtendIdSuffix"}}' class='button navbar-item-standard'>
+    <span class='icon'>
+      <i class='fas fa-print fa-lg'></i>
+    </span>
+  </a>
+</div>
+<div class='navbar-item'>
+  <a id='qrCodeButton{{$.Scratch.Get "navbarExtendIdSuffix"}}' class='button navbar-item-standard'>
+    <span class='icon'>
+      <i class='fas fa-qrcode fa-lg'></i>
+    </span>
+  </a>
+</div>
+{{range $.Page.Translations}}
+  {{if reflect.IsMap .Data.Terms}}
+    {{$.Scratch.Add "taxnomyTranslatedCount" (len .Data.Terms)}}
+  {{end}}
+{{end}}
+{{if and (.IsTranslated) (ne ($.Scratch.Get "taxnomyTranslatedCount") 0)}}
+  <div class='navbar-item'>
+    {{partial "theme/lang-selector.html" .}}
+  </div>
+{{end}}
+{{range $taxonomyname, $taxonomy := .Site.Taxonomies}}
+  {{$.Scratch.Add "taxnomyCount" (len $taxonomy)}}
+{{end}}
+{{if gt ($.Scratch.Get "taxnomyCount") 0}}
+  <div class='navbar-item'>
+    {{partial "theme/taxonomy-selector.html" .}}
+  </div>
+{{end}}
+<div class='navbar-item'>
+  <a id='shortcutsInfo{{$.Scratch.Get "navbarExtendIdSuffix"}}' trigger='navbarShortcuts' class='button navbar-item-standard navbar-trigger' title='{{i18n "navbarshortcuts_title"}}'>
+    <span class='icon'>
+      <i class='fas fa-keyboard fa-lg'></i>
+    </span>
+  </a>
+</div>
+<div class='navbar-item'>
+  <a id='siteInfo{{$.Scratch.Get "navbarExtendIdSuffix"}}' trigger='navbarInfo' class='button navbar-item-standard navbar-trigger' title='{{i18n "navbarinfo_title"}}'>
+    <span class='icon'>
+      <i class='fas fa-question-circle fa-lg'></i>
+    </span>
+  </a>
+</div>

@@ -92,10 +92,10 @@
     &::placeholder
       color: smooth-color(findColorInvert(smooth-color($theme-color, 40)), 30)
       font-style: italic
-%navbar-content-border
+%navbar-content-full-border
+  box-shadow: 0 0 0 $theme-gap-small-size smooth-color($theme-color, 50)
+%navbar-content-partial-border
   box-shadow: -$theme-gap-small-half-size $theme-gap-small-half-size 0 $theme-gap-small-half-size smooth-color($theme-color, 50), $theme-gap-small-half-size $theme-gap-small-half-size 0 $theme-gap-small-half-size smooth-color($theme-color, 50)
-  +touch
-    box-shadow: 0 0 0.1rem 1px smooth-color($content-background, 25)
 %search-content-colors
   border-color: $content-background
   background: $content-background

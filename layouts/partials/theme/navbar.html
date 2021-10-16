@@ -1,64 +1,16 @@
 <nav id='navbar' class='navbar' role='navigation' aria-label='main navigation'>
-  <div class='navbar-brand navbar-logo'>
+  <div id='navbarItemsContainer' class='navbar-brand'>
     {{partial "theme/logo.html" .}}
-    <a role='button' id='navbarBurger' class='navbar-burger burger navbar-item-standard' aria-label='menu' aria-expanded='false' data-target='navbarMenu'>
-      <span aria-hidden='true'></span>
-      <span aria-hidden='true'></span>
-      <span aria-hidden='true'></span>
-    </a>
-  </div>
-  <div id='navbarMenu' class='navbar-menu'>
-    <div class='navbar-start'>
-      <div class='navbar-item'>
-        {{partial "theme/search.html" .}}
-      </div>
-    </div>
-    <div class='navbar-end'>
-      <div class='navbar-item'>
-        <a id='printButton' class='button navbar-item-standard'>
-          <span class='icon'>
-            <i class='fas fa-print fa-lg'></i>
-          </span>
-        </a>
-      </div>
-      <div class='navbar-item'>
-        <a id='qrCodeButton' class='button navbar-item-standard'>
-          <span class='icon'>
-            <i class='fas fa-qrcode fa-lg'></i>
-          </span>
-        </a>
-      </div>
-      {{range $.Page.Translations}}
-        {{if reflect.IsMap .Data.Terms}}
-          {{$.Scratch.Add "taxnomyTranslatedCount" (len .Data.Terms)}}
-        {{end}}
-      {{end}}
-      {{if and (.IsTranslated) (ne ($.Scratch.Get "taxnomyTranslatedCount") 0)}}
-        <div class='navbar-item'>
-          {{partial "theme/lang-selector.html" .}}
+    <div id='navbarItems' class='is-flex'>
+      <div id='navbarItemsStart' class='is-flex'>
+        <div id='searchContainer' class='navbar-item'>
+          {{partial "theme/search.html" .}}
         </div>
-      {{end}}
-      {{range $taxonomyname, $taxonomy := .Site.Taxonomies}}
-        {{$.Scratch.Add "taxnomyCount" (len $taxonomy)}}
-      {{end}}
-      {{if gt ($.Scratch.Get "taxnomyCount") 0}}
-        <div class='navbar-item'>
-          {{partial "theme/taxonomy-selector.html" .}}
-        </div>
-      {{end}}
-      <div class='navbar-item'>
-        <a id='shortcutsInfo' trigger='navbarShortcuts' class='button navbar-item-standard navbar-trigger' title='{{i18n "navbarshortcuts_title"}}'>
-          <span class='icon'>
-            <i class='fas fa-keyboard fa-lg'></i>
-          </span>
-        </a>
       </div>
-      <div class='navbar-item'>
-        <a id='siteInfo' trigger='navbarInfo' class='button navbar-item-standard navbar-trigger' title='{{i18n "navbarinfo_title"}}'>
-          <span class='icon'>
-            <i class='fas fa-question-circle fa-lg'></i>
-          </span>
-        </a>
+      <div id='navbarItemsEnd' class='is-flex is-invisible'>
+        {{$.Scratch.Add "navbarExtendIdSuffix" ""}}
+        {{partial "theme/navbar-items.html" .}}
+        {{partial "theme/navbar-extend.html" .}}
       </div>
     </div>
   </div>
