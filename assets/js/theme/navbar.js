@@ -24,7 +24,7 @@ window.addEventListener('load', function() {
         navbarExtendItems[i].classList.toggle('is-hidden', true);
       }
     }
-    document.getElementById('navbarExtend').classList.toggle('is-hidden', (maxLength > tempLength));
+    document.getElementById('navbarExtend').classList.toggle('is-hidden', (maxLength >= tempLength));
     document.getElementById('navbarItemsEnd').classList.toggle('is-invisible', false);
   };
   manageNavbar();
