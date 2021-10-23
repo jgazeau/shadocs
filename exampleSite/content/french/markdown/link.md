@@ -59,7 +59,7 @@ Pour définir un lien avec un titre, il faut **respecter la syntaxe suivante**:
 Pour définir un lien il est possible d'utiliser des syntaxes alternatives:
 
 * **Ecrire l'URL du lien** (le rendu sera automatiquement réalisé par le convertisseur markdown).
-* **Entourer l'URL du lien entre les caractères inférieur et supérieur**.
+* **Entourer l'URL du lien entre les caractères inférieur (<) et supérieur (>)**.
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |
@@ -99,7 +99,7 @@ Attention, pour permettre un rendu plus agréable (à l'aide des [Markdown Rende
 
 Pour échapper un lien (faire apparaitre une URL en tant que texte) et éviter son rendu automatique par le convertisseur markdown, il est possible d'utiliser des syntaxes alternatives:
 
-* **Ajouter une apostrophe inversée (`) avant et après l'URL du lien (Définir le lien en fragment de code)**.
+* **Ajouter une apostrophe inversée (\`) avant et après l'URL du lien (Définir le lien en fragment de code)**.
 * **Echapper le premier slash (/) de l'URL du lien**.
 
 | Markdown | HTML | Rendu |
@@ -125,7 +125,7 @@ https:\//www.google.com
 
 ## Accentuer un lien
 
-Pour accentuer un lien, il faut **entourer le code markdown du lien par le code d'acccentuation choisi**. Dans le cas d'un lien en fragment de code il faut **placer les parenthèses inversées à l'intérieur du texte du lien** (entre les crochets).
+Pour accentuer un lien, il faut **entourer le code markdown du lien par le code d'acccentuation choisi**. Dans le cas d'un lien en fragment de code il faut **placer les parenthèses inversées (\`) à l'intérieur du texte du lien** (entre les crochets).
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |
@@ -181,7 +181,9 @@ Pour définir un lien dont l'URL est référencée (donc réutilisable), il faut
 
     * **\[Texte_du_lien\]\[Référence_de_l'URL_du_lien\]**
 
-    La référence de l'URL du lien n'est pas sensible à la casse et peut contenir des caractères alphanumériques, des espaces et de la ponctuation.
+    {{< alert type="info" >}}
+La référence de l'URL du lien n'est pas sensible à la casse et peut contenir des caractères alphanumériques, des espaces et de la ponctuation.
+    {{< /alert >}}
 
 * **Deuxième partie** (référence du lien)
 
@@ -195,7 +197,9 @@ Pour définir un lien dont l'URL est référencée (donc réutilisable), il faut
     * **\<\[Référence_de_l'URL_du_lien\]\>: URL_du_lien \'Titre_du_lien\'**
     * **\<\[Référence_de_l'URL_du_lien\]\>: URL_du_lien \(Titre_du_lien\)**
 
-    La deuxième partie du lien peut-être placée à n'importe quel endroit dans le document. Par exemple toutes les références d'un document peuvent être regroupée à la fin d'un document pour des raisons de lisibilité et de simplicité.
+    {{< alert type="info" >}}
+La deuxième partie du lien peut-être placée à n'importe quel endroit dans le document. Par exemple toutes les références d'un document peuvent être regroupée à la fin d'un document pour des raisons de lisibilité et de simplicité.
+    {{< /alert >}}
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |

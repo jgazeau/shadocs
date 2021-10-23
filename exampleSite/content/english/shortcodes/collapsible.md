@@ -8,7 +8,7 @@ categories: ["Shortcode"]
 # Description
 ---
 
-The **collapsible** shortcode allows to write a collapsible block of text.
+The **collapsible** shortcode allows to write a collapsible text block.
 
 # Parameters
 ---

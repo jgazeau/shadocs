@@ -17,7 +17,7 @@ Hugo utilise des **thèmes** afin de créer un rendu cohérent. L'utilisateur pe
 ---
 
 Un thème prévu pour exposer et partager de la **documentation** (Sha(*share*) docs(*documentation*)) et basé sur le framework CSS [Bulma](https://bulma.io/).  
-Le site actuel contient la documentation qui vous permettra d'utiliser le thème à vos besoins.
+Le site actuel contient la documentation qui vous permettra d'utiliser le thème selon vos besoins.
 
 # Comment utiliser le thème ?
 ---

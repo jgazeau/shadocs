@@ -13,19 +13,23 @@ Pour définir une note de bas de page, il faut **la formater en 2 parties**.
 
 * **Première partie** (référence de la note de bas de page)
 
-    Pour définir la première partie de la note de bas de page, qui correspond à une référence à définir dans la deuxième partie, il faut **respecter la syntaxe suivante**:
+    Pour définir la première partie de la note de bas de page, qui correspond à une référence à définir dans la deuxième partie, il faut **utiliser la syntaxe suivante**:
 
     * **Texte_associée_à_une_note_de_bas_de_page\[\^Référence_de_la_note_de_bas_de_page\]**
 
-    La référence de la note de bas de page peut contenir uniquement des caractères alphanumériques (aucun espace ou tabulation).
+    {{< alert type="warning" >}}
+La référence de la note de bas de page peut contenir uniquement des caractères alphanumériques (aucun espace ou tabulation).
+    {{< /alert >}}
 
 * **Deuxième partie** (contenu de la note de bas de page)
 
-    Pour définir la deuxième partie de la note de bas de page, qui correspond au contenu de la note de bas de page, il faut **respecter la syntaxe suivante**:
+    Pour définir la deuxième partie de la note de bas de page, qui correspond au contenu de la note de bas de page, il faut **utiliser la syntaxe suivante**:
 
     * **\[\^Référence_de_la_note_de_bas_de_page\]: Contenu_de_la_note_de_bas_de_page**
 
-    La deuxième partie de la note de bas de page peut-être placée à n'importe quel endroit dans le document, toutes les notes de bas de page seront automatiquement ajoutées en bas de la page courante. Il ne faut cependant pas placer le contenu des notes de bas de page dans d'autre élément markdown (Liste, Extrait de code, tableau, ...).
+    {{< alert type="warning" >}}
+La deuxième partie de la note de bas de page peut-être placée à n'importe quel endroit dans le document, toutes les notes de bas de page seront automatiquement ajoutées en bas de la page courante. Il ne faut cependant pas placer le contenu des notes de bas de page dans d'autre élément markdown (Liste, Extrait de code, tableau, ...).
+    {{< /alert >}}
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |

@@ -23,8 +23,8 @@ The theme makes it possible to print a page content with the following character
 * an icon located in the navigation bar and a shortcut allow access to the print preview
 
 {{< alert type="warning" >}}
-The PDF document printed text from Firefox is not selectable unlike Chromium-based browsers.
+The printed PDF document text from Firefox is not selectable unlike Chromium-based browsers.
 {{< /alert >}}
 {{< alert type="warning" >}}
-To get a similar rendering print as the browser display, you must activate the **Print backgrounds** option in the print settings.
+To get the same rendering as the browser display, you must activate the **Background graphics** option in the print settings.
 {{< /alert >}}

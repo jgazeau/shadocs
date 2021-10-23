@@ -41,9 +41,18 @@
   [navbar.shortcuts.7_gotobottom]
     keys = ["Shift","ArrowDown"]
     function = "scGoToBottom"
+  [navbar.shortcuts.8_print]
+    keys = ["Shift","p"]
+    function = "scPrint"
+  [navbar.shortcuts.9_qrcode]
+    keys = ["Shift","q"]
+    function = "scQrCode"
+  [navbar.shortcuts.10_closemodals]
+    keys = ["Escape"]
+    function = "scCloseModals"
 #
 # Liste des assets (https://gohugo.io/hugo-pipes/resource-from-template/) à inclures
-# Les assets gérés:
+# Assets gérés:
 # - sass                  = [Liste des fichiers SASS]
 # - css                   = [Liste des fichiers CSS]
 # - js                    = [Liste des fichiers javascript]

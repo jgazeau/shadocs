@@ -25,19 +25,21 @@ Valeurs possibles:
   * md
   * plaintext
 
-*NB: Si non renseigné, le contenu du fichier est affiché en tant qu'extrait de code (Paramètre uniquement applicable si le paramètre fichier est renseigné).*
+*NB:*  
+* *Si non renseigné, le contenu du fichier est affiché en tant qu'extrait de type **code** par défaut.
+* *Paramètre uniquement applicable si le paramètre fichier est renseigné).*
 {{< /md >}}|
 | caption | nommé |{{< md >}}
 Légende de l'extrait de code.  
-*NB: Paramètre uniquement applicable pour un extrait de code.*
+*NB: Paramètre uniquement applicable pour un extrait de type **code** par défaut.*
 {{< /md >}}|
 | codelang | nommé |{{< md >}}
 Langage de l'extrait de code.  
-*NB: Paramètre uniquement applicable pour un extrait de code.*
+*NB: Paramètre uniquement applicable pour un extrait de type **code** par défaut.*
 {{< /md >}}|
 | codeparam | nommé |{{< md >}}
 [Paramètres de surlignage](https://gohugo.io/content-management/syntax-highlighting/#highlighting-in-code-fences) de l'extrait de code.  
-*NB: Paramètre uniquement applicable pour un extrait de code.*
+*NB: Paramètre uniquement applicable pour un extrait de code de type **code** par défaut.*
 {{< /md >}}|
 
 # Exemples

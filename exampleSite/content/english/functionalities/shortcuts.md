@@ -15,16 +15,16 @@ For example, it is possible to get the list of available shortcuts using the sho
 # Define a specific shortcut
 ---
 
-To define a shortcut you must follow the following process (example with the **example** shortcut from the theme website):
+To define a shortcut you must follow the following process (example with the **example** (`Maj + 1`) shortcut from the theme website):
 
 1. Define the general configuration of the shortcut in the site specific configuration file (*Cf. highlighted lines below*):
     {{< snippet
         file="templates/configuration/config.en.toml"
         caption="config.toml ([params] section)"
         codelang="toml"
-        codeparam="linenos=inline,hl_lines=[\"10-18\"]"
+        codeparam="linenos=inline,hl_lines=[\"11-19\"]"
     />}}
-2. Define the informative labels of the shortcut that will appear in the shortcut help menu (in the appropriate *i18n* translation file):
+2. Define shortcut labels that will appear in the shortcut help menu (in the appropriate *i18n* translation file):
     {{< snippet
         file="templates/configuration/i18n.en.yaml"
         caption="en.yaml"

@@ -9,7 +9,7 @@ categories: ["Functionalities"]
 # Description
 ---
 
-By default, the theme generates a sidebar associated with the content tree structure of the website.  
+By default the theme generates a sidebar associated with the content tree structure of the website.  
 This tree structure must follow the [Hugo standard content organization](https://gohugo.io/content-management/organization/) and allows to manage two kind of pages:
 * section
     * defined by a **_index.md** content page in a **folder containing at least one other simple content page**

@@ -11,7 +11,7 @@ categories: ["Markdown"]
 
 ## Ordered list
 
-To define an ordered list, **add a number followed by the period character (.) to the line start, followed by a space** (The numbers order is not important, but **the first line number defines the starting point of the list**).  
+To define an ordered list, **add a number followed by the dot character (.) to the line start, followed by a space** (The numbers order is not important, but **the first line number defines the starting point of the list**).  
 It is possible to **nest lists by adding at least 4 spaces to the line start** compared to the previous level (all the same level elements must have **the same number of spaces at the line start**).
 
 | Markdown | HTML | Rendering |
@@ -185,7 +185,7 @@ Warning, for readability and compatibility reasons, it is recommended to **avoid
 
 ## Definition list
 
-To define a definition list, **add a colon (:) character to the line start, followed by a space only for lines containing the definition**.
+To define a definition list, **add a colon character (:) to the line start, followed by a space only for lines containing the definition**.
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |
@@ -217,7 +217,7 @@ Definition 2
 
 ## Task list
 
-To define a task list, **match one of the following syntaxes for each task line**:
+To define a task list, **use one of the following syntaxes for each task line**:
 
 * **- \[ \] Task_text** (For a not yet done task)
 * **- \[x\] Task_text** (For a done task)

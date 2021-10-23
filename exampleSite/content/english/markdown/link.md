@@ -11,7 +11,7 @@ categories: ["Markdown"]
 
 ## Classic syntax
 
-To define a link, **match the following syntax**:
+To define a link, **use the following syntax**:
 
 * **\[Link_text\]\(Link_URL\)**
 
@@ -38,7 +38,7 @@ To define a link, **match the following syntax**:
 
 ## Classic syntax with title
 
-To define a link with a title, **match the following syntax**:
+To define a link with a title, **use the following syntax**:
 
 * **\[Link_text\]\(Link_URL \"Link_title\"\)**
 
@@ -59,7 +59,7 @@ To define a link with a title, **match the following syntax**:
 To define a link it is possible to use alternative syntaxes:
 
 * **Write the link URL** (rendering will be automatically made by the markdown converter).
-* **Surround the link URL between the lower than and greater than characters**.
+* **Surround the link URL between the lower-than (\<) and greater-than (\>) characters**.
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |
@@ -99,7 +99,7 @@ Warning, for a suer-firendly rendering (using [Markdown Render Hooks](https://go
 
 To escape a link (display a URL as a text) and avoid its automatic rendering by the markdown converter, it is possible to use alternative syntaxes:
 
-* **Add a backtick (`) before and after the link URL (Define link as a code fragment)**.
+* **Add a backtick (\`) before and after the link URL (Define link as a code fragment)**.
 * **Escape the first slash (/) of the link URL**.
 
 | Markdown | HTML | Rendering |
@@ -125,7 +125,7 @@ https:\//www.google.com
 
 ## Emphasize a link
 
-To emphasize a link, **surround the markdown code of the link with the chosen emphasis code**. In case of a code fragment link, **place backticks inside the link text** (between the brackets).
+To emphasize a link, **surround the markdown code of the link with the chosen emphasis code**. In case of a code fragment link, **place backticks (\`) inside the link text** (between the brackets).
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |
@@ -177,15 +177,17 @@ To define a link whose URL is referenced (therefore reusable), it must **be form
 
 * **First part** (link text)
 
-    To define the first part of the link, which corresponds to the text that will be rendered and a reference to be defined in the second part, **match the following syntax**:
+    To define the first part of the link, which corresponds to the text that will be rendered and a reference to be defined in the second part, **use the following syntax**:
 
     * **\[Link_text\]\[Link_URL_reference\]**
 
-    The link URL reference is not case sensitive and may contain alphanumeric characters, spaces, and punctuation.
+    {{< alert type="info" >}}
+The link URL reference is not case sensitive and may contain alphanumeric characters, spaces, and punctuation.
+    {{< /alert >}}
 
 * **Second part** (link reference)
 
-    To define the second part of the link, which is the link between the link URL reference defined in the first part, and the value of the URL, **match one of the following syntaxes**:
+    To define the second part of the link, which is the link between the link URL reference defined in the first part, and the value of the URL, **use one of the following syntaxes**:
 
     * **\[Link_URL_reference\]: Link_URL**
     * **\[Link_URL_reference\]: Link_URL \"Link_title\"**
@@ -195,7 +197,9 @@ To define a link whose URL is referenced (therefore reusable), it must **be form
     * **\<\[Link_URL_reference\]\>: Link_URL \'Link_title\'**
     * **\<\[Link_URL_reference\]\>: Link_URL \(Link_title\)**
 
-    The second part of the link can be placed anywhere in the document. For example all references of a document can be grouped together at the end of a document for readability and simplicity reasons.
+    {{< alert type="info" >}}
+The second part of the link can be placed anywhere in the document. For example all references of a document can be grouped together at the end of a document for readability and simplicity reasons.
+    {{< /alert >}}
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |

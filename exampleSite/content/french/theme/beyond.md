@@ -12,15 +12,17 @@ categories: ["Thème"]
 # Fonctionnalités et améliorations à venir
 ---
 
-## Contenu du site
-* Enrichissement de la documentation constant
+### Contenu du site
+* Enrichissement de la documentation
 
-## Idées de nouvelles fonctionnalités
+### Idées de nouvelles fonctionnalités
 * Dark mode
 
-## Shortcodes
+### Shortcodes
 * Extrait de code avec onglets language
 
-## Optimisations techniques du site
+### Optimisations techniques du site
 * Utilisation de purgeCSS en PostCSS
-* Mise à jour automatique des dépendances
+
+# Contribuer
+---

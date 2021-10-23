@@ -1,5 +1,5 @@
 #
-# Github links displayed in the information modal
+# GitHub links displayed in the information modal
 #
 [github]
   main = "https://github.com/jgazeau/shadocs"
@@ -51,7 +51,7 @@
     keys = ["Escape"]
     function = "scCloseModals"
 #
-# List of assets (https://gohugo.io/hugo-pipes/resource-from-template/) to include
+# Assets list (https://gohugo.io/hugo-pipes/resource-from-template/) to include
 # Managed assets:
 # - sass                  = [List of sass files]
 # - css                   = [List of css files]

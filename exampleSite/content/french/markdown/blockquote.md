@@ -11,7 +11,7 @@ categories: ["Markdown"]
 
 ## Citation Simple
 
-Pour définir une citation, il faut **ajouter un caractère supérieur en début de ligne, suivi d'un espace**.
+Pour définir une citation, il faut **ajouter un caractère supérieur (>) en début de ligne, suivi d'un espace**.
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |
@@ -29,7 +29,7 @@ Pour définir une citation, il faut **ajouter un caractère supérieur en début
 
 ## Citation sur plusieurs paragraphes
 
-Pour définir une citation sur plusieurs paragraphes, il faut **ajouter un caractère supérieur en début de chaque ligne, même vide** ( toujours suivi d'un espace pour les lignes contenant du texte).
+Pour définir une citation sur plusieurs paragraphes, il faut **ajouter un caractère supérieur (>) en début de chaque ligne, même vide** ( toujours suivi d'un espace pour les lignes contenant du texte).
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |
@@ -52,7 +52,7 @@ Pour définir une citation sur plusieurs paragraphes, il faut **ajouter un carac
 
 ## Citations imbriquées
 
-Pour définir des citations imbriquées, il faut **ajouter un caractère supérieur en plus au début de chaque ligne pour correspondre au niveau de la citation** (toujours suivi d'un espace pour les lignes contenant du texte).
+Pour définir des citations imbriquées, il faut **ajouter un caractère supérieur (>) en plus au début de chaque ligne afin de correspondre au niveau de la citation** (toujours suivi d'un espace pour les lignes contenant du texte).
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |
@@ -77,7 +77,7 @@ Pour définir des citations imbriquées, il faut **ajouter un caractère supéri
 
 ## Citation avec d'autres éléments
 
-Pour définir une citation contenant d'autres éléments markdown, il faut écrire le markdown normalement et **prendre en compte le décalage de 2 caractères en début de ligne** correspondant à la citation (**le caractère supérieur (>) + 1 espace pour les lignes contenant du texte**).
+Pour définir une citation contenant d'autres éléments markdown, il faut écrire le markdown normalement et **prendre en compte un décalage de 2 caractères en début de ligne** correspondant à la citation (**le caractère supérieur (>) + 1 espace pour les lignes contenant du texte**).
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |
@@ -101,5 +101,5 @@ Pour définir une citation contenant d'autres éléments markdown, il faut écri
 {{< /md >}}|
 
 {{< alert type="warning" >}}
-Attention, il est possible que certains éléments markdown ne fonctionnent pas dans les citations.
+Attention, il est possible que certaines notations markdown ne fonctionnent pas dans les citations.
 {{< /alert >}}

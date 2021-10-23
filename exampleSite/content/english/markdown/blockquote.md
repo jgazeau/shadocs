@@ -11,7 +11,7 @@ categories: ["Markdown"]
 
 ## Simple blockquote
 
-To define a blockquote, **add a greater than character at the start of the line, followed by a space**.
+To define a blockquote, **add a greater-than character (>) at line start, followed by a space**.
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |
@@ -29,7 +29,7 @@ To define a blockquote, **add a greater than character at the start of the line,
 
 ## Blockquote over several paragraphs
 
-To define a blockquote over several paragraphs, **add a greater than character at the start of each line, even empty** (always followed by a space for lines containing text).
+To define a blockquote over several paragraphs, **add a greater-than character (>) at line start, even empty** (always followed by a space for lines containing text).
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |
@@ -52,7 +52,7 @@ To define a blockquote over several paragraphs, **add a greater than character a
 
 ## Nested blockquotes
 
-To define nested blockquotes, **add an extra greater than character at the beginning of each line to match the level of the blockquote** (always followed by a space for lines containing text).
+To define nested blockquotes, **add an extra greater-than character (>) at the beginning of each line to match the level of the blockquote** (always followed by a space for lines containing text).
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |
@@ -77,7 +77,7 @@ To define nested blockquotes, **add an extra greater than character at the begin
 
 ## Blockquote with other elements
 
-To define a blockquote containing other markdown elements, write the markdown normally and **take into account the offset of 2 characters at the start of the line** corresponding to the blockquote (**the greater than character (>) + 1 space for lines containing text**).
+To define a blockquote containing other markdown elements, normally write markdown and **take into account an offset of 2 characters at line start** corresponding to the blockquote (**the greater-than character (>) + 1 space for lines containing text**).
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |
@@ -101,5 +101,5 @@ To define a blockquote containing other markdown elements, write the markdown no
 {{< /md >}}|
 
 {{< alert type="warning" >}}
-Warning, some markdown elements may not work in blockquotes.
+Warning, some markdown notations may not work in blockquotes.
 {{< /alert >}}

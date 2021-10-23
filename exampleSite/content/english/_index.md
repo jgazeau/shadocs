@@ -15,7 +15,7 @@ categories: ["Theme"]
   "steps": [
     {
       "title": "Shadocs theme",
-      "intro": "Welcome on the Shadocs theme documentation website.<br>Through this step by step guide, you will discover the several website features and therefore those of the theme.",
+      "intro": "Welcome on the Shadocs theme documentation website.<br>Through this step by step onboarding guide, you will discover the several website features and therefore the theme ones.",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(false);"
     },{
       "title": "The logo",
@@ -26,7 +26,7 @@ categories: ["Theme"]
     },{
       "title": "The navigation bar",
       "intro": "The horizontal bar located at the top of the screen, also called as the navigation bar, contains several features to ease navigation and user experience on the website. Depending on the window width an extend menu will appear allowing to display hidden navigation bar buttons.",
-      "element": "#navbarMenu",
+      "element": "#navbar",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(false);"
     },{
       "title": "Search",
@@ -48,7 +48,7 @@ categories: ["Theme"]
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
     },{
       "title": "Multilingual",
-      "intro": "The multilingual button provides access to the several translations of the current page.<br><i>NB: This button is only visible if a translation exists for the current page.</i>",
+      "intro": "The multilingual button provides access to the several translations of the current page.<br><i>NB: This button is only visible if a translation page exists for the current page.</i>",
       "element": "getFirstVisibleElement('#langsSelector, #langsSelectorExtend');",
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
@@ -60,7 +60,7 @@ categories: ["Theme"]
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
     },{
       "title": "Shortcuts",
-      "intro": "The shortcuts button provides access to the list of the several shortcuts available on the website.",
+      "intro": "The shortcuts button provides access to the list of the shortcuts available on the website.",
       "element": "getFirstVisibleElement('#shortcutsInfo, #shortcutsInfoExtend');",
       "position": "left",
       "triggerexcept": ["nohover"],
@@ -78,12 +78,12 @@ categories: ["Theme"]
       "onbeforechange": "toggleSidebar(true,true);toggleExtendMenu(false);"
     },{
       "title": "Sidebar",
-      "intro": "It is possible to collapse the sidebar to only display main sections.",
+      "intro": "It is possible to collapse the sidebar to display main sections icons only.",
       "element": "#sidebarCollapse",
       "onbeforechange": "toggleSidebar(true,true);toggleExtendMenu(false);"
     },{
       "title": "Sidebar",
-      "intro": "When the sidebar is collapsed, hover over a section to display the associated sub-menus (or click on touch devices). .<br><i>NB: When the window is less than 1024 pixels wide, the sidebar is collapsed by default.</i>",
+      "intro": "When the sidebar is collapsed, hover over a section to display the associated sub-menus (or click on touch devices).<br><i>NB: When the window is less than 1024 pixels wide, the sidebar is collapsed by default.</i>",
       "element": "#sidebarUncollapse",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(false);"
     },{

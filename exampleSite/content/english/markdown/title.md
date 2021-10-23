@@ -11,7 +11,7 @@ categories: ["Markdown"]
 
 ## Classic title
 
-To define a title, **add a corresponding number of crosses (\ #) to the desired title level (from 1 to 6) at the start of the line, followed by a space**.
+To define a title, **add a corresponding number of crosses (\#) to the desired title level (from 1 to 6) at line start, followed by a space**.
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |
@@ -74,7 +74,7 @@ To define a title, **add a corresponding number of crosses (\ #) to the desired 
 
 For **levels 1 and 2 only**, it is possible to use an alternative syntax:
 
-* **Repeat characters from 1 to n times** on the line following the title text ((**=**) for level 1 and (**-**) for level 2).
+* **Repeat characters from 1 to n times**, on the line following the title text ((**=**) for level 1 and (**-**) for level 2).
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |
@@ -103,7 +103,7 @@ Level 2 title
 
 ## Title ID
 
-To define a title ID, **match the following syntax**:
+To define a title ID, **use the following syntax**:
 
 * **# Title_text {#title_ID}**
 

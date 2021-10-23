@@ -9,7 +9,7 @@ categories: ["Fonctionnalités"]
 # Description
 ---
 
-Par défaut le thème met à disposition une option de recherche. Celle-ci permet d'effectuer des **recherches simples sur le site et sur le contenu markdown avant conversion en html**, par le biais de la librairie javascript [FlexSearch](https://github.com/nextapps-de/flexsearch).
+Par défaut le thème met à disposition une option de recherche. Celle-ci permet d'effectuer des **recherches simples sur le site et sur le contenu markdown avant conversion en html**, en utilisant la librairie javascript [FlexSearch](https://github.com/nextapps-de/flexsearch).
 
 Les différentes caractéristiques de la recherche sont:
 * recherche simple (recherche par expression régulière non disponible)

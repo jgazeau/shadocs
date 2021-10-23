@@ -11,7 +11,7 @@ categories: ["Markdown"]
 
 ## Classic syntax
 
-To define an image, **match the following syntax**:
+To define an image, **use the following syntax**:
 
 * **\!\[Image_alternative_text\]\(Image_URL\)**
 

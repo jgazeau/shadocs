@@ -12,15 +12,17 @@ categories: ["Theme"]
 # Upcoming features and improvements
 ---
 
-## Website content
-* Continuous documentation enhancement
+### Website content
+* Documentation enhancement
 
-## New features ideas
+### New features ideas
 * Dark mode
 
-## Shortcodes
+### Shortcodes
 * Code snippet with language ​​tabs
 
-## Technical website improvements
+### Technical website improvements
 * Use of purgeCSS in PostCSS
-* Automatic dependencies update
+
+# Contributing
+---

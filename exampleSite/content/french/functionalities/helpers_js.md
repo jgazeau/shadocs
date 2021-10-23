@@ -9,7 +9,7 @@ categories: ["Fonctionnalités"]
 # Description
 ---
 
-Afin de faciliter l'utilisation du thème, celui-ci met à disposition des fonctions d'aide javascripts définies dans le fichier **assets/js/theme/modules/helpers.js**.
+Afin de faciliter l'utilisation du thème, des fonctions d'aide javascripts définies dans le fichier **assets/js/theme/modules/helpers.js** sont mises à disposition.
 Ces fonctions sont définies de manières globales à l'aide du fichier **assets/js/theme/modules/helpersGlobal.js** et peuvent donc être appelées depuis n'importe quel scope.
 
 # Fonctions d'aide javascript
@@ -53,17 +53,17 @@ Fonction qui gère le comportement du menu latéral:
     * true: désactive l'animation de transition du menu
     * false: active l'animation de transition du menu (comportement par défaut)
 {{< /md >}}|
-| toggleSidebarEntry(rubrique, force); |{{< md >}}
-Fonction qui gère le comportement d'une rubrique du menu latéral:
-* rubrique
-    * rubrique du ménu permettant de développer ou réduire ses entrées (éléments <a> contenant la classe *is-icon-expandable*)
+| toggleSidebarEntry(entry, force); |{{< md >}}
+Fonction qui gère le comportement d'une entrée du menu latéral:
+* entry
+    * entrée du ménu latéral permettant de développer ou réduire ses entrées (éléments \<a> contenant la classe *is-icon-expandable*)
 * force
-    * true: la rubrique est developpée
-    * false: la rubrique est réduite
+    * true: l'entrée du ménu latéral est developpée
+    * false: l'entrée du ménu latéral est réduite
 {{< /md >}}|
 | toggleSidebarEntries(force); |{{< md >}}
-Fonction qui gère le comportement des rubriques du menu latéral:
+Fonction qui gère le comportement des entrées du menu latéral:
 * force
-    * true: toutes les rubriques du menu latéral sont développées
-    * false: toutes les rubriques du menu latéral sont réduites
+    * true: toutes les entrées du menu latéral sont développées
+    * false: toutes les entrées du menu latéral sont réduites
 {{< /md >}}|

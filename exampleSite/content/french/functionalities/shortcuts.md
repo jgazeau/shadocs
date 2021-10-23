@@ -15,16 +15,16 @@ Par exemple, il est possible d'obtenir la liste des raccourcis disponibles en ut
 # Définir un raccourci spécifique
 ---
 
-Afin de définir un raccourci il faut suivre le process suivant (exemple avec le raccourci **example** du site du thème):
+Afin de définir un raccourci il faut suivre le process suivant (exemple avec le raccourci **example** (`Maj + 1`) du site du thème):
 
 1. Définir la configuration générale du raccourci dans le fichier de configuration spécifique du site (*Cf. lignes surlignées ci-dessous*):
     {{< snippet
         file="templates/configuration/config.fr.toml"
         caption="config.toml (section [params])"
         codelang="toml"
-        codeparam="linenos=inline,hl_lines=[\"10-18\"]"
+        codeparam="linenos=inline,hl_lines=[\"11-19\"]"
     />}}
-2. Définir les libellés informatifs du raccourci qui apparaitront dans le menu d'aide des raccourcis (dans le fichier de traduction *i18n* adéquat):
+2. Définir les libellés du raccourci qui apparaitront dans le menu d'aide des raccourcis (dans le fichier de traduction *i18n* adéquat):
     {{< snippet
         file="templates/configuration/i18n.fr.yaml"
         caption="fr.yaml"

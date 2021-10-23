@@ -8,7 +8,7 @@ categories: ["Fonctionnalités"]
 # Description
 ---
 
-Une section vide sera **affichée de la même manière qu'une page simple** et peut donc être définie des deux manières suivantes:
+Une section vide sera **affichée de la même manière qu'une page simple** et peut donc être définie des manières suivantes:
 * une page de contenu **_index.md** située dans un **dossier ne contenant aucune autre page simple de contenu**
     {{< treeview
         display="tree"
