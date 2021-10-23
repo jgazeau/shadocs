@@ -34,7 +34,7 @@ In addition, some pseudo-code may not be taken into account by the markdown conv
 
 To define an emoji it is possible to use an alternative syntax:
 
-* **directly copy the emoji as text** ([Sample emoji list to copy](https://emojipedia.org/)).
+* **copy the emoji as text** ([Sample emoji list to copy](https://emojipedia.org/)).
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |

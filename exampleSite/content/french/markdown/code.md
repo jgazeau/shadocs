@@ -113,7 +113,7 @@ Pour définir un bloc de code cloisonné sur plusieurs lignes, il faut **ajouter
 
 ### Syntaxe classique avec surlignage
 
-Pour définir un bloc de code cloisonné avec surlignage du code en fonction du langage utilisé, il faut **rajouter le code du langage après les 3 apostrophes inversées de la première ligne**.
+Pour définir un bloc de code cloisonné avec surlignage du code en fonction du langage utilisé, il faut **rajouter le code du langage après les 3 apostrophes inversées (\`) de la première ligne**.
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |

@@ -26,6 +26,7 @@ categories: ["Thème"]
 | [Mermaid](https://mermaid-js.github.io/mermaid/) | {{< parameter "versions.mermaid" />}} | js |
 | [QRious](https://github.com/neocotic/qrious/) | {{< parameter "versions.qrious" />}} | js |
 | [Intro](https://introjs.com/docs/) | {{< parameter "versions.intro" />}} | js |
+| [Swagger UI](https://swagger.io/tools/swagger-ui/) | {{< parameter "versions.swaggerui" />}} | js |
 
 # Installation
 ---
@@ -41,6 +42,7 @@ Pour créer un site Hugo, la documentation Hugo propose un [Quickstart](https://
         ```Bash
         cd ${REPERTOIRE_PROJET}
         git submodule add https://github.com/jgazeau/shadocs.git themes/shadocs
+        git submodule update --init --recursive
         ```
     * Télécharger les [sources du thème](https://github.com/jgazeau/shadocs/releases) et les ajouter au projet du site dans le répertoire `themes/shadocs`
 

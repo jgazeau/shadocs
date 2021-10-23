@@ -7,17 +7,17 @@
   issue = "https://github.com/jgazeau/shadocs/issues"
   fork = "https://github.com/jgazeau/shadocs/fork"
 #
-# Miscellaneous sidebar settings
+# Miscellaneous sidebar parameters
 #
 [sidebar]
   homeSectionIconDefault = "fas fa-home"
   firstSectionIconDefault = "fas fa-ban"
   nestedSectionIconDefault = "fas fa-level-up-alt fa-rotate-90 fa-xs"
 #
-# Keyboard shortcuts list of the theme
-# For each shortcut following keys must be sets:
-# - keys     = [Keyboard shortcuts table] (https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values)
-# - function = "Javascript function name to call by the shortcut"
+# List of theme keyboard shortcuts
+# For every shortcut the following keys are sets:
+# - keys     = [Table of keyboard shortcut keys] (https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values)
+# - function = "Name of the javascript function to call for the shortcut"
 #
 [navbar]
   [navbar.shortcuts.1_info]
@@ -41,9 +41,17 @@
   [navbar.shortcuts.7_gotobottom]
     keys = ["Shift","ArrowDown"]
     function = "scGoToBottom"
+  [navbar.shortcuts.8_print]
+    keys = ["Shift","p"]
+    function = "scPrint"
+  [navbar.shortcuts.9_qrcode]
+    keys = ["Shift","q"]
+    function = "scQrCode"
+  [navbar.shortcuts.10_closemodals]
+    keys = ["Escape"]
+    function = "scCloseModals"
 #
 # Assets list (https://gohugo.io/hugo-pipes/resource-from-template/) to include
-# Les assets gérés:
 # Managed assets:
 # - sass                  = [List of SASS files]
 # - css                   = [List of CSS files]

@@ -9,7 +9,7 @@ categories: ["Fonctionnalités"]
 # Description
 ---
 
-Par défaut dans le thème, chaque page de contenu (excepté pour la page d'accueil) génère une table des matières associée aux différents titres contenus dans la page.
+Par défaut dans le thème, chaque page de contenu (excepté la page d'accueil) génère une table des matières associée aux titres contenus dans la page.
 
 {{< alert type="warning" >}}
 La table des matières n'est disponible que lorsque la largeur de la fenêtre est supérieure à 1024 pixels.

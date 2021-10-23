@@ -8,7 +8,7 @@ categories: ["Functionalities"]
 # Description
 ---
 
-An empty section will be **displayed in the same way as a single page** and therefore can be defined using the two following methods:
+An empty section will be **displayed in same way as a single page** and therefore can be defined using the following methods:
 * a **_index.md** content page located in a **folder containing no other single content page**
     {{< treeview
         display="tree"

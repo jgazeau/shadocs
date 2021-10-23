@@ -25,19 +25,21 @@ Possible values:
   * md
   * plaintext
 
-*NB: If not specified, the file content is displayed as a code snippet (Parameter only applicable if file type is specified).*
+*NB:*  
+* *If not specified, the file content is displayed as snippet of type **code** by default.*
+* *Parameter only applicable if file parameter is specified).*
 {{< /md >}}|
 | caption | named |{{< md >}}
 Code snippet caption.  
-*NB: Parameter only applicable for a code snippet.*
+*NB: Parameter only applicable for a snippet with default type as code.*
 {{< /md >}}|
 | codelang | named |{{< md >}}
 Code snippet language.  
-*NB: Parameter only applicable for a code snippet.*
+*NB: Parameter only applicable for a snippet with default type as code.*
 {{< /md >}}|
 | codeparam | named |{{< md >}}
 Code snippet [highlight settings](https://gohugo.io/content-management/syntax-highlighting/#highlighting-in-code-fences).  
-*NB: Parameter only applicable for a code snippet.*
+*NB: Parameter only applicable for a snippet with default type as **code**.*
 {{< /md >}}|
 
 # Examples

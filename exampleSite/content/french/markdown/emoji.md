@@ -34,7 +34,7 @@ De plus, certains pseudo-code peuvent ne pas être pris en compte par le convert
 
 Pour définir un emoji il est possible d'utiliser une syntaxe alternative:
 
-* **copier directement l'emoji en tant que texte** ([Exemple de liste d'emoji à copier](https://emojipedia.org/)).
+* **copier l'emoji en tant que texte** ([Exemple de liste d'emoji à copier](https://emojipedia.org/)).
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |

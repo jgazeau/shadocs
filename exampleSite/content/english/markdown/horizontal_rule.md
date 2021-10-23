@@ -9,7 +9,7 @@ categories: ["Markdown"]
 # Horizontal rule
 ---
 
-To define a horizontal rule, **add at least 3 stars (\ *), hyphens (-) or underscores (_) characters at the start of the line** (The line must contain only the choosen characters).
+To define a horizontal rule, **add at least 3 stars (\*), hyphens (-) or underscores (_) characters at line start** (The line must only contain the choosen characters).
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |

@@ -9,7 +9,7 @@ categories: ["Functionalities"]
 # Description
 ---
 
-By default in the theme, each content page (except for the homepage) generates a table of contents associated with the several titles defined in the page.
+By default in the theme, each content page (except homepage) generates a table of contents associated with the titles defined in the page.
 
 {{< alert type="warning" >}}
 The table of contents is only available when the window width is greater than 1024 pixels.

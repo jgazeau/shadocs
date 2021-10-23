@@ -33,13 +33,51 @@ The parameter to display is read as a markdown and converted accordingly.
 | ---- | ---------------------- | ----------- |
 | | positional | Standard parameter path to display. |
 | path | named |{{< md >}}
-Specific parameter path to display.  
-*NB: The file parameter takes precedence over the i18n parameter.*
+Specific parameter path to display, relative to the *data* folder (the parameter must be defined in a [data template](https://gohugo.io/templates/data-templates/)).  
+*NB: The path parameter takes precedence over the i18n parameter.*
 {{< /md >}}|
 | i18n | named | i18n key parameter to display. |
 
 # Examples
 ---
+
+Given the following parameters definitions:
+
+{{< snippet
+    caption="config.toml"
+    codelang="toml"
+>}}
+[params]
+  logo      = "images/logo.png"
+  faviconmd = "![](images/favicon.png)"
+{{< /snippet >}}
+{{< snippet
+    caption="./data/dir/exampleTemplate.json"
+    codelang="json"
+>}}
+{
+  "exampleMap": {
+    "exampleArray": ["VAR1","VAR2","VAR3"],
+    "exampleString": "STRING"
+  }
+}
+{{< /snippet >}}
+{{< snippet
+    caption="./theme/data/themeParams.toml"
+    codelang="toml"
+>}}
+[navbar]
+  [navbar.shortcuts.1_info]
+    keys = ["Shift","i"]
+    function = "scShowInfo"
+{{< /snippet >}}
+{{< snippet
+    caption="./theme/i18n/en.yaml"
+    codelang="yaml"
+>}}
+- id: homepage_title
+  translation: "Homepage"
+{{< /snippet >}}
 
 | Markdown | Rendering |
 | -------- | --------- |

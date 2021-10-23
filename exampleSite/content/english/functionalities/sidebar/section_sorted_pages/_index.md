@@ -8,7 +8,7 @@ categories: ["Functionalities"]
 # Description
 ---
 
-By default, the theme manages the sidebar content sorting according to the [standard Hugo content sorting](https://gohugo.io/templates/lists/#order-content).
+By default the theme manages the sidebar content sorting according to the [standard Hugo content sorting](https://gohugo.io/templates/lists/#order-content).
 
 # Sorting behavior
 ---

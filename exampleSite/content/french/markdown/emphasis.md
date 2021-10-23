@@ -11,7 +11,7 @@ categories: ["Markdown"]
 
 ## Texte en italique
 
-Pour définir un texte en italique, il faut l'inclure entre 1 étoile (**\***) ou 1 traits de soulignement (**\_**).
+Pour définir un texte en italique, il faut **l'inclure entre 1 étoile (\*) ou 1 traits de soulignement (\_)**.
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |
@@ -26,12 +26,12 @@ Je suis en *italique*
 {{< /md >}}|
 
 {{< alert type="warning" >}}
-Attention, pour des raisons de compatibilité entre les différents markdown il est recommandé d'**utiliser la syntaxe avec des étoiles** plutôt que celle avec les traits de soulignement.
+Attention, pour des raisons de compatibilité entre les différentes syntaxes markdown il est recommandé d'**utiliser la syntaxe avec des étoiles** plutôt que celle avec les traits de soulignement.
 {{< /alert >}}
 
 ## Texte en gras
 
-Pour définir un texte en gras, il faut l'inclure entre 2 étoiles (**\***) ou 2 traits de soulignement (**\_**).
+Pour définir un texte en gras, il faut **l'inclure entre 2 étoiles (\*) ou 2 traits de soulignement (\_)**.
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |
@@ -46,12 +46,12 @@ Je suis en **gras**
 {{< /md >}}|
 
 {{< alert type="warning" >}}
-Attention, pour des raisons de compatibilité entre les différents markdown il est recommandé d'**utiliser la syntaxe avec des étoiles** plutôt que celle avec les traits de soulignement.
+Attention, pour des raisons de compatibilité entre les différentes syntaxes markdown il est recommandé d'**utiliser la syntaxe avec des étoiles** plutôt que celle avec les traits de soulignement.
 {{< /alert >}}
 
 ## Texte en italique et en gras
 
-Pour définir un texte en italique et en gras, il faut l'inclure entre 3 étoile (**\***) ou 3 traits de soulignement (**\_**).
+Pour définir un texte en italique et en gras, il faut **l'inclure entre 3 étoile (\*) ou 3 traits de soulignement (\_)**.
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |
@@ -66,12 +66,12 @@ Je suis en ***italique et en gras***
 {{< /md >}}|
 
 {{< alert type="warning" >}}
-Attention, pour des raisons de compatibilité entre les différents markdown il est recommandé d'**utiliser la syntaxe avec des étoiles** plutôt que celle avec les traits de soulignement.
+Attention, pour des raisons de compatibilité entre les différentes syntaxes markdown il est recommandé d'**utiliser la syntaxe avec des étoiles** plutôt que celle avec les traits de soulignement.
 {{< /alert >}}
 
 ## Texte barré
 
-Pour définir un texte barré, il faut l'inclure entre 2 tilde (**\~**).
+Pour définir un texte barré, il faut **l'inclure entre 2 tilde (\~)**.
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |

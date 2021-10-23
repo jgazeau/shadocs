@@ -33,13 +33,51 @@ Le paramètre à afficher est interprété en markdown et converti en conséquen
 | --- | ----------------------- | ----------- |
 | | positionnel | Chemin du paramètre standard du site à afficher. |
 | path | nommé |{{< md >}}
-Chemin du paramètre spécifique à afficher.  
+Chemin du paramètre spécifique à afficher, relatif au dossier *data* (le paramètre doit être défini dans un [fichier de type data](https://gohugo.io/templates/data-templates/)).  
 *NB: Le paramètre path est prépondérant par rapport au paramètre i18n.*
 {{< /md >}}|
 | i18n | nommé | Clé du paramètre i18n à afficher. |
 
 # Exemples
 ---
+
+Considérant les définitions de paramètres suivant:
+
+{{< snippet
+    caption="config.toml"
+    codelang="toml"
+>}}
+[params]
+  logo      = "images/logo.png"
+  faviconmd = "![](images/favicon.png)"
+{{< /snippet >}}
+{{< snippet
+    caption="./data/dir/exampleTemplate.json"
+    codelang="json"
+>}}
+{
+  "exampleMap": {
+    "exampleArray": ["VAR1","VAR2","VAR3"],
+    "exampleString": "STRING"
+  }
+}
+{{< /snippet >}}
+{{< snippet
+    caption="./theme/data/themeParams.toml"
+    codelang="toml"
+>}}
+[navbar]
+  [navbar.shortcuts.1_info]
+    keys = ["Shift","i"]
+    function = "scShowInfo"
+{{< /snippet >}}
+{{< snippet
+    caption="./theme/i18n/fr.yaml"
+    codelang="yaml"
+>}}
+- id: homepage_title
+  translation: "Page d'accueil"
+{{< /snippet >}}
 
 | Markdown | Rendu |
 | -------- | ----- |

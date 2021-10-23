@@ -9,7 +9,7 @@ categories: ["Functionalities"]
 # Description
 ---
 
-In order to ease the use of the theme, it gives some javascript functions defined in the file **assets/js/theme/modules/helpers.js**.
+In order to ease the use of the theme, some javascript functions defined in the file **assets/js/theme/modules/helpers.js** are provided.
 These functions are defined globally using the file **assets/js/theme/modules/helpersGlobal.js** and thus can be called from every scope.
 
 ## JavaScript helper functions
@@ -56,7 +56,7 @@ Function managing the sidebar behavior:
 | toggleSidebarEntry(entry, force); |{{< md >}}
 Function managing the sidebar entry:
 * entry
-    * menu entry that can expand or shrink its elements (<a> elements containing *is-icon-expandable* class)
+    * menu entry that can expand or shrink its elements (\<a> elements containing *is-icon-expandable* class)
 * force
     * true: entry is expanded
     * false: entry is shrinked

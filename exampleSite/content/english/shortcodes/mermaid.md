@@ -9,7 +9,7 @@ categories: ["Shortcode"]
 ---
 
 The **mermaid** shortcode allows to use the [mermaid.js](https://mermaid-js.github.io/mermaid/) library to generate diagrams and graphs.
-By default, the theme generates a global HTML element containing:
+By default the theme generates a global HTML element containing:
 * the mermaid.js rendered svg
 * a download icon of the rendered svg
 * a reload icon of the rendered svg

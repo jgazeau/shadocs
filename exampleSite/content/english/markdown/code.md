@@ -113,7 +113,7 @@ To define a fenced code block over several lines, **add 3 backticks (\`) at the 
 
 ### Classic syntax with highlighting
 
-To define a fenced code block with code highlighting based on the language used, **add the language code after the 3 backticks to the first line**.
+To define a fenced code block with code highlighting based on the language used, **add the language code after the 3 backticks (\`) to the first line**.
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |

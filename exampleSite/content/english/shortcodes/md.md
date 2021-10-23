@@ -11,7 +11,7 @@ categories: ["Shortcode"]
 The **md** shortcode allows to force the conversion of a block of text written in markdown.  
 This shortcode is particularly useful to add content written in complex markdown syntaxes (lists, code snippets, ...), in a table, or in case of nested shortcodes.
 {{< alert type="warning" >}}
-Auto-nesting of this shortcode is not possible.
+Nesting two **md** shortcode is not possible.
 {{< /alert >}}
 
 # Parameters
@@ -48,4 +48,4 @@ I'm a text written in **markdown**
 I'm a text written in **markdown**
 {{</* /md */>}}
 ~~~
-{{< /md >}}| Table of examples without the current row (***Rendering not available because auto-nesting of the md shortcode***) |
+{{< /md >}}| Table of examples without the current row (***Rendering not available because two md shortcode are nested in this example***) |

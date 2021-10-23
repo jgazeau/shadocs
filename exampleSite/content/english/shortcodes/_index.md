@@ -18,7 +18,7 @@ More information about [shortcodes in the Hugo documentation](https://gohugo.io/
 # Usage
 ---
 
-The documentation provides information to easily use the several shortcodes added by the theme:
+The theme shortcode documentation provides information to easily use the several shortcodes added by the theme:
 * Shortcode description
 * Shortcode parameters described using following table layout:
 

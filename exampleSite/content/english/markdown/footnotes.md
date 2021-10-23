@@ -9,23 +9,27 @@ categories: ["Markdown"]
 # Footnotes
 ---
 
-To define a footnote, it must **be formated in 2 parts**.
+To define a footnote, **it must be formated in 2 parts**.
 
 * **First part** (footnote reference)
 
-    To define the footnote first part, which corresponds to a reference to be defined in the second part, **match the following syntax**:
+    To define the footnote first part, which corresponds to a reference to be defined in the second part, **use the following syntax**:
 
     * **Text_associated_to_a_footnote\[\^Footnote_reference\]**
 
-    The footnote reference can contain only alphanumeric characters (no spaces nor tabs).
+    {{< alert type="warning" >}}
+The footnote reference can only contain alphanumeric characters (no spaces nor tabs).
+    {{< /alert >}}
 
 * **Second part** (footnote content)
 
-    To define the footnote second part, which corresponds to the content of the footnote, **match the following syntax**:
+    To define the footnote second part, which corresponds to the content of the footnote, **use the following syntax**:
 
     * **\[\^Footnote_reference\]: Footnote_content**
 
-    The footnote second part can be placed anywhere in the document, all footnotes will be automatically added at the bottom of the current page. However, footnotes content should not be placed in another markdown element (List, code snippet, table, ...).
+    {{< alert type="warning" >}}
+The footnote second part can be placed anywhere in the document, all footnotes will be automatically added at the bottom of the current page. However, footnotes content should not be placed in another markdown element (List, code snippet, table, ...).
+    {{< /alert >}}
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |

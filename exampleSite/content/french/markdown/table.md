@@ -13,8 +13,8 @@ categories: ["Markdown"]
 
 Pour définir un tableau, il faut **respecter les règles suivantes**:
 
-* **Séparer les colonnes par des barres verticales (|)**
-* **Insérer des barres verticales (|) aux deux extrémités du tableau**
+* **Séparer les colonnes par des barres verticales (\|)**
+* **Insérer des barres verticales (\|) aux deux extrémités du tableau**
 * **Séparer le titre d'une colonne avec son contenu, par une ligne de démarcation contenant au minimum 3 caractères traits d'union (-)**
 
 | Markdown | HTML | Rendu |

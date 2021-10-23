@@ -23,7 +23,7 @@ Le thème permet d'imprimer une page de contenu suivant les caractéristiques su
 * un icone situé dans la barre de navigation ainsi qu'un raccourci permettent d'accéder à la prévisualisation de l'impression
 
 {{< alert type="warning" >}}
-Le text du document imprimé en PDF à partir de Firefox n'est pas sélectionnable contrairement aux navigateurs basés sur Chromium.
+Le texte du document imprimé en PDF à partir de Firefox n'est pas sélectionnable contrairement aux navigateurs basés sur Chromium.
 {{< /alert >}}
 {{< alert type="warning" >}}
 Pour obtenir une impression ayant un rendu similaire à celui de l'affichage du navigateur, il faut activer l'option **Imprimer les arrière-plans** dans les paramètres d'impression.

@@ -11,10 +11,10 @@ categories: ["Markdown"]
 
 ## Classic syntax
 
-To define a table, **match the following rules**:
+To define a table, **use the following rules**:
 
-* **Separate columns with vertical bars (|)**
-* **Insert vertical bars (|) at both ends of the table**
+* **Separate columns with vertical bars (\|)**
+* **Insert vertical bars (\|) at both ends of the table**
 * **Separate column title with its content, with a demarcation line containing at least 3 hyphens characters (-)**
 
 | Markdown | HTML | Rendering |
@@ -99,7 +99,7 @@ Warning, it is possible to format the text of an array using *emphasis*, *link* 
 
 ## Alignment
 
-To align a column content, **add a colon (:) character to the hyphens of the demarcation line on the desired alignment side (on both sides to make the content centered)**.
+To align a column content, **add a colon character (:) to the hyphens of the demarcation line on the desired alignment side (on both sides to make the content centered)**.
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |
