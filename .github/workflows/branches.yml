@@ -1,5 +1,6 @@
 name: Check
 on:
+  workflow_dispatch:
   push:
     branches:
       - '**'
@@ -8,8 +9,6 @@ on:
     paths:
       - '**'
       - '!CHANGELOG.md'
-      - '!package.json'
-      - '!package-lock.json'
 env:
   HUGO_BASIC_EXAMPLE_REPO: "gohugoio/hugoBasicExample"
   HUGO_BIN_NAME: "hugo"
