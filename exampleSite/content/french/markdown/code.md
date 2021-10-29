@@ -119,10 +119,11 @@ Pour définir un bloc de code cloisonné avec surlignage du code en fonction du 
 | -------- | ---- | ----- |
 |{{< md >}}
 `````````
-```html
+```html {linenos=table,hl_lines=[1,"3-4"],linenostart=10}
 <html>
   <head>
     <title>Hello world</title>
+    <meta charset="UTF-8">
   </head>
 </html>
 ```
@@ -134,16 +135,18 @@ Pour définir un bloc de code cloisonné avec surlignage du code en fonction du 
     <html>
       <head>
         <title>Hello world</title>
+        <meta charset="UTF-8">
       </head>
     </html>
   </code>
 </pre>
 [...]
 {{< /plaintext >}}|{{< md >}}
-```html
+```html {linenos=table,hl_lines=[1,"3-4"],linenostart=10}
 <html>
   <head>
     <title>Hello world</title>
+    <meta charset="UTF-8">
   </head>
 </html>
 ```

@@ -32,8 +32,8 @@ html
     vertical-align: middle
     word-break: break-word
     display: table-cell
-    height: fit-content
-    width: fit-content
+    height: max-content
+    width: max-content
     text-align: center
     div
       border: solid $theme-gap-small-size $yellow
@@ -122,7 +122,7 @@ h1,h2,h3,h4,h5,h6
       transform: translateX(0)
       opacity: 1
 hr
-  background: linear-gradient(90deg, $theme-color 0%, $content-background 100%)
+  background: linear-gradient(90deg, $theme-color 0%, transparent 100%)
   border-radius: $theme-border-radius
   margin: $theme-gap-large-size 0
   height: $theme-gap-small-size
@@ -169,6 +169,9 @@ input[type="radio"]
   position: relative
   pre
     margin: 0
+  > pre[style]
+    span[style]
+      display: inline !important
   table
     td:nth-child(1)
       pre
@@ -185,9 +188,6 @@ input[type="radio"]
           width: 1px
           bottom: 0
           top: 0
-        code
-          span
-            display: inline-block
     td:nth-child(2)
       pre
         padding-left: 0
@@ -245,7 +245,7 @@ img
 blockquote
   border-left: $theme-gap-small-size solid $content-blockquote-color
   padding: $theme-gap-medium-size $theme-gap-large-size
-  background: smooth-color($content-background,10)
+  background: smooth-color($content-background, 10)
   position: relative
 table:not([style])
   margin: $content-item-margin
@@ -254,15 +254,15 @@ table:not([style])
   border-spacing: 0
   width: 100%
   blockquote
-    background: smooth-color($content-background,10)
+    background: smooth-color($content-background, 10)
     blockquote
-      background: smooth-color($content-background,20)
+      background: smooth-color($content-background, 20)
   th
     color: findColorInvert($content-table-color)
     background: $content-table-color
   th,
   td
-    border: 1px solid smooth-color($content-table-color, 50)
+    border: 1px solid smooth-color($content-table-color, 25)
     padding: $theme-gap-medium-size $theme-gap-large-size
     vertical-align: middle
     overflow: auto

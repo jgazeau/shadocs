@@ -10,6 +10,13 @@ categories: ["Shortcode"]
 
 The **snippet** shortcode allows to write a code fragment, defined either from the [shortcode content](https://gohugo.io/templates/shortcode-templates/#inner), or from a template file.
 
+Moreover, it is possible to define snippets organised in tabs. To do so, nest as many **tab** shortcode as needed in a parent **snippet** shortcode.  
+For example: display CLI commands depending on the operating system used.
+
+{{< alert type="warning" >}}
+The content as well as parameters defined in a **tab** shortcode are preponderant over ones defined in the parent **snippet** shortcode. If all tabs share the same parameters, it is therefore possible to define them globally in the parent **snippet** shortcode (Cf. [examples](/shortcodes/snippet/#examples) below).
+{{< /alert >}}
+
 # Parameters
 ---
 
@@ -22,24 +29,27 @@ File path to include.
 | type | named |{{< md >}}
 File format to include.  
 Possible values:
+  * code
   * md
   * plaintext
 
-*NB:*  
-* *If not specified, the file content is displayed as snippet of type **code** by default.*
-* *Parameter only applicable if file parameter is specified).*
+*NB: If not specified, the default type is **code**.*
 {{< /md >}}|
 | caption | named |{{< md >}}
 Code snippet caption.  
-*NB: Parameter only applicable for a snippet with default type as code.*
+*NB: Parameter only applicable for a snippet of **code** type.*
 {{< /md >}}|
 | codelang | named |{{< md >}}
 Code snippet language.  
-*NB: Parameter only applicable for a snippet with default type as code.*
+*NB: Parameter only applicable for a snippet of **code** type.*
 {{< /md >}}|
 | codeparam | named |{{< md >}}
 Code snippet [highlight settings](https://gohugo.io/content-management/syntax-highlighting/#highlighting-in-code-fences).  
-*NB: Parameter only applicable for a snippet with default type as **code**.*
+*NB: Parameter only applicable for a snippet of **code** type.*
+{{< /md >}}|
+| title | nommé |{{< md >}}
+Tab title.  
+*NB: Parameter only applicable for a **tab** shortcode nested in a **snippet** shortcode.*
 {{< /md >}}|
 
 # Examples
@@ -49,201 +59,108 @@ Code snippet [highlight settings](https://gohugo.io/content-management/syntax-hi
 | -------- | --------- |
 |{{< md >}}
 ```
-{{</* snippet
-*/>}}
-package main
-
-import "fmt"
-
-func main() {
-  fmt.Println("Hello, World!")
+{{</* snippet */>}}
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
 }
 {{</* /snippet */>}}
 ```
 {{< /md >}}|{{< snippet >}}
-package main
-
-import "fmt"
-
-func main() {
-  fmt.Println("Hello, World!")
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
 }
 {{< /snippet >}}|
 |{{< md >}}
 ```
 {{</* snippet
-    caption="I'm a legend"
+    type="code"
 */>}}
-package main
-
-import "fmt"
-
-func main() {
-  fmt.Println("Hello, World!")
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
 }
 {{</* /snippet */>}}
 ```
 {{< /md >}}|{{< snippet
-    caption="I'm a legend"
+    type="code"
 >}}
-package main
-
-import "fmt"
-
-func main() {
-  fmt.Println("Hello, World!")
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
 }
 {{< /snippet >}}|
 |{{< md >}}
 ```
 {{</* snippet
-    caption="I'm a legend"
-    codelang="go"
+    type="md"
 */>}}
-package main
-
-import "fmt"
-
-func main() {
-  fmt.Println("Hello, World!")
-}
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
 {{</* /snippet */>}}
 ```
 {{< /md >}}|{{< snippet
-    caption="I'm a legend"
-    codelang="go"
+    type="md"
 >}}
-package main
-
-import "fmt"
-
-func main() {
-  fmt.Println("Hello, World!")
-}
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
 {{< /snippet >}}|
 |{{< md >}}
 ```
 {{</* snippet
-    caption="I'm a legend"
-    codelang="go"
-    codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
+    type="plaintext"
 */>}}
-package main
-
-import "fmt"
-
-func main() {
-  fmt.Println("Hello, World!")
-}
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
 {{</* /snippet */>}}
 ```
 {{< /md >}}|{{< snippet
-    caption="I'm a legend"
-    codelang="go"
-    codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
+    type="plaintext"
 >}}
-package main
-
-import "fmt"
-
-func main() {
-  fmt.Println("Hello, World!")
-}
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
 {{< /snippet >}}|
+|{{< md >}}
+```
+{{</* snippet
+    file="templates/snippet.en.md"
+    caption="I'm a legend"
+/*/>}}
+```
+{{< /md >}}|{{< snippet
+    file="templates/snippet.en.md"
+    caption="I'm a legend"
+/>}}|
 |{{< md >}}
 ```
 {{</* snippet
     file="templates/snippet.en.md"
     type="md"
+    caption="I'm a legend"
 /*/>}}
 ```
 {{< /md >}}|{{< snippet
     file="templates/snippet.en.md"
     type="md"
+    caption="I'm a legend"
 />}}|
 |{{< md >}}
 ```
 {{</* snippet
     file="templates/snippet.en.md"
     type="plaintext"
+    caption="I'm a legend"
 /*/>}}
 ```
 {{< /md >}}|{{< snippet
     file="templates/snippet.en.md"
     type="plaintext"
-/>}}|
-|{{< md >}}
-```
-{{</* snippet
-    file="templates/snippet.en.md"
-/*/>}}
-```
-{{< /md >}}|{{< snippet
-    file="templates/snippet.en.md"
-/>}}|
-|{{< md >}}
-```
-{{</* snippet
-    file="templates/snippet.html"
-    type="plaintext"
-/*/>}}
-```
-{{< /md >}}|{{< snippet
-    file="templates/snippet.html"
-    type="plaintext"
-/>}}|
-|{{< md >}}
-```
-{{</* snippet
-    file="templates/snippet.html"
-/*/>}}
-```
-{{< /md >}}|{{< snippet
-    file="templates/snippet.html"
-/>}}|
-|{{< md >}}
-```
-{{</* snippet
-    file="templates/snippet.go"
-    type="plaintext"
-/*/>}}
-```
-{{< /md >}}|{{< snippet
-    file="templates/snippet.go"
-    type="plaintext"
-/>}}|
-|{{< md >}}
-```
-{{</* snippet
-    file="templates/snippet.go"
-/*/>}}
-```
-{{< /md >}}|{{< snippet
-    file="templates/snippet.go"
-/>}}|
-|{{< md >}}
-```
-{{</* snippet
-    file="templates/snippet.go"
     caption="I'm a legend"
-/*/>}}
-```
-{{< /md >}}|{{< snippet
-    file="templates/snippet.go"
-    caption="I'm a legend"
-/>}}|
-|{{< md >}}
-```
-{{</* snippet
-    file="templates/snippet.go"
-    caption="I'm a legend"
-    codelang="go"
-/*/>}}
-```
-{{< /md >}}|{{< snippet
-    file="templates/snippet.go"
-    caption="I'm a legend"
-    codelang="go"
 />}}|
 |{{< md >}}
 ```
@@ -260,3 +177,117 @@ func main() {
     codelang="go"
     codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
 />}}|
+|{{< md >}}
+```
+{{</* snippet */>}}
+{{</* tab
+    title="code"
+*/>}}
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
+{{</* /tab */>}}
+{{</* tab
+    title="md"
+    type="md"
+*/>}}
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
+{{</* /tab */>}}
+{{</* tab
+    title="plaintext"
+    type="plaintext"
+*/>}}
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
+{{</* /tab */>}}
+{{</* /snippet */>}}
+```
+{{< /md >}}|{{< snippet >}}
+{{< tab
+    title="code"
+>}}
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
+{{< /tab >}}
+{{< tab
+    title="md"
+    type="md"
+>}}
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
+{{< /tab >}}
+{{< tab
+    title="plaintext"
+    type="plaintext"
+>}}
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
+{{< /tab >}}
+{{< /snippet >}}|
+|{{< md >}}
+```
+{{</* snippet
+    file="templates/snippet.go"
+    type="md"
+    caption="I'm a legend"
+    codelang="go"
+    codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
+*/>}}
+{{</* tab
+    title="first tab"
+    type="code"
+    caption="I'm an other legend"
+    codelang="go"
+    codeparam="linenos=table,hl_lines=[1,3],linenostart=20"
+/*/>}}
+{{</* tab
+    file="templates/snippet.en.md"
+    title="second tab"
+    codelang="md"
+/*/>}}
+{{</* tab
+    title="third tab"
+    type="plaintext"
+    caption=""
+*/>}}
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
+{{</* /tab */>}}
+{{</* /snippet */>}}
+```
+{{< /md >}}|{{< snippet
+    file="templates/snippet.go"
+    type="md"
+    caption="I'm a legend"
+    codelang="go"
+    codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
+>}}
+{{< tab
+    title="first tab"
+    type="code"
+    caption="I'm an other legend"
+    codelang="go"
+    codeparam="linenos=table,hl_lines=[1,3],linenostart=20"
+/>}}
+{{< tab
+    file="templates/snippet.en.md"
+    title="second tab"
+    codelang="md"
+/>}}
+{{< tab
+    title="third tab"
+    type="plaintext"
+    caption=""
+>}}
+# Hello, World!
+---
+*I am* **a reusable** ***template*** to include in a page content.
+{{< /tab >}}
+{{< /snippet >}}|
