@@ -1,0 +1,47 @@
+{{with .Parent}}
+  {{$content := slice}}
+  {{with $.Get "file"}}
+    {{$content = $content | append (readFile .)}}
+  {{else}}
+    {{with (trim $.Inner "\r\n ")}}
+      {{$content = $content | append .}}
+    {{else}}
+      {{$content = $content | append ""}}
+    {{end}}
+  {{end}}
+  {{with $.Parent.Scratch.Get "snippetTabsContent"}}
+    {{$.Parent.Scratch.Set "snippetTabsContent" (. | append $content)}}
+  {{else}}
+    {{$.Parent.Scratch.Set "snippetTabsContent" $content}}
+  {{end}}
+  {{$tempTitle := ($.Get "title" | default (i18n "no_data"))}}
+  {{with $.Parent.Scratch.Get "snippetTabsTitle"}}
+    {{$.Parent.Scratch.Set "snippetTabsTitle" (. | append $tempTitle)}}
+  {{else}}
+    {{$.Parent.Scratch.Set "snippetTabsTitle" (slice $tempTitle)}}
+  {{end}}
+  {{$tempType := cond (isset $.Params "type") ($.Get "type") "null"}}
+  {{with $.Parent.Scratch.Get "snippetTabsType"}}
+    {{$.Parent.Scratch.Set "snippetTabsType" (. | append $tempType)}}
+  {{else}}
+    {{$.Parent.Scratch.Set "snippetTabsType" (slice $tempType)}}
+  {{end}}
+  {{$tempCaption := cond (isset $.Params "caption") ($.Get "caption") "null"}}
+  {{with $.Parent.Scratch.Get "snippetTabsCaption"}}
+    {{$.Parent.Scratch.Set "snippetTabsCaption" (. | append $tempCaption)}}
+  {{else}}
+    {{$.Parent.Scratch.Set "snippetTabsCaption" (slice $tempCaption)}}
+  {{end}}
+  {{$tempCodelang := cond (isset $.Params "codelang") ($.Get "codelang") "null"}}
+  {{with $.Parent.Scratch.Get "snippetTabsCodelang"}}
+    {{$.Parent.Scratch.Set "snippetTabsCodelang" (. | append $tempCodelang)}}
+  {{else}}
+    {{$.Parent.Scratch.Set "snippetTabsCodelang" (slice $tempCodelang)}}
+  {{end}}
+  {{$tempCodeparam := cond (isset $.Params "codeparam") ($.Get "codeparam") "null"}}
+  {{with $.Parent.Scratch.Get "snippetTabsCodeparam"}}
+    {{$.Parent.Scratch.Set "snippetTabsCodeparam" (. | append $tempCodeparam)}}
+  {{else}}
+    {{$.Parent.Scratch.Set "snippetTabsCodeparam" (slice $tempCodeparam)}}
+  {{end}}
+{{end}}

@@ -119,10 +119,11 @@ To define a fenced code block with code highlighting based on the language used,
 | -------- | ---- | --------- |
 |{{< md >}}
 `````````
-```html
+```html {linenos=table,hl_lines=[1,"3-4"],linenostart=10}
 <html>
   <head>
     <title>Hello world</title>
+    <meta charset="UTF-8">
   </head>
 </html>
 ```
@@ -134,16 +135,18 @@ To define a fenced code block with code highlighting based on the language used,
     <html>
       <head>
         <title>Hello world</title>
+        <meta charset="UTF-8">
       </head>
     </html>
   </code>
 </pre>
 [...]
 {{< /plaintext >}}|{{< md >}}
-```html
+```html {linenos=table,hl_lines=[1,"3-4"],linenostart=10}
 <html>
   <head>
     <title>Hello world</title>
+    <meta charset="UTF-8">
   </head>
 </html>
 ```

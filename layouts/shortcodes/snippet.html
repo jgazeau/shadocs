@@ -3,39 +3,80 @@
 {{else}}
   {{.Scratch.Set "isNestedShortcode" false}}
 {{end}}
-{{$content := ""}}
+{{$snippetContent := slice}}
 {{$optMd := dict "markup" "goldmark"}}
+{{$type := .Get "type" | default "code"}}
 {{$caption := .Get "caption"}}
 {{$codelang := .Get "codelang"}}
 {{$codeparam := .Get "codeparam"}}
-{{$snippetHtmlCodeHead := "<div class='sc-snippet-container'>" | safeHTML}}
-{{$snippetHtmlCodeEnd := "</div>" | safeHTML}}
 {{with .Get "file"}}
-  {{if eq ($.Get "type") "md"}}
-    {{$snippetHtmlCodeHead}}
-    {{readFile . | $.Page.RenderString $optMd}}
-    {{$snippetHtmlCodeEnd}}
-  {{else if eq ($.Get "type") "plaintext"}}
-    {{$snippetHtmlCodeHead}}
-    <div class='sc-snippet-plaintext'>{{readFile . | safeHTML}}</div>
-    {{$snippetHtmlCodeEnd}}
-  {{else}}
-    {{$content = (readFile .)}}
-  {{end}}
+  {{$snippetContent = $snippetContent | append (readFile .)}}
 {{else}}
-  {{with .Inner}}
-    {{$content = (trim . "\r\n")}}
+  {{with (trim .Inner "\r\n ")}}
+    {{$snippetContent = $snippetContent | append .}}
   {{end}}
 {{end}}
-{{with $content}}
-  {{$snippetHtmlCodeHead}}
-  {{with $caption}}
-    <div class='sc-snippet'>
-      <div class='sc-snippet-caption'>{{$caption}}</div>
-      {{printf "%s%s {%s}\n%s\n%s\n" "~~~" $codelang $codeparam $content "~~~" | $.Page.RenderString $optMd}}
-    </div>
-  {{else}}
-    {{printf "%s%s {%s}\n%s\n%s\n" "~~~" $codelang $codeparam $content "~~~" | $.Page.RenderString $optMd}}
+{{with $.Scratch.Get "snippetTabsContent"}}
+  {{$tempSlice := slice}}
+  {{range .}}
+    {{with .}}
+      {{$tempSlice = $tempSlice | append .}}
+    {{else}}
+      {{with (index $snippetContent 0)}}
+        {{$tempSlice = $tempSlice | append .}}
+      {{end}}
+    {{end}}
   {{end}}
-  {{$snippetHtmlCodeEnd}}
+  {{$.Scratch.Set "contentArray" $tempSlice}}
+{{else}}
+  {{$.Scratch.Set "contentArray" $snippetContent}}
+{{end}}
+{{with $.Scratch.Get "contentArray"}}
+  {{$.Page.Scratch.Add "snippetGroupUid" 1}}
+  {{$snippetGroupId := (printf "%s%s" "snippetGroup-" (string ($.Page.Scratch.Get "snippetGroupUid")))}}
+  <div class='sc-snippet-wrapper{{with gt (len .) 1}} sc-snippet-tabs{{end}}'>
+  {{range $key, $value := .}}
+    {{$.Page.Scratch.Add "snippetTabUid" 1}}
+    {{$snippetTabId := (printf "%s%s" "snippetTab-" (string ($.Page.Scratch.Get "snippetTabUid")))}}
+    {{$tempTitle := ""}}
+    {{$tempType := $type}}
+    {{$tempCaption := $caption}}
+    {{$tempCodelang := $codelang}}
+    {{$tempCodeparam := $codeparam}}
+    {{with $.Scratch.Get "snippetTabsTitle"}}{{if ne (index . $key) "null"}}{{$tempTitle = index . $key}}{{end}}{{end}}
+    {{with $.Scratch.Get "snippetTabsType"}}{{if ne (index . $key) "null"}}{{$tempType = index . $key}}{{end}}{{end}}
+    {{with $.Scratch.Get "snippetTabsCaption"}}{{if ne (index . $key) "null"}}{{$tempCaption = index . $key}}{{end}}{{end}}
+    {{with $.Scratch.Get "snippetTabsCodelang"}}{{if ne (index . $key) "null"}}{{$tempCodelang = index . $key}}{{end}}{{end}}
+    {{with $.Scratch.Get "snippetTabsCodeparam"}}{{if ne (index . $key) "null"}}{{$tempCodeparam = index . $key}}{{end}}{{end}}
+    {{template "getSnippetContentWrapper" dict "groupId" $snippetGroupId "tabId" $snippetTabId "key" $key "content" $value "title" $tempTitle "type" $tempType "caption" $tempCaption "codelang" $tempCodelang "codeparam" $tempCodeparam "optMd" $optMd "context" $}}
+  {{end}}
+  </div>
+{{end}}
+<!-- TEMPLATES -->
+{{define "getSnippetContentWrapper"}}
+  {{with .title}}
+    <input id='{{$.tabId}}' class='sc-snippet-input' type='radio' name='{{$.groupId}}'{{if eq $.key 0}} checked{{end}}/>
+    <label class='sc-snippet-label' for='{{$.tabId}}'>{{.}}</label>
+  {{end}}
+  <div class='sc-snippet-container{{with .title}} sc-snippet-tab{{end}}'{{with .title}} id='{{$.tabId}}-content'{{end}}>
+    {{with .caption}}
+      <div class='sc-snippet'>
+        <div class='sc-snippet-caption'>{{.}}</div>
+        {{template "getSnippetContent" dict "content" $.content "type" $.type "codelang" $.codelang "codeparam" $.codeparam "optMd" $.optMd "context" $.context}}
+      </div>
+    {{else}}
+      {{template "getSnippetContent" dict "content" $.content "type" $.type "codelang" $.codelang "codeparam" $.codeparam "optMd" $.optMd "context" $.context}}
+    {{end}}
+  </div>
+{{end}}
+{{define "getSnippetContent"}}
+  {{if (eq .type "code")}}
+    {{printf "%s%s {%s}\n%s\n%s\n" "~~~" .codelang .codeparam .content "~~~" | .context.Page.RenderString .optMd}}
+  {{else if (eq .type "md")}}
+    <div class='sc-snippet-md'>{{.content | .context.Page.RenderString .optMd}}</div>
+  {{else if (eq .type "plaintext")}}
+    <div class='sc-snippet-plaintext'>{{.content | safeHTML}}</div>
+  {{else}}
+    {{errorf "wrong value for parameter type in snippet shortcode: %s" .type}}
+  {{end}}
 {{end}}
