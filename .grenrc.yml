@@ -8,6 +8,7 @@
     - "tags/releases"
     - "duplicate"
     - "wontfix"
+    - "invalid"
   groupBy:
     New features:
       - "feature"
@@ -17,5 +18,5 @@
       - "enhancement"
     Documentation:
       - "documentation"
-    Uncategorised:
-      - "closed"
+    Internal:
+      - "internal"
