@@ -29,10 +29,12 @@
   # - css                   = [Liste des fichiers CSS]
   # - js                    = [Liste des fichiers javascript]
   # - jsModules             = [Liste des fichiers modules javascript]
-  # - shortcodes.sass       = [Liste des fichiers SASS à inclure quand le shortcode associé est présent dans le contenu de la page]
   # - shortcodes.css        = [Liste des fichiers CSS à inclure quand le shortcode associé est présent dans le contenu de la page]
   # - shortcodes.js         = [Liste des fichiers javascript à inclure quand le shortcode associé est présent dans le contenu de la page]
   # - shortcodes.jsModules  = [Liste des fichiers modules javascript à inclure quand le shortcode associé est présent dans le contenu de la page]
+  # - fencedcodes.css       = [Liste des fichiers CSS à inclure quand le language d'un bloc de code cloisonné associé est présent dans le contenu de la page]
+  # - fencedcodes.js        = [Liste des fichiers javascript à inclure quand le language d'un bloc de code cloisonné associé est présent dans le contenu de la page]
+  # - fencedcodes.jsModules = [Liste des fichiers modules javascript à inclure quand le language d'un bloc de code cloisonné associé est présent dans le contenu de la page]
   #
   [params.includes]
     sass = [
@@ -78,4 +80,25 @@
       ]
     shortcodeX = [
         "js/shortcodes/modules/shortcodeX.js"
+      ]
+  [params.includes.fencedcodes.css]
+    shortcode1 = [
+        "css/fencedcodes/shortcode1.css"
+      ]
+    shortcodeX = [
+        "css/fencedcodes/shortcodeX.css"
+      ]
+  [params.includes.fencedcodes.js]
+    shortcode1 = [
+        "js/fencedcodes/shortcode1.js"
+      ]
+    shortcodeX = [
+        "js/fencedcodes/shortcodeX.js"
+      ]
+  [params.includes.fencedcodes.jsModules]
+    shortcode1 = [
+        "js/fencedcodes/modules/shortcode1.js"
+      ]
+    shortcodeX = [
+        "js/fencedcodes/modules/shortcodeX.js"
       ]

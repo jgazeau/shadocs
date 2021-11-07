@@ -33,6 +33,16 @@
     {{range $value}}{{$cssFiles = $cssFiles | append .}}{{end}}
   {{end}}
 {{end}}
+{{range $key, $value := .Site.Data.themeParams.includes.fencedcodes.css}}
+{{with len (findRE (printf "%s%s%s" "{{(<|%)[[:space:]]*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
+    {{range $value}}{{$cssFiles = $cssFiles | append .}}{{end}}
+  {{end}}
+{{end}}
+{{range $key, $value := .Site.Params.includes.fencedcodes.css}}
+{{with len (findRE (printf "%s%s%s" "{{(<|%)[[:space:]]*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
+    {{range $value}}{{$cssFiles = $cssFiles | append .}}{{end}}
+  {{end}}
+{{end}}
 {{if gt (len $cssFiles) 0}}
   {{template "includeCss" dict "this" $cssFiles}}
 {{end}}

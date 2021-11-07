@@ -92,10 +92,6 @@
     collapsible = [
       "js/shortcodes/collapsible.js"
     ]
-    mermaid = [
-      "js/external/mermaid.min.js",
-      "js/shortcodes/mermaid.js"
-    ]
     intro = [
       "js/external/intro.min.js",
       "js/shortcodes/intro.js"
@@ -114,6 +110,11 @@
   [includes.shortcodes.css]
     openapi = [
       "css/external/swagger-ui.min.css"
+    ]
+  [includes.fencedcodes.jsModules]
+    mermaid = [
+      "js/external/mermaid.min.js",
+      "js/fencedcodes/mermaid.js"
     ]
 #
 # Miscellaneous shortcodes parameters

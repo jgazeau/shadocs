@@ -1,5 +1,5 @@
 ---
-weight: 3230
+weight: 3240
 title: "Print"
 description: "How to manage page printing?"
 titleIcon: "fas fa-print"

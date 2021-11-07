@@ -2,6 +2,8 @@
   const baseUrl = '{{.Site.BaseURL}}{{.Site.LanguagePrefix}}';
   const codeCopyBefore = '{{i18n "code_copy_before"}}';
   const codeCopyAfter = '{{i18n "code_copy_after"}}';
+  const svgDownloadLabel = '{{i18n "download_as_svg"}}';
+  const helperLoadingLabel = '{{i18n "helper_loading"}}';
   const searchNoResults = '{{i18n "search_no_results"}}';
   const introNextLabel = '{{i18n "intro_nextlabel"}}';
   const introPrevLabel = '{{i18n "intro_prevlabel"}}';
@@ -32,6 +34,16 @@
     {{range $value}}{{$jsModulesFiles = $jsModulesFiles | append .}}{{end}}
   {{end}}
 {{end}}
+{{range $key, $value := .Site.Data.themeParams.includes.fencedcodes.jsModules}}
+  {{with len (findRE (printf "%s%s" "[[:space:]]*(```)?" $key) $.Page.RawContent)}}
+    {{range $value}}{{$jsModulesFiles = $jsModulesFiles | append .}}{{end}}
+  {{end}}
+{{end}}
+{{range $key, $value := .Site.Params.includes.fencedcodes.jsModules}}
+  {{with len (findRE (printf "%s%s" "[[:space:]]*(```)?" $key) $.Page.RawContent)}}
+    {{range $value}}{{$jsModulesFiles = $jsModulesFiles | append .}}{{end}}
+  {{end}}
+{{end}}
 {{if gt (len $jsModulesFiles) 0}}
   {{template "includeJs" dict "this" $jsModulesFiles "context" $ "type" "module"}}
 {{end}}
@@ -53,6 +65,16 @@
 {{end}}
 {{range $key, $value := .Site.Params.includes.shortcodes.js}}
   {{with len (findRE (printf "%s%s%s" "{{(<|%)[[:space:]]*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
+    {{range $value}}{{$jsFiles = $jsFiles | append .}}{{end}}
+  {{end}}
+{{end}}
+{{range $key, $value := .Site.Data.themeParams.includes.fencedcodes.js}}
+  {{with len (findRE (printf "%s%s" "[[:space:]]*(```)?" $key) $.Page.RawContent)}}
+    {{range $value}}{{$jsFiles = $jsFiles | append .}}{{end}}
+  {{end}}
+{{end}}
+{{range $key, $value := .Site.Params.includes.fencedcodes.js}}
+  {{with len (findRE (printf "%s%s" "[[:space:]]*(```)?" $key) $.Page.RawContent)}}
     {{range $value}}{{$jsFiles = $jsFiles | append .}}{{end}}
   {{end}}
 {{end}}
