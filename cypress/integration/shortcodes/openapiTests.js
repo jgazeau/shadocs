@@ -6,14 +6,6 @@ describe('for: openapi shortcode', () => {
     cy.get('#content .sc-openapi-wrapper > .sc-openapi-container')
       .should('have.length', 2)
   })
-  it('openapis should be visible', {defaultCommandTimeout: 10000}, () => {
-    cy.get('#content .sc-openapi-iframe')
-      .each(($elem) => {
-        cy.get($elem)
-          .scrollIntoView()
-          .should('be.visible')
-      })
-  })
   it('openapi should have a loading helper', () => {
     cy.get('#content .sc-openapi-wrapper.helper-loading-container')
       .should('have.class', 'is-loading')
