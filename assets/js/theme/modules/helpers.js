@@ -102,7 +102,8 @@ export function getFirstAncestorByClass(e, cls) {
 };
 // Check if the element can hold the copy option
 export function isPreCopyToEnable(e) {
-  if (e.tagName === 'PRE') {
+  let firstCodeChild = e.querySelector(':scope > code:first-of-type')
+  if (e.tagName === 'PRE' && firstCodeChild && !firstCodeChild.classList.contains('language-mermaid')) {
     let te = e;
     while ((te = te.parentNode) && (te.classList) && !te.classList.contains('highlight'));
     if (!te.classList) {
@@ -302,4 +303,31 @@ export function addGlobalVariable(name, value) {
   if (!window[name]) {
     window[name] = value;
   };
+}
+// Function returning a loading helper
+export function getLoadingHelper(wrapperClass, wrapperId) {
+  let fragment = document.createDocumentFragment();
+  const container = document.createElement('div');
+  const loading = document.createElement('div');
+  const title = document.createElement('span');
+  const spinner = document.createElement('div');
+  const dots = document.createElement('div');
+  const dot = document.createElement('div');
+  container.id = wrapperId;
+  container.classList.add('helper-loading-container', 'is-loading', wrapperClass);
+  loading.classList.add('helper-loading');
+  title.classList.add('helper-loading-title');
+  title.innerHTML = helperLoadingLabel;
+  spinner.classList.add('helper-loading-spinner');
+  dots.classList.add('helper-loading-dots');
+  dot.classList.add('helper-loading-dot');
+  fragment.appendChild(container);
+  container.appendChild(loading)
+  loading.appendChild(title);
+  loading.appendChild(spinner);
+  spinner.appendChild(dots);
+  for (let i = 0; i < 6; i++) {
+    dots.appendChild(dot.cloneNode());
+  }
+  return fragment;
 }

@@ -70,8 +70,6 @@
   translation: "Copié dans le presse-papiers"
 - id: download_as_svg
   translation: "Télécharger en tant que SVG"
-- id: reload_svg
-  translation: "Recharger le SVG"
 - id: 404_title
   translation: "Oups, nous n'arrivons pas à trouver la page que vous cherchez."
 - id: 404_footer

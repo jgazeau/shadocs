@@ -191,45 +191,44 @@ input[type="radio"]
     td:nth-child(2)
       pre
         padding-left: 0
-pre
-  padding: $theme-gap-extra-large-size
-  margin: $content-item-margin
-  +font-family(roboto-mono)
-  background: black
-  code
-    color: white
-  .copy-code
-    box-shadow: inset 0 0 $theme-border-width $theme-border-small-width black
-    position: absolute
-    background: white
-    right: 0
-    top: 0
-    &:after
+  pre
+    padding: $theme-gap-extra-large-size
+    +font-family(roboto-mono)
+    background: black
+    code
+      color: white
+    .copy-code
       box-shadow: inset 0 0 $theme-border-width $theme-border-small-width black
-      +responsive-size(font-size, $theme-font-medium-size, 3px)
-      height: $theme-gap-extra-large-size
-      right: $theme-gap-extra-large-size
-      padding: $theme-gap-medium-size
-      content: attr(title-after)
-      +font-family(roboto-mono)
-      text-overflow: ellipsis
-      white-space: nowrap
-      transform: scale(0)
-      align-items: center
-      max-width: inherit
       position: absolute
       background: white
-      overflow: hidden
-      color: darkgreen
-      display: inline
-      opacity: 0
+      right: 0
       top: 0
-    &:not(:active):after
-      transition: transform 1.5s step-end
-      animation: copied 1.5s ease-in-out
-    &:active:after
-      transition: transform 1.5s step-start
-      transform: scale(1)
+      &:after
+        box-shadow: inset 0 0 $theme-border-width $theme-border-small-width black
+        +responsive-size(font-size, $theme-font-medium-size, 3px)
+        height: $theme-gap-extra-large-size
+        right: $theme-gap-extra-large-size
+        padding: $theme-gap-medium-size
+        content: attr(title-after)
+        +font-family(roboto-mono)
+        text-overflow: ellipsis
+        white-space: nowrap
+        transform: scale(0)
+        align-items: center
+        max-width: inherit
+        position: absolute
+        background: white
+        overflow: hidden
+        color: darkgreen
+        display: inline
+        opacity: 0
+        top: 0
+      &:not(:active):after
+        transition: transform 1.5s step-end
+        animation: copied 1.5s ease-in-out
+      &:active:after
+        transition: transform 1.5s step-start
+        transform: scale(1)
 *:not(pre)
   > code
     box-shadow: 0 0 1px 0 smooth-color($content-background, 50)

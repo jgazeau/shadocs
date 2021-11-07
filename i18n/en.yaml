@@ -70,8 +70,6 @@
   translation: "Copied to clipboard"
 - id: download_as_svg
   translation: "Download as SVG"
-- id: reload_svg
-  translation: "Reload SVG"
 - id: 404_title
   translation: "Oops, we can't find the page you're looking for."
 - id: 404_footer

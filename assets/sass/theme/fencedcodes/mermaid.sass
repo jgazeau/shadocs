@@ -9,13 +9,6 @@
     align-content: center
     align-items: center
     display: flex
-    .sc-mermaid
-      justify-content: center
-      align-items: center
-      display: flex
-      width: 100%
-      svg
-        width: auto
   &.is-loading
     .sc-mermaid-container
       > *
@@ -24,3 +17,5 @@
   .label
     +responsive-size(font-size, $mermaid-label-font-size, 3px)
     font-weight: 400
+.language-mermaid
+  display: none
