@@ -19,7 +19,6 @@ categories: ["Theme"]
 * Dark mode
 
 ### Shortcodes
-* Code snippet with language ​​tabs
 
 ### Technical website improvements
 * Use of purgeCSS in PostCSS

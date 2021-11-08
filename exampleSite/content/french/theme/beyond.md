@@ -19,7 +19,6 @@ categories: ["Thème"]
 * Dark mode
 
 ### Shortcodes
-* Extrait de code avec onglets language
 
 ### Optimisations techniques du site
 * Utilisation de purgeCSS en PostCSS
