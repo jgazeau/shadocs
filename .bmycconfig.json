@@ -9,7 +9,7 @@
       "library": "swagger-ui",
       "fileName": "swagger-ui-bundle.min.js"
     },
-    "currentVersion": "4.0.0-rc.4"
+    "currentVersion": "4.1.0"
   },
   {
     "package": "swagger-ui",
@@ -21,7 +21,7 @@
       "library": "swagger-ui",
       "fileName": "swagger-ui-standalone-preset.min.js"
     },
-    "currentVersion": "4.0.0-rc.4"
+    "currentVersion": "4.1.0"
   },
   {
     "package": "swagger-ui",
@@ -33,7 +33,7 @@
       "library": "swagger-ui",
       "fileName": "swagger-ui.min.css"
     },
-    "currentVersion": "4.0.0-rc.4"
+    "currentVersion": "4.1.0"
   },
   {
     "package": "flexsearch",
@@ -105,7 +105,7 @@
       "library": "intro.js",
       "fileName": "intro.min.js"
     },
-    "currentVersion": "4.2.2"
+    "currentVersion": "4.3.0"
   },
   {
     "package": "fontawesome",
