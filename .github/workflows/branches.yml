@@ -15,6 +15,8 @@ env:
   HUGO_CACHE_NAME: "hugo-bin-cache"
   HUGO_PATH_BIN: "${GITHUB_WORKSPACE}/bin"
   HUGO_TESTS_VERSIONS: "0.71.0 0.88.1"
+  CYPRESS_CACHE_NAME: "cypress-cache"
+  CYPRESS_CACHE_PATH: "~/.cache"
   NPM_CACHE_NAME: "npm-cache"
   NPM_CACHE_PATH: "~/.npm"
 jobs:
@@ -115,7 +117,12 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ env.NPM_CACHE_PATH }}
-          key: ${{ env.NPM_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-${{ env.NPM_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
+      - name: Cache Cypress binary
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.CYPRESS_CACHE_PATH }}
+          key: ${{ runner.os }}-${{ env.CYPRESS_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
       - name: Add temporary binaries to PATH
         run: echo "${HUGO_PATH_BIN}" >> ${GITHUB_PATH}
       - name: Prepare e2e tests
@@ -124,7 +131,13 @@ jobs:
           npm ci
           npm config set shadocs:HUGO_BIN ${HUGO_BIN_NAME}_${HUGO_TESTS_VERSIONS##* }
           printf "%70s\n" | tr ' ' '-'
-          npm run cypress:info
+          npx cypress verify
+          npx cypress info
+          npx cypress version
+          npx cypress version --component package
+          npx cypress version --component binary
+          npx cypress version --component electron
+          npx cypress version --component node
           printf "%70s\n" | tr ' ' '-'
       - name: Execute e2e tests (Chrome)
         run: |
@@ -152,7 +165,12 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ env.NPM_CACHE_PATH }}
-          key: ${{ env.NPM_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-${{ env.NPM_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
+      - name: Cache Cypress binary
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.CYPRESS_CACHE_PATH }}
+          key: ${{ runner.os }}-${{ env.CYPRESS_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
       - name: Add temporary binaries to PATH
         run: echo "${HUGO_PATH_BIN}" >> ${GITHUB_PATH}
       - name: Prepare e2e tests
@@ -161,7 +179,13 @@ jobs:
           npm ci
           npm config set shadocs:HUGO_BIN ${HUGO_BIN_NAME}_${HUGO_TESTS_VERSIONS##* }
           printf "%70s\n" | tr ' ' '-'
-          npm run cypress:info
+          npx cypress verify
+          npx cypress info
+          npx cypress version
+          npx cypress version --component package
+          npx cypress version --component binary
+          npx cypress version --component electron
+          npx cypress version --component node
           printf "%70s\n" | tr ' ' '-'
       - name: Execute e2e tests (Firefox)
         run: |
@@ -189,7 +213,12 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ${{ env.NPM_CACHE_PATH }}
-          key: ${{ env.NPM_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
+          key: ${{ runner.os }}-${{ env.NPM_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
+      - name: Cache Cypress binary
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.CYPRESS_CACHE_PATH }}
+          key: ${{ runner.os }}-${{ env.CYPRESS_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
       - name: Add temporary binaries to PATH
         run: echo "${HUGO_PATH_BIN}" >> ${GITHUB_PATH}
       - name: Prepare e2e tests
@@ -198,7 +227,13 @@ jobs:
           npm ci
           npm config set shadocs:HUGO_BIN ${HUGO_BIN_NAME}_${HUGO_TESTS_VERSIONS##* }
           printf "%70s\n" | tr ' ' '-'
-          npm run cypress:info
+          npx cypress verify
+          npx cypress info
+          npx cypress version
+          npx cypress version --component package
+          npx cypress version --component binary
+          npx cypress version --component electron
+          npx cypress version --component node
           printf "%70s\n" | tr ' ' '-'
       - name: Execute e2e tests (Edge)
         run: |
