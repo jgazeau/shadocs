@@ -1,4 +1,4 @@
-# Shadocs theme for Hugo
+# Shadocs theme for Hugo (Test)
 
 [![Shadocs version](https://img.shields.io/github/package-json/v/jgazeau/shadocs/main)](https://github.com/jgazeau/shadocs/releases/)
 [![Automated Changelog by gren](https://img.shields.io/badge/%F0%9F%A4%96-changelog%20by%20gren-00B2EE.svg)](https://github-tools.github.io/github-release-notes/)
