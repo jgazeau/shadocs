@@ -20,16 +20,16 @@ for (const testCase of testCases) {
       })
     })
     describe('when tag dropdown', () => {
-      it('hover should display tags', () => {
-        cy.get(`#tagsSelectorContainer${extendId}`)
+      it('hover should display taxonomies', () => {
+        cy.get(`#taxonomiesSelectorContainer${extendId}`)
           .then(($elem) => {
             $elem.get(0).classList.toggle('is-hovered', true)
           })
-        cy.get(`#dropdown-menu-tags${extendId}`)
+        cy.get(`#dropdown-menu-taxonomies${extendId}`)
           .should('be.visible')
       })
       it('should have 2 tag', () => {
-        cy.get(`#dropdown-menu-tags${extendId} .dropdown-item`)
+        cy.get(`#dropdown-menu-taxonomies${extendId} .dropdown-item`)
           .should('have.length', 2)
       })
     })

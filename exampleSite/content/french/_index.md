@@ -55,7 +55,7 @@ categories: ["Thème"]
     },{
       "title": "Taxonomies",
       "intro": "Le bouton taxonomies permet d'accéder aux différentes taxonomies du site.<br><i>NB: Ce bouton est visible uniquement si au moins une taxonomie existe.</i>",
-      "element": "getFirstVisibleElement('#tagsSelector, #tagsSelectorExtend');",
+      "element": "getFirstVisibleElement('#taxonomiesSelector, #taxonomiesSelectorExtend');",
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
     },{

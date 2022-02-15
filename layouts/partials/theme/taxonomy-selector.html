@@ -1,12 +1,12 @@
-<div id='tagsSelectorContainer{{$.Scratch.Get "navbarExtendIdSuffix"}}' class='dropdown is-right'>
+<div id='taxonomiesSelectorContainer{{$.Scratch.Get "navbarExtendIdSuffix"}}' class='dropdown is-right'>
   <div class='dropdown-trigger'>
-    <button id='tagsSelector{{$.Scratch.Get "navbarExtendIdSuffix"}}' class='button navbar-item-standard' aria-haspopup='true' aria-controls='dropdown-menu'>
+    <button id='taxonomiesSelector{{$.Scratch.Get "navbarExtendIdSuffix"}}' class='button navbar-item-standard' aria-haspopup='true' aria-controls='dropdown-menu'>
       <span class='icon'>
         <i class='fas fa-tags fa-lg'></i>
       </span>
     </button>
   </div>
-  <div id='dropdown-menu-tags{{$.Scratch.Get "navbarExtendIdSuffix"}}' class='dropdown-menu' role='menu'>
+  <div id='dropdown-menu-taxonomies{{$.Scratch.Get "navbarExtendIdSuffix"}}' class='dropdown-menu' role='menu'>
     <div class='dropdown-content is-paddingless'>
       {{range $taxonomyname, $taxonomy := .Site.Taxonomies}}
         {{if gt (len $taxonomy) 0}}
