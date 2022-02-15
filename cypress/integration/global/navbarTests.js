@@ -28,9 +28,9 @@ for (const testCase of testCases) {
         cy.get(`#dropdown-menu-tags${extendId}`)
           .should('be.visible')
       })
-      it('should have 1 tag', () => {
+      it('should have 2 tag', () => {
         cy.get(`#dropdown-menu-tags${extendId} .dropdown-item`)
-          .should('have.length', 1)
+          .should('have.length', 2)
       })
     })
     describe('when print icon', () => {
