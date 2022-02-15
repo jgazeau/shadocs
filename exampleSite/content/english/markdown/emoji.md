@@ -4,6 +4,7 @@ linkTitle: "Emoji"
 title: "Markdown: Emoji"
 description: "How to define an emoji ?"
 categories: ["Markdown"]
+tags: ["Content management"]
 ---
 
 # Emoji

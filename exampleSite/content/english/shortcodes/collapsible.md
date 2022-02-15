@@ -3,6 +3,7 @@ weight: 4030
 title: "{{< collapsible >}}"
 description: "Shortcode {{< collapsible >}}."
 categories: ["Shortcode"]
+tags: ["Content management"]
 ---
 
 # Description

@@ -4,6 +4,7 @@ linkTitle: "Line break"
 title: "Markdown: Line break"
 description: "How to define a line break?"
 categories: ["Markdown"]
+tags: ["Content management"]
 ---
 
 # Line break

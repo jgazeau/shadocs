@@ -4,6 +4,7 @@ linkTitle: "Link"
 title: "Markdown: Link"
 description: "How to define a link?"
 categories: ["Markdown"]
+tags: ["Content management"]
 ---
 
 # Link

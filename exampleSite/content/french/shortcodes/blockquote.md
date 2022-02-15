@@ -3,6 +3,7 @@ weight: 4020
 title: "{{< blockquote >}}"
 description: "Shortcode {{< blockquote >}}."
 categories: ["Shortcode"]
+tags: ["Gestion du contenu"]
 ---
 
 # Description

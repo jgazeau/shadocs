@@ -4,6 +4,7 @@ linkTitle: "Extrait de code"
 title: "Markdown: Extrait de code"
 description: "Comment définir un extrait de code ?"
 categories: ["Markdown"]
+tags: ["Gestion du contenu"]
 ---
 
 # Extrait de code

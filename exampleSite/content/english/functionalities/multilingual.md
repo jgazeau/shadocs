@@ -4,6 +4,7 @@ title: "Multilingual"
 description: "How to manage multilingual mode?"
 titleIcon: "fas fa-globe"
 categories: ["Functionalities"]
+tags: ["Content management"]
 ---
 
 # Description

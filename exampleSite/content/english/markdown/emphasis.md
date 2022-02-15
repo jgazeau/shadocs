@@ -4,6 +4,7 @@ linkTitle: "Emphasis"
 title: "Markdown: Emphasis"
 description: "How to emphasize text?"
 categories: ["Markdown"]
+tags: ["Content management"]
 ---
 
 # Emphasis

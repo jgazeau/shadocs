@@ -3,7 +3,7 @@
 #
 baseURL                = "https://example.com"
 copyright              = "The MIT License (MIT) Copyright © 2020 Jordan GAZEAU"
-defaultContentLanguage = "fr"
+defaultContentLanguage = "en"
 enableEmoji            = false
 enableGitInfo          = true
 metaDataFormat         = "yaml"
@@ -26,6 +26,7 @@ themesdir              = "../.."
 
 [taxonomies]
   category = "categories"
+  tag = "tags"
 
 [outputs]
   home = ["HTML", "JSON"]
@@ -70,6 +71,8 @@ themesdir              = "../.."
   [params.taxonomies]
     [params.taxonomies.categories]
       icon = "fas fa-th"
+    [params.taxonomies.tags]
+      icon = "fas fa-tag"
   [params.includes]
     jsModules = [
         "js/shortcuts.js"

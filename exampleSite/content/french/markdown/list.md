@@ -4,6 +4,7 @@ linkTitle: "Liste"
 title: "Markdown: Liste"
 description: "Comment définir une liste ?"
 categories: ["Markdown"]
+tags: ["Gestion du contenu"]
 ---
 
 # Liste

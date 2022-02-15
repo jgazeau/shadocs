@@ -4,6 +4,7 @@ linkTitle: "Code snippet"
 title: "Markdown: Code snippet"
 description: "How to define a code snippet?"
 categories: ["Markdown"]
+tags: ["Content management"]
 ---
 
 # Code snippet

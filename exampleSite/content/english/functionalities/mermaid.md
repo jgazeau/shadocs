@@ -4,6 +4,7 @@ title: "Mermaid"
 description: "How to use Mermaid?"
 titleIcon: "fas fa-chart-bar"
 categories: ["Functionalities"]
+tags: ["Content management"]
 ---
 
 # Description

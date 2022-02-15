@@ -4,6 +4,7 @@ title: "Shortcuts"
 description: "How to manage keyboard shortcuts?"
 titleIcon: "fas fa-keyboard"
 categories: ["Functionalities"]
+tags: ["Configuration"]
 ---
 
 # Description

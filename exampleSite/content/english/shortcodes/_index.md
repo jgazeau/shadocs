@@ -4,6 +4,7 @@ title: "Shortcodes"
 description: "Descriptions and examples of the theme shortcodes."
 titleIcon: "fas fa-file-code"
 categories: ["Shortcode"]
+tags: ["Content management"]
 ---
 
 # Shortcode, what is it?

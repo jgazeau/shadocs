@@ -4,6 +4,7 @@ title: "Table of contents"
 description: "How to manage table of contents?"
 titleIcon: "fas fa-list-ul"
 categories: ["Functionalities"]
+tags: ["Content management"]
 ---
 
 # Description

@@ -3,6 +3,7 @@ weight: 4070
 title: "{{< openapi >}}"
 description: "Shortcode {{< openapi >}}."
 categories: ["Shortcode"]
+tags: ["Gestion du contenu"]
 ---
 
 # Description

@@ -4,6 +4,7 @@ linkTitle: "Footnotes"
 title: "Markdown: Footnotes"
 description: "How to define footnotes?"
 categories: ["Markdown"]
+tags: ["Content management"]
 ---
 
 # Footnotes

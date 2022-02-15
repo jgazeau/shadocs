@@ -4,6 +4,7 @@ linkTitle: "Table"
 title: "Markdown: Table"
 description: "How to define a table?"
 categories: ["Markdown"]
+tags: ["Content management"]
 ---
 
 # Table

@@ -4,6 +4,7 @@ linkTitle: "Paragraph"
 title: "Markdown: Paragraph"
 description: "How to define a paragraph?"
 categories: ["Markdown"]
+tags: ["Content management"]
 ---
 
 # Paragraph
