@@ -4,6 +4,7 @@ linkTitle: "Titre"
 title: "Markdown: Titre"
 description: "Comment définir un titre ?"
 categories: ["Markdown"]
+tags: ["Gestion du contenu"]
 ---
 
 # Titre

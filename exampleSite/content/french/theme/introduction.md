@@ -4,6 +4,7 @@ linkTitle: "Introduction"
 title: "Installation: Introduction"
 description: "Tout ce qu'il faut savoir avant d'utiliser le thème."
 categories: ["Thème"]
+tags: ["Configuration"]
 ---
 
 # Gestion des versions

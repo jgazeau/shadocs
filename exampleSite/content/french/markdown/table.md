@@ -4,6 +4,7 @@ linkTitle: "Tableau"
 title: "Markdown: Tableau"
 description: "Comment définir un tableau ?"
 categories: ["Markdown"]
+tags: ["Gestion du contenu"]
 ---
 
 # Tableau

@@ -4,6 +4,7 @@ linkTitle: "L'accentuation"
 title: "Markdown: L'accentuation"
 description: "Comment accentuer du texte ?"
 categories: ["Markdown"]
+tags: ["Gestion du contenu"]
 ---
 
 # L'accentuation

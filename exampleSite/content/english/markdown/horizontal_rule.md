@@ -4,6 +4,7 @@ linkTitle: "Horizontal rule"
 title: "Markdown: Horizontal rule"
 description: "How to define a horizontal rule?"
 categories: ["Markdown"]
+tags: ["Content management"]
 ---
 
 # Horizontal rule

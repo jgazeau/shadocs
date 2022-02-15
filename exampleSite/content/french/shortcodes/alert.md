@@ -3,6 +3,7 @@ weight: 4010
 title: "{{< alert >}}"
 description: "Shortcode {{< alert >}}."
 categories: ["Shortcode"]
+tags: ["Gestion du contenu"]
 ---
 
 # Description

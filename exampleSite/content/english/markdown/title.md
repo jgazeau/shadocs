@@ -4,6 +4,7 @@ linkTitle: "Title"
 title: "Markdown: Title"
 description: "How to define a title?"
 categories: ["Markdown"]
+tags: ["Content management"]
 ---
 
 # Title

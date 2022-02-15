@@ -4,6 +4,7 @@ linkTitle: "Note de bas de page"
 title: "Markdown: Note de bas de page"
 description: "Comment définir une note de bas de page ?"
 categories: ["Markdown"]
+tags: ["Gestion du contenu"]
 ---
 
 # Note de bas de page

@@ -4,6 +4,7 @@ linkTitle: "Escaping characters"
 title: "Markdown: Escaping characters"
 description: "How to escape characters?"
 categories: ["Markdown"]
+tags: ["Content management"]
 ---
 
 # Escaping characters

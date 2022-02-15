@@ -4,6 +4,7 @@ title: "Table des matières"
 description: "Comment gérér la table des matières ?"
 titleIcon: "fas fa-list-ul"
 categories: ["Fonctionnalités"]
+tags: ["Gestion du contenu"]
 ---
 
 # Description

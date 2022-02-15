@@ -4,6 +4,7 @@ linkTitle: "Séparation horizontale"
 title: "Markdown: Séparation horizontale"
 description: "Comment définir une séparation horizontale ?"
 categories: ["Markdown"]
+tags: ["Gestion du contenu"]
 ---
 
 # Séparation horizontale

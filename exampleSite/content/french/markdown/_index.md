@@ -4,6 +4,7 @@ title: "Le Markdown"
 description: "Descriptions et exemples des syntaxes markdown utilisées dans Hugo."
 titleIcon: "fab fa-markdown"
 categories: ["Markdown"]
+tags: ["Gestion du contenu"]
 ---
 
 # Un peu d'histoire

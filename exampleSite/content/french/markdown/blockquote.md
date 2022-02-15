@@ -4,6 +4,7 @@ linkTitle: "Citation"
 title: "Markdown: Citation"
 description: "Comment définir une citation ?"
 categories: ["Markdown"]
+tags: ["Gestion du contenu"]
 ---
 
 # Citation

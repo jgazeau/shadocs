@@ -4,6 +4,7 @@ linkTitle: "List"
 title: "Markdown: List"
 description: "How to define a list?"
 categories: ["Markdown"]
+tags: ["Content management"]
 ---
 
 # List

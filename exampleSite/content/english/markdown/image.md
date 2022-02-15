@@ -4,6 +4,7 @@ linkTitle: "Image"
 title: "Markdown: Image"
 description: "How to define an image?"
 categories: ["Markdown"]
+tags: ["Content management"]
 ---
 
 # Image

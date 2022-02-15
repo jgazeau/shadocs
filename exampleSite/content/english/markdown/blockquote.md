@@ -4,6 +4,7 @@ linkTitle: "Blockquote"
 title: "Markdown: Blockquote"
 description: "How to define a blockquote?"
 categories: ["Markdown"]
+tags: ["Content management"]
 ---
 
 # Blockquote

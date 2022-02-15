@@ -4,6 +4,7 @@ linkTitle: "Commentaire"
 title: "Markdown: Commentaire"
 description: "Comment définir un commentaire ?"
 categories: ["Markdown"]
+tags: ["Gestion du contenu"]
 ---
 
 # Commentaire
