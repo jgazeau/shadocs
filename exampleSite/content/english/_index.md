@@ -55,7 +55,7 @@ categories: ["Theme"]
     },{
       "title": "Taxonomies",
       "intro": "The taxonomies button provides access to the several taxonomies of the website.<br><i>NB: This button is only visible if at least one taxonomy exists.</i>",
-      "element": "getFirstVisibleElement('#tagsSelector, #tagsSelectorExtend');",
+      "element": "getFirstVisibleElement('#taxonomiesSelector, #taxonomiesSelectorExtend');",
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
     },{
