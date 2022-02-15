@@ -14,9 +14,9 @@ describe('for: multilingual', () => {
         cy.visit($path)
           .location('pathname')
           .should('eq', $path)
-        cy.visit(Cypress.env('ENGLISH_URL_PREFIX') + $path)
+        cy.visit(Cypress.env('FRENCH_URL_PREFIX') + $path)
           .location('pathname')
-          .should('eq', Cypress.env('ENGLISH_URL_PREFIX') + $path)
+          .should('eq', Cypress.env('FRENCH_URL_PREFIX') + $path)
       })
   })
   it('all entries in the sidebar should be set properly active when visited', () => {

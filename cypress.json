@@ -6,7 +6,7 @@
   "video": false,
   "env": {
     "404_URL"                   : "/404.html",
-    "ENGLISH_URL_PREFIX"        : "/en",
+    "FRENCH_URL_PREFIX"         : "/fr",
     "FUNC_TOC_URL"              : "/functionalities/toc/",
     "FUNC_MERMAID_URL"          : "/functionalities/mermaid/",
     "HOMEPAGE_URL"              : "/",
