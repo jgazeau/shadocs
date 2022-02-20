@@ -1,13 +1,33 @@
-<div id='toc'>
-  <div id='tocHeader' class='is-sticky'>
-    <h6 id='tocTitle' class='is-marginless'>{{i18n "toc_title"}}</h6>
+<div class='column is-sticky is-hidden-touch is-paddingless' id='tocContainer'>
+  <div class='toc-header'>
+    <h6 class='toc-title is-marginless'>{{i18n "toc_title"}}</h6>
     <i title='{{i18n "toc_backtotop"}}' id='tocBackToTop' class='fas fa-arrow-circle-up'></i>
   </div>
-  {{if in (string .TableOfContents) "<ul>"}}
-    {{.TableOfContents}}
-  {{else}}
-  <nav id="TableOfContents">
-    <p><strong>{{i18n "no_data"}}</strong></p>
-  </nav>
-  {{end}}
+  <div id='tocWrapper'>
+    <div id='toc'>
+      {{if in (string .TableOfContents) "<ul>"}}
+        {{.TableOfContents}}
+      {{else}}
+      <nav id="TableOfContents">
+        <p><strong>{{i18n "no_data"}}</strong></p>
+      </nav>
+      {{end}}
+    </div>
+    <div id='taxonomies'>
+      {{- with .Site.Taxonomies -}}
+        {{- range $taxonomy, $pages := . -}}
+          <div class='taxonomy-wrapper'>
+            {{- with ($.GetTerms $taxonomy) -}}
+              <div class='toc-header'>
+                <h6 class='toc-title is-marginless'>{{humanize $taxonomy}}</h6>
+              </div>
+              {{- range . -}}
+                <a href='{{.RelPermalink}}' class='taxonomy'><i class="far fa-circle-dot"></i>{{.Title}}</a>
+              {{- end -}}
+            {{- end -}}
+          </div>
+        {{- end -}}
+      {{- end -}}
+    </div>
+  </div>
 </div>

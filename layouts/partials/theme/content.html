@@ -16,8 +16,6 @@
     {{.Content}}
   </div>
   {{if ($.Scratch.Get "isToc")}}
-    <div class='column is-sticky is-hidden-touch is-paddingless' id='tocContainer'>
-      {{partial "theme/toc.html" .}}
-    </div>
+    {{partial "theme/toc.html" .}}
   {{end}}
 </div>
