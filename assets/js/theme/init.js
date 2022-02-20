@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let tdiv = document.createElement('div');
       let ti = document.createElement('i');
       tdiv.setAttribute('class', 'copy-code is-action-button');
-      ti.setAttribute('class', 'fas fa-copy');
+      ti.setAttribute('class', 'fa-solid fa-copy');
       if ((typeof codeCopyBefore !== 'undefined') && (typeof codeCopyAfter !== 'undefined')) {
         tdiv.setAttribute('title', codeCopyBefore);
         tdiv.setAttribute('title-after', codeCopyAfter);

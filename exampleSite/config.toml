@@ -70,9 +70,9 @@ themesdir              = "../.."
       function = "scExample"
   [params.taxonomies]
     [params.taxonomies.categories]
-      icon = "fas fa-th"
+      icon = "fa-solid fa-table-cells"
     [params.taxonomies.tags]
-      icon = "fas fa-tag"
+      icon = "fa-solid fa-tag"
   [params.includes]
     jsModules = [
         "js/shortcuts.js"

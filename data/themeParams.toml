@@ -10,9 +10,9 @@
 # Miscellaneous sidebar parameters
 #
 [sidebar]
-  homeSectionIconDefault = "fas fa-home"
-  firstSectionIconDefault = "fas fa-ban"
-  nestedSectionIconDefault = "fas fa-level-up-alt fa-rotate-90 fa-xs"
+  homeSectionIconDefault = "fa-solid fa-house-chimney"
+  firstSectionIconDefault = "fa-solid fa-ban"
+  nestedSectionIconDefault = "fa-solid fa-turn-up fa-rotate-90 fa-xs"
 #
 # List of theme keyboard shortcuts
 # For every shortcut the following keys are sets:
@@ -122,23 +122,23 @@
 [shortcodes]
   [shortcodes.treeview]
     [shortcodes.treeview.kinds]
-      default     = "fas fa-exclamation-circle"
-      defaultDir  = "fas fa-folder"
-      defaultFile = "fas fa-file"
-      home        = "fas fa-home"
-      page        = "fas fa-file-alt"
-      section     = "fas fa-list-alt"
-      taxonomy    = "fas fa-tags"
-      term        = "fas fa-tag"
-      dir         = "fas fa-folder"
-      archive     = "fas fa-file-archive"
-      file        = "fas fa-file"
-      image       = "fas fa-file-image"
-      video       = "fas fa-file-video"
-      script      = "fas fa-file-code"
-      dockerfile  = "fab fa-docker"
-      pdf         = "fas fa-file-pdf"
-      powerpoint  = "fas fa-file-powerpoint"
-      excel       = "fas fa-file-excel"
-      csv         = "fas fa-file-csv"
-      word        = "fas fa-file-word"
+      default     = "fa-solid fa-circle-exclamation"
+      defaultDir  = "fa-solid fa-folder"
+      defaultFile = "fa-solid fa-file"
+      home        = "fa-solid fa-house-chimney"
+      page        = "fa-solid fa-file-lines"
+      section     = "fa-solid fa-folder-tree"
+      taxonomy    = "fa-solid fa-tags"
+      term        = "fa-solid fa-tag"
+      dir         = "fa-solid fa-folder"
+      archive     = "fa-solid fa-file-zipper"
+      file        = "fa-solid fa-file"
+      image       = "fa-solid fa-file-image"
+      video       = "fa-solid fa-file-video"
+      script      = "fa-solid fa-file-code"
+      dockerfile  = "fa-brands fa-docker"
+      pdf         = "fa-solid fa-file-pdf"
+      powerpoint  = "fa-solid fa-file-powerpoint"
+      excel       = "fa-solid fa-file-excel"
+      csv         = "fa-solid fa-file-csv"
+      word        = "fa-solid fa-file-word"

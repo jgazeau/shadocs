@@ -2,7 +2,7 @@
 weight: 3220
 title: "Shortcuts"
 description: "How to manage keyboard shortcuts?"
-titleIcon: "fas fa-keyboard"
+titleIcon: "fa-solid fa-keyboard"
 categories: ["Functionalities"]
 tags: ["Configuration"]
 ---

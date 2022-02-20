@@ -2,7 +2,7 @@
 weight: 3200
 title: "Search"
 description: "How to manage search?"
-titleIcon: "fas fa-search"
+titleIcon: "fa-solid fa-magnifying-glass"
 categories: ["Functionalities"]
 ---
 

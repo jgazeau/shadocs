@@ -22,7 +22,7 @@
   # - icon = "Fontawesome classes associated to the taxonomy"
   [params.taxonomies]
     [params.taxonomies.categories]
-      icon = "fas fa-th"
+      icon = "fa-solid fa-table-cells"
   # Assets list (https://gohugo.io/hugo-pipes/resource-from-template/) to include
   # Managed assets:
   # - sass                  = [List of SASS files]

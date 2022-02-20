@@ -35,7 +35,7 @@ function renderMermaid(mermaidId, graphDefinition) {
   const mermaidSvgExportIcon = document.createElement('i');
   mermaidContainer.classList.add('sc-mermaid-container');
   mermaidSvgExport.classList.add('is-action-button');
-  mermaidSvgExportIcon.classList.add('fas','fa-download');
+  mermaidSvgExportIcon.classList.add('fa-solid','fa-download');
   mermaidSvgExport.id = `${mermaidId}-export-svg`;
   mermaidSvgExport.title = svgDownloadLabel;
   mermaidFragment.appendChild(mermaidContainer);

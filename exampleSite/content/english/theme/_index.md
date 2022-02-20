@@ -2,7 +2,7 @@
 weight: 1000
 title: "Theme"
 description: "How to use the theme?"
-titleIcon: "fas fa-cog"
+titleIcon: "fa-solid fa-user-gear"
 categories: ["Theme"]
 ---
 

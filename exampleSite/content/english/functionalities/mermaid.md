@@ -2,7 +2,7 @@
 weight: 3210
 title: "Mermaid"
 description: "How to use Mermaid?"
-titleIcon: "fas fa-chart-bar"
+titleIcon: "fa-solid fa-chart-column"
 categories: ["Functionalities"]
 tags: ["Content management"]
 ---

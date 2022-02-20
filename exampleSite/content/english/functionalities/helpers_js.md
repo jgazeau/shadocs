@@ -2,7 +2,7 @@
 weight: 3230
 title: "Javascript helpers functions"
 description: "How to use javascript helpers functions?"
-titleIcon: "fab fa-js-square"
+titleIcon: "fa-brands fa-js"
 categories: ["Functionalities"]
 tags: ["Configuration"]
 ---

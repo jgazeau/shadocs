@@ -2,7 +2,7 @@
 weight: 3160
 title: "Multilingual"
 description: "How to manage multilingual mode?"
-titleIcon: "fas fa-globe"
+titleIcon: "fa-solid fa-globe"
 categories: ["Functionalities"]
 tags: ["Content management"]
 ---

@@ -2,7 +2,7 @@
 weight: 5000
 title: "Plan du site"
 description: "Plan du site."
-titleIcon: "fas fa-sitemap"
+titleIcon: "fa-solid fa-sitemap"
 categories: ["Divers"]
 ---
 
