@@ -2,7 +2,7 @@
 weight: 3250
 title: "Page QR code"
 description: "How to manage page QR code?"
-titleIcon: "fas fa-qrcode"
+titleIcon: "fa-solid fa-qrcode"
 categories: ["Functionalities"]
 ---
 

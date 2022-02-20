@@ -2,7 +2,7 @@
 weight: 3220
 title: "Raccourcis"
 description: "Comment gérér les raccourcis clavier ?"
-titleIcon: "fas fa-keyboard"
+titleIcon: "fa-solid fa-keyboard"
 categories: ["Fonctionnalités"]
 tags: ["Configuration"]
 ---

@@ -1,9 +1,9 @@
 ...
 [sidebar]
   # FontAwesome classes associated with the default icon of the home page
-  homeSectionIconDefault = "fas fa-home"
+  homeSectionIconDefault = "fa-solid fa-house-chimney"
   # FontAwesome classes associated with the default icon of the first level sections/pages
-  firstSectionIconDefault = "fas fa-ban"
+  firstSectionIconDefault = "fa-solid fa-ban"
   # FontAwesome classes associated with the default icon for 1+ level sections/pages
-  nestedSectionIconDefault = "fas fa-level-up-alt fa-rotate-90 fa-xs"
+  nestedSectionIconDefault = "fa-solid fa-turn-up fa-rotate-90 fa-xs"
 ...

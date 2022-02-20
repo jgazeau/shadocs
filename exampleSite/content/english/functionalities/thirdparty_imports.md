@@ -2,7 +2,7 @@
 weight: 3190
 title: "Thridparties imports"
 description: "How to manage the import of external libraries or thirdparties code?"
-titleIcon: "fas fa-sign-in-alt fa-rotate-90"
+titleIcon: "fa-solid fa-right-to-bracket fa-rotate-90"
 categories: ["Functionalities"]
 tags: ["Configuration"]
 ---

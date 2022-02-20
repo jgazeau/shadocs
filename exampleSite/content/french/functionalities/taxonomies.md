@@ -2,7 +2,7 @@
 weight: 3170
 title: "Taxonomies"
 description: "Comment gérér les taxonomies ?"
-titleIcon: "fas fa-tags"
+titleIcon: "fa-solid fa-tags"
 categories: ["Fonctionnalités"]
 tags: ["Configuration"]
 ---
@@ -25,5 +25,5 @@ Il est possible d'associer un logo à une taxonomie, qui appraitra dans le menu 
 [params]
   [params.taxonomies]
     [params.taxonomies.categories]
-      icon = "fas fa-th"
+      icon = "fa-solid fa-table-cells"
 ```

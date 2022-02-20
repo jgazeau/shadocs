@@ -2,7 +2,7 @@
 weight: 3240
 title: "Print"
 description: "How to manage page printing?"
-titleIcon: "fas fa-print"
+titleIcon: "fa-solid fa-print"
 categories: ["Functionalities"]
 ---
 

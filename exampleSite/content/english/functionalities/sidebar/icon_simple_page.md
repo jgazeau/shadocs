@@ -2,7 +2,7 @@
 weight: 3150
 title: "Single page with icon"
 description: "Sidebar: Single page with icon"
-titleIcon: "fas fa-icons"
+titleIcon: "fa-solid fa-icons"
 categories: ["Functionalities"]
 ---
 
@@ -33,6 +33,6 @@ Two possible parametrization (with the several FontAwesome classes for each para
     codelang="md"
 >}}
 ---
-titleIcon: "fas fa-icons"
+titleIcon: "fa-solid fa-icons"
 ---
 {{< /snippet >}}

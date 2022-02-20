@@ -2,7 +2,7 @@
 weight: 3000
 title: "Fonctionnalités"
 description: "Descriptions et exemples des fonctionnalités du thème."
-titleIcon: "fas fa-cubes"
+titleIcon: "fa-solid fa-cubes"
 categories: ["Fonctionnalités"]
 tags: ["Gestion du contenu"]
 ---

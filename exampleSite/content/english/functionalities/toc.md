@@ -2,7 +2,7 @@
 weight: 3180
 title: "Table of contents"
 description: "How to manage table of contents?"
-titleIcon: "fas fa-list-ul"
+titleIcon: "fa-solid fa-list-ul"
 categories: ["Functionalities"]
 tags: ["Content management"]
 ---

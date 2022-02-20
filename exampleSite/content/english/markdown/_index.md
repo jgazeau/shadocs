@@ -2,7 +2,7 @@
 weight: 2000
 title: "The Markdown"
 description: "Descriptions and examples of markdown syntaxes used in Hugo."
-titleIcon: "fab fa-markdown"
+titleIcon: "fa-brands fa-markdown"
 categories: ["Markdown"]
 tags: ["Content management"]
 ---

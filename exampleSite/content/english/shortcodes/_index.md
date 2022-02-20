@@ -2,7 +2,7 @@
 weight: 4000
 title: "Shortcodes"
 description: "Descriptions and examples of the theme shortcodes."
-titleIcon: "fas fa-file-code"
+titleIcon: "fa-solid fa-file-code"
 categories: ["Shortcode"]
 tags: ["Content management"]
 ---

@@ -2,7 +2,7 @@
 weight: 3240
 title: "Impression"
 description: "Comment gérér l'impression d'une page ?"
-titleIcon: "fas fa-print"
+titleIcon: "fa-solid fa-print"
 categories: ["Fonctionnalités"]
 ---
 

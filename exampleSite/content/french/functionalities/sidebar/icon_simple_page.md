@@ -2,7 +2,7 @@
 weight: 3150
 title: "Page simple avec icone"
 description: "Menu latéral: Page simple avec icone"
-titleIcon: "fas fa-icons"
+titleIcon: "fa-solid fa-icons"
 categories: ["Fonctionnalités"]
 ---
 
@@ -33,6 +33,6 @@ Pour cela deux paramétrages sont possibles (avec pour chaque valeur de paramèt
     codelang="md"
 >}}
 ---
-titleIcon: "fas fa-icons"
+titleIcon: "fa-solid fa-icons"
 ---
 {{< /snippet >}}

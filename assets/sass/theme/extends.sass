@@ -60,8 +60,7 @@
   .is-icon-expandable
     .icon
       &:after
-        font-family: "Font Awesome 5 Free"
-        font-weight: 900
+        font: var(--fa-font-solid)
         content: "\f107"
       &:hover:after
         content: "\f103"
@@ -159,11 +158,10 @@
 %toc-link-effect
   &:after
     transition: transform 0.3s, opacity 0.2s
-    font-family: "Font Awesome 5 Free"
     margin: 0 $theme-gap-medium-size
     transform: translateX(0.5rem)
+    font: var(--fa-font-solid)
     display: inline-block
-    font-weight: 900
     content: "\f060"
     opacity: 0
   &:hover:after
@@ -181,14 +179,13 @@
   padding-bottom: 1px
   position: relative
   &:after
+    font: var(--fa-font-solid)
     font-size: calc(#{$theme-gap-large-size} / 2)
     bottom: calc(#{$theme-gap-large-size} / 2)
     margin-left: $theme-gap-small-half-size
-    font-family: "Font Awesome 5 Free"
     color: $content-link-color
     font-style: normal
     position: absolute
-    font-weight: 900
     content: '\f35d'
   &:hover
     color: $content-link-color

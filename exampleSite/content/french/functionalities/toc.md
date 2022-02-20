@@ -2,7 +2,7 @@
 weight: 3180
 title: "Table des matières"
 description: "Comment gérér la table des matières ?"
-titleIcon: "fas fa-list-ul"
+titleIcon: "fa-solid fa-list-ul"
 categories: ["Fonctionnalités"]
 tags: ["Gestion du contenu"]
 ---

@@ -2,7 +2,7 @@
 weight: 5000
 title: "Sitemap"
 description: "Sitemap."
-titleIcon: "fas fa-sitemap"
+titleIcon: "fa-solid fa-sitemap"
 categories: ["Miscellaneous"]
 ---
 

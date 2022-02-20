@@ -2,7 +2,7 @@
 weight: 3250
 title: "404"
 description: "How to manage 404 page?"
-titleIcon: "far fa-times-circle"
+titleIcon: "fa-solid fa-circle-xmark"
 categories: ["Functionalities"]
 ---
 
