@@ -118,8 +118,32 @@ Possible values:
             "label": "***Flat file** in a directory*"
         }]
 },{
+    "kind": "default",
+    "label": "***Default***"
+},{
+    "kind": "dir",
+    "label": "***Directory***"
+},{
     "kind": "file",
-    "label": "***Flat file***"
+    "label": "***File***"
+},{
+    "kind": "home",
+    "label": "***Home***"
+},{
+    "kind": "page",
+    "label": "***Page***"
+},{
+    "kind": "section",
+    "label": "***Section***"
+},{
+    "kind": "taxonomy",
+    "label": "***Taxonomy***"
+},{
+    "kind": "term",
+    "label": "***Taxonomy's term***"
+},{
+    "kind": "archive",
+    "label": "***Archive***"
 },{
     "kind": "image",
     "label": "***Image file***"
@@ -175,8 +199,32 @@ Possible values:
             "label": "***Flat file** in a directory*"
         }]
 },{
+    "kind": "default",
+    "label": "***Default***"
+},{
+    "kind": "dir",
+    "label": "***Directory***"
+},{
     "kind": "file",
-    "label": "***Flat file***"
+    "label": "***File***"
+},{
+    "kind": "home",
+    "label": "***Home***"
+},{
+    "kind": "page",
+    "label": "***Page***"
+},{
+    "kind": "section",
+    "label": "***Section***"
+},{
+    "kind": "taxonomy",
+    "label": "***Taxonomy***"
+},{
+    "kind": "term",
+    "label": "***Taxonomy's term***"
+},{
+    "kind": "archive",
+    "label": "***Archive***"
 },{
     "kind": "image",
     "label": "***Image file***"

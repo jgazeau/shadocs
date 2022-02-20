@@ -8,9 +8,9 @@
       {{if in (string .TableOfContents) "<ul>"}}
         {{.TableOfContents}}
       {{else}}
-      <nav id="TableOfContents">
-        <p><strong>{{i18n "no_data"}}</strong></p>
-      </nav>
+        <nav id="TableOfContents">
+          <p><strong>{{i18n "no_data"}}</strong></p>
+        </nav>
       {{end}}
     </div>
     <div id='taxonomies'>

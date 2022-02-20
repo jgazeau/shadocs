@@ -121,17 +121,15 @@
 [shortcodes]
   [shortcodes.treeview]
     [shortcodes.treeview.kinds]
-      default     = "fa-solid fa-circle-exclamation"
-      defaultDir  = "fa-solid fa-folder"
-      defaultFile = "fa-solid fa-file"
+      default     = "fa-solid fa-circle-question"
+      dir         = "fa-solid fa-folder"
+      file        = "fa-solid fa-file"
       home        = "fa-solid fa-house-chimney"
       page        = "fa-solid fa-file-lines"
       section     = "fa-solid fa-folder-tree"
       taxonomy    = "fa-solid fa-tags"
       term        = "fa-solid fa-tag"
-      dir         = "fa-solid fa-folder"
       archive     = "fa-solid fa-file-zipper"
-      file        = "fa-solid fa-file"
       image       = "fa-solid fa-file-image"
       video       = "fa-solid fa-file-video"
       script      = "fa-solid fa-file-code"

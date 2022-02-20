@@ -96,9 +96,9 @@
         {{end}}
       {{else}}
         {{with .content}}
-          {{$scratch.Set "kind" $.context.Site.Data.themeParams.shortcodes.treeview.kinds.defaultDir}}
+          {{$scratch.Set "kind" $.context.Site.Data.themeParams.shortcodes.treeview.kinds.dir}}
         {{else}}
-          {{$scratch.Set "kind" $.context.Site.Data.themeParams.shortcodes.treeview.kinds.defaultFile}}
+          {{$scratch.Set "kind" $.context.Site.Data.themeParams.shortcodes.treeview.kinds.file}}
         {{end}}
       {{end}}
       {{with $element.label}}

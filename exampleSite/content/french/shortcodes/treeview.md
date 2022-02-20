@@ -118,8 +118,32 @@ Valeurs possibles:
             "label": "***Fichier plat** dans un répertoire*"
         }]
 },{
+    "kind": "default",
+    "label": "***Par défaut***"
+},{
+    "kind": "dir",
+    "label": "***Répertoire***"
+},{
     "kind": "file",
-    "label": "***Fichier plat***"
+    "label": "***Fichier***"
+},{
+    "kind": "home",
+    "label": "***Accueil***"
+},{
+    "kind": "page",
+    "label": "***Page***"
+},{
+    "kind": "section",
+    "label": "***Section***"
+},{
+    "kind": "taxonomy",
+    "label": "***Taxonomie***"
+},{
+    "kind": "term",
+    "label": "***Terme de taxonomie***"
+},{
+    "kind": "archive",
+    "label": "***Archive***"
 },{
     "kind": "image",
     "label": "***Fichier image***"
@@ -175,8 +199,32 @@ Valeurs possibles:
             "label": "***Fichier plat** dans un répertoire*"
         }]
 },{
+    "kind": "default",
+    "label": "***Par défaut***"
+},{
+    "kind": "dir",
+    "label": "***Répertoire***"
+},{
     "kind": "file",
-    "label": "***Fichier plat***"
+    "label": "***Fichier***"
+},{
+    "kind": "home",
+    "label": "***Accueil***"
+},{
+    "kind": "page",
+    "label": "***Page***"
+},{
+    "kind": "section",
+    "label": "***Section***"
+},{
+    "kind": "taxonomy",
+    "label": "***Taxonomie***"
+},{
+    "kind": "term",
+    "label": "***Terme de taxonomie***"
+},{
+    "kind": "archive",
+    "label": "***Archive***"
 },{
     "kind": "image",
     "label": "***Fichier image***"
