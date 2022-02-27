@@ -40,4 +40,10 @@ describe('for: table of content', () => {
           .should('be.visible')
       })
   })
+  it('toc should contain taxonomies', () => {
+    cy.viewportDesktop()
+    cy.get('#tocContainer #taxonomies .taxonomy')
+      .should('have.length.at.least', 1)
+      .should('be.visible')
+  })
 })
