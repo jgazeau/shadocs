@@ -6,6 +6,10 @@
   translation: "No result found"
 - id: sidebar_collapse
   translation: "Collapse sidebar"
+- id: banner_default_content
+  translation: |
+    You are viewing the version ***{{.Site.Params.currentversion}}*** of this website.  
+    For an up-to-date documentation, please check the [latest version]({{.Site.Params.latestversionurl}}).
 - id: toc_title
   translation: "On this page:"
 - id: toc_backtotop

@@ -1,0 +1,18 @@
+<div id='versionsSelectorContainer{{$.Scratch.Get "navbarExtendIdSuffix"}}' class='dropdown is-right'>
+  <div class='dropdown-trigger'>
+    <button id='versionsSelector{{$.Scratch.Get "navbarExtendIdSuffix"}}' class='button navbar-item-standard' aria-haspopup='true' aria-controls='dropdown-menu'>
+      <span class='icon'>
+        <i class='fa-solid fa-timeline fa-lg'></i>
+      </span>
+    </button>
+  </div>
+  <div id='dropdown-menu-versions{{$.Scratch.Get "navbarExtendIdSuffix"}}' class='dropdown-menu' role='menu'>
+    <div class='dropdown-content is-paddingless'>
+      {{range $.Site.Params.navbar.versions}}
+          <a href='{{index . "url"}}' class='dropdown-item has-text-weight-bold'>
+            {{index . "name"}}
+          </a>
+      {{end}}
+    </div>
+  </div>
+</div>

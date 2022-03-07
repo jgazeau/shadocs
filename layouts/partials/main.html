@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  {{partial "theme/meta.html" .root}}
+  {{partial "theme/includes-head.html" .root}}
+  {{partial "custom/custom-head.html" .root}}
+  <body>
+    <section>
+      {{partial "theme/header.html" .root}}
+      <div class='columns is-mobile is-paddingless is-marginless' id='mainContainer'>
+        {{partial "theme/sidebar.html" .root}}
+        {{partial .contentTemplate .root}}
+      </div>
+    </section>
+    {{partial "theme/includes-end.html" .root}}
+    {{partial "custom/custom-footer.html" .root}}
+  </body>
+</html>

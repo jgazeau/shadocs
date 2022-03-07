@@ -57,17 +57,26 @@ themesdir              = "../.."
 # Specific configuration
 #
 [params]
-  logo             = "images/logo.png"
-  logoTouch        = "images/logoTouch.png"
-  image404         = "images/404.gif"
-  favicon          = "images/favicon.png"
-  faviconmd        = "![](images/favicon.png)"
-  homeLayout       = "onboarding"
-  siteContentOrder = "weight"
+  logo               = "images/logo.png"
+  logoTouch          = "images/logoTouch.png"
+  image404           = "images/404.gif"
+  favicon            = "images/favicon.png"
+  faviconmd          = "![](images/favicon.png)"
+  homeLayout         = "onboarding"
+  siteContentOrder   = "weight"
+  # globalBanner    = true
+  currentVersion     = "latest"
+  latestVersionUrl   = "https://shadocs.netlify.app/"
   [params.navbar.shortcuts]
     [params.navbar.shortcuts.example]
       keys     = ["Shift","1"]
       function = "scExample"
+    [[params.navbar.versions]]
+      name = 'latest'
+      url  = 'https://shadocs.netlify.app/'
+    [[params.navbar.versions]]
+      name = 'feat-deprecated-version'
+      url  = 'https://feat-deprecated-version--shadocs.netlify.app/'
   [params.taxonomies]
     [params.taxonomies.categories]
       icon = "fa-solid fa-table-cells"
