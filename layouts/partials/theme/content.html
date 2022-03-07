@@ -10,6 +10,13 @@
     {{end}}
   {{end}}
   <div class='column' id='{{$.Scratch.Get "contentId"}}'>
+    {{with (or .Site.Params.globalBanner .Params.banner)}}
+      {{$bannerContent := i18n "banner_default_content" $}}
+      {{with $.Params.bannerContent}}
+        {{$bannerContent = .}}
+      {{end}}
+      {{partial "theme/banner.html" (dict "text" $bannerContent "rootContext" $)}}
+    {{end}}
     {{with .Title}}
       {{partial "theme/content-title.html" (dict "titleId" ($.Scratch.Get "titleId") "title" .)}}
     {{end}}

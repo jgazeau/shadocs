@@ -36,7 +36,7 @@ Les différents types d'imports gérés par le thème sont les suivants:
 Les fichiers à importer doivent obligatoirement être définis en tant qu'[assets Hugo](https://gohugo.io/hugo-pipes/introduction/#asset-directory)
 {{< /alert >}}
 
-# Définition d'mports tiers
+# Définition d'imports tiers
 ---
 
 Pour définir un fichier à importer il faut utliser la configuration suivante (*Cf. lignes surlignées ci-dessous*):
@@ -45,7 +45,7 @@ Pour définir un fichier à importer il faut utliser la configuration suivante (
     file="templates/configuration/config.fr.toml"
     caption="config.toml ([params] section)"
     codelang="toml"
-    codeparam="linenos=inline,hl_lines=[\"26-31\",\"37-53\"]"
+    codeparam="linenos=inline,hl_lines=[\"34-39\",\"47-63\"]"
 />}}
 
 # Définition d'imports tiers pour les shortcodes
@@ -59,5 +59,5 @@ Pour définir un fichier à importer, associé à un shortcode, il faut utliser 
     file="templates/configuration/config.fr.toml"
     caption="config.toml ([params] section)"
     codelang="toml"
-    codeparam="linenos=inline,hl_lines=[\"26-27\",\"32-35\",\"54-81\"]"
+    codeparam="linenos=inline,hl_lines=[\"34-35\",\"40-45\",\"64-112\"]"
 />}}

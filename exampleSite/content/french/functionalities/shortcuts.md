@@ -23,7 +23,7 @@ Afin de définir un raccourci il faut suivre le process suivant (exemple avec le
         file="templates/configuration/config.fr.toml"
         caption="config.toml (section [params])"
         codelang="toml"
-        codeparam="linenos=inline,hl_lines=[\"11-19\"]"
+        codeparam="linenos=inline,hl_lines=[\"19-27\"]"
     />}}
 2. Définir les libellés du raccourci qui apparaitront dans le menu d'aide des raccourcis (dans le fichier de traduction *i18n* adéquat):
     {{< snippet

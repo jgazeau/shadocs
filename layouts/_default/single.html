@@ -1,17 +1,1 @@
-<!DOCTYPE html>
-<html>
-  {{partial "theme/meta.html" .}}
-  {{partial "theme/includes-head.html" .}}
-  {{partial "custom/custom-head.html" .}}
-  <body>
-    <section>
-      {{partial "theme/header.html" .}}
-      <div class='columns is-mobile is-paddingless is-marginless' id='mainContainer'>
-        {{partial "theme/sidebar.html" .}}
-        {{partial "theme/content.html" .}}
-      </div>
-    </section>
-    {{partial "theme/includes-end.html" .}}
-    {{partial "custom/custom-footer.html" .}}
-  </body>
-</html>
+{{partial "main.html" (dict "root" . "contentTemplate" "theme/content.html")}}

@@ -6,8 +6,16 @@
   image404         = "images/404.gif"
   # Favicon website file path
   favicon          = "images/favicon.png"
+  # Default layout used for the homepage
+  homeLayout       = "onboarding"
   # Site content order (https://gohugo.io/templates/lists/#order-content)
   siteContentOrder = "weight"
+  # Activate a global banner on all website pages
+  globalBanner    = true
+  # Curent version of the website
+  currentVersion     = "latest"
+  # Url of the latest version of the website
+  latestVersionUrl   = "https://shadocs.netlify.app/"
   # Keyboard shortcuts list
   # For each shortcut following keys must be sets:
   # - keys     = [Keyboard shortcuts table](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values)

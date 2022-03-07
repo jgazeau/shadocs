@@ -1,0 +1,12 @@
+{{with .text}}
+  <div class='banner'>
+    <i class="fa-solid fa-circle-exclamation fa-2x"></i>
+    <span>
+      {{- $optMd := dict "markup" "goldmark" -}}
+      {{- . | $.rootContext.Page.RenderString $optMd -}}
+    </span>
+    <i class="fa-solid fa-circle-exclamation fa-2x"></i>
+  </div>
+{{else}}
+  {{errorf "banner set without text in %q" .rootContext.Path}}
+{{end}}
