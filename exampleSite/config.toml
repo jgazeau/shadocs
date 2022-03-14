@@ -64,7 +64,7 @@ themesdir              = "../.."
   faviconmd          = "![](images/favicon.png)"
   homeLayout         = "onboarding"
   siteContentOrder   = "weight"
-  # globalBanner    = true
+  # globalBanner     = true
   currentVersion     = "latest"
   latestVersionUrl   = "https://shadocs.netlify.app/"
   [params.navbar.shortcuts]
