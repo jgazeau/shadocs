@@ -47,10 +47,11 @@ categories: ["Thème"]
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
     },{
-      "title": "Multilingue",
-      "intro": "Le bouton multilingue permet d'accéder aux différentes traductions de la page courante.<br><i>NB: Ce bouton est visible uniquement si une page de traduction existe pour la page courante.</i>",
-      "element": "getFirstVisibleElement('#langsSelector, #langsSelectorExtend');",
+      "title": "Raccourcis",
+      "intro": "Le bouton raccourcis permet d'accéder à la liste des différents raccourcis disponibles sur le site.",
+      "element": "getFirstVisibleElement('#shortcutsInfo, #shortcutsInfoExtend');",
       "position": "left",
+      "triggerexcept": ["nohover"],
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
     },{
       "title": "Taxonomies",
@@ -59,11 +60,16 @@ categories: ["Thème"]
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
     },{
-      "title": "Raccourcis",
-      "intro": "Le bouton raccourcis permet d'accéder à la liste des différents raccourcis disponibles sur le site.",
-      "element": "getFirstVisibleElement('#shortcutsInfo, #shortcutsInfoExtend');",
+      "title": "Multilingue",
+      "intro": "Le bouton multilingue permet d'accéder aux différentes traductions de la page courante.<br><i>NB: Ce bouton est visible uniquement si une page de traduction existe pour la page courante.</i>",
+      "element": "getFirstVisibleElement('#langsSelector, #langsSelectorExtend');",
       "position": "left",
-      "triggerexcept": ["nohover"],
+      "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
+    },{
+      "title": "Versionning",
+      "intro": "Le bouton versionning permet d'obtenir les autres versions disponibles du site.",
+      "element": "getFirstVisibleElement('#versionsSelector, #versionsSelectorExtend');",
+      "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
     },{
       "title": "À propos du site",

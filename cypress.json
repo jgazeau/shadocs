@@ -8,6 +8,7 @@
     "404_URL"                   : "/404.html",
     "FRENCH_URL_PREFIX"         : "/fr",
     "FUNC_TOC_URL"              : "/functionalities/toc/",
+    "FUNC_BANNER_URLS"          : ["/functionalities/banner/global/","/functionalities/banner/single/"],
     "FUNC_MERMAID_URL"          : "/functionalities/mermaid/",
     "HOMEPAGE_URL"              : "/",
     "NULL_STRING"               : "bnVsbFN0cmluZw==",
