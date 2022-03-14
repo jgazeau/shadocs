@@ -71,12 +71,12 @@ themesdir              = "../.."
     [params.navbar.shortcuts.example]
       keys     = ["Shift","1"]
       function = "scExample"
-    [[params.navbar.versions]]
-      name = 'latest'
-      url  = 'https://shadocs.netlify.app/'
-    [[params.navbar.versions]]
-      name = 'feat-deprecated-version'
-      url  = 'https://feat-deprecated-version--shadocs.netlify.app/'
+  [[params.navbar.versions]]
+    name = 'latest'
+    url  = 'https://shadocs.netlify.app/'
+  [[params.navbar.versions]]
+    name = 'feat-deprecated-version'
+    url  = 'https://feat-deprecated-version--shadocs.netlify.app/'
   [params.taxonomies]
     [params.taxonomies.categories]
       icon = "fa-solid fa-table-cells"

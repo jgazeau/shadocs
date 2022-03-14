@@ -16,7 +16,7 @@ Par exemple, il est possible d'obtenir la liste des raccourcis disponibles en ut
 # Définir un raccourci spécifique
 ---
 
-Afin de définir un raccourci il faut suivre le process suivant (exemple avec le raccourci **example** (`Maj + 1`) du site du thème):
+Afin de définir un raccourci, il faut suivre le process suivant (exemple avec le raccourci **example** (`Maj + 1`) du site du thème):
 
 1. Définir la configuration générale du raccourci dans le fichier de configuration spécifique du site (*Cf. lignes surlignées ci-dessous*):
     {{< snippet

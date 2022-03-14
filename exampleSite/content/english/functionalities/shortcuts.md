@@ -16,7 +16,7 @@ For example, it is possible to get the list of available shortcuts using the sho
 # Define a specific shortcut
 ---
 
-To define a shortcut you must follow the following process (example with the **example** (`Maj + 1`) shortcut from the theme website):
+To define a shortcut, follow this process (example with the **example** (`Maj + 1`) shortcut from the theme website):
 
 1. Define the general configuration of the shortcut in the site specific configuration file (*Cf. highlighted lines below*):
     {{< snippet
