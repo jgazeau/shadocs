@@ -47,10 +47,11 @@ categories: ["Theme"]
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
     },{
-      "title": "Multilingual",
-      "intro": "The multilingual button provides access to the several translations of the current page.<br><i>NB: This button is only visible if a translation page exists for the current page.</i>",
-      "element": "getFirstVisibleElement('#langsSelector, #langsSelectorExtend');",
+      "title": "Shortcuts",
+      "intro": "The shortcuts button provides access to the list of the shortcuts available on the website.",
+      "element": "getFirstVisibleElement('#shortcutsInfo, #shortcutsInfoExtend');",
       "position": "left",
+      "triggerexcept": ["nohover"],
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
     },{
       "title": "Taxonomies",
@@ -59,11 +60,16 @@ categories: ["Theme"]
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
     },{
-      "title": "Shortcuts",
-      "intro": "The shortcuts button provides access to the list of the shortcuts available on the website.",
-      "element": "getFirstVisibleElement('#shortcutsInfo, #shortcutsInfoExtend');",
+      "title": "Multilingual",
+      "intro": "The multilingual button provides access to the several translations of the current page.<br><i>NB: This button is only visible if a translation page exists for the current page.</i>",
+      "element": "getFirstVisibleElement('#langsSelector, #langsSelectorExtend');",
       "position": "left",
-      "triggerexcept": ["nohover"],
+      "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
+    },{
+      "title": "Versionning",
+      "intro": "The versionning button provides other available versions of the website.",
+      "element": "getFirstVisibleElement('#versionsSelector, #versionsSelectorExtend');",
+      "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
     },{
       "title": "About the website",

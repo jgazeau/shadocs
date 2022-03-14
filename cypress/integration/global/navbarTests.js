@@ -82,5 +82,19 @@ for (const testCase of testCases) {
         cy.scShowInfoResults()
       })
     })
+    describe('when versionning dropdown', () => {
+      it('hover should display versions', () => {
+        cy.get(`#versionsSelectorContainer${extendId}`)
+          .then(($elem) => {
+            $elem.get(0).classList.toggle('is-hovered', true)
+          })
+        cy.get(`#dropdown-menu-versions${extendId}`)
+          .should('be.visible')
+      })
+      it('should have 2 versions', () => {
+        cy.get(`#dropdown-menu-versions${extendId} .dropdown-item`)
+          .should('have.length', 2)
+      })
+    })
   })
 }
