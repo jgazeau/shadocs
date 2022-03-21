@@ -27,7 +27,7 @@ jobs:
       - name: Manage Hugo cache key
         run: echo ${HUGO_TESTS_VERSIONS} > ${HUGO_CACHE_NAME}
       - name: Cache Hugo binaries
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.HUGO_PATH_BIN }}
           key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
@@ -72,7 +72,7 @@ jobs:
       - name: Manage Hugo cache key
         run: echo ${HUGO_TESTS_VERSIONS} > ${HUGO_CACHE_NAME}
       - name: Cache Hugo binaries
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.HUGO_PATH_BIN }}
           key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
@@ -109,17 +109,17 @@ jobs:
       - name: Manage Hugo cache key
         run: echo ${HUGO_TESTS_VERSIONS} > ${HUGO_CACHE_NAME}
       - name: Cache Hugo binaries
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.HUGO_PATH_BIN }}
           key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.NPM_CACHE_PATH }}
           key: ${{ runner.os }}-${{ env.NPM_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
       - name: Cache Cypress binary
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.CYPRESS_CACHE_PATH }}
           key: ${{ runner.os }}-${{ env.CYPRESS_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
@@ -157,17 +157,17 @@ jobs:
       - name: Manage Hugo cache key
         run: echo ${HUGO_TESTS_VERSIONS} > ${HUGO_CACHE_NAME}
       - name: Cache Hugo binaries
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.HUGO_PATH_BIN }}
           key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.NPM_CACHE_PATH }}
           key: ${{ runner.os }}-${{ env.NPM_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
       - name: Cache Cypress binary
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.CYPRESS_CACHE_PATH }}
           key: ${{ runner.os }}-${{ env.CYPRESS_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
@@ -205,17 +205,17 @@ jobs:
       - name: Manage Hugo cache key
         run: echo ${HUGO_TESTS_VERSIONS} > ${HUGO_CACHE_NAME}
       - name: Cache Hugo binaries
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.HUGO_PATH_BIN }}
           key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.NPM_CACHE_PATH }}
           key: ${{ runner.os }}-${{ env.NPM_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
       - name: Cache Cypress binary
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ${{ env.CYPRESS_CACHE_PATH }}
           key: ${{ runner.os }}-${{ env.CYPRESS_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
