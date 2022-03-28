@@ -14,6 +14,18 @@
   translation: "Sur cette page:"
 - id: toc_backtotop
   translation: "Retour en haut"
+- id: navbar_label_print
+  translation: "Imprimer"
+- id: navbar_label_qrcode
+  translation: "QR code"
+- id: navbar_label_shortcuts
+  translation: "Raccourcis"
+- id: navbar_label_taxonomies
+  translation: "Taxonomies"
+- id: navbar_label_versions
+  translation: "Versions"
+- id: navbar_label_info
+  translation: "À propos"
 - id: navbarinfo_title
   translation: "À propos"
 - id: navbarshortcuts_title

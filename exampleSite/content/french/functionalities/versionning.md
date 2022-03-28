@@ -3,7 +3,7 @@ weight: 3290
 title: "Versionning"
 description: "Comment gérér les versions du site ?"
 titleIcon: "fa-solid fa-timeline"
-categories: ["Functionalities"]
+categories: ["Fonctionnalités"]
 ---
 
 # Description

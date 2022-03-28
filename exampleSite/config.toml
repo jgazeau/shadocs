@@ -75,8 +75,8 @@ themesdir              = "../.."
     name = 'latest'
     url  = 'https://shadocs.netlify.app/'
   [[params.navbar.versions]]
-    name = 'feat-deprecated-version'
-    url  = 'https://feat-deprecated-version--shadocs.netlify.app/'
+    name = 'deprecated version'
+    url  = 'https://shadocs.netlify.app/404.html'
   [params.taxonomies]
     [params.taxonomies.categories]
       icon = "fa-solid fa-table-cells"
