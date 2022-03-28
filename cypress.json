@@ -1,7 +1,7 @@
 {
   "baseUrl": "http://localhost:1313",
-  "viewportWidth": 1280,
-  "viewportHeight": 768,
+  "viewportWidth": 1920,
+  "viewportHeight": 1080,
   "screenshotOnRunFailure": false,
   "video": false,
   "env": {
@@ -27,8 +27,8 @@
     "TAXONOMY_URL"              : "/categories/",
     "TERM_URL"                  : "/categories/markdown/",
     "THEME_URL"                 : "/theme/",
-    "VIEWPORT_COMMON_HEIGHT"    : 768,
-    "VIEWPORT_DESKTOP_MAXWIDTH" : 1280,
+    "VIEWPORT_COMMON_HEIGHT"    : 1080,
+    "VIEWPORT_DESKTOP_MAXWIDTH" : 1920,
     "VIEWPORT_DESKTOP_MINWIDTH" : 1024,
     "VIEWPORT_TOUCH_MAXWIDTH"   : 1023,
     "VIEWPORT_TOUCH_MINWIDTH"   : 769,

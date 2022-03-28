@@ -70,14 +70,25 @@
         &:hover:after
           transform: rotate(180deg)
 %navbar-item-standard
+  padding: $theme-gap-small-size $theme-gap-medium-size
   background-color: transparent !important
   border-radius: $theme-gap-small-size
   color: findColorInvert($theme-color)
   @extend %navbar-item-generic
+  min-width: $control-height
   @extend %navbar-item-hover
+  flex-wrap: nowrap
+  display: flex
   &:focus
     box-shadow: unset
     border: unset
+  .icon-text
+    +font-family(lato)
+    font-weight: 700
+    &:not(:last-child)
+     padding-right: $theme-gap-small-size
+  .icon
+    margin: unset
 %navbar-item-generic
   transition: all 0.2s ease
   box-shadow: unset
