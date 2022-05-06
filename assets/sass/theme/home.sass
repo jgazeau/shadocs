@@ -1,6 +1,10 @@
 #contentHome
-  padding-right: $navbar-height
-  padding-left: $navbar-height
+  +mobile
+    padding-right: $theme-gap-medium-size
+    padding-left: $theme-gap-medium-size
+  +tablet
+    padding-right: $navbar-height
+    padding-left: $navbar-height
   +static-size-width(100%)
   justify-content: center
   flex-direction: column
