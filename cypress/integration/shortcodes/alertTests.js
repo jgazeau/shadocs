@@ -1,6 +1,6 @@
 describe('for: alert shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_URL') + Cypress.env('SC_ALERT_URL'))
+    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_ALERT_PATH'))
   })
   it('two info alerts should be displayed', () => {
     cy.get('#content .sc-alert.sc-alert-info')

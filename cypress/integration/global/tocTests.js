@@ -1,6 +1,6 @@
 describe('for: table of content', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('FUNC_TOC_URL'))
+    cy.visit(Cypress.env('FUNC_TOC_PATH'))
   })
   it('toc should be displayed on desktop', () => {
     cy.viewportDesktop()
@@ -23,12 +23,12 @@ describe('for: table of content', () => {
       .should('not.exist')
   })
   it('toc should not be displayed on term pages', () => {
-    cy.visit(Cypress.env('TERM_URL'))
+    cy.visit(Cypress.env('TERM_PATH'))
     cy.get('#tocContainer')
       .should('not.exist')
   })
   it('toc should not be displayed on taxonomy pages', () => {
-    cy.visit(Cypress.env('TAXONOMY_URL'))
+    cy.visit(Cypress.env('TAXONOMY_PATH'))
     cy.get('#tocContainer')
       .should('not.exist')
   })

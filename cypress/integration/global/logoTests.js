@@ -1,6 +1,6 @@
 describe('for: logo', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SITEMAP_URL'))
+    cy.visit(Cypress.env('SITEMAP_PATH'))
   })
   it('logo should be displayed', () => {
     cy.get('#globalLogo')
@@ -9,7 +9,7 @@ describe('for: logo', () => {
   it('logo should redirect to homepage', () => {
     cy.get('#globalLogo')
       .click()
-    cy.location('pathname')
+    cy.location('href')
       .should('eq', Cypress.env('HOMEPAGE_URL'))
   })
 })

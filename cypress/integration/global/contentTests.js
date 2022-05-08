@@ -1,6 +1,6 @@
 describe('for: content', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('FUNC_TOC_URL'))
+    cy.visit(Cypress.env('FUNC_TOC_PATH'))
   })
   it('all titles should have anchors', () => {
     cy.get('#content')
@@ -19,11 +19,8 @@ describe('for: content', () => {
           .children('a[href="#' + encodeURI($title[0].id).toLowerCase() + '"]')
           .should('have.class', 'anchor')
           .click({force:true})
-        cy.location()
-          .should((loc) => {
-            expect(loc.hash).to.eq('#' + encodeURI($title[0].id).toLowerCase())
-            expect(loc.pathname).to.eq(Cypress.env('FUNC_TOC_URL'))
-          })
+        cy.location('href')
+          .should('eq', Cypress.env('HOMEPAGE_URL') + Cypress.env('FUNC_TOC_PATH') + '#' + encodeURI($title[0].id).toLowerCase())
       })
   })
 })

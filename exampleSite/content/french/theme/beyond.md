@@ -1,8 +1,8 @@
 ---
 weight: 1030
 linkTitle: "Vers l'infini et au-delà !"
-title: "Installation: Vers l'infini et au-delà !"
-description: "Tout ce qu'il faut savoir sur le thème."
+title: "Vers l'infini et au-delà !"
+description: "Ce qui est prévu par la suite dans le thème."
 categories: ["Thème"]
 ---
 
@@ -22,6 +22,3 @@ categories: ["Thème"]
 
 ### Optimisations techniques du site
 * Utilisation de purgeCSS en PostCSS
-
-# Contribuer
----

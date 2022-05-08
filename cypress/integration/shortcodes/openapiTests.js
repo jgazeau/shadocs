@@ -1,6 +1,6 @@
 describe('for: openapi shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_URL') + Cypress.env('SC_OPENAPI_URL'))
+    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_OPENAPI_PATH'))
   })
   it('two openapi should be displayed', () => {
     cy.get('#content .sc-openapi-wrapper > .sc-openapi-container')

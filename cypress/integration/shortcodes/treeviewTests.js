@@ -1,6 +1,6 @@
 describe('for: treeview shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_URL') + Cypress.env('SC_TREEVIEW_URL'))
+    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_TREEVIEW_PATH'))
   })
   it('six treeviews should be displayed', () => {
     cy.get('#content .sc-treeview')
