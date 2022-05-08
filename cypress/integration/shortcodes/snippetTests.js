@@ -1,6 +1,6 @@
 describe('for: snippet shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_URL') + Cypress.env('SC_SNIPPET_URL'))
+    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_SNIPPET_PATH'))
   })
   it('ten snippets wrapper should be displayed', () => {
     cy.get('#content .sc-snippet-wrapper')

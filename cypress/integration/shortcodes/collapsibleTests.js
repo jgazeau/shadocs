@@ -1,6 +1,6 @@
 describe('for: collapsible shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_URL') + Cypress.env('SC_COLLAPSIBLE_URL'))
+    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_COLLAPSIBLE_PATH'))
   })
   it('two collapsibles should be displayed', () => {
     cy.get('#content .sc-collapsible-container')

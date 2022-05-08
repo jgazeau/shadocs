@@ -1,6 +1,6 @@
 describe('for: mermaid', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('FUNC_MERMAID_URL'))
+    cy.visit(Cypress.env('FUNC_MERMAID_PATH'))
   })
   it('one mermaid should be displayed', () => {
     cy.get('#content .sc-mermaid-wrapper > .sc-mermaid-container')

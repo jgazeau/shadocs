@@ -1,6 +1,6 @@
 describe('for: 404 page', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('404_URL'))
+    cy.visit(Cypress.env('404_PATH'))
   })
   it('link back to homepage should be displayed', () => {
     cy.get('#footer404')
@@ -9,7 +9,9 @@ describe('for: 404 page', () => {
   it('link back to homepage should redirect to homepage', () => {
     cy.get('#footer404')
       .click()
-    cy.location('pathname')
-      .should('eq', Cypress.env('HOMEPAGE_URL'))
+    cy.location()
+      .should((loc) => {
+        expect(loc.toString()).to.eq(Cypress.env('HOMEPAGE_URL'))
+      })
   })
 })

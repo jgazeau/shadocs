@@ -1,6 +1,6 @@
 describe('for: parameter shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_URL') + Cypress.env('SC_PARAMETER_URL'))
+    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_PARAMETER_PATH'))
   })
   it('seven parameters should be displayed', () => {
     cy.get('#content .sc-parameter')

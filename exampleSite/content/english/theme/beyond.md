@@ -1,8 +1,8 @@
 ---
 weight: 1030
 linkTitle: "To infinity and beyond!"
-title: "Setup: To infinity and beyond!"
-description: "Everything needed to know about the theme."
+title: "To infinity and beyond!"
+description: "What will come next in the theme."
 categories: ["Theme"]
 ---
 
@@ -22,6 +22,3 @@ categories: ["Theme"]
 
 ### Technical website improvements
 * Use of purgeCSS in PostCSS
-
-# Contributing
----

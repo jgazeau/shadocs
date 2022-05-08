@@ -1,6 +1,6 @@
 describe('for: blockquote shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_URL') + Cypress.env('SC_BLOCKQUOTE_URL'))
+    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_BLOCKQUOTE_PATH'))
   })
   it('two blockquotes should be displayed', () => {
     cy.get('#content .sc-blockquote')

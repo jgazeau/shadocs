@@ -1,6 +1,6 @@
 describe('for: intro shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_URL') + Cypress.env('SC_INTRO_URL'))
+    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_INTRO_PATH'))
   })
   it('one intro should be displayed', () => {
     cy.get('#content #introTest')

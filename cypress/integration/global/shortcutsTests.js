@@ -1,6 +1,6 @@
 describe('for: shortcuts', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SITEMAP_URL'))
+    cy.visit(Cypress.env('SITEMAP_PATH'))
   })
   it('[shift+i] should open website information panel', () => {
     cy.window().its('scShowInfo')
@@ -18,8 +18,10 @@ describe('for: shortcuts', () => {
     cy.window().its('scGoHome')
     cy.get('body')
       .type('{shift+h}', {delay:0})
-    cy.location('pathname')
-      .should('eq', Cypress.env('HOMEPAGE_URL'))
+    cy.location()
+      .should((loc) => {
+        expect(loc.toString()).to.eq(Cypress.env('HOMEPAGE_URL'))
+      })
   })
   it('[shift+f] should focus on search', () => {
     cy.window().its('scGoSearch')

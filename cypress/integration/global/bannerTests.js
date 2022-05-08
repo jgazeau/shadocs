@@ -1,4 +1,4 @@
-for (const bannerUrl of Cypress.env('FUNC_BANNER_URLS')) {
+for (const bannerUrl of Cypress.env('FUNC_BANNER_PATHS')) {
   describe('for: table of content of ' + bannerUrl, () => {
     beforeEach(() => {
       cy.visit(bannerUrl)
