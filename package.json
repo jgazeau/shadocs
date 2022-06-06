@@ -39,7 +39,7 @@
   "devDependencies": {
     "bmyc": "^0.2.0",
     "cross-env": "^7.0.3",
-    "cypress": "^9.6.1",
+    "cypress": "^10.0.2",
     "github-release-notes": "^0.17.3",
     "start-server-and-test": "^1.14.0"
   }
