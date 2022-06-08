@@ -1,10 +1,14 @@
-{
-  "baseUrl": "http://localhost:1313/",
-  "viewportWidth": 1920,
-  "viewportHeight": 1080,
-  "screenshotOnRunFailure": false,
-  "video": false,
-  "env": {
+const { defineConfig } = require('cypress')
+
+module.exports = defineConfig({
+  e2e: {
+    baseUrl: "http://localhost:1313/"
+  },
+  viewportWidth: 1920,
+  viewportHeight: 1080,
+  screenshotOnRunFailure: false,
+  video: false,
+  env: {
     "404_PATH"                  : "404.html",
     "SITEMAP_XML_PATH"          : "sitemap.xml",
     "FRENCH_URL_PREFIX"         : "/fr",
@@ -37,4 +41,4 @@
     "VIEWPORT_MOBILE_MINWIDTH"  : 300,
     "WAIT_FOR_ANIMATION"        : 500
   }
-}
+})
