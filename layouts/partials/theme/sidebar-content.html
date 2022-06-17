@@ -49,7 +49,7 @@
     {{end}}
     <div {{if eq .FirstSection .}}class='is-expandable'{{end}}>
       <div {{if eq .FirstSection .}}class='is-sidebar-list-wrapper'{{end}}>
-        <li class='is-marginless{{if $sidebarRoot.Scratch.Get "isTreeActive"}} is-tree-active{{end}}{{if gt $linkWeight 0}} is-entries-expandable{{if .IsAncestor $sidebarRoot}} is-entries-expanded{{else}} is-entries-shrinked{{end}}{{end}}'>
+        <li class='is-marginless{{if $sidebarRoot.Scratch.Get "isTreeActive"}} is-tree-active{{end}}{{if gt $linkWeight 0}} is-entries-expandable{{if .IsAncestor $sidebarRoot | or (eq $sidebarRoot .) }} is-entries-expanded{{else}} is-entries-shrinked{{end}}{{end}}'>
           <div class='card{{if $sidebarRoot.Scratch.Get "isSidebarActive"}} is-sidebar-active{{end}}'{{if $sidebarRoot.Scratch.Get "isSidebarActive"}} id='sidebarActiveEntry'{{end}}>
             {{template "sidebarSectionIcon" dict "this" . "sidebarroot" $sidebarRoot "linkWeight" $linkWeight "isLabel" true}}
             {{if gt $linkWeight 0}}
