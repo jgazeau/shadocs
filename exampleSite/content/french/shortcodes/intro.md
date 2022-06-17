@@ -103,10 +103,10 @@ Identifiant donné à l'élément HTML du bouton de lancement de l'intro.
 | -------- | ----- |
 |{{< md >}}
 ```
-{{</* intro
+{{</*/* intro
   introtitle="Je suis une intro"
   id="introTest"
-*/>}}
+*/*/>}}
 {
   "showBullets": false,
   "showStepNumbers": true,
@@ -150,7 +150,7 @@ Identifiant donné à l'élément HTML du bouton de lancement de l'intro.
       "onchange": "console.log(\"J'arrive dans l'étape 5 pour tout le monde sur l'élément #globalLogo en position droite\");"
     }]
 }
-{{</* /intro */>}}
+{{</*/* /intro */*/>}}
 ```
 {{< /md >}}|{{< intro
   introtitle="Je suis une intro"

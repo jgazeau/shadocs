@@ -25,18 +25,18 @@ This shortcode is particularly useful for displaying HTML code, or markdown code
 | -------- | --------- |
 |{{< md >}}
 ```
-{{</* plaintext */>}}
+{{</*/* plaintext */*/>}}
 <p>I'm a HTML code</p>
-{{</* /plaintext */>}}
+{{</*/* /plaintext */*/>}}
 ```
 {{< /md >}}|{{< plaintext >}}
 <p>I'm a HTML code</p>
 {{< /plaintext >}}|
 |{{< md >}}
 ```
-{{</* plaintext */>}}
+{{</*/* plaintext */*/>}}
 **I'm a markdown code**
-{{</* /plaintext */>}}
+{{</*/* /plaintext */*/>}}
 ```
 {{< /md >}}|{{< plaintext >}}
 **I'm a markdown code**

@@ -60,12 +60,12 @@ Titre de l'onglet.
 | -------- | ----- |
 |{{< md >}}
 ```
-{{</* snippet */>}}
+{{</*/* snippet */*/>}}
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
 }
-{{</* /snippet */>}}
+{{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet >}}
 # Hello, World!
@@ -75,14 +75,14 @@ Titre de l'onglet.
 {{< /snippet >}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     type="code"
-*/>}}
+*/*/>}}
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
 }
-{{</* /snippet */>}}
+{{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet
     type="code"
@@ -94,13 +94,13 @@ Titre de l'onglet.
 {{< /snippet >}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     type="md"
-*/>}}
+*/*/>}}
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
-{{</* /snippet */>}}
+{{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet
     type="md"
@@ -111,13 +111,13 @@ Titre de l'onglet.
 {{< /snippet >}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     type="plaintext"
-*/>}}
+*/*/>}}
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
-{{</* /snippet */>}}
+{{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet
     type="plaintext"
@@ -128,10 +128,10 @@ Titre de l'onglet.
 {{< /snippet >}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     file="templates/snippet.fr.md"
     caption="Je suis une légende"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< snippet
     file="templates/snippet.fr.md"
@@ -139,11 +139,11 @@ Titre de l'onglet.
 />}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     file="templates/snippet.fr.md"
     type="md"
     caption="Je suis une légende"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< snippet
     file="templates/snippet.fr.md"
@@ -152,11 +152,11 @@ Titre de l'onglet.
 />}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     file="templates/snippet.fr.md"
     type="plaintext"
     caption="Je suis une légende"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< snippet
     file="templates/snippet.fr.md"
@@ -165,12 +165,12 @@ Titre de l'onglet.
 />}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     file="templates/snippet.go"
     caption="Je suis une légende"
     codelang="go"
     codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< snippet
     file="templates/snippet.go"
@@ -180,31 +180,31 @@ Titre de l'onglet.
 />}}|
 |{{< md >}}
 ```
-{{</* snippet */>}}
-{{</* tab
+{{</*/* snippet */*/>}}
+{{</*/* tab
     title="code"
-*/>}}
+*/*/>}}
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
-{{</* /tab */>}}
-{{</* tab
+{{</*/* /tab */*/>}}
+{{</*/* tab
     title="md"
     type="md"
-*/>}}
+*/*/>}}
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
-{{</* /tab */>}}
-{{</* tab
+{{</*/* /tab */*/>}}
+{{</*/* tab
     title="plaintext"
     type="plaintext"
-*/>}}
+*/*/>}}
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
-{{</* /tab */>}}
-{{</* /snippet */>}}
+{{</*/* /tab */*/>}}
+{{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet >}}
 {{< tab
@@ -233,35 +233,35 @@ Titre de l'onglet.
 {{< /snippet >}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     file="templates/snippet.go"
     type="md"
     caption="Je suis une légende"
     codelang="go"
     codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
-*/>}}
-{{</* tab
+*/*/>}}
+{{</*/* tab
     title="first tab"
     type="code"
     caption="Je suis une autre légende"
     codelang="go"
     codeparam="linenos=table,hl_lines=[1,3],linenostart=20"
-/*/>}}
-{{</* tab
+/*/*/>}}
+{{</*/* tab
     file="templates/snippet.fr.md"
     title="second tab"
     codelang="md"
-/*/>}}
-{{</* tab
+/*/*/>}}
+{{</*/* tab
     title="third tab"
     type="plaintext"
     caption=""
-*/>}}
+*/*/>}}
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
-{{</* /tab */>}}
-{{</* /snippet */>}}
+{{</*/* /tab */*/>}}
+{{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet
     file="templates/snippet.go"

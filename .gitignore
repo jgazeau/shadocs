@@ -3,6 +3,7 @@
 /resources/_gen/
 exampleSite/public
 exampleSite/resources/_gen/
+.hugo_build.lock
 
 # Ignore npm files
 node_modules/

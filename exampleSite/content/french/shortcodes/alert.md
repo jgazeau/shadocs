@@ -33,20 +33,20 @@ Styles disponibles:
 | -------- | ----- |
 |{{< md >}}
 ```
-{{</* alert */>}}
+{{</*/* alert */*/>}}
 Je suis une alerte de type **info** par défaut
-{{</* /alert */>}}
+{{</*/* /alert */*/>}}
 ```
 {{< /md >}}|{{< alert >}}
 Je suis une alerte de type **info** par défaut
 {{< /alert >}}|
 |{{< md >}}
 ```
-{{</* alert
+{{</*/* alert
     type="info"
-*/>}}
+*/*/>}}
 Je suis une alerte de type **info**
-{{</* /alert */>}}
+{{</*/* /alert */*/>}}
 ```
 {{< /md >}}|{{< alert
     type="info"
@@ -55,11 +55,11 @@ Je suis une alerte de type **info**
 {{< /alert >}}|
 |{{< md >}}
 ```
-{{</* alert
+{{</*/* alert
     type="success"
-*/>}}
+*/*/>}}
 Je suis une alerte de type **success**
-{{</* /alert */>}}
+{{</*/* /alert */*/>}}
 ```
 {{< /md >}}|{{< alert
     type="success"
@@ -68,11 +68,11 @@ Je suis une alerte de type **success**
 {{< /alert >}}|
 |{{< md >}}
 ```
-{{</* alert
+{{</*/* alert
     type="warning"
-*/>}}
+*/*/>}}
 Je suis une alerte de type **warning**
-{{</* /alert */>}}
+{{</*/* /alert */*/>}}
 ```
 {{< /md >}}|{{< alert
     type="warning"
@@ -81,11 +81,11 @@ Je suis une alerte de type **warning**
 {{< /alert >}}|
 |{{< md >}}
 ```
-{{</* alert
+{{</*/* alert
     type="error"
-*/>}}
+*/*/>}}
 Je suis une alerte de type **error**
-{{</* /alert */>}}
+{{</*/* /alert */*/>}}
 ```
 {{< /md >}}|{{< alert
     type="error"

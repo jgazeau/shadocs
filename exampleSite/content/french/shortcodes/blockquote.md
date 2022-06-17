@@ -28,20 +28,20 @@ Source de la citation.
 | -------- | ----- |
 |{{< md >}}
 ```
-{{</* blockquote */>}}
+{{</*/* blockquote */*/>}}
 Je suis une citation sans source
-{{</* /blockquote */>}}
+{{</*/* /blockquote */*/>}}
 ```
 {{< /md >}}|{{< blockquote >}}
 Je suis une citation sans source
 {{< /blockquote >}}|
 |{{< md >}}
 ```
-{{</* blockquote
+{{</*/* blockquote
     source="Shadocs"
-*/>}}
+*/*/>}}
 Je suis une citation avec source
-{{</* /blockquote */>}}
+{{</*/* /blockquote */*/>}}
 ```
 {{< /md >}}|{{< blockquote
     source="Shadocs"

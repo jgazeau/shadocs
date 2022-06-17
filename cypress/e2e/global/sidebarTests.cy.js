@@ -23,6 +23,17 @@ describe('for: sidebar', () => {
       cy.get('.is-icon-expandable')
         .should('have.class', 'is-icon-shrinked')
     })
+    it('sidebar entries should be uncollapsed when current page is a section', () => {
+      cy.visit(Cypress.env('THEME_PATH'))
+      cy.viewportDesktop('min')
+      cy.get('#sidebarActiveEntry').as('sidebarActiveEntry')
+      cy.get('@sidebarActiveEntry')
+        .parent()
+        .should('have.class', 'is-entries-expanded')
+      cy.get('@sidebarActiveEntry')
+        .next('ul')
+        .should('be.visible')
+    })
   })
   describe('when sidebar uncollapsed', () => {
     beforeEach(() => {

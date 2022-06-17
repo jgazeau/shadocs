@@ -60,12 +60,12 @@ Tab title.
 | -------- | --------- |
 |{{< md >}}
 ```
-{{</* snippet */>}}
+{{</*/* snippet */*/>}}
 # Hello, World!
 ---
 *I am* **a reusable** ***template*** to include in a page content.
 }
-{{</* /snippet */>}}
+{{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet >}}
 # Hello, World!
@@ -75,14 +75,14 @@ Tab title.
 {{< /snippet >}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     type="code"
-*/>}}
+*/*/>}}
 # Hello, World!
 ---
 *I am* **a reusable** ***template*** to include in a page content.
 }
-{{</* /snippet */>}}
+{{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet
     type="code"
@@ -94,13 +94,13 @@ Tab title.
 {{< /snippet >}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     type="md"
-*/>}}
+*/*/>}}
 # Hello, World!
 ---
 *I am* **a reusable** ***template*** to include in a page content.
-{{</* /snippet */>}}
+{{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet
     type="md"
@@ -111,13 +111,13 @@ Tab title.
 {{< /snippet >}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     type="plaintext"
-*/>}}
+*/*/>}}
 # Hello, World!
 ---
 *I am* **a reusable** ***template*** to include in a page content.
-{{</* /snippet */>}}
+{{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet
     type="plaintext"
@@ -128,10 +128,10 @@ Tab title.
 {{< /snippet >}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     file="templates/snippet.en.md"
     caption="I'm a legend"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< snippet
     file="templates/snippet.en.md"
@@ -139,11 +139,11 @@ Tab title.
 />}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     file="templates/snippet.en.md"
     type="md"
     caption="I'm a legend"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< snippet
     file="templates/snippet.en.md"
@@ -152,11 +152,11 @@ Tab title.
 />}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     file="templates/snippet.en.md"
     type="plaintext"
     caption="I'm a legend"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< snippet
     file="templates/snippet.en.md"
@@ -165,12 +165,12 @@ Tab title.
 />}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     file="templates/snippet.go"
     caption="I'm a legend"
     codelang="go"
     codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< snippet
     file="templates/snippet.go"
@@ -180,31 +180,31 @@ Tab title.
 />}}|
 |{{< md >}}
 ```
-{{</* snippet */>}}
-{{</* tab
+{{</*/* snippet */*/>}}
+{{</*/* tab
     title="code"
-*/>}}
+*/*/>}}
 # Hello, World!
 ---
 *I am* **a reusable** ***template*** to include in a page content.
-{{</* /tab */>}}
-{{</* tab
+{{</*/* /tab */*/>}}
+{{</*/* tab
     title="md"
     type="md"
-*/>}}
+*/*/>}}
 # Hello, World!
 ---
 *I am* **a reusable** ***template*** to include in a page content.
-{{</* /tab */>}}
-{{</* tab
+{{</*/* /tab */*/>}}
+{{</*/* tab
     title="plaintext"
     type="plaintext"
-*/>}}
+*/*/>}}
 # Hello, World!
 ---
 *I am* **a reusable** ***template*** to include in a page content.
-{{</* /tab */>}}
-{{</* /snippet */>}}
+{{</*/* /tab */*/>}}
+{{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet >}}
 {{< tab
@@ -233,35 +233,35 @@ Tab title.
 {{< /snippet >}}|
 |{{< md >}}
 ```
-{{</* snippet
+{{</*/* snippet
     file="templates/snippet.go"
     type="md"
     caption="I'm a legend"
     codelang="go"
     codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
-*/>}}
-{{</* tab
+*/*/>}}
+{{</*/* tab
     title="first tab"
     type="code"
     caption="I'm an other legend"
     codelang="go"
     codeparam="linenos=table,hl_lines=[1,3],linenostart=20"
-/*/>}}
-{{</* tab
+/*/*/>}}
+{{</*/* tab
     file="templates/snippet.en.md"
     title="second tab"
     codelang="md"
-/*/>}}
-{{</* tab
+/*/*/>}}
+{{</*/* tab
     title="third tab"
     type="plaintext"
     caption=""
-*/>}}
+*/*/>}}
 # Hello, World!
 ---
 *I am* **a reusable** ***template*** to include in a page content.
-{{</* /tab */>}}
-{{</* /snippet */>}}
+{{</*/* /tab */*/>}}
+{{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet
     file="templates/snippet.go"

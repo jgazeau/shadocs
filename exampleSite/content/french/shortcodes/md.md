@@ -28,9 +28,9 @@ Imbriquer deux shortcode **md** n'est pas possible.
 | -------- | ----- |
 |{{< md >}}
 ```
-{{</* md */>}}
+{{</*/* md */*/>}}
 Je suis du texte écrit en **markdown**
-{{</* /md */>}}
+{{</*/* /md */*/>}}
 ```
 {{< /md >}}|{{< md >}}
 Je suis du texte écrit en **markdown**
@@ -39,14 +39,14 @@ Je suis du texte écrit en **markdown**
 ~~~
 | Markdown | Rendu |
 | -------- | ----- |
-|{{</* md */>}}
+|{{</*/* md */*/>}}
 ```
-{{</* md */>}}
+{{</*/* md */*/>}}
 Je suis du texte écrit en **markdown**
-{{</* /md */>}}
+{{</*/* /md */*/>}}
 ```
-{{</* /md */>}}|{{</* md */>}}
+{{</*/* /md */*/>}}|{{</*/* md */*/>}}
 Je suis du texte écrit en **markdown**
-{{</* /md */>}}
+{{</*/* /md */*/>}}
 ~~~
 {{< /md >}}| Tableau d'exemples sans la ligne courante (***Rendu non disponible car deux shortcode md sont imbriqués dans cet exemple***) |

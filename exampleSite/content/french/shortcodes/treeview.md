@@ -44,24 +44,24 @@ Valeurs possibles:
 | -------- | ----- |
 |{{< md >}}
 ```
-{{</* treeview /*/>}}
+{{</*/* treeview /*/*/>}}
 ```
 {{< /md >}}|{{< treeview />}}|
 |{{< md >}}
 ```
-{{</* treeview
+{{</*/* treeview
     rootpath="/shortcodes"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< treeview 
     rootpath="/shortcodes"
 />}}|
 |{{< md >}}
 ```
-{{</* treeview
+{{</*/* treeview
     rootpath="/shortcodes"
     display="graph"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< treeview 
     rootpath="/shortcodes"
@@ -69,10 +69,10 @@ Valeurs possibles:
 />}}|
 |{{< md >}}
 ```
-{{</* treeview
+{{</*/* treeview
     rootpath="/shortcodes"
     display="tree"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< treeview 
     rootpath="/shortcodes"
@@ -80,11 +80,11 @@ Valeurs possibles:
 />}}|
 |{{< md >}}
 ```
-{{</* treeview
+{{</*/* treeview
     rootpath="/shortcodes"
     display="tree"
     init="collapse"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< treeview 
     rootpath="/shortcodes"
@@ -93,9 +93,9 @@ Valeurs possibles:
 />}}|
 |{{< md >}}
 ```
-{{</* treeview
+{{</*/* treeview
     display="tree"
-*/>}}
+*/*/>}}
 [{
     "kind": "dir",
     "label": "***Répertoire***",
@@ -172,7 +172,7 @@ Valeurs possibles:
     "kind": "word",
     "label": "***Fichier Word***"
 }]
-{{</* /treeview */>}}
+{{</*/* /treeview */*/>}}
 ```
 {{< /md >}}|{{< treeview
     display="tree"

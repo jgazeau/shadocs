@@ -84,60 +84,60 @@ Considérant les définitions de paramètres suivant:
 | -------- | ----- |
 |{{< md >}}
 ```
-{{</* parameter "inconnu" /*/>}}
+{{</*/* parameter "inconnu" /*/*/>}}
 ```
 {{< /md >}}|{{< parameter "inconnu" />}}|
 |{{< md >}}
 ```
-{{</* parameter "logo" /*/>}}
+{{</*/* parameter "logo" /*/*/>}}
 ```
 {{< /md >}}|{{< parameter "logo" />}}|
 |{{< md >}}
 ```
-{{</* parameter "faviconmd" /*/>}}
+{{</*/* parameter "faviconmd" /*/*/>}}
 ```
 {{< /md >}}|{{< parameter "faviconmd" />}}|
 |{{< md >}}
 ```
-{{</* parameter
+{{</*/* parameter
     path="dir.exampleTemplate.exampleMap"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< parameter
     path="dir.exampleTemplate.exampleMap"
 />}}|
 |{{< md >}}
 ```
-{{</* parameter
+{{</*/* parameter
     path="dir.exampleTemplate.exampleMap.exampleArray"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< parameter
     path="dir.exampleTemplate.exampleMap.exampleArray"
 />}}|
 |{{< md >}}
 ```
-{{</* parameter
+{{</*/* parameter
     path="dir.exampleTemplate.exampleMap.exampleString"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< parameter
     path="dir.exampleTemplate.exampleMap.exampleString"
 />}}|
 |{{< md >}}
 ```
-{{</* parameter
+{{</*/* parameter
     path="themeParams.navbar.shortcuts.1_info"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< parameter
     path="themeParams.navbar.shortcuts.1_info"
 />}}|
 |{{< md >}}
 ```
-{{</* parameter
+{{</*/* parameter
     i18n="homepage_title"
-/*/>}}
+/*/*/>}}
 ```
 {{< /md >}}|{{< parameter
     i18n="homepage_title"

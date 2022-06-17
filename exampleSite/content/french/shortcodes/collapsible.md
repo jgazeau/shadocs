@@ -28,20 +28,20 @@ Titre du bloc de texte.
 | -------- | ----- |
 |{{< md >}}
 ```
-{{</* collapsible */>}}
+{{</*/* collapsible */*/>}}
 Je suis caché
-{{</* /collapsible */>}}
+{{</*/* /collapsible */*/>}}
 ```
 {{< /md >}}|{{< collapsible >}}
 Je suis caché
 {{< /collapsible >}}|
 |{{< md >}}
 ```
-{{</* collapsible
+{{</*/* collapsible
     title="Sésame, ouvre-toi!"
-*/>}}
+*/*/>}}
 Je suis caché
-{{</* /collapsible */>}}
+{{</*/* /collapsible */*/>}}
 ```
 {{< /md >}}|{{< collapsible
     title="Sésame, ouvre-toi!"

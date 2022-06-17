@@ -25,7 +25,7 @@ Le shortcode **pagebreak** permet de définir un saut de page pour l'impression.
 | -------- | ----- |
 |{{< md >}}
 ```
-{{</* pagebreak */>}}
+{{</*/* pagebreak */*/>}}
 # Exemples
 ```
 {{< /md >}}| (***Rendu non disponible et visible uniquement dans l'aperçu impression***) |

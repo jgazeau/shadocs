@@ -28,20 +28,20 @@ Text block title.
 | -------- | --------- |
 |{{< md >}}
 ```
-{{</* collapsible */>}}
+{{</*/* collapsible */*/>}}
 I'm hidden
-{{</* /collapsible */>}}
+{{</*/* /collapsible */*/>}}
 ```
 {{< /md >}}|{{< collapsible >}}
 I'm hidden
 {{< /collapsible >}}|
 |{{< md >}}
 ```
-{{</* collapsible
+{{</*/* collapsible
     title="Open sesame!"
-*/>}}
+*/*/>}}
 I'm hidden
-{{</* /collapsible */>}}
+{{</*/* /collapsible */*/>}}
 ```
 {{< /md >}}|{{< collapsible
     title="Open sesame!"

@@ -28,9 +28,9 @@ Nesting two **md** shortcode is not possible.
 | -------- | --------- |
 |{{< md >}}
 ```
-{{</* md */>}}
+{{</*/* md */*/>}}
 I'm a text written in **markdown**
-{{</* /md */>}}
+{{</*/* /md */*/>}}
 ```
 {{< /md >}}|{{< md >}}
 I'm a text written in **markdown**
@@ -39,14 +39,14 @@ I'm a text written in **markdown**
 ~~~
 | Markdown | Rendering |
 | -------- | --------- |
-|{{</* md */>}}
+|{{</*/* md */*/>}}
 ```
-{{</* md */>}}
+{{</*/* md */*/>}}
 I'm a text written in **markdown**
-{{</* /md */>}}
+{{</*/* /md */*/>}}
 ```
-{{</* /md */>}}|{{</* md */>}}
+{{</*/* /md */*/>}}|{{</*/* md */*/>}}
 I'm a text written in **markdown**
-{{</* /md */>}}
+{{</*/* /md */*/>}}
 ~~~
 {{< /md >}}| Table of examples without the current row (***Rendering not available because two md shortcode are nested in this example***) |

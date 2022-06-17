@@ -28,20 +28,20 @@ Source of the quote.
 | -------- | --------- |
 |{{< md >}}
 ```
-{{</* blockquote */>}}
+{{</*/* blockquote */*/>}}
 I'm a quote without source
-{{</* /blockquote */>}}
+{{</*/* /blockquote */*/>}}
 ```
 {{< /md >}}|{{< blockquote >}}
 I'm a quote without source
 {{< /blockquote >}}|
 |{{< md >}}
 ```
-{{</* blockquote
+{{</*/* blockquote
     source="Shadocs"
-*/>}}
+*/*/>}}
 I'm a quote with source
-{{</* /blockquote */>}}
+{{</*/* /blockquote */*/>}}
 ```
 {{< /md >}}|{{< blockquote
     source="Shadocs"

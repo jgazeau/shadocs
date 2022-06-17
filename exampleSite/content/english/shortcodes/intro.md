@@ -103,10 +103,10 @@ Identifier given to the global HTML element of the intro launch button.
 | -------- | --------- |
 |{{< md >}}
 ```
-{{</* intro
+{{</*/* intro
   introtitle="I'm an intro"
   id="introTest"
-*/>}}
+*/*/>}}
 {
   "showBullets": false,
   "showStepNumbers": true,
@@ -150,7 +150,7 @@ Identifier given to the global HTML element of the intro launch button.
       "onchange": "console.log(\"I'm entering step 5 for everyone on the #globalLogo element on right position\");"
     }]
 }
-{{</* /intro */>}}
+{{</*/* /intro */*/>}}
 ```
 {{< /md >}}|{{< intro
   introtitle="I'm an intro"

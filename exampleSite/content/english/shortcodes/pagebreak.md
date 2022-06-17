@@ -25,7 +25,7 @@ The **pagebreak** shortcode is used to define a page break for print.
 | -------- | --------- |
 |{{< md >}}
 ```
-{{</* pagebreak */>}}
+{{</*/* pagebreak */*/>}}
 # Examples
 ```
 {{< /md >}}| (***Rendering not available and only visible in print preview***) |
