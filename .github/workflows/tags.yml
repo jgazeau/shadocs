@@ -5,7 +5,7 @@ on:
 jobs:
   Publish:
     name: Publish
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     env:
       CHANGELOG_FILE: CHANGELOG.md
     steps:
