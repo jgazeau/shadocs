@@ -1,0 +1,45 @@
+name: Bump thirdparties using Bmyc
+on:
+  push:
+    branches:
+      - 'main'
+env:
+  NPM_CACHE_NAME: "npm-cache"
+  NPM_CACHE_PATH: "~/.npm"
+jobs:
+  Bump:
+    name: Bump
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 1
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+      - name: Bmyc
+        env:
+          LOG_FILE: "workflow.log"
+          PR_TITLE: "build: bump bmyc assets"
+          BRANCH_NAME: "build/bump_bmyc_assets"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BMYC_GITHUB_TOKEN: ${{ secrets.BMYC_GITHUB_TOKEN }}
+        run: |
+          printf "%70s\n" | tr ' ' '-'
+          npm ci
+          npx bmyc --version
+          printf "%70s\n" | tr ' ' '-'
+          printf "%s\n\n" "${PR_TITLE}" > ${LOG_FILE}
+          npx bmyc | tee -a ${LOG_FILE}
+          if [ $(git status --porcelain | wc -l) -gt 0 ];then
+            git checkout -b ${BRANCH_NAME}
+            git add -u .
+            git config --local user.name "GitHub Action"
+            git config --local user.email "action@github.com"
+            git commit -m "${PR_TITLE}"
+            git push -f origin ${BRANCH_NAME}
+            hub pull-request --file ${LOG_FILE} "build: bump bmyc assets" -l "internal" --base main --head  ${BRANCH_NAME}
+          fi

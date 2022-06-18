@@ -11,3 +11,6 @@ node_modules/
 # Cypress files to ignore
 /cypress/downloads/
 debug.log
+
+# Common files
+workflow.log
