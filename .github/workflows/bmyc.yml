@@ -34,14 +34,13 @@ jobs:
           npm ci
           npx bmyc --version
           printf "%70s\n" | tr ' ' '-'
-          printf "%s\n\n" "${PR_TITLE}" > ${LOG_FILE}
-          npx bmyc | tee -a ${LOG_FILE}
-          if [ $(git status --porcelain | wc -l) -gt 0 ];then
+          npx bmyc --summary-pr ${LOG_FILE}
+          if [[ $(git status --porcelain | wc -l) -gt 0 && -f ${LOG_FILE} ]];then
             git checkout -b ${BRANCH_NAME}
             git add -u .
             git config --local user.name "GitHub Action"
             git config --local user.email "action@github.com"
             git commit -m "${PR_TITLE}"
             git push -f origin ${BRANCH_NAME}
-            hub pull-request --file ${LOG_FILE} "build: bump bmyc assets" -l "internal" --base main --head  ${BRANCH_NAME}
+            hub pull-request --file ${LOG_FILE} -l "internal" --base main --head ${BRANCH_NAME}
           fi
