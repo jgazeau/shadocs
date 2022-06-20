@@ -9,7 +9,7 @@
       "library": "swagger-ui",
       "fileName": "swagger-ui-bundle.min.js"
     },
-    "currentVersion": "4.5.0"
+    "currentVersion": "4.12.0"
   },
   {
     "package": "swagger-ui",
@@ -21,7 +21,7 @@
       "library": "swagger-ui",
       "fileName": "swagger-ui-standalone-preset.min.js"
     },
-    "currentVersion": "4.5.0"
+    "currentVersion": "4.12.0"
   },
   {
     "package": "swagger-ui",
@@ -33,7 +33,7 @@
       "library": "swagger-ui",
       "fileName": "swagger-ui.min.css"
     },
-    "currentVersion": "4.5.0"
+    "currentVersion": "4.12.0"
   },
   {
     "package": "flexsearch",
@@ -57,7 +57,7 @@
       "library": "mermaid",
       "fileName": "mermaid.min.js"
     },
-    "currentVersion": "8.14.0"
+    "currentVersion": "9.1.2"
   },
   {
     "package": "qrious",
@@ -81,7 +81,7 @@
       "library": "overlayscrollbars",
       "fileName": "js/OverlayScrollbars.min.js"
     },
-    "currentVersion": "1.13.1"
+    "currentVersion": "1.13.2"
   },
   {
     "package": "overlayscrollbars",
@@ -93,7 +93,7 @@
       "library": "overlayscrollbars",
       "fileName": "css/OverlayScrollbars.min.css"
     },
-    "currentVersion": "1.13.1"
+    "currentVersion": "1.13.2"
   },
   {
     "package": "intro",
@@ -105,7 +105,7 @@
       "library": "intro.js",
       "fileName": "intro.min.js"
     },
-    "currentVersion": "5.0.0"
+    "currentVersion": "5.1.0"
   },
   {
     "package": "fontawesome",
@@ -117,7 +117,7 @@
       "library": "font-awesome",
       "fileName": "css/all.min.css"
     },
-    "currentVersion": "6.0.0"
+    "currentVersion": "6.1.1"
   },
   {
     "package": "fontawesome",
@@ -129,7 +129,7 @@
       "library": "font-awesome",
       "fileName": "webfonts/fa-brands-400.ttf"
     },
-    "currentVersion": "6.0.0"
+    "currentVersion": "6.1.1"
   },
   {
     "package": "fontawesome",
@@ -141,7 +141,7 @@
       "library": "font-awesome",
       "fileName": "webfonts/fa-brands-400.woff2"
     },
-    "currentVersion": "6.0.0"
+    "currentVersion": "6.1.1"
   },
   {
     "package": "fontawesome",
@@ -153,7 +153,7 @@
       "library": "font-awesome",
       "fileName": "webfonts/fa-regular-400.ttf"
     },
-    "currentVersion": "6.0.0"
+    "currentVersion": "6.1.1"
   },
   {
     "package": "fontawesome",
@@ -165,7 +165,7 @@
       "library": "font-awesome",
       "fileName": "webfonts/fa-regular-400.woff2"
     },
-    "currentVersion": "6.0.0"
+    "currentVersion": "6.1.1"
   },
   {
     "package": "fontawesome",
@@ -177,7 +177,7 @@
       "library": "font-awesome",
       "fileName": "webfonts/fa-solid-900.ttf"
     },
-    "currentVersion": "6.0.0"
+    "currentVersion": "6.1.1"
   },
   {
     "package": "fontawesome",
@@ -189,6 +189,6 @@
       "library": "font-awesome",
       "fileName": "webfonts/fa-solid-900.woff2"
     },
-    "currentVersion": "6.0.0"
+    "currentVersion": "6.1.1"
   }
 ]
