@@ -1,8 +1,7 @@
 name: Bump thirdparties using Bmyc
 on:
-  push:
-    branches:
-      - 'main'
+  schedule:
+    - cron: '30 2 * * 1'
 env:
   NPM_CACHE_NAME: "npm-cache"
   NPM_CACHE_PATH: "~/.npm"
