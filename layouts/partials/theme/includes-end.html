@@ -88,7 +88,7 @@
   {{$scratch := newScratch}}
   {{range .this}}
     {{ if in . ".min." }}
-      {{$scratch.Set "script" (resources.Get . | resources.ExecuteAsTemplate . $context)}}
+      {{$scratch.Set "script" (resources.Get .)}}
     {{else}}
       {{$scratch.Set "script" (resources.Get . | resources.ExecuteAsTemplate . $context | minify)}}
     {{end}}
