@@ -1,14 +1,15 @@
-<div class='columns is-mobile is-marginless is-scroll-smooth' id='contentContainer'>
-  {{$.Scratch.Set "contentId" "content"}}
-  {{$.Scratch.Set "titleId" "contentTitle"}}
-  {{$.Scratch.Set "isToc" true}}
-  {{if .IsHome}}
-    {{if eq .Site.Params.homeLayout "onboarding"}}
-      {{$.Scratch.Set "contentId" "contentHome"}}
-      {{$.Scratch.Set "titleId" "contentHomeTitle"}}
-      {{$.Scratch.Set "isToc" false}}
-    {{end}}
+{{$.Scratch.Set "contentId" "content"}}
+{{$.Scratch.Set "titleId" "contentTitle"}}
+{{if .IsHome}}
+  {{if eq .Site.Params.homeLayout "onboarding"}}
+    {{$.Scratch.Set "contentId" "contentHome"}}
+    {{$.Scratch.Set "titleId" "contentHomeTitle"}}
+    {{$.Scratch.Set "isToc" false}}
   {{end}}
+{{else}}
+  {{$.Scratch.Set "isToc" (partial "theme/helpers/tocResolver.html" (dict "this" .))}}
+{{end}}
+<div class='columns is-mobile is-marginless is-scroll-smooth{{if ($.Scratch.Get "isToc")}} has-toc{{end}}' id='contentContainer'>
   <div class='column' id='{{$.Scratch.Get "contentId"}}'>
     {{with (or .Site.Params.globalBanner .Params.banner)}}
       {{$bannerContent := i18n "banner_default_content" $}}

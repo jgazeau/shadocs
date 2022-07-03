@@ -105,8 +105,8 @@ document.addEventListener('DOMContentLoaded', function() {
   };
   manageActiveEntryScroll(document.getElementById('sidebarActiveEntry'));
   // Manage click on collapsible sidebar
-  document.getElementById('sidebarUncollapse').addEventListener('click', (e) => {manageClickCollapsibleSidebar()});
-  document.getElementById('sidebarCollapse').addEventListener('click', (e) => {manageClickCollapsibleSidebar()});
+  document.getElementById('sidebarUncollapse').addEventListener('click', () => {manageClickCollapsibleSidebar()});
+  document.getElementById('sidebarCollapse').addEventListener('click', () => {manageClickCollapsibleSidebar()});
   // Manage collapsible sidebar during resize of window
   window.addEventListener('resize', function(){
     manageDefaultCollapsibleSidebar();

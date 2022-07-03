@@ -86,7 +86,8 @@
     "js/theme/qrcode.js",
     "js/theme/search.js",
     "js/theme/shortcuts.js",
-    "js/theme/sidebar.js"
+    "js/theme/sidebar.js",
+    "js/theme/toc.js"
   ]
   [includes.shortcodes.jsModules]
     collapsible = [

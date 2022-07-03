@@ -1,11 +1,24 @@
+#tocCollapsible
+  +static-size-height(calc(100vh - #{$navbar-height}))
+  color: findColorInvert($toc-taxonomy-collapsible-color)
+  background-color: $toc-taxonomy-collapsible-color
+  +static-size-width($toc-collapsible-width)
+  padding: $theme-gap-small-half-size
+  justify-content: center
+  @extend %unselectable
+  align-items: center
+  display: flex
+  &:hover
+    background-color: $toc-taxonomy-collapsible-color-hover
+    cursor: pointer
 #tocContainer
-  border-left: $theme-border-width solid smooth-color($content-writing-color, 80)
+  border-left: $theme-border-width solid $toc-taxonomy-border-color
   +static-size-height(calc(100vh - #{$navbar-height}))
   +static-size-width($toc-width)
   flex-flow: column
   display: flex
   .toc-header
-    border-bottom: $theme-border-width solid smooth-color($content-writing-color, 80)
+    border-bottom: $theme-border-width solid $toc-taxonomy-border-color
     color: smooth-color($content-writing-color, 50)
     +static-size-height($navbar-height)
     padding: $theme-gap-medium-size
@@ -43,7 +56,7 @@
           list-style-type: none
           padding: 0
           li
-            border-left: 1px solid smooth-color($content-writing-color, 85)
+            border-left: 1px solid $toc-taxonomy-border-color
             ul
               padding: $toc-padding
             a

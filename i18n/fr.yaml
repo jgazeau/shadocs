@@ -106,3 +106,7 @@
   translation: "Terminer"
 - id: na_common
   translation: "Non disponible"
+- id: sidebar_collapsible_title
+  translation: "Développer/Réduire menu latéral"
+- id: toc_collapsible_title
+  translation: "Développer/Réduire table des matières"
