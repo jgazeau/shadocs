@@ -45,7 +45,7 @@ Pour définir un fichier à importer il faut utliser la configuration suivante (
     file="templates/configuration/config.fr.toml"
     caption="config.toml ([params] section)"
     codelang="toml"
-    codeparam="linenos=inline,hl_lines=[\"34-39\",\"47-63\"]"
+    codeparam="linenos=inline,hl_lines=[\"36-41\",\"49-65\"]"
 />}}
 
 # Définition d'imports tiers pour les shortcodes
@@ -59,5 +59,5 @@ Pour définir un fichier à importer, associé à un shortcode, il faut utliser 
     file="templates/configuration/config.fr.toml"
     caption="config.toml ([params] section)"
     codelang="toml"
-    codeparam="linenos=inline,hl_lines=[\"34-35\",\"40-45\",\"64-112\"]"
+    codeparam="linenos=inline,hl_lines=[\"36-37\",\"42-47\",\"66-114\"]"
 />}}

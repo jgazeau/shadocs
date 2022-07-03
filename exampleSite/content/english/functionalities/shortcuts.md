@@ -23,7 +23,7 @@ To define a shortcut, follow this process (example with the **example** (`Maj + 
         file="templates/configuration/config.en.toml"
         caption="config.toml ([params] section)"
         codelang="toml"
-        codeparam="linenos=inline,hl_lines=[\"19-27\"]"
+        codeparam="linenos=inline,hl_lines=[\"21-29\"]"
     />}}
 2. Define shortcut labels that will appear in the shortcut help menu (in the appropriate *i18n* translation file):
     {{< snippet

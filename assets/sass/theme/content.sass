@@ -11,6 +11,19 @@
   overflow-x: hidden
   overflow-y: auto
   flex: 1
+  &.has-toc
+    #content
+      +desktop
+        +static-size-width(calc(100% - #{$toc-width} - #{$toc-collapsible-width}))
+    &.is-toc-collapsed
+      #content
+        +desktop
+          +static-size-width(calc(100% - #{$toc-collapsible-width}))
+      #tocContainer
+        display: none
+      #tocCollapsible
+        i
+          transform: rotate(180deg)
   #contentTitle
     margin-bottom: $theme-gap-large-size
     font-size: $theme-title-font-size
@@ -25,11 +38,8 @@
   #content
     padding-right: $navbar-height
     padding-left: $navbar-height
+    +static-size-width(100%)
     position: relative
-    +touch
-      +static-size-width(100%)
-    +desktop
-      +static-size-width(calc(100% - #{$toc-width}))
     &:after
       height: $theme-gap-large-size
       position: absolute

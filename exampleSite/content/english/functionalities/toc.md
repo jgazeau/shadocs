@@ -10,10 +10,28 @@ tags: ["Content management"]
 # Description
 ---
 
-By default in the theme, each content page (except homepage) generates a table of contents associated with the titles defined in the page.
+By default in the theme, each content page (except homepage) generates a table of contents associated with the titles defined in the page.  
+It is possible to activate or deactivate this functionnality, both globally (sitewide) or per-page, with the following considerations:
+* the homepage never contains the table of contents
+* the configuration key to use is `toc`
+* without configuration, the table of contents is enabled globally (sitewide)
+* the following configuration precedence apply (from highest to lowest):
+    * page configuration
+    * site configuration
+* the following configuration is used to activate/deactivate the table of content globally (sitewide)
+    ```
+    [params]
+      toc = true/false
+    ```
+* the following configuration is used to activate/deactivate the table of content on a single page (to define in the front matter)
+    ```
+    ---
+    toc: false
+    ---
+    ```
 
 {{< alert type="warning" >}}
-The table of contents is only available when the window width is greater than 1024 pixels.
+When activated, the table of contents is only available when the window width is greater than 1024 pixels.
 {{< /alert >}}
 
 # Example

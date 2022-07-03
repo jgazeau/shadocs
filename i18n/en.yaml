@@ -106,3 +106,7 @@
   translation: "Done"
 - id: na_common
   translation: "Not available"
+- id: sidebar_collapsible_title
+  translation: "Collapse/Uncollapse sidebar"
+- id: toc_collapsible_title
+  translation: "Collapse/Uncollapse table of contents"

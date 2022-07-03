@@ -1,0 +1,9 @@
+{{$tocEnabled := true}}
+{{with (eq .this.Site.Params.toc false)}}
+  {{$tocEnabled = false}}
+{{end}}
+{{if isset .this.Params "toc"}}
+  {{if (eq .this.Params.toc true)}}{{$tocEnabled = true}}{{end}}
+  {{if (eq .this.Params.toc false)}}{{$tocEnabled = false}}{{end}}
+{{end}}
+{{return $tocEnabled}}
