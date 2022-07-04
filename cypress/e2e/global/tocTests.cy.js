@@ -2,7 +2,7 @@ describe('for: table of content', () => {
   beforeEach(() => {
     cy.visit(Cypress.env('FUNC_TOC_PATH'))
   })
-  it('toc should be displayed on desktop', () => {
+  it('toc should be displayed by default on desktop', () => {
     cy.viewportDesktop()
     cy.get('#tocContainer')
       .should('be.visible')
@@ -44,6 +44,19 @@ describe('for: table of content', () => {
     cy.viewportDesktop()
     cy.get('#tocContainer #taxonomies .taxonomy')
       .should('have.length.at.least', 1)
+      .should('be.visible')
+  })
+  it('toc should be collapsible', () => {
+    cy.viewportDesktop()
+    cy.get('#tocContainer')
+      .should('be.visible')
+    cy.get('#tocCollapsible')
+      .click()
+    cy.get('#tocContainer')
+      .should('not.be.visible')
+    cy.get('#tocCollapsible')
+      .click()
+    cy.get('#tocContainer')
       .should('be.visible')
   })
 })
