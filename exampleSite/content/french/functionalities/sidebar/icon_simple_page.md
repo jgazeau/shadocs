@@ -1,5 +1,5 @@
 ---
-weight: 3150
+weight: 7000
 title: "Page simple avec icone"
 description: "Menu latéral: Page simple avec icone"
 titleIcon: "fa-solid fa-icons"

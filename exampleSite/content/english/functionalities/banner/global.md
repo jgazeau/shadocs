@@ -1,5 +1,5 @@
 ---
-weight: 3270
+weight: 1000
 title: "Global banner"
 description: "How to manage global banner?"
 categories: ["Functionalities"]

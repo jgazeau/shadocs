@@ -1,5 +1,5 @@
 ---
-weight: 3210
+weight: 7000
 title: "Mermaid"
 description: "How to use Mermaid?"
 titleIcon: "fa-solid fa-chart-column"

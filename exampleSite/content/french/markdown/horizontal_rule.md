@@ -1,5 +1,5 @@
 ---
-weight: 2020
+weight: 2000
 linkTitle: "Séparation horizontale"
 title: "Markdown: Séparation horizontale"
 description: "Comment définir une séparation horizontale ?"

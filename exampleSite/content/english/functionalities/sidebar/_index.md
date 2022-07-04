@@ -1,5 +1,5 @@
 ---
-weight: 3010
+weight: 1000
 title: "Sidebar"
 description: "How to manage the sidebar?"
 titleIcon: "fa-solid fa-bars"

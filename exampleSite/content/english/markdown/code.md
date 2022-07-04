@@ -1,5 +1,5 @@
 ---
-weight: 2080
+weight: 8000
 linkTitle: "Code snippet"
 title: "Markdown: Code snippet"
 description: "How to define a code snippet?"

@@ -1,5 +1,5 @@
 ---
-weight: 2060
+weight: 6000
 linkTitle: "Citation"
 title: "Markdown: Citation"
 description: "Comment définir une citation ?"

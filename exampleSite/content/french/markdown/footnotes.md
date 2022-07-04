@@ -1,5 +1,5 @@
 ---
-weight: 2120
+weight: 12000
 linkTitle: "Note de bas de page"
 title: "Markdown: Note de bas de page"
 description: "Comment définir une note de bas de page ?"

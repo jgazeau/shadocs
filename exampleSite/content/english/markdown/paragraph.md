@@ -1,5 +1,5 @@
 ---
-weight: 2030
+weight: 3000
 linkTitle: "Paragraph"
 title: "Markdown: Paragraph"
 description: "How to define a paragraph?"

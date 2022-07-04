@@ -1,5 +1,5 @@
 ---
-weight: 3270
+weight: 1000
 title: "Bannière globale"
 description: "Comment gérér une bannière globale ?"
 categories: ["Fonctionnalités"]

@@ -1,5 +1,5 @@
 ---
-weight: 2070
+weight: 7000
 linkTitle: "Liste"
 title: "Markdown: Liste"
 description: "Comment définir une liste ?"

@@ -1,5 +1,5 @@
 ---
-weight: 3280
+weight: 2000
 title: "Single banner"
 description: "How to manage single banner?"
 categories: ["Functionalities"]

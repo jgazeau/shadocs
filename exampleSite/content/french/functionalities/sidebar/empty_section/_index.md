@@ -1,5 +1,5 @@
 ---
-weight: 3020
+weight: 1000
 title: "Section vide"
 description: "Menu latéral: Section vide"
 categories: ["Fonctionnalités"]

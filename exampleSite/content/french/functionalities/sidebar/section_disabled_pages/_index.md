@@ -1,5 +1,5 @@
 ---
-weight: 3070
+weight: 4000
 title: "Pages désactivées"
 description: "Menu latéral: Pages désactivées"
 categories: ["Fonctionnalités"]

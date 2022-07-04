@@ -1,5 +1,4 @@
 ---
-weight: 4080
 title: "{{< pagebreak >}}"
 description: "Shortcode {{< pagebreak >}}."
 categories: ["Shortcode"]

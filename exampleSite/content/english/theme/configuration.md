@@ -1,5 +1,5 @@
 ---
-weight: 1020
+weight: 2000
 linkTitle: "Configuration"
 title: "Installation: Configuration"
 description: "How to set up the theme for a website?"

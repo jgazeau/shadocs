@@ -1,5 +1,4 @@
 ---
-weight: 4030
 title: "{{< collapsible >}}"
 description: "Shortcode {{< collapsible >}}."
 categories: ["Shortcode"]

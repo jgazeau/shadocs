@@ -1,5 +1,5 @@
 ---
-weight: 1010
+weight: 1000
 linkTitle: "Introduction"
 title: "Installation: Introduction"
 description: "Everything you need to know before using the theme."

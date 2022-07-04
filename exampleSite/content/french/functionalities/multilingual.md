@@ -1,5 +1,5 @@
 ---
-weight: 3160
+weight: 2000
 title: "Multilingue"
 description: "Comment gérér le mode multilingue ?"
 titleIcon: "fa-solid fa-globe"

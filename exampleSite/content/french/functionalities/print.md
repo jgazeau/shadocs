@@ -1,5 +1,5 @@
 ---
-weight: 3240
+weight: 10000
 title: "Impression"
 description: "Comment gérér l'impression d'une page ?"
 titleIcon: "fa-solid fa-print"

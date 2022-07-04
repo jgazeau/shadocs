@@ -1,5 +1,5 @@
 ---
-weight: 1020
+weight: 2000
 linkTitle: "Configuration"
 title: "Installation: Configuration"
 description: "Comment paramétrer le thème pour un site ?"

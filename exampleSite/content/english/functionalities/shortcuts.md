@@ -1,5 +1,5 @@
 ---
-weight: 3220
+weight: 8000
 title: "Shortcuts"
 description: "How to manage keyboard shortcuts?"
 titleIcon: "fa-solid fa-keyboard"

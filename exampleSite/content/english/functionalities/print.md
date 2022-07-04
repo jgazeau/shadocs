@@ -1,5 +1,5 @@
 ---
-weight: 3240
+weight: 10000
 title: "Print"
 description: "How to manage page printing?"
 titleIcon: "fa-solid fa-print"
