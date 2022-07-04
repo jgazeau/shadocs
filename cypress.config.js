@@ -13,6 +13,7 @@ module.exports = defineConfig({
     "SITEMAP_XML_PATH"          : "sitemap.xml",
     "FRENCH_URL_PREFIX"         : "/fr",
     "FUNC_TOC_PATH"             : "functionalities/toc/",
+    "FUNC_TOC_DISABLED_PATH"    : "functionalities/toc/toc_disabled/",
     "FUNC_BANNER_PATHS"         : ["functionalities/banner/global/","functionalities/banner/single/"],
     "FUNC_MERMAID_PATH"         : "functionalities/mermaid/",
     "HOMEPAGE_URL"              : "http://localhost:1313/",

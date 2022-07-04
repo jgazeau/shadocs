@@ -106,7 +106,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   // Manage click on collapsible toc
-  document.getElementById('tocCollapsible').addEventListener('click', () => {
-    document.getElementById('contentContainer').classList.toggle('is-toc-collapsed');
-  });
+  let tc = document.getElementById('tocCollapsible');
+  if (tc) {
+    tc.addEventListener('click', () => {
+      cc.classList.toggle('is-toc-collapsed');
+    });
+  };
 });
