@@ -1,5 +1,5 @@
 ---
-weight: 3010
+weight: 1000
 title: "Menu latéral"
 description: "Comment gérér le menu latéral ?"
 titleIcon: "fa-solid fa-bars"

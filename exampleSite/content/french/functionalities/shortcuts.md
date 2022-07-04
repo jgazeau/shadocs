@@ -1,5 +1,5 @@
 ---
-weight: 3220
+weight: 8000
 title: "Raccourcis"
 description: "Comment gérér les raccourcis clavier ?"
 titleIcon: "fa-solid fa-keyboard"

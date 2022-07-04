@@ -1,5 +1,5 @@
 ---
-weight: 3290
+weight: 14000
 title: "Versionning"
 description: "Comment gérér les versions du site ?"
 titleIcon: "fa-solid fa-timeline"

@@ -1,5 +1,4 @@
 ---
-weight: 4070
 title: "{{< openapi >}}"
 description: "Shortcode {{< openapi >}}."
 categories: ["Shortcode"]

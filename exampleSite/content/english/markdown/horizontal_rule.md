@@ -1,5 +1,5 @@
 ---
-weight: 2020
+weight: 2000
 linkTitle: "Horizontal rule"
 title: "Markdown: Horizontal rule"
 description: "How to define a horizontal rule?"

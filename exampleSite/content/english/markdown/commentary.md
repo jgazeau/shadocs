@@ -1,5 +1,5 @@
 ---
-weight: 2150
+weight: 15000
 linkTitle: "Comment"
 title: "Markdown: Comment"
 description: "How to define a comment?"

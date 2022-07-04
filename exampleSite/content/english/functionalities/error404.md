@@ -1,5 +1,5 @@
 ---
-weight: 3250
+weight: 11000
 title: "404"
 description: "How to manage 404 page?"
 titleIcon: "fa-solid fa-circle-xmark"

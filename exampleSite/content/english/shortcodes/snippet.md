@@ -1,5 +1,4 @@
 ---
-weight: 4110
 title: "{{< snippet >}}"
 description: "Shortcode {{< snippet >}}."
 categories: ["Shortcode"]

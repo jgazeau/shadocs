@@ -1,5 +1,5 @@
 ---
-weight: 2100
+weight: 10000
 linkTitle: "Image"
 title: "Markdown: Image"
 description: "Comment définir une image ?"

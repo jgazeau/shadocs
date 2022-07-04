@@ -1,5 +1,5 @@
 ---
-weight: 3280
+weight: 2000
 title: "Bannière spécifique"
 description: "Comment gérér une bannière spécifique ?"
 categories: ["Fonctionnalités"]

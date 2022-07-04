@@ -1,5 +1,5 @@
 ---
-weight: 3200
+weight: 6000
 title: "Search"
 description: "How to manage search?"
 titleIcon: "fa-solid fa-magnifying-glass"

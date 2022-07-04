@@ -1,5 +1,5 @@
 ---
-weight: 3100
+weight: 5000
 title: "Sorted pages"
 description: "Sidebar: Sorted pages"
 categories: ["Functionalities"]

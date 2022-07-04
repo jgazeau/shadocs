@@ -1,5 +1,5 @@
 ---
-weight: 2080
+weight: 8000
 linkTitle: "Extrait de code"
 title: "Markdown: Extrait de code"
 description: "Comment définir un extrait de code ?"

@@ -1,5 +1,5 @@
 ---
-weight: 3100
+weight: 5000
 title: "Pages triées"
 description: "Menu latéral: Pages triées"
 categories: ["Fonctionnalités"]

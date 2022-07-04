@@ -1,5 +1,5 @@
 ---
-weight: 3080
+weight: 1000
 title: "Page simple désactivée"
 description: "Menu latéral: Page simple désactivée"
 categories: ["Fonctionnalités"]

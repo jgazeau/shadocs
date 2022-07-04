@@ -1,5 +1,5 @@
 ---
-weight: 2060
+weight: 6000
 linkTitle: "Blockquote"
 title: "Markdown: Blockquote"
 description: "How to define a blockquote?"

@@ -1,5 +1,5 @@
 ---
-weight: 3260
+weight: 13000
 title: "Bannière"
 description: "Comment gérér une bannière ?"
 titleIcon: "fa-solid fa-bullhorn"

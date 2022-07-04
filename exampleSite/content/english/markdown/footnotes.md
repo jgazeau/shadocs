@@ -1,5 +1,5 @@
 ---
-weight: 2120
+weight: 12000
 linkTitle: "Footnotes"
 title: "Markdown: Footnotes"
 description: "How to define footnotes?"

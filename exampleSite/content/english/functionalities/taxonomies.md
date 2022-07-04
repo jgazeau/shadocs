@@ -1,5 +1,5 @@
 ---
-weight: 3170
+weight: 3000
 title: "Taxonomies"
 description: "How to manage taxonomies?"
 titleIcon: "fa-solid fa-tags"

@@ -1,5 +1,5 @@
 ---
-weight: 3150
+weight: 7000
 title: "Single page with icon"
 description: "Sidebar: Single page with icon"
 titleIcon: "fa-solid fa-icons"

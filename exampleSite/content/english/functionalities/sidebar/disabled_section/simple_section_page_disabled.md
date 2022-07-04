@@ -1,5 +1,5 @@
 ---
-weight: 3060
+weight: 1000
 title: "Simple disabled section page"
 description: "Sidebar: Simple disabled section page"
 categories: ["Functionalities"]

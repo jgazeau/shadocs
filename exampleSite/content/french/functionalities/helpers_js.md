@@ -1,5 +1,5 @@
 ---
-weight: 3230
+weight: 9000
 title: "Fonctions d'aide Javascript"
 description: "Comment utiliser les fonctions d'aide Javascript?"
 titleIcon: "fa-brands fa-js"

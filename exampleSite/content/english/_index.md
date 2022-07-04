@@ -1,5 +1,5 @@
 ---
-weight: 1
+weight: 0
 title: "Shadocs theme documentation"
 description: "Shadocs theme homepage"
 categories: ["Theme"]
