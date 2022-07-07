@@ -23,6 +23,9 @@ themesdir              = "../.."
   [[module.mounts]]
     source = 'openapi'
     target = 'static/openapi'
+  [[module.mounts]]
+    source = 'asyncapi'
+    target = 'static/asyncapi'
 
 [taxonomies]
   category = "categories"

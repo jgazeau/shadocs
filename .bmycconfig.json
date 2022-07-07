@@ -1,5 +1,29 @@
 [
   {
+    "package": "asyncapi",
+    "hold": false,
+    "name": "js_bundle",
+    "localPath": "assets/js/external/asyncapi-bundle.min.js",
+    "assetManager": {
+      "name": "unpkg",
+      "library": "@asyncapi/parser",
+      "filePath": "dist/bundle.js"
+    },
+    "currentVersion": "1.15.1"
+  },
+  {
+    "package": "asyncapi",
+    "hold": false,
+    "name": "web_component",
+    "localPath": "assets/js/external/asyncapi-web-component.min.js",
+    "assetManager": {
+      "name": "unpkg",
+      "library": "@asyncapi/web-component",
+      "filePath": "lib/asyncapi-web-component.js"
+    },
+    "currentVersion": "0.24.23"
+  },
+  {
     "package": "swagger-ui",
     "hold": false,
     "name": "js_bundle",
