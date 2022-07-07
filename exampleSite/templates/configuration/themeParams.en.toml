@@ -112,6 +112,10 @@
       "js/external/swagger-ui-bundle.min.js",
       "js/external/swagger-ui-preset.min.js"
     ]
+    asyncapi = [
+      "js/external/asyncapi-bundle.min.js",
+      "js/external/asyncapi-web-component.min.js"
+    ]
   [includes.shortcodes.css]
     openapi = [
       "css/external/swagger-ui.min.css"

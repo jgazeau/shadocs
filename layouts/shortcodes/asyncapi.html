@@ -1,0 +1,12 @@
+{{.Page.Scratch.Add "asyncapiUid" 1}}
+{{with (.Get "id")}}
+  {{$.Scratch.Set "asyncapiId" (replace . "'" "")}}
+{{else}}
+  {{$.Scratch.Set "asyncapiId" (printf "%s%s" "asyncapi-" (string (.Page.Scratch.Get "asyncapiUid")))}}
+{{end}}
+<asyncapi-component
+  asyncapi-id='{{$.Scratch.Get "asyncapiId"}}'
+  schemaUrl='{{.Get "source"}}'
+  schemaFetchOptions='{"method":"GET","mode":"cors"}'
+  cssImportPath='https://unpkg.com/@asyncapi/react-component@0.19.0/lib/styles/fiori.css'>
+</asyncapi-component>
