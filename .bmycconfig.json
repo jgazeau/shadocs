@@ -129,7 +129,7 @@
       "library": "intro.js",
       "fileName": "intro.min.js"
     },
-    "currentVersion": "5.1.0"
+    "currentVersion": "6.0.0"
   },
   {
     "package": "fontawesome",
