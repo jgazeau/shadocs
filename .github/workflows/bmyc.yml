@@ -1,5 +1,6 @@
 name: Bump thirdparties using Bmyc
 on:
+  workflow_dispatch:
   schedule:
     - cron: '30 2 * * 1'
 env:
@@ -39,5 +40,5 @@ jobs:
             git config --local user.email "action@github.com"
             git commit -m "${PR_TITLE}"
             git push -f origin ${BRANCH_NAME}
-            hub pull-request --file ${LOG_FILE} -l "internal" --base main --head ${BRANCH_NAME}
+            hub pull-request -f --file ${LOG_FILE} -l "internal" --base main --head ${BRANCH_NAME}
           fi
