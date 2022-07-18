@@ -1,5 +1,6 @@
 name: Bump thirdparties using Bmyc
 on:
+  workflow_dispatch:
   schedule:
     - cron: '30 2 * * 1'
 env:
@@ -32,6 +33,8 @@ jobs:
           npx bmyc --version
           printf "%70s\n" | tr ' ' '-'
           npx bmyc --summary-pr ${LOG_FILE}
+          TEST=$(sha1sum ${LOG_FILE})
+          echo "TEST=$TEST"
           if [[ $(git status --porcelain | wc -l) -gt 0 && -f ${LOG_FILE} ]];then
             git checkout -b ${BRANCH_NAME}
             git add -u .
@@ -39,5 +42,5 @@ jobs:
             git config --local user.email "action@github.com"
             git commit -m "${PR_TITLE}"
             git push -f origin ${BRANCH_NAME}
-            hub pull-request --file ${LOG_FILE} -l "internal" --base main --head ${BRANCH_NAME}
+            hub pull-request -f --file ${LOG_FILE} -l "internal" --base main --head ${BRANCH_NAME}
           fi
