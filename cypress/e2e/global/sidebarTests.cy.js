@@ -37,7 +37,6 @@ describe('for: sidebar', () => {
   })
   describe('when sidebar uncollapsed', () => {
     beforeEach(() => {
-      cy.visit(Cypress.env('HOMEPAGE_URL'))
       cy.toggleSidebar(true, true)
     })
     it('sidebar should collapse', () => {
@@ -79,7 +78,6 @@ describe('for: sidebar', () => {
   })
   describe('when sidebar collapsed', () => {
     beforeEach(() => {
-      cy.visit(Cypress.env('HOMEPAGE_URL'))
       cy.toggleSidebar(false, true)
     })
     it('sidebar should uncollapse', () => {

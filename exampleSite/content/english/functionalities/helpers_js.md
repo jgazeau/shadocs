@@ -39,6 +39,11 @@ Function managing the default behavior of the sidebar:
 * If the window is greater than or equal to 1024 pixels wide, sidebar is uncollapsed
 * If the window is less than 1024 pixels wide, sidebar is collapsed
 {{< /md >}}|
+| manageDefaultToc(); |{{< md >}}
+Function managing the default behavior of the table of contents:
+* If the window is greater than or equal to 1216 pixels wide, table of contents is uncollapsed
+* If the window is less than 1216 pixels wide, table of contents is collapsed
+{{< /md >}}|
 | toggleExtendMenu(force); |{{< md >}}
 Function managing the extend menu of the navigation bar (only if it is displayed):
 * force
@@ -67,4 +72,10 @@ Function managing the sidebar entries:
 * force
     * true: all entries are expanded
     * false: all entries are shrinked
+{{< /md >}}|
+| toggleToc(force); |{{< md >}}
+Function managing the table of contents behavior:
+* force
+    * true: the table of contents is uncollapsed
+    * false: the table of contents is collapsed
 {{< /md >}}|

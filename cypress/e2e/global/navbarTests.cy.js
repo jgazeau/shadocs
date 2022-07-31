@@ -1,4 +1,4 @@
-const testCases = ['desktop','mobile']
+const testCases = ['default','mobile']
 for (const testCase of testCases) {
   describe('for: navbar' + ' on ' + testCase, () => {
     const extendId = (testCase == 'mobile') ? 'Extend' : '';

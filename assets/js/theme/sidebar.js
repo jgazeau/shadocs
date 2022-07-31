@@ -1,4 +1,5 @@
 import {
+  addFunctionToResizeEvent,
   isInScrollContainer,
   isInViewport,
   getFirstAncestorByClass,
@@ -108,9 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('sidebarUncollapse').addEventListener('click', () => {manageClickCollapsibleSidebar()});
   document.getElementById('sidebarCollapse').addEventListener('click', () => {manageClickCollapsibleSidebar()});
   // Manage collapsible sidebar during resize of window
-  window.addEventListener('resize', function(){
-    manageDefaultCollapsibleSidebar();
-  });
+  addFunctionToResizeEvent(manageDefaultCollapsibleSidebar);
 });
 // Manage scroll for the active entry in the sidebar
 function manageActiveEntryScroll(e) {

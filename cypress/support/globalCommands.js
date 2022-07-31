@@ -1,6 +1,12 @@
 // ***********************************************
 // https://on.cypress.io/custom-commands
 // ***********************************************
+Cypress.Commands.add('viewportWidescreen', ($size) => {
+  if ($size === 'min')
+    cy.viewport(Cypress.env('VIEWPORT_WIDESCREEN_MINWIDTH'), Cypress.env('VIEWPORT_COMMON_HEIGHT'), true)
+  else
+    cy.viewport(Cypress.env('VIEWPORT_WIDESCREEN_MAXWIDTH'), Cypress.env('VIEWPORT_COMMON_HEIGHT'), true)
+})
 Cypress.Commands.add('viewportDesktop', ($size) => {
   if ($size === 'min')
     cy.viewport(Cypress.env('VIEWPORT_DESKTOP_MINWIDTH'), Cypress.env('VIEWPORT_COMMON_HEIGHT'), true)
@@ -26,6 +32,10 @@ Cypress.Commands.add('toggleSidebar', ($force, $noTransition) => {
 Cypress.Commands.add('toggleSidebarEntries', ($force) => {
   cy.window()
     .then((window) => window.toggleSidebarEntries($force))
+})
+Cypress.Commands.add('toggleToc', ($force) => {
+  cy.window()
+    .then((window) => window.toggleToc($force))
 })
 Cypress.Commands.add('disableSmoothScroll', () => {
   cy.window()

@@ -1,6 +1,5 @@
-Cypress.Commands.add('desktopNavbarBeforeEach', () => {
+Cypress.Commands.add('defaultNavbarBeforeEach', () => {
   cy.visit(Cypress.env('HOMEPAGE_URL'))
-  cy.viewportDesktop()
 })
 Cypress.Commands.add('mobileNavbarBeforeEach', () => {
   cy.visit(Cypress.env('HOMEPAGE_URL'))
