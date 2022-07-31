@@ -35,9 +35,14 @@ Function récupérant le premier élement visible d'un sélecteur CSS:
     * [sélecteur CSS](https://developer.mozilla.org/docs/Web/CSS/CSS_Selectors)
 {{< /md >}}|
 | manageDefaultCollapsibleSidebar(); |{{< md >}}
+Fonction qui gère le comportement par défaut de la table des matières:
+* Si la fenêtre est supérieure ou égale à 1024 pixels de large, la table des matières est développée
+* Si la fenêtre est inférieure à 1024 pixels de large, la table des matières est réduite
+{{< /md >}}|
+| manageDefaultToc(); |{{< md >}}
 Fonction qui gère le comportement par défaut du menu latéral:
-* Si la fenêtre est supérieure ou égale à 1024 pixels de large, le menu est développé
-* Si la fenêtre est inférieure à 1024 pixels de large, le menu est réduit
+* Si la fenêtre est supérieure ou égale à 1216 pixels de large, le menu est développé
+* Si la fenêtre est inférieure à 1216 pixels de large, le menu est réduit
 {{< /md >}}|
 | toggleExtendMenu(force); |{{< md >}}
 Fonction qui gère le comportement du menu d'extension de la barre de navigation (uniquement si celui-ci est visible):
@@ -67,4 +72,10 @@ Fonction qui gère le comportement des entrées du menu latéral:
 * force
     * true: toutes les entrées du menu latéral sont développées
     * false: toutes les entrées du menu latéral sont réduites
+{{< /md >}}|
+| toggleToc(force); |{{< md >}}
+Fonction qui gère le comportement de la table des matières:
+* force
+    * true: la table des matières est developpée
+    * false: la table des matières est réduite
 {{< /md >}}|

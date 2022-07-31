@@ -13,17 +13,18 @@
   flex: 1
   &.has-toc
     #content
-      +desktop
-        +static-size-width(calc(100% - #{$toc-width} - #{$toc-collapsible-width}))
+      +static-size-width(calc(100% - #{$toc-width} - #{$toc-collapsible-width}))
     &.is-toc-collapsed
       #content
-        +desktop
-          +static-size-width(calc(100% - #{$toc-collapsible-width}))
+        +static-size-width(calc(100% - #{$toc-collapsible-width}))
       #tocContainer
         display: none
       #tocCollapsible
         i
           transform: rotate(180deg)
+    +until-widescreen
+      #content
+        +static-size-width(calc(100% - #{$toc-collapsible-width}))
   #contentTitle
     margin-bottom: $theme-gap-large-size
     font-size: $theme-title-font-size

@@ -36,8 +36,10 @@ export const overlayOptions = {
     touchSupport: true
   }
 };
+export const widescreenSize = 1216;
 export const desktopSize = 1024;
 export const tabletSize = 769;
+export const sizeTriggerWidescreen = 'widescreen';
 export const sizeTriggerDesktop = 'desktop';
 export const sizeTriggerTouch = 'touch';
 export const sizeTriggerMobile = 'mobile';

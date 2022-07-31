@@ -1,6 +1,8 @@
 import {
+  widescreenSize,
   desktopSize,
   tabletSize,
+  sizeTriggerWidescreen,
   sizeTriggerDesktop,
   sizeTriggerTouch,
   sizeTriggerMobile,
@@ -11,6 +13,7 @@ import {
 
 // VARS //
 let isManualCollapsedSidebar = false;
+let isManualCollapsedToc = false;
 // MAIN //
 // Function that manage modals closing
 // If an element is given as input, we only close the modal associated
@@ -52,13 +55,10 @@ export function addFunctionToResizeEvent(f) {
 // Get the actual size and return associated triggers
 export function getTriggers() {
   let triggers = [];
-  if (document.body.clientWidth >= desktopSize) {
-    triggers.push(sizeTriggerDesktop);
-  } else if (document.body.clientWidth >= tabletSize) {
-    triggers.push(sizeTriggerTouch);
-  } else {
-    triggers.push(sizeTriggerMobile);
-  }
+  if (document.body.clientWidth >= widescreenSize) { triggers.push(sizeTriggerWidescreen); }
+  if (document.body.clientWidth >= desktopSize) { triggers.push(sizeTriggerDesktop); }
+  if (document.body.clientWidth >= tabletSize) { triggers.push(sizeTriggerTouch); }
+  if (document.body.clientWidth < tabletSize) { triggers.push(sizeTriggerMobile); }
   if (window.matchMedia('(hover: hover)').matches) {
     triggers.push(mediaTriggerHover);
   } else {
@@ -331,3 +331,26 @@ export function getLoadingHelper(wrapperClass, wrapperId) {
   }
   return fragment;
 }
+// Manage click on TOC
+export function manageClickCollapsibleToc() {
+  if (getTriggers().includes(sizeTriggerWidescreen)) {
+    isManualCollapsedToc = !document.getElementById('contentContainer').classList.contains('is-toc-collapsed');
+  };
+  toggleToc();
+};
+// Manage TOC depending on window size
+export function manageDefaultToc() {
+  if (!getTriggers().includes(sizeTriggerWidescreen) || isManualCollapsedToc) {
+    toggleToc(false);
+  } else {
+    toggleToc(true);
+  };
+};
+// Function to toggle the TOC at desired state
+// - force (true is uncollapsed, false to collapsed)
+export function toggleToc(force) {
+  if (typeof force === 'undefined') {
+    force = document.getElementById('contentContainer').classList.contains('is-toc-collapsed');
+  }
+  document.getElementById('contentContainer').classList.toggle('is-toc-collapsed', !force);
+};

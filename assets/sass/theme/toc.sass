@@ -1,3 +1,10 @@
+#tocWrapper
+  background: $content-background
+  display: flex
+  right: 0
+  +until-widescreen
+    #tocContainer
+      box-shadow: 0 0 $theme-gap-small-size 0.1rem $toc-taxonomy-border-color
 #tocCollapsible
   +static-size-height(calc(100vh - #{$navbar-height}))
   color: findColorInvert($toc-taxonomy-collapsible-color)
@@ -40,7 +47,7 @@
         &:hover
           color: $content-link-color
           cursor: pointer
-  #tocWrapper
+  #tocContent
     +responsive-size(font-size, $toc-font-size, 3px)
     justify-content: space-between
     overflow-x: hidden

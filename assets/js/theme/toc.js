@@ -1,4 +1,7 @@
 import {
+  addFunctionToResizeEvent,
+  manageClickCollapsibleToc,
+  manageDefaultToc,
   waitForScroll
 } from './modules/helpers.min.js'
 
@@ -108,8 +111,8 @@ document.addEventListener('DOMContentLoaded', function() {
   // Manage click on collapsible toc
   let tc = document.getElementById('tocCollapsible');
   if (tc) {
-    tc.addEventListener('click', () => {
-      cc.classList.toggle('is-toc-collapsed');
-    });
+    tc.addEventListener('click', () => {manageClickCollapsibleToc()});
   };
+  // Manage collapsible sidebar during resize of window
+  addFunctionToResizeEvent(manageDefaultToc);
 });
