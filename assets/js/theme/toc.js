@@ -9,6 +9,7 @@ import {
 // MAIN //
 //Manage Toc actions
 document.addEventListener('DOMContentLoaded', function() {
+  manageDefaultToc();
   // Manage toc during scroll
   function manageTocScroll() {
     const containerTop = cc.getBoundingClientRect().top;

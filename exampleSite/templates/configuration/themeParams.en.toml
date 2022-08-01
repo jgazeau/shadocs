@@ -35,19 +35,22 @@
   [navbar.shortcuts.5_togglesidebar]
     keys = ["Shift","m"]
     function = "scToggleSidebar"
-  [navbar.shortcuts.6_backtotop]
+  [navbar.shortcuts.6_toggletoc]
+    keys = ["Shift","t"]
+    function = "scToggleToc"
+  [navbar.shortcuts.7_backtotop]
     keys = ["Shift","ArrowUp"]
     function = "scBackToTop"
-  [navbar.shortcuts.7_gotobottom]
+  [navbar.shortcuts.8_gotobottom]
     keys = ["Shift","ArrowDown"]
     function = "scGoToBottom"
-  [navbar.shortcuts.8_print]
+  [navbar.shortcuts.9_print]
     keys = ["Shift","p"]
     function = "scPrint"
-  [navbar.shortcuts.9_qrcode]
+  [navbar.shortcuts.10_qrcode]
     keys = ["Shift","q"]
     function = "scQrCode"
-  [navbar.shortcuts.10_closemodals]
+  [navbar.shortcuts.11_closemodals]
     keys = ["Escape"]
     function = "scCloseModals"
 #

@@ -39,6 +39,12 @@ function scToggleSidebar() {
   closeModals();
   document.getElementById('sidebarCollapse').click();
 }
+// Function to toggle the toc
+window.scToggleToc = scToggleToc;
+function scToggleToc() {
+  closeModals();
+  document.getElementById('tocCollapsible').click();
+}
 // Function to back to top of the current page
 window.scBackToTop = scBackToTop;
 function scBackToTop() {

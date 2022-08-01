@@ -49,26 +49,30 @@
 - id: 5_togglesidebar_keys_wording
   translation: "Maj,m"
 - id: 5_togglesidebar_wording
-  translation: "Réduire/Développer le menu latéral"
-- id: 6_backtotop_keys_wording
+  translation: "Réduire/Développer la table des matières"
+- id: 6_toggletoc_keys_wording
+  translation: "Maj,m"
+- id: 6_toggletoc_wording
+  translation: "Réduire/Développer la table des matières"
+- id: 7_backtotop_keys_wording
   translation: "Maj,↑"
-- id: 6_backtotop_wording
+- id: 7_backtotop_wording
   translation: "Aller en haut de la page"
-- id: 7_gotobottom_keys_wording
+- id: 8_gotobottom_keys_wording
   translation: "Maj,↓"
-- id: 7_gotobottom_wording
+- id: 8_gotobottom_wording
   translation: "Aller en bas de la page"
-- id: 8_print_keys_wording
+- id: 9_print_keys_wording
   translation: "Maj,p"
-- id: 8_print_wording
+- id: 9_print_wording
   translation: "Imprimer la page courante"
-- id: 9_qrcode_keys_wording
+- id: 10_qrcode_keys_wording
   translation: "Maj,q"
-- id: 9_qrcode_wording
+- id: 10_qrcode_wording
   translation: "Obtenir le QR code de la page courante"
-- id: 10_closemodals_keys_wording
+- id: 11_closemodals_keys_wording
   translation: "Echap"
-- id: 10_closemodals_wording
+- id: 11_closemodals_wording
   translation: "Fermer les fenêtres modales"
 - id: shortcode_collapsible
   translation: "Développer/Réduire"

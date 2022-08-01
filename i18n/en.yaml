@@ -50,25 +50,29 @@
   translation: "Shift,m"
 - id: 5_togglesidebar_wording
   translation: "Collapse/Uncollapse sidebar"
-- id: 6_backtotop_keys_wording
+- id: 6_toggletoc_keys_wording
+  translation: "Shift,t"
+- id: 6_toggletoc_wording
+  translation: "Collapse/Uncollapse toc"
+- id: 7_backtotop_keys_wording
   translation: "Shift,↑"
-- id: 6_backtotop_wording
+- id: 7_backtotop_wording
   translation: "Go to the top of the page"
-- id: 7_gotobottom_keys_wording
+- id: 8_gotobottom_keys_wording
   translation: "Shift,↓"
-- id: 7_gotobottom_wording
+- id: 8_gotobottom_wording
   translation: "Go to the bottom of the page"
-- id: 8_print_keys_wording
+- id: 9_print_keys_wording
   translation: "Shift,p"
-- id: 8_print_wording
+- id: 9_print_wording
   translation: "Print current page"
-- id: 9_qrcode_keys_wording
+- id: 10_qrcode_keys_wording
   translation: "Shift,q"
-- id: 9_qrcode_wording
+- id: 10_qrcode_wording
   translation: "Get current page QR code"
-- id: 10_closemodals_keys_wording
+- id: 11_closemodals_keys_wording
   translation: "Escape"
-- id: 10_closemodals_wording
+- id: 11_closemodals_wording
   translation: "Close modals"
 - id: shortcode_collapsible
   translation: "Expand/Collapse"

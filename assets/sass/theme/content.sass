@@ -22,6 +22,15 @@
       #tocCollapsible
         i
           transform: rotate(180deg)
+    &:not(.is-toc-collapsed):not(.is-toc-uncollapsed)
+      +touch
+        #content
+          +static-size-width(calc(100% - #{$toc-collapsible-width}))
+        #tocContainer
+          display: none
+        #tocCollapsible
+          i
+            transform: rotate(180deg)
     +until-widescreen
       #content
         +static-size-width(calc(100% - #{$toc-collapsible-width}))

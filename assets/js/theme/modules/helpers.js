@@ -353,4 +353,5 @@ export function toggleToc(force) {
     force = document.getElementById('contentContainer').classList.contains('is-toc-collapsed');
   }
   document.getElementById('contentContainer').classList.toggle('is-toc-collapsed', !force);
+  document.getElementById('contentContainer').classList.toggle('is-toc-uncollapsed', force);
 };
