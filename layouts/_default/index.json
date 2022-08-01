@@ -21,6 +21,7 @@
       {{- end -}}
     {{- end -}}
   {{- end -}}
+  {{- $first := true -}}
   {{- range $index, $tempPage := ($.Scratch.Get "pageArray") -}}
     {{- $.Scratch.Set "isStandardPage" true -}}
     {{- range $taxonomyName, $taxonomy := .Site.Taxonomies -}}
@@ -29,7 +30,6 @@
       {{- end -}}
     {{- end -}}
     {{- if $.Scratch.Get "isStandardPage" -}}
-      {{- $.Scratch.Add "tempIndex" 1 -}}
       {{- if .IsHome -}}
         {{- $.Scratch.Set "rootTitleIcon" (print .Site.Data.themeParams.sidebar.homeSectionIconDefault " fa-lg") -}}
       {{- else -}}
@@ -39,7 +39,7 @@
           {{- $.Scratch.Set "rootTitleIcon" (print .Site.Data.themeParams.sidebar.firstSectionIconDefault " fa-lg") -}}
         {{- end -}}
       {{- end -}}
-      {{if and ($.Scratch.Get "tempIndex") (gt ($.Scratch.Get "tempIndex") 1)}},{{end}}{
+      {{if $first}}{{$first = false}}{{else}},{{end}}{
       "id": "{{- $index -}}",
       "rootTitleIndex": "{{- with .FirstSection.File -}}{{- $.Scratch.Get .UniqueID -}}
         {{- else -}}
