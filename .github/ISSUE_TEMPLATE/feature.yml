@@ -1,21 +1,17 @@
 name: Feature
-description: Propose a new feature
+description: Request a new feature
 title: "[feature_request]: "
 labels: ["enhancement"]
 body:
   - type: textarea
-    id: porposal-feature
+    id: request
     attributes:
-      label: What is missing in the theme?
-      description: Please provide what is missing in the theme and why it should be added?
-      value: |
-        ## This feature is missing from the theme:
-          
-          ...
-          
-        ## I already have an idea of the implementation:
-          
-          ...
-          
+      label: What is missing in the project?
+      description: Please provide what is missing in the project and why it should be added?
     validations:
       required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solution?
+      description: Got a solution, or an idea to implement the feature? Feel free to provide it!

@@ -6,35 +6,33 @@ body:
   - type: markdown
     attributes:
       value: |
-        Please provide as much information as you can in this bug report!
-        Also remember to provide a reproducer if possible, it will make it easier and quicker to help you 😉
+        # What is the issue?
+        ---
+        *Please provide as much information as you can in this bug report!*
+        *Also remember to provide a reproducer if possible, it will make it easier and quicker to help you 😉*
   - type: textarea
-    id: what-issue
+    id: issue-steps
     attributes:
-      label: What is the issue?
-      description: Please provide all the steps that lead to your issue, the relevant information (logs, screenshots, versions, ...) and also what did you expect to happen!
-      value: |
-        ## The steps that lead to the issue:
-          
-          ...
-          
-        ## The expected behavior:
-          
-          ...
-          
-        ## The reproducer you can use:
-          
-          ...
-          
+      label: Steps that lead to the issue
+      description: Please provide all the steps and relevant information that lead to your issue (logs, screenshots, versions, ...).
     validations:
       required: true
   - type: textarea
-    id: proposal-solution
+    id: issue-expected-behavior
     attributes:
-      label: Proposal solution?
-      placeholder: Did you find any solution?
-      value: |
-        ## The solution I have found to solve the issue:
-          
-          ...
-          
+      label: Expected behavior
+      description: What did you expect to happen?
+    validations:
+      required: true
+  - type: textarea
+    id: issue-reproducer
+    attributes:
+      label: Reproducer
+      description: Provide a reproducer so we can easily and quickly help you.
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solution?
+      description: Got a solution, or an idea to solve the issue? Feel free to provide it!
