@@ -1,0 +1,26 @@
+changelog:
+  exclude:
+    labels:
+      - tags/releases
+      - duplicate
+      - wontfix
+      - invalid
+  categories:
+    - title: New features 🎉
+      labels:
+        - feature
+    - title: Bug Fixes 🔨
+      labels:
+        - bug
+    - title: Enhancements 🔧
+      labels:
+        - enhancement
+    - title: Documentation 📚
+      labels:
+        - documentation
+    - title: Internal
+      labels:
+        - internal
+    - title: Other Changes
+      labels:
+        - "*"
