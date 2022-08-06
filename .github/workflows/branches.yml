@@ -7,7 +7,6 @@ on:
       - '**'
     paths:
       - '**'
-      - '!CHANGELOG.md'
 env:
   HUGO_BASIC_EXAMPLE_REPO: "gohugoio/hugoBasicExample"
   HUGO_BIN_NAME: "hugo"

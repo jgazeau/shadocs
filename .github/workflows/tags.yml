@@ -19,18 +19,20 @@ jobs:
         with:
           node-version: '16'
           cache: 'npm'
-      - name: Generate changelog
+      - name: Publish release
         id: changelog
         env:
           GREN_GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           export TAG_NAME=${GITHUB_REF##*/}
-          npm install github-release-notes
-          npx gren changelog --generate --override --tags=all
+          printf "%70s\n" | tr ' ' '-'
+          npm ci
+          printf "%70s\n" | tr ' ' '-'
           npm version ${TAG_NAME} --no-git-tag-version
+          printf "%70s\n" | tr ' ' '-'
           git add package.json
           git add package-lock.json
-          git add ${CHANGELOG_FILE}
+          printf "%70s\n" | tr ' ' '-'
           git config --local user.name "GitHub Action"
           git config --local user.email "action@github.com"
           git commit -m "tag/${TAG_NAME}"
