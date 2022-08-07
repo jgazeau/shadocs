@@ -11,7 +11,7 @@ env:
   HUGO_BASIC_EXAMPLE_REPO: "gohugoio/hugoBasicExample"
   HUGO_BIN_NAME: "hugo"
   HUGO_CACHE_NAME: "hugo-bin-cache"
-  HUGO_PATH_BIN: "${GITHUB_WORKSPACE}/bin"
+  HUGO_BIN_PATH: ci_hugo_bin
   HUGO_TESTS_VERSIONS: "0.71.0 0.101.0"
   CYPRESS_CACHE_NAME: "cypress-cache"
   CYPRESS_CACHE_PATH: "~/.cache"
@@ -27,25 +27,28 @@ jobs:
       - name: Cache Hugo binaries
         uses: actions/cache@v3
         with:
-          path: ${{ env.HUGO_PATH_BIN }}
+          path: ${{ env.HUGO_BIN_PATH }}
           key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
       - name: Add temporary binaries to PATH
-        run: echo "${HUGO_PATH_BIN}" >> ${GITHUB_PATH}
+        run: echo "${HUGO_BIN_PATH}" >> ${GITHUB_PATH}
       - name: Download Hugo binaries
         run: |
+          ABS_HUGO_BIN_PATH=${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}
           for hugoVersion in ${HUGO_TESTS_VERSIONS[@]}; do
-            if [ ! -d "${HUGO_PATH_BIN}" ]; then
-              mkdir -p ${HUGO_PATH_BIN}
+            if [ ! -d "${ABS_HUGO_BIN_PATH}" ]; then
+              mkdir -p ${ABS_HUGO_BIN_PATH}
             fi
-            if [ ! -f "${HUGO_PATH_BIN}/${HUGO_BIN_NAME}_${hugoVersion}" ]; then
+            if [ ! -f "${ABS_HUGO_BIN_PATH}/${HUGO_BIN_NAME}_${hugoVersion}" ]; then
               printf "%70s\n" | tr ' ' '-'
               printf "%-60s%10s\n" "-> Downloading Hugo version:" "${hugoVersion}"
               printf "%70s\n" | tr ' ' '-'
               HUGO_BIN="hugo_extended_${hugoVersion}_macOS-64bit.tar.gz"
               HUGO_URL_BIN="https://github.com/gohugoio/hugo/releases/download/v${hugoVersion}/${HUGO_BIN}"
-              (cd ${HUGO_PATH_BIN} && curl -sLO -H "Accept: application/octet-stream" ${HUGO_URL_BIN})
-              tar -xf ${HUGO_PATH_BIN}/${HUGO_BIN} -C ${HUGO_PATH_BIN}
-              mv ${HUGO_PATH_BIN}/${HUGO_BIN_NAME} ${HUGO_PATH_BIN}/${HUGO_BIN_NAME}_${hugoVersion}
+              (cd ${ABS_HUGO_BIN_PATH} && curl -sLO -H "Accept: application/octet-stream" ${HUGO_URL_BIN})
+              tar -xf ${ABS_HUGO_BIN_PATH}/${HUGO_BIN} -C ${ABS_HUGO_BIN_PATH}
+              mv ${ABS_HUGO_BIN_PATH}/${HUGO_BIN_NAME} ${ABS_HUGO_BIN_PATH}/${HUGO_BIN_NAME}_${hugoVersion}
+              cd ${GITHUB_WORKSPACE}
+              rm -f ${ABS_HUGO_BIN_PATH}/${HUGO_BIN}
             fi
             printf "%70s\n" | tr ' ' '-'
             ${HUGO_BIN_NAME}_${hugoVersion} version
@@ -72,10 +75,10 @@ jobs:
       - name: Cache Hugo binaries
         uses: actions/cache@v3
         with:
-          path: ${{ env.HUGO_PATH_BIN }}
+          path: ${{ env.HUGO_BIN_PATH }}
           key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
       - name: Add temporary binaries to PATH
-        run: echo "${HUGO_PATH_BIN}" >> ${GITHUB_PATH}
+        run: echo "${HUGO_BIN_PATH}" >> ${GITHUB_PATH}
       - name: Build theme against Hugo versions
         run: |
           for hugoVersion in ${HUGO_TESTS_VERSIONS[@]}; do
@@ -109,7 +112,7 @@ jobs:
       - name: Cache Hugo binaries
         uses: actions/cache@v3
         with:
-          path: ${{ env.HUGO_PATH_BIN }}
+          path: ${{ env.HUGO_BIN_PATH }}
           key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
       - name: Cache node modules
         uses: actions/cache@v3
@@ -122,12 +125,11 @@ jobs:
           path: ${{ env.CYPRESS_CACHE_PATH }}
           key: ${{ runner.os }}-${{ env.CYPRESS_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
       - name: Add temporary binaries to PATH
-        run: echo "${HUGO_PATH_BIN}" >> ${GITHUB_PATH}
+        run: echo "${HUGO_BIN_PATH}" >> ${GITHUB_PATH}
       - name: Prepare e2e tests
         run: |
           printf "%70s\n" | tr ' ' '-'
           npm ci
-          npm config set shadocs:HUGO_BIN ${HUGO_BIN_NAME}_${HUGO_TESTS_VERSIONS##* }
           printf "%70s\n" | tr ' ' '-'
           npx cypress verify
           npx cypress info
@@ -140,6 +142,7 @@ jobs:
       - name: Execute e2e tests (Chrome)
         run: |
           printf "%70s\n" | tr ' ' '-'
+          mv ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}_${HUGO_TESTS_VERSIONS##* } ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}
           npm run cy:run:chrome
           printf "%70s\n" | tr ' ' '-'
   test-theme-firefox:
@@ -157,7 +160,7 @@ jobs:
       - name: Cache Hugo binaries
         uses: actions/cache@v3
         with:
-          path: ${{ env.HUGO_PATH_BIN }}
+          path: ${{ env.HUGO_BIN_PATH }}
           key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
       - name: Cache node modules
         uses: actions/cache@v3
@@ -170,12 +173,11 @@ jobs:
           path: ${{ env.CYPRESS_CACHE_PATH }}
           key: ${{ runner.os }}-${{ env.CYPRESS_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
       - name: Add temporary binaries to PATH
-        run: echo "${HUGO_PATH_BIN}" >> ${GITHUB_PATH}
+        run: echo "${HUGO_BIN_PATH}" >> ${GITHUB_PATH}
       - name: Prepare e2e tests
         run: |
           printf "%70s\n" | tr ' ' '-'
           npm ci
-          npm config set shadocs:HUGO_BIN ${HUGO_BIN_NAME}_${HUGO_TESTS_VERSIONS##* }
           printf "%70s\n" | tr ' ' '-'
           npx cypress verify
           npx cypress info
@@ -188,6 +190,7 @@ jobs:
       - name: Execute e2e tests (Firefox)
         run: |
           printf "%70s\n" | tr ' ' '-'
+          mv ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}_${HUGO_TESTS_VERSIONS##* } ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}
           npm run cy:run:firefox
           printf "%70s\n" | tr ' ' '-'
   test-theme-edge:
@@ -205,7 +208,7 @@ jobs:
       - name: Cache Hugo binaries
         uses: actions/cache@v3
         with:
-          path: ${{ env.HUGO_PATH_BIN }}
+          path: ${{ env.HUGO_BIN_PATH }}
           key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
       - name: Cache node modules
         uses: actions/cache@v3
@@ -218,12 +221,11 @@ jobs:
           path: ${{ env.CYPRESS_CACHE_PATH }}
           key: ${{ runner.os }}-${{ env.CYPRESS_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
       - name: Add temporary binaries to PATH
-        run: echo "${HUGO_PATH_BIN}" >> ${GITHUB_PATH}
+        run: echo "${HUGO_BIN_PATH}" >> ${GITHUB_PATH}
       - name: Prepare e2e tests
         run: |
           printf "%70s\n" | tr ' ' '-'
           npm ci
-          npm config set shadocs:HUGO_BIN ${HUGO_BIN_NAME}_${HUGO_TESTS_VERSIONS##* }
           printf "%70s\n" | tr ' ' '-'
           npx cypress verify
           npx cypress info
@@ -236,5 +238,6 @@ jobs:
       - name: Execute e2e tests (Edge)
         run: |
           printf "%70s\n" | tr ' ' '-'
+          mv ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}_${HUGO_TESTS_VERSIONS##* } ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}
           npm run cy:run:edge
           printf "%70s\n" | tr ' ' '-'

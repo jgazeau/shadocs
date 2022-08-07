@@ -1,4 +1,4 @@
-name: Bump thirdparties using Bmyc
+name: Bmyc bumps
 on:
   workflow_dispatch:
   schedule:
@@ -7,8 +7,8 @@ env:
   NPM_CACHE_NAME: "npm-cache"
   NPM_CACHE_PATH: "~/.npm"
 jobs:
-  Bump:
-    name: Bump
+  Bmyc:
+    name: Bump thirdparties using Bmyc
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -20,7 +20,7 @@ jobs:
         with:
           node-version: '16'
           cache: 'npm'
-      - name: Bmyc
+      - name: Bump thirdparties and create PR
         env:
           LOG_FILE: "workflow.log"
           PR_TITLE: "build: bump bmyc assets"
@@ -33,8 +33,6 @@ jobs:
           npx bmyc --version
           printf "%70s\n" | tr ' ' '-'
           npx bmyc --summary-pr ${LOG_FILE}
-          TEST=$(sha1sum ${LOG_FILE})
-          echo "TEST=$TEST"
           if [[ $(git status --porcelain | wc -l) -gt 0 && -f ${LOG_FILE} ]];then
             git checkout -b ${BRANCH_NAME}
             git add -u .
