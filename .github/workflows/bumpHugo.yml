@@ -1,0 +1,44 @@
+name: Bump Hugo
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '30 2 * * 1'
+env:
+  NPM_CACHE_NAME: "npm-cache"
+  NPM_CACHE_PATH: "~/.npm"
+jobs:
+  Bump:
+    name: Bump Hugo
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 1
+      - name: Bump thirdparties and create PR
+        env:
+          PR_TITLE: "build: bump Hugo"
+          BRANCH_NAME: "build/bump_hugo"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          minHugoVersion=$(grep -E '^min_version.*$' theme.toml)
+          minHugoVersion=${minHugoVersion#*\"}
+          minHugoVersion=${minHugoVersion%\"*}
+          latestHugoVersion=$(curl -s -H "Accept: application/vnd.github+json" -H "Authorization: token ${GITHUB_TOKEN}" "https://api.github.com/repos/gohugoio/hugo/releases/latest" | jq -r '.tag_name')
+          latestHugoVersion=${latestHugoVersion#*v}
+          printf "%70s\n" | tr ' ' '-'
+          printf "%70s\n" "Minimum Hugo version: ${minHugoVersion}"
+          printf "%70s\n" "Latest Hugo version : ${latestHugoVersion}"
+          printf "%70s\n" | tr ' ' '-'
+          sed -i 's/HUGO_TESTS_VERSIONS:.*/HUGO_TESTS_VERSIONS: "'"${minHugoVersion}"' '"${latestHugoVersion}"'"/' .github/workflows/branches.yml
+          sed -i 's/HUGO_VERSION.*/HUGO_VERSION       = "'"${latestHugoVersion}"'"/' netlify.toml
+          if [[ $(git status --porcelain | wc -l) -gt 0 ]];then
+            git checkout -b ${BRANCH_NAME}
+            git add -u .
+            git config --local user.name "GitHub Action"
+            git config --local user.email "action@github.com"
+            git commit -m "${PR_TITLE}"
+            git push -f origin ${BRANCH_NAME}
+            hub pull-request -f --file ${LOG_FILE} -l "internal" --base main --head ${BRANCH_NAME}
+          fi
