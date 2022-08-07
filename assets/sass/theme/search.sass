@@ -5,8 +5,7 @@
   max-height: calc(#{$navbar-height} - (2 * #{$theme-gap-medium-size}))
   background-color: smooth-color($theme-color, 30) !important
   color: findColorInvert(smooth-color($theme-color, 30))
-  min-width: $navbar-search-min-width
-  max-width: $navbar-search-width
+  width: $navbar-search-width
   @extend %navbar-item-generic
   @extend %navbar-item-hover
   text-overflow: ellipsis
@@ -23,8 +22,7 @@
     font-style: italic
 #searchInput
   +responsive-size(font-size, $content-font-size, 3px)
-  min-width: $navbar-search-min-width
-  max-width: $navbar-search-width
+  width: $navbar-search-width
   display: block
 #searchList
   +responsive-size(font-size, $content-font-size, 3px)

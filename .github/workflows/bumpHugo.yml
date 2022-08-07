@@ -28,8 +28,8 @@ jobs:
           latestHugoVersion=$(curl -s -H "Accept: application/vnd.github+json" -H "Authorization: token ${GITHUB_TOKEN}" "https://api.github.com/repos/gohugoio/hugo/releases/latest" | jq -r '.tag_name')
           latestHugoVersion=${latestHugoVersion#*v}
           printf "%70s\n" | tr ' ' '-'
-          printf "%70s\n" "Minimum Hugo version: ${minHugoVersion}"
-          printf "%70s\n" "Latest Hugo version : ${latestHugoVersion}"
+          printf "%-70s\n" "Minimum Hugo version: ${minHugoVersion}"
+          printf "%-70s\n" "Latest Hugo version : ${latestHugoVersion}"
           printf "%70s\n" | tr ' ' '-'
           sed -i 's/HUGO_TESTS_VERSIONS:.*/HUGO_TESTS_VERSIONS: "'"${minHugoVersion}"' '"${latestHugoVersion}"'"/' .github/workflows/branches.yml
           sed -i 's/HUGO_VERSION.*/HUGO_VERSION       = "'"${latestHugoVersion}"'"/' netlify.toml
