@@ -20,22 +20,56 @@ Pour définir un lien, il faut **respecter la syntaxe suivante**:
 | -------- | ---- | ----- |
 |{{< md >}}
 ```
-[Je suis un lien](/markdown/link/)
+[Je suis un lien relatif vers une autre page du site](../image/)
 ```
 {{< /md >}}|{{< plaintext >}}
-<a href="/markdown/link/">Je suis un lien</a>
+<a href="../image/">Je suis un lien relatif vers une autre page du site</a>
 {{< /plaintext >}}|{{< md >}}
-[Je suis un lien](/markdown/link/)
+[Je suis un lien relatif vers une autre page du site](../image/)
 {{< /md >}}|
 |{{< md >}}
 ```
-[Je suis un lien vers un ID de titre](/markdown/link/#lien)
+[Je suis un lien absolu vers une autre page du site](/images/favicon.png)
 ```
 {{< /md >}}|{{< plaintext >}}
-<a href="/markdown/link/#lien">Je suis un lien vers un ID de titre</a>
+<a href="/images/favicon.png">Je suis un lien absolu vers une autre page du site</a>
 {{< /plaintext >}}|{{< md >}}
-[Je suis un lien vers un ID de titre](/markdown/link/#lien)
+[Je suis un lien absolu vers une autre page du site](/images/favicon.png)
 {{< /md >}}|
+|{{< md >}}
+```
+[Je suis un lien vers un ID de titre dans la page courante](#lien)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="#lien">Je suis un lien vers un ID de titre dans la page courante</a>
+{{< /plaintext >}}|{{< md >}}
+[Je suis un lien vers un ID de titre dans la page courante](#lien)
+{{< /md >}}|
+|{{< md >}}
+```
+[Je suis un lien vers la page d'accueil](/)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="/">Je suis un lien vers la page d'accueil</a>
+{{< /plaintext >}}|{{< md >}}
+[Je suis un lien vers la page d'accueil](/)
+{{< /md >}}|
+|{{< md >}}
+```
+[Je suis un lien externe](https://www.google.com)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="https://www.google.com">Je suis un lien externe</a>
+{{< /plaintext >}}|{{< md >}}
+[Je suis un lien externe](https://www.google.com)
+{{< /md >}}|
+
+{{< alert type="warning" >}}
+Les liens vers la page d'accueil utilisant `/` sont relatif à la langue actuelle du site.
+{{< /alert >}}
+{{< alert type="warning" >}}
+Les liens absolus vers des resources utilisant `/<CHEMIN_DE_LA_RESOURCE>` ne sont pas relatif à la langue actuelle du site.
+{{< /alert >}}
 
 ## Syntaxe classique avec titre
 
@@ -47,17 +81,17 @@ Pour définir un lien avec un titre, il faut **respecter la syntaxe suivante**:
 | -------- | ---- | ----- |
 |{{< md >}}
 ```
-[Je suis un lien](/markdown/link/ "Et moi son titre")
+[Je suis un lien](#syntaxe-classique-avec-titre "Et moi son titre")
 ```
 {{< /md >}}|{{< plaintext >}}
-<a title="Et moi son titre" href="/markdown/link/">Je suis un lien</a>
+<a title="Et moi son titre" href="#syntaxe-classique-avec-titre">Je suis un lien</a>
 {{< /plaintext >}}|{{< md >}}
-[Je suis un lien](/markdown/link/ "Et moi son titre")
+[Je suis un lien](#syntaxe-classique-avec-titre "Et moi son titre")
 {{< /md >}}|
 
 ## Syntaxe alternative
 
-Pour définir un lien il est possible d'utiliser des syntaxes alternatives:
+Pour définir un lien externe il est possible d'utiliser des syntaxes alternatives:
 
 * **Ecrire l'URL du lien** (le rendu sera automatiquement réalisé par le convertisseur markdown).
 * **Entourer l'URL du lien entre les caractères inférieur (<) et supérieur (>)**.
@@ -212,11 +246,11 @@ La deuxième partie du lien peut-être placée à n'importe quel endroit dans le
 
 Je suis un texte tout seul
 
-[Référence A]: /markdown/link/
+[Référence A]: #lien-référencé
 ```
 {{< /md >}}|{{< plaintext >}}
-<a href="/markdown/link/">Je suis un lien</a>
-<a href="/markdown/link/">Je suis un second lien</a>
+<a href="#lien-référencé">Je suis un lien</a>
+<a href="#lien-référencé">Je suis un second lien</a>
 <p>Je suis un texte tout seul</p>
 {{< /plaintext >}}|{{< md >}}
 [Je suis un lien][Référence A]
@@ -225,7 +259,7 @@ Je suis un texte tout seul
 
 Je suis un texte tout seul
 
-[Référence A]: /markdown/link/
+[Référence A]: #lien-référencé
 {{< /md >}}|
 |{{< md >}}
 ```
@@ -235,11 +269,11 @@ Je suis un texte tout seul
 
 Je suis un texte tout seul
 
-[Référence A]: /markdown/link/ "Et moi son titre"
+[Référence A]: #lien-référencé "Et moi son titre"
 ```
 {{< /md >}}|{{< plaintext >}}
-<a title="Et moi son titre" href="/markdown/link/">Je suis un lien</a>
-<a title="Et moi son titre" href="/markdown/link/">Je suis un second lien</a>
+<a title="Et moi son titre" href="#lien-référencé">Je suis un lien</a>
+<a title="Et moi son titre" href="#lien-référencé">Je suis un second lien</a>
 <p>Je suis un texte tout seul</p>
 {{< /plaintext >}}|{{< md >}}
 [Je suis un lien][Référence A]
@@ -248,7 +282,7 @@ Je suis un texte tout seul
 
 Je suis un texte tout seul
 
-[Référence A]: /markdown/link/ "Et moi son titre"
+[Référence A]: #lien-référencé "Et moi son titre"
 {{< /md >}}|
 |{{< md >}}
 ```
@@ -258,11 +292,11 @@ Je suis un texte tout seul
 
 Je suis un texte tout seul
 
-[Référence A]: /markdown/link/ 'Et moi son titre'
+[Référence A]: #lien-référencé 'Et moi son titre'
 ```
 {{< /md >}}|{{< plaintext >}}
-<a title="Et moi son titre" href="/markdown/link/">Je suis un lien</a>
-<a title="Et moi son titre" href="/markdown/link/">Je suis un second lien</a>
+<a title="Et moi son titre" href="#lien-référencé">Je suis un lien</a>
+<a title="Et moi son titre" href="#lien-référencé">Je suis un second lien</a>
 <p>Je suis un texte tout seul</p>
 {{< /plaintext >}}|{{< md >}}
 [Je suis un lien][Référence A]
@@ -271,7 +305,7 @@ Je suis un texte tout seul
 
 Je suis un texte tout seul
 
-[Référence A]: /markdown/link/ 'Et moi son titre'
+[Référence A]: #lien-référencé 'Et moi son titre'
 {{< /md >}}|
 |{{< md >}}
 ```
@@ -281,11 +315,11 @@ Je suis un texte tout seul
 
 Je suis un texte tout seul
 
-[Référence A]: /markdown/link/ (Et moi son titre)
+[Référence A]: #lien-référencé (Et moi son titre)
 ```
 {{< /md >}}|{{< plaintext >}}
-<a title="Et moi son titre" href="/markdown/link/">Je suis un lien</a>
-<a title="Et moi son titre" href="/markdown/link/">Je suis un second lien</a>
+<a title="Et moi son titre" href="#lien-référencé">Je suis un lien</a>
+<a title="Et moi son titre" href="#lien-référencé">Je suis un second lien</a>
 <p>Je suis un texte tout seul</p>
 {{< /plaintext >}}|{{< md >}}
 [Je suis un lien][Référence A]
@@ -294,7 +328,7 @@ Je suis un texte tout seul
 
 Je suis un texte tout seul
 
-[Référence A]: /markdown/link/ (Et moi son titre)
+[Référence A]: #lien-référencé (Et moi son titre)
 {{< /md >}}|
 |{{< md >}}
 ```
@@ -304,11 +338,11 @@ Je suis un texte tout seul
 
 Je suis un texte tout seul
 
-[Référence A]: </markdown/link/> "Et moi son titre"
+[Référence A]: <#lien-référencé> "Et moi son titre"
 ```
 {{< /md >}}|{{< plaintext >}}
-<a title="Et moi son titre" href="/markdown/link/">Je suis un lien</a>
-<a title="Et moi son titre" href="/markdown/link/">Je suis un second lien</a>
+<a title="Et moi son titre" href="#lien-référencé">Je suis un lien</a>
+<a title="Et moi son titre" href="#lien-référencé">Je suis un second lien</a>
 <p>Je suis un texte tout seul</p>
 {{< /plaintext >}}|{{< md >}}
 [Je suis un lien][Référence A]
@@ -317,7 +351,7 @@ Je suis un texte tout seul
 
 Je suis un texte tout seul
 
-[Référence A]: </markdown/link/> "Et moi son titre"
+[Référence A]: <#lien-référencé> "Et moi son titre"
 {{< /md >}}|
 |{{< md >}}
 ```
@@ -327,11 +361,11 @@ Je suis un texte tout seul
 
 Je suis un texte tout seul
 
-[Référence A]: </markdown/link/> 'Et moi son titre'
+[Référence A]: <#lien-référencé> 'Et moi son titre'
 ```
 {{< /md >}}|{{< plaintext >}}
-<a title="Et moi son titre" href="/markdown/link/">Je suis un lien</a>
-<a title="Et moi son titre" href="/markdown/link/">Je suis un second lien</a>
+<a title="Et moi son titre" href="#lien-référencé">Je suis un lien</a>
+<a title="Et moi son titre" href="#lien-référencé">Je suis un second lien</a>
 <p>Je suis un texte tout seul</p>
 {{< /plaintext >}}|{{< md >}}
 [Je suis un lien][Référence A]
@@ -340,7 +374,7 @@ Je suis un texte tout seul
 
 Je suis un texte tout seul
 
-[Référence A]: </markdown/link/> 'Et moi son titre'
+[Référence A]: <#lien-référencé> 'Et moi son titre'
 {{< /md >}}|
 |{{< md >}}
 ```
@@ -350,11 +384,11 @@ Je suis un texte tout seul
 
 Je suis un texte tout seul
 
-[Référence A]: </markdown/link/> (Et moi son titre)
+[Référence A]: <#lien-référencé> (Et moi son titre)
 ```
 {{< /md >}}|{{< plaintext >}}
-<a title="Et moi son titre" href="/markdown/link/">Je suis un lien</a>
-<a title="Et moi son titre" href="/markdown/link/">Je suis un second lien</a>
+<a title="Et moi son titre" href="#lien-référencé">Je suis un lien</a>
+<a title="Et moi son titre" href="#lien-référencé">Je suis un second lien</a>
 <p>Je suis un texte tout seul</p>
 {{< /plaintext >}}|{{< md >}}
 [Je suis un lien][Référence A]
@@ -363,7 +397,7 @@ Je suis un texte tout seul
 
 Je suis un texte tout seul
 
-[Référence A]: </markdown/link/> (Et moi son titre)
+[Référence A]: <#lien-référencé> (Et moi son titre)
 {{< /md >}}|
 
 ## Lien avec espace
@@ -392,10 +426,10 @@ Pour définir l'ID d'un lien, il faut **écrire un lien en suivant la [syntaxe c
 | -------- | ---- | ----- |
 |{{< md >}}
 ```
-[Je suis un lien](/markdown/link/ "Et moi son titre")
+[Je suis un lien](#id-dun-lien-spécificité-du-thème "Et moi son titre")
 ```
 {{< /md >}}|{{< plaintext >}}
-<a id="et-moi-son-titre" title="Et moi son titre" href="/markdown/link/">Je suis un lien</a>
+<a id="et-moi-son-titre" title="Et moi son titre" href="#id-dun-lien-spécificité-du-thème">Je suis un lien</a>
 {{< /plaintext >}}|{{< md >}}
-[Je suis un lien](/markdown/link/ "Et moi son titre")
+[Je suis un lien](#id-dun-lien-spécificité-du-thème "Et moi son titre")
 {{< /md >}}|

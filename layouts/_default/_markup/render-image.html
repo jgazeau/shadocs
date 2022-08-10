@@ -1,1 +1,1 @@
-<img src='{{.Destination | safeURL | relURL}}' alt='{{.Text}}' class='{{.Text}}'{{with .Title}} title='{{.}}' id='{{anchorize .}}'{{end}}/>
+<img src='{{partial "theme/helpers/hrefResolver.html" (dict "this" .)}}' alt='{{.Text}}' class='{{.Text}}'{{with .Title}} title='{{.}}' id='{{anchorize .}}'{{end}}/>

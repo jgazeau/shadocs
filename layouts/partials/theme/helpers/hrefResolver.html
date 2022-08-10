@@ -1,0 +1,11 @@
+{{$href := .this.Destination | safeURL}}
+{{with $href}}
+  {{with eq (slicestr $href 0 1) "/"}}
+    {{with eq $href "/"}}
+      {{$href = "" | relLangURL}}
+    {{else}}
+      {{$href = (slicestr $href 1) | relURL}}
+    {{end}}
+  {{end}}
+{{end}}
+{{return $href}}

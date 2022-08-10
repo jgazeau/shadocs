@@ -49,7 +49,7 @@ Considérant les définitions de paramètres suivant:
 >}}
 [params]
   logo      = "images/logo.png"
-  faviconmd = "![](images/favicon.png)"
+  faviconmd = "![](/images/favicon.png)"
 {{< /snippet >}}
 {{< snippet
     caption="./data/dir/exampleTemplate.json"
