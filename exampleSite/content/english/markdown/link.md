@@ -20,22 +20,56 @@ To define a link, **use the following syntax**:
 | -------- | ---- | --------- |
 |{{< md >}}
 ```
-[I'm a link](/markdown/link/)
+[I'm a relative link to another page of the website](../image/)
 ```
 {{< /md >}}|{{< plaintext >}}
-<a href="/markdown/link/">I'm a link</a>
+<a href="../image/">I'm a relative link to another page of the website</a>
 {{< /plaintext >}}|{{< md >}}
-[I'm a link](/markdown/link/)
+[I'm a relative link to another page of the website](../image/)
 {{< /md >}}|
 |{{< md >}}
 ```
-[I'm a link to a title ID](/markdown/link/#link)
+[I'm an absolute link to another page of the website](/images/favicon.png)
 ```
 {{< /md >}}|{{< plaintext >}}
-<a href="/markdown/link/#link">I'm a link to a title ID</a>
+<a href="/images/favicon.png">I'm an absolute link to another page of the website</a>
 {{< /plaintext >}}|{{< md >}}
-[I'm a link to a title ID](/markdown/link/#link)
+[I'm an absolute link to another page of the website](/images/favicon.png)
 {{< /md >}}|
+|{{< md >}}
+```
+[I'm a link to a title ID in current page](#link)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="#link">I'm a link to a title ID in current page</a>
+{{< /plaintext >}}|{{< md >}}
+[I'm a link to a title ID in current page](#link)
+{{< /md >}}|
+|{{< md >}}
+```
+[I'm a link to the homepage](/)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="/">I'm a link to the homepage</a>
+{{< /plaintext >}}|{{< md >}}
+[I'm a link to the homepage](/)
+{{< /md >}}|
+|{{< md >}}
+```
+[I'm an external link](https://www.google.com)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="https://www.google.com">I'm an external link</a>
+{{< /plaintext >}}|{{< md >}}
+[I'm an external link](https://www.google.com)
+{{< /md >}}|
+
+{{< alert type="warning" >}}
+Links to the homepage using `/` is relative to the actual website lang.
+{{< /alert >}}
+{{< alert type="warning" >}}
+Absolute links to resources using `/<RESOURCE_PATH>` is not relative to the actual website lang.
+{{< /alert >}}
 
 ## Classic syntax with title
 
@@ -47,17 +81,17 @@ To define a link with a title, **use the following syntax**:
 | -------- | ---- | --------- |
 |{{< md >}}
 ```
-[I'm a link](/markdown/link/ "And I'm its title")
+[I'm a link](#classic-syntax-with-title "And I'm its title")
 ```
 {{< /md >}}|{{< plaintext >}}
-<a title="And I'm its title" href="/markdown/link/">I'm a link</a>
+<a title="And I'm its title" href="#classic-syntax-with-title">I'm a link</a>
 {{< /plaintext >}}|{{< md >}}
-[I'm a link](/markdown/link/ "And I'm its title")
+[I'm a link](#classic-syntax-with-title "And I'm its title")
 {{< /md >}}|
 
 ## Alternative syntax
 
-To define a link it is possible to use alternative syntaxes:
+To define an external link it is possible to use alternative syntaxes:
 
 * **Write the link URL** (rendering will be automatically made by the markdown converter).
 * **Surround the link URL between the lower-than (\<) and greater-than (\>) characters**.
@@ -212,11 +246,11 @@ The second part of the link can be placed anywhere in the document. For example 
 
 I'm a lonely text
 
-[Reference A]: /markdown/link/
+[Reference A]: #referenced-link
 ```
 {{< /md >}}|{{< plaintext >}}
-<a href="/markdown/link/">I'm a link</a>
-<a href="/markdown/link/">I'm a second link</a>
+<a href="#referenced-link">I'm a link</a>
+<a href="#referenced-link">I'm a second link</a>
 <p>I'm a lonely text</p>
 {{< /plaintext >}}|{{< md >}}
 [I'm a link][Reference A]
@@ -225,7 +259,7 @@ I'm a lonely text
 
 I'm a lonely text
 
-[Reference A]: /markdown/link/
+[Reference A]: #referenced-link
 {{< /md >}}|
 |{{< md >}}
 ```
@@ -235,11 +269,11 @@ I'm a lonely text
 
 I'm a lonely text
 
-[Reference A]: /markdown/link/ "And I'm its title"
+[Reference A]: #referenced-link "And I'm its title"
 ```
 {{< /md >}}|{{< plaintext >}}
-<a title="And I'm its title" href="/markdown/link/">I'm a link</a>
-<a title="And I'm its title" href="/markdown/link/">I'm a second link</a>
+<a title="And I'm its title" href="#referenced-link">I'm a link</a>
+<a title="And I'm its title" href="#referenced-link">I'm a second link</a>
 <p>I'm a lonely text</p>
 {{< /plaintext >}}|{{< md >}}
 [I'm a link][Reference A]
@@ -248,7 +282,7 @@ I'm a lonely text
 
 I'm a lonely text
 
-[Reference A]: /markdown/link/ "And I'm its title"
+[Reference A]: #referenced-link "And I'm its title"
 {{< /md >}}|
 |{{< md >}}
 ```
@@ -258,11 +292,11 @@ I'm a lonely text
 
 I'm a lonely text
 
-[Reference A]: /markdown/link/ 'And I'm its title'
+[Reference A]: #referenced-link 'And I\'m its title'
 ```
 {{< /md >}}|{{< plaintext >}}
-<a title="And I'm its title" href="/markdown/link/">I'm a link</a>
-<a title="And I'm its title" href="/markdown/link/">I'm a second link</a>
+<a title="And I'm its title" href="#referenced-link">I'm a link</a>
+<a title="And I'm its title" href="#referenced-link">I'm a second link</a>
 <p>I'm a lonely text</p>
 {{< /plaintext >}}|{{< md >}}
 [I'm a link][Reference A]
@@ -271,7 +305,7 @@ I'm a lonely text
 
 I'm a lonely text
 
-[Reference A]: /markdown/link/ 'And I'm its title'
+[Reference A]: #referenced-link 'And I\'m its title'
 {{< /md >}}|
 |{{< md >}}
 ```
@@ -281,11 +315,11 @@ I'm a lonely text
 
 I'm a lonely text
 
-[Reference A]: /markdown/link/ (And I'm its title)
+[Reference A]: #referenced-link (And I'm its title)
 ```
 {{< /md >}}|{{< plaintext >}}
-<a title="And I'm its title" href="/markdown/link/">I'm a link</a>
-<a title="And I'm its title" href="/markdown/link/">I'm a second link</a>
+<a title="And I'm its title" href="#referenced-link">I'm a link</a>
+<a title="And I'm its title" href="#referenced-link">I'm a second link</a>
 <p>I'm a lonely text</p>
 {{< /plaintext >}}|{{< md >}}
 [I'm a link][Reference A]
@@ -294,7 +328,7 @@ I'm a lonely text
 
 I'm a lonely text
 
-[Reference A]: /markdown/link/ (And I'm its title)
+[Reference A]: #referenced-link (And I'm its title)
 {{< /md >}}|
 |{{< md >}}
 ```
@@ -304,11 +338,11 @@ I'm a lonely text
 
 I'm a lonely text
 
-[Reference A]: </markdown/link/> "And I'm its title"
+[Reference A]: <#referenced-link> "And I'm its title"
 ```
 {{< /md >}}|{{< plaintext >}}
-<a title="And I'm its title" href="/markdown/link/">I'm a link</a>
-<a title="And I'm its title" href="/markdown/link/">I'm a second link</a>
+<a title="And I'm its title" href="#referenced-link">I'm a link</a>
+<a title="And I'm its title" href="#referenced-link">I'm a second link</a>
 <p>I'm a lonely text</p>
 {{< /plaintext >}}|{{< md >}}
 [I'm a link][Reference A]
@@ -317,7 +351,7 @@ I'm a lonely text
 
 I'm a lonely text
 
-[Reference A]: </markdown/link/> "And I'm its title"
+[Reference A]: <#referenced-link> "And I'm its title"
 {{< /md >}}|
 |{{< md >}}
 ```
@@ -327,11 +361,11 @@ I'm a lonely text
 
 I'm a lonely text
 
-[Reference A]: </markdown/link/> 'And I'm its title'
+[Reference A]: <#referenced-link> 'And I\'m its title'
 ```
 {{< /md >}}|{{< plaintext >}}
-<a title="And I'm its title" href="/markdown/link/">I'm a link</a>
-<a title="And I'm its title" href="/markdown/link/">I'm a second link</a>
+<a title="And I'm its title" href="#referenced-link">I'm a link</a>
+<a title="And I'm its title" href="#referenced-link">I'm a second link</a>
 <p>I'm a lonely text</p>
 {{< /plaintext >}}|{{< md >}}
 [I'm a link][Reference A]
@@ -340,7 +374,7 @@ I'm a lonely text
 
 I'm a lonely text
 
-[Reference A]: </markdown/link/> 'And I'm its title'
+[Reference A]: <#referenced-link> 'And I\'m its title'
 {{< /md >}}|
 |{{< md >}}
 ```
@@ -350,11 +384,11 @@ I'm a lonely text
 
 I'm a lonely text
 
-[Reference A]: </markdown/link/> (And I'm its title)
+[Reference A]: <#referenced-link> (And I'm its title)
 ```
 {{< /md >}}|{{< plaintext >}}
-<a title="And I'm its title" href="/markdown/link/">I'm a link</a>
-<a title="And I'm its title" href="/markdown/link/">I'm a second link</a>
+<a title="And I'm its title" href="#referenced-link">I'm a link</a>
+<a title="And I'm its title" href="#referenced-link">I'm a second link</a>
 <p>I'm a lonely text</p>
 {{< /plaintext >}}|{{< md >}}
 [I'm a link][Reference A]
@@ -363,7 +397,7 @@ I'm a lonely text
 
 I'm a lonely text
 
-[Reference A]: </markdown/link/> (And I'm its title)
+[Reference A]: <#referenced-link> (And I'm its title)
 {{< /md >}}|
 
 ## Link with space
@@ -392,10 +426,10 @@ To define a link ID, **write a link following the [classic syntax with title](ma
 | -------- | ---- | --------- |
 |{{< md >}}
 ```
-[I'm a link](/markdown/link/ "And I'm its title")
+[I'm a link](#link-id-theme-specific "And I'm its title")
 ```
 {{< /md >}}|{{< plaintext >}}
-<a id="and-im-its-title" title="And I'm its title" href="/markdown/link/">I'm a link</a>
+<a id="and-im-its-title" title="And I'm its title" href="#link-id-theme-specific">I'm a link</a>
 {{< /plaintext >}}|{{< md >}}
-[I'm a link](/markdown/link/ "And I'm its title")
+[I'm a link](#link-id-theme-specific "And I'm its title")
 {{< /md >}}|
