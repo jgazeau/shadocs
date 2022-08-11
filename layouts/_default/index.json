@@ -25,7 +25,7 @@
   {{- range $index, $tempPage := ($.Scratch.Get "pageArray") -}}
     {{- $.Scratch.Set "isStandardPage" true -}}
     {{- range $taxonomyName, $taxonomy := .Site.Taxonomies -}}
-      {{- with (hasPrefix ($tempPage.RelPermalink | relLangURL) ($taxonomyName | relLangURL)) -}}
+      {{- with (hasPrefix ($tempPage.RelPermalink | safeURL | relLangURL) ($taxonomyName | relLangURL)) -}}
         {{- $.Scratch.Set "isStandardPage" false -}}
       {{- end -}}
     {{- end -}}
@@ -55,13 +55,13 @@
           {{- htmlEscape .FirstSection.Title -}}
         {{- end -}}",
       "rootTitleIcon": "{{htmlEscape ($.Scratch.Get "rootTitleIcon")}}",
-      "rootTitlePath": "{{.FirstSection.RelPermalink | relLangURL}}",
+      "rootTitlePath": "{{.FirstSection.RelPermalink | safeURL | relLangURL}}",
       "rootTitleTitle": "{{- if .IsHome -}}
           {{- i18n "homepage_title" -}}
         {{- else -}}
           {{- printf "%s / %s" (i18n "homepage_title") (htmlEscape .FirstSection.Title) -}}
         {{- end -}}",
-      "permalink": "{{.RelPermalink | relLangURL}}",
+      "permalink": "{{.RelPermalink | safeURL | relLangURL}}",
       "permalinkTitle": "{{template "permalinkTitle" dict "currentPage" . "value" ""}}",
       "title": "{{- if .IsHome -}}
           {{- i18n "homepage_title" -}}

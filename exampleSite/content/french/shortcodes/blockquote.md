@@ -17,7 +17,7 @@ Le shortcode **blockquote** permet d'écrire une citation.
 | --- | ----------------------- | ----------- |
 | source | nommé |{{< md >}}
 Source de la citation.  
-*NB: Si non renseigné, le rendu est celui d'une [citation standard en markdown](/markdown/blockquote).*
+*NB: Si non renseigné, le rendu est celui d'une [citation standard en markdown](../../markdown/blockquote/).*
 {{< /md >}}|
 
 # Exemples

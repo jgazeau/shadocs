@@ -14,7 +14,7 @@ De plus, il est possible de définir plusieurs fragments de code répartis dans 
 Par exemple: afficher les commandes d'un CLI en fonction du système d'exploitation utilisé.
 
 {{< alert type="warning" >}}
-Le contenu ainsi que les paramètres définis dans un shortcode **tab** sont prépondérant par rapport à ceux définis dans le shortcode **snippet** parent. Si tout les onglets partagent les mêmes paramètres il est donc possible de les définir de manière globale dans le shortcode **snippet** parent (Cf. [exemples](/shortcodes/snippet/#exemples) ci-dessous).
+Le contenu ainsi que les paramètres définis dans un shortcode **tab** sont prépondérant par rapport à ceux définis dans le shortcode **snippet** parent. Si tout les onglets partagent les mêmes paramètres il est donc possible de les définir de manière globale dans le shortcode **snippet** parent (Cf. [exemples](#exemples) ci-dessous).
 {{< /alert >}}
 
 # Paramètres

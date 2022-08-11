@@ -418,7 +418,7 @@ Pour définir un lien dont l'URL contient des espaces, il faut **encoder l'URL a
 
 ## ID d'un lien (Spécificité du thème)
 
-Pour définir l'ID d'un lien, il faut **écrire un lien en suivant la [syntaxe classique avec titre](markdown/link/#syntaxe-classique-avec-titre)**. L'ID est rajouté au lien automatiquement (à l'aide du thème) et aura pour valeur la sortie de la fonction [anchorize](https://gohugo.io/functions/anchorize/) de Hugo avec en entrée la valeur du titre du lien:
+Pour définir l'ID d'un lien, il faut **écrire un lien en suivant la [syntaxe classique avec titre](#syntaxe-classique-avec-titre)**. L'ID est rajouté au lien automatiquement (à l'aide du thème) et aura pour valeur la sortie de la fonction [anchorize](https://gohugo.io/functions/anchorize/) de Hugo avec en entrée la valeur du titre du lien:
 
 * **\[Texte_du_lien\]\(URL_du_lien \"Titre_du_lien\"\)**
 

@@ -23,7 +23,7 @@
                   <h6 class='toc-title is-marginless'>{{humanize $taxonomy}}</h6>
                 </div>
                 {{- range . -}}
-                  <a href='{{.RelPermalink}}' class='taxonomy'><i class="fa-solid fa-circle-dot"></i>{{.Title}}</a>
+                  <a href='{{.RelPermalink | safeURL}}' class='taxonomy'><i class="fa-solid fa-circle-dot"></i>{{.Title}}</a>
                 {{- end -}}
               {{- end -}}
             </div>

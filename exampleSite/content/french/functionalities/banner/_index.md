@@ -11,5 +11,5 @@ tags: ["Gestion du contenu"]
 ---
 
 Dans le thème, il est possible d'afficher une bannière en haut de la page, en utilisant deux options disponibles:
-* [activer le site en tant que site archivé, et afficher une bannière sur toutes les pages](/functionalities/banner/global)
-* [activer une bannière sur une seule page](/functionalities/banner/single)
+* [activer le site en tant que site archivé, et afficher une bannière sur toutes les pages](global/)
+* [activer une bannière sur une seule page](single/)
