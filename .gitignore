@@ -14,3 +14,6 @@ debug.log
 
 # Common files
 workflow.log
+
+# Htmltest files
+/tmp/

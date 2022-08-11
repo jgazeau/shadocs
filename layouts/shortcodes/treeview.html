@@ -67,7 +67,7 @@
             <i class='{{.}}'></i>
           </div>
           {{end}}
-          <p class='is-marginless'><a href='{{with $page.RelPermalink}}{{.}}{{end}}' class='is-pretty-link'>{{with $page.LinkTitle}}{{.}}{{else}}{{i18n "empty_description"}}{{end}}</a></p>
+          <p class='is-marginless'><a href='{{with $page.RelPermalink | safeURL}}{{.}}{{end}}' class='is-pretty-link'>{{with $page.LinkTitle}}{{.}}{{else}}{{i18n "empty_description"}}{{end}}</a></p>
         </div>
         {{with $page.Page.Pages}}
           {{template "pathList" dict "this" . "context" $.context}}

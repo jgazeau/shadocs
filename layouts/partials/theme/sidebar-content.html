@@ -83,13 +83,13 @@
   {{$sidebarRoot := .sidebarroot}}
   {{if or (.this.Params.sidebardisabled) ($sidebarRoot.Scratch.Get "isEmptyContent")}}
     <div class='card-header is-sidebar-disable'>
-      <div class='card-header-title' href='{{.this.RelPermalink}}'>
+      <div class='card-header-title' href='{{.this.RelPermalink | safeURL}}'>
         <i class='{{$sidebarRoot.Scratch.Get "titleIcon"}}'></i>
         {{if .isLabel}}<p class='pt-0 pb-0 pr-2{{if eq .this.FirstSection .this}} pl-1{{else}} pl-0{{end}}' title='{{.this.LinkTitle}}'>{{.this.LinkTitle}}</p>{{end}}
       </div>
   {{else}}
     <div class='card-header{{if eq .linkWeight 0}} is-single-link{{end}}'>
-      <a href='{{.this.RelPermalink}}' class='card-header-title'{{if .isLabel}} title='{{.this.LinkTitle}}'{{end}}>
+      <a href='{{.this.RelPermalink | safeURL}}' class='card-header-title'{{if .isLabel}} title='{{.this.LinkTitle}}'{{end}}>
         <i class='{{$sidebarRoot.Scratch.Get "titleIcon"}}'></i>
         {{if .isLabel}}<p class='pt-0 pb-0 pr-2{{if eq .this.FirstSection .this}} pl-1{{else}} pl-0{{end}}'>{{.this.LinkTitle}}</p>{{end}}
       </a>

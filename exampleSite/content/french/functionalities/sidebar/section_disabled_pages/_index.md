@@ -13,7 +13,7 @@ Une page peut être définie comme désactivée des deux manières suivantes:
 * manuellement, en définissant la variable `sidebarDisabled` à `true` dans l'entête de la page
 
 {{< alert >}}
-Une [section](/functionalities/sidebar/section/) étant un cas particulier de page de contenu, il est possible de définir une section vide de la même manière qu'une page de contenu simple.
+Une [section](../section/) étant un cas particulier de page de contenu, il est possible de définir une section vide de la même manière qu'une page de contenu simple.
 {{< /alert >}}
 
 # Exemples

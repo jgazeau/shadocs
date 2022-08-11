@@ -19,7 +19,7 @@ Le thème permet d'imprimer une page de contenu suivant les caractéristiques su
     * le menu latéral n'est pas imprimé
     * la barre de navigation n'est pas imprimée
     * la table des matières n'est pas imprimée
-* les sauts de pages sont ajustés automatiquement au contenu mais il est possible d'en définir des spécifiques à l'aide du shortcode [pagebreak](/shortcodes/pagebreak/)
+* les sauts de pages sont ajustés automatiquement au contenu mais il est possible d'en définir des spécifiques à l'aide du shortcode [pagebreak](../../shortcodes/pagebreak/)
 * un icone situé dans la barre de navigation ainsi qu'un raccourci permettent d'accéder à la prévisualisation de l'impression
 
 {{< alert type="warning" >}}

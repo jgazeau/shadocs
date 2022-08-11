@@ -22,10 +22,10 @@
       <div class='tabs-results'>
         {{range $key, $value := .Data.Terms.Alphabetical}}
           <div id='tabs-{{.Term}}-results' class='tabs-results-list{{with (eq $key 0)}} is-active{{end}}'>
-            <a class='tabs-title' href='{{.Page.Permalink}}'>{{humanize .Term}}</a>
+            <a class='tabs-title' href='{{.Page.Permalink | safeURL}}'>{{humanize .Term}}</a>
             <ul>
               {{range (index $.Site.Taxonomies ($.Scratch.Get "taxonomy") .Term)}}
-                <li><a class='is-pretty-link' href='{{.Permalink}}'>{{.LinkTitle}}</a></li>
+                <li><a class='is-pretty-link' href='{{.Permalink | safeURL}}'>{{.LinkTitle}}</a></li>
               {{end}}
             </ul>
           </div>

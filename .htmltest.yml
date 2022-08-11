@@ -1,0 +1,5 @@
+DirectoryPath: "exampleSite/public"
+CheckFavicon: true
+EnforceHTML5: true
+IgnoreDirs:
+- "en"

@@ -55,7 +55,7 @@
     {{else}}
       {{$scratch.Set "script" (resources.Get . | minify)}}
     {{end}}
-    <link rel='stylesheet' type='text/css' href='{{($scratch.Get "script").RelPermalink}}'>
+    <link rel='stylesheet' type='text/css' href='{{($scratch.Get "script").RelPermalink | safeURL}}'>
   {{end}}
 {{end}}
 {{define "includeSass"}}
@@ -65,5 +65,5 @@
   {{end}}
   {{$options := (dict "outputStyle" "compressed" "includePaths" (slice "assets/bulma" "assets/sass"))}}
   {{$cssFile := $filesArray | resources.Concat "css/main.sass" | resources.ToCSS $options}}
-  <link rel='stylesheet' rel='preload' type='text/css' href='{{$cssFile.RelPermalink}}'>
+  <link rel='stylesheet' rel='preload' type='text/css' href='{{$cssFile.RelPermalink | safeURL}}'>
 {{end}}

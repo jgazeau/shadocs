@@ -418,7 +418,7 @@ To define a link whose URL contains spaces, **encode the URL with the associated
 
 ## Link ID (Theme specific)
 
-To define a link ID, **write a link following the [classic syntax with title](markdown/link/#classic-syntax-with-title)**. The ID is automatically added to the link (using the theme) and its value is the output of Hugo's [anchorize](https://gohugo.io/functions/anchorize/) function with the link title as input value:
+To define a link ID, **write a link following the [classic syntax with title](#classic-syntax-with-title)**. The ID is automatically added to the link (using the theme) and its value is the output of Hugo's [anchorize](https://gohugo.io/functions/anchorize/) function with the link title as input value:
 
 * **\[Link_text\]\(Link_URL \"Link_title\"\)**
 

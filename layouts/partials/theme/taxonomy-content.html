@@ -27,7 +27,7 @@
               {{i18n "empty_description"}}
             {{end}}
           </p>
-          <a class='is-pretty-link' href='{{.Permalink}}'>...{{i18n "read_more"}}</a>
+          <a class='is-pretty-link' href='{{.Permalink | safeURL}}'>...{{i18n "read_more"}}</a>
         </div>
       </article>
     </div>

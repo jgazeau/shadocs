@@ -14,7 +14,7 @@ Moreover, it is possible to define snippets organised in tabs. To do so, nest as
 For example: display CLI commands depending on the operating system used.
 
 {{< alert type="warning" >}}
-The content as well as parameters defined in a **tab** shortcode are preponderant over ones defined in the parent **snippet** shortcode. If all tabs share the same parameters, it is therefore possible to define them globally in the parent **snippet** shortcode (Cf. [examples](/shortcodes/snippet/#examples) below).
+The content as well as parameters defined in a **tab** shortcode are preponderant over ones defined in the parent **snippet** shortcode. If all tabs share the same parameters, it is therefore possible to define them globally in the parent **snippet** shortcode (Cf. [examples](#examples) below).
 {{< /alert >}}
 
 # Parameters

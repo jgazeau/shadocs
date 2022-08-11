@@ -13,7 +13,7 @@ A page can be set as disabled using the two following methods:
 * manually, by setting the `sidebarDisabled` variable  to `true` in the front matter
 
 {{< alert >}}
-Since a [section](/functionalities/sidebar/section/) is a special case of a content page, it is possible to define an empty section in the same way as a simple content page.
+Since a [section](../section/) is a special case of a content page, it is possible to define an empty section in the same way as a simple content page.
 {{< /alert >}}
 
 # Examples

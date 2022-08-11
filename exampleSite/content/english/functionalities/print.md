@@ -19,7 +19,7 @@ The theme makes it possible to print a page content with the following character
     * sidebar is not printed
     * navigation bar is not printed
     * table of contents is not printed
-* pagebreaks are automatically adjusted to the content but it is possible to define specific ones using [pagebreak](/shortcodes/pagebreak/) shortcode
+* pagebreaks are automatically adjusted to the content but it is possible to define specific ones using [pagebreak](../../shortcodes/pagebreak/) shortcode
 * an icon located in the navigation bar and a shortcut allow access to the print preview
 
 {{< alert type="warning" >}}

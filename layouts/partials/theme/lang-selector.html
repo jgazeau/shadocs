@@ -13,7 +13,7 @@
         {{$.Scratch.Set "translatedLang" .Language.Lang}}
         {{range $.Page.Translations}}
           {{if eq .Language.Lang ($.Scratch.Get "translatedLang")}}
-            {{$.Scratch.Set "translatedUrl" .RelPermalink}}
+            {{$.Scratch.Set "translatedUrl" (.RelPermalink | safeURL)}}
           {{else}}
             {{$.Scratch.Set "translatedUrl" ""}}
           {{end}}

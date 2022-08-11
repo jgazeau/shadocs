@@ -49,7 +49,7 @@ Given the following parameters definitions:
 >}}
 [params]
   logo      = "images/logo.png"
-  faviconmd = "![](/images/favicon.png)"
+  faviconmd = "![Favicon](/images/favicon.png)"
 {{< /snippet >}}
 {{< snippet
     caption="./data/dir/exampleTemplate.json"
