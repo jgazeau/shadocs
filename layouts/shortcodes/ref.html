@@ -1,0 +1,6 @@
+{{- $refScheme := "ref" -}}
+{{with .IsNamedParams}}
+  {{$refScheme}}:{{ref $.Page (dict "path" ($.Get "path") "lang" ($.Get "lang") "outputFormat" ($.Get "outputFormat"))}}
+{{else}}
+  {{$refScheme}}:{{ref $.Page ($.Get 0)}}
+{{end}}

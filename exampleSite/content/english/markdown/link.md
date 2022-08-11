@@ -20,30 +20,48 @@ To define a link, **use the following syntax**:
 | -------- | ---- | --------- |
 |{{< md >}}
 ```
-[I'm a relative link to another page of the website](../image/)
+[I'm a relative link to another page (in the same folder) of the website](image/)
 ```
 {{< /md >}}|{{< plaintext >}}
-<a href="../image/">I'm a relative link to another page of the website</a>
+<a href="/markdown/image/">I'm a relative link to another page (in the same folder) of the website</a>
 {{< /plaintext >}}|{{< md >}}
-[I'm a relative link to another page of the website](../image/)
+[I'm a relative link to another page (in the same folder) of the website](image/)
 {{< /md >}}|
 |{{< md >}}
 ```
-[I'm an absolute link to another page of the website](/images/favicon.png)
+[I'm a relative link to another page (parent page) of the website](./)
 ```
 {{< /md >}}|{{< plaintext >}}
-<a href="/images/favicon.png">I'm an absolute link to another page of the website</a>
+<a href="/markdown/">I'm a relative link to another page (parent page) of the website</a>
 {{< /plaintext >}}|{{< md >}}
-[I'm an absolute link to another page of the website](/images/favicon.png)
+[I'm a relative link to another page (parent page) of the website](./)
 {{< /md >}}|
 |{{< md >}}
 ```
-[I'm a link to a title ID in current page](#link)
+[I'm an absolute link to another page of the website](/markdown/image/)
 ```
 {{< /md >}}|{{< plaintext >}}
-<a href="#link">I'm a link to a title ID in current page</a>
+<a href="/markdown/image/">I'm an absolute link to another page of the website</a>
 {{< /plaintext >}}|{{< md >}}
-[I'm a link to a title ID in current page](#link)
+[I'm an absolute link to another page of the website](/markdown/image/)
+{{< /md >}}|
+|{{< md >}}
+```
+[I'm an absolute link to a static resource of the website](/images/favicon.png)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="/images/favicon.png">I'm an absolute link to a static resource of the website</a>
+{{< /plaintext >}}|{{< md >}}
+[I'm an absolute link to a static resource of the website](/images/favicon.png)
+{{< /md >}}|
+|{{< md >}}
+```
+[I'm a link to a title ID](#link)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="#link">I'm a link to a title ID</a>
+{{< /plaintext >}}|{{< md >}}
+[I'm a link to a title ID](#link)
 {{< /md >}}|
 |{{< md >}}
 ```
@@ -56,6 +74,15 @@ To define a link, **use the following syntax**:
 {{< /md >}}|
 |{{< md >}}
 ```
+[I'm a link to the homepage in another language](/fr/)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="/fr/">I'm a link to the homepage in another language</a>
+{{< /plaintext >}}|{{< md >}}
+[I'm a link to the homepage in another language](/fr/)
+{{< /md >}}|
+|{{< md >}}
+```
 [I'm an external link](https://www.google.com)
 ```
 {{< /md >}}|{{< plaintext >}}
@@ -64,6 +91,14 @@ To define a link, **use the following syntax**:
 [I'm an external link](https://www.google.com)
 {{< /md >}}|
 
+{{< alert type="warning" >}}
+Links that does not contain a URL scheme are all prefixed depending on the `baseURL` configuration.  
+For example:  
+| baseURL | Markdown | Rendering |
+| ------- | -------- | --------- |
+| / | \[](/markdown/link/) | href="**/markdown/link/**" |
+| http\://myWebsite.com/subpath/ | \[](/markdown/link/) | href="**/subpath/markdown/link/**" |
+{{< /alert >}}
 {{< alert type="warning" >}}
 Links to the homepage using `/` is relative to the actual website lang.
 {{< /alert >}}
@@ -127,7 +162,7 @@ https://www.google.com
 {{< /md >}}|
 
 {{< alert type="warning" >}}
-Warning, for a suer-firendly rendering (using [Markdown Render Hooks](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks)) it is recommended to **use the classic syntax**.
+Warning, for a user-friendly rendering (using [Markdown Render Hooks](https://gohugo.io/getting-started/configuration-markup#markdown-render-hooks)) it is recommended to **use the classic syntax**.
 {{< /alert >}}
 
 ## Escape a link
@@ -432,4 +467,47 @@ To define a link ID, **write a link following the [classic syntax with title](#c
 <a id="and-im-its-title" title="And I'm its title" href="#link-id-theme-specific">I'm a link</a>
 {{< /plaintext >}}|{{< md >}}
 [I'm a link](#link-id-theme-specific "And I'm its title")
+{{< /md >}}|
+
+## Ref/Relref
+
+To define a link using the `ref` or `relref`, **follow the associated default [built-in Hugo shortcodes syntax](https://gohugo.io/content-management/shortcodes/#ref-and-relref)**.
+
+| Markdown | HTML | Rendering |
+| -------- | ---- | --------- |
+|{{< md >}}
+```
+[I'm a ref link]({{%/*/* ref "image/" */*/%}})
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="<baseURL>/markdown/image/">I'm a ref link</a>
+{{< /plaintext >}}|{{< md >}}
+[I'm a ref link]({{% ref "image/" %}})
+{{< /md >}}|
+|{{< md >}}
+```
+[I'm a ref link with named parameters]({{%/*/* ref path="image/" lang="fr" outputFormat="html" */*/%}})
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="<baseURL>/fr/markdown/image/">I'm a ref link with named parameters</a>
+{{< /plaintext >}}|{{< md >}}
+[I'm a ref link with named parameters]({{% ref path="image/" lang="fr" outputFormat="html" %}})
+{{< /md >}}|
+|{{< md >}}
+```
+[I'm a relref link]({{%/*/* relref "image/" */*/%}})
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="/markdown/image/">I'm a relref link</a>
+{{< /plaintext >}}|{{< md >}}
+[I'm a relref link]({{% relref "image/" %}})
+{{< /md >}}|
+|{{< md >}}
+```
+[I'm a relref link with named parameters]({{%/*/* relref path="image/" lang="fr" outputFormat="html" */*/%}})
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="/fr/markdown/image/">I'm a relref link with named parameters</a>
+{{< /plaintext >}}|{{< md >}}
+[I'm a relref link with named parameters]({{% relref path="image/" lang="fr" outputFormat="html" %}})
 {{< /md >}}|

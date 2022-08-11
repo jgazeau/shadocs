@@ -20,30 +20,48 @@ Pour définir un lien, il faut **respecter la syntaxe suivante**:
 | -------- | ---- | ----- |
 |{{< md >}}
 ```
-[Je suis un lien relatif vers une autre page du site](../image/)
+[Je suis un lien relatif vers une autre page (du même répertoire) du site](image/)
 ```
 {{< /md >}}|{{< plaintext >}}
-<a href="../image/">Je suis un lien relatif vers une autre page du site</a>
+<a href="/markdown/image/">Je suis un lien relatif vers une autre page (du même répertoire) du site</a>
 {{< /plaintext >}}|{{< md >}}
-[Je suis un lien relatif vers une autre page du site](../image/)
+[Je suis un lien relatif vers une autre page (du même répertoire) du site](image/)
 {{< /md >}}|
 |{{< md >}}
 ```
-[Je suis un lien absolu vers une autre page du site](/images/favicon.png)
+[Je suis un lien relatif vers une autre page (page parente) du site](./)
 ```
 {{< /md >}}|{{< plaintext >}}
-<a href="/images/favicon.png">Je suis un lien absolu vers une autre page du site</a>
+<a href="/markdown/">Je suis un lien relatif vers une autre page (page parente) du site</a>
 {{< /plaintext >}}|{{< md >}}
-[Je suis un lien absolu vers une autre page du site](/images/favicon.png)
+[Je suis un lien relatif vers une autre page (page parente) du site](./)
 {{< /md >}}|
 |{{< md >}}
 ```
-[Je suis un lien vers un ID de titre dans la page courante](#lien)
+[Je suis un lien absolu vers une autre page du site](/markdown/image/)
 ```
 {{< /md >}}|{{< plaintext >}}
-<a href="#lien">Je suis un lien vers un ID de titre dans la page courante</a>
+<a href="/markdown/image/">Je suis un lien absolu vers une autre page du site</a>
 {{< /plaintext >}}|{{< md >}}
-[Je suis un lien vers un ID de titre dans la page courante](#lien)
+[Je suis un lien absolu vers une autre page du site](/markdown/image/)
+{{< /md >}}|
+|{{< md >}}
+```
+[Je suis un lien absolu vers une ressource statique du site](/images/favicon.png)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="/images/favicon.png">Je suis un lien absolu vers une ressource statique du site</a>
+{{< /plaintext >}}|{{< md >}}
+[Je suis un lien absolu vers une ressource statique du site](/images/favicon.png)
+{{< /md >}}|
+|{{< md >}}
+```
+[Je suis un lien vers un ID de titre](#lien)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="#lien">Je suis un lien vers un ID de titre</a>
+{{< /plaintext >}}|{{< md >}}
+[Je suis un lien vers un ID de titre](#lien)
 {{< /md >}}|
 |{{< md >}}
 ```
@@ -56,6 +74,15 @@ Pour définir un lien, il faut **respecter la syntaxe suivante**:
 {{< /md >}}|
 |{{< md >}}
 ```
+[Je suis un lien vers la page d'accueil d'une autre langue](/fr/)
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="/fr/">Je suis un lien vers la page d'accueil d'une autre langue</a>
+{{< /plaintext >}}|{{< md >}}
+[Je suis un lien vers la page d'accueil d'une autre langue](/fr/)
+{{< /md >}}|
+|{{< md >}}
+```
 [Je suis un lien externe](https://www.google.com)
 ```
 {{< /md >}}|{{< plaintext >}}
@@ -64,6 +91,14 @@ Pour définir un lien, il faut **respecter la syntaxe suivante**:
 [Je suis un lien externe](https://www.google.com)
 {{< /md >}}|
 
+{{< alert type="warning" >}}
+Les liens ne contenant pas de schéma URL sont tous préfixé en fonction de la configuration `baseURL`.  
+Par exemple:  
+| baseURL | Markdown | Rendu |
+| ------- | -------- | ----- |
+| / | \[](/markdown/link/) | href="**/markdown/link/**" |
+| http\://myWebsite.com/subpath/ | \[](/markdown/link/) | href="**/subpath/markdown/link/**" |
+{{< /alert >}}
 {{< alert type="warning" >}}
 Les liens vers la page d'accueil utilisant `/` sont relatif à la langue actuelle du site.
 {{< /alert >}}
@@ -432,4 +467,47 @@ Pour définir l'ID d'un lien, il faut **écrire un lien en suivant la [syntaxe c
 <a id="et-moi-son-titre" title="Et moi son titre" href="#id-dun-lien-spécificité-du-thème">Je suis un lien</a>
 {{< /plaintext >}}|{{< md >}}
 [Je suis un lien](#id-dun-lien-spécificité-du-thème "Et moi son titre")
+{{< /md >}}|
+
+## Ref/Relref
+
+Pour définir un lien en utilisant `ref` ou `relref`, il faut **suivre la [syntaxe par défaut des shortcodes intégrés à Hugo](https://gohugo.io/content-management/shortcodes/#ref-and-relref)**.
+
+| Markdown | HTML | Rendu |
+| -------- | ---- | ----- |
+|{{< md >}}
+```
+[Je suis un lien ref]({{%/*/* ref "image/" */*/%}})
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="<baseURL>/markdown/image/">Je suis un lien ref</a>
+{{< /plaintext >}}|{{< md >}}
+[Je suis un lien ref]({{% ref "image/" %}})
+{{< /md >}}|
+|{{< md >}}
+```
+[Je suis un lien ref avec des paramètres nommées]({{%/*/* ref path="image/" lang="fr" outputFormat="html" */*/%}})
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="<baseURL>/fr/markdown/image/">Je suis un lien ref avec des paramètres nommées</a>
+{{< /plaintext >}}|{{< md >}}
+[Je suis un lien ref avec des paramètres nommées]({{% ref path="image/" lang="fr" outputFormat="html" %}})
+{{< /md >}}|
+|{{< md >}}
+```
+[Je suis un lien relref]({{%/*/* relref "image/" */*/%}})
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="/markdown/image/">Je suis un lien relref</a>
+{{< /plaintext >}}|{{< md >}}
+[Je suis un lien relref]({{% relref "image/" %}})
+{{< /md >}}|
+|{{< md >}}
+```
+[Je suis un lien relref avec des paramètres nommées]({{%/*/* relref path="image/" lang="fr" outputFormat="html" */*/%}})
+```
+{{< /md >}}|{{< plaintext >}}
+<a href="/fr/markdown/image/">Je suis un lien relref avec des paramètres nommées</a>
+{{< /plaintext >}}|{{< md >}}
+[Je suis un lien relref avec des paramètres nommées]({{% relref path="image/" lang="fr" outputFormat="html" %}})
 {{< /md >}}|

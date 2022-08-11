@@ -269,6 +269,8 @@ table:not([style])
     color: $content-writing-color
   tbody
     tr
+      &:nth-of-type(even)
+        background: $content-background
       &:nth-of-type(odd)
         background: smooth-color($content-background, 10)
 .footnotes

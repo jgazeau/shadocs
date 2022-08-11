@@ -6,6 +6,12 @@
     {{else}}
       {{$href = (slicestr $href 1) | relURL}}
     {{end}}
+  {{else}}
+    {{with not (urls.Parse $href).Scheme}}
+      {{$href = relref $.this.Page $href}}
+    {{else}}
+      {{$href = replaceRE "^ref:|^relref:" "" $href}}
+    {{end}}
   {{end}}
 {{end}}
 {{return $href}}
