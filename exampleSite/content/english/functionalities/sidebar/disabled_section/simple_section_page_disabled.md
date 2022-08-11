@@ -8,4 +8,4 @@ categories: ["Functionalities"]
 # Description
 ---
 
-Cf. [Simple page](../../simple_page/)
+Cf. [Simple page](../simple_page/)
