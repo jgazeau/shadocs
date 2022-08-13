@@ -24,22 +24,22 @@
   {{range .}}{{$cssFiles = $cssFiles | append .}}{{end}}
 {{end}}
 {{range $key, $value := .Site.Data.themeParams.includes.shortcodes.css}}
-  {{with len (findRE (printf "%s%s%s" "{{(<|%)[[:space:]]*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
+  {{with $.Page.HasShortcode $key}}
     {{range $value}}{{$cssFiles = $cssFiles | append .}}{{end}}
   {{end}}
 {{end}}
 {{range $key, $value := .Site.Params.includes.shortcodes.css}}
-  {{with len (findRE (printf "%s%s%s" "{{(<|%)[[:space:]]*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
+  {{with $.Page.HasShortcode $key}}
     {{range $value}}{{$cssFiles = $cssFiles | append .}}{{end}}
   {{end}}
 {{end}}
 {{range $key, $value := .Site.Data.themeParams.includes.fencedcodes.css}}
-{{with len (findRE (printf "%s%s%s" "{{(<|%)[[:space:]]*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
+  {{with len (findRE (printf "%s%s" "[[:space:]]*(```)?" $key) $.Page.RawContent)}}
     {{range $value}}{{$cssFiles = $cssFiles | append .}}{{end}}
   {{end}}
 {{end}}
 {{range $key, $value := .Site.Params.includes.fencedcodes.css}}
-{{with len (findRE (printf "%s%s%s" "{{(<|%)[[:space:]]*?" $key "(.|\n|\r)*?(%|>)}}") $.Page.RawContent)}}
+  {{with len (findRE (printf "%s%s" "[[:space:]]*(```)?" $key) $.Page.RawContent)}}
     {{range $value}}{{$cssFiles = $cssFiles | append .}}{{end}}
   {{end}}
 {{end}}
