@@ -1,23 +1,25 @@
 [params]
   # Chemin des fichiers logo du site
-  logo               = "images/logo.png"
-  logoTouch          = "images/logoTouch.png"
+  logo                    = "images/logo.png"
+  logoTouch               = "images/logoTouch.png"
   # Chemin du fichier de l'image affichée en cas d'erreur 404
-  image404           = "images/404.gif"
+  image404                = "images/404.gif"
   # Chemin du fichier du favicon du site
-  favicon            = "images/favicon.png"
+  favicon                 = "images/favicon.png"
   # Aperçu par défaut de la page d'accueil
-  homeLayout         = "onboarding"
+  homeLayout              = "onboarding"
   # Ordre du contenu du site (https://gohugo.io/templates/lists/#order-content)
-  siteContentOrder   = "weight"
+  siteContentOrder        = "weight"
   # Active/Désactive la table des matières de manière globale (sur tout le site)
-  toc                = true
+  toc                     = true
   # Active une bannière globale sur toutes les pages du site
-  globalBanner       = true
+  globalBanner            = true
   # Version courante du site
-  currentVersion     = "latest"
+  currentVersion          = "latest"
   # Url de la dernière version du site
-  latestVersionUrl   = "https://shadocs.netlify.app/"
+  latestVersionUrl        = "https://shadocs.netlify.app/"
+  # Force la résolution des liens en utilisant la fonction relref (https://gohugo.io/content-management/cross-references/)
+  enforceRefrelLinks      = true
   # Liste des raccourcis clavier
   # Pour chaque raccourci il faut renseigner les clés suivantes:
   # - keys     = [Table des touches de clavier du raccourci](https://developer.mozilla.org/fr/docs/Web/API/KeyboardEvent/key/Key_Values)

@@ -1,23 +1,25 @@
 [params]
   # Website logo file paths
-  logo               = "images/logo.png"
-  logoTouch          = "images/logoTouch.png"
+  logo                    = "images/logo.png"
+  logoTouch               = "images/logoTouch.png"
   # Image file path displayed during a 404 error
-  image404           = "images/404.gif"
+  image404                = "images/404.gif"
   # Favicon website file path
-  favicon            = "images/favicon.png"
+  favicon                 = "images/favicon.png"
   # Default layout used for the homepage
-  homeLayout         = "onboarding"
+  homeLayout              = "onboarding"
   # Site content order (https://gohugo.io/templates/lists/#order-content)
-  siteContentOrder   = "weight"
+  siteContentOrder        = "weight"
   # Activate/Deactivate the table of contents globally (sitewide)
-  toc                = true
+  toc                     = true
   # Activate a global banner on all website pages
-  globalBanner       = true
+  globalBanner            = true
   # Curent version of the website
-  currentVersion     = "latest"
+  currentVersion          = "latest"
   # Url of the latest version of the website
-  latestVersionUrl   = "https://shadocs.netlify.app/"
+  latestVersionUrl        = "https://shadocs.netlify.app/"
+  # Enforce Link resolution using relref function (https://gohugo.io/content-management/cross-references/)
+  enforceRefrelLinks      = true
   # Keyboard shortcuts list
   # For each shortcut following keys must be sets:
   # - keys     = [Keyboard shortcuts table](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values)

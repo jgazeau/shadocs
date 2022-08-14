@@ -60,17 +60,18 @@ themesdir              = "../.."
 # Specific configuration
 #
 [params]
-  logo               = "images/logo.png"
-  logoTouch          = "images/logoTouch.png"
-  image404           = "images/404.gif"
-  favicon            = "images/favicon.png"
-  faviconmd          = "![Favicon](/images/favicon.png)"
-  homeLayout         = "onboarding"
-  siteContentOrder   = "weight"
-  # toc              = true
-  # globalBanner     = true
-  currentVersion     = "latest"
-  latestVersionUrl   = "https://shadocs.netlify.app/"
+  logo                    = "images/logo.png"
+  logoTouch               = "images/logoTouch.png"
+  image404                = "images/404.gif"
+  favicon                 = "images/favicon.png"
+  faviconmd               = "![Favicon](/images/favicon.png)"
+  homeLayout              = "onboarding"
+  siteContentOrder        = "weight"
+  # toc                   = true
+  # globalBanner          = true
+  currentVersion          = "latest"
+  latestVersionUrl        = "https://shadocs.netlify.app/"
+  # enforceRefrelLinks    = true
   [params.navbar.shortcuts]
     [params.navbar.shortcuts.example]
       keys     = ["Shift","1"]
