@@ -1,6 +1,6 @@
 {{$href := .this.Destination | safeURL}}
 {{with $href}}
-  {{with eq (slicestr $href 0 1) "/"}}
+  {{with and (eq (slicestr $href 0 1) "/") (not $.this.Page.Site.Params.enforceRefrelLinks)}}
     {{with eq $href "/"}}
       {{$href = "" | relLangURL}}
     {{else}}
