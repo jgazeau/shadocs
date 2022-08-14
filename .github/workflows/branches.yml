@@ -12,6 +12,9 @@ env:
   HUGO_BIN_NAME: "hugo"
   HUGO_CACHE_NAME: "hugo-bin-cache"
   HUGO_BIN_PATH: ci_hugo_bin
+  HTMLTEST_BIN_NAME: htmltest
+  HTMLTEST_CACHE_NAME: "htmltest-bin-cache"
+  HTMLTEST_BIN_PATH: ci_htmltest_bin
   HUGO_TESTS_VERSIONS: "0.71.0 0.101.0"
   CYPRESS_CACHE_NAME: "cypress-cache"
   CYPRESS_CACHE_PATH: "~/.cache"
@@ -54,9 +57,9 @@ jobs:
             ${HUGO_BIN_NAME}_${hugoVersion} version
             printf "%70s\n" | tr ' ' '-'
           done
-  verify-theme:
+  test-theme-hugo:
     needs: hugo-binaries
-    name: Verify theme
+    name: Test theme against Hugo versions
     runs-on: macos-latest
     steps:
       - name: Checkout theme repository
@@ -97,6 +100,58 @@ jobs:
             ${HUGO_BIN_NAME}_${hugoVersion} version
             ${HUGO_BIN_NAME}_${hugoVersion} -s ${HUGO_BASIC_EXAMPLE_REPO} -t ../../../
           done
+  test-theme-links:
+    needs: hugo-binaries
+    name: Test theme links
+    runs-on: macos-latest
+    steps:
+      - name: Checkout theme repository
+        uses: actions/checkout@v3
+        with:
+          submodules: recursive
+          fetch-depth: 1
+      - name: Manage Hugo cache key
+        run: echo ${HUGO_TESTS_VERSIONS} > ${HUGO_CACHE_NAME}
+      - name: Cache Hugo binaries
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.HUGO_BIN_PATH }}
+          key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
+      - name: Cache Htmltest
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.HTMLTEST_BIN_PATH }}
+          key: ${{ env.HTMLTEST_CACHE_NAME }}-${{ hashFiles(format('{0}{1}{2}', env.HTMLTEST_CACHE_NAME, '/', env.HTMLTEST_BIN_NAME)) }}
+      - name: Add temporary binaries to PATH
+        run: |
+          echo "${HUGO_BIN_PATH}" >> ${GITHUB_PATH}
+          echo "${HTMLTEST_BIN_PATH}" >> ${GITHUB_PATH}
+      - name: Download Htmltest binary
+        run: |
+          ABS_HTMLTEST_BIN_PATH=${GITHUB_WORKSPACE}/${HTMLTEST_BIN_PATH}
+          if [ ! -d "${ABS_HTMLTEST_BIN_PATH}" ]; then
+            mkdir -p ${ABS_HTMLTEST_BIN_PATH}
+          fi
+          if [ ! -f "${ABS_HTMLTEST_BIN_PATH}/${HTMLTEST_BIN_PATH}" ]; then
+            printf "%70s\n" | tr ' ' '-'
+            printf "%-60s%10s\n" "-> Downloading Htmltest"
+            printf "%70s\n" | tr ' ' '-'
+            HTMLTEST_URL_BIN=$(curl -XGET -s https://api.github.com/repos/wjdp/htmltest/releases/latest | jq -r '.assets[]|select(.name | test(".*_macos_amd64.tar.gz")).browser_download_url')
+            HTMLTEST_BIN=${HTMLTEST_URL_BIN##*/}
+            (cd ${ABS_HTMLTEST_BIN_PATH} && curl -sLO -H "Accept: application/octet-stream" ${HTMLTEST_URL_BIN})
+            tar -xf ${ABS_HTMLTEST_BIN_PATH}/${HTMLTEST_BIN} -C ${ABS_HTMLTEST_BIN_PATH}
+            cd ${GITHUB_WORKSPACE}
+            rm -f ${ABS_HTMLTEST_BIN_PATH}/${HTMLTEST_BIN}
+          fi
+          printf "%70s\n" | tr ' ' '-'
+          ${HTMLTEST_BIN_NAME} --version
+          printf "%70s\n" | tr ' ' '-'
+      - name: Build Hugo static files
+        run: |
+          mv ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}_${HUGO_TESTS_VERSIONS##* } ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}
+          hugo -s exampleSite/ -b "localhost:1313/"
+      - name: Run htmltest
+        run: htmltest
   test-theme-chrome:
     needs: hugo-binaries
     name: Test theme against Chrome
