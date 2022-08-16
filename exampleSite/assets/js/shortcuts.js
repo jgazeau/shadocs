@@ -1,7 +1,7 @@
 import {
   addElementToModal,
   displayModal
-} from '/js/theme/modules/helpers.min.js'
+} from './theme/modules/helpers.min.js'
 
 // VARS //
 // MAIN //
