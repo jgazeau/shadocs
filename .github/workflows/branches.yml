@@ -132,7 +132,7 @@ jobs:
           if [ ! -d "${ABS_HTMLTEST_BIN_PATH}" ]; then
             mkdir -p ${ABS_HTMLTEST_BIN_PATH}
           fi
-          if [ ! -f "${ABS_HTMLTEST_BIN_PATH}/${HTMLTEST_BIN_PATH}" ]; then
+          if [ ! -f "${ABS_HTMLTEST_BIN_PATH}/${HTMLTEST_BIN_NAME}" ]; then
             printf "%70s\n" | tr ' ' '-'
             printf "%-60s%10s\n" "-> Downloading Htmltest"
             printf "%70s\n" | tr ' ' '-'
