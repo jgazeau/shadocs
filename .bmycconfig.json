@@ -24,6 +24,18 @@
     "currentVersion": "0.24.23"
   },
   {
+    "package": "asyncapi",
+    "hold": false,
+    "name": "react-component",
+    "localPath": "assets/css/external/asyncapi-fiori.css",
+    "assetManager": {
+      "name": "unpkg",
+      "library": "@asyncapi/react-component",
+      "filePath": "lib/styles/fiori.css"
+    },
+    "currentVersion": "0.24.23"
+  },
+  {
     "package": "swagger-ui",
     "hold": false,
     "name": "js_bundle",
