@@ -93,6 +93,9 @@
     "js/theme/toc.js"
   ]
   [includes.shortcodes.jsModules]
+    asyncapi = [
+      "js/shortcodes/asyncapi.js",
+    ]
     collapsible = [
       "js/shortcodes/collapsible.js"
     ]
@@ -107,15 +110,18 @@
       "js/shortcodes/openapi.js",
     ]
   [includes.shortcodes.js]
-    openapi = [
-      "js/external/swagger-ui-bundle.min.js",
-      "js/external/swagger-ui-preset.min.js"
-    ]
     asyncapi = [
       "js/external/asyncapi-bundle.min.js",
       "js/external/asyncapi-web-component.min.js"
     ]
+    openapi = [
+      "js/external/swagger-ui-bundle.min.js",
+      "js/external/swagger-ui-preset.min.js"
+    ]
   [includes.shortcodes.css]
+    asyncapi = [
+      "css/external/asyncapi-fiori.css"
+    ]
     openapi = [
       "css/external/swagger-ui.min.css"
     ]
