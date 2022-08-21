@@ -24,7 +24,7 @@ function renderAllOpenAPI() {
   }
 }
 function renderOpenAPI(oc) {
-  const openapiId = oc.getAttribute('openapi-id');
+  const openapiId = oc.id;
   const openapiErrorId = openapiId + '-error';
   const openapiError = document.getElementById(openapiErrorId);
   if (openapiError) {
@@ -50,37 +50,40 @@ function renderOpenAPI(oc) {
   oi.width = '100%';
   oi.onload = () => {
     const openapiWrapper = getFirstAncestorByClass(oc, 'sc-openapi-wrapper');
-    try {
-      SwaggerUIBundle({
-        url: oc.getAttribute('openapi-url'),
-        domNode: oi.contentWindow.document.getElementById(openapiId),
-        presets: [
-          SwaggerUIBundle.presets.apis,
-          SwaggerUIStandalonePreset
-        ]
-      });
-      let observerCallback = function(mutationList) {
-        setOpenAPIHeight(oi);
-      }
-      let observer = new MutationObserver(observerCallback);
-      observer.observe(oi.contentWindow.document.documentElement, { childList: true, subtree: true });
-      setTimeout(function() {
+    const openapiPromise = new Promise((resolve) => resolve());
+    openapiPromise
+      .then(() => {
+        SwaggerUIBundle({
+          url: oc.getAttribute('openapi-url'),
+          domNode: oi.contentWindow.document.getElementById(openapiId),
+          presets: [
+            SwaggerUIBundle.presets.apis,
+            SwaggerUIStandalonePreset
+          ]
+        });
+      })
+      .then(() => {
+        let observerCallback = function() {
+          setOpenAPIHeight(oi);
+        }
+        let observer = new MutationObserver(observerCallback);
+        observer.observe(oi.contentWindow.document.documentElement, { childList: true, subtree: true });
+      })
+      .then(() => {
         openapiWrapper.classList.toggle('is-loading', false);
         setOpenAPIHeight(oi);
-      }, 600);
-    } catch (error) {
-      const ed = document.createElement('div');
-      ed.classList.add('sc-alert', 'sc-alert-error');
-      ed.innerHTML = error;
-      ed.id = openapiErrorId;
-      setTimeout(function() {
-        while (oi.lastChild) {
-          oi.removeChild(oi.lastChild);
+      })
+      .catch((error) => {
+        const ed = document.createElement('div');
+        ed.classList.add('sc-alert', 'sc-alert-error');
+        ed.innerHTML = error;
+        ed.id = openapiErrorId;
+        while (oc.lastChild) {
+          oc.removeChild(oc.lastChild);
         }
         openapiWrapper.classList.toggle('is-loading', false);
         openapiWrapper.insertAdjacentElement('afterbegin', ed);
-      }, 600);
-    }
+      });
   }
   oc.appendChild(oi);
 }

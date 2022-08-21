@@ -17,7 +17,6 @@ describe('for: multilingual', () => {
       .then((sitemapindex) => {
         const parser = new DOMParser();
         const sitemaps = parser.parseFromString(sitemapindex,"text/xml").getElementsByTagName('sitemap');
-        console.log(sitemaps)
         cy.request(sitemaps[0].getElementsByTagName('loc')[0].childNodes[0].nodeValue)
           .its('body')
           .then((urlset) => parser.parseFromString(urlset,"text/xml").getElementsByTagName('url').length)

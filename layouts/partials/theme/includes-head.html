@@ -49,7 +49,7 @@
 <!-- TEMPLATES -->
 {{define "includeCss"}}
   {{$scratch := newScratch}}
-  {{range .this}}
+  {{range .this | uniq}}
     {{ if in . ".min." }}
       {{$scratch.Set "script" (resources.Get .)}}
     {{else}}
@@ -60,7 +60,7 @@
 {{end}}
 {{define "includeSass"}}
   {{$filesArray := slice}}
-  {{range .this}}
+  {{range .this | uniq}}
     {{$filesArray = $filesArray | append (resources.Get .)}}
   {{end}}
   {{$options := (dict "outputStyle" "compressed" "includePaths" (slice "assets/bulma" "assets/sass"))}}

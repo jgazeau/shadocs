@@ -17,7 +17,7 @@ describe('for: openapi shortcode', () => {
   // For now local download is not fully supported in firefox browser.
   // Cypress doesn't seems to accept browser preferences in headless mode.
   // https://github.com/cypress-io/cypress/issues/8814
-  it('export button should export mermaid', {browser:'!firefox', defaultCommandTimeout: 10000}, () => {
+  it('export link should export openapi', {browser:'!firefox', defaultCommandTimeout: 10000}, () => {
     const path = require('path');
     cy.get('.sc-openapi-iframe').first()
       .its('0.contentDocument')
