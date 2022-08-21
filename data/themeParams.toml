@@ -99,6 +99,18 @@
     collapsible = [
       "js/shortcodes/collapsible.js"
     ]
+    highcharts = [
+      "js/shortcodes/highcharts.js",
+    ]
+    highcharts-gantt = [
+      "js/shortcodes/highcharts.js",
+    ]
+    highcharts-maps = [
+      "js/shortcodes/highcharts.js",
+    ]
+    highcharts-stock = [
+      "js/shortcodes/highcharts.js",
+    ]
     intro = [
       "js/external/intro.min.js",
       "js/shortcodes/intro.js"
@@ -117,6 +129,21 @@
     openapi = [
       "js/external/swagger-ui-bundle.min.js",
       "js/external/swagger-ui-preset.min.js"
+    ]
+    highcharts = [
+      "js/external/highcharts.min.js"
+    ]
+    highcharts-gantt = [
+      "js/external/highcharts.min.js",
+      "js/external/highcharts_gantt.min.js"
+    ]
+    highcharts-maps = [
+      "js/external/highcharts.min.js",
+      "js/external/highcharts_map.min.js"
+    ]
+    highcharts-stock = [
+      "js/external/highcharts.min.js",
+      "js/external/highcharts_stock.min.js"
     ]
   [includes.shortcodes.css]
     asyncapi = [

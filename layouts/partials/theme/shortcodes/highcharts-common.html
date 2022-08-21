@@ -1,0 +1,10 @@
+<div class='sc-highcharts-wrapper is-loading helper-loading-container'>
+  {{.root.Page.Scratch.Add "highchartsUid" 1}}
+  {{with (.root.Get "id")}}
+    {{$.root.Scratch.Set "highchartsId" (replace . "'" "")}}
+  {{else}}
+    {{$.root.Scratch.Set "highchartsId" (printf "%s%s" "highcharts-" (string (.root.Page.Scratch.Get "highchartsUid")))}}
+  {{end}}
+  <div class='sc-highcharts-container' id='{{$.root.Scratch.Get "highchartsId"}}' highcharts-source='{{.root.Get "source"}}' highcharts-options='{{.root.Get "options"}}' highcharts-type='{{.highchartsType}}'></div>
+  {{partial "theme/loading.html"}}
+</div>
