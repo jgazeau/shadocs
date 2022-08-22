@@ -1,5 +1,6 @@
 name: Tags
 on:
+  workflow_dispatch:
   release:
     types: [created]
 jobs:
