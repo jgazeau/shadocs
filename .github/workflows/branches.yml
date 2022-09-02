@@ -46,7 +46,7 @@ jobs:
               printf "%70s\n" | tr ' ' '-'
               printf "%-60s%10s\n" "-> Downloading Hugo version:" "${hugoVersion}"
               printf "%70s\n" | tr ' ' '-'
-              HUGO_BIN="hugo_extended_${hugoVersion}_macOS-64bit.tar.gz"
+              HUGO_BIN="hugo_extended_${hugoVersion}_macOS-universal.tar.gz"
               HUGO_URL_BIN="https://github.com/gohugoio/hugo/releases/download/v${hugoVersion}/${HUGO_BIN}"
               (cd ${ABS_HUGO_BIN_PATH} && curl -sLO -H "Accept: application/octet-stream" ${HUGO_URL_BIN})
               tar -xf ${ABS_HUGO_BIN_PATH}/${HUGO_BIN} -C ${ABS_HUGO_BIN_PATH}
