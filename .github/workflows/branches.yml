@@ -13,6 +13,7 @@ env:
   HUGO_BIN_NAME: "hugo"
   HUGO_CACHE_NAME: "hugo-bin-cache"
   HUGO_BIN_PATH: ci_hugo_bin
+  HUGO_VERSION_THRESHOLD: "0.101.0"
   HTMLTEST_BIN_NAME: htmltest
   HTMLTEST_CACHE_NAME: "htmltest-bin-cache"
   HTMLTEST_BIN_PATH: ci_htmltest_bin
@@ -46,7 +47,11 @@ jobs:
               printf "%70s\n" | tr ' ' '-'
               printf "%-60s%10s\n" "-> Downloading Hugo version:" "${hugoVersion}"
               printf "%70s\n" | tr ' ' '-'
-              HUGO_BIN="hugo_extended_${hugoVersion}_macOS-64bit.tar.gz"
+              if [ "${HUGO_VERSION_THRESHOLD}" = $(printf "%s\n%s" "${HUGO_VERSION_THRESHOLD}" "${hugoVersion}" | sort -V | head -n1) ]; then
+                HUGO_BIN="hugo_extended_${hugoVersion}_macOS-64bit.tar.gz"
+              else
+                HUGO_BIN="hugo_extended_${hugoVersion}_macOS-universal.tar.gz"
+              fi
               HUGO_URL_BIN="https://github.com/gohugoio/hugo/releases/download/v${hugoVersion}/${HUGO_BIN}"
               (cd ${ABS_HUGO_BIN_PATH} && curl -sLO -H "Accept: application/octet-stream" ${HUGO_URL_BIN})
               tar -xf ${ABS_HUGO_BIN_PATH}/${HUGO_BIN} -C ${ABS_HUGO_BIN_PATH}
