@@ -1,5 +1,7 @@
 import {
-  getFirstAncestorByClass
+  addFunctionToResizeEvent,
+  getFirstAncestorByClass,
+  waitFor
 } from '../theme/modules/helpers.min.js'
 
 // VARS //
@@ -12,24 +14,45 @@ function renderAllHighcharts() {
   for (let i = 0; i < divh.length; i++) {
     renderHighcharts(divh[i]);
   }
+  manageHighchartsResize(divh);
 }
-function renderHighcharts(hc) {
-  const chartType=hc.getAttribute('highcharts-type');
-  const chartOptions=hc.getAttribute('highcharts-options');
-  const chartSource=hc.getAttribute('highcharts-source');
-  const highchartsWrapper = getFirstAncestorByClass(hc, 'sc-highcharts-wrapper')
-  fetch(chartSource)
-    .then(response => {
-      if (response.ok) {
-        return response.text();
-      } else {
-        throw new Error(response.statusText);
+function manageHighchartsResize(cc) {
+  if (cc.length) {
+    const resizeHighcharts = function() {
+      let charts = Highcharts.charts;
+      for (let i = 0; i < charts.length; i++) {
+        charts[i].setSize(null, null, false);
       }
+    }
+    addFunctionToResizeEvent(resizeHighcharts);
+    document.getElementById('sidebarUncollapse').addEventListener('click', () => {
+      setTimeout(function() {resizeHighcharts();}, 200);
+    });
+    document.getElementById('sidebarCollapse').addEventListener('click', () => {
+      setTimeout(function() {resizeHighcharts();}, 200);
+    });
+    let tc = document.getElementById('tocCollapsible');
+    if (tc) {
+      tc.addEventListener('click', () => {resizeHighcharts();});
+    };
+  }
+}
+async function renderHighcharts(hc) {
+  const highchartsWrapper = getFirstAncestorByClass(hc, 'sc-highcharts-wrapper')
+  const highchartsPromise = new Promise((resolve) => resolve());
+  await highchartsPromise
+    .then(() => {
+      const maximumAttempts = 50;
+      const delayAttempts = 600;
+      return waitForHighcharts(hc, delayAttempts, maximumAttempts).then((isRenderHighcharts) => {
+        if (isRenderHighcharts) {
+          highchartsWrapper.classList.toggle('is-loading', false);
+          return Promise.resolve();
+        } else {
+          throw new Error('{{i18n "highcharts_error"}}');
+        }
+      })
     })
-    .then(jsonContent => {
-      Highcharts[chartType](hc.id, JSON.parse(jsonContent))
-    })
-    .then(() => highchartsWrapper.classList.toggle('is-loading', false))
     .catch((error) => {
       const ed = document.createElement('div');
       ed.classList.add('sc-alert', 'sc-alert-error');
@@ -39,3 +62,18 @@ function renderHighcharts(hc) {
       highchartsWrapper.insertAdjacentElement('afterbegin', ed);
     });
 }
+
+function waitForHighcharts(e, delay, maxCount, count=0) {
+  count++;
+  return waitFor(delay).then(() => {
+    if (count < maxCount) {
+      if (e.innerHTML) {
+        return Promise.resolve(true);
+      } else { 
+        return waitForHighcharts(e, delay, maxCount, count);
+      }
+    } else {
+      return Promise.resolve(false);
+    }
+  });
+};

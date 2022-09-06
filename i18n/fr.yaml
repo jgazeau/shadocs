@@ -114,3 +114,5 @@
   translation: "Développer/Réduire menu latéral"
 - id: toc_collapsible_title
   translation: "Développer/Réduire table des matières"
+- id: highcharts_error
+  translation: "Rendu du Highcharts non disponible"

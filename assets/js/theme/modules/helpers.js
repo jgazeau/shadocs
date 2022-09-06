@@ -208,7 +208,7 @@ export function waitForScroll(e, delay, maxCount, count=0) {
   });
 };
 // Function to set a timeout, returning a promise
-function waitFor(d) {
+export function waitFor(d) {
   return new Promise(function(resolve) {
     setTimeout(resolve, d);
   });
