@@ -71,13 +71,12 @@
   ]
   css = [
     "css/external/fontawesome.all.min.css",
-    "css/external/OverlayScrollbars.min.css"
+    "css/external/overlay-scrollbars/OverlayScrollbars.min.css"
   ]
   js = [
     "js/theme/browserCompatibility.js",
-    "js/external/flexsearch.min.js",
-    "js/external/OverlayScrollbars.min.js",
-    "js/external/qrious.min.js"
+    "js/external/flexsearch/flexsearch.bundle.min.js",
+    "js/external/qrious/qrious.min.js"
   ]
   jsModules = [
     "js/theme/modules/const.js",
@@ -90,11 +89,14 @@
     "js/theme/search.js",
     "js/theme/shortcuts.js",
     "js/theme/sidebar.js",
-    "js/theme/toc.js"
+    "js/theme/toc.js",
+    "js/external/overlay-scrollbars/OverlayScrollbars.min.js"
   ]
   [includes.shortcodes.jsModules]
     asyncapi = [
       "js/shortcodes/asyncapi.js",
+      "js/external/asyncapi/bundle.min.js",
+      "js/external/asyncapi/asyncapi-web-component.min.js"
     ]
     collapsible = [
       "js/shortcodes/collapsible.js"
@@ -102,17 +104,8 @@
     highcharts = [
       "js/shortcodes/highcharts.js",
     ]
-    highcharts-gantt = [
-      "js/shortcodes/highcharts.js",
-    ]
-    highcharts-maps = [
-      "js/shortcodes/highcharts.js",
-    ]
-    highcharts-stock = [
-      "js/shortcodes/highcharts.js",
-    ]
     intro = [
-      "js/external/intro.min.js",
+      "js/external/intro/intro.min.js",
       "js/shortcodes/intro.js"
     ]
     treeview = [
@@ -122,39 +115,20 @@
       "js/shortcodes/openapi.js",
     ]
   [includes.shortcodes.js]
-    asyncapi = [
-      "js/external/asyncapi-bundle.min.js",
-      "js/external/asyncapi-web-component.min.js"
-    ]
     openapi = [
-      "js/external/swagger-ui-bundle.min.js",
-      "js/external/swagger-ui-preset.min.js"
-    ]
-    highcharts = [
-      "js/external/highcharts.min.js"
-    ]
-    highcharts-gantt = [
-      "js/external/highcharts.min.js",
-      "js/external/highcharts_gantt.min.js"
-    ]
-    highcharts-maps = [
-      "js/external/highcharts.min.js",
-      "js/external/highcharts_map.min.js"
-    ]
-    highcharts-stock = [
-      "js/external/highcharts.min.js",
-      "js/external/highcharts_stock.min.js"
+      "js/external/swagger-ui/swagger-ui-bundle.min.js",
+      "js/external/swagger-ui/swagger-ui-standalone-preset.min.js"
     ]
   [includes.shortcodes.css]
     asyncapi = [
-      "css/external/asyncapi-fiori.css"
+      "css/external/asyncapi/fiori.css"
     ]
     openapi = [
-      "css/external/swagger-ui.min.css"
+      "css/external/swagger-ui/swagger-ui.min.css"
     ]
   [includes.fencedcodes.jsModules]
     mermaid = [
-      "js/external/mermaid.min.js",
+      "js/external/mermaid/mermaid.min.js",
       "js/fencedcodes/mermaid.js"
     ]
 #

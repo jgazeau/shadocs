@@ -114,3 +114,5 @@
   translation: "Collapse/Uncollapse sidebar"
 - id: toc_collapsible_title
   translation: "Collapse/Uncollapse table of contents"
+- id: highcharts_error
+  translation: "Highcharts rendering unavailable"

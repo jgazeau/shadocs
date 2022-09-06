@@ -44,8 +44,16 @@
     {{range $value}}{{$jsModulesFiles = $jsModulesFiles | append .}}{{end}}
   {{end}}
 {{end}}
+<!-- Highcharts assets includes -->
+{{range $.Page.Scratch.Get "highchartsAssets"}}
+  {{$jsModulesFiles = $jsModulesFiles | append .}}
+{{end}}
 {{if gt (len $jsModulesFiles) 0}}
   {{template "includeJs" dict "this" $jsModulesFiles "context" $ "type" "module"}}
+{{end}}
+<!-- Highcharts scripts includes -->
+{{range $.Page.Scratch.Get "highchartsContent"}}
+  {{template "includeJsScript" dict "this" .}}
 {{end}}
 <!-- JS includes -->
 {{$jsFiles := slice}}
@@ -94,4 +102,9 @@
     {{end}}
     <script type='{{$type}}' src='{{($scratch.Get "script").RelPermalink | safeURL}}'></script>
   {{end}}
+{{end}}
+{{define "includeJsScript"}}
+  <script type='module'>
+    {{- .this | safeJS -}}
+  </script>
 {{end}}

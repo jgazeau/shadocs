@@ -24,9 +24,6 @@ themesdir              = "../.."
     source = 'asyncapi'
     target = 'static/asyncapi'
   [[module.mounts]]
-    source = 'highcharts'
-    target = 'static/highcharts'
-  [[module.mounts]]
     source = 'openapi'
     target = 'static/openapi'
 

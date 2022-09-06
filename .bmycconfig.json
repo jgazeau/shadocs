@@ -2,20 +2,20 @@
   {
     "package": "asyncapi",
     "hold": false,
-    "name": "js_bundle",
-    "localPath": "assets/js/external/asyncapi-bundle.min.js",
+    "name": "js/bundle",
+    "localPath": "assets/js/external/asyncapi/bundle.min.js",
     "assetManager": {
       "name": "unpkg",
       "library": "@asyncapi/parser",
       "filePath": "dist/bundle.js"
     },
-    "currentVersion": "1.15.1"
+    "currentVersion": "1.16.0"
   },
   {
     "package": "asyncapi",
     "hold": false,
-    "name": "web_component",
-    "localPath": "assets/js/external/asyncapi-web-component.min.js",
+    "name": "js/asyncapi-web-component",
+    "localPath": "assets/js/external/asyncapi/asyncapi-web-component.min.js",
     "assetManager": {
       "name": "unpkg",
       "library": "@asyncapi/web-component",
@@ -26,8 +26,8 @@
   {
     "package": "asyncapi",
     "hold": false,
-    "name": "react-component",
-    "localPath": "assets/css/external/asyncapi-fiori.css",
+    "name": "css/fiori",
+    "localPath": "assets/css/external/asyncapi/fiori.css",
     "assetManager": {
       "name": "unpkg",
       "library": "@asyncapi/react-component",
@@ -38,8 +38,8 @@
   {
     "package": "swagger-ui",
     "hold": false,
-    "name": "js_bundle",
-    "localPath": "assets/js/external/swagger-ui-bundle.min.js",
+    "name": "js/swagger-ui-bundle",
+    "localPath": "assets/js/external/swagger-ui/swagger-ui-bundle.min.js",
     "assetManager": {
       "name": "cdnjs",
       "library": "swagger-ui",
@@ -50,8 +50,8 @@
   {
     "package": "swagger-ui",
     "hold": false,
-    "name": "js_preset",
-    "localPath": "assets/js/external/swagger-ui-preset.min.js",
+    "name": "js/swagger-ui-standalone-preset",
+    "localPath": "assets/js/external/swagger-ui/swagger-ui-standalone-preset.min.js",
     "assetManager": {
       "name": "cdnjs",
       "library": "swagger-ui",
@@ -62,8 +62,8 @@
   {
     "package": "swagger-ui",
     "hold": false,
-    "name": "css",
-    "localPath": "assets/css/external/swagger-ui.min.css",
+    "name": "css/swagger-ui",
+    "localPath": "assets/css/external/swagger-ui/swagger-ui.min.css",
     "assetManager": {
       "name": "cdnjs",
       "library": "swagger-ui",
@@ -74,8 +74,8 @@
   {
     "package": "flexsearch",
     "hold": false,
-    "name": "js",
-    "localPath": "assets/js/external/flexsearch.min.js",
+    "name": "js/flexsearch.bundle",
+    "localPath": "assets/js/external/flexsearch/flexsearch.bundle.min.js",
     "assetManager": {
       "name": "cdnjs",
       "library": "FlexSearch",
@@ -86,20 +86,20 @@
   {
     "package": "mermaid",
     "hold": false,
-    "name": "js",
-    "localPath": "assets/js/external/mermaid.min.js",
+    "name": "js/mermaid",
+    "localPath": "assets/js/external/mermaid/mermaid.min.js",
     "assetManager": {
       "name": "cdnjs",
       "library": "mermaid",
       "fileName": "mermaid.min.js"
     },
-    "currentVersion": "9.1.6"
+    "currentVersion": "9.1.7"
   },
   {
     "package": "qrious",
     "hold": false,
-    "name": "js",
-    "localPath": "assets/js/external/qrious.min.js",
+    "name": "js/qrious",
+    "localPath": "assets/js/external/qrious/qrious.min.js",
     "assetManager": {
       "name": "cdnjs",
       "library": "qrious",
@@ -110,8 +110,8 @@
   {
     "package": "overlayscrollbars",
     "hold": false,
-    "name": "js",
-    "localPath": "assets/js/external/OverlayScrollbars.min.js",
+    "name": "js/OverlayScrollbars",
+    "localPath": "assets/js/external/overlay-scrollbars/OverlayScrollbars.min.js",
     "assetManager": {
       "name": "cdnjs",
       "library": "overlayscrollbars",
@@ -122,8 +122,8 @@
   {
     "package": "overlayscrollbars",
     "hold": false,
-    "name": "css",
-    "localPath": "assets/css/external/OverlayScrollbars.min.css",
+    "name": "css/OverlayScrollbars",
+    "localPath": "assets/css/external/overlay-scrollbars/OverlayScrollbars.min.css",
     "assetManager": {
       "name": "cdnjs",
       "library": "overlayscrollbars",
@@ -134,8 +134,8 @@
   {
     "package": "intro",
     "hold": false,
-    "name": "js",
-    "localPath": "assets/js/external/intro.min.js",
+    "name": "js/intro",
+    "localPath": "assets/js/external/intro/intro.min.js",
     "assetManager": {
       "name": "cdnjs",
       "library": "intro.js",
@@ -146,7 +146,7 @@
   {
     "package": "fontawesome",
     "hold": false,
-    "name": "css",
+    "name": "css/all",
     "localPath": "assets/css/external/fontawesome.all.min.css",
     "assetManager": {
       "name": "cdnjs",
@@ -158,7 +158,7 @@
   {
     "package": "fontawesome",
     "hold": false,
-    "name": "fa_brands-400.ttf",
+    "name": "static/css/fa_brands-400.ttf",
     "localPath": "static/css/webfonts/fa-brands-400.ttf",
     "assetManager": {
       "name": "cdnjs",
@@ -170,7 +170,7 @@
   {
     "package": "fontawesome",
     "hold": false,
-    "name": "fa_brands-400.woff2",
+    "name": "static/css/fa_brands-400.woff2",
     "localPath": "static/css/webfonts/fa-brands-400.woff2",
     "assetManager": {
       "name": "cdnjs",
@@ -182,7 +182,7 @@
   {
     "package": "fontawesome",
     "hold": false,
-    "name": "fa_regular-400.ttf",
+    "name": "static/css/fa_regular-400.ttf",
     "localPath": "static/css/webfonts/fa-regular-400.ttf",
     "assetManager": {
       "name": "cdnjs",
@@ -194,7 +194,7 @@
   {
     "package": "fontawesome",
     "hold": false,
-    "name": "fa_regular-400.woff2",
+    "name": "static/css/fa_regular-400.woff2",
     "localPath": "static/css/webfonts/fa-regular-400.woff2",
     "assetManager": {
       "name": "cdnjs",
@@ -206,7 +206,7 @@
   {
     "package": "fontawesome",
     "hold": false,
-    "name": "fa_solid-900.ttf",
+    "name": "static/css/fa_solid-900.ttf",
     "localPath": "static/css/webfonts/fa-solid-900.ttf",
     "assetManager": {
       "name": "cdnjs",
@@ -218,7 +218,7 @@
   {
     "package": "fontawesome",
     "hold": false,
-    "name": "fa_solid-900.woff2",
+    "name": "static/css/fa_solid-900.woff2",
     "localPath": "static/css/webfonts/fa-solid-900.woff2",
     "assetManager": {
       "name": "cdnjs",
@@ -226,5 +226,1745 @@
       "fileName": "webfonts/fa-solid-900.woff2"
     },
     "currentVersion": "6.2.0"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/highcharts",
+    "localPath": "assets/js/external/highcharts/highcharts.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "highcharts.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/highcharts-3d",
+    "localPath": "assets/js/external/highcharts/highcharts-3d.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "highcharts-3d.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/highcharts-gantt",
+    "localPath": "assets/js/external/highcharts/highcharts-gantt.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "highcharts-gantt.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/highcharts-more",
+    "localPath": "assets/js/external/highcharts/highcharts-more.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "highcharts-more.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/highmaps",
+    "localPath": "assets/js/external/highcharts/highmaps.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "highmaps.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/highstock",
+    "localPath": "assets/js/external/highcharts/highstock.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "highstock.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "css/highcharts",
+    "localPath": "assets/css/external/highcharts/highcharts.min.css",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "css/highcharts.min.css"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/acceleration-bands",
+    "localPath": "assets/js/external/highcharts/indicators/acceleration-bands.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/acceleration-bands.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/accumulation-distribution",
+    "localPath": "assets/js/external/highcharts/indicators/accumulation-distribution.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/accumulation-distribution.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/ao",
+    "localPath": "assets/js/external/highcharts/indicators/ao.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/ao.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/apo",
+    "localPath": "assets/js/external/highcharts/indicators/apo.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/apo.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/aroon-oscillator",
+    "localPath": "assets/js/external/highcharts/indicators/aroon-oscillator.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/aroon-oscillator.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/aroon",
+    "localPath": "assets/js/external/highcharts/indicators/aroon.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/aroon.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/atr",
+    "localPath": "assets/js/external/highcharts/indicators/atr.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/atr.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/bollinger-bands",
+    "localPath": "assets/js/external/highcharts/indicators/bollinger-bands.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/bollinger-bands.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/cci",
+    "localPath": "assets/js/external/highcharts/indicators/cci.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/cci.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/chaikin",
+    "localPath": "assets/js/external/highcharts/indicators/chaikin.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/chaikin.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/cmf",
+    "localPath": "assets/js/external/highcharts/indicators/cmf.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/cmf.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/cmo",
+    "localPath": "assets/js/external/highcharts/indicators/cmo.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/cmo.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/dema",
+    "localPath": "assets/js/external/highcharts/indicators/dema.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/dema.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/disparity-index",
+    "localPath": "assets/js/external/highcharts/indicators/disparity-index.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/disparity-index.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/dmi",
+    "localPath": "assets/js/external/highcharts/indicators/dmi.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/dmi.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/dpo",
+    "localPath": "assets/js/external/highcharts/indicators/dpo.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/dpo.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/ema",
+    "localPath": "assets/js/external/highcharts/indicators/ema.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/ema.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/ichimoku-kinko-hyo",
+    "localPath": "assets/js/external/highcharts/indicators/ichimoku-kinko-hyo.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/ichimoku-kinko-hyo.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/indicators-all",
+    "localPath": "assets/js/external/highcharts/indicators/indicators-all.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/indicators-all.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/indicators",
+    "localPath": "assets/js/external/highcharts/indicators/indicators.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/indicators.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/keltner-channels",
+    "localPath": "assets/js/external/highcharts/indicators/keltner-channels.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/keltner-channels.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/klinger",
+    "localPath": "assets/js/external/highcharts/indicators/klinger.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/klinger.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/macd",
+    "localPath": "assets/js/external/highcharts/indicators/macd.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/macd.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/mfi",
+    "localPath": "assets/js/external/highcharts/indicators/mfi.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/mfi.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/momentum",
+    "localPath": "assets/js/external/highcharts/indicators/momentum.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/momentum.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/natr",
+    "localPath": "assets/js/external/highcharts/indicators/natr.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/natr.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/obv",
+    "localPath": "assets/js/external/highcharts/indicators/obv.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/obv.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/pivot-points",
+    "localPath": "assets/js/external/highcharts/indicators/pivot-points.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/pivot-points.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/ppo",
+    "localPath": "assets/js/external/highcharts/indicators/ppo.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/ppo.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/price-channel",
+    "localPath": "assets/js/external/highcharts/indicators/price-channel.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/price-channel.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/price-envelopes",
+    "localPath": "assets/js/external/highcharts/indicators/price-envelopes.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/price-envelopes.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/psar",
+    "localPath": "assets/js/external/highcharts/indicators/psar.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/psar.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/regressions",
+    "localPath": "assets/js/external/highcharts/indicators/regressions.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/regressions.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/roc",
+    "localPath": "assets/js/external/highcharts/indicators/roc.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/roc.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/rsi",
+    "localPath": "assets/js/external/highcharts/indicators/rsi.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/rsi.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/slow-stochastic",
+    "localPath": "assets/js/external/highcharts/indicators/slow-stochastic.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/slow-stochastic.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/stochastic",
+    "localPath": "assets/js/external/highcharts/indicators/stochastic.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/stochastic.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/supertrend",
+    "localPath": "assets/js/external/highcharts/indicators/supertrend.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/supertrend.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/tema",
+    "localPath": "assets/js/external/highcharts/indicators/tema.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/tema.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/trendline",
+    "localPath": "assets/js/external/highcharts/indicators/trendline.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/trendline.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/trix",
+    "localPath": "assets/js/external/highcharts/indicators/trix.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/trix.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/volume-by-price",
+    "localPath": "assets/js/external/highcharts/indicators/volume-by-price.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/volume-by-price.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/vwap",
+    "localPath": "assets/js/external/highcharts/indicators/vwap.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/vwap.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/williams-r",
+    "localPath": "assets/js/external/highcharts/indicators/williams-r.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/williams-r.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/wma",
+    "localPath": "assets/js/external/highcharts/indicators/wma.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/wma.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/indicators/zigzag",
+    "localPath": "assets/js/external/highcharts/indicators/zigzag.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "indicators/zigzag.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/lib/canvg",
+    "localPath": "assets/js/external/highcharts/lib/canvg.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "lib/canvg.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/lib/jspdf",
+    "localPath": "assets/js/external/highcharts/lib/jspdf.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "lib/jspdf.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/lib/svg2pdf",
+    "localPath": "assets/js/external/highcharts/lib/svg2pdf.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "lib/svg2pdf.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/accessibility",
+    "localPath": "assets/js/external/highcharts/modules/accessibility.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/accessibility.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/annotations-advanced",
+    "localPath": "assets/js/external/highcharts/modules/annotations-advanced.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/annotations-advanced.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/annotations",
+    "localPath": "assets/js/external/highcharts/modules/annotations.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/annotations.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/arc-diagram",
+    "localPath": "assets/js/external/highcharts/modules/arc-diagram.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/arc-diagram.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/arrow-symbols",
+    "localPath": "assets/js/external/highcharts/modules/arrow-symbols.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/arrow-symbols.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/boost-canvas",
+    "localPath": "assets/js/external/highcharts/modules/boost-canvas.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/boost-canvas.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/boost",
+    "localPath": "assets/js/external/highcharts/modules/boost.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/boost.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/broken-axis",
+    "localPath": "assets/js/external/highcharts/modules/broken-axis.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/broken-axis.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/bullet",
+    "localPath": "assets/js/external/highcharts/modules/bullet.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/bullet.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/coloraxis",
+    "localPath": "assets/js/external/highcharts/modules/coloraxis.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/coloraxis.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/current-date-indicator",
+    "localPath": "assets/js/external/highcharts/modules/current-date-indicator.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/current-date-indicator.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/cylinder",
+    "localPath": "assets/js/external/highcharts/modules/cylinder.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/cylinder.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/data",
+    "localPath": "assets/js/external/highcharts/modules/data.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/data.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/datagrouping",
+    "localPath": "assets/js/external/highcharts/modules/datagrouping.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/datagrouping.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/debugger",
+    "localPath": "assets/js/external/highcharts/modules/debugger.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/debugger.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/dependency-wheel",
+    "localPath": "assets/js/external/highcharts/modules/dependency-wheel.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/dependency-wheel.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/dotplot",
+    "localPath": "assets/js/external/highcharts/modules/dotplot.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/dotplot.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/drag-panes",
+    "localPath": "assets/js/external/highcharts/modules/drag-panes.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/drag-panes.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/draggable-points",
+    "localPath": "assets/js/external/highcharts/modules/draggable-points.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/draggable-points.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/drilldown",
+    "localPath": "assets/js/external/highcharts/modules/drilldown.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/drilldown.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/dumbbell",
+    "localPath": "assets/js/external/highcharts/modules/dumbbell.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/dumbbell.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/export-data",
+    "localPath": "assets/js/external/highcharts/modules/export-data.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/export-data.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/exporting",
+    "localPath": "assets/js/external/highcharts/modules/exporting.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/exporting.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/full-screen",
+    "localPath": "assets/js/external/highcharts/modules/full-screen.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/full-screen.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/funnel",
+    "localPath": "assets/js/external/highcharts/modules/funnel.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/funnel.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/funnel3d",
+    "localPath": "assets/js/external/highcharts/modules/funnel3d.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/funnel3d.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/gantt",
+    "localPath": "assets/js/external/highcharts/modules/gantt.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/gantt.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/grid-axis",
+    "localPath": "assets/js/external/highcharts/modules/grid-axis.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/grid-axis.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/heatmap",
+    "localPath": "assets/js/external/highcharts/modules/heatmap.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/heatmap.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/heikinashi",
+    "localPath": "assets/js/external/highcharts/modules/heikinashi.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/heikinashi.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/histogram-bellcurve",
+    "localPath": "assets/js/external/highcharts/modules/histogram-bellcurve.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/histogram-bellcurve.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/hollowcandlestick",
+    "localPath": "assets/js/external/highcharts/modules/hollowcandlestick.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/hollowcandlestick.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/item-series",
+    "localPath": "assets/js/external/highcharts/modules/item-series.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/item-series.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/lollipop",
+    "localPath": "assets/js/external/highcharts/modules/lollipop.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/lollipop.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/map",
+    "localPath": "assets/js/external/highcharts/modules/map.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/map.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/marker-clusters",
+    "localPath": "assets/js/external/highcharts/modules/marker-clusters.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/marker-clusters.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/networkgraph",
+    "localPath": "assets/js/external/highcharts/modules/networkgraph.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/networkgraph.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/no-data-to-display",
+    "localPath": "assets/js/external/highcharts/modules/no-data-to-display.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/no-data-to-display.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/offline-exporting",
+    "localPath": "assets/js/external/highcharts/modules/offline-exporting.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/offline-exporting.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/oldie-polyfills",
+    "localPath": "assets/js/external/highcharts/modules/oldie-polyfills.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/oldie-polyfills.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/oldie",
+    "localPath": "assets/js/external/highcharts/modules/oldie.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/oldie.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/organization",
+    "localPath": "assets/js/external/highcharts/modules/organization.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/organization.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/overlapping-datalabels",
+    "localPath": "assets/js/external/highcharts/modules/overlapping-datalabels.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/overlapping-datalabels.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/parallel-coordinates",
+    "localPath": "assets/js/external/highcharts/modules/parallel-coordinates.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/parallel-coordinates.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/pareto",
+    "localPath": "assets/js/external/highcharts/modules/pareto.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/pareto.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/pathfinder",
+    "localPath": "assets/js/external/highcharts/modules/pathfinder.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/pathfinder.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/pattern-fill",
+    "localPath": "assets/js/external/highcharts/modules/pattern-fill.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/pattern-fill.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/price-indicator",
+    "localPath": "assets/js/external/highcharts/modules/price-indicator.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/price-indicator.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/pyramid3d",
+    "localPath": "assets/js/external/highcharts/modules/pyramid3d.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/pyramid3d.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/sankey",
+    "localPath": "assets/js/external/highcharts/modules/sankey.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/sankey.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/series-label",
+    "localPath": "assets/js/external/highcharts/modules/series-label.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/series-label.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/series-on-point",
+    "localPath": "assets/js/external/highcharts/modules/series-on-point.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/series-on-point.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/solid-gauge",
+    "localPath": "assets/js/external/highcharts/modules/solid-gauge.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/solid-gauge.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/sonification",
+    "localPath": "assets/js/external/highcharts/modules/sonification.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/sonification.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/static-scale",
+    "localPath": "assets/js/external/highcharts/modules/static-scale.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/static-scale.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/stock-tools",
+    "localPath": "assets/js/external/highcharts/modules/stock-tools.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/stock-tools.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/stock",
+    "localPath": "assets/js/external/highcharts/modules/stock.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/stock.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/streamgraph",
+    "localPath": "assets/js/external/highcharts/modules/streamgraph.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/streamgraph.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/sunburst",
+    "localPath": "assets/js/external/highcharts/modules/sunburst.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/sunburst.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/tilemap",
+    "localPath": "assets/js/external/highcharts/modules/tilemap.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/tilemap.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/timeline",
+    "localPath": "assets/js/external/highcharts/modules/timeline.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/timeline.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/treegrid",
+    "localPath": "assets/js/external/highcharts/modules/treegrid.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/treegrid.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/treemap",
+    "localPath": "assets/js/external/highcharts/modules/treemap.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/treemap.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/variable-pie",
+    "localPath": "assets/js/external/highcharts/modules/variable-pie.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/variable-pie.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/variwide",
+    "localPath": "assets/js/external/highcharts/modules/variwide.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/variwide.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/vector",
+    "localPath": "assets/js/external/highcharts/modules/vector.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/vector.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/venn",
+    "localPath": "assets/js/external/highcharts/modules/venn.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/venn.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/windbarb",
+    "localPath": "assets/js/external/highcharts/modules/windbarb.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/windbarb.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/wordcloud",
+    "localPath": "assets/js/external/highcharts/modules/wordcloud.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/wordcloud.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/modules/xrange",
+    "localPath": "assets/js/external/highcharts/modules/xrange.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "modules/xrange.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/themes/avocado",
+    "localPath": "assets/js/external/highcharts/themes/avocado.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "themes/avocado.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/themes/brand-dark",
+    "localPath": "assets/js/external/highcharts/themes/brand-dark.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "themes/brand-dark.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/themes/brand-light",
+    "localPath": "assets/js/external/highcharts/themes/brand-light.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "themes/brand-light.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/themes/dark-blue",
+    "localPath": "assets/js/external/highcharts/themes/dark-blue.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "themes/dark-blue.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/themes/dark-green",
+    "localPath": "assets/js/external/highcharts/themes/dark-green.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "themes/dark-green.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/themes/dark-unica",
+    "localPath": "assets/js/external/highcharts/themes/dark-unica.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "themes/dark-unica.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/themes/gray",
+    "localPath": "assets/js/external/highcharts/themes/gray.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "themes/gray.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/themes/grid-light",
+    "localPath": "assets/js/external/highcharts/themes/grid-light.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "themes/grid-light.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/themes/grid",
+    "localPath": "assets/js/external/highcharts/themes/grid.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "themes/grid.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/themes/high-contrast-dark",
+    "localPath": "assets/js/external/highcharts/themes/high-contrast-dark.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "themes/high-contrast-dark.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/themes/high-contrast-light",
+    "localPath": "assets/js/external/highcharts/themes/high-contrast-light.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "themes/high-contrast-light.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/themes/sand-signika",
+    "localPath": "assets/js/external/highcharts/themes/sand-signika.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "themes/sand-signika.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/themes/skies",
+    "localPath": "assets/js/external/highcharts/themes/skies.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "themes/skies.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "js/themes/sunset",
+    "localPath": "assets/js/external/highcharts/themes/sunset.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "themes/sunset.min.js"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "css/annotations/popup",
+    "localPath": "assets/css/external/highcharts/annotations/popup.min.css",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "css/annotations/popup.min.css"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "css/stocktools/gui",
+    "localPath": "assets/css/external/highcharts/stocktools/gui.min.css",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "css/stocktools/gui.min.css"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "css/themes/dark-unica",
+    "localPath": "assets/css/external/highcharts/themes/dark-unica.min.css",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "css/themes/dark-unica.min.css"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "css/themes/grid-light",
+    "localPath": "assets/css/external/highcharts/themes/grid-light.min.css",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "css/themes/grid-light.min.css"
+    },
+    "currentVersion": "10.2.1"
+  },
+  {
+    "package": "highcharts",
+    "hold": false,
+    "name": "css/themes/sand-signika",
+    "localPath": "assets/css/external/highcharts/themes/sand-signika.min.css",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "highcharts",
+      "fileName": "css/themes/sand-signika.min.css"
+    },
+    "currentVersion": "10.2.1"
   }
 ]
