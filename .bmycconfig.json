@@ -9,7 +9,7 @@
       "library": "@asyncapi/parser",
       "filePath": "dist/bundle.js"
     },
-    "currentVersion": "1.15.1"
+    "currentVersion": "1.16.0"
   },
   {
     "package": "asyncapi",
@@ -93,7 +93,7 @@
       "library": "mermaid",
       "fileName": "mermaid.min.js"
     },
-    "currentVersion": "9.1.6"
+    "currentVersion": "9.1.7"
   },
   {
     "package": "qrious",
