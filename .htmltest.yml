@@ -3,3 +3,4 @@ CheckFavicon: true
 EnforceHTML5: true
 IgnoreDirs:
 - "en"
+IgnoreURLs: ["https://emojipedia.org/"]
