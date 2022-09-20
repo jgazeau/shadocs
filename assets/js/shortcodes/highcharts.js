@@ -42,7 +42,7 @@ async function renderHighcharts(hc) {
   const highchartsPromise = new Promise((resolve) => resolve());
   await highchartsPromise
     .then(() => {
-      const maximumAttempts = 25;
+      const maximumAttempts = 10;
       const delayAttempts = 600;
       return waitForHighcharts(hc, delayAttempts, maximumAttempts).then((isRenderHighcharts) => {
         if (isRenderHighcharts) {

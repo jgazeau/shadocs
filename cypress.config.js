@@ -24,6 +24,7 @@ module.exports = defineConfig({
     "SC_ASYNCAPI_PATH"             : "asyncapi/",
     "SC_BLOCKQUOTE_PATH"           : "blockquote/",
     "SC_COLLAPSIBLE_PATH"          : "collapsible/",
+    "SC_HIGHCHARTS_PATH"           : "highcharts/",
     "SC_INTRO_PATH"                : "intro/",
     "SC_OPENAPI_PATH"              : "openapi/",
     "SC_PAGEBREAK_PATH"            : "pagebreak/",
