@@ -10,24 +10,16 @@ tags: ["Configuration"]
 # Gestion des versions
 ---
 
-## Applications tierces
+## Assets utilisées dans le thème
 
 | Application | Version minimum |
 | ----------- | --------------- |
 | [Hugo (Extended version)](https://gohugo.io/) | {{< parameter "versions.hugo_min" />}} |
+| [Bulma](https://bulma.io/) | {{< parameter "versions.bulma" />}} |
 
-## Assets utilisées dans le thème
-
-| Asset | Version utilisée | Type |
-| ----- | ---------------- | ---- |
-| [Bulma](https://bulma.io/) | {{< parameter "versions.bulma" />}} | css |
-| [Font Awesome](https://fontawesome.com/) | {{< parameter "versions.fontawesome" />}} | css |
-| [Overlay Scrollbar](https://kingsora.github.io/OverlayScrollbars/#!overview) | {{< parameter "versions.overlayscrollbar" />}} | css/js |
-| [FlexSearch](https://github.com/nextapps-de/flexsearch) | {{< parameter "versions.flexsearch" />}} | js |
-| [Mermaid](https://mermaid-js.github.io/mermaid/) | {{< parameter "versions.mermaid" />}} | js |
-| [QRious](https://github.com/neocotic/qrious/) | {{< parameter "versions.qrious" />}} | js |
-| [Intro](https://introjs.com/docs/) | {{< parameter "versions.intro" />}} | js |
-| [Swagger UI](https://swagger.io/tools/swagger-ui/) | {{< parameter "versions.swaggerui" />}} | js |
+{{< alert type="info" >}}
+Plusieurs autres assets sont utilisés dans Shadocs. Leurs versions sont disponibles dans le fichier *.bmycconfig.json*, et les assets sont automatiquements mis à jour grâce à la librairie [Bmyc](https://github.com/jgazeau/bmyc#bump-me-if-you-can-bmyc).
+{{< /alert >}}
 
 # Installation
 ---
