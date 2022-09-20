@@ -142,7 +142,7 @@ jobs:
             printf "%70s\n" | tr ' ' '-'
             printf "%-60s%10s\n" "-> Downloading Htmltest"
             printf "%70s\n" | tr ' ' '-'
-            HTMLTEST_URL_BIN=$(curl -XGET -s https://api.github.com/repos/wjdp/htmltest/releases/latest | jq -r '.assets[]|select(.name | test(".*_macos_amd64.tar.gz")).browser_download_url')
+            HTMLTEST_URL_BIN=$(curl -XGET -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' -s https://api.github.com/repos/wjdp/htmltest/releases/latest | jq -r '.assets[]|select(.name | test(".*_macos_amd64.tar.gz")).browser_download_url')
             HTMLTEST_BIN=${HTMLTEST_URL_BIN##*/}
             (cd ${ABS_HTMLTEST_BIN_PATH} && curl -sLO -H "Accept: application/octet-stream" ${HTMLTEST_URL_BIN})
             tar -xf ${ABS_HTMLTEST_BIN_PATH}/${HTMLTEST_BIN} -C ${ABS_HTMLTEST_BIN_PATH}
