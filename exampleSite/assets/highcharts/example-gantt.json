@@ -1,4 +1,4 @@
-{
+Highcharts.ganttChart('highcharts2', {
     title: {
         text: 'Simple Gantt Chart'
     },
@@ -28,4 +28,4 @@
             dependency: ['a', 'b']
         }]
     }]
-}
+});
