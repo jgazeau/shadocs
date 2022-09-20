@@ -7,8 +7,8 @@ describe('for: openapi shortcode', () => {
       .should('have.length', 2)
   })
   it('openapi should have a loading helper', () => {
-    cy.get('#content .sc-openapi-wrapper.helper-loading-container')
-      .should('have.class', 'is-loading')
+    cy.get('#content .sc-openapi-wrapper')
+      .should('have.class', 'helper-loading-container')
   })
   it('openapi should not have a loading helper once loaded', {defaultCommandTimeout: 10000}, () => {
     cy.get('#content .sc-openapi-wrapper.helper-loading-container')
