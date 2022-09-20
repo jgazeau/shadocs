@@ -1,93 +1,98 @@
-{
-    chart: {
-      events: {
-        load: function () {
-          var chart = this;
+Highcharts.getJSON('https://demo-live-data.highcharts.com/aapl-ohlcv.json', function (data) {
 
-          // Select the save button of the popup and assign a click event
-          document
-            .querySelectorAll('.highcharts-popup-annotations button')[0]
-            .addEventListener(
-              'click',
-              // Function which saves the new background color.
-              function () {
-                var color = document.querySelectorAll(
-                  '.highcharts-popup-annotations input[name="stroke"]'
-                )[0].value;
+  // split the data set into ohlc and volume
+  var ohlc = [],
+      volume = [],
+      dataLength = data.length,
+      i = 0;
 
-                // Update the circle
-                chart.currentAnnotation.update({
-                  shapes: [{
-                    fill: color
-                  }]
-                });
+  for (i; i < dataLength; i += 1) {
+      ohlc.push([
+          data[i][0], // the date
+          data[i][1], // open
+          data[i][2], // high
+          data[i][3], // low
+          data[i][4] // close
+      ]);
 
-                // Close the popup
-                chart.annotationsPopupContainer.style.display = 'none';
-              }
-            );
-        }
-      }
-    },
-    navigation: {
-      // Informs Stock Tools where to look for HTML elements for adding
-      // technical indicators, annotations etc.
-      bindingsClassName: 'tools-container',
-      events: {
-        // On selecting the annotation the showPopup event is fired
-        showPopup: function (event) {
-          var chart = this.chart;
+      volume.push([
+          data[i][0], // the date
+          data[i][5] // the volume
+      ]);
+  }
 
-          if (!chart.annotationsPopupContainer) {
-            // Get and store the popup annotations container
-            chart.annotationsPopupContainer = document
-              .getElementsByClassName('highcharts-popup-annotations')[0];
+  Highcharts.stockChart('highcharts4', {
+      yAxis: [{
+          labels: {
+              align: 'left'
+          },
+          height: '80%',
+          resize: {
+              enabled: true
           }
-
-          // Show the popup container, but not when we add the annotation.
-          if (
-            event.formType === 'annotation-toolbar' &&
-            !chart.activeButton
-          ) {
-            chart.currentAnnotation = event.annotation;
-            chart.annotationsPopupContainer.style.display = 'block';
-          }
-        },
-
-        closePopup: function () {
-          // Hide the popup container, and reset currentAnnotation
-          this.chart.annotationsPopupContainer.style.display = 'none';
-          this.chart.currentAnnotation = null;
-        },
-
-        selectButton: function (event) {
-          // Select button
-          event.button.classList.add('active');
-          // Register this is current button to indicate we're adding
-          // an annotation.
-          this.chart.activeButton = event.button;
-        },
-
-        deselectButton: function (event) {
-          // Unselect the button
-          event.button.classList.remove('active');
-          // Remove info about active button:
-          this.chart.activeButton = null;
-        }
-      }
-    },
-    stockTools: {
-      gui: {
-        enabled: false // disable the built-in toolbar
-      }
-    },
-
-    series: [{
-      id: 'aapl',
-      name: 'AAPL',
-      data: data,
+      }, {
+          labels: {
+              align: 'left'
+          },
+          top: '80%',
+          height: '20%',
+          offset: 0
+      }],
       tooltip: {
-        valueDecimals: 2
+          shape: 'square',
+          headerShape: 'callout',
+          borderWidth: 0,
+          shadow: false,
+          positioner: function (width, height, point) {
+              var chart = this.chart,
+                  position;
+
+              if (point.isHeader) {
+                  position = {
+                      x: Math.max(
+                          // Left side limit
+                          chart.plotLeft,
+                          Math.min(
+                              point.plotX + chart.plotLeft - width / 2,
+                              // Right side limit
+                              chart.chartWidth - width - chart.marginRight
+                          )
+                      ),
+                      y: point.plotY
+                  };
+              } else {
+                  position = {
+                      x: point.series.chart.plotLeft,
+                      y: point.series.yAxis.top - chart.plotTop
+                  };
+              }
+
+              return position;
+          }
+      },
+      series: [{
+          type: 'ohlc',
+          id: 'aapl-ohlc',
+          name: 'AAPL Stock Price',
+          data: ohlc
+      }, {
+          type: 'column',
+          id: 'aapl-volume',
+          name: 'AAPL Volume',
+          data: volume,
+          yAxis: 1
+      }],
+      responsive: {
+          rules: [{
+              condition: {
+                  maxWidth: 800
+              },
+              chartOptions: {
+                  rangeSelector: {
+                      inputEnabled: false
+                  }
+              }
+          }]
       }
-    }]
-}
+  });
+});
