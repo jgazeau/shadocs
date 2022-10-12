@@ -5,7 +5,7 @@
     {{partial "theme/includes-head.html" .root}}
     {{partial "custom/custom-head.html" .root}}
   </head>
-  <body>
+  <body onload='browserCompatibility()'>
     <section>
       {{partial "theme/header.html" .root}}
       <div class='columns is-mobile is-paddingless is-marginless' id='mainContainer'>

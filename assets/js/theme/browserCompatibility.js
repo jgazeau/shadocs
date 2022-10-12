@@ -1,6 +1,6 @@
 // Function returning true or false (wether the site can be loaded or not)
 // depending on the browser version (IE not supported)
-window.onload = function () {
+function browserCompatibility() {
   var ua = window.navigator.userAgent;
   var msie = ua.indexOf('MSIE ');
   var trident = ua.indexOf('Trident/');
