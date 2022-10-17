@@ -17,7 +17,7 @@ env:
   HTMLTEST_BIN_NAME: htmltest
   HTMLTEST_CACHE_NAME: "htmltest-bin-cache"
   HTMLTEST_BIN_PATH: ci_htmltest_bin
-  HUGO_TESTS_VERSIONS: "0.91.0 0.104.0"
+  HUGO_TESTS_VERSIONS: "0.91.0 0.104.3"
   CYPRESS_CACHE_NAME: "cypress-cache"
   CYPRESS_CACHE_PATH: "~/.cache"
   NPM_CACHE_NAME: "npm-cache"
