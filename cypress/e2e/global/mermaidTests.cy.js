@@ -40,15 +40,15 @@ describe('for: mermaid', () => {
         let elId = $elem[0].id;
         cy.get('#' + elId + '-svg')
           .scrollIntoView()
-          .click({force:true})
+          .click({ force: true })
         cy.get('#modalContainer #modal #' + elId + '-svg')
           .should('be.visible')
       })
   })
-    // For now local download is not fully supported in firefox browser.
+  // For now local download is not fully supported in firefox browser.
   // Cypress doesn't seems to accept browser preferences in headless mode.
   // https://github.com/cypress-io/cypress/issues/8814
-  it('export button should export mermaid', {browser:'!firefox'}, () => {
+  it('export button should export mermaid', { browser: '!firefox' }, () => {
     const path = require('path');
     cy.get('#content .sc-mermaid-wrapper.helper-loading-container')
       .each(($elem) => {
@@ -58,7 +58,7 @@ describe('for: mermaid', () => {
             $svg[0].removeAttribute('class');
             cy.get('#' + elId + '-export-svg')
               .scrollIntoView()
-              .click({force:true})
+              .click({ force: true })
             cy.readFile(path.join(Cypress.config('downloadsFolder'), elId + '.svg'))
               .should('be.equal', $svg[0].outerHTML)
           })

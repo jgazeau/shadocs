@@ -5,19 +5,19 @@ describe('for: shortcuts', () => {
   it('[shift+i] should open website information panel', () => {
     cy.window().its('scShowInfo')
     cy.get('body')
-      .type('{shift+i}', {delay:0})
+      .type('{shift+i}', { delay: 0 })
     cy.scShowInfoResults()
   })
   it('[shift+k] should open shortcuts panel', () => {
     cy.window().its('scShowShortcuts')
     cy.get('body')
-      .type('{shift+k}', {delay:0})
+      .type('{shift+k}', { delay: 0 })
     cy.scShowShortcutsResults()
   })
   it('[shift+h] should redirect to homepage', () => {
     cy.window().its('scGoHome')
     cy.get('body')
-      .type('{shift+h}', {delay:0})
+      .type('{shift+h}', { delay: 0 })
     cy.location()
       .should((loc) => {
         expect(loc.toString()).to.eq(Cypress.env('HOMEPAGE_URL'))
@@ -26,7 +26,7 @@ describe('for: shortcuts', () => {
   it('[shift+f] should focus on search', () => {
     cy.window().its('scGoSearch')
     cy.get('body')
-      .type('{shift+f}', {delay:0})
+      .type('{shift+f}', { delay: 0 })
     cy.get('#search')
       .should('be.focused')
   })
@@ -35,7 +35,7 @@ describe('for: shortcuts', () => {
       .wait(Cypress.env('WAIT_FOR_ANIMATION'))
     cy.toggleSidebar(true, true)
     cy.get('body')
-      .type('{shift+m}', {delay:0})
+      .type('{shift+m}', { delay: 0 })
     cy.get('#sidebarContainer')
       .should('have.class', 'is-sidebar-collapsed')
   })
@@ -44,7 +44,7 @@ describe('for: shortcuts', () => {
       .wait(Cypress.env('WAIT_FOR_ANIMATION'))
     cy.toggleSidebar(false, true)
     cy.get('body')
-      .type('{shift+m}', {delay:0})
+      .type('{shift+m}', { delay: 0 })
     cy.get('#sidebarContainer')
       .should('have.class', 'is-sidebar-uncollapsed')
   })
@@ -53,7 +53,7 @@ describe('for: shortcuts', () => {
       .wait(Cypress.env('WAIT_FOR_ANIMATION'))
     cy.toggleToc(true)
     cy.get('body')
-      .type('{shift+t}', {delay:0})
+      .type('{shift+t}', { delay: 0 })
     cy.get('#contentContainer')
       .should('have.class', 'is-toc-collapsed')
   })
@@ -62,7 +62,7 @@ describe('for: shortcuts', () => {
       .wait(Cypress.env('WAIT_FOR_ANIMATION'))
     cy.toggleToc(false)
     cy.get('body')
-      .type('{shift+t}', {delay:0})
+      .type('{shift+t}', { delay: 0 })
     cy.get('#contentContainer')
       .should('have.class', 'is-toc-uncollapsed')
   })
@@ -72,7 +72,7 @@ describe('for: shortcuts', () => {
     cy.get('#contentContainer')
       .scrollTo('bottom')
     cy.get('body')
-      .type('{shift+uparrow}', {delay:0})
+      .type('{shift+uparrow}', { delay: 0 })
     cy.get('#contentContainer')
       .should('have.prop', 'scrollTop', 0)
   })
@@ -82,18 +82,18 @@ describe('for: shortcuts', () => {
     cy.get('#contentContainer')
       .scrollTo('top')
     cy.get('body')
-      .type('{shift+downarrow}', {delay:0})
+      .type('{shift+downarrow}', { delay: 0 })
     cy.get('#contentContainer').then(($elem) => {
-        let calcScrollHeight = $elem[0].clientHeight + $elem[0].scrollTop;
-        let elScrollHeight = $elem[0].scrollHeight;
-        expect(elScrollHeight).to.equal(calcScrollHeight);
-      })
+      let calcScrollHeight = $elem[0].clientHeight + $elem[0].scrollTop;
+      let elScrollHeight = $elem[0].scrollHeight;
+      expect(elScrollHeight).to.equal(calcScrollHeight);
+    })
   })
   it('[shift+p] should open print preview', () => {
     cy.window().its('scPrint')
     cy.scPrintStub()
     cy.get('body')
-      .type('{shift+p}', {delay:0})
+      .type('{shift+p}', { delay: 0 })
     cy.scPrintResults()
   })
   it('[escape] should close modal', () => {
@@ -107,7 +107,7 @@ describe('for: shortcuts', () => {
   it('[shift+q] should open QR code panel', () => {
     cy.window().its('scQrCode')
     cy.get('body')
-      .type('{shift+q}', {delay:0})
+      .type('{shift+q}', { delay: 0 })
     cy.scQrCodeResults()
   })
   it('[shift+1] should open the example panel', () => {

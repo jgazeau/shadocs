@@ -10,7 +10,7 @@ describe('for: asyncapi shortcode', () => {
     cy.get('#content .sc-asyncapi-wrapper')
       .should('have.class', 'helper-loading-container')
   })
-  it('asyncapi should not have a loading helper once loaded', {defaultCommandTimeout: 10000}, () => {
+  it('asyncapi should not have a loading helper once loaded', { defaultCommandTimeout: 10000 }, () => {
     cy.get('#content .sc-asyncapi-wrapper.helper-loading-container')
       .should('not.have.class', 'is-loading')
   })

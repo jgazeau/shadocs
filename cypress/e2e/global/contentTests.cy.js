@@ -18,7 +18,7 @@ describe('for: content', () => {
         cy.get($title[0])
           .children('a[href="#' + encodeURI($title[0].id).toLowerCase() + '"]')
           .should('have.class', 'anchor')
-          .click({force:true})
+          .click({ force: true })
         cy.location('href')
           .should('eq', Cypress.env('HOMEPAGE_URL') + Cypress.env('FUNC_TOC_PATH') + '#' + encodeURI($title[0].id).toLowerCase())
       })

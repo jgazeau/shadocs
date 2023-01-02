@@ -7,7 +7,7 @@ describe('for: multilingual', () => {
       .its('body')
       .then((sitemapindex) => {
         const parser = new DOMParser();
-        const xmlSitemapindex = parser.parseFromString(sitemapindex,"text/xml");
+        const xmlSitemapindex = parser.parseFromString(sitemapindex, "text/xml");
         expect(xmlSitemapindex.getElementsByTagName('sitemap')).to.have.length(2)
       })
   })
@@ -16,15 +16,15 @@ describe('for: multilingual', () => {
       .its('body')
       .then((sitemapindex) => {
         const parser = new DOMParser();
-        const sitemaps = parser.parseFromString(sitemapindex,"text/xml").getElementsByTagName('sitemap');
+        const sitemaps = parser.parseFromString(sitemapindex, "text/xml").getElementsByTagName('sitemap');
         cy.request(sitemaps[0].getElementsByTagName('loc')[0].childNodes[0].nodeValue)
           .its('body')
-          .then((urlset) => parser.parseFromString(urlset,"text/xml").getElementsByTagName('url').length)
+          .then((urlset) => parser.parseFromString(urlset, "text/xml").getElementsByTagName('url').length)
           .then((urlCount) => {
             for (let sitemap of sitemaps) {
               cy.request(sitemap.getElementsByTagName('loc')[0].childNodes[0].nodeValue)
                 .its('body')
-                .then((urlset) => parser.parseFromString(urlset,"text/xml").getElementsByTagName('url'))
+                .then((urlset) => parser.parseFromString(urlset, "text/xml").getElementsByTagName('url'))
                 .should((urlset) => {
                   expect(urlset.length).to.equal(urlCount)
                 })
