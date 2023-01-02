@@ -44,10 +44,10 @@ Cypress.Commands.add('disableSmoothScroll', () => {
 Cypress.Commands.add('scrollAndClickElem', ($elem) => {
   cy.get($elem)
     .scrollIntoView()
-    .click({force:true})
+    .click({ force: true })
 })
-Cypress.Commands.add('scrollAndClick', {prevSubject:true}, ($elem) => {
+Cypress.Commands.add('scrollAndClick', { prevSubject: true }, ($elem) => {
   cy.wrap($elem)
     .scrollIntoView()
-    .click({force:true})
+    .click({ force: true })
 })

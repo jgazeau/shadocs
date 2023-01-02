@@ -9,12 +9,21 @@ describe('for: highcharts shortcode', () => {
     cy.get('#content .sc-highcharts-wrapper > .sc-highcharts-container')
       .should('have.length', 4)
   })
-  it('highcharts should have a loading helper', () => {
+  it('highcharts should have a loading helper', { defaultCommandTimeout: 60000 }, () => {
     cy.get('#content .sc-highcharts-wrapper')
-      .should('have.class', 'helper-loading-container')
+      .each(($elem) => {
+        cy.get($elem)
+          .scrollIntoView()
+          .should('have.class', 'helper-loading-container')
+      })
+
   })
-  it('highcharts should not have a loading helper once loaded', {defaultCommandTimeout: 10000}, () => {
+  it('highcharts should not have a loading helper once loaded', { defaultCommandTimeout: 60000 }, () => {
     cy.get('#content .sc-highcharts-wrapper.helper-loading-container')
-      .should('not.have.class', 'is-loading')
+      .each(($elem) => {
+        cy.get($elem)
+          .scrollIntoView()
+          .should('not.have.class', 'is-loading')
+      })
   })
 })

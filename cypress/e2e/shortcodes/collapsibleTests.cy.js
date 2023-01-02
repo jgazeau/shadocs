@@ -32,7 +32,7 @@ describe('for: collapsible shortcode', () => {
           .scrollIntoView()
           .children('.sc-collapsible-header')
           .wait(Cypress.env('WAIT_FOR_ANIMATION'))
-          .click({force:true})
+          .click({ force: true })
           .should('have.class', 'sc-uncollapsed')
         cy.get($elem)
           .children('.sc-collapsible-content')

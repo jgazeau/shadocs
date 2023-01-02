@@ -38,7 +38,7 @@ describe('for: intro shortcode', () => {
       .each(($elem) => {
         cy.scrollAndClickElem($elem)
         cy.get('.introjs-overlay')
-          .click({force:true})
+          .click({ force: true })
         cy.get('.introjs-tooltipReferenceLayer .introjs-tooltip')
           .should('not.exist')
       })
@@ -48,7 +48,7 @@ describe('for: intro shortcode', () => {
       .each(($elem) => {
         cy.scrollAndClickElem($elem)
         cy.get('.introjs-tooltipReferenceLayer .introjs-tooltip .introjs-skipbutton')
-          .click({force:true})
+          .click({ force: true })
         cy.get('.introjs-tooltipReferenceLayer .introjs-tooltip')
           .should('not.exist')
       })

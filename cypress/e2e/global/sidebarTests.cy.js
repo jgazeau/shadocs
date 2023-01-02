@@ -1,8 +1,8 @@
 describe('for: sidebar', () => {
+  beforeEach(() => {
+    cy.visit(Cypress.env('HOMEPAGE_URL'))
+  })
   describe('when onload', () => {
-    beforeEach(() => {
-      cy.visit(Cypress.env('HOMEPAGE_URL'))
-    })
     it('sidebar should be uncollapsed by default on desktop', () => {
       cy.viewportDesktop('min')
       cy.get('#sidebarContainer')
@@ -44,7 +44,7 @@ describe('for: sidebar', () => {
         .click()
       cy.get('#sidebarContainer')
         .should('have.class', 'is-sidebar-collapsed')
-      })
+    })
     it('expandable entries should expand', () => {
       cy.toggleSidebarEntries(false)
       cy.get('.is-icon-expandable')
