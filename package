@@ -9,7 +9,6 @@ exampleSite/
 i18n/
 layouts/
 static/
-CHANGELOG.md
 LICENSE
 README.md
 theme.toml
