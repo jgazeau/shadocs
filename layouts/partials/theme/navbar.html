@@ -8,8 +8,9 @@
         </div>
       </div>
       <div id='navbarItemsEnd' class='is-flex is-invisible'>
-        {{$.Scratch.Add "navbarExtendIdSuffix" ""}}
+        {{$.Scratch.Set "navbarExtendIdSuffix" ""}}
         {{partial "theme/navbar-items.html" .}}
+        {{$.Scratch.Set "navbarExtendIdSuffix" "Extend"}}
         {{partial "theme/navbar-extend.html" .}}
       </div>
     </div>
