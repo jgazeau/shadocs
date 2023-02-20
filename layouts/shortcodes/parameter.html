@@ -1,45 +1,45 @@
-{{$keyRange := ""}}
-{{$keyValues := ""}}
-{{$null := .Inner}}
-{{ if .IsNamedParams }}
-  {{with .Get "path"}}
-    {{$keyRange = (split . ".")}}
-    {{$keyValues = $.Site.Data}}
-  {{end}}
-  {{with .Get "i18n"}}
-    {{$keyValues = i18n .}}
-  {{end}}
-{{else}}
-  {{with .Get 0}}
-    {{$keyRange = (split . ".")}}
-    {{$keyValues = $.Site.Params}}
-  {{end}}
-{{end}}
-{{with $keyRange}}
-  {{range $key := .}}
-    {{with isset $keyValues $key}}
-      {{$keyValues = (index $keyValues $key)}}
-    {{else}}
-      {{$keyValues = ""}}
-    {{end}}
-  {{end}}
-{{end}}
-{{with $keyValues}}
-  <div class='sc-parameter'>
-    {{template "displayResults" dict "this" . "context" $}}
+{{- $keyRange := "" -}}
+{{- $keyValues := "" -}}
+{{- $null := .Inner -}}
+{{- if .IsNamedParams -}}
+  {{- with .Get "path" -}}
+    {{- $keyRange = (split . ".") -}}
+    {{- $keyValues = $.Site.Data -}}
+  {{- end -}}
+  {{- with .Get "i18n" -}}
+    {{- $keyValues = i18n . -}}
+  {{- end -}}
+{{- else -}}
+  {{- with .Get 0 -}}
+    {{- $keyRange = (split . ".") -}}
+    {{- $keyValues = $.Site.Params -}}
+  {{- end -}}
+{{- end -}}
+{{- with $keyRange -}}
+  {{- range $key := . -}}
+    {{- with isset $keyValues $key -}}
+      {{- $keyValues = (index $keyValues $key) -}}
+    {{- else -}}
+      {{- $keyValues = "" -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- with $keyValues -}}
+  <div class="sc-parameter">
+    {{- template "displayResults" dict "this" . "context" $ -}}
   </div>
-{{end}}
+{{- end -}}
 <!-- TEMPLATES -->
-{{define "displayResults"}}
-  {{$optMd := dict "markup" "goldmark"}}
-  {{$this := .this}}
-  {{with reflect.IsMap $this}}
-    {{partial "theme/helpers/printMap.html" (dict "this" $this "context" $.context)}}
-  {{else}}
-    {{with reflect.IsSlice $this}}
-      {{partial "theme/helpers/printSlice.html" (dict "this" $this "context" $.context)}}
-    {{else}}
-      <div>{{$this | $.context.Page.RenderString $optMd}}</div>
-    {{end}}
-  {{end}}
-{{end}}
+{{- define "displayResults" -}}
+  {{- $optMd := dict "markup" "goldmark" -}}
+  {{- $this := .this -}}
+  {{- with reflect.IsMap $this -}}
+    {{- partial "theme/helpers/printMap.html" (dict "this" $this "context" $.context) -}}
+  {{- else -}}
+    {{- with reflect.IsSlice $this -}}
+      {{- partial "theme/helpers/printSlice.html" (dict "this" $this "context" $.context) -}}
+    {{- else -}}
+      <div>{{- $this | $.context.Page.RenderString $optMd -}}</div>
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

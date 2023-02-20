@@ -39,7 +39,7 @@
           {{- $.Scratch.Set "rootTitleIcon" (print .Site.Data.themeParams.sidebar.firstSectionIconDefault " fa-lg") -}}
         {{- end -}}
       {{- end -}}
-      {{if $first}}{{$first = false}}{{else}},{{end}}{
+      {{- if $first -}}{{- $first = false -}}{{- else -}},{{- end -}}{
       "id": "{{- $index -}}",
       "rootTitleIndex": "{{- with .FirstSection.File -}}{{- $.Scratch.Get .UniqueID -}}
         {{- else -}}
@@ -54,21 +54,21 @@
         {{- else -}}
           {{- htmlEscape .FirstSection.Title -}}
         {{- end -}}",
-      "rootTitleIcon": "{{htmlEscape ($.Scratch.Get "rootTitleIcon")}}",
-      "rootTitlePath": "{{.FirstSection.RelPermalink | safeURL}}",
+      "rootTitleIcon": "{{- htmlEscape ($.Scratch.Get "rootTitleIcon") -}}",
+      "rootTitlePath": "{{- .FirstSection.RelPermalink | safeURL -}}",
       "rootTitleTitle": "{{- if .IsHome -}}
           {{- i18n "homepage_title" -}}
         {{- else -}}
           {{- printf "%s / %s" (i18n "homepage_title") (htmlEscape .FirstSection.Title) -}}
         {{- end -}}",
-      "permalink": "{{.RelPermalink | safeURL}}",
-      "permalinkTitle": "{{template "permalinkTitle" dict "currentPage" . "value" ""}}",
+      "permalink": "{{- .RelPermalink | safeURL -}}",
+      "permalinkTitle": "{{- template "permalinkTitle" dict "currentPage" . "value" "" -}}",
       "title": "{{- if .IsHome -}}
           {{- i18n "homepage_title" -}}
         {{- else -}}
           {{- htmlEscape .Title -}}
         {{- end -}}",
-      "content": {{.Plain | jsonify}}
+      "content": {{- .Plain | jsonify -}}
     }
     {{- end -}}
   {{- end -}}
@@ -107,4 +107,3 @@
       {{- end -}}
     {{- end -}}
   {{- end -}}
-  

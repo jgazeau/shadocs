@@ -1,17 +1,17 @@
-{{$href := .this.Destination | safeURL}}
-{{with $href}}
-  {{with and (eq (slicestr $href 0 1) "/") (not $.this.Page.Site.Params.enforceRefrelLinks)}}
-    {{with eq $href "/"}}
-      {{$href = "" | relLangURL}}
-    {{else}}
-      {{$href = (slicestr $href 1) | relURL}}
-    {{end}}
-  {{else}}
-    {{with not (urls.Parse $href).Scheme}}
-      {{$href = relref $.this.Page $href}}
-    {{else}}
-      {{$href = replaceRE "^ref:|^relref:" "" $href}}
-    {{end}}
-  {{end}}
-{{end}}
-{{return ($href | safeURL)}}
+{{- $href := .this.Destination | safeURL -}}
+{{- with $href -}}
+  {{- with and (eq (slicestr $href 0 1) "/") (not $.this.Page.Site.Params.enforceRefrelLinks) -}}
+    {{- with eq $href "/" -}}
+      {{- $href = "" | relLangURL -}}
+    {{- else -}}
+      {{- $href = (slicestr $href 1) | relURL -}}
+    {{- end -}}
+  {{- else -}}
+    {{- with not (urls.Parse $href).Scheme -}}
+      {{- $href = relref $.this.Page $href -}}
+    {{- else -}}
+      {{- $href = replaceRE "^ref:|^relref:" "" $href -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return ($href | safeURL) -}}

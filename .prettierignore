@@ -1,0 +1,14 @@
+# External assets ignores
+assets/bulma/**
+**/external/**
+# Hugo ignores
+public/**
+resources/**
+# Theme ignores
+assets/js/theme/modules/const.js
+exampleSite/**/*.md
+exampleSite/assets/highcharts/*.json
+layouts/_default/index.json
+layouts/_default/_markup/render-heading.html
+layouts/partials/theme/sidebar-content.html
+layouts/partials/theme/taxonomy-content.html

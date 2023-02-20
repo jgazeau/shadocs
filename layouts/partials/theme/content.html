@@ -1,29 +1,33 @@
-{{$.Scratch.Set "contentId" "content"}}
-{{$.Scratch.Set "titleId" "contentTitle"}}
-{{if .IsHome}}
-  {{if eq .Site.Params.homeLayout "onboarding"}}
-    {{$.Scratch.Set "contentId" "contentHome"}}
-    {{$.Scratch.Set "titleId" "contentHomeTitle"}}
-    {{$.Scratch.Set "isToc" false}}
-  {{end}}
-{{else}}
-  {{$.Scratch.Set "isToc" (partial "theme/helpers/tocResolver.html" (dict "this" .))}}
-{{end}}
-<div class='columns is-mobile is-marginless is-scroll-smooth{{if ($.Scratch.Get "isToc")}} has-toc{{end}}' id='contentContainer'>
-  <div class='column' id='{{$.Scratch.Get "contentId"}}'>
-    {{with (or .Site.Params.globalBanner .Params.banner)}}
-      {{$bannerContent := i18n "banner_default_content" $}}
-      {{with $.Params.bannerContent}}
-        {{$bannerContent = .}}
-      {{end}}
-      {{partial "theme/banner.html" (dict "text" $bannerContent "rootContext" $)}}
-    {{end}}
-    {{with .Title}}
-      {{partial "theme/content-title.html" (dict "titleId" ($.Scratch.Get "titleId") "title" .)}}
-    {{end}}
-    {{.Content}}
+{{- $.Scratch.Set "contentId" "content" -}}
+{{- $.Scratch.Set "titleId" "contentTitle" -}}
+{{- if .IsHome -}}
+  {{- if eq .Site.Params.homeLayout "onboarding" -}}
+    {{- $.Scratch.Set "contentId" "contentHome" -}}
+    {{- $.Scratch.Set "titleId" "contentHomeTitle" -}}
+    {{- $.Scratch.Set "isToc" false -}}
+  {{- end -}}
+{{- else -}}
+  {{- $.Scratch.Set "isToc" (partial "theme/helpers/tocResolver.html" (dict "this" .)) -}}
+{{- end -}}
+{{- $contentContainerClasses := slice "columns" "is-mobile" "is-marginless" "is-scroll-smooth" -}}
+{{- with ($.Scratch.Get "isToc") -}}
+  {{- $contentContainerClasses = $contentContainerClasses | append "has-toc" -}}
+{{- end -}}
+<div class="{{- delimit $contentContainerClasses " " -}}" id="contentContainer">
+  <div class="column" id="{{- $.Scratch.Get "contentId" -}}">
+    {{- with (or .Site.Params.globalBanner .Params.banner) -}}
+      {{- $bannerContent := i18n "banner_default_content" $ -}}
+      {{- with $.Params.bannerContent -}}
+        {{- $bannerContent = . -}}
+      {{- end -}}
+      {{- partial "theme/banner.html" (dict "text" $bannerContent "rootContext" $) -}}
+    {{- end -}}
+    {{- with .Title -}}
+      {{- partial "theme/content-title.html" (dict "titleId" ($.Scratch.Get "titleId") "title" .) -}}
+    {{- end -}}
+    {{- .Content -}}
   </div>
-  {{if ($.Scratch.Get "isToc")}}
-    {{partial "theme/toc.html" .}}
-  {{end}}
+  {{- if ($.Scratch.Get "isToc") -}}
+    {{- partial "theme/toc.html" . -}}
+  {{- end -}}
 </div>

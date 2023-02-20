@@ -4,8 +4,8 @@ on:
   schedule:
     - cron: '30 2 * * 1'
 env:
-  NPM_CACHE_NAME: "npm-cache"
-  NPM_CACHE_PATH: "~/.npm"
+  NPM_CACHE_NAME: 'npm-cache'
+  NPM_CACHE_PATH: '~/.npm'
 jobs:
   Bump:
     name: Bump Hugo
@@ -19,9 +19,9 @@ jobs:
           token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
       - name: Bump thirdparties and create PR
         env:
-          LOG_FILE: "workflow.log"
-          PR_TITLE: "build: bump Hugo"
-          BRANCH_NAME: "build/bump_hugo"
+          LOG_FILE: 'workflow.log'
+          PR_TITLE: 'build: bump Hugo'
+          BRANCH_NAME: 'build/bump_hugo'
           GITHUB_TOKEN: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
         run: |
           minHugoVersion=$(grep -E '^min_version.*$' theme.toml)

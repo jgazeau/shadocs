@@ -1,29 +1,37 @@
-<div class='column is-sticky is-paddingless' id='tocWrapper'>
-  <div class='is-paddingless' id='tocContainer'>
-    <div class='toc-header'>
-      <h6 class='toc-title is-marginless'>{{i18n "toc_title"}}</h6>
-      <i title='{{i18n "toc_backtotop"}}' id='tocBackToTop' class='fa-solid fa-circle-arrow-up'></i>
+<div class="column is-sticky is-paddingless" id="tocWrapper">
+  <div class="is-paddingless" id="tocContainer">
+    <div class="toc-header">
+      <h6 class="toc-title is-marginless">{{- i18n "toc_title" -}}</h6>
+      <i
+        title="{{- i18n "toc_backtotop" -}}"
+        id="tocBackToTop"
+        class="fa-solid fa-circle-arrow-up"
+      ></i>
     </div>
-    <div id='tocContent'>
-      <div id='toc'>
-        {{if in (string .TableOfContents) "<ul>"}}
-          {{.TableOfContents}}
-        {{else}}
+    <div id="tocContent">
+      <div id="toc">
+        {{- if in (string .TableOfContents) "<ul>" -}}
+          {{- .TableOfContents -}}
+        {{- else -}}
           <nav id="TableOfContents">
-            <p><strong>{{i18n "no_data"}}</strong></p>
+            <p><strong>{{- i18n "no_data" -}}</strong></p>
           </nav>
-        {{end}}
+        {{- end -}}
       </div>
-      <div id='taxonomies'>
+      <div id="taxonomies">
         {{- with .Site.Taxonomies -}}
           {{- range $taxonomy, $pages := . -}}
-            <div class='taxonomy-wrapper'>
+            <div class="taxonomy-wrapper">
               {{- with ($.GetTerms $taxonomy) -}}
-                <div class='toc-header'>
-                  <h6 class='toc-title is-marginless'>{{humanize $taxonomy}}</h6>
+                <div class="toc-header">
+                  <h6 class="toc-title is-marginless">
+                    {{- humanize $taxonomy -}}
+                  </h6>
                 </div>
                 {{- range . -}}
-                  <a href='{{.RelPermalink | safeURL}}' class='taxonomy'><i class="fa-solid fa-circle-dot"></i>{{.Title}}</a>
+                  <a href="{{- .RelPermalink | safeURL -}}" class="taxonomy"
+                    ><i class="fa-solid fa-circle-dot"></i>{{- .Title -}}</a
+                  >
                 {{- end -}}
               {{- end -}}
             </div>
@@ -32,7 +40,11 @@
       </div>
     </div>
   </div>
-  <div class='is-paddingless' id='tocCollapsible' title='{{i18n "toc_collapsible_title"}}'>
-    <i class='fa-solid fa-angles-right fa-lg'></i>
+  <div
+    class="is-paddingless"
+    id="tocCollapsible"
+    title="{{- i18n "toc_collapsible_title" -}}"
+  >
+    <i class="fa-solid fa-angles-right fa-lg"></i>
   </div>
 </div>

@@ -1,118 +1,118 @@
 - id: homepage_title
   translation: "Page d'accueil"
 - id: search_placeholder
-  translation: "Rechercher"
+  translation: 'Rechercher'
 - id: search_no_results
-  translation: "Aucun résultat trouvé"
+  translation: 'Aucun résultat trouvé'
 - id: sidebar_collapse
-  translation: "Réduire le menu latéral"
+  translation: 'Réduire le menu latéral'
 - id: banner_default_content
   translation: |
-    Vous consultez la version ***{{.Site.Params.currentversion}}*** de ce site.  
-    Pour une version à jour de la documentation, merci de se référer à la [dernière version]({{.Site.Params.latestversionurl}}).
+    Vous consultez la version ***{{- .Site.Params.currentversion -}}*** de ce site.  
+    Pour une version à jour de la documentation, merci de se référer à la [dernière version]({{- .Site.Params.latestversionurl -}}).
 - id: toc_title
-  translation: "Sur cette page:"
+  translation: 'Sur cette page:'
 - id: toc_backtotop
-  translation: "Retour en haut"
+  translation: 'Retour en haut'
 - id: navbar_label_print
-  translation: "Imprimer"
+  translation: 'Imprimer'
 - id: navbar_label_qrcode
-  translation: "QR code"
+  translation: 'QR code'
 - id: navbar_label_shortcuts
-  translation: "Raccourcis"
+  translation: 'Raccourcis'
 - id: navbar_label_taxonomies
-  translation: "Taxonomies"
+  translation: 'Taxonomies'
 - id: navbar_label_versions
-  translation: "Versions"
+  translation: 'Versions'
 - id: navbar_label_info
-  translation: "À propos"
+  translation: 'À propos'
 - id: navbarinfo_title
-  translation: "À propos"
+  translation: 'À propos'
 - id: navbarshortcuts_title
-  translation: "Raccourcis clavier"
+  translation: 'Raccourcis clavier'
 - id: 1_info_keys_wording
-  translation: "Maj,i"
+  translation: 'Maj,i'
 - id: 1_info_wording
-  translation: "Afficher les informations du site"
+  translation: 'Afficher les informations du site'
 - id: 2_shortcuts_keys_wording
-  translation: "Maj,k"
+  translation: 'Maj,k'
 - id: 2_shortcuts_wording
-  translation: "Afficher les raccourcis"
+  translation: 'Afficher les raccourcis'
 - id: 3_home_keys_wording
-  translation: "Maj,h"
+  translation: 'Maj,h'
 - id: 3_home_wording
   translation: "Aller à la page d'accueil"
 - id: 4_search_keys_wording
-  translation: "Maj,f"
+  translation: 'Maj,f'
 - id: 4_search_wording
-  translation: "Rechercher sur le site"
+  translation: 'Rechercher sur le site'
 - id: 5_togglesidebar_keys_wording
-  translation: "Maj,m"
+  translation: 'Maj,m'
 - id: 5_togglesidebar_wording
-  translation: "Réduire/Développer la table des matières"
+  translation: 'Réduire/Développer la table des matières'
 - id: 6_toggletoc_keys_wording
-  translation: "Maj,m"
+  translation: 'Maj,m'
 - id: 6_toggletoc_wording
-  translation: "Réduire/Développer la table des matières"
+  translation: 'Réduire/Développer la table des matières'
 - id: 7_backtotop_keys_wording
-  translation: "Maj,↑"
+  translation: 'Maj,↑'
 - id: 7_backtotop_wording
-  translation: "Aller en haut de la page"
+  translation: 'Aller en haut de la page'
 - id: 8_gotobottom_keys_wording
-  translation: "Maj,↓"
+  translation: 'Maj,↓'
 - id: 8_gotobottom_wording
-  translation: "Aller en bas de la page"
+  translation: 'Aller en bas de la page'
 - id: 9_print_keys_wording
-  translation: "Maj,p"
+  translation: 'Maj,p'
 - id: 9_print_wording
-  translation: "Imprimer la page courante"
+  translation: 'Imprimer la page courante'
 - id: 10_qrcode_keys_wording
-  translation: "Maj,q"
+  translation: 'Maj,q'
 - id: 10_qrcode_wording
-  translation: "Obtenir le QR code de la page courante"
+  translation: 'Obtenir le QR code de la page courante'
 - id: 11_closemodals_keys_wording
-  translation: "Echap"
+  translation: 'Echap'
 - id: 11_closemodals_wording
-  translation: "Fermer les fenêtres modales"
+  translation: 'Fermer les fenêtres modales'
 - id: shortcode_collapsible
-  translation: "Développer/Réduire"
+  translation: 'Développer/Réduire'
 - id: no_data
-  translation: "Aucune donnée disponible"
+  translation: 'Aucune donnée disponible'
 - id: empty_description
-  translation: "Aucune description disponible"
+  translation: 'Aucune description disponible'
 - id: read_more
-  translation: "Lire plus"
+  translation: 'Lire plus'
 - id: helper_loading
-  translation: "Chargement"
+  translation: 'Chargement'
 - id: code_copy_before
-  translation: "Copier dans le presse-papiers"
+  translation: 'Copier dans le presse-papiers'
 - id: code_copy_after
-  translation: "Copié dans le presse-papiers"
+  translation: 'Copié dans le presse-papiers'
 - id: download_as_svg
-  translation: "Télécharger en tant que SVG"
+  translation: 'Télécharger en tant que SVG'
 - id: 404_title
   translation: "Oups, nous n'arrivons pas à trouver la page que vous cherchez."
 - id: 404_footer
   translation: "Retour à la page d'accueil"
 - id: intro_error_title
-  translation: "Erreur !!"
+  translation: 'Erreur !!'
 - id: intro_error
-  translation: "JSON invalide. Veuillez vérifier la définition du shortcode Intro."
+  translation: 'JSON invalide. Veuillez vérifier la définition du shortcode Intro.'
 - id: intro_empty
-  translation: "Attribut <strong><i>steps</i></strong> introuvable. Veuillez vérifier la définition du shortcode Intro."
+  translation: 'Attribut <strong><i>steps</i></strong> introuvable. Veuillez vérifier la définition du shortcode Intro.'
 - id: intro_prevlabel
-  translation: "Précédent"
+  translation: 'Précédent'
 - id: intro_nextlabel
-  translation: "Suivant"
+  translation: 'Suivant'
 - id: intro_skiplabel
-  translation: "✗"
+  translation: '✗'
 - id: intro_donelabel
-  translation: "Terminer"
+  translation: 'Terminer'
 - id: na_common
-  translation: "Non disponible"
+  translation: 'Non disponible'
 - id: sidebar_collapsible_title
-  translation: "Développer/Réduire menu latéral"
+  translation: 'Développer/Réduire menu latéral'
 - id: toc_collapsible_title
-  translation: "Développer/Réduire table des matières"
+  translation: 'Développer/Réduire table des matières'
 - id: highcharts_error
-  translation: "Rendu du Highcharts non disponible"
+  translation: 'Rendu du Highcharts non disponible'

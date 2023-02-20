@@ -1,30 +1,40 @@
-<div id='sidebarContainer' class='column is-narrow is-paddingless is-marginless'>
-  <div id='sidebarWrapper' class='is-fixed'>
-    <div id='sidebar' class='is-marginless'>
-      <aside class='menu is-paddingless is-marginless'>
-        <ul class='menu-list is-marginless is-paddingless'>
-          {{partial "theme/sidebar-content.html" .}}
+<div
+  id="sidebarContainer"
+  class="column is-narrow is-paddingless is-marginless"
+>
+  <div id="sidebarWrapper" class="is-fixed">
+    <div id="sidebar" class="is-marginless">
+      <aside class="menu is-paddingless is-marginless">
+        <ul class="menu-list is-marginless is-paddingless">
+          {{- partial "theme/sidebar-content.html" . -}}
         </ul>
       </aside>
     </div>
-    <div id='sidebarCollapsible' class='is-marginless'>
-      <div class='card is-uncollapse-action'>
-        <div id='sidebarUncollapse' class='card-header is-single-link' title='{{i18n "sidebar_collapsible_title"}}'>
-          <a class='card-header-title'>
-            <i class='fa-solid fa-angles-right fa-lg'></i>
+    <div id="sidebarCollapsible" class="is-marginless">
+      <div class="card is-uncollapse-action">
+        <div
+          id="sidebarUncollapse"
+          class="card-header is-single-link"
+          title="{{- i18n "sidebar_collapsible_title" -}}"
+        >
+          <a class="card-header-title">
+            <i class="fa-solid fa-angles-right fa-lg"></i>
           </a>
         </div>
       </div>
-      <div class='card is-collapse-action'>
-        <div id='sidebarCollapse' class='card-header is-single-link' title='{{i18n "sidebar_collapsible_title"}}'>
-          <a class='card-header-title'>
-            <i class='fa-solid fa-angles-left fa-lg'></i>
-            <p>{{i18n "sidebar_collapse"}}</p>
+      <div class="card is-collapse-action">
+        <div
+          id="sidebarCollapse"
+          class="card-header is-single-link"
+          title="{{- i18n "sidebar_collapsible_title" -}}"
+        >
+          <a class="card-header-title">
+            <i class="fa-solid fa-angles-left fa-lg"></i>
+            <p>{{- i18n "sidebar_collapse" -}}</p>
           </a>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div id='sidebarMobileWrapper' class='column is-narrow is-hidden-desktop'>
-</div>
+<div id="sidebarMobileWrapper" class="column is-narrow is-hidden-desktop"></div>

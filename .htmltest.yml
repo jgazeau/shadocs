@@ -1,6 +1,6 @@
-DirectoryPath: "exampleSite/public"
+DirectoryPath: 'exampleSite/public'
 CheckFavicon: true
 EnforceHTML5: true
 IgnoreDirs:
-- "en"
-IgnoreURLs: ["https://emojipedia.org/"]
+  - 'en'
+IgnoreURLs: ['https://emojipedia.org/']

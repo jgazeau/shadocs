@@ -1,5 +1,14 @@
-{{$simpleLink := true}}
-{{with (findRE "<img.*>" .Text)}}
-  {{$simpleLink = false}}
-{{end}}
-<a href='{{partial "theme/helpers/hrefResolver.html" (dict "this" .)}}'{{with .Title}} title='{{.}}' id='{{. | anchorize}}'{{end}}{{with $simpleLink}} class='is-pretty-link'{{end}}>{{.Text | safeHTML}}</a>
+{{- $simpleLink := true -}}
+{{- with (findRE `(?s)<img.*>` .Text) -}}
+  {{- $simpleLink = false -}}
+{{- end -}}
+<a
+  href="{{- partial "theme/helpers/hrefResolver.html" (dict "this" .) -}}"
+  {{- with .Title -}}
+    title="{{- . -}}" id="{{- . | anchorize -}}"
+  {{- end -}}
+  {{- with $simpleLink -}}
+    class="is-pretty-link"
+  {{- end -}}
+  >{{- .Text | safeHTML -}}</a
+>

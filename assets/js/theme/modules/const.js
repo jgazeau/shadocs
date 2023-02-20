@@ -4,7 +4,7 @@
 {{- with $.Site.Params.navbar.shortcuts -}}
   {{- template "setShortcutsMap" dict "this" . "context" $ -}}
 {{- end -}}
-export const shortcutsKeys = {{($.Scratch.Get "shortcutsMap") | jsonify}};
+export const shortcutsKeys = {{- ($.Scratch.Get "shortcutsMap") | jsonify -}};
 export const flexSearchThemeOptions = {
   minMatchCharLength: 2,
   highlightMaxCharOffset: 20,
@@ -59,4 +59,4 @@ export let resizeFunctionsList = [];
       {{- $context.Scratch.SetInMap "shortcutsMap" $shortcutName ($context.Scratch.Get $shortcutName) -}}
     {{- end -}}
   {{- end -}}
-{{end}}
+{{- end -}}
