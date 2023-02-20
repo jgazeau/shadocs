@@ -1,11 +1,11 @@
 import {
   addFunctionToResizeEvent,
-  getFirstAncestorByClass
-} from '../theme/modules/helpers.min.js'
+  getFirstAncestorByClass,
+} from '../theme/modules/helpers.min.js';
 
 // VARS //
 // MAIN //
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   renderAllOpenAPI();
 });
 function renderAllOpenAPI() {
@@ -14,12 +14,12 @@ function renderAllOpenAPI() {
     renderOpenAPI(divo[i]);
   }
   if (divo.length) {
-    const resizeOpenAPI = function() {
+    const resizeOpenAPI = function () {
       let divi = document.getElementsByClassName('sc-openapi-iframe');
       for (let i = 0; i < divi.length; i++) {
         setOpenAPIHeight(divi[i]);
       }
-    }
+    };
     addFunctionToResizeEvent(resizeOpenAPI);
   }
 }
@@ -34,7 +34,7 @@ function renderOpenAPI(oc) {
   const cssRef = '/css/external/swagger-ui/swagger-ui.min.css';
   const cssRel = 'stylesheet';
   const cssType = 'text/css';
-  const oiCss = 'html,body { overflow: hidden; }'
+  const oiCss = 'html,body { overflow: hidden; }';
   oi.classList.toggle('sc-openapi-iframe', true);
   oi.srcdoc = `
     <html>
@@ -56,18 +56,18 @@ function renderOpenAPI(oc) {
         SwaggerUIBundle({
           url: oc.getAttribute('openapi-url'),
           domNode: oi.contentWindow.document.getElementById(openapiId),
-          presets: [
-            SwaggerUIBundle.presets.apis,
-            SwaggerUIStandalonePreset
-          ]
+          presets: [SwaggerUIBundle.presets.apis, SwaggerUIStandalonePreset],
         });
       })
       .then(() => {
-        let observerCallback = function() {
+        let observerCallback = function () {
           setOpenAPIHeight(oi);
-        }
+        };
         let observer = new MutationObserver(observerCallback);
-        observer.observe(oi.contentWindow.document.documentElement, { childList: true, subtree: true });
+        observer.observe(oi.contentWindow.document.documentElement, {
+          childList: true,
+          subtree: true,
+        });
       })
       .then(() => {
         openapiWrapper.classList.toggle('is-loading', false);
@@ -84,9 +84,11 @@ function renderOpenAPI(oc) {
         openapiWrapper.classList.toggle('is-loading', false);
         openapiWrapper.insertAdjacentElement('afterbegin', ed);
       });
-  }
+  };
   oc.appendChild(oi);
 }
 function setOpenAPIHeight(oi) {
-  oi.style.height = oi.contentWindow.document.documentElement.getBoundingClientRect().height + 'px';
+  oi.style.height =
+    oi.contentWindow.document.documentElement.getBoundingClientRect().height +
+    'px';
 }

@@ -1,19 +1,19 @@
-<nav id='navbar' class='navbar' role='navigation' aria-label='main navigation'>
-  <div id='navbarItemsContainer' class='navbar-brand'>
-    {{partial "theme/logo.html" .}}
-    <div id='navbarItems' class='is-flex'>
-      <div id='navbarItemsStart' class='is-flex'>
-        <div id='searchContainer' class='navbar-item'>
-          {{partial "theme/search.html" .}}
+<nav id="navbar" class="navbar" role="navigation" aria-label="main navigation">
+  <div id="navbarItemsContainer" class="navbar-brand">
+    {{- partial "theme/logo.html" . -}}
+    <div id="navbarItems" class="is-flex">
+      <div id="navbarItemsStart" class="is-flex">
+        <div id="searchContainer" class="navbar-item">
+          {{- partial "theme/search.html" . -}}
         </div>
       </div>
-      <div id='navbarItemsEnd' class='is-flex is-invisible'>
-        {{$.Scratch.Set "navbarExtendIdSuffix" ""}}
-        {{partial "theme/navbar-items.html" .}}
-        {{$.Scratch.Set "navbarExtendIdSuffix" "Extend"}}
-        {{partial "theme/navbar-extend.html" .}}
+      <div id="navbarItemsEnd" class="is-flex is-invisible">
+        {{- $.Scratch.Set "navbarExtendIdSuffix" "" -}}
+        {{- partial "theme/navbar-items.html" . -}}
+        {{- $.Scratch.Set "navbarExtendIdSuffix" "Extend" -}}
+        {{- partial "theme/navbar-extend.html" . -}}
       </div>
     </div>
   </div>
 </nav>
-<div id='navbarOverlay'></div>
+<div id="navbarOverlay"></div>

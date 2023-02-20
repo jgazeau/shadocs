@@ -9,8 +9,8 @@ import {
   toggleSidebar,
   toggleSidebarEntry,
   toggleSidebarEntries,
-  toggleToc
-} from './helpers.min.js'
+  toggleToc,
+} from './helpers.min.js';
 
 // VARS //
 // MAIN //

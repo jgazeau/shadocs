@@ -1,36 +1,36 @@
 <div class='column is-marginless' id='contentContainer'>
-  {{with .LinkTitle}}
-    {{with $.Data.Singular}}
-      {{$.Scratch.Set "tempTaxonomy" (humanize .)}}
-    {{else}}
-      {{$.Scratch.Set "tempTaxonomy" (humanize $.Data.Plural)}}
-    {{end}}
-    {{partial "theme/content-title.html" (dict "titleId" "contentTitle" "title" (print ($.Scratch.Get "tempTaxonomy") ": " .))}}
-  {{end}}
-  {{range $key, $value := (default (index $.Site.Taxonomies (.Data.Plural) (.LinkTitle | anchorize)) (index $.Site.Taxonomies (.Data.Plural) (.LinkTitle | urlize)))}}
-    {{with (modBool $key 2)}}
-      {{with (ne $key 0)}}
+  {{- with .LinkTitle -}}
+    {{- with $.Data.Singular -}}
+      {{- $.Scratch.Set "tempTaxonomy" (humanize .) -}}
+    {{- else -}}
+      {{- $.Scratch.Set "tempTaxonomy" (humanize $.Data.Plural) -}}
+    {{- end -}}
+    {{- partial "theme/content-title.html" (dict "titleId" "contentTitle" "title" (print ($.Scratch.Get "tempTaxonomy") ": " .)) -}}
+  {{- end -}}
+  {{- range $key, $value := (default (index $.Site.Taxonomies (.Data.Plural) (.LinkTitle | anchorize)) (index $.Site.Taxonomies (.Data.Plural) (.LinkTitle | urlize))) -}}
+    {{- with (modBool $key 2) -}}
+      {{- with (ne $key 0) -}}
         </div>
-      {{end}}
+      {{- end -}}
       <div class='tile is-ancestor is-marginless'>
-    {{end}}
+    {{- end -}}
     <div class='tile is-parent'>
       <article class='tile is-child message'>
         <div class='message-header'>
-          {{$value.LinkTitle}}
+          {{- $value.LinkTitle -}}
         </div>
         <div class='message-body'>
           <p>
-            {{with $value.Description}}
-              {{.}}
-            {{else}}
-              {{i18n "empty_description"}}
-            {{end}}
+            {{- with $value.Description -}}
+              {{- . -}}
+            {{- else -}}
+              {{- i18n "empty_description" -}}
+            {{- end -}}
           </p>
-          <a class='is-pretty-link' href='{{.Permalink | safeURL}}'>...{{i18n "read_more"}}</a>
+          <a class='is-pretty-link' href='{{- .Permalink | safeURL -}}'>...{{- i18n "read_more" -}}</a>
         </div>
       </article>
     </div>
-  {{end}}
+  {{- end -}}
   </div>
 </div>

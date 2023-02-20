@@ -1,38 +1,53 @@
-<div id='taxonomiesSelectorContainer{{$.Scratch.Get "navbarExtendIdSuffix"}}' class='dropdown is-right'>
-  <div class='dropdown-trigger'>
-    <button id='taxonomiesSelector{{$.Scratch.Get "navbarExtendIdSuffix"}}' class='button navbar-item-standard' aria-haspopup='true' aria-controls='dropdown-menu'>
-      <span class='icon-text'>{{i18n "navbar_label_taxonomies"}}</span>
-      <span class='icon'>
-        <i class='fa-solid fa-tags fa-lg'></i>
+<div
+  id="taxonomiesSelectorContainer{{- $.Scratch.Get "navbarExtendIdSuffix" -}}"
+  class="dropdown is-right"
+>
+  <div class="dropdown-trigger">
+    <button
+      id="taxonomiesSelector{{- $.Scratch.Get "navbarExtendIdSuffix" -}}"
+      class="button navbar-item-standard"
+      aria-haspopup="true"
+      aria-controls="dropdown-menu"
+    >
+      <span class="icon-text">{{- i18n "navbar_label_taxonomies" -}}</span>
+      <span class="icon">
+        <i class="fa-solid fa-tags fa-lg"></i>
       </span>
     </button>
   </div>
-  <div id='dropdown-menu-taxonomies{{$.Scratch.Get "navbarExtendIdSuffix"}}' class='dropdown-menu' role='menu'>
-    <div class='dropdown-content is-paddingless'>
-      {{range $taxonomyname, $taxonomy := .Site.Taxonomies}}
-        {{if gt (len $taxonomy) 0}}
-          {{$.Scratch.Set "taxonomyUrl" (printf "%s%s%s" ("" | relLangURL) ($taxonomyname | urlize) "/")}}
-          {{if eq $.Page.RelPermalink ($.Scratch.Get "taxonomyUrl")}}
-            <div class='dropdown-item is-selected has-text-weight-bold'>
-              {{with $.Site.Params.taxonomies}}
-                {{with (index . $taxonomyname).icon}}
-                  <i class='{{.}}'></i>
-                {{end}}
-              {{end}}
-              {{humanize $taxonomyname}}
+  <div
+    id="dropdown-menu-taxonomies{{- $.Scratch.Get "navbarExtendIdSuffix" -}}"
+    class="dropdown-menu"
+    role="menu"
+  >
+    <div class="dropdown-content is-paddingless">
+      {{- range $taxonomyname, $taxonomy := .Site.Taxonomies -}}
+        {{- if gt (len $taxonomy) 0 -}}
+          {{- $.Scratch.Set "taxonomyUrl" (printf "%s%s%s" ("" | relLangURL) ($taxonomyname | urlize) "/") -}}
+          {{- if eq $.Page.RelPermalink ($.Scratch.Get "taxonomyUrl") -}}
+            <div class="dropdown-item is-selected has-text-weight-bold">
+              {{- with $.Site.Params.taxonomies -}}
+                {{- with (index . $taxonomyname).icon -}}
+                  <i class="{{- . -}}"></i>
+                {{- end -}}
+              {{- end -}}
+              {{- humanize $taxonomyname -}}
             </div>
-          {{else}}
-            <a href='{{$.Scratch.Get "taxonomyUrl"}}' class='dropdown-item has-text-weight-bold'>
-              {{with $.Site.Params.taxonomies}}
-                {{with (index . $taxonomyname).icon}}
-                  <i class='{{.}}'></i>
-                {{end}}
-              {{end}}
-              {{humanize $taxonomyname}}
+          {{- else -}}
+            <a
+              href="{{- $.Scratch.Get "taxonomyUrl" -}}"
+              class="dropdown-item has-text-weight-bold"
+            >
+              {{- with $.Site.Params.taxonomies -}}
+                {{- with (index . $taxonomyname).icon -}}
+                  <i class="{{- . -}}"></i>
+                {{- end -}}
+              {{- end -}}
+              {{- humanize $taxonomyname -}}
             </a>
-          {{end}}
-        {{end}}
-      {{end}}
+          {{- end -}}
+        {{- end -}}
+      {{- end -}}
     </div>
   </div>
 </div>

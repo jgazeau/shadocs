@@ -1,118 +1,118 @@
 - id: homepage_title
-  translation: "Homepage"
+  translation: 'Homepage'
 - id: search_placeholder
-  translation: "Search"
+  translation: 'Search'
 - id: search_no_results
-  translation: "No result found"
+  translation: 'No result found'
 - id: sidebar_collapse
-  translation: "Collapse sidebar"
+  translation: 'Collapse sidebar'
 - id: banner_default_content
   translation: |
-    You are viewing the version ***{{.Site.Params.currentversion}}*** of this website.  
-    For an up-to-date documentation, please check the [latest version]({{.Site.Params.latestversionurl}}).
+    You are viewing the version ***{{- .Site.Params.currentversion -}}*** of this website.  
+    For an up-to-date documentation, please check the [latest version]({{- .Site.Params.latestversionurl -}}).
 - id: toc_title
-  translation: "On this page:"
+  translation: 'On this page:'
 - id: toc_backtotop
-  translation: "Back to top"
+  translation: 'Back to top'
 - id: navbar_label_print
-  translation: "Print"
+  translation: 'Print'
 - id: navbar_label_qrcode
-  translation: "QR code"
+  translation: 'QR code'
 - id: navbar_label_shortcuts
-  translation: "Shortcuts"
+  translation: 'Shortcuts'
 - id: navbar_label_taxonomies
-  translation: "Taxonomies"
+  translation: 'Taxonomies'
 - id: navbar_label_versions
-  translation: "Versions"
+  translation: 'Versions'
 - id: navbar_label_info
-  translation: "About"
+  translation: 'About'
 - id: navbarinfo_title
-  translation: "About"
+  translation: 'About'
 - id: navbarshortcuts_title
-  translation: "Keyboard shortcuts"
+  translation: 'Keyboard shortcuts'
 - id: 1_info_keys_wording
-  translation: "Shift,i"
+  translation: 'Shift,i'
 - id: 1_info_wording
-  translation: "Show website information"
+  translation: 'Show website information'
 - id: 2_shortcuts_keys_wording
-  translation: "Shift,k"
+  translation: 'Shift,k'
 - id: 2_shortcuts_wording
-  translation: "Show shortcuts"
+  translation: 'Show shortcuts'
 - id: 3_home_keys_wording
-  translation: "Shift,h"
+  translation: 'Shift,h'
 - id: 3_home_wording
-  translation: "Go to homepage"
+  translation: 'Go to homepage'
 - id: 4_search_keys_wording
-  translation: "Shift,f"
+  translation: 'Shift,f'
 - id: 4_search_wording
-  translation: "Find on website"
+  translation: 'Find on website'
 - id: 5_togglesidebar_keys_wording
-  translation: "Shift,m"
+  translation: 'Shift,m'
 - id: 5_togglesidebar_wording
-  translation: "Collapse/Uncollapse sidebar"
+  translation: 'Collapse/Uncollapse sidebar'
 - id: 6_toggletoc_keys_wording
-  translation: "Shift,t"
+  translation: 'Shift,t'
 - id: 6_toggletoc_wording
-  translation: "Collapse/Uncollapse toc"
+  translation: 'Collapse/Uncollapse toc'
 - id: 7_backtotop_keys_wording
-  translation: "Shift,↑"
+  translation: 'Shift,↑'
 - id: 7_backtotop_wording
-  translation: "Go to the top of the page"
+  translation: 'Go to the top of the page'
 - id: 8_gotobottom_keys_wording
-  translation: "Shift,↓"
+  translation: 'Shift,↓'
 - id: 8_gotobottom_wording
-  translation: "Go to the bottom of the page"
+  translation: 'Go to the bottom of the page'
 - id: 9_print_keys_wording
-  translation: "Shift,p"
+  translation: 'Shift,p'
 - id: 9_print_wording
-  translation: "Print current page"
+  translation: 'Print current page'
 - id: 10_qrcode_keys_wording
-  translation: "Shift,q"
+  translation: 'Shift,q'
 - id: 10_qrcode_wording
-  translation: "Get current page QR code"
+  translation: 'Get current page QR code'
 - id: 11_closemodals_keys_wording
-  translation: "Escape"
+  translation: 'Escape'
 - id: 11_closemodals_wording
-  translation: "Close modals"
+  translation: 'Close modals'
 - id: shortcode_collapsible
-  translation: "Expand/Collapse"
+  translation: 'Expand/Collapse'
 - id: no_data
-  translation: "No data available"
+  translation: 'No data available'
 - id: empty_description
-  translation: "No description available"
+  translation: 'No description available'
 - id: read_more
-  translation: "Read more"
+  translation: 'Read more'
 - id: helper_loading
-  translation: "Loading"
+  translation: 'Loading'
 - id: code_copy_before
-  translation: "Copy to clipboard"
+  translation: 'Copy to clipboard'
 - id: code_copy_after
-  translation: "Copied to clipboard"
+  translation: 'Copied to clipboard'
 - id: download_as_svg
-  translation: "Download as SVG"
+  translation: 'Download as SVG'
 - id: 404_title
   translation: "Oops, we can't find the page you're looking for."
 - id: 404_footer
-  translation: "Back to homepage"
+  translation: 'Back to homepage'
 - id: intro_error_title
-  translation: "Error !!"
+  translation: 'Error !!'
 - id: intro_error
-  translation: "Invalid JSON. Please check the Intro shortcode definition."
+  translation: 'Invalid JSON. Please check the Intro shortcode definition.'
 - id: intro_empty
-  translation: "Attribute <strong><i>steps</i></strong> not found. Please check the Intro shortcode definition"
+  translation: 'Attribute <strong><i>steps</i></strong> not found. Please check the Intro shortcode definition'
 - id: intro_prevlabel
-  translation: "Previous"
+  translation: 'Previous'
 - id: intro_nextlabel
-  translation: "Next"
+  translation: 'Next'
 - id: intro_skiplabel
-  translation: "✗"
+  translation: '✗'
 - id: intro_donelabel
-  translation: "Done"
+  translation: 'Done'
 - id: na_common
-  translation: "Not available"
+  translation: 'Not available'
 - id: sidebar_collapsible_title
-  translation: "Collapse/Uncollapse sidebar"
+  translation: 'Collapse/Uncollapse sidebar'
 - id: toc_collapsible_title
-  translation: "Collapse/Uncollapse table of contents"
+  translation: 'Collapse/Uncollapse table of contents'
 - id: highcharts_error
-  translation: "Highcharts rendering unavailable"
+  translation: 'Highcharts rendering unavailable'

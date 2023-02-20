@@ -1,4 +1,4 @@
-<h{{.Level}} id='{{.Anchor | safeURL}}'>
-  {{.Text | safeHTML}}
-  <a href='#{{.Anchor | safeURL}}' class='anchor'>#</a>
-</h{{.Level}}>
+<h{{- .Level }} id='{{- .Anchor | safeURL -}}'>
+  {{- .Text | safeHTML -}}
+  <a href='#{{- .Anchor | safeURL -}}' class='anchor'>#</a>
+</h{{- .Level -}}>

@@ -1,5 +1,5 @@
-{{with .text}}
-  <div class='banner'>
+{{- with .text -}}
+  <div class="banner">
     <i class="fa-solid fa-circle-exclamation fa-2x"></i>
     <span>
       {{- $optMd := dict "markup" "goldmark" -}}
@@ -7,6 +7,6 @@
     </span>
     <i class="fa-solid fa-circle-exclamation fa-2x"></i>
   </div>
-{{else}}
-  {{errorf "banner set without text in %q" .rootContext.Path}}
-{{end}}
+{{- else -}}
+  {{- errorf "banner set without text in %q" .rootContext.Path -}}
+{{- end -}}

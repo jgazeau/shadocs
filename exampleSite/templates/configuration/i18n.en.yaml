@@ -11,9 +11,9 @@
   translation: Fork
 # Comma-separated labels associated with the keyboard keys of the shortcut
 - id: example_keys_wording
-  translation: "Shift,1"
+  translation: 'Shift,1'
 # Shortcut description
 - id: example_wording
-  translation: "Display a shortcut example"
+  translation: 'Display a shortcut example'
 - id: shortcut_example
-  translation: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut aliquam metus. Nam massa lectus, consequat nec est eget, faucibus suscipit nunc. Donec dapibus tortor eget libero laoreet, quis commodo orci mattis. Pellentesque in arcu et odio viverra varius vitae sit amet dolor. Mauris venenatis malesuada leo, et egestas lectus feugiat vel. Morbi pretium id turpis ac varius. Integer ut ipsum augue."
+  translation: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut aliquam metus. Nam massa lectus, consequat nec est eget, faucibus suscipit nunc. Donec dapibus tortor eget libero laoreet, quis commodo orci mattis. Pellentesque in arcu et odio viverra varius vitae sit amet dolor. Mauris venenatis malesuada leo, et egestas lectus feugiat vel. Morbi pretium id turpis ac varius. Integer ut ipsum augue.'

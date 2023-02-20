@@ -9,19 +9,19 @@ on:
     paths:
       - '**'
 env:
-  HUGO_BASIC_EXAMPLE_REPO: "gohugoio/hugoBasicExample"
-  HUGO_BIN_NAME: "hugo"
-  HUGO_CACHE_NAME: "hugo-bin-cache"
+  HUGO_BASIC_EXAMPLE_REPO: 'gohugoio/hugoBasicExample'
+  HUGO_BIN_NAME: 'hugo'
+  HUGO_CACHE_NAME: 'hugo-bin-cache'
   HUGO_BIN_PATH: ci_hugo_bin
-  HUGO_VERSION_THRESHOLD: "0.103.0"
+  HUGO_VERSION_THRESHOLD: '0.103.0'
   HTMLTEST_BIN_NAME: htmltest
-  HTMLTEST_CACHE_NAME: "htmltest-bin-cache"
+  HTMLTEST_CACHE_NAME: 'htmltest-bin-cache'
   HTMLTEST_BIN_PATH: ci_htmltest_bin
-  HUGO_TESTS_VERSIONS: "0.91.0 0.110.0"
-  CYPRESS_CACHE_NAME: "cypress-cache"
-  CYPRESS_CACHE_PATH: "~/.cache"
-  NPM_CACHE_NAME: "npm-cache"
-  NPM_CACHE_PATH: "~/.npm"
+  HUGO_TESTS_VERSIONS: '0.91.0 0.110.0'
+  CYPRESS_CACHE_NAME: 'cypress-cache'
+  CYPRESS_CACHE_PATH: '~/.cache'
+  NPM_CACHE_NAME: 'npm-cache'
+  NPM_CACHE_PATH: '~/.npm'
 jobs:
   hugo-binaries:
     name: Manage Hugo binaries

@@ -1,21 +1,21 @@
-{{$pagesArray := slice}}
-{{if eq .this.Site.Params.siteContentOrder "weight"}}
-  {{$pagesArray = .input.ByWeight}}
-{{else if eq .this.Site.Params.siteContentOrder "date"}}
-  {{$pagesArray = .input.ByDate}}
-{{else if eq .this.Site.Params.siteContentOrder "publishdate"}}
-  {{$pagesArray = .input.ByPublishDate}}
-{{else if eq .this.Site.Params.siteContentOrder "expirationdate"}}
-  {{$pagesArray = .input.ByExpiryDate}}
-{{else if eq .this.Site.Params.siteContentOrder "lastmodifieddate"}}
-  {{$pagesArray = .input.ByLastmod}}
-{{else if eq .this.Site.Params.siteContentOrder "length"}}
-  {{$pagesArray = .input.ByLength}}
-{{else if eq .this.Site.Params.siteContentOrder "title"}}
-  {{$pagesArray = .input.ByTitle}}
-{{else if eq .this.Site.Params.siteContentOrder "linktitle"}}
-  {{$pagesArray = .input.ByLinkTitle}}
-{{else}}
-  {{$pagesArray = .input}}
-{{end}}
-{{return $pagesArray}}
+{{- $pagesArray := slice -}}
+{{- if eq .this.Site.Params.siteContentOrder "weight" -}}
+  {{- $pagesArray = .input.ByWeight -}}
+{{- else if eq .this.Site.Params.siteContentOrder "date" -}}
+  {{- $pagesArray = .input.ByDate -}}
+{{- else if eq .this.Site.Params.siteContentOrder "publishdate" -}}
+  {{- $pagesArray = .input.ByPublishDate -}}
+{{- else if eq .this.Site.Params.siteContentOrder "expirationdate" -}}
+  {{- $pagesArray = .input.ByExpiryDate -}}
+{{- else if eq .this.Site.Params.siteContentOrder "lastmodifieddate" -}}
+  {{- $pagesArray = .input.ByLastmod -}}
+{{- else if eq .this.Site.Params.siteContentOrder "length" -}}
+  {{- $pagesArray = .input.ByLength -}}
+{{- else if eq .this.Site.Params.siteContentOrder "title" -}}
+  {{- $pagesArray = .input.ByTitle -}}
+{{- else if eq .this.Site.Params.siteContentOrder "linktitle" -}}
+  {{- $pagesArray = .input.ByLinkTitle -}}
+{{- else -}}
+  {{- $pagesArray = .input -}}
+{{- end -}}
+{{- return $pagesArray -}}

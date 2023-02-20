@@ -1,8 +1,30 @@
-<div id='globalLogoContainer' class='is-flex'>
-  <a id='globalLogo' class='navbar-item navbar-item-standard is-paddingless' href='{{"" | relLangURL}}'>
-    <img alt='{{i18n "homepage_title"}}' src='{{with .Site.Params.logo}}{{. | relURL}}{{else}}{{"images/logo.png" | relURL}}{{end}}'>
+<div id="globalLogoContainer" class="is-flex">
+  <a
+    id="globalLogo"
+    class="navbar-item navbar-item-standard is-paddingless"
+    href="{{- "" | relLangURL -}}"
+  >
+    <img
+      alt="{{- i18n "homepage_title" -}}"
+      src="{{- with .Site.Params.logo -}}
+        {{- . | relURL -}}
+      {{- else -}}
+        {{- "images/logo.png" | relURL -}}
+      {{- end -}}"
+    />
   </a>
-  <a id='globalTouchLogo' class='navbar-item navbar-item-standard is-paddingless' href='{{"" | relLangURL}}'>
-    <img alt='{{i18n "homepage_title"}}' src='{{with .Site.Params.logoTouch}}{{. | relURL}}{{else}}{{"images/logoTouch.png" | relURL}}{{end}}'>
+  <a
+    id="globalTouchLogo"
+    class="navbar-item navbar-item-standard is-paddingless"
+    href="{{- "" | relLangURL -}}"
+  >
+    <img
+      alt="{{- i18n "homepage_title" -}}"
+      src="{{- with .Site.Params.logoTouch -}}
+        {{- . | relURL -}}
+      {{- else -}}
+        {{- "images/logoTouch.png" | relURL -}}
+      {{- end -}}"
+    />
   </a>
 </div>

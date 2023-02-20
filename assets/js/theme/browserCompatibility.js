@@ -5,7 +5,8 @@ function browserCompatibility() {
   var msie = ua.indexOf('MSIE ');
   var trident = ua.indexOf('Trident/');
   console.log(ua);
-  var unsupportedBrowserHtml = "\
+  var unsupportedBrowserHtml =
+    "\
   <div id='unsupportedBrowser'>\
     <div class='is-compatibility-alert'>\
       <div>\
@@ -14,13 +15,19 @@ function browserCompatibility() {
         <p>$BROWSER_VERSION</p>\
       </div>\
     </div>\
-  </div>"
+  </div>";
   if (msie > 0) {
     // IE 10 or older, return version number
-    document.body.innerHTML = unsupportedBrowserHtml.replace('$BROWSER_VERSION','IE ' + parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10));
+    document.body.innerHTML = unsupportedBrowserHtml.replace(
+      '$BROWSER_VERSION',
+      'IE ' + parseInt(ua.substring(msie + 5, ua.indexOf('.', msie)), 10)
+    );
   } else if (trident > 0) {
     // IE 11, return version number
     var rv = ua.indexOf('rv:');
-    document.body.innerHTML = unsupportedBrowserHtml.replace('$BROWSER_VERSION','IE ' + parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10));
-  };
-};
+    document.body.innerHTML = unsupportedBrowserHtml.replace(
+      '$BROWSER_VERSION',
+      'IE ' + parseInt(ua.substring(rv + 3, ua.indexOf('.', rv)), 10)
+    );
+  }
+}
