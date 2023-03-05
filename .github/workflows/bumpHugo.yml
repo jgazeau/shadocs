@@ -33,7 +33,7 @@ jobs:
           printf "%-70s\n" "Minimum Hugo version: ${minHugoVersion}"
           printf "%-70s\n" "Latest Hugo version : ${latestHugoVersion}"
           printf "%70s\n" | tr ' ' '-'
-          sed -i 's/HUGO_TESTS_VERSIONS:.*/HUGO_TESTS_VERSIONS: "'"${minHugoVersion}"' '"${latestHugoVersion}"'"/' .github/workflows/branches.yml
+          sed -i 's/HUGO_TESTS_VERSIONS:.*/HUGO_TESTS_VERSIONS: '\'"${minHugoVersion}"' '"${latestHugoVersion}"\''/' .github/workflows/branches.yml
           sed -i 's/HUGO_VERSION.*/HUGO_VERSION       = "'"${latestHugoVersion}"'"/' netlify.toml
           if [[ $(git status --porcelain | wc -l) -gt 0 ]];then
             printf "%s\n" "chore:(bmyc): bump latest hugo version to ${latestHugoVersion}" > ${LOG_FILE}
