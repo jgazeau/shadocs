@@ -30,4 +30,4 @@ La documentation des shortcodes du thème fournie les informations afin de pouvo
 # Les shortcodes du thème
 ---
 
-{{< treeview >}}
+{{< treeview />}}

@@ -26,4 +26,4 @@ Dans le cas de Hugo, le convertisseur markdown utilisé est [Goldmark](https://g
 # La Syntaxe Markdown
 ---
 
-{{< treeview >}}
+{{< treeview />}}

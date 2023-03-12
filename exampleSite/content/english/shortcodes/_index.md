@@ -30,4 +30,4 @@ The theme shortcode documentation provides information to easily use the several
 # Theme shortcodes
 ---
 
-{{< treeview >}}
+{{< treeview />}}

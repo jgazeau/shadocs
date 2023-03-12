@@ -26,4 +26,4 @@ In Hugo's case, the markdown converter used is [Goldmark](https://github.com/yui
 # The Markdown syntax
 ---
 
-{{< treeview >}}
+{{< treeview />}}
