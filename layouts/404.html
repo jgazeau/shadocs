@@ -12,22 +12,20 @@
     href="{{- $main.RelPermalink | safeURL -}}"
   />
   <body>
-    <section>
-      <div id="content404">
-        <div id="errorCode404" data-text="404"><span>404</span></div>
-        <p id="title404">{{- i18n "404_title" -}}</p>
-        <img
-          alt="{{- i18n "404_title" -}}"
-          src="{{- with .Site.Params.image404 -}}
-            {{- . | relURL -}}
-          {{- else -}}
-            {{- "images/404.gif" | relURL -}}
-          {{- end -}}"
-        />
-        <a id="footer404" href="{{- "" | relLangURL -}}">
-          {{- i18n "404_footer" -}}
-        </a>
-      </div>
-    </section>
+    <div id="content404">
+      <div id="errorCode404" data-text="404"><span>404</span></div>
+      <p id="title404">{{- i18n "404_title" -}}</p>
+      <img
+        alt="{{- i18n "404_title" -}}"
+        src="{{- with .Site.Params.image404 -}}
+          {{- . | relURL -}}
+        {{- else -}}
+          {{- "images/404.gif" | relURL -}}
+        {{- end -}}"
+      />
+      <a id="footer404" href="{{- "" | relLangURL -}}">
+        {{- i18n "404_footer" -}}
+      </a>
+    </div>
   </body>
 </html>

@@ -45,7 +45,7 @@
   a
     @extend %unselectable
 #sidebar
-  +static-size-height(calc(100vh - #{$navbar-height} - (#{$sidebar-entry-height} + (2 * #{$theme-gap-medium-size}) + #{$theme-gap-small-size})))
+  +static-size-height(calc(100svh - #{$navbar-height} - (#{$sidebar-entry-height} + (2 * #{$theme-gap-medium-size}) + #{$theme-gap-small-size})))
 #sidebar,
 #sidebarContainer,
 #sidebarCollapsible
@@ -56,7 +56,6 @@
 .menu
   font-size: $sidebar-font-size
 #sidebarContainer
-  +static-size-height(calc(100vh - #{$navbar-height}))
   width: $sidebar-width
   z-index: 20
   &.is-sidebar-collapsed
@@ -75,7 +74,6 @@
   @media (hover: none)
     position: fixed
 #sidebarMobileWrapper
-  +static-size-height(calc(100vh - #{$navbar-height}))
   +static-size-width(#{$sidebar-width-collapsed})
   position: fixed
   +touch
