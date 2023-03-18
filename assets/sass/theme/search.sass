@@ -20,10 +20,14 @@
   &::placeholder
     color: smooth-color(findColorInvert(smooth-color($theme-color, 30)), 30)
     font-style: italic
+  +mobile
+    width: $navbar-search-width-mobile
 #searchInput
   +responsive-size(font-size, $content-font-size, 3px)
   width: $navbar-search-width
   display: block
+  +mobile
+    width: $navbar-search-width-mobile
 #searchList
   +responsive-size(font-size, $content-font-size, 3px)
   max-height: $navbar-search-results-height

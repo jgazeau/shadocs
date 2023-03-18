@@ -6,16 +6,14 @@
     {{- partial "custom/custom-head.html" .root -}}
   </head>
   <body onload="browserCompatibility()">
-    <section>
-      {{- partial "theme/header.html" .root -}}
-      <div
-        class="columns is-mobile is-paddingless is-marginless"
-        id="mainContainer"
-      >
-        {{- partial "theme/sidebar.html" .root -}}
-        {{- partial .contentTemplate .root -}}
-      </div>
-    </section>
+    {{- partial "theme/header.html" .root -}}
+    <div
+      class="columns is-mobile is-paddingless is-marginless"
+      id="mainContainer"
+    >
+      {{- partial "theme/sidebar.html" .root -}}
+      {{- partial .contentTemplate .root -}}
+    </div>
     {{- partial "theme/includes-end.html" .root -}}
     {{- partial "custom/custom-footer.html" .root -}}
   </body>

@@ -6,7 +6,7 @@
     #tocContainer
       box-shadow: 0 0 $theme-gap-small-size 0.1rem $toc-taxonomy-border-color
 #tocCollapsible
-  +static-size-height(calc(100vh - #{$navbar-height}))
+  +static-size-height(calc(100svh - #{$navbar-height}))
   color: findColorInvert($toc-taxonomy-collapsible-color)
   background-color: $toc-taxonomy-collapsible-color
   +static-size-width($toc-collapsible-width)
@@ -20,7 +20,7 @@
     cursor: pointer
 #tocContainer
   border-left: $theme-border-width solid $toc-taxonomy-border-color
-  +static-size-height(calc(100vh - #{$navbar-height}))
+  +static-size-height(calc(100svh - #{$navbar-height}))
   +static-size-width($toc-width)
   flex-flow: column
   display: flex

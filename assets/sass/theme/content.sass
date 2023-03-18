@@ -2,9 +2,10 @@
 // Markdown content styles
 //
 #mainContainer
-  +static-size-height(calc(100vh - #{$navbar-height}))
+  overflow-x: hidden
+  overflow-y: auto
+  flex: 1 1 auto
 #contentContainer
-  +static-size-height(calc(100vh - #{$navbar-height}))
   background: $content-background
   color: $content-writing-color
   word-break: break-word
