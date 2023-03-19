@@ -74,7 +74,7 @@ for (const testCase of testCases) {
         cy.scShowInfoResults();
       });
     });
-    describe('when versionning dropdown', () => {
+    describe('when versioning dropdown', () => {
       it('hover should display versions', () => {
         cy.get(`#versionsSelectorContainer${extendId}`).then(($elem) => {
           $elem.get(0).classList.toggle('is-hovered', true);

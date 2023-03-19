@@ -1,7 +1,7 @@
 ---
 weight: 5000
-title: "Thridparties imports"
-description: "How to manage the import of external libraries or thirdparties code?"
+title: "Third-party imports"
+description: "How to manage the import of external libraries or third-party code?"
 titleIcon: "fa-solid fa-right-to-bracket fa-rotate-90"
 categories: ["Functionalities"]
 tags: ["Configuration"]
@@ -36,7 +36,7 @@ The several types of imports managed by the theme are the following ones:
 Files to import must be defined as [Hugo assets](https://gohugo.io/hugo-pipes/introduction/#asset-directory)
 {{< /alert >}}
 
-# Define thirparty imports
+# Define third-party imports
 ---
 
 To define a file to import you must use the following configuration (*Cf. highlighted lines below*):
@@ -48,7 +48,7 @@ To define a file to import you must use the following configuration (*Cf. highli
     codeparam="linenos=inline,hl_lines=[\"38-43\",\"51-67\"]"
 />}}
 
-# Define thirparty imports for shortcodes
+# Define third-party imports for shortcodes
 ---
 
 The theme also offers the possibility to import libraries or third-party code associated with a shortcode. These files will be imported only if the shortcode is used in the current page, therefore reducing the loading time of the page.

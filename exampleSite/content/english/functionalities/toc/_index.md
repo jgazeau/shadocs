@@ -11,7 +11,7 @@ tags: ["Content management"]
 ---
 
 By default in the theme, each content page (except homepage) generates a table of contents associated with the titles defined in the page.  
-It is possible to activate or deactivate this functionnality, both globally (sitewide) or per-page, with the following considerations:
+It is possible to activate or deactivate this functionality, both globally (sitewide) or per-page, with the following considerations:
 * the homepage never contains the table of contents
 * the configuration key to use is `toc`
 * without configuration, the table of contents is enabled globally (sitewide)

@@ -24,7 +24,7 @@ Function managing modal closing:
 * If no input, all modals are closed
 {{< /md >}}|
 | disableSmoothScroll(); |{{< md >}}
-Fonction deactivating smooth scrolling on main content.
+Function deactivating smooth scrolling on main content.
 {{< /md >}}|
 | enableSmoothScroll(); |{{< md >}}
 Fonction activating smooth scrolling on main content.
