@@ -14,12 +14,12 @@ If you find any bug within the theme, don't hesitate to [raise and report a new 
 # Want to contribute?
 ---
 
-If you want to contribute directly to the project, don't hesitate do fork the project and raise a Pull Request to submit your modifications. All ideas are welcomed and I'll be glad to check them.
+If you want to contribute directly to the project, don't hesitate do fork the project and raise a Pull Request to submit your modifications. All ideas are welcome and I'll be glad to check them.
 
 # Want to run the documentation website locally?
 ---
 
 To run the current website locally, run the following command:
 ```sh
-hugo -s exampleSite/ serve
+hugo -s exampleSite/ server
 ```

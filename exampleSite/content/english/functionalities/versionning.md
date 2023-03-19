@@ -1,6 +1,6 @@
 ---
 weight: 14000
-title: "Versionning"
+title: "Versioning"
 description: "How to manage website versions?"
 titleIcon: "fa-solid fa-timeline"
 categories: ["Functionalities"]

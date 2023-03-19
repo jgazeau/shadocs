@@ -10,7 +10,7 @@ tags: ["Content management"]
 # Footnotes
 ---
 
-To define a footnote, **it must be formated in 2 parts**.
+To define a footnote, **it must be formatted in 2 parts**.
 
 * **First part** (footnote reference)
 

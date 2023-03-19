@@ -243,7 +243,7 @@ To emphasize a link, **surround the markdown code of the link with the chosen em
 
 ## Referenced link
 
-To define a link whose URL is referenced (therefore reusable), it must **be formated in 2 parts**.
+To define a link whose URL is referenced (therefore reusable), it must **be formatted in 2 parts**.
 
 * **First part** (link text)
 

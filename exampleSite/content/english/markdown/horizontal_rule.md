@@ -10,7 +10,7 @@ tags: ["Content management"]
 # Horizontal rule
 ---
 
-To define a horizontal rule, **add at least 3 stars (\*), hyphens (-) or underscores (_) characters at line start** (The line must only contain the choosen characters).
+To define a horizontal rule, **add at least 3 stars (\*), hyphens (-) or underscores (_) characters at line start** (The line must only contain the chosen characters).
 
 | Markdown | HTML | Rendering |
 | -------- | ---- | --------- |

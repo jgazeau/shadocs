@@ -66,8 +66,8 @@ categories: ["Theme"]
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
     },{
-      "title": "Versionning",
-      "intro": "The versionning button provides other available versions of the website.",
+      "title": "Versioning",
+      "intro": "The versioning button provides other available versions of the website.",
       "element": "getFirstVisibleElement('#versionsSelector, #versionsSelectorExtend');",
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(true);"
