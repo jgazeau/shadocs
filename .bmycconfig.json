@@ -9,7 +9,7 @@
       "library": "@asyncapi/parser",
       "filePath": "dist/bundle.js"
     },
-    "currentVersion": "1.17.1"
+    "currentVersion": "1.18.1"
   },
   {
     "package": "asyncapi",
@@ -224,6 +224,30 @@
       "name": "cdnjs",
       "library": "font-awesome",
       "fileName": "webfonts/fa-solid-900.woff2"
+    },
+    "currentVersion": "6.2.0"
+  },
+  {
+    "package": "fontawesome",
+    "hold": false,
+    "name": "static/css/fa-v4compatibility.ttf",
+    "localPath": "static/css/webfonts/fa-v4compatibility.ttf",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-v4compatibility.ttf"
+    },
+    "currentVersion": "6.2.0"
+  },
+  {
+    "package": "fontawesome",
+    "hold": false,
+    "name": "static/css/fa-v4compatibility.woff2",
+    "localPath": "static/css/webfonts/fa-v4compatibility.woff2",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "font-awesome",
+      "fileName": "webfonts/fa-v4compatibility.woff2"
     },
     "currentVersion": "6.2.0"
   },
