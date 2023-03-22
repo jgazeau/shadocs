@@ -9,7 +9,6 @@ enableGitInfo          = true
 metaDataFormat         = "yaml"
 publishDir             = "public"
 title                  = "Shadocs theme for Hugo"
-theme                  = "shadocs"
 themesdir              = "../.."
 ignoreLogs             = ['warning-goldmark-raw-html']
 
@@ -17,6 +16,9 @@ ignoreLogs             = ['warning-goldmark-raw-html']
   name = "Jordan GAZEAU"
 
 [module]
+  # uncomment line below for local development of module
+  # needs hugo v0.109.0 or higher and go 1.18 or higher
+  # workspace = "hugo.work"
   [module.hugoVersion]
     extended = true
     min = '0.141.0'
@@ -36,7 +38,8 @@ ignoreLogs             = ['warning-goldmark-raw-html']
   [[module.mounts]]
     source = 'jsoneditor'
     target = 'static/jsoneditor'
-
+  [[module.imports]]
+    path = 'github.com/jgazeau/shadocs'
 
 [taxonomies]
   category = "categories"
