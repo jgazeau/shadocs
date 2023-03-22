@@ -28,23 +28,30 @@ Several other assets are used in Shadocs. Versions can be found within the *.bmy
 
 To create a Hugo website, the Hugo documentation provides a complete [Quickstart](https://gohugo.io/getting-started/quick-start/) which includes all the necessary steps to easily and quickly create a Hugo website.
 
-## Adding the theme
+## Adding the theme module
 
 1. To add and use the Shadocs theme with a Hugo website, use one of the following possibilities:
-    * Add the theme as a Git submodule to the website project (Recommended method)
+    * Turn your website project into a hugo module and declare the shadocs theme module as a dependency for your site (Recommended method)
         ```Bash
         cd ${PROJECT_DIRECTORY}
-        git submodule add https://github.com/jgazeau/shadocs.git themes/shadocs
-        git submodule update --init --recursive
+        hugo mod init github.com/USERNAME/PROJECT
+        hugo mod get github.com/jgazeau/shadocs
         ```
-    * Download the [theme sources](https://github.com/jgazeau/shadocs/releases) and add them to the website project in the `themes/shadocs` directory
+    * Download the [theme archive](https://github.com/jgazeau/shadocs/releases).  and extract it into the `_vendor` directory of your website project's root directory (only if you don't have `go` language installed at your system)
+        ```Bash
+        cd ${PROJECT_DIRECTORY}
+        wget https://github.com/jgazeau/shadocs/releases/download/v2.0.0/_vendor-2.0.0.zip
+        unzip _vendor-2.0.0.zip
+        ```
 
-2. Add the theme to the website configuration file:
+2. Declare the theme module as an import in your website's configuration file:
 {{< snippet
-    caption="config.toml"
+    caption="hugo.toml"
     codelang="toml"
 >}}
 [...]
-theme = "shadocs"
+[module]
+  [[module.imports]]
+    path = 'github.com/jgazeau/shadocs'  
 [...]
 {{< /snippet >}}
