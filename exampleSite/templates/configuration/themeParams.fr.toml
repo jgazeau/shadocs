@@ -67,7 +67,7 @@
 #
 [includes]
   sass = [
-    "sass/main.sass"
+    "sass/theme/main.sass"
   ]
   css = [
     "css/external/fontawesome.all.min.css",
