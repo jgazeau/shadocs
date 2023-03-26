@@ -8,7 +8,7 @@
   translation: 'Collapse sidebar'
 - id: banner_default_content
   translation: |
-    You are viewing the version ***{{- .Site.Params.currentversion -}}*** of this website.  
+    You are viewing version ***{{- .Site.Params.currentversion -}}*** of this website.
     For an up-to-date documentation, please check the [latest version]({{- .Site.Params.latestversionurl -}}).
 - id: toc_title
   translation: 'On this page:'
@@ -69,7 +69,7 @@
 - id: 10_qrcode_keys_wording
   translation: 'Shift,q'
 - id: 10_qrcode_wording
-  translation: 'Get current page QR code'
+  translation: 'Show current page QR code'
 - id: 11_closemodals_keys_wording
   translation: 'Escape'
 - id: 11_closemodals_wording
@@ -97,9 +97,9 @@
 - id: intro_error_title
   translation: 'Error !!'
 - id: intro_error
-  translation: 'Invalid JSON. Please check the Intro shortcode definition.'
+  translation: "Invalid JSON. Please check the JSON data given inside the 'intro' shortcode."
 - id: intro_empty
-  translation: 'Attribute <strong><i>steps</i></strong> not found. Please check the Intro shortcode definition'
+  translation: "Attribute <strong><i>steps</i></strong> not found. Please check the JSON definition given inside the 'intro' shortcode"
 - id: intro_prevlabel
   translation: 'Previous'
 - id: intro_nextlabel

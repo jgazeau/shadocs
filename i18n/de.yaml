@@ -1,0 +1,118 @@
+- id: homepage_title
+  translation: 'Startseite'
+- id: search_placeholder
+  translation: 'Suche'
+- id: search_no_results
+  translation: 'Kein Suchergebnis'
+- id: sidebar_collapse
+  translation: 'Seitenleiste einklappen'
+- id: banner_default_content
+  translation: |
+    Sie betrachten gerade Version ***{{- .Site.Params.currentversion -}}*** dieser Webseite.  
+    Nutzen Sie die [neueste Version]({{- .Site.Params.latestversionurl -}}) um den aktuellen Stand der Webseite anzuzeigen.
+- id: toc_title
+  translation: 'Auf dieser Seite:'
+- id: toc_backtotop
+  translation: 'Zurück zum Anfang'
+- id: navbar_label_print
+  translation: 'Drucken'
+- id: navbar_label_qrcode
+  translation: 'QR-Code'
+- id: navbar_label_shortcuts
+  translation: 'Shortcuts'
+- id: navbar_label_taxonomies
+  translation: 'Taxonomien'
+- id: navbar_label_versions
+  translation: 'Versionen'
+- id: navbar_label_info
+  translation: 'Über'
+- id: navbarinfo_title
+  translation: 'Über'
+- id: navbarshortcuts_title
+  translation: 'Tastaturkürzel'
+- id: 1_info_keys_wording
+  translation: 'Shift,i'
+- id: 1_info_wording
+  translation: 'Website-Information anzeigen'
+- id: 2_shortcuts_keys_wording
+  translation: 'Shift,k'
+- id: 2_shortcuts_wording
+  translation: 'Shortcuts anzeigen'
+- id: 3_home_keys_wording
+  translation: 'Shift,h'
+- id: 3_home_wording
+  translation: 'Zur Startseite'
+- id: 4_search_keys_wording
+  translation: 'Shift,f'
+- id: 4_search_wording
+  translation: 'Auf der Webseite finden'
+- id: 5_togglesidebar_keys_wording
+  translation: 'Shift,m'
+- id: 5_togglesidebar_wording
+  translation: 'Seitenleiste ein-/ausklappen'
+- id: 6_toggletoc_keys_wording
+  translation: 'Shift,t'
+- id: 6_toggletoc_wording
+  translation: 'Inhaltsverzeichnis ein-/ausklappen'
+- id: 7_backtotop_keys_wording
+  translation: 'Shift,↑'
+- id: 7_backtotop_wording
+  translation: 'Gehe zum Anfang der Seite'
+- id: 8_gotobottom_keys_wording
+  translation: 'Shift,↓'
+- id: 8_gotobottom_wording
+  translation: 'Gehe ans Ende der Seite'
+- id: 9_print_keys_wording
+  translation: 'Shift,p'
+- id: 9_print_wording
+  translation: 'Drucke die aktuelle Seite'
+- id: 10_qrcode_keys_wording
+  translation: 'Shift,q'
+- id: 10_qrcode_wording
+  translation: 'Zeige den QR-Code der aktuellen Seite an'
+- id: 11_closemodals_keys_wording
+  translation: 'Escape'
+- id: 11_closemodals_wording
+  translation: 'Übergeordnete Fenster schließen'
+- id: shortcode_collapsible
+  translation: 'Ein-/ausklappen'
+- id: no_data
+  translation: 'Keine Daten verfügbar'
+- id: empty_description
+  translation: 'Keine Beschreibung verfügbar'
+- id: read_more
+  translation: 'Mehr lesen'
+- id: helper_loading
+  translation: 'Lädt …'
+- id: code_copy_before
+  translation: 'In die Zwischenablage kopieren'
+- id: code_copy_after
+  translation: 'In die Zwischenablage kopiert'
+- id: download_as_svg
+  translation: 'Als SVG herunterladen'
+- id: 404_title
+  translation: 'Oops, die gewünschte Seite kann nicht gefunden werden'
+- id: 404_footer
+  translation: 'Zurück zur Startseite'
+- id: intro_error_title
+  translation: 'Fehler !!'
+- id: intro_error
+  translation: "Ungültiges JSON. Bitte überprüfen Sie die im Shortcode 'intro' als Inhalt angegebene JSON-Datenstruktur."
+- id: intro_empty
+  translation: "Attribut <strong><i>steps</i></strong> nicht gefunden. Bitte überprüfen Sie im Shortcode 'intro' angegebene JSON-Datenstruktur."
+- id: intro_prevlabel
+  translation: 'Vorherige'
+- id: intro_nextlabel
+  translation: 'Nächste'
+- id: intro_skiplabel
+  translation: '✗'
+- id: intro_donelabel
+  translation: 'Erledigt'
+- id: na_common
+  translation: 'Nicht verfügbar'
+- id: sidebar_collapsible_title
+  translation: 'Seitenleiste ein-/ausklappen'
+- id: toc_collapsible_title
+  translation: 'Inhaltsverzeichnis ein-/ausklappen'
+- id: highcharts_error
+  translation: 'Service für Anzeige des Highcharts-Diagramms nicht verfügbar'
