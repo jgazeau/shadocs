@@ -14,7 +14,7 @@ Moreover, it is possible to define snippets organised in tabs. To do so, nest as
 For example: display CLI commands depending on the operating system used.
 
 {{< alert type="warning" >}}
-The content as well as parameters defined in a **tab** shortcode are preponderant over ones defined in the parent **snippet** shortcode. If all tabs share the same parameters, it is therefore possible to define them globally in the parent **snippet** shortcode (Cf. [examples](#examples) below).
+The content as well as parameters defined in a **tab** shortcode take precedence over definitions in the parent **snippet** shortcode. If all tabs share the same parameters, it is therefore possible to define them globally in the parent **snippet** shortcode (cf. [examples](#examples) below).
 {{< /alert >}}
 
 # Parameters
@@ -47,7 +47,7 @@ Code snippet language.
 Code snippet [highlight settings](https://gohugo.io/content-management/syntax-highlighting/#highlighting-in-code-fences).  
 *NB: Parameter only applicable for a snippet of **code** type.*
 {{< /md >}}|
-| title | nommé |{{< md >}}
+| title | named |{{< md >}}
 Tab title.  
 *NB: Parameter only applicable for a **tab** shortcode nested in a **snippet** shortcode.*
 {{< /md >}}|
