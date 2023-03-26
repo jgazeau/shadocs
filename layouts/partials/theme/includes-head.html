@@ -67,7 +67,7 @@
   {{- range .this | uniq -}}
     {{- $filesArray = $filesArray | append (resources.Get .) -}}
   {{- end -}}
-  {{- $options := (dict "outputStyle" "compressed" "includePaths" (slice "assets/bulma" "assets/sass")) -}}
+  {{- $options := (dict "outputStyle" "compressed" "includePaths" (slice "assets/bulma" "assets/sass/theme" "assets/sass/custom" "assets/sass")) -}}
   {{- $cssFile := $filesArray | resources.Concat "css/main.sass" | resources.ToCSS $options -}}
   <link
     rel="stylesheet"

@@ -3,8 +3,8 @@
   <script type='text/javascript'>
     let text404 = '{{- with .Site.Params.text404 -}}{{- . -}}{{- else -}}404{{- end -}}';
   </script> {{- partial "theme/meta.html" . -}}
-  {{- $404sass := resources.Get "sass/404.sass" -}}
-  {{- $options := (dict "outputStyle" "compressed" "includePaths" (slice "assets/bulma" "assets/sass")) -}}
+  {{- $404sass := resources.Get "sass/theme/404.sass" -}}
+  {{- $options := (dict "outputStyle" "compressed" "includePaths" (slice "assets/bulma" "assets/sass/theme")) -}}
   {{- $main    := $404sass | resources.ExecuteAsTemplate "css/404.sass" . | resources.ToCSS $options -}}
   <link
     rel="stylesheet"

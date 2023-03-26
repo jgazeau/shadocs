@@ -1,5 +1,5 @@
 ---
-weight: 4000
+weight: 5000
 linkTitle: "Contributer"
 title: "Guide de contribution"
 description: "Comment contribuer au thème ?"
