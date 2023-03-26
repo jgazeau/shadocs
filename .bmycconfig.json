@@ -45,7 +45,7 @@
       "library": "swagger-ui",
       "fileName": "swagger-ui-bundle.min.js"
     },
-    "currentVersion": "4.15.2"
+    "currentVersion": "4.18.1"
   },
   {
     "package": "swagger-ui",
@@ -57,7 +57,7 @@
       "library": "swagger-ui",
       "fileName": "swagger-ui-standalone-preset.min.js"
     },
-    "currentVersion": "4.15.2"
+    "currentVersion": "4.18.1"
   },
   {
     "package": "swagger-ui",
@@ -69,7 +69,7 @@
       "library": "swagger-ui",
       "fileName": "swagger-ui.min.css"
     },
-    "currentVersion": "4.15.2"
+    "currentVersion": "4.18.1"
   },
   {
     "package": "flexsearch",
@@ -153,7 +153,7 @@
       "library": "font-awesome",
       "fileName": "css/all.min.css"
     },
-    "currentVersion": "6.2.0"
+    "currentVersion": "6.3.0"
   },
   {
     "package": "fontawesome",
@@ -165,7 +165,7 @@
       "library": "font-awesome",
       "fileName": "webfonts/fa-brands-400.ttf"
     },
-    "currentVersion": "6.2.0"
+    "currentVersion": "6.3.0"
   },
   {
     "package": "fontawesome",
@@ -177,7 +177,7 @@
       "library": "font-awesome",
       "fileName": "webfonts/fa-brands-400.woff2"
     },
-    "currentVersion": "6.2.0"
+    "currentVersion": "6.3.0"
   },
   {
     "package": "fontawesome",
@@ -189,7 +189,7 @@
       "library": "font-awesome",
       "fileName": "webfonts/fa-regular-400.ttf"
     },
-    "currentVersion": "6.2.0"
+    "currentVersion": "6.3.0"
   },
   {
     "package": "fontawesome",
@@ -201,7 +201,7 @@
       "library": "font-awesome",
       "fileName": "webfonts/fa-regular-400.woff2"
     },
-    "currentVersion": "6.2.0"
+    "currentVersion": "6.3.0"
   },
   {
     "package": "fontawesome",
@@ -213,7 +213,7 @@
       "library": "font-awesome",
       "fileName": "webfonts/fa-solid-900.ttf"
     },
-    "currentVersion": "6.2.0"
+    "currentVersion": "6.3.0"
   },
   {
     "package": "fontawesome",
@@ -225,7 +225,7 @@
       "library": "font-awesome",
       "fileName": "webfonts/fa-solid-900.woff2"
     },
-    "currentVersion": "6.2.0"
+    "currentVersion": "6.3.0"
   },
   {
     "package": "fontawesome",
@@ -237,7 +237,7 @@
       "library": "font-awesome",
       "fileName": "webfonts/fa-v4compatibility.ttf"
     },
-    "currentVersion": "6.2.0"
+    "currentVersion": "6.3.0"
   },
   {
     "package": "fontawesome",
@@ -249,7 +249,7 @@
       "library": "font-awesome",
       "fileName": "webfonts/fa-v4compatibility.woff2"
     },
-    "currentVersion": "6.2.0"
+    "currentVersion": "6.3.0"
   },
   {
     "package": "highcharts",
@@ -261,7 +261,7 @@
       "library": "highcharts",
       "fileName": "highcharts.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -273,7 +273,7 @@
       "library": "highcharts",
       "fileName": "highcharts-3d.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -285,7 +285,7 @@
       "library": "highcharts",
       "fileName": "highcharts-gantt.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -297,7 +297,7 @@
       "library": "highcharts",
       "fileName": "highcharts-more.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -309,7 +309,7 @@
       "library": "highcharts",
       "fileName": "highmaps.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -321,7 +321,7 @@
       "library": "highcharts",
       "fileName": "highstock.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -333,7 +333,7 @@
       "library": "highcharts",
       "fileName": "css/highcharts.min.css"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -345,7 +345,7 @@
       "library": "highcharts",
       "fileName": "indicators/acceleration-bands.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -357,7 +357,7 @@
       "library": "highcharts",
       "fileName": "indicators/accumulation-distribution.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -369,7 +369,7 @@
       "library": "highcharts",
       "fileName": "indicators/ao.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -381,7 +381,7 @@
       "library": "highcharts",
       "fileName": "indicators/apo.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -393,7 +393,7 @@
       "library": "highcharts",
       "fileName": "indicators/aroon-oscillator.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -405,7 +405,7 @@
       "library": "highcharts",
       "fileName": "indicators/aroon.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -417,7 +417,7 @@
       "library": "highcharts",
       "fileName": "indicators/atr.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -429,7 +429,7 @@
       "library": "highcharts",
       "fileName": "indicators/bollinger-bands.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -441,7 +441,7 @@
       "library": "highcharts",
       "fileName": "indicators/cci.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -453,7 +453,7 @@
       "library": "highcharts",
       "fileName": "indicators/chaikin.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -465,7 +465,7 @@
       "library": "highcharts",
       "fileName": "indicators/cmf.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -477,7 +477,7 @@
       "library": "highcharts",
       "fileName": "indicators/cmo.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -489,7 +489,7 @@
       "library": "highcharts",
       "fileName": "indicators/dema.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -501,7 +501,7 @@
       "library": "highcharts",
       "fileName": "indicators/disparity-index.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -513,7 +513,7 @@
       "library": "highcharts",
       "fileName": "indicators/dmi.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -525,7 +525,7 @@
       "library": "highcharts",
       "fileName": "indicators/dpo.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -537,7 +537,7 @@
       "library": "highcharts",
       "fileName": "indicators/ema.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -549,7 +549,7 @@
       "library": "highcharts",
       "fileName": "indicators/ichimoku-kinko-hyo.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -561,7 +561,7 @@
       "library": "highcharts",
       "fileName": "indicators/indicators-all.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -573,7 +573,7 @@
       "library": "highcharts",
       "fileName": "indicators/indicators.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -585,7 +585,7 @@
       "library": "highcharts",
       "fileName": "indicators/keltner-channels.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -597,7 +597,7 @@
       "library": "highcharts",
       "fileName": "indicators/klinger.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -609,7 +609,7 @@
       "library": "highcharts",
       "fileName": "indicators/macd.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -621,7 +621,7 @@
       "library": "highcharts",
       "fileName": "indicators/mfi.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -633,7 +633,7 @@
       "library": "highcharts",
       "fileName": "indicators/momentum.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -645,7 +645,7 @@
       "library": "highcharts",
       "fileName": "indicators/natr.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -657,7 +657,7 @@
       "library": "highcharts",
       "fileName": "indicators/obv.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -669,7 +669,7 @@
       "library": "highcharts",
       "fileName": "indicators/pivot-points.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -681,7 +681,7 @@
       "library": "highcharts",
       "fileName": "indicators/ppo.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -693,7 +693,7 @@
       "library": "highcharts",
       "fileName": "indicators/price-channel.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -705,7 +705,7 @@
       "library": "highcharts",
       "fileName": "indicators/price-envelopes.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -717,7 +717,7 @@
       "library": "highcharts",
       "fileName": "indicators/psar.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -729,7 +729,7 @@
       "library": "highcharts",
       "fileName": "indicators/regressions.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -741,7 +741,7 @@
       "library": "highcharts",
       "fileName": "indicators/roc.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -753,7 +753,7 @@
       "library": "highcharts",
       "fileName": "indicators/rsi.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -765,7 +765,7 @@
       "library": "highcharts",
       "fileName": "indicators/slow-stochastic.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -777,7 +777,7 @@
       "library": "highcharts",
       "fileName": "indicators/stochastic.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -789,7 +789,7 @@
       "library": "highcharts",
       "fileName": "indicators/supertrend.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -801,7 +801,7 @@
       "library": "highcharts",
       "fileName": "indicators/tema.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -813,7 +813,7 @@
       "library": "highcharts",
       "fileName": "indicators/trendline.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -825,7 +825,7 @@
       "library": "highcharts",
       "fileName": "indicators/trix.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -837,7 +837,7 @@
       "library": "highcharts",
       "fileName": "indicators/volume-by-price.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -849,7 +849,7 @@
       "library": "highcharts",
       "fileName": "indicators/vwap.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -861,7 +861,7 @@
       "library": "highcharts",
       "fileName": "indicators/williams-r.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -873,7 +873,7 @@
       "library": "highcharts",
       "fileName": "indicators/wma.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -885,7 +885,7 @@
       "library": "highcharts",
       "fileName": "indicators/zigzag.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -897,7 +897,7 @@
       "library": "highcharts",
       "fileName": "lib/canvg.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -909,7 +909,7 @@
       "library": "highcharts",
       "fileName": "lib/jspdf.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -921,7 +921,7 @@
       "library": "highcharts",
       "fileName": "lib/svg2pdf.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -933,7 +933,7 @@
       "library": "highcharts",
       "fileName": "modules/accessibility.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -945,7 +945,7 @@
       "library": "highcharts",
       "fileName": "modules/annotations-advanced.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -957,7 +957,7 @@
       "library": "highcharts",
       "fileName": "modules/annotations.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -969,7 +969,7 @@
       "library": "highcharts",
       "fileName": "modules/arc-diagram.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -981,7 +981,7 @@
       "library": "highcharts",
       "fileName": "modules/arrow-symbols.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -993,7 +993,7 @@
       "library": "highcharts",
       "fileName": "modules/boost-canvas.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1005,7 +1005,7 @@
       "library": "highcharts",
       "fileName": "modules/boost.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1017,7 +1017,7 @@
       "library": "highcharts",
       "fileName": "modules/broken-axis.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1029,7 +1029,7 @@
       "library": "highcharts",
       "fileName": "modules/bullet.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1041,7 +1041,7 @@
       "library": "highcharts",
       "fileName": "modules/coloraxis.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1053,7 +1053,7 @@
       "library": "highcharts",
       "fileName": "modules/current-date-indicator.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1065,7 +1065,7 @@
       "library": "highcharts",
       "fileName": "modules/cylinder.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1077,7 +1077,7 @@
       "library": "highcharts",
       "fileName": "modules/data.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1089,7 +1089,7 @@
       "library": "highcharts",
       "fileName": "modules/datagrouping.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1101,7 +1101,7 @@
       "library": "highcharts",
       "fileName": "modules/debugger.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1113,7 +1113,7 @@
       "library": "highcharts",
       "fileName": "modules/dependency-wheel.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1125,7 +1125,7 @@
       "library": "highcharts",
       "fileName": "modules/dotplot.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1137,7 +1137,7 @@
       "library": "highcharts",
       "fileName": "modules/drag-panes.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1149,7 +1149,7 @@
       "library": "highcharts",
       "fileName": "modules/draggable-points.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1161,7 +1161,7 @@
       "library": "highcharts",
       "fileName": "modules/drilldown.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1173,7 +1173,7 @@
       "library": "highcharts",
       "fileName": "modules/dumbbell.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1185,7 +1185,7 @@
       "library": "highcharts",
       "fileName": "modules/export-data.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1197,7 +1197,7 @@
       "library": "highcharts",
       "fileName": "modules/exporting.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1209,7 +1209,7 @@
       "library": "highcharts",
       "fileName": "modules/full-screen.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1221,7 +1221,7 @@
       "library": "highcharts",
       "fileName": "modules/funnel.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1233,7 +1233,7 @@
       "library": "highcharts",
       "fileName": "modules/funnel3d.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1245,7 +1245,7 @@
       "library": "highcharts",
       "fileName": "modules/gantt.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1257,7 +1257,7 @@
       "library": "highcharts",
       "fileName": "modules/grid-axis.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1269,7 +1269,7 @@
       "library": "highcharts",
       "fileName": "modules/heatmap.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1281,7 +1281,7 @@
       "library": "highcharts",
       "fileName": "modules/heikinashi.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1293,7 +1293,7 @@
       "library": "highcharts",
       "fileName": "modules/histogram-bellcurve.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1305,7 +1305,7 @@
       "library": "highcharts",
       "fileName": "modules/hollowcandlestick.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1317,7 +1317,7 @@
       "library": "highcharts",
       "fileName": "modules/item-series.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1329,7 +1329,7 @@
       "library": "highcharts",
       "fileName": "modules/lollipop.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1341,7 +1341,7 @@
       "library": "highcharts",
       "fileName": "modules/map.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1353,7 +1353,7 @@
       "library": "highcharts",
       "fileName": "modules/marker-clusters.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1365,7 +1365,7 @@
       "library": "highcharts",
       "fileName": "modules/networkgraph.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1377,7 +1377,7 @@
       "library": "highcharts",
       "fileName": "modules/no-data-to-display.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1389,7 +1389,7 @@
       "library": "highcharts",
       "fileName": "modules/offline-exporting.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1401,7 +1401,7 @@
       "library": "highcharts",
       "fileName": "modules/oldie-polyfills.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1413,7 +1413,7 @@
       "library": "highcharts",
       "fileName": "modules/oldie.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1425,7 +1425,7 @@
       "library": "highcharts",
       "fileName": "modules/organization.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1437,7 +1437,7 @@
       "library": "highcharts",
       "fileName": "modules/overlapping-datalabels.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1449,7 +1449,7 @@
       "library": "highcharts",
       "fileName": "modules/parallel-coordinates.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1461,7 +1461,7 @@
       "library": "highcharts",
       "fileName": "modules/pareto.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1473,7 +1473,7 @@
       "library": "highcharts",
       "fileName": "modules/pathfinder.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1485,7 +1485,7 @@
       "library": "highcharts",
       "fileName": "modules/pattern-fill.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1497,7 +1497,7 @@
       "library": "highcharts",
       "fileName": "modules/price-indicator.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1509,7 +1509,7 @@
       "library": "highcharts",
       "fileName": "modules/pyramid3d.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1521,7 +1521,7 @@
       "library": "highcharts",
       "fileName": "modules/sankey.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1533,7 +1533,7 @@
       "library": "highcharts",
       "fileName": "modules/series-label.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1545,7 +1545,7 @@
       "library": "highcharts",
       "fileName": "modules/series-on-point.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1557,7 +1557,7 @@
       "library": "highcharts",
       "fileName": "modules/solid-gauge.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1569,7 +1569,7 @@
       "library": "highcharts",
       "fileName": "modules/sonification.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1581,7 +1581,7 @@
       "library": "highcharts",
       "fileName": "modules/static-scale.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1593,7 +1593,7 @@
       "library": "highcharts",
       "fileName": "modules/stock-tools.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1605,7 +1605,7 @@
       "library": "highcharts",
       "fileName": "modules/stock.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1617,7 +1617,7 @@
       "library": "highcharts",
       "fileName": "modules/streamgraph.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1629,7 +1629,7 @@
       "library": "highcharts",
       "fileName": "modules/sunburst.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1641,7 +1641,7 @@
       "library": "highcharts",
       "fileName": "modules/tilemap.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1653,7 +1653,7 @@
       "library": "highcharts",
       "fileName": "modules/timeline.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1665,7 +1665,7 @@
       "library": "highcharts",
       "fileName": "modules/treegrid.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1677,7 +1677,7 @@
       "library": "highcharts",
       "fileName": "modules/treemap.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1689,7 +1689,7 @@
       "library": "highcharts",
       "fileName": "modules/variable-pie.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1701,7 +1701,7 @@
       "library": "highcharts",
       "fileName": "modules/variwide.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1713,7 +1713,7 @@
       "library": "highcharts",
       "fileName": "modules/vector.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1725,7 +1725,7 @@
       "library": "highcharts",
       "fileName": "modules/venn.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1737,7 +1737,7 @@
       "library": "highcharts",
       "fileName": "modules/windbarb.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1749,7 +1749,7 @@
       "library": "highcharts",
       "fileName": "modules/wordcloud.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1761,7 +1761,7 @@
       "library": "highcharts",
       "fileName": "modules/xrange.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1773,7 +1773,7 @@
       "library": "highcharts",
       "fileName": "themes/avocado.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1785,7 +1785,7 @@
       "library": "highcharts",
       "fileName": "themes/brand-dark.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1797,7 +1797,7 @@
       "library": "highcharts",
       "fileName": "themes/brand-light.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1809,7 +1809,7 @@
       "library": "highcharts",
       "fileName": "themes/dark-blue.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1821,7 +1821,7 @@
       "library": "highcharts",
       "fileName": "themes/dark-green.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1833,7 +1833,7 @@
       "library": "highcharts",
       "fileName": "themes/dark-unica.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1845,7 +1845,7 @@
       "library": "highcharts",
       "fileName": "themes/gray.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1857,7 +1857,7 @@
       "library": "highcharts",
       "fileName": "themes/grid-light.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1869,7 +1869,7 @@
       "library": "highcharts",
       "fileName": "themes/grid.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1881,7 +1881,7 @@
       "library": "highcharts",
       "fileName": "themes/high-contrast-dark.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1893,7 +1893,7 @@
       "library": "highcharts",
       "fileName": "themes/high-contrast-light.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1905,7 +1905,7 @@
       "library": "highcharts",
       "fileName": "themes/sand-signika.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1917,7 +1917,7 @@
       "library": "highcharts",
       "fileName": "themes/skies.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1929,7 +1929,7 @@
       "library": "highcharts",
       "fileName": "themes/sunset.min.js"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1941,7 +1941,7 @@
       "library": "highcharts",
       "fileName": "css/annotations/popup.min.css"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1953,7 +1953,7 @@
       "library": "highcharts",
       "fileName": "css/stocktools/gui.min.css"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1965,7 +1965,7 @@
       "library": "highcharts",
       "fileName": "css/themes/dark-unica.min.css"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1977,7 +1977,7 @@
       "library": "highcharts",
       "fileName": "css/themes/grid-light.min.css"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   },
   {
     "package": "highcharts",
@@ -1989,6 +1989,6 @@
       "library": "highcharts",
       "fileName": "css/themes/sand-signika.min.css"
     },
-    "currentVersion": "10.2.1"
+    "currentVersion": "10.3.3"
   }
 ]
