@@ -21,13 +21,12 @@
     role="menu"
   >
     <div class="dropdown-content is-paddingless">
-      {{- range $.Site.Home.AllTranslations -}}
+      {{- range $.Page.AllTranslations -}}
         {{- $.Scratch.Set "translatedLang" .Language.Lang -}}
+        {{- $.Scratch.Set "translatedUrl" "" -}}
         {{- range $.Page.Translations -}}
           {{- if eq .Language.Lang ($.Scratch.Get "translatedLang") -}}
             {{- $.Scratch.Set "translatedUrl" (.RelPermalink | safeURL) -}}
-          {{- else -}}
-            {{- $.Scratch.Set "translatedUrl" "" -}}
           {{- end -}}
         {{- end -}}
         {{- if eq $.Site.Language.LanguageName .Language.LanguageName -}}
