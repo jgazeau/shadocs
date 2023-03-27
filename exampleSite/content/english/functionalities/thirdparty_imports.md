@@ -17,12 +17,10 @@ The several types of imports managed by the theme are the following ones:
 | Import type | Comment |
 | ----------- | ------- |
 | **SASS files** (.sass) |{{< md >}}
-* Imported in `<head>` tag as `<link rel="stylesheet" type="text/css">` after being [converted as CSS by Hugo](https://gohugo.io/hugo-pipes/transform-to-css/), grouped and minified in **main.css** file
+* Imported in `<head>` tag as `<link rel="stylesheet" type="text/css">` after being [converted as CSS by Hugo](https://gohugo.io/hugo-pipes/transform-to-css/), grouped and minified in **css/main.css** file
 * Paths used for the SASS➔CSS conversion :
     * assets/bulma
     * assets/sass
-    * assets/sass/theme
-    * assets/sass/custom
 {{< /md >}}|
 | **CSS files** (.css) |{{< md >}}
 * Imported file by file in `<head>` tag as `<link rel="stylesheet" type="text/css">` and minified

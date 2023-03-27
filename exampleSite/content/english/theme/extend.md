@@ -64,9 +64,6 @@ The following files are managed within the theme:
 * **assets/sass/custom/custom_pre_variables.sass** to override [bulma variables](https://bulma.io/documentation/customize/variables/) as well as [primary theme variables](https://github.com/jgazeau/shadocs/blob/main/assets/sass/theme/pre_variables.sass)
 * **assets/sass/custom/custom_variables.sass** to override [secondary theme variables](https://github.com/jgazeau/shadocs/blob/main/assets/sass/theme/variables.sass)
 
-{{< alert type="warning" >}}
-If specific SASS customization is choosed, all custom files must exist (and left empty if nothing has to be overriden) within the **assets/sass/custom** folder (e.g. [documentation website SASS assets folder](https://github.com/jgazeau/shadocs/tree/main/exampleSite/assets/sass/custom))
-{{< /alert >}}
 {{< alert type="info" >}}
 For more information, check the documentation website [custom_variables.sass](https://github.com/jgazeau/shadocs/blob/main/exampleSite/assets/sass/custom/custom_variables.sass) and [example.sass](https://github.com/jgazeau/shadocs/blob/main/exampleSite/assets/sass/custom/example.sass), to implement specific CSS behavior:
 ### Specific title color for custom SASS example {#sass_custom_example}
