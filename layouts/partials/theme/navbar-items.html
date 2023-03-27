@@ -34,19 +34,19 @@
   </a>
 </div>
 {{- range $taxonomyname, $taxonomy := .Site.Taxonomies -}}
-  {{- $.Scratch.Add "taxnomyCount" (len $taxonomy) -}}
+  {{- $.Scratch.Add "taxonomyCount" (len $taxonomy) -}}
 {{- end -}}
-{{- if gt ($.Scratch.Get "taxnomyCount") 0 -}}
+{{- if gt ($.Scratch.Get "taxonomyCount") 0 -}}
   <div class="navbar-item">
     {{- partial "theme/taxonomy-selector.html" . -}}
   </div>
 {{- end -}}
 {{- range $.Page.Translations -}}
   {{- if reflect.IsMap .Data.Terms -}}
-    {{- $.Scratch.Add "taxnomyTranslatedCount" (len .Data.Terms) -}}
+    {{- $.Scratch.Add "taxonomyTranslatedCount" (len .Data.Terms) -}}
   {{- end -}}
 {{- end -}}
-{{- if and (.IsTranslated) (ne ($.Scratch.Get "taxnomyTranslatedCount") 0) -}}
+{{- if and (.IsTranslated) (ne ($.Scratch.Get "taxonomyTranslatedCount") 0) -}}
   <div class="navbar-item">
     {{- partial "theme/lang-selector.html" . -}}
   </div>
