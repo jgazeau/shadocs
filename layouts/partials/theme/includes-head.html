@@ -67,7 +67,7 @@
   {{- range .this | uniq -}}
     {{- $filesArray = $filesArray | append (resources.Get .) -}}
   {{- end -}}
-  {{- $options := (dict "outputStyle" "compressed") -}}
+  {{- $options := (dict "outputStyle" "compressed" "targetPath" "css/main.css") -}}
   {{- $cssFile := $filesArray | resources.Concat "sass/theme/bundle.sass" | resources.ToCSS $options -}}
   <link
     rel="stylesheet"

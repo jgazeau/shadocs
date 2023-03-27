@@ -64,9 +64,6 @@ Les fichiers suivants sont gérés dans le thème:
 * **assets/sass/custom/custom_pre_variables.sass** pour surcharger les [variables bulma](https://bulma.io/documentation/customize/variables/) de même que les [variables primaires du thème](https://github.com/jgazeau/shadocs/blob/main/assets/sass/theme/pre_variables.sass)
 * **assets/sass/custom/custom_variables.sass** pour surcharger les [variables secondaires du thème](https://github.com/jgazeau/shadocs/blob/main/assets/sass/theme/variables.sass)
 
-{{< alert type="warning" >}}
-Si la personnalisation SASS est choisie, tout les fichiers specifiques doivent exister (et laissés vide si rien ne doit être surchargé) dans le dossier **assets/sass/custom** (e.g. [dossier des assets du site de documentation](https://github.com/jgazeau/shadocs/tree/main/exampleSite/assets/sass/custom))
-{{< /alert >}}
 {{< alert type="info" >}}
 Pour plus d'information, se référer au fichier du site de documentation [custom_variables.sass](https://github.com/jgazeau/shadocs/blob/main/exampleSite/assets/sass/custom/custom_variables.sass) et [example.sass](https://github.com/jgazeau/shadocs/blob/main/exampleSite/assets/sass/custom/example.sass), pour implémenter un comportement CSS spécifique:
 ### Couleur de titre spécifique pour exemple de personnalisation SASS {#sass_custom_example}
