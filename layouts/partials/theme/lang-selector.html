@@ -22,20 +22,13 @@
   >
     <div class="dropdown-content is-paddingless">
       {{- range $.Page.AllTranslations -}}
-        {{- $.Scratch.Set "translatedLang" .Language.Lang -}}
-        {{- $.Scratch.Set "translatedUrl" "" -}}
-        {{- range $.Page.Translations -}}
-          {{- if eq .Language.Lang ($.Scratch.Get "translatedLang") -}}
-            {{- $.Scratch.Set "translatedUrl" (.RelPermalink | safeURL) -}}
-          {{- end -}}
-        {{- end -}}
         {{- if eq $.Site.Language.LanguageName .Language.LanguageName -}}
           <div class="dropdown-item is-selected has-text-weight-bold">
             {{- .Language.LanguageName -}}
           </div>
         {{- else -}}
           <a
-            href="{{- $.Scratch.Get "translatedUrl" -}}"
+            href="{{- .RelPermalink | safeURL -}}"
             class="dropdown-item has-text-weight-bold"
           >
             {{- .Language.LanguageName -}}
