@@ -18,7 +18,7 @@ ignoreLogs             = ['warning-goldmark-raw-html']
 [module]
   # uncomment line below for local development of module
   # needs hugo v0.109.0 or higher and go 1.18 or higher
-  # workspace = "hugo.work"
+  workspace = "hugo.work"
   [module.hugoVersion]
     extended = true
     min = '0.141.0'
