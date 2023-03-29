@@ -110,9 +110,5 @@
   translation: 'Erledigt'
 - id: na_common
   translation: 'Nicht verfügbar'
-- id: sidebar_collapsible_title
-  translation: 'Seitenleiste ein-/ausklappen'
-- id: toc_collapsible_title
-  translation: 'Inhaltsverzeichnis ein-/ausklappen'
 - id: highcharts_error
   translation: 'Service für Anzeige des Highcharts-Diagramms nicht verfügbar'

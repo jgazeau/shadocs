@@ -53,7 +53,7 @@
 - id: 6_toggletoc_keys_wording
   translation: 'Shift,t'
 - id: 6_toggletoc_wording
-  translation: 'Collapse/Uncollapse toc'
+  translation: 'Collapse/Uncollapse table of contents'
 - id: 7_backtotop_keys_wording
   translation: 'Shift,↑'
 - id: 7_backtotop_wording
@@ -110,9 +110,5 @@
   translation: 'Done'
 - id: na_common
   translation: 'Not available'
-- id: sidebar_collapsible_title
-  translation: 'Collapse/Uncollapse sidebar'
-- id: toc_collapsible_title
-  translation: 'Collapse/Uncollapse table of contents'
 - id: highcharts_error
   translation: 'Highcharts rendering unavailable'
