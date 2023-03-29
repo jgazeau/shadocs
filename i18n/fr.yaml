@@ -49,9 +49,9 @@
 - id: 5_togglesidebar_keys_wording
   translation: 'Maj,m'
 - id: 5_togglesidebar_wording
-  translation: 'Réduire/Développer la table des matières'
+  translation: 'Réduire/Développer le menu latéral'
 - id: 6_toggletoc_keys_wording
-  translation: 'Maj,m'
+  translation: 'Maj,t'
 - id: 6_toggletoc_wording
   translation: 'Réduire/Développer la table des matières'
 - id: 7_backtotop_keys_wording
