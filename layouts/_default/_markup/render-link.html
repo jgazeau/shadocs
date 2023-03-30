@@ -7,7 +7,7 @@
   {{- with .Title -}}
     title="{{- . -}}" id="{{- . | anchorize -}}"
   {{- end -}}
-  {{- with $simpleLink -}}
+  {{- with $simpleLink }}
     class="is-pretty-link"
   {{- end -}}
   >{{- .Text | safeHTML -}}</a
