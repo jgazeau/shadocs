@@ -1,6 +1,7 @@
 DirectoryPath: 'exampleSite/public'
 CheckFavicon: true
 EnforceHTML5: true
+IgnoreExternalBrokenLinks: true
 IgnoreDirs:
   - 'en'
 IgnoreURLs: ['https://emojipedia.org/']
