@@ -42,7 +42,7 @@
     "bmyc": "^0.5.4",
     "cross-env": "^7.0.3",
     "cypress": "^12.11.0",
-    "prettier": "^2.8.7",
+    "prettier": "^2.8.8",
     "prettier-plugin-go-template": "^0.0.13",
     "start-server-and-test": "^2.0.0"
   }
