@@ -1,0 +1,19 @@
+module:
+  mounts:
+    - source: archetypes
+      target: archetypes
+    - source: assets
+      target: assets
+    - source: data
+      target: data
+    - source: i18n
+      target: i18n
+    - source: layouts
+      target: layouts
+    - source: static
+      target: static
+  imports:
+    path: github.com/jgthms/bulma
+    mounts:
+    - source: .
+      target: assets/sass
