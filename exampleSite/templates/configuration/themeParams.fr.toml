@@ -71,7 +71,7 @@
   ]
   css = [
     "css/external/fontawesome.all.min.css",
-    "css/external/overlay-scrollbars/OverlayScrollbars.min.css"
+    "css/external/overlay-scrollbars/overlayscrollbars.min.css"
   ]
   js = [
     "js/theme/browserCompatibility.js",
@@ -90,13 +90,13 @@
     "js/theme/shortcuts.js",
     "js/theme/sidebar.js",
     "js/theme/toc.js",
-    "js/external/overlay-scrollbars/OverlayScrollbars.min.js"
+    "js/external/overlay-scrollbars/overlayscrollbars.min.js"
   ]
   [includes.shortcodes.jsModules]
     asyncapi = [
       "js/shortcodes/asyncapi.js",
-      "js/external/asyncapi/bundle.js",
-      "js/external/asyncapi/asyncapi-web-component.js"
+      "js/external/asyncapi/index.min.js",
+      "js/external/asyncapi/asyncapi-web-component.min.js"
     ]
     collapsible = [
       "js/shortcodes/collapsible.js"

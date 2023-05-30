@@ -1,23 +1,24 @@
+import { overlayOptions } from './modules/const.min.js';
 import {
   addFunctionToResizeEvent,
-  isInScrollContainer,
-  isInViewport,
   getFirstAncestorByClass,
   getScrollMiddleOffset,
   getScrollOffset,
+  isInScrollContainer,
+  isInViewport,
   manageClickCollapsibleSidebar,
   manageDefaultCollapsibleSidebar,
   toggleSidebarEntry,
 } from './modules/helpers.min.js';
-import { overlayOptions } from './modules/const.min.js';
 
 // VARS //
+var { OverlayScrollbars } = OverlayScrollbarsGlobal;
 // MAIN //
 //Manage sidebar actions
 document.addEventListener('DOMContentLoaded', function () {
   manageDefaultCollapsibleSidebar();
   //Create perfect scrollbar instances
-  new OverlayScrollbars(document.getElementById('sidebar'), overlayOptions);
+  OverlayScrollbars(document.getElementById('sidebar'), overlayOptions);
   //Manage expand function for sidebar entries
   let iie = document.getElementsByClassName('is-icon-expandable');
   for (let i = 0; i < iie.length; i++) {
@@ -91,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function () {
           entriesContainer.style.left =
             this.getBoundingClientRect().right + 'px';
           entriesWrapper.style.maxHeight = entriesMaxHeight + 'px';
-          new OverlayScrollbars(entriesWrapper, overlayOptions);
+          OverlayScrollbars(entriesWrapper, overlayOptions);
           manageActiveEntryScroll(
             document.getElementById('sidebarActiveEntry')
           );
