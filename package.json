@@ -12,7 +12,7 @@
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
     "start": "cross-env HUGO_PORT=${npm_package_config_HUGO_PORT} HUGO_BIN=${npm_package_config_HUGO_BIN} TEST_BASE_URL=${npm_package_config_TEST_BASE_URL} npm run start:child",
-    "start:child": "cross-env-shell \"${HUGO_BIN} --source exampleSite serve --baseUrl ${TEST_BASE_URL} --port ${HUGO_PORT} --disableLiveReload\"",
+    "start:child": "cross-env-shell \"${HUGO_BIN} --source exampleSite serve --baseURL ${TEST_BASE_URL} --port ${HUGO_PORT} --disableLiveReload\"",
     "cypress:info": "cypress info",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
