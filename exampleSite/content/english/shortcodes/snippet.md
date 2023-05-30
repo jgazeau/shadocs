@@ -63,14 +63,12 @@ Tab title.
 # Hello, World!
 ---
 *I am* **a reusable** ***template*** to include in a page content.
-}
 {{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet >}}
 # Hello, World!
 ---
 *I am* **a reusable** ***template*** to include in a page content.
-}
 {{< /snippet >}}|
 |{{< md >}}
 ```
@@ -80,7 +78,6 @@ Tab title.
 # Hello, World!
 ---
 *I am* **a reusable** ***template*** to include in a page content.
-}
 {{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet
@@ -89,7 +86,6 @@ Tab title.
 # Hello, World!
 ---
 *I am* **a reusable** ***template*** to include in a page content.
-}
 {{< /snippet >}}|
 |{{< md >}}
 ```

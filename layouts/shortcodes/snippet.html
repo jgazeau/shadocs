@@ -112,7 +112,11 @@
 {{- end -}}
 {{- define "getSnippetContent" -}}
   {{- if (eq .type "code") -}}
-    {{- printf "%s%s {%s}\n%s\n%s\n" "~~~" .codelang .codeparam .content "~~~" | .context.Page.RenderString .optMd -}}
+    {{- $computedCodeParam := "" -}}
+    {{- with .codeparam -}}
+      {{- $computedCodeParam = (printf "{%s}" .) -}}
+    {{- end -}}
+    {{- printf "%s%s %s\n%s\n%s\n" "~~~" .codelang $computedCodeParam .content "~~~" | .context.Page.RenderString .optMd -}}
   {{- else if (eq .type "md") -}}
     <div class="sc-snippet-md">
       {{- .content | .context.Page.RenderString .optMd -}}

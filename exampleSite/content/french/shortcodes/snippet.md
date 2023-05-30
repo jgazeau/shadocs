@@ -63,14 +63,12 @@ Titre de l'onglet.
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
-}
 {{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet >}}
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
-}
 {{< /snippet >}}|
 |{{< md >}}
 ```
@@ -80,7 +78,6 @@ Titre de l'onglet.
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
-}
 {{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet
@@ -89,7 +86,6 @@ Titre de l'onglet.
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
-}
 {{< /snippet >}}|
 |{{< md >}}
 ```
