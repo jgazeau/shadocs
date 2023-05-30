@@ -71,12 +71,13 @@
   ]
   css = [
     "css/external/fontawesome.all.min.css",
-    "css/external/overlay-scrollbars/OverlayScrollbars.min.css"
+    "css/external/overlay-scrollbars/overlayscrollbars.min.css"
   ]
   js = [
     "js/theme/browserCompatibility.js",
     "js/external/flexsearch/flexsearch.bundle.min.js",
-    "js/external/qrious/qrious.min.js"
+    "js/external/qrious/qrious.min.js",
+    "js/external/overlay-scrollbars/overlayscrollbars.min.js"
   ]
   jsModules = [
     "js/theme/modules/const.js",
@@ -89,13 +90,12 @@
     "js/theme/search.js",
     "js/theme/shortcuts.js",
     "js/theme/sidebar.js",
-    "js/theme/toc.js",
-    "js/external/overlay-scrollbars/OverlayScrollbars.min.js"
+    "js/theme/toc.js"
   ]
   [includes.shortcodes.jsModules]
     asyncapi = [
       "js/shortcodes/asyncapi.js",
-      "js/external/asyncapi/bundle.min.js",
+      "js/external/asyncapi/index.min.js",
       "js/external/asyncapi/asyncapi-web-component.min.js"
     ]
     collapsible = [

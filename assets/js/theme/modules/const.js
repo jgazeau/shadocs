@@ -23,17 +23,18 @@ export const flexSearchOptions = {
   }
 }
 export const overlayOptions = {
-  className: 'main-scrollbar-theme',
   paddingAbsolute: true,
-  overflowBehavior: {
+  overflow: {
     x: 'hidden',
     y: 'scroll'
   },
   scrollbars : {
+    theme: 'os-theme-shadocs',
+    autoHideDelay: 300,
     autoHide: 'leave',
-    dragScrolling: false,
-    clickScrolling: false,
-    touchSupport: true
+    dragScroll: false,
+    clickScroll: false,
+    pointers: ['mouse', 'touch', 'pen']
   }
 };
 export const widescreenSize = 1216;
