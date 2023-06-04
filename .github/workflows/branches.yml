@@ -155,7 +155,7 @@ jobs:
       - name: Build Hugo static files
         run: |
           mv ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}_${HUGO_TESTS_VERSIONS##* } ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}
-          hugo -s exampleSite/ -b "localhost:1313/"
+          hugo -s exampleSite/ -b "localhost:1313"
       - name: Run htmltest
         run: htmltest
   test-theme-chrome:
