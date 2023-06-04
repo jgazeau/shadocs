@@ -2,7 +2,7 @@
 {{- with $href -}}
   {{- with and (eq (slicestr $href 0 1) "/") (not $.this.Page.Site.Params.enforceRefrelLinks) -}}
     {{- with eq $href "/" -}}
-      {{- $href = "" | relLangURL -}}
+      {{- $href = "/" | relLangURL -}}
     {{- else -}}
       {{- $href = (slicestr $href 1) | relURL -}}
     {{- end -}}
