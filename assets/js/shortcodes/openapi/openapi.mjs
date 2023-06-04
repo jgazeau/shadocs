@@ -1,7 +1,7 @@
 import {
   addFunctionToResizeEvent,
   getFirstAncestorByClass,
-} from '../theme/modules/helpers.min.js';
+} from '../../theme/modules/helpers.min.js';
 
 // VARS //
 // MAIN //
