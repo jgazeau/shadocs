@@ -9,7 +9,7 @@
       "library": "@asyncapi/parser",
       "filePath": "browser/index.js"
     },
-    "currentVersion": "2.0.1"
+    "currentVersion": "2.0.2"
   },
   {
     "package": "asyncapi",
