@@ -45,7 +45,7 @@
       "library": "swagger-ui",
       "fileName": "swagger-ui-bundle.min.js"
     },
-    "currentVersion": "5.1.0"
+    "currentVersion": "5.1.1"
   },
   {
     "package": "swagger-ui",
@@ -57,7 +57,7 @@
       "library": "swagger-ui",
       "fileName": "swagger-ui-standalone-preset.min.js"
     },
-    "currentVersion": "5.1.0"
+    "currentVersion": "5.1.1"
   },
   {
     "package": "swagger-ui",
@@ -69,7 +69,7 @@
       "library": "swagger-ui",
       "fileName": "swagger-ui.min.css"
     },
-    "currentVersion": "5.1.0"
+    "currentVersion": "5.1.1"
   },
   {
     "package": "flexsearch",
@@ -117,7 +117,7 @@
       "library": "overlayscrollbars",
       "fileName": "browser/overlayscrollbars.browser.es6.min.js"
     },
-    "currentVersion": "2.2.0"
+    "currentVersion": "2.2.1"
   },
   {
     "package": "overlayscrollbars",
@@ -129,7 +129,7 @@
       "library": "overlayscrollbars",
       "fileName": "styles/overlayscrollbars.min.css"
     },
-    "currentVersion": "2.2.0"
+    "currentVersion": "2.2.1"
   },
   {
     "package": "intro",
