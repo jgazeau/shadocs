@@ -23,7 +23,7 @@
           {{- "images/404.gif" | relURL -}}
         {{- end -}}"
       />
-      <a id="footer404" href="{{- "/" | relLangURL -}}">
+      <a id="footer404" href="{{- urls.JoinPath (.Site.BaseURL | relLangURL) "/" -}}">
         {{- i18n "404_footer" -}}
       </a>
     </div>

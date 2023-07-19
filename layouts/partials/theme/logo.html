@@ -2,7 +2,7 @@
   <a
     id="globalLogo"
     class="navbar-item navbar-item-standard is-paddingless"
-    href="{{- "/" | relLangURL -}}"
+    href="{{- urls.JoinPath (.Site.BaseURL | relLangURL) "/" -}}"
   >
     <img
       alt="{{- i18n "homepage_title" -}}"
@@ -16,7 +16,7 @@
   <a
     id="globalTouchLogo"
     class="navbar-item navbar-item-standard is-paddingless"
-    href="{{- "/" | relLangURL -}}"
+    href="{{- urls.JoinPath (.Site.BaseURL | relLangURL) "/" -}}"
   >
     <img
       alt="{{- i18n "homepage_title" -}}"
