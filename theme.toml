@@ -9,7 +9,7 @@ homepage = "https://shadocs.netlify.app/"
 demosite = "https://shadocs.netlify.app/"
 tags = ["Bulma", "Search", "Simple", "Documentation", "Fontawesome", "Intro", "Mermaid", "OpenAPI", "AsyncAPI"]
 features = ["Menu", "Nested sections", "Search", "Shortcuts", "Netlify", "Intro", "Mermaid", "OpenAPI", "AsyncAPI"]
-min_version = "0.91.0"
+min_version = "0.112.0"
 
 [author]
   name = "Jordan GAZEAU"
