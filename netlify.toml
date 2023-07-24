@@ -3,7 +3,7 @@ publish = "exampleSite/public"
 command = "hugo -s exampleSite"
 
 [build.environment]
-HUGO_VERSION       = "0.115.3"
+HUGO_VERSION       = "0.115.4"
 HUGO_THEME         = "repo"
 HUGO_ENABLEGITINFO = "true"
 
