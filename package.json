@@ -41,7 +41,7 @@
   "devDependencies": {
     "bmyc": "^0.5.5",
     "cross-env": "^7.0.3",
-    "cypress": "^13.2.0",
+    "cypress": "^13.3.1",
     "prettier": "^3.0.1",
     "prettier-plugin-go-template": "^0.0.15",
     "start-server-and-test": "^2.0.0"
