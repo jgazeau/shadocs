@@ -95,7 +95,6 @@
   [includes.shortcodes.jsModules]
     asyncapi = [
       "js/shortcodes/asyncapi.js",
-      "js/external/asyncapi/index.min.js",
       "js/external/asyncapi/asyncapi-web-component.min.js"
     ]
     collapsible = [
@@ -122,7 +121,7 @@
     ]
   [includes.shortcodes.css]
     asyncapi = [
-      "css/external/asyncapi/fiori.css"
+      "css/external/asyncapi/default.min.css"
     ]
     openapi = [
       "css/external/swagger-ui/swagger-ui.min.css"
