@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/jgazeau/shadocs",
   "devDependencies": {
-    "bmyc": "^0.5.6",
+    "bmyc": "^0.5.8",
     "cross-env": "^7.0.3",
     "cypress": "^13.3.1",
     "prettier": "^3.0.3",
