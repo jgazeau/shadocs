@@ -40,5 +40,5 @@ jobs:
             git config --local user.email "action@github.com"
             git commit -m "${PR_TITLE}"
             git push -f origin ${BRANCH_NAME}
-            hub pull-request -f --file ${LOG_FILE} -l "internal" --base main --head ${BRANCH_NAME}
+            gh pr create --title "$(head -n 1 ${LOG_FILE})" --body "$(tail -n +2 ${LOG_FILE})" --label "internal" --base main --head ${BRANCH_NAME} --fill
           fi

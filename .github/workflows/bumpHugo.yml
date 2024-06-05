@@ -19,7 +19,6 @@ jobs:
           token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
       - name: Bump thirdparties and create PR
         env:
-          LOG_FILE: 'workflow.log'
           PR_TITLE: 'build: bump Hugo'
           BRANCH_NAME: 'build/bump_hugo'
           GITHUB_TOKEN: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
@@ -36,12 +35,11 @@ jobs:
           sed -i 's/HUGO_TESTS_VERSIONS:.*/HUGO_TESTS_VERSIONS: '\'"${minHugoVersion}"' '"${latestHugoVersion}"\''/' .github/workflows/branches.yml
           sed -i 's/HUGO_VERSION.*/HUGO_VERSION       = "'"${latestHugoVersion}"'"/' netlify.toml
           if [[ $(git status --porcelain | wc -l) -gt 0 ]];then
-            printf "%s\n" "chore:(bmyc): bump latest hugo version to ${latestHugoVersion}" > ${LOG_FILE}
             git checkout -b ${BRANCH_NAME}
             git add -u .
             git config --local user.name "GitHub Action"
             git config --local user.email "action@github.com"
             git commit -m "${PR_TITLE}"
             git push -f origin ${BRANCH_NAME}
-            hub pull-request -f --file ${LOG_FILE} -l "internal" --base main --head ${BRANCH_NAME}
+            gh pr create --title "chore:(bmyc): bump latest hugo version to ${latestHugoVersion}" --label "internal" --base main --head ${BRANCH_NAME} --fill
           fi
