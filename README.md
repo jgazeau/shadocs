@@ -1,9 +1,5 @@
 # Shadocs theme for Hugo
 
-[![Shadocs version](https://img.shields.io/github/package-json/v/jgazeau/shadocs/main)](https://github.com/jgazeau/shadocs/releases/)
-
-## Checks
-
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/jgazeau/shadocs/hugo.yml?branch=main&style=for-the-badge&logo=githubpages&logoSize=auto&label=Documentation%20Website&labelColor=steelblue&link=https%3A%2F%2Fjgazeau.github.io%2Fshadocs%2F)
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/jgazeau/shadocs/branches.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&logoSize=auto)
 ![GitHub Tag](https://img.shields.io/github/v/tag/jgazeau/shadocs?sort=semver&style=for-the-badge&link=https%3A%2F%2Fgithub.com%2Fjgazeau%2Fshadocs%2Freleases)
