@@ -17,7 +17,7 @@
   # Curent version of the website
   currentVersion          = "latest"
   # Url of the latest version of the website
-  latestVersionUrl        = "https://shadocs.netlify.app/"
+  latestVersionUrl        = "https://jgazeau.github.io/shadocs/"
   # Enforce Link resolution using relref function (https://gohugo.io/content-management/cross-references/)
   enforceRefrelLinks      = true
   # Keyboard shortcuts list

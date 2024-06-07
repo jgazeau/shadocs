@@ -70,7 +70,7 @@ themesdir              = "../.."
   # toc                   = true
   # globalBanner          = true
   currentVersion          = "latest"
-  latestVersionUrl        = "https://shadocs.netlify.app/"
+  latestVersionUrl        = "https://jgazeau.github.io/shadocs/"
   # enforceRefrelLinks    = true
   [params.navbar.shortcuts]
     [params.navbar.shortcuts.example]
@@ -78,10 +78,10 @@ themesdir              = "../.."
       function = "scExample"
   [[params.navbar.versions]]
     name = 'latest'
-    url  = 'https://shadocs.netlify.app/'
+    url  = 'https://jgazeau.github.io/shadocs/'
   [[params.navbar.versions]]
     name = 'deprecated version'
-    url  = 'https://shadocs.netlify.app/404.html'
+    url  = 'https://jgazeau.github.io/shadocs/404.html'
   [params.taxonomies]
     [params.taxonomies.categories]
       icon = "fa-solid fa-table-cells"

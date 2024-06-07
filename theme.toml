@@ -5,10 +5,10 @@ name = "Shadocs"
 license = "MIT"
 licenselink = "https://github.com/jgazeau/shadocs/blob/master/LICENSE"
 description = "Multipurpose Theme for sharing documentation"
-homepage = "https://shadocs.netlify.app/"
-demosite = "https://shadocs.netlify.app/"
+homepage = "https://jgazeau.github.io/shadocs/"
+demosite = "https://jgazeau.github.io/shadocs/"
 tags = ["Bulma", "Search", "Simple", "Documentation", "Fontawesome", "Intro", "Mermaid", "OpenAPI", "AsyncAPI"]
-features = ["Menu", "Nested sections", "Search", "Shortcuts", "Netlify", "Intro", "Mermaid", "OpenAPI", "AsyncAPI"]
+features = ["Menu", "Nested sections", "Search", "Shortcuts", "GitHub Pages", "Intro", "Mermaid", "OpenAPI", "AsyncAPI"]
 min_version = "0.112.0"
 
 [author]
