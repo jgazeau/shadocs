@@ -33,7 +33,7 @@ jobs:
           printf "%-70s\n" "Latest Hugo version : ${latestHugoVersion}"
           printf "%70s\n" | tr ' ' '-'
           sed -i 's/HUGO_TESTS_VERSIONS:.*/HUGO_TESTS_VERSIONS: '\'"${minHugoVersion}"' '"${latestHugoVersion}"\''/' .github/workflows/branches.yml
-          sed -i 's/HUGO_VERSION.*/HUGO_VERSION       = "'"${latestHugoVersion}"'"/' netlify.toml
+          sed -i 's/HUGO_VERSION:.*/HUGO_VERSION: '"${latestHugoVersion}"'/' .github/workflows/hugo.yml
           if [[ $(git status --porcelain | wc -l) -gt 0 ]];then
             git checkout -b ${BRANCH_NAME}
             git add -u .
