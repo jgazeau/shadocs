@@ -21,7 +21,7 @@
       "library": "@asyncapi/react-component",
       "filePath": "styles/default.min.css"
     },
-    "currentVersion": "2.0.1"
+    "currentVersion": "2.0.3"
   },
   {
     "package": "swagger-ui",
