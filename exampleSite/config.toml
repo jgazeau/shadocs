@@ -12,8 +12,8 @@ title                  = "Shadocs theme for Hugo"
 theme                  = "shadocs"
 themesdir              = "../.."
 
-[Author]
-  name = "Jordan GAZEAU"
+[params.author]
+    name = "Jordan GAZEAU"
 
 [module]
   [module.hugoVersion]
