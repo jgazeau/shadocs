@@ -107,15 +107,14 @@
       "js/external/intro/intro.min.js",
       "js/shortcodes/intro.js"
     ]
+    openapi = [
+      "js/shortcodes/openapi.js",
+    ]
     treeview = [
       "js/shortcodes/treeview.js"
     ]
-    openapi = [
-      "js/shortcodes/openapi/openapi.mjs",
-    ]
   [includes.shortcodes.js]
     openapi = [
-      "js/shortcodes/openapi/openapi.js",
       "js/external/swagger-ui/swagger-ui-bundle.min.js",
       "js/external/swagger-ui/swagger-ui-standalone-preset.min.js"
     ]
