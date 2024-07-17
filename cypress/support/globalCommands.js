@@ -75,3 +75,10 @@ Cypress.Commands.add('scrollAndClickElem', ($elem) => {
 Cypress.Commands.add('scrollAndClick', { prevSubject: true }, ($elem) => {
   cy.wrap($elem).scrollIntoView().click({ force: true });
 });
+Cypress.Commands.add('assertValueCopiedToClipboard', value => {
+  cy.window().then(win => {
+    win.navigator.clipboard.readText().then(text => {
+      expect(text).to.eq(value)
+    })
+  })
+})

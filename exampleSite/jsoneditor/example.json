@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Dummy Schema",
+  "type": "object",
+  "properties": {
+    "dummyString": {
+      "type": "string",
+      "description": "Dummy string",
+      "minLength": 1,
+      "maxLength": 10,
+      "pattern": "^[a-zA-Z0-9]{1,10}$"
+    },
+    "dummyDate": {
+      "type": "string",
+      "description": "Dummy date in YYYY-MM-DD format",
+      "format": "date",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "dummyEnum": {
+      "type": "string",
+      "description": "Dummy enum",
+      "enum": ["first", "second", "third"]
+    },
+    "dummyStrings": {
+      "type": "array",
+      "description": "List of Dummy strings",
+      "items": {
+        "type": "string",
+        "description": "Dummy string",
+        "minLength": 1,
+        "maxLength": 10,
+        "pattern": "^[a-zA-Z0-9]{1,10}$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "dummyObject": {
+      "type": "object",
+      "description": "Dummy object",
+      "properties": {
+        "dummyString": {
+          "type": "string",
+          "description": "Dummy string",
+          "minLength": 1,
+          "maxLength": 10,
+          "pattern": "^[a-zA-Z0-9]{1,10}$"
+        }
+      },
+      "required": ["dummyString"]
+    }
+  },
+  "required": ["dummyString", "dummyDate", "dummyStrings", "dummyObject"]
+}

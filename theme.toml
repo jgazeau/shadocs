@@ -7,8 +7,8 @@ licenselink = "https://github.com/jgazeau/shadocs/blob/master/LICENSE"
 description = "Multipurpose Theme for sharing documentation"
 homepage = "https://jgazeau.github.io/shadocs/"
 demosite = "https://jgazeau.github.io/shadocs/"
-tags = ["Bulma", "Search", "Simple", "Documentation", "Fontawesome", "Intro", "Mermaid", "OpenAPI", "AsyncAPI"]
-features = ["Menu", "Nested sections", "Search", "Shortcuts", "GitHub Pages", "Intro", "Mermaid", "OpenAPI", "AsyncAPI"]
+tags = ["Bulma", "Search", "Simple", "Documentation", "Fontawesome", "Intro", "Mermaid", "OpenAPI", "AsyncAPI", "JsonEditor"]
+features = ["Menu", "Nested sections", "Search", "Shortcuts", "GitHub Pages", "Intro", "Mermaid", "OpenAPI", "AsyncAPI", "JsonEditor"]
 min_version = "0.112.0"
 
 [author]

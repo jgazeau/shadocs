@@ -1,6 +1,7 @@
 const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
+  chromeWebSecurity: false,
   e2e: {
     baseUrl: 'http://localhost:1313/',
   },
@@ -29,6 +30,7 @@ module.exports = defineConfig({
     SC_COLLAPSIBLE_PATH: 'collapsible/',
     SC_HIGHCHARTS_PATH: 'highcharts/',
     SC_INTRO_PATH: 'intro/',
+    SC_JSONEDITOR_PATH: 'jsoneditor/',
     SC_OPENAPI_PATH: 'openapi/',
     SC_PAGEBREAK_PATH: 'pagebreak/',
     SC_PARAMETER_PATH: 'parameter/',

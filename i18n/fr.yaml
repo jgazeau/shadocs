@@ -112,3 +112,9 @@
   translation: 'Non disponible'
 - id: highcharts_error
   translation: 'Rendu du Highcharts non disponible'
+- id: jsoneditor_download_json
+  translation: 'Télécharger le JSON'
+- id: jsoneditor_copy_json
+  translation: 'Copier le JSON dans le presse-papiers'
+- id: jsoneditor_validate_error
+  translation: 'Erreur de formulaire'

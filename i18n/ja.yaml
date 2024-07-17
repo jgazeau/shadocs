@@ -91,7 +91,7 @@
 - id: download_as_svg
   translation: 'SVGでダウンロード'
 - id: 404_title
-  translation: "おっと、お探しのページを見つけられませんでした。"
+  translation: 'おっと、お探しのページを見つけられませんでした。'
 - id: 404_footer
   translation: 'ホームページへ戻る'
 - id: intro_error_title
@@ -112,3 +112,9 @@
   translation: '使用不可'
 - id: highcharts_error
   translation: 'Highcharts レンダリングは使用不可です'
+- id: jsoneditor_download_json
+  translation: 'JSON をダウンロード'
+- id: jsoneditor_copy_json
+  translation: 'JSON をクリップボードにコピー'
+- id: jsoneditor_validate_error
+  translation: 'フォームエラー'
