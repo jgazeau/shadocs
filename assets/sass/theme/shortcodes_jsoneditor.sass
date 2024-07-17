@@ -1,0 +1,154 @@
+//
+// Treeview
+//
+.sc-jsoneditor-container
+  border: 1px solid smooth-color($content-background, 30)
+  background: smooth-color($content-background, 10)
+  padding: $theme-gap-medium-size
+  color: $content-writing-color
+  +font-family(roboto-mono)
+  .je-indented-panel
+    border: 1px solid smooth-color($content-background, 20)
+    padding: $theme-gap-medium-size
+    margin: 0
+  .row
+    padding: $theme-gap-medium-size
+    &:not(:has(.je-indented-panel))
+      &:focus-within,
+      &:hover
+        background: smooth-color($content-background, 15)
+  div[data-schematype="object"].je-object__container
+    >.je-indented-panel
+      padding: 0
+  div[data-schematype="array"]
+    >.je-indented-panel
+      div[data-schematype].je-indented-panel
+        &:focus-within,
+        &:hover
+          background: smooth-color($content-background, 15)
+      >div
+        >div[data-schematype]+div[data-schematype]
+            margin: $theme-gap-medium-size 0
+        >div[data-schematype]:first-child
+            margin-bottom: $theme-gap-medium-size
+    div:has(span>button.json-editor-btntype-delete),
+    div:has(span>button.json-editor-btntype-move)
+      position: relative
+      >span
+        &:has(button.json-editor-btntype-delete)
+        &:has(button.json-editor-btntype-move)
+          justify-content: space-between
+          flex-direction: row
+          position: absolute
+          flex-wrap: nowrap
+          display: flex
+          right: 0
+          top: 0
+      div[data-schematype="object"]>span
+        &:has(button.json-editor-btntype-delete),
+        &:has(button.json-editor-btntype-move)
+          button
+            margin-left: $theme-gap-small-size
+      .je-indented-panel>span
+        &:has(button.json-editor-btntype-delete),
+        &:has(button.json-editor-btntype-move)
+          margin: $theme-gap-medium-size $theme-gap-small-size
+          button
+            margin-right: $theme-gap-small-size
+  .je-header
+    font-weight: bold
+    button
+      border: 1px solid smooth-color($json-editor-color, 25)
+      padding: $theme-gap-small-size $theme-gap-medium-size
+      color: findColorInvert($json-editor-color)
+      background: $json-editor-color
+      &:before
+        padding-right: $theme-gap-medium-size
+        font: var(--fa-font-solid)
+        content: "\f550"
+      &:hover
+        background: smooth-color($json-editor-color, 20)
+        cursor: pointer
+    &.je-object__title
+      button:before
+        content: "\f1b2"
+  .json-editor-btn-add
+    border: 1px solid smooth-color($json-editor-add-color, 25)
+    color: findColorInvert($json-editor-add-color)
+    background: $json-editor-add-color
+    &:hover
+      background: smooth-color($json-editor-add-color, 15)
+      cursor: pointer
+  .json-editor-btntype-delete
+    border: 1px solid smooth-color($json-editor-delete-color, 25)
+    color: findColorInvert($json-editor-delete-color)
+    background: $json-editor-delete-color
+    &:hover
+      background: smooth-color($json-editor-delete-color, 15)
+      cursor: pointer
+  .json-editor-btntype-move
+    border: 1px solid smooth-color($json-editor-move-color, 25)
+    color: findColorInvert($json-editor-move-color)
+    background: $json-editor-move-color
+    &:hover
+      background: smooth-color($json-editor-move-color, 15)
+      cursor: pointer
+  .form-control
+    label
+      &:after
+        content: ":"
+    input
+      width: 100%
+    .errmsg
+      font-style: italic
+      color: red
+  input,
+  select
+    border: 1px solid smooth-color($content-background, 25)
+    background: $content-background
+    color: $content-writing-color
+    +static-size-width(100%)
+    box-shadow: unset
+    outline: unset
+    margin: 0
+    &:hover,
+    &:focus,
+    &:focus-visible,
+      border: 1px solid smooth-color($content-background, 50)
+.sc-jsoneditor-action-wrapper
+  padding: $theme-gap-medium-size
+  justify-content: center
+  flex-direction: row
+  flex-wrap: nowrap
+  display: flex
+  .is-action-button
+    position: relative
+    &.sc-jsoneditor-copy-button:after
+      right: 100%
+    &.sc-jsoneditor-download-button:after
+      left: 100%
+    &.sc-jsoneditor-success:after
+      color: $json-editor-success-color
+    &.sc-jsoneditor-error:after
+      color: $json-editor-error-color
+    &:after
+      +responsive-size(font-size, $theme-font-medium-size, 3px)
+      height: $theme-gap-extra-large-size
+      padding: $theme-gap-medium-size
+      content: attr(title-after)
+      +font-family(roboto-mono)
+      text-overflow: ellipsis
+      white-space: nowrap
+      align-items: center
+      transform: scale(0)
+      max-width: inherit
+      position: absolute
+      overflow: hidden
+      display: inline
+      opacity: 0
+    &:not(:active):after
+      transition: transform 1.5s step-end
+      animation: copied 1.5s ease-in-out
+    &:active:after
+      transition: transform 1.5s step-start
+      transform: scale(1)

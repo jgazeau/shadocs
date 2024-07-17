@@ -132,6 +132,18 @@
     "currentVersion": "7.2.0"
   },
   {
+    "package": "json-editor",
+    "hold": false,
+    "name": "js/json-editor",
+    "localPath": "assets/js/external/json-editor/jsoneditor.min.js",
+    "assetManager": {
+      "name": "cdnjs",
+      "library": "json-editor",
+      "fileName": "jsoneditor.min.js"
+    },
+    "currentVersion": "2.15.1"
+  },
+  {
     "package": "fontawesome",
     "hold": false,
     "name": "css/all",

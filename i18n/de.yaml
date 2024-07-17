@@ -112,3 +112,9 @@
   translation: 'Nicht verfügbar'
 - id: highcharts_error
   translation: 'Service für Anzeige des Highcharts-Diagramms nicht verfügbar'
+- id: jsoneditor_download_json
+  translation: 'Laden Sie JSON herunter'
+- id: jsoneditor_copy_json
+  translation: 'JSON in die Zwischenablage kopieren'
+- id: jsoneditor_validate_error
+  translation: 'Formularfehler'

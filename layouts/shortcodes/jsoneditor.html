@@ -1,0 +1,34 @@
+<div class="sc-jsoneditor-wrapper is-loading helper-loading-container">
+  {{- .Page.Scratch.Add "jsoneditorUid" 1 -}}
+  {{- with (.Get "id") -}}
+    {{- $.Scratch.Set "jsoneditorId" (replace . "'" "") -}}
+  {{- else -}}
+    {{- $.Scratch.Set "jsoneditorId" (printf "%s%s" "jsoneditor-" (string (.Page.Scratch.Get "jsoneditorUid"))) -}}
+  {{- end -}}
+  <div
+    class="sc-jsoneditor-container"
+    id="{{- $.Scratch.Get "jsoneditorId" -}}"
+    jsoneditor-url="{{- .Get "source" -}}"
+    {{- with .Get "postProcessFunction" -}}
+    post-process-function="{{- . -}}"
+    {{- end -}}
+  ></div>
+  {{- partial "theme/loading.html" -}}
+  <div
+    class="sc-jsoneditor-action-wrapper"
+    id="{{- $.Scratch.Get "jsoneditorId" -}}-action-wrapper"
+  >
+    <a
+      id="{{- $.Scratch.Get "jsoneditorId" -}}-copy"
+      class="sc-jsoneditor-copy-button is-action-button"
+      title="{{- i18n "jsoneditor_copy_json" -}}">
+      <i class="fa-solid fa-copy"></i>
+    </a>
+    <a
+      id="{{- $.Scratch.Get "jsoneditorId" -}}-download"
+      class="sc-jsoneditor-download-button is-action-button"
+      title="{{- i18n "jsoneditor_download_json" -}}">
+      <i class="fa-solid fa-download"></i>
+    </a>
+  </div>
+</div>

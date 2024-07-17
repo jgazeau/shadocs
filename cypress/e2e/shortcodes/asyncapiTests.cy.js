@@ -11,14 +11,10 @@ describe('for: asyncapi shortcode', () => {
       'helper-loading-container'
     );
   });
-  it(
-    'asyncapi should not have a loading helper once loaded',
-    { defaultCommandTimeout: 10000 },
-    () => {
-      cy.get('#content .sc-asyncapi-wrapper.helper-loading-container').should(
-        'not.have.class',
-        'is-loading'
-      );
-    }
-  );
+  it('asyncapi should not have a loading helper once loaded', { defaultCommandTimeout: 10000 }, () => {
+    cy.get('#content .sc-asyncapi-wrapper.helper-loading-container').should(
+      'not.have.class',
+      'is-loading'
+    );
+  });
 });
