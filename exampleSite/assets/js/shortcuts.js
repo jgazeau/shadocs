@@ -3,8 +3,6 @@ import {
   displayModal,
 } from './theme/modules/helpers.min.js';
 
-// VARS //
-// MAIN //
 // Function to display a shortcut example
 window.scExample = scExample;
 function scExample() {

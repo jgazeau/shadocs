@@ -7,7 +7,8 @@ describe('for: parameter shortcode', () => {
   });
   it('parameters should be visible', () => {
     cy.get('#content .sc-parameter').each(($elem) => {
-      cy.get($elem).scrollIntoView().should('be.visible');
+      cy.get('#contentContainer').scrollTo(0, $elem[0].getBoundingClientRect().top,{ensureScrollable: false});
+      cy.get($elem).should('be.visible');
     });
   });
 });

@@ -13,7 +13,7 @@ theme                  = "shadocs"
 themesdir              = "../.."
 
 [params.author]
-    name = "Jordan GAZEAU"
+  name = "Jordan GAZEAU"
 
 [module]
   [module.hugoVersion]
@@ -24,8 +24,15 @@ themesdir              = "../.."
     source = 'asyncapi'
     target = 'static/asyncapi'
   [[module.mounts]]
+    source = 'assets'
+    target = 'static/assets'
+  [[module.mounts]]
     source = 'openapi'
     target = 'static/openapi'
+  [[module.mounts]]
+    source = 'jsoneditor'
+    target = 'static/jsoneditor'
+
 
 [taxonomies]
   category = "categories"
@@ -89,14 +96,15 @@ themesdir              = "../.."
       icon = "fa-solid fa-tag"
   [params.includes]
     jsModules = [
-        "js/shortcuts.js"
-      ]
+      "js/jsoneditor.js",
+      "js/shortcuts.js"
+    ]
     js        = []
     css       = [
-        "css/shortcuts.css"
-      ]
+      "css/shortcuts.css"
+    ]
     sass      = [
-        "sass/custom/example.sass"
+      "sass/custom/example.sass"
     ]
   [params.versions]
     hugo_min         = "[0.112.0](https://github.com/gohugoio/hugo/releases/tag/v0.112.0)"

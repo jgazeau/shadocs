@@ -61,7 +61,7 @@ jobs:
             --gc \
             --minify \
             --source exampleSite \
-            --baseURL "${{ steps.pages.outputs.base_url }}/"
+            --baseURL "${{ steps.pages.outputs.base_url }}/shadocs/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

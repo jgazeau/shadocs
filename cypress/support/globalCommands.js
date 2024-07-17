@@ -75,3 +75,29 @@ Cypress.Commands.add('scrollAndClickElem', ($elem) => {
 Cypress.Commands.add('scrollAndClick', { prevSubject: true }, ($elem) => {
   cy.wrap($elem).scrollIntoView().click({ force: true });
 });
+Cypress.Commands.add('allowClipBoardAndFocus', () => {
+  cy.wrap(
+    Cypress.automation('remote:debugger:protocol', {
+      command: 'Browser.grantPermissions',
+      params: {
+        permissions: ['clipboardReadWrite', 'clipboardSanitizedWrite'],
+        origin: window.location.origin,
+      },
+    }),
+  );
+  cy.window().focus();
+});
+Cypress.Commands.add('assertJsonValueFromClipboard', value => {
+  cy.window()
+    .then((win) =>
+      new Cypress.Promise((resolve, reject) =>
+        win.navigator
+          .clipboard
+          .readText()
+          .then(resolve)
+          .catch(reject))
+    )
+    .then((clipboard) => {
+      return JSON.parse(clipboard);
+    }).should('deep.equal', value);
+});

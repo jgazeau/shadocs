@@ -48,9 +48,6 @@ describe('for: mermaid', () => {
       }
     );
   });
-  // For now local download is not fully supported in firefox browser.
-  // Cypress doesn't seems to accept browser preferences in headless mode.
-  // https://github.com/cypress-io/cypress/issues/8814
   it('export button should export mermaid', { browser: '!firefox' }, () => {
     const path = require('path');
     cy.get('#content .sc-mermaid-wrapper.helper-loading-container').each(

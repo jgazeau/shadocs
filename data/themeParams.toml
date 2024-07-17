@@ -107,6 +107,10 @@
       "js/external/intro/intro.min.js",
       "js/shortcodes/intro.js"
     ]
+    jsoneditor = [
+      "js/external/json-editor/jsoneditor.min.js",
+      "js/shortcodes/jsoneditor.js"
+    ]
     openapi = [
       "js/shortcodes/openapi.js",
     ]
