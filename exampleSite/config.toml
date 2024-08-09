@@ -12,8 +12,8 @@ title                  = "Shadocs theme for Hugo"
 theme                  = "shadocs"
 themesdir              = "../.."
 
-[Author]
-  name = "Jordan GAZEAU"
+[params.author]
+    name = "Jordan GAZEAU"
 
 [module]
   [module.hugoVersion]
@@ -26,6 +26,9 @@ themesdir              = "../.."
   [[module.mounts]]
     source = 'openapi'
     target = 'static/openapi'
+  [[module.mounts]]
+    source = 'jsoneditor'
+    target = 'static/jsoneditor'
 
 [taxonomies]
   category = "categories"

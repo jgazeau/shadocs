@@ -10,7 +10,7 @@ tags: ["Content management"]
 
 The **asyncapi** shortcode allows to display an AsyncAPI documentation associated to a service.
 
-# Paramètres
+# Parameters
 ---
 
 | Name | Type(named/positional) | Description |

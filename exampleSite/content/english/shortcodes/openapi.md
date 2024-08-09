@@ -10,7 +10,7 @@ tags: ["Content management"]
 
 The **openapi** shortcode allows to display an OpenAPI documentation associated to a service.
 
-# Paramètres
+# Parameters
 ---
 
 | Name | Type(named/positional) | Description |
