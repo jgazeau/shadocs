@@ -20,19 +20,6 @@ themesdir              = "../.."
     extended = true
     min = '0.112.0'
     max = ''
-  [[module.mounts]]
-    source = 'asyncapi'
-    target = 'static/assets/asyncapi'
-  [[module.mounts]]
-    source = 'assets'
-    target = 'static/assets'
-  [[module.mounts]]
-    source = 'openapi'
-    target = 'static/assets/openapi'
-  [[module.mounts]]
-    source = 'jsoneditor'
-    target = 'static/assets/jsoneditor'
-
 
 [taxonomies]
   category = "categories"
