@@ -24,6 +24,9 @@ themesdir              = "../.."
     source = 'asyncapi'
     target = 'static/asyncapi'
   [[module.mounts]]
+    source = 'assets'
+    target = 'static/assets'
+  [[module.mounts]]
     source = 'openapi'
     target = 'static/openapi'
   [[module.mounts]]

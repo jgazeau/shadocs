@@ -27,9 +27,9 @@ Source of the AsyncAPI documentation.
 | -------- | --------- |
 |{{< md >}}
 ```
-{{</*/* asyncapi source="/static/asyncapi/example.yaml" */*/>}}
+{{</*/* asyncapi source="/asyncapi/example.yaml" */*/>}}
 ```
-{{< /md >}}|{{< asyncapi source="/static/asyncapi/example.yaml" >}}|
+{{< /md >}}|{{< asyncapi source="/asyncapi/example.yaml" >}}|
 |{{< md >}}
 ```
 {{</*/* asyncapi source="https://raw.githubusercontent.com/asyncapi/spec/master/examples/simple-asyncapi.yml" */*/>}}
