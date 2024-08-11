@@ -22,16 +22,16 @@ themesdir              = "../.."
     max = ''
   [[module.mounts]]
     source = 'asyncapi'
-    target = 'static/static/asyncapi'
+    target = 'static/assets/asyncapi'
   [[module.mounts]]
     source = 'assets'
     target = 'static/assets'
   [[module.mounts]]
     source = 'openapi'
-    target = 'static/static/openapi'
+    target = 'static/assets/openapi'
   [[module.mounts]]
     source = 'jsoneditor'
-    target = 'static/static/jsoneditor'
+    target = 'static/assets/jsoneditor'
 
 
 [taxonomies]
