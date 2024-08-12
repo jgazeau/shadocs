@@ -105,7 +105,7 @@
       "library": "overlayscrollbars",
       "fileName": "browser/overlayscrollbars.browser.es6.min.js"
     },
-    "currentVersion": "2.9.2"
+    "currentVersion": "2.10.0"
   },
   {
     "package": "overlayscrollbars",
@@ -117,7 +117,7 @@
       "library": "overlayscrollbars",
       "fileName": "styles/overlayscrollbars.min.css"
     },
-    "currentVersion": "2.9.2"
+    "currentVersion": "2.10.0"
   },
   {
     "package": "intro",
