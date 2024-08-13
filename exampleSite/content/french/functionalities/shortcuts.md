@@ -34,7 +34,7 @@ Afin de définir un raccourci, il faut suivre le process suivant (exemple avec l
 />}}
 3. Définir le code javascript associé au raccourci et appelé par le biais de la fonction définie à l'étape 1:
 {{< snippet
-    file="templates/configuration/shortcuts.js"
+    file="assets/js/shortcuts.js"
     caption="shortcuts.js"
     codelang="js"
 />}}

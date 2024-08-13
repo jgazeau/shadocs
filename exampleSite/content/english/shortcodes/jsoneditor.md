@@ -51,6 +51,6 @@ Name of the global Javascript method to be executed after validating the JSON sc
 {{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" postProcessFunction="examplePostProcessJson" >}}|
 |{{< md >}}
 ```
-{{</*/* jsoneditor source="/jsoneditor/example.json" */*/>}}
+{{</*/* jsoneditor source="jsoneditor/example.json" */*/>}}
 ```
-{{< /md >}}|{{< jsoneditor source="/jsoneditor/example.json" >}}|
+{{< /md >}}|{{< jsoneditor source="jsoneditor/example.json" >}}|

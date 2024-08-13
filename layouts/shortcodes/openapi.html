@@ -8,7 +8,7 @@
   <div
     class="sc-openapi-container"
     id="{{- $.Scratch.Get "openapiId" -}}"
-    openapi-url="{{- .Get "source" -}}"
+    openapi-url="{{- .Get "source" | relURL -}}"
   ></div>
   {{- partial "theme/loading.html" -}}
 </div>

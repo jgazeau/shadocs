@@ -27,11 +27,11 @@ Source de la documentation AsyncAPI.
 | -------- | ----- |
 |{{< md >}}
 ```
-{{</*/* asyncapi source="/asyncapi/example.yaml" */*/>}}
+{{</*/* asyncapi source="asyncapi/example.yaml" */*/>}}
 ```
-{{< /md >}}|{{< asyncapi source="/asyncapi/example.yaml" >}}|
+{{< /md >}}|{{< asyncapi source="asyncapi/example.yaml" >}}|
 |{{< md >}}
 ```
-{{</*/* asyncapi source="https://raw.githubusercontent.com/asyncapi/spec/master/examples/simple.yml" */*/>}}
+{{</*/* asyncapi source="https://raw.githubusercontent.com/asyncapi/spec/master/examples/simple-asyncapi.yml" */*/>}}
 ```
-{{< /md >}}|{{< asyncapi source="https://raw.githubusercontent.com/asyncapi/spec/master/examples/simple.yml" >}}|
+{{< /md >}}|{{< asyncapi source="https://raw.githubusercontent.com/asyncapi/spec/master/examples/simple-asyncapi.yml" >}}|

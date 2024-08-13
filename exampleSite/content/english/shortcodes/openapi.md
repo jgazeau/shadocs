@@ -27,9 +27,9 @@ Source of the OpenAPI documentation.
 | -------- | --------- |
 |{{< md >}}
 ```
-{{</*/* openapi source="/openapi/example.yaml" */*/>}}
+{{</*/* openapi source="openapi/example.yaml" */*/>}}
 ```
-{{< /md >}}|{{< openapi source="/openapi/example.yaml" >}}|
+{{< /md >}}|{{< openapi source="openapi/example.yaml" >}}|
 |{{< md >}}
 ```
 {{</*/* openapi source="https://petstore.swagger.io/v2/swagger.json" */*/>}}

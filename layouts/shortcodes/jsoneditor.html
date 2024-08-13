@@ -8,7 +8,7 @@
   <div
     class="sc-jsoneditor-container"
     id="{{- $.Scratch.Get "jsoneditorId" -}}"
-    jsoneditor-url="{{- .Get "source" -}}"
+    jsoneditor-url="{{- .Get "source" | relURL -}}"
     {{- with .Get "postProcessFunction" -}}
     post-process-function="{{- . -}}"
     {{- end -}}

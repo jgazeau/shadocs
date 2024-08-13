@@ -21,11 +21,14 @@ themesdir              = "../.."
     min = '0.112.0'
     max = ''
   [[module.mounts]]
-    source = 'asyncapi'
-    target = 'static/asyncapi'
+    source = 'static'
+    target = 'static'
   [[module.mounts]]
     source = 'assets'
     target = 'static/assets'
+  [[module.mounts]]
+    source = 'asyncapi'
+    target = 'static/asyncapi'
   [[module.mounts]]
     source = 'openapi'
     target = 'static/openapi'

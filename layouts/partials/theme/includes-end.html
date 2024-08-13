@@ -1,5 +1,5 @@
 <script type='text/javascript'>
-  const baseUrl = '{{- .Site.BaseURL -}}{{- .Site.LanguagePrefix -}}';
+  const baseUrl = new URL('{{- .Site.LanguagePrefix -}}', '{{- .Site.BaseURL -}}').href;
   const codeCopyBefore = '{{- i18n "code_copy_before" -}}';
   const codeCopyAfter = '{{- i18n "code_copy_after" -}}';
   const svgDownloadLabel = '{{- i18n "download_as_svg" -}}';

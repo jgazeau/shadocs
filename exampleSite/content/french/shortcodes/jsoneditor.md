@@ -51,6 +51,6 @@ Nom de la méthode globale Javascript à exécuter après validation du schéma 
 {{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" postProcessFunction="examplePostProcessJson" >}}|
 |{{< md >}}
 ```
-{{</*/* jsoneditor source="/jsoneditor/example.json" */*/>}}
+{{</*/* jsoneditor source="jsoneditor/example.json" */*/>}}
 ```
-{{< /md >}}|{{< jsoneditor source="/jsoneditor/example.json" >}}|
+{{< /md >}}|{{< jsoneditor source="jsoneditor/example.json" >}}|

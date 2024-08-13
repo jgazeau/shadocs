@@ -32,7 +32,7 @@ function renderOpenAPI(oc) {
     openapiError.remove();
   }
   const oi = document.createElement('iframe');
-  const cssRef = '/css/external/swagger-ui/swagger-ui.min.css';
+  const cssRef = new URL('css/external/swagger-ui/swagger-ui.min.css', baseUrl).href;
   const cssRel = 'stylesheet';
   const cssType = 'text/css';
   const oiCss = 'html,body { overflow: hidden; }';
@@ -92,4 +92,13 @@ function setOpenAPIHeight(oi) {
   oi.style.height =
     oi.contentWindow.document.documentElement.getBoundingClientRect().height +
     'px';
+}
+function combinePaths(basePath, relativePath) {
+  if (!basePath.endsWith('/')) {
+    basePath += '/';
+  }
+  if (relativePath.startsWith('/')) {
+    relativePath = relativePath.substring(1);
+  }
+  return basePath + relativePath;
 }
