@@ -7,6 +7,7 @@
   padding: $theme-gap-medium-size
   color: $content-writing-color
   +font-family(roboto-mono)
+  position: relative
   .je-indented-panel
     border: 1px solid smooth-color($content-background, 20)
     padding: $theme-gap-medium-size
@@ -129,8 +130,6 @@
       left: 100%
     &.sc-jsoneditor-success:after
       color: $json-editor-success-color
-    &.sc-jsoneditor-error:after
-      color: $json-editor-error-color
     &:after
       +responsive-size(font-size, $theme-font-medium-size, 3px)
       height: $theme-gap-extra-large-size
@@ -152,3 +151,15 @@
     &:active:after
       transition: transform 1.5s step-start
       transform: scale(1)
+.sc-jsoneditor-toast-error
+  background-color: $alert-error-color !important
+  color: $theme-writing-color !important
+  box-shadow: $content-box-shadow
+div:has(> div.sc-jsoneditor-toast-error)
+  padding: $theme-gap-small-size !important
+  position: absolute !important
+  justify-content: flex-end
+  user-select: none
+  max-height: 100%
+  overflow: hidden
+  cursor: pointer

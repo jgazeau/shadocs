@@ -76,7 +76,8 @@
   js = [
     "js/theme/browserCompatibility.js",
     "js/external/flexsearch/flexsearch.bundle.min.js",
-    "js/external/qrious/qrious.min.js"
+    "js/external/qrious/qrious.min.js",
+    "js/external/overlay-scrollbars/overlayscrollbars.min.js"
   ]
   jsModules = [
     "js/theme/modules/const.js",
@@ -89,8 +90,7 @@
     "js/theme/search.js",
     "js/theme/shortcuts.js",
     "js/theme/sidebar.js",
-    "js/theme/toc.js",
-    "js/external/overlay-scrollbars/overlayscrollbars.min.js"
+    "js/theme/toc.js"
   ]
   [includes.shortcodes.jsModules]
     asyncapi = [
@@ -107,15 +107,19 @@
       "js/external/intro/intro.min.js",
       "js/shortcodes/intro.js"
     ]
+    jsoneditor = [
+      "js/external/bulma-toast/bulma-toast.min.js",
+      "js/external/json-editor/jsoneditor.min.js",
+      "js/shortcodes/jsoneditor.js"
+    ]
+    openapi = [
+      "js/shortcodes/openapi.js",
+    ]
     treeview = [
       "js/shortcodes/treeview.js"
     ]
-    openapi = [
-      "js/shortcodes/openapi/openapi.mjs",
-    ]
   [includes.shortcodes.js]
     openapi = [
-      "js/shortcodes/openapi/openapi.js",
       "js/external/swagger-ui/swagger-ui-bundle.min.js",
       "js/external/swagger-ui/swagger-ui-standalone-preset.min.js"
     ]

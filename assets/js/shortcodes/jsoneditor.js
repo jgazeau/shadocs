@@ -6,7 +6,19 @@ import {
 // MAIN //
 document.addEventListener('DOMContentLoaded', function () {
   renderAllJsoneditor();
+  initBulmaToast();
 });
+function initBulmaToast() {
+  bulmaToast.setDefaults({
+    closeOnClick: true,
+    dismissible: false,
+    duration: 2000,
+    pauseOnHover: true,
+    position: 'bottom-right',
+    type: 'is-danger',
+    extraClasses: 'sc-jsoneditor-toast-error'
+  })
+}
 function renderAllJsoneditor() {
   let divj = document.getElementsByClassName('sc-jsoneditor-container');
   for (let i = 0; i < divj.length; i++) {
@@ -19,6 +31,7 @@ function renderJsoneditor(jc) {
   const jsoneditorDownload = document.getElementById(jc.id + '-download');
   const jsoneditorErrorId = jc.id + '-error';
   const jsoneditorError = document.getElementById(jsoneditorErrorId);
+  const jsonPostAnalyzeFunction = jc.getAttribute('post-analyze-function');
   const jsonPostProcessFunction = jc.getAttribute('post-process-function');
   if (jsoneditorError) {
     jsoneditorError.remove();
@@ -45,26 +58,19 @@ function renderJsoneditor(jc) {
         theme: "barebones"
       });
       jsoneditorCopy.addEventListener('click', () => {
-        if (validateSchema(jsoneditor)) {
+        if (validateSchema(jsonPostAnalyzeFunction, jsoneditor, jc.id)) {
           jsoneditorCopy.classList.toggle('sc-jsoneditor-success', true);
-          jsoneditorCopy.classList.toggle('sc-jsoneditor-error', false);
           jsoneditorCopy.setAttribute('title-after', codeCopyAfter)
           navigator.clipboard.writeText(JSON.stringify(maybePostProcessJson(jsonPostProcessFunction, jsoneditor.getValue()), null, 2));
         } else {
           jsoneditorCopy.classList.toggle('sc-jsoneditor-success', false);
-          jsoneditorCopy.classList.toggle('sc-jsoneditor-error', true);
-          jsoneditorCopy.setAttribute('title-after', jsoneditorValidateError)
         }
       });
       jsoneditorDownload.addEventListener('click', () => {
-        if (validateSchema(jsoneditor)) {
+        if (validateSchema(jsonPostAnalyzeFunction, jsoneditor, jc.id)) {
           URL.revokeObjectURL(jsoneditorDownload.href);
           jsoneditorDownload.href = URL.createObjectURL(new Blob([JSON.stringify(maybePostProcessJson(jsonPostProcessFunction, jsoneditor.getValue()), null, 2)], { type: 'application/json' }));
           jsoneditorDownload.download = schema.title + '.json';
-        } else {
-          jsoneditorDownload.classList.toggle('sc-jsoneditor-success', false);
-          jsoneditorDownload.classList.toggle('sc-jsoneditor-error', true);
-          jsoneditorDownload.setAttribute('title-after', jsoneditorValidateError)
         }
       });
       jsoneditorWrapper.classList.toggle('is-loading', false);
@@ -93,9 +99,16 @@ function getJsonSchema(url) {
     throw new Error(`Error getting content at ${url} ${xhr.status} ${xhr.statusText}`);
   }
 }
-function validateSchema(jsoneditor) {
-  const errors = jsoneditor.validate();
+function validateSchema(jsonPostAnalyzeFunction, jsoneditor, containerId) {
+  let errors = jsoneditor.validate();
+  if (typeof window[jsonPostAnalyzeFunction] === 'function') {
+    errors = errors.concat(window[jsonPostAnalyzeFunction](jsoneditor.schema).map((error) => {return {message: error}}));
+  }
   if (errors.length) {
+    errors.forEach((error) => bulmaToast.toast({
+      message: jsoneditorValidateError + ': ' + error.message,
+      appendTo: document.getElementById(containerId),
+    }));
     return false;
   } else {
     return true;

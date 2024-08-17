@@ -2,10 +2,10 @@ describe('for: jsoneditor shortcode', () => {
   beforeEach(() => {
     cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_JSONEDITOR_PATH'));
   });
-  it('three jsoneditor should be displayed', () => {
+  it('five jsoneditor should be displayed', () => {
     cy.get('#content .sc-jsoneditor-wrapper > .sc-jsoneditor-container').should(
       'have.length',
-      3
+      5
     );
   });
   it('jsoneditor should have a loading helper', () => {

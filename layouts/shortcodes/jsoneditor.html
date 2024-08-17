@@ -12,6 +12,9 @@
     {{- with .Get "postProcessFunction" -}}
     post-process-function="{{- . -}}"
     {{- end -}}
+    {{- with .Get "postAnalyzeFunction" -}}
+    post-analyze-function="{{- . -}}"
+    {{- end -}}
   ></div>
   {{- partial "theme/loading.html" -}}
   <div

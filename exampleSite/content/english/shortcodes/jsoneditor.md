@@ -19,9 +19,14 @@ The **jsoneditor** shortcode allows to display a form based on a JSON Schema. Th
 Source of the JSON Schema.  
 *NB: The source can be either a local path or an URL.*
 {{< /md >}}|
+| postAnalyzeFunction | named |{{< md >}}
+Name of the global Javascript method to run specific and additionnal validation right after the Jsoneditor standard validation.  
+* **input**: JSON Schema
+* **output**: Array of errors as array of strings (Empty array if no errors)
+{{< /md >}}|
 | postProcessFunction | named |{{< md >}}
-Name of the global Javascript method to be executed after validating the JSON schema and allowing the generated JSON to be processed before exporting it.  
-* **input**: JSON generated from JSON Schema
+Name of the global Javascript method to run specific and additionnal process right after the Jsoneditor standard JSON generation.  
+* **input**: JSON generated from JSON Schema by Jsoneditor
 * **output**: JSON to export
 {{< /md >}}|
 
@@ -45,10 +50,27 @@ Name of the global Javascript method to be executed after validating the JSON sc
 ```
 {{</*/* jsoneditor
   source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json"
-  postProcessFunction="examplePostProcessJson"
+  postAnalyzeFunction="examplePostAnalyzeFunction"
 */*/>}}
 ```
-{{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" postProcessFunction="examplePostProcessJson" >}}|
+{{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" postAnalyzeFunction="examplePostAnalyzeFunction" >}}|
+|{{< md >}}
+```
+{{</*/* jsoneditor
+  source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json"
+  postProcessFunction="examplePostProcessFunction"
+*/*/>}}
+```
+{{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" postProcessFunction="examplePostProcessFunction" >}}|
+|{{< md >}}
+```
+{{</*/* jsoneditor
+  source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json"
+  postAnalyzeFunction="examplePostAnalyzeFunction"
+  postProcessFunction="examplePostProcessFunction"
+*/*/>}}
+```
+{{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" postAnalyzeFunction="examplePostAnalyzeFunction" postProcessFunction="examplePostProcessFunction" >}}|
 |{{< md >}}
 ```
 {{</*/* jsoneditor source="jsoneditor/example.json" */*/>}}

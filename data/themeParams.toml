@@ -108,6 +108,7 @@
       "js/shortcodes/intro.js"
     ]
     jsoneditor = [
+      "js/external/bulma-toast/bulma-toast.min.js",
       "js/external/json-editor/jsoneditor.min.js",
       "js/shortcodes/jsoneditor.js"
     ]
