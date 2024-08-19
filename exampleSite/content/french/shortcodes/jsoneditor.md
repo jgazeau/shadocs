@@ -21,12 +21,18 @@ Source du JSON Schema.
 {{< /md >}}|
 | postAnalyzeFunction | named |{{< md >}}
 Nom de la méthode globale Javascript utilisé pour exécuter une validation spécifique et supplémentaire juste après la validation standard Jsoneditor.  
-* **input**: JSON Schema
-* **output**: List d'erreurs sous forme de liste de strings (Liste vide si aucune erreur)
+* **input**: JSON Schema, JSON généré depuis le JSON Schema par Jsoneditor
+* **output**: List d'***erreurs*** (Liste vide si aucune erreur), avec les ***erreurs*** de la forme:
+  ```
+  {
+    path: [CHEMIN_DU_CHAMP_EN_ERREUR],
+    message: [MESSAGE_D'ERREUR]
+  }
+  ```
 {{< /md >}}|
 | postProcessFunction | named |{{< md >}}
 Nom de la méthode globale Javascript utilisée pour exécuter un processus spécifique et supplémentaire juste après la génération standard du JSON de Jsoneditor.  
-* **input**: JSON généré depuis le JSON Schema par Jsoneditor
+* **input**: JSON Schema, JSON généré depuis le JSON Schema par Jsoneditor
 * **output**: JSON à exporter
 {{< /md >}}|
 

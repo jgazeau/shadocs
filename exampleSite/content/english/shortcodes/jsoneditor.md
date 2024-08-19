@@ -21,12 +21,18 @@ Source of the JSON Schema.
 {{< /md >}}|
 | postAnalyzeFunction | named |{{< md >}}
 Name of the global Javascript method to run specific and additionnal validation right after the Jsoneditor standard validation.  
-* **input**: JSON Schema
-* **output**: Array of errors as array of strings (Empty array if no errors)
+* **input**: JSON Schema, JSON generated from JSON Schema by Jsoneditor
+* **output**: Array of ***errors*** (Empty array if no errors), with ***errors*** of type:  
+  ```
+  {
+    path: [FIELD_ERROR_PATH],
+    message: [ERROR_MESSAGE]
+  }
+  ```
 {{< /md >}}|
 | postProcessFunction | named |{{< md >}}
 Name of the global Javascript method to run specific and additionnal process right after the Jsoneditor standard JSON generation.  
-* **input**: JSON generated from JSON Schema by Jsoneditor
+* **input**: JSON Schema, JSON generated from JSON Schema by Jsoneditor
 * **output**: JSON to export
 {{< /md >}}|
 

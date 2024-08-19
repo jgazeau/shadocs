@@ -125,14 +125,9 @@
   .is-action-button
     position: relative
     &.sc-jsoneditor-copy-button:after
-      right: 100%
-    &.sc-jsoneditor-download-button:after
-      left: 100%
-    &.sc-jsoneditor-success:after
-      color: $json-editor-success-color
-    &:after
       +responsive-size(font-size, $theme-font-medium-size, 3px)
       height: $theme-gap-extra-large-size
+      color: $json-editor-success-color
       padding: $theme-gap-medium-size
       content: attr(title-after)
       +font-family(roboto-mono)
@@ -144,6 +139,7 @@
       position: absolute
       overflow: hidden
       display: inline
+      right: 100%
       opacity: 0
     &:not(:active):after
       transition: transform 1.5s step-end
