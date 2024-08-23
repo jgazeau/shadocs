@@ -10,10 +10,13 @@
     id="{{- $.Scratch.Get "jsoneditorId" -}}"
     jsoneditor-url="{{- .Get "source" | relURL -}}"
     {{- with .Get "postProcessFunction" -}}
-    post-process-function="{{- . -}}"
+      post-process-function="{{- . -}}"
     {{- end -}}
     {{- with .Get "postAnalyzeFunction" -}}
-    post-analyze-function="{{- . -}}"
+      post-analyze-function="{{- . -}}"
+    {{- end -}}
+    {{- with .Get "filenameToDownloadFunction" -}}
+      filename-to-download-function="{{- . -}}"
     {{- end -}}
   ></div>
   {{- partial "theme/loading.html" -}}

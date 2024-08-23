@@ -65,4 +65,13 @@ describe('for: jsoneditor shortcode', () => {
           .should('equal','An example post process JSON');
       });
   });
+  it('export link should export jsoneditor with specific filename', { browser: '!firefox', defaultCommandTimeout: 10000 }, () => {
+    cy.get('.sc-jsoneditor-wrapper .sc-jsoneditor-container[filename-to-download-function]~.sc-jsoneditor-action-wrapper .sc-jsoneditor-download-button')
+      .first()
+      .click({ force: true })
+      .then(($jsoneditorLink) => {
+        const fileName = $jsoneditorLink[0].download;
+        expect(fileName).to.equal('exampleFile.json');
+      });
+  });
 });

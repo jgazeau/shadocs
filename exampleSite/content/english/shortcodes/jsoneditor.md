@@ -35,6 +35,13 @@ Name of the global Javascript method to run specific and additionnal process rig
 * **input**: JSON Schema, JSON generated from JSON Schema by Jsoneditor
 * **output**: JSON to export
 {{< /md >}}|
+| filenameToDownloadFunction | named |{{< md >}}
+Name of the global Javascript method to define filename to download.  
+* **input**: JSON Schema, JSON generated from JSON Schema by Jsoneditor
+* **output**: Filename to download
+
+*NB: By default filename will be equal to **schema.title** or fallback to the **ID of the jsoneditor HTML container**.*
+{{< /md >}}|
 
 {{< snippet
     file="assets/js/jsoneditor.js"
@@ -72,11 +79,10 @@ Name of the global Javascript method to run specific and additionnal process rig
 ```
 {{</*/* jsoneditor
   source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json"
-  postAnalyzeFunction="examplePostAnalyzeFunction"
-  postProcessFunction="examplePostProcessFunction"
+  filenameToDownloadFunction="exampleFilenameToDownloadFunction"
 */*/>}}
 ```
-{{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" postAnalyzeFunction="examplePostAnalyzeFunction" postProcessFunction="examplePostProcessFunction" >}}|
+{{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" filenameToDownloadFunction="exampleFilenameToDownloadFunction" >}}|
 |{{< md >}}
 ```
 {{</*/* jsoneditor source="jsoneditor/example.json" */*/>}}

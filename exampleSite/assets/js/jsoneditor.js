@@ -6,3 +6,7 @@ window.examplePostAnalyzeFunction = function examplePostAnalyzeFunction(schema, 
 window.examplePostProcessFunction = function examplePostProcessFunction(schema, json) {
   return 'An example post process JSON'
 }
+// Function to define filename to download
+window.exampleFilenameToDownloadFunction = function exampleFilenameToDownloadFunction(schema, json) {
+  return 'exampleFile.json'
+}

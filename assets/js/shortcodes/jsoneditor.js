@@ -33,6 +33,7 @@ function renderJsoneditor(jc) {
   const jsoneditorError = document.getElementById(jsoneditorErrorId);
   const jsonPostAnalyzeFunction = jc.getAttribute('post-analyze-function');
   const jsonPostProcessFunction = jc.getAttribute('post-process-function');
+  const filenameToDownloadFunction = jc.getAttribute('filename-to-download-function');
   if (jsoneditorError) {
     jsoneditorError.remove();
   }
@@ -69,7 +70,7 @@ function renderJsoneditor(jc) {
         if (validateSchema(jsonPostAnalyzeFunction, jsoneditor, jc.id)) {
           URL.revokeObjectURL(jsoneditorDownload.href);
           jsoneditorDownload.href = URL.createObjectURL(new Blob([JSON.stringify(maybePostProcessJson(jsonPostProcessFunction, jsoneditor), null, 2)], { type: 'application/json' }));
-          jsoneditorDownload.download = schema.title + '.json';
+          jsoneditorDownload.download = getFilenameToDownload(filenameToDownloadFunction, jsoneditor, jc.id);
         }
       });
       jsoneditorWrapper.classList.toggle('is-loading', false);
@@ -120,5 +121,12 @@ function maybePostProcessJson(jsonPostProcessFunction, jsoneditor) {
     return window[jsonPostProcessFunction](jsoneditor.schema, jsoneditor.getValue());
   } else {
     return jsoneditor.getValue();
+  }
+}
+function getFilenameToDownload(filenameToDownloadFunction, jsoneditor, jsoneditorContainerId) {
+  if (typeof window[filenameToDownloadFunction] === 'function') {
+    return window[filenameToDownloadFunction](jsoneditor.schema, jsoneditor.getValue());
+  } else {
+    return (jsoneditor.schema.title) ?  `${jsoneditor.schema.title}.json` : `${jsoneditorContainerId}.json`
   }
 }
