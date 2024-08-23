@@ -12,6 +12,16 @@
     border: 1px solid smooth-color($content-background, 20)
     padding: $theme-gap-medium-size
     margin: 0
+  .je-tabholder--top
+    padding: $theme-gap-medium-size $theme-gap-medium-size 0 $theme-gap-medium-size
+    justify-content: flex-start
+  .je-tabholder--top,
+  .je-tabholder--clear
+    border: 1px solid smooth-color($content-background, 20)
+    margin: 0
+  .je-tabholder--clear
+    >.je-indented-panel
+      border: none
   .row
     padding: $theme-gap-medium-size
     &:not(:has(.je-indented-panel))
