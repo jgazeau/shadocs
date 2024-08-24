@@ -21,13 +21,13 @@
   # Force la résolution des liens en utilisant la fonction relref (https://gohugo.io/content-management/cross-references/)
   enforceRefrelLinks      = true
   # Désactive le bouton "Imprimer" dans la barre de navigation
-  # navbarPrintEntry      = false
+  navbarPrintEntry        = false
   # Désactive le bouton "QR code" dans la barre de navigation
-  # navbarQRCodeEntry     = false
+  navbarQRCodeEntry       = false
   # Désactive le bouton "Raccourcis" dans la barre de navigation
-  # navbarSchortcutsEntry = false
+  navbarSchortcutsEntry   = false
   # Désactive le bouton "À propos" dans la barre de navigation
-  # navbarInfo            = false
+  navbarInfo              = false
   # Liste des raccourcis clavier
   # Pour chaque raccourci il faut renseigner les clés suivantes:
   # - keys     = [Table des touches de clavier du raccourci](https://developer.mozilla.org/fr/docs/Web/API/KeyboardEvent/key/Key_Values)

@@ -21,13 +21,13 @@
   # Enforce Link resolution using relref function (https://gohugo.io/content-management/cross-references/)
   enforceRefrelLinks      = true
   # Disable "Print" button in navbar
-  # navbarPrintEntry      = false
+  navbarPrintEntry        = false
   # Disable "QR code" button in navbar
-  # navbarQRCodeEntry     = false
+  navbarQRCodeEntry       = false
   # Disable "Shortcuts" button in navbar
-  # navbarSchortcutsEntry = false
+  navbarSchortcutsEntry   = false
   # Disable "About" button in navbar
-  # navbarInfo            = false
+  navbarInfo              = false
   # Keyboard shortcuts list
   # For each shortcut following keys must be sets:
   # - keys     = [Keyboard shortcuts table](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values)
