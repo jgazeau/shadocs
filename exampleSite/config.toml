@@ -77,11 +77,15 @@ themesdir              = "../.."
   faviconmd               = "![Favicon](/images/favicon.png)"
   homeLayout              = "onboarding"
   siteContentOrder        = "weight"
-  # toc                   = true
-  # globalBanner          = true
+  # toc                     = true
+  # globalBanner            = true
   currentVersion          = "latest"
   latestVersionUrl        = "https://jgazeau.github.io/shadocs/"
-  # enforceRefrelLinks    = true
+  # enforceRefrelLinks      = true
+  # navbarPrintEntry        = false
+  # navbarQRCodeEntry       = false
+  # navbarSchortcutsEntry   = false
+  # navbarInfo              = false
   [params.navbar.shortcuts]
     [params.navbar.shortcuts.example]
       keys     = ["Shift","1"]
