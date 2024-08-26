@@ -130,9 +130,12 @@
     openapi = [
       "css/external/swagger-ui/swagger-ui.min.css"
     ]
+  [includes.fencedcodes.js]
+    mermaid = [
+      "js/external/mermaid/mermaid.min.js"
+    ]
   [includes.fencedcodes.jsModules]
     mermaid = [
-      "js/external/mermaid/mermaid.min.js",
       "js/fencedcodes/mermaid.js"
     ]
 #

@@ -54,7 +54,7 @@ describe('for: mermaid', () => {
       ($elem) => {
         let elId = $elem[0].id;
         cy.get('#' + elId + '-svg').then(($svg) => {
-          $svg[0].removeAttribute('class');
+          $svg[0].classList.remove('sc-mermaid-svg', 'is-modal');
           cy.get('#' + elId + '-export-svg')
             .scrollIntoView()
             .click({ force: true });
