@@ -71,6 +71,9 @@ function renderJsoneditor(jc) {
           URL.revokeObjectURL(jsoneditorDownload.href);
           jsoneditorDownload.href = URL.createObjectURL(new Blob([JSON.stringify(maybePostProcessJson(jsonPostProcessFunction, jsoneditor), null, 2)], { type: 'application/json' }));
           jsoneditorDownload.download = getFilenameToDownload(filenameToDownloadFunction, jsoneditor, jc.id);
+        } else {
+          jsoneditorDownload.removeAttribute('href');
+          jsoneditorDownload.removeAttribute('download');
         }
       });
       jsoneditorWrapper.classList.toggle('is-loading', false);
