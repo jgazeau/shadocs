@@ -5,7 +5,7 @@
   </script> {{- partial "theme/meta.html" . -}}
   {{- $404sass := resources.Get "sass/theme/404.sass" -}}
   {{- $options := (dict "outputStyle" "compressed" "includePaths" (slice "assets/bulma" "assets/sass/theme")) -}}
-  {{- $main    := $404sass | resources.ExecuteAsTemplate "css/404.sass" . | resources.ToCSS $options -}}
+  {{- $main    := $404sass | resources.ExecuteAsTemplate "css/404.sass" . | css.Sass $options -}}
   <link
     rel="stylesheet"
     type="text/css"
