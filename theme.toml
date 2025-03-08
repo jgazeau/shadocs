@@ -9,7 +9,7 @@ homepage = "https://jgazeau.github.io/shadocs/"
 demosite = "https://jgazeau.github.io/shadocs/"
 tags = ["Bulma", "Search", "Simple", "Documentation", "Fontawesome", "Intro", "Mermaid", "OpenAPI", "AsyncAPI", "JsonEditor"]
 features = ["Menu", "Nested sections", "Search", "Shortcuts", "GitHub Pages", "Intro", "Mermaid", "OpenAPI", "AsyncAPI", "JsonEditor"]
-min_version = "0.112.0"
+min_version = "0.141.0"
 
 [author]
   name = "Jordan GAZEAU"
