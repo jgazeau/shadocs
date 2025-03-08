@@ -7,7 +7,7 @@
   {{- else -}}
     {{- $.Page.Scratch.Add "highchartsAssets" (slice "js/external/highcharts/highcharts.min.js") -}}
   {{- end -}}
-  {{- with resources.GetRemote ($.Get "source") -}}
+  {{- with try resources.GetRemote ($.Get "source") -}}
     {{- with .Err -}}
       {{- with resources.Get ($.Get "source") -}}
         {{- $.Page.Scratch.Add "highchartsContent" (slice .Content) -}}
