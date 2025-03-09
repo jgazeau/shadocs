@@ -44,7 +44,7 @@ Specific parameter path to display, relative to the *data* folder (the parameter
 Given the following parameters definitions:
 
 {{< snippet
-    caption="config.toml"
+    caption="hugo.toml"
     codelang="toml"
 >}}
 [params]

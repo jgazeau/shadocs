@@ -10,7 +10,7 @@ banner: true
 # Description
 ---
 
-Pour afficher une bannière globale, rendue sur toutes les pages, définir le paramètre `globalBanner` à `true` dans le fichier **config.toml**.  
+Pour afficher une bannière globale, rendue sur toutes les pages, définir le paramètre `globalBanner` à `true` dans le fichier **hugo.toml**.  
 Par défaut, la bannière contient un texte à propos d'une version dépréciée, défini dans la variable `banner_default_content` du module **i18n**, utilisant les deux paramètres suivants:
 * currentVersion
 * latestVersionUrl

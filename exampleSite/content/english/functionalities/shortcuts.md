@@ -21,7 +21,7 @@ To define a shortcut, follow this process (example with the **example** (`Maj + 
 1. Define the general configuration of the shortcut in the site specific configuration file (*Cf. highlighted lines below*):
 {{< snippet
     file="templates/configuration/config.en.toml"
-    caption="config.toml ([params] section)"
+    caption="hugo.toml ([params] section)"
     codelang="toml"
     codeparam="linenos=inline,hl_lines=[\"23-31\"]"
 />}}

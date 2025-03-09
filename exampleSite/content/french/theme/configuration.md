@@ -14,8 +14,8 @@ Pour configurer un site Hugo utilisant le thème, il existe trois type de config
 
 | Type | Fichier de configuration |
 | ---- | ------------------------ |
-| [Configuration standard Hugo](https://gohugo.io/getting-started/configuration/) | ./config.toml |
-| Configuration spécifique par le biais des [variables site](https://gohugo.io/variables/site/) | ./config.toml |
+| [Configuration standard Hugo](https://gohugo.io/getting-started/configuration/) | ./hugo.toml |
+| Configuration spécifique par le biais des [variables site](https://gohugo.io/variables/site/) | ./hugo.toml |
 | Configuration par défaut du thème | .themes/shadocs/data/themeParams.toml |
 
 # Configuration spécifique
@@ -23,7 +23,7 @@ Pour configurer un site Hugo utilisant le thème, il existe trois type de config
 
 {{< snippet
     file="templates/configuration/config.fr.toml"
-    caption="config.toml (section [params])"
+    caption="hugo.toml (section [params])"
     codelang="toml"
 />}}
 

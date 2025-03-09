@@ -44,7 +44,7 @@ Chemin du paramètre spécifique à afficher, relatif au dossier *data* (le para
 Considérant les définitions de paramètres suivant:
 
 {{< snippet
-    caption="config.toml"
+    caption="hugo.toml"
     codelang="toml"
 >}}
 [params]
