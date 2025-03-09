@@ -21,7 +21,7 @@ Afin de définir un raccourci, il faut suivre le process suivant (exemple avec l
 1. Définir la configuration générale du raccourci dans le fichier de configuration spécifique du site (*Cf. lignes surlignées ci-dessous*):
 {{< snippet
     file="templates/configuration/config.fr.toml"
-    caption="config.toml (section [params])"
+    caption="hugo.toml (section [params])"
     codelang="toml"
     codeparam="linenos=inline,hl_lines=[\"23-31\"]"
 />}}

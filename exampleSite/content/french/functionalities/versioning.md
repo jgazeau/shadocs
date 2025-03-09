@@ -14,7 +14,7 @@ Par défaut dans le thème, il est possible de renseigner une liste de liens ré
 # Définir d'autres versions du site
 ---
 
-Pour définir d'autres version du site, spécifier les dans la liste `params.navbar.versions` du fichier de configuration `config.toml`:
+Pour définir d'autres version du site, spécifier les dans la liste `params.navbar.versions` du fichier de configuration `hugo.toml`:
 ```toml
 [params]
   [[params.navbar.versions]]

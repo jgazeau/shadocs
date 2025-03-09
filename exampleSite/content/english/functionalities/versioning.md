@@ -14,7 +14,7 @@ By default in the theme, it is possible to specify a dropdown list of links refe
 # Define another versions of the website
 ---
 
-To define other versions of the website, specify them in the `params.navbar.versions` list of the `config.toml` configuration file:
+To define other versions of the website, specify them in the `params.navbar.versions` list of the `hugo.toml` configuration file:
 ```toml
 [params]
   [[params.navbar.versions]]

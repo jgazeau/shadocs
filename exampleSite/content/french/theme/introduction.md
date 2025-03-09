@@ -41,7 +41,7 @@ Pour créer un site Hugo, la documentation Hugo propose un [Quickstart](https://
 
 2. Ajouter le thème au fichier de configuration du site:
 {{< snippet
-    caption="config.toml"
+    caption="hugo.toml"
     codelang="toml"
 >}}
 [...]
