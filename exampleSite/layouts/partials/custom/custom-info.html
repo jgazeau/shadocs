@@ -1,8 +1,8 @@
 {{- $optMd := dict "markup" "goldmark" -}}
-<div class="columns is-marginless is-multiline is-centered">
-  <div class="column">
+<div class="columns marginless is-multiline is-centered">
+  <div class="column is-one-quarter-widescreen is-half-tablet is-flex is-justify-content-center is-align-items-center">
     <a
-      class="is-itext-link"
+      class="is-reveal-link"
       href="{{- .Site.Data.themeParams.github.main -}}"
       target="_blank"
     >
@@ -12,9 +12,9 @@
       </div>
     </a>
   </div>
-  <div class="column">
+  <div class="column is-one-quarter-widescreen is-half-tablet is-flex is-justify-content-center is-align-items-center">
     <a
-      class="is-itext-link"
+      class="is-reveal-link"
       href="{{- .Site.Data.themeParams.github.download -}}"
       target="_blank"
     >
@@ -24,9 +24,9 @@
       </div>
     </a>
   </div>
-  <div class="column">
+  <div class="column is-one-quarter-widescreen is-half-tablet is-flex is-justify-content-center is-align-items-center">
     <a
-      class="is-itext-link"
+      class="is-reveal-link"
       href="{{- .Site.Data.themeParams.github.issue -}}"
       target="_blank"
     >
@@ -36,9 +36,9 @@
       </div>
     </a>
   </div>
-  <div class="column">
+  <div class="column is-one-quarter-widescreen is-half-tablet is-flex is-justify-content-center is-align-items-center">
     <a
-      class="is-itext-link"
+      class="is-reveal-link"
       href="{{- .Site.Data.themeParams.github.fork -}}"
       target="_blank"
     >
@@ -49,13 +49,15 @@
     </a>
   </div>
 </div>
-<p>
-  {{- printf "%s (%s)" (i18n "navbarinfo_content") hugo.Version | .RenderString $optMd -}}
-</p>
-<p>
-  {{- with .GitInfo -}}
-    {{- printf "%s (%s)" $.Site.Copyright .AbbreviatedHash -}}
-  {{- else -}}
-    {{- .Site.Copyright -}}
-  {{- end -}}
-</p>
+<div class="has-text-centered">
+  <p>
+    {{- printf "%s (%s)" (i18n "navbarinfo_content") hugo.Version | .RenderString $optMd -}}
+  </p>
+  <p>
+    {{- with .GitInfo -}}
+      {{- printf "%s (%s)" $.Site.Copyright .AbbreviatedHash -}}
+    {{- else -}}
+      {{- .Site.Copyright -}}
+    {{- end -}}
+  </p>
+</div>

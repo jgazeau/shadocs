@@ -82,7 +82,7 @@
   translation: '説明文がありません'
 - id: read_more
   translation: 'もっと読む'
-- id: helper_loading
+- id: loading
   translation: 'ロード中'
 - id: code_copy_before
   translation: 'クリップボードにコピー'

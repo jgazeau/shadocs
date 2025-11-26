@@ -1,7 +1,7 @@
 import {
   addElementToModal,
   displayModal,
-  getLoadingHelper,
+  getLoader,
 } from '../theme/modules/helpers.min.js';
 
 // VARS //
@@ -23,7 +23,7 @@ async function renderMermaids() {
     const mermaidId = `scMermaid${i}`;
     const graphDefinition = divm[i].textContent;
     divm[i].parentElement.replaceWith(
-      getLoadingHelper('sc-mermaid-wrapper', mermaidId)
+      getLoader('sc-mermaid-wrapper', mermaidId)
     );
     await renderMermaid(mermaidId, graphDefinition);
   }
@@ -67,7 +67,7 @@ async function renderMermaid(mermaidId, graphDefinition) {
     mermaidWrapper.classList.toggle('is-loading', false);
   } catch (error) {
     const ed = document.createElement('div');
-    ed.classList.add('sc-alert', 'sc-alert-error');
+    ed.classList.add('notification', 'is-danger');
     ed.innerHTML = error;
     ed.id = `${mermaidId}-error`;
     mermaidSvgExport.classList.toggle('is-hidden', true);

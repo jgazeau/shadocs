@@ -1,4 +1,5 @@
-<div class="column is-marginless" id="contentContainer">
+<div class="column marginless paddingless" id="contentContainer">
+  <div class="content" id="content">
   {{- with .LinkTitle -}}
     {{- partial "theme/content-title.html" (dict "titleId" "contentTitle" "title" .) -}}
   {{- end -}}
@@ -6,17 +7,17 @@
     {{- $.Scratch.Add "taxonomyInPagesCount" (len .Data.Pages) -}}
   {{- end -}}
   {{- if eq ($.Scratch.Get "taxonomyInPagesCount") 0 -}}
-    <div class="sc-alert sc-alert-warning has-text-centered">
+    <div class="notification is-warning has-text-centered">
       <p class="has-text-weight-bold">{{- i18n "no_data" -}}</p>
     </div>
   {{- else -}}
     {{- $.Scratch.Set "taxonomy" .Data.Plural -}}
     <div class="tabs-container">
-      <nav class="tabs-triggers">
-        <ul>
+      <nav class="tabs-triggers has-text-centered">
+        <ul class="is-flex is-flex-wrap-wrap is-flex-direction-row is-justify-content-center">
           {{- range $key, $value := .Data.Terms.Alphabetical -}}
-            <li>
-              {{- $tabsTriggerClasses := slice "tabs-trigger" -}}
+            <li class="is-flex is-justify-content-center is-align-items-center is-flex-shrink-1 is-flex-grow-1">
+              {{- $tabsTriggerClasses := slice "tabs-trigger" "title" "is-4" -}}
               {{- with (eq $key 0) -}}
                 {{- $tabsTriggerClasses = $tabsTriggerClasses | append "is-active" -}}
               {{- end -}}
@@ -39,9 +40,9 @@
             id="tabs-{{- .Term -}}-results"
             class="{{- delimit $tabsResultsClasses " " -}}"
           >
-            <a class="tabs-title" href="{{- .Page.Permalink | safeURL -}}"
-              >{{- humanize .Term -}}</a
-            >
+            <h4 class="tabs-title title is-flex is-align-items-center marginless is-4">
+              <a href="{{- .Page.Permalink | safeURL -}}" class="is-pretty-link">{{- humanize .Term -}}</a>
+            </h4>
             <ul>
               {{- range (index $.Site.Taxonomies ($.Scratch.Get "taxonomy") .Term) -}}
                 <li>
@@ -56,4 +57,5 @@
       </div>
     </div>
   {{- end -}}
+  </div>
 </div>

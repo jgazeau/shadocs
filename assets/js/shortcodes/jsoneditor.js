@@ -12,7 +12,7 @@ function initBulmaToast() {
   bulmaToast.setDefaults({
     closeOnClick: true,
     dismissible: false,
-    duration: 2000,
+    duration: 3000,
     pauseOnHover: true,
     position: 'bottom-right',
     type: 'is-danger',
@@ -80,7 +80,7 @@ function renderJsoneditor(jc) {
     })
     .catch((error) => {
       const ed = document.createElement('div');
-      ed.classList.add('sc-alert', 'sc-alert-error');
+      ed.classList.add('notification', 'is-danger');
       ed.innerHTML = error;
       ed.id = jsoneditorErrorId;
       while (jc.lastChild) {

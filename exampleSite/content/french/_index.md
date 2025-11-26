@@ -80,7 +80,7 @@ categories: ["Thème"]
     },{
       "title": "Menu latéral",
       "intro": "Le menu latéral situé à gauche de l'écran permet de naviguer à travers l'ensemble des pages du site.",
-      "element": "#sidebarWrapper",
+      "element": "#sidebar",
       "onbeforechange": "toggleSidebar(true,true);toggleExtendMenu(false);"
     },{
       "title": "Menu latéral",

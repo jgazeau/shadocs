@@ -34,7 +34,7 @@
 {{- with $.Scratch.Get "contentArray" -}}
   {{- $.Page.Scratch.Add "snippetGroupUid" 1 -}}
   {{- $snippetGroupId := (printf "%s%s" "snippetGroup-" (string ($.Page.Scratch.Get "snippetGroupUid"))) -}}
-  {{- $snippetWrapperClasses := slice "sc-snippet-wrapper" -}}
+  {{- $snippetWrapperClasses := slice "sc-snippet-wrapper" "is-flex" "is-flex-wrap-wrap" "my-4" -}}
   {{- with gt (len .) 1 -}}
     {{- $snippetWrapperClasses = $snippetWrapperClasses | append "sc-snippet-tabs" -}}
   {{- end -}}

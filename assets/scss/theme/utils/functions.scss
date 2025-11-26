@@ -1,0 +1,29 @@
+@use "sass:color";
+@use "sass:string";
+@use "sass:math";
+@use "../../bulma/sass/utilities" as bulma_utilities;
+//
+// Main
+//
+@function shade($color, $percent) {
+  $weight: if(math.is-unitless($percent), $percent * 1%, $percent);
+  @return color.mix(black, $color, $weight);
+};
+@function tint($color, $percent) {
+  $weight: if(math.is-unitless($percent), $percent * 1%, $percent);
+  @return color.mix(white, $color, $weight);
+};
+@function smooth-color($color, $percent) {
+  @if bulma_utilities.bulmaColorLuminance($color) > 0.55 {
+    @return shade($color, $percent);
+  } @else {
+    @return tint($color, $percent);
+  }
+};
+@function str-replace($string, $search, $replace: "") {
+  $index: string.index($string, $search);
+  @if $index {
+    @return string.slice($string, 1, $index - 1) + $replace + str-replace(string.slice($string, $index + string.length($search)), $search, $replace);
+  }
+  @return $string;
+};

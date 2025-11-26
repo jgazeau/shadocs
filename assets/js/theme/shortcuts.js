@@ -15,7 +15,7 @@ function scShowShortcuts() {
   closeModals();
   document
     .getElementById('navbarShortcuts')
-    .classList.toggle('is-hidden', false);
+    .classList.toggle('is-active', true);
   document.getElementById('search').blur();
 }
 // Function to go to homepage

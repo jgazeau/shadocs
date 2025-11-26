@@ -10,7 +10,7 @@
       aria-controls="dropdown-menu"
     >
       <span class="icon-text">{{- i18n "navbar_label_versions" -}}</span>
-      <span class="icon">
+      <span class="icon marginless">
         <i class="fa-solid fa-arrow-down-9-1 fa-lg"></i>
       </span>
     </button>
@@ -20,7 +20,7 @@
     class="dropdown-menu"
     role="menu"
   >
-    <div class="dropdown-content is-paddingless">
+    <div class="dropdown-content paddingless">
       {{- range $.Site.Params.navbar.versions -}}
         <a
           href="{{- index . "url" -}}"

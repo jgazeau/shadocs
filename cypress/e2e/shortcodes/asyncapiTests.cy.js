@@ -5,14 +5,14 @@ describe('for: asyncapi shortcode', () => {
   it('two asyncapi should be displayed', () => {
     cy.get('#content asyncapi-component').should('have.length', 2);
   });
-  it('asyncapi should have a loading helper', () => {
+  it('asyncapi should have a loader', () => {
     cy.get('#content .sc-asyncapi-wrapper').should(
       'have.class',
-      'helper-loading-container'
+      'loader-container'
     );
   });
-  it('asyncapi should not have a loading helper once loaded', { defaultCommandTimeout: 10000 }, () => {
-    cy.get('#content .sc-asyncapi-wrapper.helper-loading-container').should(
+  it('asyncapi should not have a loader once loaded', { defaultCommandTimeout: 10000 }, () => {
+    cy.get('#content .sc-asyncapi-wrapper.loader-container').should(
       'not.have.class',
       'is-loading'
     );

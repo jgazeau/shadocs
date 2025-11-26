@@ -80,7 +80,7 @@ categories: ["Theme"]
     },{
       "title": "Sidebar",
       "intro": "The sidebar on the left of the screen allows to navigate through all the pages of the website.",
-      "element": "#sidebarWrapper",
+      "element": "#sidebar",
       "onbeforechange": "toggleSidebar(true,true);toggleExtendMenu(false);"
     },{
       "title": "Sidebar",

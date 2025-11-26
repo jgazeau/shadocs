@@ -20,7 +20,7 @@ Styles available:
 * info
 * success
 * warning
-* error
+* danger
 
 *NB: If not specified, the default style is **info**.*
 {{< /md >}}|
@@ -81,13 +81,13 @@ I'm a **warning** type alert
 |{{< md >}}
 ```
 {{</*/* alert
-    type="error"
+    type="danger"
 */*/>}}
-I'm a **error** type alert
+I'm a **danger** type alert
 {{</*/* /alert */*/>}}
 ```
 {{< /md >}}|{{< alert
-    type="error"
+    type="danger"
 >}}
-I'm a **error** type alert
+I'm a **danger** type alert
 {{< /alert >}}|

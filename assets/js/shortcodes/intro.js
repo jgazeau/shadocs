@@ -1,8 +1,8 @@
 import {
-  atou,
   addFunctionToResizeEvent,
-  getTriggers,
+  atou,
   disableSmoothScroll,
+  getTriggers,
 } from '../theme/modules/helpers.min.js';
 
 // VARS //

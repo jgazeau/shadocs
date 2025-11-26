@@ -1,4 +1,4 @@
-<div class="sc-highcharts-wrapper is-loading helper-loading-container">
+<div class="sc-highcharts-wrapper is-loading loader-container">
   {{- with not (.Get "id") -}}
     {{- errorf "Highcharts id must be set in highcharts shortcode in %q" $.Page.RelPermalink -}}
   {{- end -}}
@@ -17,5 +17,5 @@
     {{- end -}}
   {{- end -}}
   <div class="sc-highcharts-container" id="{{- .Get "id" -}}"></div>
-  {{- partial "theme/loading.html" -}}
+  {{- partial "theme/loader.html" -}}
 </div>

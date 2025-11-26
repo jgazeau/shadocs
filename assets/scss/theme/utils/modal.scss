@@ -1,0 +1,53 @@
+@use "../vars" as vars;
+@use "functions.scss" as functions;
+@use "../../bulma/sass/utilities" as bulma_utilities;
+//
+// Variables
+//
+$modal-border-width: 0.0625rem;
+$modal-border-color: vars.$theme-color;
+$modal-body-background-color: vars.$theme-color;
+$modal-header-background-color: functions.smooth-color(vars.$theme-color, 15);
+//
+// Main
+//
+.modal-background {
+  cursor: zoom-out;
+}
+.modal-content {
+  .message-header {
+    background-color: $modal-header-background-color;
+    color: functions.smooth-color(bulma_utilities.bulmaFindColorInvert($modal-header-background-color), 20);
+  }
+  .message-body {
+    background-color: $modal-body-background-color;
+    color: functions.smooth-color(bulma_utilities.bulmaFindColorInvert($modal-body-background-color), 20);
+    .shortcut-entry {
+      flex-basis: 100%;
+      .shortcut-keys,
+      .shortcut-wording {
+        border-bottom: $modal-border-width solid $modal-header-background-color;
+        border-top: $modal-border-width solid $modal-header-background-color;
+        flex: 1 1 50%;
+      }
+      .shortcut-keys {
+        border-right: $modal-border-width solid $modal-header-background-color;
+      }
+      .shortcut-wording {
+        border-left: $modal-border-width solid $modal-header-background-color;
+      }
+      &:first-child {
+        .shortcut-keys,
+        .shortcut-wording {
+          border-top: none;
+        }
+      }
+      &:last-child {
+        .shortcut-keys,
+        .shortcut-wording {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

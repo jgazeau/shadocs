@@ -1,4 +1,5 @@
-<div class='column is-marginless' id='contentContainer'>
+<div class='column marginless paddingless' id='contentContainer'>
+  <div class="content" id="content">
   {{- with .LinkTitle -}}
     {{- with $.Data.Singular -}}
       {{- $.Scratch.Set "tempTaxonomy" (humanize .) -}}
@@ -12,10 +13,10 @@
       {{- with (ne $key 0) -}}
         </div>
       {{- end -}}
-      <div class='tile is-ancestor is-marginless'>
+      <div id='taxonomyGrid' class='grid'>
     {{- end -}}
-    <div class='tile is-parent'>
-      <article class='tile is-child message'>
+    <div class='cell'>
+      <article class='message'>
         <div class='message-header'>
           {{- $value.LinkTitle -}}
         </div>
@@ -32,5 +33,6 @@
       </article>
     </div>
   {{- end -}}
+  </div>
   </div>
 </div>

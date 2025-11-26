@@ -1,4 +1,4 @@
-<div class="sc-asyncapi-wrapper is-loading helper-loading-container">
+<div class="sc-asyncapi-wrapper is-loading loader-container">
   {{- .Page.Scratch.Add "asyncapiUid" 1 -}}
   {{- with (.Get "id") -}}
     {{- $.Scratch.Set "asyncapiId" (replace . "'" "") -}}
@@ -12,5 +12,5 @@
     cssImportPath="{{- "css/external/asyncapi/default.min.css" | relURL -}}"
   >
   </asyncapi-component>
-  {{- partial "theme/loading.html" -}}
+  {{- partial "theme/loader.html" -}}
 </div>

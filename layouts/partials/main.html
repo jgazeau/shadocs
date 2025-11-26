@@ -5,10 +5,10 @@
     {{- partial "theme/includes-head.html" .root -}}
     {{- partial "custom/custom-head.html" .root -}}
   </head>
-  <body onload="browserCompatibility()">
+  <body class="is-flex is-flex-direction-column">
     {{- partial "theme/header.html" .root -}}
     <div
-      class="columns is-mobile is-paddingless is-marginless"
+      class="columns is-mobile paddingless marginless"
       id="mainContainer"
     >
       {{- partial "theme/sidebar.html" .root -}}

@@ -1,7 +1,7 @@
-<div id="globalLogoContainer" class="is-flex">
+<div id="globalLogoContainer">
   <a
     id="globalLogo"
-    class="navbar-item navbar-item-standard is-paddingless"
+    class="navbar-item navbar-item-standard is-flex-desktop is-align-items-center is-justify-content-center paddingless"
     href="{{- urls.JoinPath (.Site.BaseURL | relLangURL) "/" -}}"
   >
     <img
@@ -15,7 +15,7 @@
   </a>
   <a
     id="globalTouchLogo"
-    class="navbar-item navbar-item-standard is-paddingless"
+    class="navbar-item navbar-item-standard is-flex-touch paddingless"
     href="{{- urls.JoinPath (.Site.BaseURL | relLangURL) "/" -}}"
   >
     <img

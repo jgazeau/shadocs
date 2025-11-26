@@ -1,9 +1,7 @@
 archetypes/
-assets/bulma/bulma.sass
-assets/bulma/sass/
 assets/css/
 assets/js/
-assets/sass/
+assets/scss/
 data/
 exampleSite/
 i18n/

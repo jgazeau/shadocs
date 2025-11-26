@@ -1,0 +1,139 @@
+@use "../vars" as vars;
+@use "mixins.scss" as mixins;
+@use "functions.scss" as functions;
+@use "../../bulma/sass/utilities" as bulma_utilities;
+@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+//
+// Variables
+//
+$toc-border-width: 0.125rem;
+$toc-color: functions.smooth-color(bulma_utilities.bulmaFindColorInvert(vars.$toc-background-color), 60);
+$toc-font-size: 0.875rem;
+$toc-padding: 0.5rem;
+$toc-taxonomy-background-color: functions.smooth-color(vars.$theme-color, 15);
+//
+// Main
+//
+#tocWrapper {
+  background: vars.$toc-background-color;
+  position: sticky;
+  right: 0;
+  top: 0;
+  z-index: 20;
+}
+#tocCollapsible {
+  @include mixins.static-size-height(calc(100svh - vars.$navbar-height));
+  @include mixins.static-size-width(vars.$toc-collapsible-width);
+  background-color: $toc-color;
+  color: bulma_utilities.bulmaFindColorInvert($toc-color);
+  user-select: none;
+  &:hover {
+    background-color: functions.smooth-color($toc-color, 10);
+    cursor: pointer;
+  }
+}
+#tocContainer {
+  @include mixins.static-size-height(calc(100svh - vars.$navbar-height));
+  @include mixins.static-size-width(vars.$toc-width);
+  border-left: $toc-border-width solid $toc-color;
+  .toc-header {
+    border-bottom: $toc-border-width solid $toc-color;
+    color: $toc-color;
+    padding: $toc-padding;
+    .toc-title {
+      color: $toc-color;
+    }
+    #tocBackToTop {
+      font-size: vars.$theme-icon-size;
+    }
+    #tocBackToTop {
+      opacity: 0;
+      transition: all 0.2s ease;
+      visibility: hidden;
+      &.is-active {
+        opacity: 1;
+        visibility: visible;
+        &:hover {
+          color: vars.$content-link-color;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  #tocContent {
+    height: 100%;
+    #toc {
+      #TableOfContents {
+        font-size: $toc-font-size;
+        padding: $toc-padding 0 0 $toc-padding;
+        ul {
+          list-style-type: none;
+          margin: 0 !important;
+          li {
+            border-left: 1px solid $toc-color;
+            ul {
+              padding: 0 0 0 $toc-padding;
+            }
+            a {
+              align-content: center;
+              align-items: center;
+              color: vars.$content-color;
+              display: flex;
+              justify-content: space-between;
+              padding: 0 0 0 $toc-padding;
+              transition: all 0.2s ease;
+              &.is-past {
+                color: $toc-color;
+              }
+              &.is-current,
+              &:hover {
+                color: vars.$content-link-color;
+              }
+              &.is-current {
+                + ul {
+                  > li {
+                    border-left: 1px solid vars.$content-link-color;
+                  }
+                }
+              }
+              &:after {
+                content: "\f060";
+                display: inline-block;
+                font: var(--fa-font-solid);
+                margin: 0 $toc-padding;
+                opacity: 0;
+                transform: translateX(0.5rem);
+                transition: transform 0.3s, opacity 0.2s;
+              }
+              &:hover:after {
+                opacity: 1;
+                transform: translateX(0);
+              }
+            }
+          }
+        }
+      }
+    }
+    .taxonomy-wrapper {
+      .toc-header {
+        flex-basis: 100%;
+      }
+      .taxonomy {
+        background: $toc-color;
+        border-radius: 0.5rem;
+        color: bulma_utilities.bulmaFindColorInvert($toc-color);
+        font-size: $toc-font-size;
+        margin: 0.25rem;
+        padding: 0.25rem 0.5rem;
+        transition: all 0.2s ease;
+        i {
+          padding-right: 0.25rem;
+        }
+        &:hover {
+          background: $toc-taxonomy-background-color;
+          color: bulma_utilities.bulmaFindColorInvert($toc-taxonomy-background-color);
+        }
+      }
+    }
+  }
+}

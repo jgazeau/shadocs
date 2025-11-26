@@ -82,7 +82,7 @@
   translation: 'Aucune description disponible'
 - id: read_more
   translation: 'Lire plus'
-- id: helper_loading
+- id: loading
   translation: 'Chargement'
 - id: code_copy_before
   translation: 'Copier dans le presse-papiers'

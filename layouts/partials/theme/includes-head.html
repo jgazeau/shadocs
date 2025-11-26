@@ -1,16 +1,16 @@
-<!-- SASS includes -->
-{{- $sassFiles := slice -}}
-{{- with .Site.Data.themeParams.includes.sass -}}
-  {{- range . -}}{{- $sassFiles = $sassFiles | append . -}}{{- end -}}
+<!-- SCSS includes -->
+{{- $scssFiles := slice -}}
+{{- with .Site.Data.themeParams.includes.scss -}}
+  {{- range . -}}{{- $scssFiles = $scssFiles | append . -}}{{- end -}}
 {{- end -}}
-{{- with .Site.Params.includes.sass -}}
-  {{- range . -}}{{- $sassFiles = $sassFiles | append . -}}{{- end -}}
+{{- with .Site.Params.includes.scss -}}
+  {{- range . -}}{{- $scssFiles = $scssFiles | append . -}}{{- end -}}
 {{- end -}}
-{{- with .Page.Params.includes.sass -}}
-  {{- range . -}}{{- $sassFiles = $sassFiles | append . -}}{{- end -}}
+{{- with .Page.Params.includes.scss -}}
+  {{- range . -}}{{- $scssFiles = $scssFiles | append . -}}{{- end -}}
 {{- end -}}
-{{- if gt (len $sassFiles) 0 -}}
-  {{- template "includeSass" dict "this" $sassFiles -}}
+{{- if gt (len $scssFiles) 0 -}}
+  {{- template "includeScss" dict "this" $scssFiles -}}
 {{- end -}}
 <!-- CSS includes -->
 {{- $cssFiles := slice -}}
@@ -62,13 +62,14 @@
     />
   {{- end -}}
 {{- end -}}
-{{- define "includeSass" -}}
-  {{- $filesArray := slice -}}
-  {{- range .this | uniq -}}
-    {{- $filesArray = $filesArray | append (resources.Get .) -}}
-  {{- end -}}
-  {{- $options := (dict "outputStyle" "compressed" "targetPath" "css/main.css") -}}
-  {{- $cssFile := $filesArray | resources.Concat "sass/theme/bundle.sass" | css.Sass $options -}}
+{{- define "includeScss" -}}
+  {{- $options := dict
+    "outputStyle" "compressed"
+    "includePaths" (slice "assets/bulma" "assets/scss/theme")
+    "targetPath" "css/main.css"
+    "transpiler" "dartsass"
+  -}}
+  {{- $cssFile := (resources.Get "scss/theme/main.scss") | resources.ExecuteAsTemplate "css/main.scss" . | css.Sass $options -}}
   <link
     rel="stylesheet"
     rel="preload"

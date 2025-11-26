@@ -1,0 +1,338 @@
+@use "../vars" as vars;
+@use "mixins.scss" as mixins;
+@use "functions.scss" as functions;
+//
+// Variables
+//
+$intro-arrow-size: 0.3125rem;
+$intro-border-radius: 0.75rem;
+//
+// Extends
+//
+%clean {
+  outline: none;
+  text-decoration: none;
+  user-select: none;
+}
+//
+// Main
+//
+.sc-intro {
+  @include mixins.font-family(permanent-marker);
+  box-shadow: inset 0 0 0 0.1rem vars.$content-link-color;
+  color: vars.$content-link-color;
+  cursor: pointer;
+  display: inline-block;
+  padding: 0.5rem 3.5rem;
+  position: relative;
+  text-align: center;
+  transition: 0.2s 0.1s cubic-bezier(.1, 0, .1, 1);
+  user-select: none;
+  &:before {
+    background-color: vars.$content-link-color;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 100%;
+    top: 0;
+    transition: 0.2s 0.1s cubic-bezier(.1, 0, .1, 1), left 0.2s cubic-bezier(.1, 0, .1, 1);
+  }
+  &:after {
+    align-items: center;
+    bottom: 0;
+    color: functions.shade(vars.$content-link-color, 60);
+    content: "\f5b0";
+    display: flex;
+    font: var(--fa-font-solid);
+    justify-content: center;
+    left: 0;
+    margin: auto;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    transition: 0;
+    width: 4rem;
+  }
+  &:hover {
+    padding: 0.5rem 5.5rem 0.5rem 1.5rem;
+  }
+  &:hover:before {
+    left: calc(100% - 4rem);
+    right: 0;
+    transition: 0.2s cubic-bezier(.1, 0, .1, 1), left 0.2s 0.1s cubic-bezier(.1, 0, .1, 1);
+  }
+  &:hover:after {
+    left: calc(100% - 4rem);
+    opacity: 1;
+    transition: 0.2s 0.05s cubic-bezier(.1, 0, .1, 1);
+  }
+//
+// Thirdparty
+//
+}
+.introjs-overlay {
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease-out;
+  z-index: 99;
+}
+.introjs-disableInteraction {
+  background-color: vars.$content-background-color;
+  opacity: 0;
+  position: absolute;
+  z-index: 99 !important;
+}
+.introjs-relativePosition {
+  position: relative;
+}
+.introjs-helperLayer {
+  border-radius: $intro-border-radius;
+  position: absolute;
+  transition: all 0.5s ease-out;
+  z-index: 98;
+}
+.introjs-helperLayer {
+  *:before,
+  *:after,
+  * {
+    box-sizing: content-box;
+  }
+}
+.introjs-tooltipReferenceLayer {
+  @include mixins.font-family(lato);
+  background-color: transparent;
+  box-sizing: content-box;
+  color: vars.$content-color;
+  position: absolute;
+  transition: all 0.5s ease-out;
+  visibility: hidden;
+  z-index: 100;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0;
+  }
+}
+.introjs-helperNumberLayer {
+  @extend %clean;
+  color: smooth-color(vars.$content-background-color, 20);
+  padding: 0.75rem;
+  text-align: center;
+}
+.introjs-arrow {
+  border: $intro-arrow-size solid vars.$content-background-color;
+  box-shadow: 0 0 0.125rem 0.125rem vars.$theme-color;
+  content: "";
+  position: absolute;
+  transform: rotateZ(45deg);
+  z-index: -1;
+}
+.introjs-arrow {
+  &.top {
+    left: $intro-border-radius;
+    top: -$intro-arrow-size;
+  }
+}
+.introjs-arrow {
+  &.top-right {
+    right: $intro-border-radius;
+    top: -$intro-arrow-size;
+  }
+}
+.introjs-arrow {
+  &.top-middle {
+    justify-self: center;
+    top: -$intro-arrow-size;
+  }
+}
+.introjs-arrow {
+  &.right {
+    right: -$intro-arrow-size;
+    top: $intro-border-radius;
+  }
+}
+.introjs-arrow {
+  &.right-bottom {
+    bottom: $intro-border-radius;
+    right: -$intro-arrow-size;
+  }
+}
+.introjs-arrow {
+  &.bottom {
+    bottom: -$intro-arrow-size;
+    left: $intro-border-radius;
+  }
+}
+.introjs-arrow {
+  &.bottom-right {
+    bottom: -$intro-arrow-size;
+    right: $intro-border-radius;
+  }
+}
+.introjs-arrow {
+  &.bottom-middle {
+    bottom: -$intro-arrow-size;
+    justify-self: center;
+  }
+}
+.introjs-arrow {
+  &.left {
+    left: -$intro-arrow-size;
+    top: $intro-border-radius;
+  }
+}
+.introjs-arrow {
+  &.left-bottom {
+    bottom: $intro-border-radius;
+    left: -$intro-arrow-size;
+  }
+}
+.introjs-tooltip {
+  animation: 0.4s delayed;
+  animation-fill-mode: forwards;
+  background-color: vars.$content-background-color;
+  border-radius: $intro-border-radius;
+  box-shadow: 0 0 0.125rem 0.125rem vars.$theme-color;
+  max-width: 22rem;
+  min-width: 15.5rem;
+  position: absolute;
+  visibility: hidden;
+}
+.introjs-tooltiptext {
+  padding: 0.75rem;
+  word-break: break-word;
+}
+.introjs-tooltip-title {
+  @include mixins.font-family(oswald);
+  flex-basis: 100%;
+  font-size: vars.$theme-h4-font-size;
+  font-weight: bold;
+}
+.introjs-tooltip-title,
+.introjs-skipbutton {
+  align-items: center;
+  display: flex;
+  font-size: vars.$theme-h4-font-size;
+  font-weight: 900;
+  justify-content: center;
+  text-align: center;
+  padding: 0.75rem;
+  word-break: break-word;
+}
+.introjs-skipbutton {
+  @extend %clean;
+  color: vars.$content-color;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  &:hover,
+  &:focus {
+    color: vars.$theme-red-color;
+  }
+}
+.introjs-tooltip-header,
+.introjs-tooltipbuttons {
+  display: flex;
+}
+.introjs-tooltipbuttons {
+  justify-content: space-between;
+  &:not(:empty) {
+    border-top: 1px solid functions.smooth-color(vars.$content-background-color, 10);
+  }
+}
+.introjs-button {
+  @include mixins.font-family(oswald);
+  @extend %clean;
+  align-items: center;
+  background-color: functions.smooth-color(vars.$content-background-color, 10);
+  border: 1px solid functions.smooth-color(vars.$content-background-color, 15);
+  border-radius: $intro-border-radius;
+  color: vars.$content-color;
+  cursor: pointer;
+  display: flex;
+  flex-basis: 50%;
+  font-weight: 700;
+  justify-content: center;
+  margin: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  text-align: center;
+  word-break: break-word;
+  &.active,
+  &:hover {
+    background-color: functions.smooth-color(vars.$content-background-color, 15);
+  }
+}
+.introjs-prevbutton {
+  float: left;
+}
+.introjs-nextbutton {
+  float: right;
+}
+.introjs-disabled,
+.introjs-disabled:hover,
+.introjs-disabled:focus {
+  background-color: functions.smooth-color(vars.$content-background-color, 5);
+  border-color: functions.smooth-color(vars.$content-background-color, 10);
+  box-shadow: none;
+  color: functions.smooth-color(vars.$content-background-color, 20);
+  cursor: not-allowed;
+}
+.introjs-hidden {
+  display: none;
+}
+.introjs-bullets {
+  margin: 0.75rem;
+  text-align: center;
+  ul {
+    clear: both;
+    display: inline-block;
+    margin: 0 auto 0;
+    padding: 0;
+    li {
+      float: left;
+      list-style: none;
+      margin: 0 0.125rem;
+      a {
+        @extend %clean;
+        background: functions.smooth-color(vars.$content-background-color, 15);
+        border-radius: $intro-border-radius;
+        cursor: pointer;
+        display: block;
+        height: 0.5rem;
+        transition: width 0.1s ease;
+        width: 0.5rem;
+        &.active,
+        &:hover,
+        &:focus {
+          background: functions.smooth-color(vars.$content-background-color, 50);
+          width: 1rem;
+        }
+      }
+    }
+  }
+}
+.introjs-progress {
+  background-color: functions.smooth-color(vars.$content-background-color, 15);
+  border-radius: $intro-border-radius;
+  height: 0.5rem;
+  margin: 0.75rem;
+  overflow: hidden;
+  .introjs-progressbar {
+    background-color: vars.$theme-green-color;
+    height: 100%;
+    width: 0%;
+  }
+}
+.introjsFloatingElement {
+  height: 0;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  width: 0;
+}
+.introjs-fixedTooltip {
+  position: fixed;
+}

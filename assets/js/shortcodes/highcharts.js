@@ -68,7 +68,7 @@ async function renderHighcharts(hc) {
     })
     .catch((error) => {
       const ed = document.createElement('div');
-      ed.classList.add('sc-alert', 'sc-alert-error');
+      ed.classList.add('notification', 'is-danger');
       ed.innerHTML = error;
       ed.id = hc.id;
       highchartsWrapper.classList.toggle('is-loading', false);

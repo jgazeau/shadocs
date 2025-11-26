@@ -1,0 +1,71 @@
+@use "sass:map";
+@use "sass:list";
+@use "sass:string";
+@use "functions.scss" as functions;
+@use "../../bulma/sass/utilities" as bulma_utilities;
+@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+//
+// Main
+//
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: woff2) {
+  $src: null;
+  $extmods: (eot: "?", svg: "#" + functions.str-replace($name, " ", "_"));
+  $formats: (otf: "opentype", ttf: "truetype");
+  @each $ext in $exts {
+    $extmod: if(map.has-key($extmods, $ext), $ext + map.get($extmods, $ext), $ext);
+    $format: if(map.has-key($formats, $ext), map.get($formats, $ext), $ext);
+    $src: list.append($src, url(string.quote($path + "." + $extmod)) format(string.quote($format)), comma);
+  }
+  @font-face {
+    font-family: string.quote($name);
+    font-weight: $weight;
+    font-display: block;
+    font-style: $style;
+    src: $src;
+  }
+}
+@mixin font-family($name) {
+  font-family: $name,bulma_utilities.$family-sans-serif !important;
+}
+@mixin nested-even-content($element, $max-depth) {
+  @for $i from 1 through $max-depth {
+    @if ($i % 2 == 0) {
+      $selector: "";
+      @for $j from 1 through $i {
+        $selector: if($j == 1, "#{$element}", "#{$selector} #{$element}");
+      }
+      #{$selector} {
+        @content;
+      }
+    }
+  }
+}
+@mixin nested-odd-content($element, $max-depth) {
+  @for $i from 1 through $max-depth {
+    @if ($i % 2 == 1) {
+      $selector: "";
+      @for $j from 1 through $i {
+        $selector: if($j == 1, "#{$element}", "#{$selector} #{$element}");
+      }
+      #{$selector} {
+        @content;
+      }
+    }
+  }
+}
+@mixin responsive-size($prop, $size, $gap) {
+  #{$prop}: $size;
+  @include bulma_mixins.touch {
+    #{$prop}: calc(#{$size} - #{$gap});
+  }
+}
+@mixin static-size-height($size) {
+  height: $size;
+  max-height: $size;
+  min-height: $size;
+}
+@mixin static-size-width($size) {
+  max-width: $size;
+  min-width: $size;
+  width: $size;
+}

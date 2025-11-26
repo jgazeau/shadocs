@@ -1,0 +1,129 @@
+@charset "utf-8";
+@use "sass:color";
+@use "vars" as vars;
+@use "utils/mixins.scss" as mixins;
+//
+// Animations
+//
+@keyframes crack1 {
+  0%,
+  95% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-2%, 2%);
+  }
+}
+@keyframes crack2 {
+  0%,
+  95% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(2%, -2%);
+  }
+};
+//
+// Fonts
+//
+@include mixins.font-face('oswald', '../fonts/oswald/oswald-v49-latin-700', 700, normal, woff2);
+//
+// Main
+//
+body {
+  color: vars.$content-color;
+  font-family: oswald !important;
+  height: 100svh;
+  margin: 0;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  width: 100vw;
+}
+#content404 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100svh;
+  justify-content: center;
+  text-align: center;
+  width: 100vw;
+  > * {
+    margin: 0;
+    max-width: 100%;
+    padding: 0.5rem;
+  }
+  #errorCode404 {
+    filter: blur(0.04rem);
+    font-size: 5rem;
+    padding: 0;
+    position: relative;
+    user-select: none;
+    span {
+      clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
+    }
+    &::before,
+    &::after {
+      content: attr(data-text);
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+    &::before {
+      animation: crack1 2s linear forwards;
+      clip-path: polygon(0% 0%, 11% 0%, 56% 100%, 0% 100%);
+    }
+    &::after {
+      animation: crack2 2s linear forwards;
+      clip-path: polygon(43% 0%, 100% 0%, 100% 100%, 69% 100%);
+    }
+  }
+  #title404,
+  #footer404 {
+    font-size: 1.5rem;
+  }
+  #footer404 {
+    background: transparent;
+    color: vars.$theme-color;
+    margin: 0.5rem;
+    outline: none;
+    padding: 0.5rem 2rem;
+    position: relative;
+    text-decoration: none;
+    &::after,
+    &::before {
+      border-radius: 0;
+      content: "";
+      height: 100%;
+      position: absolute;
+      transform: skewX(30deg);
+      transition: all 0.4s cubic-bezier(0.8, 0, 0, 0.2);
+      width: 50%;
+      z-index: -1;
+    }
+    &::before {
+      background: linear-gradient(90deg, color.scale(vars.$theme-color-404, $lightness: 15%) 0%, color.scale(vars.$theme-color-404, $lightness: 30%) 100%);
+      left: 0.75rem;
+      top: -0.5rem;
+    }
+    &::after {
+      background: linear-gradient(90deg, vars.$theme-color-404 0%, color.scale(vars.$theme-color-404, $lightness: 15%) 100%);
+      right: 0.75rem;
+      top: 0.5rem;
+    }
+    &:hover {
+      &::before,
+      &::after {
+        top: 0;
+        transform: skewx(0deg);
+      }
+      &::before {
+        border-radius: 0 0.5rem 0.5rem 0;
+        left: 50%;
+      }
+      &::after {
+        border-radius: 0.5rem 0 0 0.5rem;
+        right: 50%;
+      }
+    }
+  }
+}

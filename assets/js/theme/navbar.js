@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
   for (const trigger of triggers) {
     const triggeredId = trigger.getAttribute('trigger');
     trigger.addEventListener('click', function () {
-      document.getElementById(triggeredId).classList.toggle('is-hidden', false);
+      document.getElementById(triggeredId).classList.toggle('is-active', true);
     });
   }
 });
