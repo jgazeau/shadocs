@@ -10,7 +10,7 @@
       aria-controls="dropdown-menu"
     >
       <span class="icon-text">{{- $.Site.Language.LanguageName -}}</span>
-      <span class="icon">
+      <span class="icon marginless">
         <i class="fa-solid fa-globe fa-lg"></i>
       </span>
     </button>
@@ -20,7 +20,7 @@
     class="dropdown-menu"
     role="menu"
   >
-    <div class="dropdown-content is-paddingless">
+    <div class="dropdown-content paddingless">
       {{- range $.Page.AllTranslations -}}
         {{- if eq $.Site.Language.LanguageName .Language.LanguageName -}}
           <div class="dropdown-item is-selected has-text-weight-bold">

@@ -1,14 +1,14 @@
 import {
-  widescreenSize,
   desktopSize,
-  tabletSize,
-  sizeTriggerWidescreen,
-  sizeTriggerDesktop,
-  sizeTriggerTouch,
-  sizeTriggerMobile,
   mediaTriggerHover,
   mediaTriggerNoHover,
   resizeFunctionsList,
+  sizeTriggerDesktop,
+  sizeTriggerMobile,
+  sizeTriggerTouch,
+  sizeTriggerWidescreen,
+  tabletSize,
+  widescreenSize,
 } from './const.min.js';
 
 // VARS //
@@ -21,18 +21,18 @@ export function closeModals(e) {
   if (e) {
     closeModal(e);
   } else {
-    let modals = document.getElementsByClassName('modal-container');
-    for (const modal of modals) {
-      closeModal(modal);
+    let modalBackgrounds = document.getElementsByClassName('modal-background');
+    for (const modalBackground of modalBackgrounds) {
+      closeModal(modalBackground);
     }
   }
 }
 // Function that close a single modal
-function closeModal(modal) {
-  if (modal.id === 'modalContainer') {
-    document.getElementById('modal').innerHTML = '';
+function closeModal(modalBackground) {
+  if (modalBackground.parentElement.id === 'modalContainer') {
+    document.getElementById('modalWrapper').innerHTML = '';
   }
-  modal.classList.toggle('is-hidden', true);
+  modalBackground.parentElement.classList.toggle('is-active', false);
 }
 // Decode Base64 to original data from Hugo (safeJS | base64Encode)
 export function atou(b64) {
@@ -76,14 +76,14 @@ export function getTriggers() {
 }
 // Add element to modal
 export function addElementToModal(el) {
-  let mc = document.getElementById('modal');
+  let mc = document.getElementById('modalWrapper');
   mc.appendChild(el);
 }
 // Display modal container
 export function displayModal() {
   document
     .getElementById('modalContainer')
-    .classList.toggle('is-hidden', false);
+    .classList.toggle('is-active', true);
 }
 // Check if an element is in the viewport
 export function isInViewport(e) {
@@ -375,31 +375,31 @@ export function manageNavbarMenu() {
     .getElementById('navbarItemsEnd')
     .classList.toggle('is-invisible', false);
 }
-// Function returning a loading helper
-export function getLoadingHelper(wrapperClass, wrapperId) {
+// Function returning a loader
+export function getLoader(wrapperClass, wrapperId) {
   let fragment = document.createDocumentFragment();
   const container = document.createElement('div');
-  const loading = document.createElement('div');
+  const loader = document.createElement('div');
   const title = document.createElement('span');
   const spinner = document.createElement('div');
   const dots = document.createElement('div');
   const dot = document.createElement('div');
   container.id = wrapperId;
   container.classList.add(
-    'helper-loading-container',
+    'loader-container',
     'is-loading',
     wrapperClass
   );
-  loading.classList.add('helper-loading');
-  title.classList.add('helper-loading-title');
-  title.innerHTML = helperLoadingLabel;
-  spinner.classList.add('helper-loading-spinner');
-  dots.classList.add('helper-loading-dots');
-  dot.classList.add('helper-loading-dot');
+  loader.classList.add('loader-wrapper');
+  title.classList.add('loader-title');
+  title.innerHTML = loaderLabel;
+  spinner.classList.add('loader-spinner');
+  dots.classList.add('loader-dots');
+  dot.classList.add('loader-dot');
   fragment.appendChild(container);
-  container.appendChild(loading);
-  loading.appendChild(title);
-  loading.appendChild(spinner);
+  container.appendChild(loader);
+  loader.appendChild(title);
+  loader.appendChild(spinner);
   spinner.appendChild(dots);
   for (let i = 0; i < 6; i++) {
     dots.appendChild(dot.cloneNode());

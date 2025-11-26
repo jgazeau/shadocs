@@ -1,0 +1,88 @@
+@use "../vars" as vars;
+@use "functions.scss" as functions;
+//
+// Variables
+//
+$treeview-separator-color: functions.smooth-color(vars.$content-color, 40);
+//
+// Main
+//
+.sc-treeview {
+  word-break: normal;
+  .sc-treeview-graph {
+    border-left: solid 0.125rem $treeview-separator-color;
+    list-style-type: none !important;
+    padding-left: 1.25rem;
+    .sc-treeview-label {
+      position: relative;
+      &:before {
+        background-color: $treeview-separator-color;
+        bottom: 0;
+        content: '';
+        height: 0.125rem;
+        left: -1.25rem;
+        margin: auto;
+        position: absolute;
+        top: 0;
+        width: 1rem;
+      }
+    }
+  }
+  .sc-treeview-tree {
+    list-style-type: none !important;
+    padding-left: 1.75rem;
+    .sc-treeview-tree {
+      position: relative;
+      &:before {
+        border-left: dashed 0.125rem $treeview-separator-color;
+        content: '';
+        height: 100%;
+        left: 1.25rem;
+        position: absolute;
+        top: 0;
+      }
+      &:has( > .sc-treeview-coll .sc-treeview-icon.sc-treeview-coll-trigger) {
+        &:before {
+          height: calc(100% - 1.75rem);
+          top: 1.75rem;
+        }
+      }
+    }
+    .sc-treeview-label {
+      position: relative;
+      .sc-treeview-icon {
+        color: vars.$theme-color;
+        font-size: vars.$theme-h3-font-size;
+        padding: 0.25rem 0.5rem;
+        &.sc-treeview-coll-trigger {
+          cursor: pointer;
+        }
+      }
+    }
+    .sc-treeview-coll {
+      > .sc-treeview-label {
+        .sc-treeview-icon {
+          &:before {
+            content: "\f146";
+            font: var(--fa-font-solid);
+            font-size: vars.$theme-h6-font-size;
+            position: absolute;
+            right: 100%;
+          }
+        }
+      }
+      &.is-collapsed {
+        > .sc-treeview-label {
+          .sc-treeview-icon {
+            &:before {
+              content: "\f0fe";
+            }
+          }
+        }
+        .sc-treeview-tree {
+          display: none;
+        }
+      }
+    }
+  }
+}

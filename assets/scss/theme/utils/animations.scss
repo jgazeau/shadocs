@@ -1,0 +1,22 @@
+//
+// Main
+//
+@keyframes copied {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes delayed {
+  99% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+};

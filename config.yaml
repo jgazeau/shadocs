@@ -13,7 +13,10 @@ module:
     - source: static
       target: static
   imports:
-    path: github.com/jgthms/bulma
-    mounts:
-    - source: .
-      target: assets/sass
+    - path: github.com/jgthms/bulma
+      version: 1.0.4
+      mounts:
+      - source: .
+        target: assets/scss
+      - source: sass
+        target: assets/scss/bulma/sass

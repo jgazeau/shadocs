@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
   // Manage modals closing
   document.addEventListener('click', function (e) {
-    if (e.target.classList.contains('modal-container')) {
+    if (e.target.classList.contains('modal-background')) {
       closeModals(e.target);
     }
   });
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     if (isPreCopyToEnable(p[i])) {
       let tdiv = document.createElement('div');
       let ti = document.createElement('i');
-      tdiv.setAttribute('class', 'copy-code is-action-button');
+      tdiv.setAttribute('class', 'copy-code is-action-button is-pre-copy-code');
       ti.setAttribute('class', 'fa-solid fa-copy');
       if (
         typeof codeCopyBefore !== 'undefined' &&

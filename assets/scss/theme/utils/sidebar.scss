@@ -1,0 +1,230 @@
+@use "../vars" as vars;
+@use "mixins.scss" as mixins;
+@use "functions.scss" as functions;
+@use "../../bulma/sass/utilities" as bulma_utilities;
+@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+//
+// Variables
+//
+$sidebar-border: vars.$sidebar-border-width solid vars.$sidebar-border-color;
+$sidebar-entry-border-radius: 0.75rem;
+$sidebar-entry-height: calc(vars.$theme-icon-size + (2 * vars.$sidebar-entry-padding));
+$sidebar-entry-icon-width: calc(vars.$theme-icon-size + (2 * vars.$sidebar-entry-padding));
+$sidebar-collapsible-height: calc($sidebar-entry-height + (2 * vars.$sidebar-entry-padding) + vars.$sidebar-border-width);
+//
+// Mixins
+//
+@mixin sidebar-collapsed {
+  width: vars.$sidebar-collapsed-width;
+  .menu {
+    .menu-list {
+      li {
+        &.is-tree-active {
+          border-radius: $sidebar-entry-border-radius;
+        }
+      }
+    }
+  }
+  .is-fs-expandable-icon {
+    display: block;
+  }
+  .is-collapse-action {
+    display: none;
+  }
+  .is-uncollapse-action {
+    display: block;
+  }
+  .is-expandable {
+    display: none;
+    &.is-hovered {
+      @media (hover: hover) {
+        display: block;
+        padding-left: vars.$sidebar-entry-padding;
+        position: fixed;
+        .is-sidebar-list-wrapper {
+          background: vars.$sidebar-background-color;
+          border: $sidebar-border;
+          border-radius: 0;
+          min-height: $sidebar-entry-height;
+          overflow-x: hidden;
+          overflow-y: auto;
+          padding: vars.$sidebar-entry-padding;
+          width: vars.$sidebar-width;
+          .card-header-title {
+            i.fa-lg {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//
+// Main
+//
+#sidebar,
+#sidebarCollapsible {
+  padding: 0.5rem;
+  width: vars.$sidebar-width;
+  .is-fs-expandable-icon,
+  .is-uncollapse-action {
+    display: none;
+  }
+  .card,
+  .card-header,
+  .card-header-icon {
+    @include mixins.static-size-height($sidebar-entry-height);
+  }
+  .card {
+    width: 100%;
+    .card-header {
+      .card-header-title {
+        color: bulma_utilities.bulmaFindColorInvert(vars.$sidebar-background-color);
+        padding: vars.$sidebar-entry-padding 0;
+        white-space: nowrap;
+        i {
+          @include mixins.static-size-width($sidebar-entry-icon-width);
+          height: 100%;
+        }
+        p {
+          padding-left: vars.$sidebar-entry-padding;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+      .card-header-icon {
+        @include mixins.static-size-width($sidebar-entry-icon-width);
+        color: bulma_utilities.bulmaFindColorInvert(vars.$sidebar-background-color);
+        user-select: none;
+      }
+    }
+    &.is-sidebar-active {
+      .card-header {
+        background: functions.smooth-color(bulma_utilities.bulmaFindColorInvert(vars.$sidebar-background-color), 25);
+        .card-header-title,
+        .card-header-icon {
+          color: vars.$sidebar-background-color;
+        }
+      }
+    }
+    .is-sidebar-disable {
+      .card-header-title {
+        color: functions.smooth-color(vars.$sidebar-background-color, 35);
+      }
+    }
+  }
+  .is-icon-expandable {
+    .icon {
+      &:after {
+        font: var(--fa-font-solid);
+        content: "\f107";
+      }
+      &:hover:after {
+        content: "\f103";
+      }
+    }
+    &.is-icon-expanded {
+      .icon {
+        &:after,
+        &:hover:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+    @media (hover: hover) {
+    .card:not(.is-sidebar-active) {
+      .card-header {
+        &:not(.is-sidebar-disable):hover {
+          background: functions.smooth-color(vars.$sidebar-background-color, 15);
+        }
+      }
+    }
+  }
+}
+#sidebar {
+  @include mixins.static-size-height(calc(100svh - vars.$navbar-height - $sidebar-collapsible-height));
+  background: linear-gradient(vars.$sidebar-background-color, functions.smooth-color(vars.$sidebar-background-color, 5));
+  border: $sidebar-border;
+  .is-tree-active {
+    background: functions.smooth-color(vars.$sidebar-background-color, 7.5);
+  }
+  ul {
+    list-style-type: none;
+  }
+  ul.is-tree-active {
+    border-radius: 0 $sidebar-entry-border-radius $sidebar-entry-border-radius 0;
+  }
+  li {
+    &.is-tree-active {
+      border-radius: $sidebar-entry-border-radius $sidebar-entry-border-radius $sidebar-entry-border-radius 0;
+    }
+    &.is-entries-shrinked {
+      li {
+        display: none !important;
+      }
+    }
+  }
+  .menu {
+    font-size: vars.$theme-h6-font-size;
+    a {
+      background-color: transparent !important;
+    }
+  }
+}
+#sidebarCollapsible {
+  @include mixins.static-size-height($sidebar-collapsible-height);
+  background: linear-gradient(functions.smooth-color(vars.$sidebar-background-color, 5), vars.$sidebar-background-color);
+  border-bottom: $sidebar-border;
+  border-left: $sidebar-border;
+  border-right: $sidebar-border;
+  a {
+    user-select: none;
+  }
+}
+#sidebar,
+#sidebarContainer,
+#sidebarCollapsible {
+  transition: width 0.2s ease;
+}
+#sidebarContainer {
+  width: vars.$sidebar-width;
+  z-index: 20;
+  &.is-sidebar-collapsed {
+    width: vars.$sidebar-collapsed-width;
+    #sidebar,
+    #sidebarCollapsible {
+      @include sidebar-collapsed;
+    }
+  }
+  &:not(.is-sidebar-collapsed):not(.is-sidebar-uncollapsed) {
+    @include bulma_mixins.touch {
+      width: vars.$sidebar-collapsed-width;
+      #sidebar,
+      #sidebarCollapsible {
+        @include sidebar-collapsed;
+      }
+    }
+  }
+  @include bulma_mixins.touch {
+    position: fixed;
+  }
+  @media (hover: none) {
+    position: fixed;
+  }
+}
+#sidebarMobileWrapper {
+  @include mixins.static-size-width(vars.$sidebar-collapsed-width);
+  position: fixed;
+  @include bulma_mixins.touch {
+    @include mixins.static-size-width(vars.$sidebar-collapsed-width);
+    display: block;
+    position: relative;
+  }
+  @media (hover: none) {
+    @include mixins.static-size-width(vars.$sidebar-collapsed-width);
+    display: block;
+    position: relative;
+  }
+}

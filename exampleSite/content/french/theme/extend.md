@@ -53,8 +53,10 @@ Les fichiers suivants sont gérés dans le thème:
 Pour plus d'information, se référer au fichier du [site de documentation custom-info.html](https://github.com/jgazeau/shadocs/blob/main/exampleSite/layouts/partials/custom/custom-info.html)
     {{< /alert >}}
 
-# Personnalisation SASS
+# Personnalisation SCSS
 ---
+
+TODO
 
 La mise en page CSS du thème est implémentée en utilisant le langage [SASS](https://sass-lang.com/).
 

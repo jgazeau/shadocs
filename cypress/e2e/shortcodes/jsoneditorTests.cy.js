@@ -8,14 +8,14 @@ describe('for: jsoneditor shortcode', () => {
       5
     );
   });
-  it('jsoneditor should have a loading helper', () => {
+  it('jsoneditor should have a loader', () => {
     cy.get('#content .sc-jsoneditor-wrapper').should(
       'have.class',
-      'helper-loading-container'
+      'loader-container'
     );
   });
   it('jsoneditor should not have a jsoneditor helper once loaded', { defaultCommandTimeout: 10000 }, () => {
-    cy.get('#content .sc-jsoneditor-wrapper.helper-loading-container').should(
+    cy.get('#content .sc-jsoneditor-wrapper.loader-container').should(
       'not.have.class',
       'is-loading'
     );

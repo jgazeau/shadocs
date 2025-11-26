@@ -1,20 +1,24 @@
 {{- $.Scratch.Set "contentId" "content" -}}
+{{- $.Scratch.Set "contentClasses" (slice "content" "column") -}}
 {{- $.Scratch.Set "titleId" "contentTitle" -}}
+{{- $.Scratch.Set "titleClasses" "mb-4" -}}
 {{- if .IsHome -}}
   {{- if eq .Site.Params.homeLayout "onboarding" -}}
     {{- $.Scratch.Set "contentId" "contentHome" -}}
+    {{- $.Scratch.Set "contentClasses" (slice "content" "column" "is-flex" "is-flex-direction-column" "is-align-items-center" "is-justify-content-center") -}}
     {{- $.Scratch.Set "titleId" "contentHomeTitle" -}}
+    {{- $.Scratch.Set "titleClasses" "marginless" -}}
     {{- $.Scratch.Set "isToc" false -}}
   {{- end -}}
 {{- else -}}
   {{- $.Scratch.Set "isToc" (partial "theme/helpers/tocResolver.html" (dict "this" .)) -}}
 {{- end -}}
-{{- $contentContainerClasses := slice "columns" "is-mobile" "is-marginless" "is-scroll-smooth" -}}
+{{- $contentContainerClasses := slice "columns" "is-mobile" "is-flex" "is-flex-grow-1" "marginless" "paddingless" "is-scroll-smooth" -}}
 {{- with ($.Scratch.Get "isToc") -}}
   {{- $contentContainerClasses = $contentContainerClasses | append "has-toc" -}}
 {{- end -}}
 <div class="{{- delimit $contentContainerClasses " " -}}" id="contentContainer">
-  <div class="column" id="{{- $.Scratch.Get "contentId" -}}">
+  <div class="{{- delimit ($.Scratch.Get "contentClasses") " " -}}" id="{{- $.Scratch.Get "contentId" -}}">
     {{- with (or .Site.Params.globalBanner .Params.banner) -}}
       {{- $bannerContent := i18n "banner_default_content" $ -}}
       {{- with $.Params.bannerContent -}}
@@ -23,7 +27,7 @@
       {{- partial "theme/banner.html" (dict "text" $bannerContent "rootContext" $) -}}
     {{- end -}}
     {{- with .Title -}}
-      {{- partial "theme/content-title.html" (dict "titleId" ($.Scratch.Get "titleId") "title" .) -}}
+      {{- partial "theme/content-title.html" (dict "titleId" ($.Scratch.Get "titleId") "title" . "titleClasses" ($.Scratch.Get "titleClasses")) -}}
     {{- end -}}
     {{- .Content -}}
   </div>

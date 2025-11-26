@@ -1,0 +1,84 @@
+@use "../vars" as vars;
+@use "mixins.scss" as mixins;
+@use "functions.scss" as functions;
+@use "../../bulma/sass/utilities" as bulma_utilities;
+//
+// Variables
+//
+$snippet-active-tab-background-color: vars.$theme-blue-darker-color;
+$snippet-header-background-color: silver;
+//
+// Main
+//
+.sc-snippet-wrapper {
+  .sc-snippet-input[type=radio],
+  .sc-snippet-tab {
+    display: none;
+  }
+  .sc-snippet-input[type=radio]:checked+.sc-snippet-label {
+    background: $snippet-active-tab-background-color;
+    box-shadow: unset;
+    color: bulma_utilities.bulmaFindColorInvert($snippet-active-tab-background-color);
+    & + .sc-snippet-tab {
+      display: block;
+    }
+  }
+  .sc-snippet-input[type=radio]:not(:checked)+.sc-snippet-label:hover {
+    background: functions.smooth-color(vars.$content-background-color, 30);
+  }
+  .sc-snippet-label {
+    @include mixins.font-family(roboto-mono);
+    border-radius: 0.5rem 0.5rem 0 0;
+    background: functions.smooth-color(vars.$content-background-color, 20);
+    color: vars.$content-color;
+    cursor: pointer;
+    flex: 1;
+    font-weight: bold;
+    margin: 0 0.5rem;
+    order: 1;
+    padding: 0.5rem 0.75rem;
+    position: relative;
+    text-align: center;
+    user-select: none;
+  }
+  .sc-snippet-tab {
+    order: 2;
+    padding: var(--bulma-content-table-cell-padding);
+  }
+  .sc-snippet-container {
+    @include mixins.static-size-width(100%);
+    &.sc-snippet-tab {
+      border: 1px solid $snippet-active-tab-background-color;
+    }
+    .sc-snippet {
+      .sc-snippet-caption {
+        @include mixins.font-family(roboto-mono);
+        background: $snippet-header-background-color;
+        border: 1px solid functions.smooth-color($snippet-header-background-color, 20);
+        border-radius: 0.75rem 0.75rem 0 0;
+        color: bulma_utilities.bulmaFindColorInvert($snippet-header-background-color);
+        font-style: italic;
+        font-weight: bold;
+        padding: 0.5rem 0;
+        text-align: center;
+      }
+      .highlight {
+        margin: 0 !important;
+      }
+      .sc-snippet-plaintext,
+      .sc-snippet-md {
+        border-bottom: 1px solid functions.smooth-color($snippet-header-background-color, 20);
+        border-left: 1px solid functions.smooth-color($snippet-header-background-color, 20);
+        border-right: 1px solid functions.smooth-color($snippet-header-background-color, 20);
+        padding: var(--bulma-content-table-cell-padding);
+      }
+    }
+    .sc-snippet-plaintext {
+      white-space: pre-wrap;
+    }
+    .sc-snippet-plaintext,
+    .sc-snippet-md {
+      overflow: hidden;
+    }
+  }
+}

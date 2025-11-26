@@ -1,5 +1,6 @@
-<div id="navbarShortcuts" class="is-hidden modal-container">
-  <div class="modal-content-box modal-text-box">
+<div id="navbarShortcuts" class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content marginless is-flex">
     {{- with $.Site.Data.themeParams.navbar.shortcuts -}}
       {{- $.Scratch.Set "isThemeShortcuts" true -}}
     {{- else -}}
@@ -11,15 +12,11 @@
       {{- $.Scratch.Set "isParamShortcuts" false -}}
     {{- end -}}
     {{- if or ($.Scratch.Get "isThemeShortcuts") ($.Scratch.Get "isParamShortcuts") -}}
-      <div class="card modal-title is-radiusless">
-        <div class="card-header">
-          <p class="card-header-title is-marginless">
-            {{- i18n "navbarshortcuts_title" -}}
-          </p>
+      <div class="message is-flex is-flex-direction-column is-flex-grow-1">
+        <div class="message-header is-justify-content-center">
+          <p>{{- i18n "navbarshortcuts_title" -}}</p>
         </div>
-      </div>
-      <div class="modal-content-container">
-        <div class="modal-content-block">
+        <div class="message-body is-overflow-y">
           {{- with $.Site.Data.themeParams.navbar.shortcuts -}}
             {{- range $shortcutName, $parameters := . -}}
               {{- with $parameters.function -}}
@@ -58,15 +55,17 @@
   {{- else -}}
     {{- $scratch.Set "wording" $shortcutName -}}
   {{- end -}}
-  <div class="modal-content">
-    {{- range $index, $keyWording := ($scratch.Get "keysWording") -}}
-      {{- if ne $index 0 -}}
-        <p>+</p>
+  <div class="shortcut-entry is-flex">
+    <div class="shortcut-keys is-flex is-align-items-center is-justify-content-center p-2">
+      {{- range $index, $keyWording := ($scratch.Get "keysWording") -}}
+        {{- if ne $index 0 -}}
+          <p class="p-2">+</p>
+        {{- end -}}
+        <kbd>{{- $keyWording -}}</kbd>
       {{- end -}}
-      <kbd>{{- $keyWording -}}</kbd>
-    {{- end -}}
-  </div>
-  <div class="modal-content">
-    <p class="has-text-weight-normal">{{- $scratch.Get "wording" -}}</p>
+    </div>
+    <div class="shortcut-wording is-flex is-align-items-center is-justify-content-center p-2">
+      <p>{{- $scratch.Get "wording" -}}</p>
+    </div>
   </div>
 {{- end -}}

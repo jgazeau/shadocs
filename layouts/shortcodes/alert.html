@@ -1,11 +1,9 @@
-{{- $alertClassPrefix := "sc-alert" -}}
-{{- $alertClassDefault := "info" -}}
-{{- $alertClasses := slice $alertClassPrefix -}}
+{{- $alertClassLevel := "info" -}}
+{{- $alertClasses := slice "notification" -}}
 {{- with .Get "type" -}}
-  {{- $alertClasses = $alertClasses | append (printf "%s-%s" $alertClassPrefix .) -}}
-{{- else -}}
-  {{- $alertClasses = $alertClasses | append (printf "%s-%s" $alertClassPrefix $alertClassDefault) -}}
+  {{- $alertClassLevel = . -}}
 {{- end -}}
+{{- $alertClasses = $alertClasses | append (printf "is-%s" $alertClassLevel) -}}
 <div class="{{- delimit $alertClasses " " -}}">
   {{- $optMd := dict "markup" "goldmark" -}}
   {{- .Inner | .Page.RenderString $optMd -}}

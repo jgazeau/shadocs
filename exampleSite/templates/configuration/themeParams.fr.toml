@@ -12,7 +12,7 @@
 [sidebar]
   homeSectionIconDefault = "fa-solid fa-house-chimney"
   firstSectionIconDefault = "fa-solid fa-ban"
-  nestedSectionIconDefault = "fa-solid fa-turn-up fa-rotate-90 fa-xs"
+  nestedSectionIconDefault = "fa-solid fa-arrow-turn-up fa-rotate-90 fa-sm"
 #
 # Liste des raccourcis clavier du thème
 # Pour chaque raccourci les clés suivantes sont renseignées:
@@ -56,25 +56,19 @@
 #
 # Liste des assets (https://gohugo.io/hugo-pipes/resource-from-template/) à inclures
 # Assets gérés:
-# - sass                  = [Liste des fichiers SASS]
 # - css                   = [Liste des fichiers CSS]
 # - js                    = [Liste des fichiers javascript]
 # - jsModules             = [Liste des fichiers modules javascript]
-# - shortcodes.sass       = [Liste des fichiers SASS à inclure quand le shortcode associé est présent dans le contenu de la page]
 # - shortcodes.css        = [Liste des fichiers CSS à inclure quand le shortcode associé est présent dans le contenu de la page]
 # - shortcodes.js         = [Liste des fichiers javascript à inclure quand le shortcode associé est présent dans le contenu de la page]
 # - shortcodes.jsModules  = [Liste des fichiers modules javascript à inclure quand le shortcode associé est présent dans le contenu de la page]
 #
 [includes]
-  sass = [
-    "sass/theme/main.sass"
-  ]
   css = [
     "css/external/fontawesome.all.min.css",
     "css/external/overlay-scrollbars/overlayscrollbars.min.css"
   ]
   js = [
-    "js/theme/browserCompatibility.js",
     "js/external/flexsearch/flexsearch.bundle.min.js",
     "js/external/qrious/qrious.min.js",
     "js/external/overlay-scrollbars/overlayscrollbars.min.js"

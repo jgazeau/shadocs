@@ -10,7 +10,7 @@
       aria-controls="dropdown-menu"
     >
       <span class="icon-text">{{- i18n "navbar_label_taxonomies" -}}</span>
-      <span class="icon">
+      <span class="icon marginless">
         <i class="fa-solid fa-tags fa-lg"></i>
       </span>
     </button>
@@ -20,12 +20,12 @@
     class="dropdown-menu"
     role="menu"
   >
-    <div class="dropdown-content is-paddingless">
+    <div class="dropdown-content paddingless">
       {{- range $taxonomyname, $taxonomy := .Site.Taxonomies -}}
         {{- if gt (len $taxonomy) 0 -}}
           {{- $.Scratch.Set "taxonomyUrl" (urls.JoinPath (.Site.BaseURL | relLangURL) ($taxonomyname | urlize) "/") -}}
           {{- if eq $.Page.RelPermalink ($.Scratch.Get "taxonomyUrl") -}}
-            <div class="dropdown-item is-selected has-text-weight-bold">
+            <div class="dropdown-item is-selected is-flex is-align-items-center has-text-weight-bold">
               {{- with $.Site.Params.taxonomies -}}
                 {{- with (index . $taxonomyname).icon -}}
                   <i class="{{- . -}}"></i>

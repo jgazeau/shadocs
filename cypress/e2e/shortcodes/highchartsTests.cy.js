@@ -12,21 +12,21 @@ describe('for: highcharts shortcode', () => {
     );
   });
   it(
-    'highcharts should have a loading helper',
+    'highcharts should have a loader',
     { defaultCommandTimeout: 60000 },
     () => {
       cy.get('#content .sc-highcharts-wrapper').each(($elem) => {
         cy.get($elem)
           .scrollIntoView()
-          .should('have.class', 'helper-loading-container');
+          .should('have.class', 'loader-container');
       });
     }
   );
   it(
-    'highcharts should not have a loading helper once loaded',
+    'highcharts should not have a loader once loaded',
     { defaultCommandTimeout: 60000 },
     () => {
-      cy.get('#content .sc-highcharts-wrapper.helper-loading-container').each(
+      cy.get('#content .sc-highcharts-wrapper.loader-container').each(
         ($elem) => {
           cy.get($elem).scrollIntoView().should('not.have.class', 'is-loading');
         }

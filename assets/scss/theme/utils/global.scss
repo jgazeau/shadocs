@@ -1,0 +1,153 @@
+@use "../vars" as vars;
+@use "functions.scss" as functions;
+@use "mixins.scss" as mixins;
+@use "../../bulma/sass/utilities" as bulma_utilities;
+@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+//
+// Fonts
+//
+@include mixins.font-face('lato', '../fonts/lato/lato-v23-latin-regular', 400, normal, woff2);
+@include mixins.font-face('lato', '../fonts/lato/lato-v23-latin-italic', 400, italic, woff2);
+@include mixins.font-face('lato', '../fonts/lato/lato-v23-latin-700', 700, normal, woff2);
+@include mixins.font-face('lato', '../fonts/lato/lato-v23-latin-700italic', 700, italic, woff2);
+@include mixins.font-face('lato', '../fonts/lato/lato-v23-latin-900', 900, normal, woff2);
+@include mixins.font-face('lato', '../fonts/lato/lato-v23-latin-900italic', 900, italic, woff2);
+@include mixins.font-face('oswald', '../fonts/oswald/oswald-v49-latin-700', 700, normal, woff2);
+@include mixins.font-face('roboto-mono', '../fonts/roboto-mono/roboto-mono-v22-latin-700', 700, normal, woff2);
+@include mixins.font-face('roboto-mono', '../fonts/roboto-mono/roboto-mono-v22-latin-regular', 400, normal, woff2);
+@include mixins.font-face('permanent-marker', '../fonts/permanent-marker/permanent-marker-v16-latin-regular', 400, normal, woff2);
+//
+// Main
+//
+body {
+  @include mixins.font-family(lato);
+  @include mixins.static-size-height(100vh);
+  @include mixins.static-size-width(100vw);
+}
+dt {
+  font-weight: vars.$content-strong-weight;
+}
+.footnotes {
+  font-size: 80% !important;
+  hr {
+    background: vars.$content-footnote-color;
+    border-radius: 0.25rem;
+  }
+}
+.footnote-ref,
+.footnote-backref {
+  color: functions.smooth-color(vars.$content-color, 50);
+  &:before {
+    content: '[';
+  }
+  &:after {
+    content: ']';
+  }
+  &:hover {
+    color: vars.$content-footnote-color;
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  .anchor {
+    color: functions.smooth-color(vars.$content-color, 50);
+    margin-left: 0.25rem;
+    opacity: 0;
+    transform: translateX(0.75rem);
+    transition: transform 0.3s, opacity 0.2s, color 0.2s;
+    &:hover {
+      color: vars.$content-link-color;
+    }
+    @media (hover: none) {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  &:hover {
+    .anchor {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  + hr {
+    margin-top: -#{vars.$theme-content-spacing};
+  }
+}
+hr {
+  background: linear-gradient(90deg, vars.$theme-color 0%, transparent 100%);
+  border-radius: 0.25rem;
+}
+html {
+  overflow: hidden !important;
+  @include mixins.static-size-width(100%);
+}
+input[type="checkbox"],
+input[type="radio"] {
+  vertical-align: middle !important;
+}
+kbd {
+  background: linear-gradient(functions.tint(bulma_utilities.$grey-light, 20), functions.tint(bulma_utilities.$grey-light, 80));
+  border: 1px solid bulma_utilities.$grey;
+  border-radius: 0.25rem;
+  box-shadow: inset 0 0.1rem 0.2rem bulma_utilities.$grey-light, inset 0 -0.1rem 0.2rem bulma_utilities.$grey;
+  color: bulma_utilities.$grey-darker;
+  padding: 0.25rem 0.5rem;
+  user-select: none;
+}
+img {
+  justify-self: center;
+}
+@include mixins.nested-even-content("blockquote", 10) {
+  background: functions.smooth-color(vars.$content-background-color, 20) !important;
+}
+@include mixins.nested-odd-content("blockquote", 10) {
+  background: functions.smooth-color(vars.$content-background-color, 10) !important;
+}
+*:not(pre) {
+  > code {
+    @include mixins.font-family(roboto-mono);
+    background: functions.smooth-color(vars.$content-background-color, 20);
+    border-radius: 0.25rem;
+    color: vars.$content-color;
+    font-size: 90%;
+    font-weight: bold;
+    padding: 0 0.25rem;
+  }
+}
+.highlight {
+  position: relative;
+  pre {
+    padding: calc(#{vars.$theme-h3-font-size} + 1rem) !important;
+  }
+}
+ul,
+ol,
+dd {
+  margin-inline-start: 1.25rem !important;
+}
+table:not([style]) {
+  table-layout: fixed;
+  width: 100%;
+  thead,
+  tfoot {
+    background: vars.$content-table-ends-cell-background-color;
+  }
+  th,
+  td {
+    vertical-align: middle !important;
+  }
+  tbody {
+    > tr {
+      &:nth-of-type(even) {
+        background: vars.$content-background-color;
+      }
+      &:nth-of-type(odd) {
+        background: functions.smooth-color(vars.$content-background-color, 10);
+      }
+    }
+  }
+}

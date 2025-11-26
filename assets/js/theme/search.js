@@ -1,15 +1,15 @@
 import {
+  flexSearchOptions,
+  flexSearchThemeOptions,
+} from './modules/const.min.js';
+import {
   addFunctionToResizeEvent,
   hideSearchList,
   isSearchListHidden,
-  showSearchList,
   removeActive,
+  showSearchList,
   sortByProperties,
 } from './modules/helpers.min.js';
-import {
-  flexSearchThemeOptions,
-  flexSearchOptions,
-} from './modules/const.min.js';
 
 (function () {
   'use strict';
@@ -149,22 +149,20 @@ import {
   function addTitleToSearchList(item) {
     const rootTitle = item.rootTitle || 'N/A';
     const rootTitleIcon = '<i class="' + item.rootTitleIcon + '"></i>';
-    const li = document.createElement('li');
+    const titleResult = document.createElement('div');
     const a = document.createElement('a');
     const spre = document.createElement('span');
     const stitle = document.createElement('span');
+    titleResult.classList.add('search-title-result');
+    a.classList.add('is-flex', 'is-align-items-center');
     a.setAttribute('href', item.rootTitlePath);
     a.setAttribute('title', item.rootTitleTitle);
-    a.classList.add('level', 'is-mobile', 'is-title');
-    if (searchList.children.length === 0) {
-      a.classList.add('is-first-title');
-    }
-    spre.classList.add('level-item', 'spre');
+    spre.classList.add('spre');
     spre.innerHTML = rootTitleIcon;
-    stitle.classList.add('level-item', 'stitle');
+    stitle.classList.add('stitle');
     stitle.innerHTML = rootTitle;
-    searchList.appendChild(li);
-    li.appendChild(a);
+    searchList.appendChild(titleResult);
+    titleResult.appendChild(a);
     a.appendChild(spre);
     a.appendChild(stitle);
   }
@@ -172,36 +170,37 @@ import {
   function addResultToSearchList(item, highlightedTitle, highlightedContent) {
     const title = highlightedTitle || 'N/A';
     const content = highlightedContent || 'N/A';
-    const li = document.createElement('li');
+    const result = document.createElement('div');
     const a = document.createElement('a');
     const lleft = document.createElement('div');
     const lright = document.createElement('div');
     const scontent = document.createElement('div');
     const spath = document.createElement('div');
+    result.classList.add('search-result');
+    a.classList.add('is-flex', 'is-align-items-stretch');
     a.setAttribute('href', item.permalink);
     a.setAttribute('title', item.permalinkTitle);
-    a.classList.add('level', 'is-mobile');
-    lleft.classList.add('level-left');
-    lright.classList.add('level-right');
-    scontent.classList.add('level-item', 'scontent');
+    lleft.classList.add('sleft', 'is-flex-shrink-0', 'is-align-content-center');
+    lright.classList.add('sright');
+    scontent.classList.add('scontent');
     scontent.innerHTML = content;
-    spath.classList.add('level-item', 'spath');
+    spath.classList.add('spath');
     spath.innerHTML = title;
-    searchList.appendChild(li);
-    li.appendChild(a);
+    searchList.appendChild(result);
+    result.appendChild(a);
     a.appendChild(lleft);
     a.appendChild(lright);
-    lleft.appendChild(scontent);
-    lright.appendChild(spath);
+    lleft.appendChild(spath);
+    lright.appendChild(scontent);
   }
   // Function to add a no result message to the search list
   function addNoResultToSearchList() {
-    let li = document.createElement('li');
+    let noResult = document.createElement('div');
     searchList.classList.add('no-result');
-    li.classList.add('no-result', 'level-item', 'is-mobile');
-    li.removeAttribute('title');
-    li.innerHTML = searchNoResults;
-    searchList.appendChild(li);
+    noResult.classList.add('no-result', 'level-item', 'is-mobile');
+    noResult.removeAttribute('title');
+    noResult.innerHTML = searchNoResults;
+    searchList.appendChild(noResult);
   }
   // Function to empty a result list
   function emptyList() {

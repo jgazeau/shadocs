@@ -11,7 +11,7 @@ describe('for: treeview shortcode', () => {
     });
   });
   it('one treeview with warning alert should be displayed', () => {
-    cy.get('#content .sc-treeview .sc-alert.sc-alert-warning').should(
+    cy.get('#content .sc-treeview .notification.is-warning').should(
       'have.length',
       1
     );

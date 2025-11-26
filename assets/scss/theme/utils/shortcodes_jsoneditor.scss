@@ -1,0 +1,195 @@
+@use "../vars" as vars;
+@use "mixins.scss" as mixins;
+@use "functions.scss" as functions;
+@use "../../bulma/sass/utilities" as bulma_utilities;
+//
+// Variables
+//
+$jsoneditor-content-border-radius: 0.75rem;
+$jsoneditor-content-padding: 0.5rem;
+//
+// Main
+//
+.sc-jsoneditor-container {
+  background: functions.smooth-color(vars.$content-background-color, 10);
+  border: 1px solid functions.smooth-color(vars.$content-background-color, 30);
+  border-radius: $jsoneditor-content-border-radius;
+  color: vars.$content-color;
+  padding: $jsoneditor-content-padding;
+  position: relative;
+  .je-indented-panel {
+    border-radius: $jsoneditor-content-border-radius;
+    border: 1px solid functions.smooth-color(vars.$content-background-color, 20);
+    padding: $jsoneditor-content-padding;
+    margin: 0;
+  }
+  .je-tabholder--clear {
+    > .je-indented-panel {
+      border: none;
+    }
+  }
+  .row {
+    border-radius: $jsoneditor-content-border-radius;
+    padding: $jsoneditor-content-padding;
+    &:not(:has(.je-indented-panel)) {
+      &:focus-within,
+      &:hover {
+        background: functions.smooth-color(vars.$content-background-color, 15);
+      }
+    }
+  }
+  div[data-schematype="object"].je-object__container {
+    > .je-indented-panel {
+      padding: 0;
+    }
+  }
+  div[data-schematype="array"] {
+    > .je-indented-panel {
+      div[data-schematype].je-indented-panel {
+        margin-bottom: 0.5rem;
+        &:focus-within,
+        &:hover {
+          background: functions.smooth-color(vars.$content-background-color, 15);
+        }
+      }
+    }
+    div:has(span > button.json-editor-btntype-delete),
+    div:has(span > button.json-editor-btntype-move) {
+      position: relative;
+      > span {
+        &:has(button.json-editor-btntype-delete),
+        &:has(button.json-editor-btntype-move) {
+          display: flex;
+          justify-content: space-between;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+      }
+      .je-indented-panel > span {
+        &:has(button.json-editor-btntype-delete),
+        &:has(button.json-editor-btntype-move) {
+          margin: $jsoneditor-content-padding;
+        }
+      }
+    }
+  }
+  .je-header {
+    font-size: vars.$theme-h5-font-size;
+    font-weight: bold;
+    button {
+      background: vars.$theme-color;
+      border-radius: $jsoneditor-content-border-radius;
+      color: bulma_utilities.bulmaFindColorInvert(vars.$theme-color);
+      padding: 0.5rem 0.75rem;
+      &:before {
+        content: "\f0c9";
+        font: var(--fa-font-solid);
+        padding-right: 0.5rem;
+      }
+      &:hover {
+        background: functions.smooth-color(vars.$theme-color, 20);
+        cursor: pointer;
+      }
+    }
+    &.je-object__title {
+      button:before {
+        content: "\f1b2";
+      }
+    }
+  }
+  .json-editor-btntype-add,
+  .json-editor-btntype-delete,
+  .json-editor-btntype-move {
+    @include mixins.static-size-height(max-content);
+    @include mixins.static-size-width(max-content);
+    align-items: center;
+    border-radius: $jsoneditor-content-border-radius;
+    display: flex;
+    justify-content: center;
+    padding: $jsoneditor-content-padding;
+    &:hover {
+      cursor: pointer;
+    }
+    &:after,
+    &:before {
+      content: none;
+    }
+  }
+  .json-editor-btntype-add {
+    background: vars.$theme-green-color;
+    color: bulma_utilities.bulmaFindColorInvert(vars.$theme-green-color);
+    &:hover {
+      background: functions.smooth-color(vars.$theme-green-color, 40);
+    }
+  }
+  .json-editor-btntype-delete {
+    background: vars.$theme-red-color;
+    color: bulma_utilities.bulmaFindColorInvert(vars.$theme-red-color);
+    margin-left: $jsoneditor-content-padding;
+    &:hover {
+      background: functions.smooth-color(vars.$theme-red-color, 40);
+    }
+  }
+  .json-editor-btntype-move {
+    background: vars.$theme-blue-color;
+    color: bulma_utilities.bulmaFindColorInvert(vars.$theme-blue-color);
+    margin-left: $jsoneditor-content-padding;
+    &:hover {
+      background: functions.smooth-color(vars.$theme-blue-color, 40);
+    }
+  }
+  label {
+    display: inline-block;
+    font-weight: bold;
+    line-height: 2rem;
+    margin: 0 0 $jsoneditor-content-padding 0 !important;
+    &:after {
+      content: ":";
+    }
+  }
+  p {
+    margin: $jsoneditor-content-padding 0 !important;
+  }
+  .errmsg {
+    color: vars.$theme-red-color;
+    font-style: italic;
+    margin: $jsoneditor-content-padding 0 0 0 !important;
+  }
+  p[style="color: red;"] {
+    font-style: italic;
+  }
+  input,
+  select {
+    @include mixins.static-size-width(100%);
+    background: vars.$content-background-color;
+    border: 1px solid functions.smooth-color(vars.$content-background-color, 25);
+    box-shadow: unset;
+    color: vars.$content-color;
+    outline: unset;
+    padding: $jsoneditor-content-padding;
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      border: 1px solid functions.smooth-color(vars.$content-background-color, 50);
+    }
+  }
+  div:has( > div.sc-jsoneditor-toast-error) {
+    cursor: pointer;
+    justify-content: flex-end;
+    max-height: 100%;
+    overflow: hidden;
+    padding: $jsoneditor-content-padding !important;
+    position: absolute !important;
+    user-select: none;
+  }
+}
+.sc-jsoneditor-toast-error {
+  padding: var(--bulma-notification-padding) !important;
+}
+.sc-jsoneditor-action-wrapper {
+  border-image: linear-gradient(to right,transparent 25%, functions.smooth-color(vars.$theme-color, 0) 50%, transparent 75%) 1 0 0 0;
+  border-top: 1px solid;
+  margin-top: $jsoneditor-content-padding;
+  padding-top: $jsoneditor-content-padding;
+}

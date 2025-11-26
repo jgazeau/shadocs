@@ -82,7 +82,7 @@
   translation: 'No description available'
 - id: read_more
   translation: 'Read more'
-- id: helper_loading
+- id: loading
   translation: 'Loading'
 - id: code_copy_before
   translation: 'Copy to clipboard'

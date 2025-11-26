@@ -15,14 +15,14 @@ describe('for: mermaid', () => {
       }
     );
   });
-  it('mermaid should not have a loading helper once loaded', () => {
-    cy.get('#content .sc-mermaid-wrapper.helper-loading-container').should(
+  it('mermaid should not have a loader once loaded', () => {
+    cy.get('#content .sc-mermaid-wrapper.loader-container').should(
       'not.have.class',
       'is-loading'
     );
   });
   it('mermaid should contain one svg with corresponding id', () => {
-    cy.get('#content .sc-mermaid-wrapper.helper-loading-container').each(
+    cy.get('#content .sc-mermaid-wrapper.loader-container').each(
       ($elem) => {
         let elId = $elem[0].id;
         cy.get('#' + elId + '-svg').should('have.length', 1);
@@ -30,7 +30,7 @@ describe('for: mermaid', () => {
     );
   });
   it('mermaid should contain one export button', () => {
-    cy.get('#content .sc-mermaid-wrapper.helper-loading-container').each(
+    cy.get('#content .sc-mermaid-wrapper.loader-container').each(
       ($elem) => {
         let elId = $elem[0].id;
         cy.get('#' + elId + '-export-svg').should('have.length', 1);
@@ -38,7 +38,7 @@ describe('for: mermaid', () => {
     );
   });
   it('mermaid should open modal containing svg when clicked', () => {
-    cy.get('#content .sc-mermaid-wrapper.helper-loading-container').each(
+    cy.get('#content .sc-mermaid-wrapper.loader-container').each(
       ($elem) => {
         let elId = $elem[0].id;
         cy.get('#' + elId + '-svg')
@@ -50,7 +50,7 @@ describe('for: mermaid', () => {
   });
   it('export button should export mermaid', { browser: '!firefox' }, () => {
     const path = require('path');
-    cy.get('#content .sc-mermaid-wrapper.helper-loading-container').each(
+    cy.get('#content .sc-mermaid-wrapper.loader-container').each(
       ($elem) => {
         let elId = $elem[0].id;
         cy.get('#' + elId + '-svg').then(($svg) => {

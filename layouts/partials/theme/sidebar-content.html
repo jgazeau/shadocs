@@ -42,7 +42,7 @@
       {{- $sidebarRoot.Scratch.Set "titleIcon" (print ($sidebarRoot.Scratch.Get "titleIcon") " fa-lg") -}}
     {{- end -}}
     {{- if eq .FirstSection . -}}
-      {{- $firstSectionClasses := slice "card" "is-fs-expandable-icon" -}}
+      {{- $firstSectionClasses := slice "card" "is-fs-expandable-icon" "marginless" -}}
       {{- if $sidebarRoot.Scratch.Get "isTreeActive" -}}
         {{- $firstSectionClasses = $firstSectionClasses | append "is-sidebar-active" -}}
       {{- end -}}
@@ -53,7 +53,7 @@
     {{- end -}}
     <div class="{{- if eq .FirstSection . -}}is-expandable{{- end -}}">
       <div class="{{- if eq .FirstSection . -}}is-sidebar-list-wrapper{{- end -}}">
-        {{- $sidebarLiClasses := slice "is-marginless" -}}
+        {{- $sidebarLiClasses := slice "marginless" -}}
         {{- if $sidebarRoot.Scratch.Get "isTreeActive" -}}
           {{- $sidebarLiClasses = $sidebarLiClasses | append "is-tree-active" -}}
         {{- end -}}
@@ -66,7 +66,7 @@
           {{- end -}}
         {{- end -}}
         <li class="{{- delimit $sidebarLiClasses " " -}}">
-          {{- $sidebarEntryClasses := slice "card" -}}
+          {{- $sidebarEntryClasses := slice "card" "marginless" -}}
           {{- if $sidebarRoot.Scratch.Get "isSidebarActive" -}}
             {{- $sidebarEntryClasses = $sidebarEntryClasses | append "is-sidebar-active" -}}
           {{- end -}}
@@ -78,7 +78,7 @@
           >
             {{- template "sidebarSectionIcon" dict "this" . "sidebarroot" $sidebarRoot "linkWeight" $linkWeight "isLabel" true -}}
             {{- if gt $linkWeight 0 -}}
-              {{- $sidebarEntryIconClasses := slice "card-header-icon" "is-icon-expandable" "is-paddingless" -}}
+              {{- $sidebarEntryIconClasses := slice "card-header-icon" "is-flex" "is-icon-expandable" "paddingless" "fa-fw" -}}
               {{- if gt $linkWeight 0 -}}
                 {{- if .IsAncestor $sidebarRoot -}}
                   {{- $sidebarEntryIconClasses = $sidebarEntryIconClasses | append "is-icon-expanded" -}}
@@ -91,7 +91,7 @@
               </a>
             </div>
           </div>
-          {{- $sidebarUlClasses := slice "is-marginless" -}}
+          {{- $sidebarUlClasses := slice "marginless" -}}
           {{- if $sidebarRoot.Scratch.Get "isTreeActive" -}}
             {{- $sidebarUlClasses = $sidebarUlClasses | append "is-tree-active" -}}
           {{- end -}}
@@ -120,15 +120,9 @@
   {{- $sidebarRoot := .sidebarroot -}}
   {{- if or (.this.Params.sidebardisabled) ($sidebarRoot.Scratch.Get "isEmptyContent") -}}
     <div class='card-header is-sidebar-disable'>
-      <div class='card-header-title' href='{{- .this.RelPermalink | safeURL -}}'>
-        <i class='{{- $sidebarRoot.Scratch.Get "titleIcon" -}}'></i>
-        {{- $sidebarEntryLabelClasses := slice "pt-0" "pb-0" "pr-2" -}}
-        {{- if eq .this.FirstSection .this -}}
-          {{- $sidebarEntryLabelClasses = $sidebarEntryLabelClasses | append "pl-1" -}}
-        {{- else -}}
-          {{- $sidebarEntryLabelClasses = $sidebarEntryLabelClasses | append "pl-0" -}}
-        {{- end -}}
-        {{- if .isLabel -}}<p class="{{- delimit $sidebarEntryLabelClasses " " -}}" title='{{- .this.LinkTitle -}}'>{{- .this.LinkTitle -}}</p>{{- end -}}
+      <div class='card-header-title is-flex has-text-centered is-clipped' href='{{- .this.RelPermalink | safeURL -}}'>
+        <i class='{{- $sidebarRoot.Scratch.Get "titleIcon" }} fa-fw is-align-content-center'></i>
+        {{- if .isLabel -}}<p class='is-clipped' title='{{- .this.LinkTitle -}}'>{{- .this.LinkTitle -}}</p>{{- end -}}
       </div>
   {{- else -}}
     {{- $sidebarEntryClasses := slice "card-header" -}}
@@ -138,19 +132,13 @@
     <div class="{{- delimit $sidebarEntryClasses " " -}}">
       <a
         href='{{- .this.RelPermalink | safeURL -}}'
-        class='card-header-title'
+        class='card-header-title is-flex has-text-centered is-clipped'
         {{- if .isLabel }}
           title='{{- .this.LinkTitle -}}'
         {{- end -}}
       >
-        <i class='{{- $sidebarRoot.Scratch.Get "titleIcon" -}}'></i>
-        {{- $sidebarEntryLabelClasses := slice "pt-0" "pb-0" "pr-2" -}}
-        {{- if eq .this.FirstSection .this -}}
-          {{- $sidebarEntryLabelClasses = $sidebarEntryLabelClasses | append "pl-1" -}}
-        {{- else -}}
-          {{- $sidebarEntryLabelClasses = $sidebarEntryLabelClasses | append "pl-0" -}}
-        {{- end -}}
-        {{- if .isLabel -}}<p class="{{- delimit $sidebarEntryLabelClasses " " -}}">{{- .this.LinkTitle -}}</p>{{- end -}}
+        <i class='{{- $sidebarRoot.Scratch.Get "titleIcon" }} fa-fw is-align-content-center'></i>
+        {{- if .isLabel -}}<p class='is-clipped'>{{- .this.LinkTitle -}}</p>{{- end -}}
       </a>
   {{- end -}}
 {{- end -}}

@@ -8,14 +8,14 @@ describe('for: openapi shortcode', () => {
       2
     );
   });
-  it('openapi should have a loading helper', () => {
+  it('openapi should have a loader', () => {
     cy.get('#content .sc-openapi-wrapper').should(
       'have.class',
-      'helper-loading-container'
+      'loader-container'
     );
   });
-  it('openapi should not have a loading helper once loaded', { defaultCommandTimeout: 10000 }, () => {
-    cy.get('#content .sc-openapi-wrapper.helper-loading-container').should(
+  it('openapi should not have a loader once loaded', { defaultCommandTimeout: 10000 }, () => {
+    cy.get('#content .sc-openapi-wrapper.loader-container').should(
       'not.have.class',
       'is-loading'
     );

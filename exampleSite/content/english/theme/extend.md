@@ -53,8 +53,10 @@ The following files are managed within the theme:
 For more information, check the [documentation website custom-info.html](https://github.com/jgazeau/shadocs/blob/main/exampleSite/layouts/partials/custom/custom-info.html)
     {{< /alert >}}
 
-# SASS customization
+# SCSS customization
 ---
+
+TODO
 
 CSS layout of the theme is implemented using [SASS](https://sass-lang.com/).
 

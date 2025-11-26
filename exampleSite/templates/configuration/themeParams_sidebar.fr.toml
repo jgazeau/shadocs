@@ -5,5 +5,5 @@
   # Classes FontAwesome associées à l'icone par défaut des sections/pages du premier niveau
   firstSectionIconDefault = "fa-solid fa-ban"
   # Classes FontAwesome associées à l'icone par défaut des sections/pages de niveau 1+
-  nestedSectionIconDefault = "fa-solid fa-turn-up fa-rotate-90 fa-xs"
+  nestedSectionIconDefault = "fa-solid fa-arrow-turn-up fa-rotate-90 fa-sm"
 ...

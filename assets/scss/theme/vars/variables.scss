@@ -1,0 +1,72 @@
+@use "theme_variables.scss" as theme_variables;
+@use "../utils/functions.scss" as functions;
+@use "../../bulma/sass/utilities" as bulma_utilities;
+//
+// Content
+//
+$content-blockquote-color: theme_variables.$theme-blue-darker-color;
+$content-color: hsl(0, 0%, 21%);
+$content-background-color: bulma_utilities.bulmaFindColorInvert($content-color);
+$content-footnote-color: theme_variables.$theme-blue-darker-color;
+$content-link-color: theme_variables.$theme-blue-color;
+$content-padding: 0.75rem;
+$content-strong-weight: 800;
+$content-table-ends-cell-background-color: theme_variables.$theme-blue-darker-color;
+//
+// Global
+//
+$global-list-padding: 1.25rem;
+//
+// Banner
+//
+$banner-background-color: hsl(50, 90%, 80%);
+$banner-border-color: hsl(50, 80%, 50%);
+//
+// Loader
+//
+$loader-background-color: mediumseagreen;
+//
+// Navbar
+//
+$navbar-padding: 0.5rem;
+$navbar-height: theme_variables.$theme-control-height + (2 * $navbar-padding);
+$navbar-search-input-border-l-delta: 10%;
+$navbar-search-input-color-h: 207;
+$navbar-search-input-color-s: 44%;
+$navbar-search-input-color-l: 49%;
+$navbar-search-mobile-width: 9;
+$navbar-search-no-results-background-color: theme_variables.$theme-red-darker-color;
+$navbar-search-title-results-background-color: theme_variables.$theme-green-darker-color;
+$navbar-search-results-height: 40vh;
+$navbar-search-results-width: 60vw;
+$navbar-search-results-width-touch: 80vw;
+$navbar-search-width: 15.5rem;
+//
+// Sidebar
+//
+$sidebar-background-color: theme_variables.$theme-color;
+$sidebar-border-color: functions.smooth-color(theme_variables.$theme-color, 20);
+$sidebar-border-width: 0.25rem;
+$sidebar-entry-padding: 0.5rem;
+$sidebar-width: 18.75rem;
+$sidebar-collapsed-width: calc(theme_variables.$theme-icon-size + (4 * $sidebar-entry-padding) + (2 * $sidebar-border-width));
+//
+// Toc variables
+//
+$toc-background-color: $content-background-color;
+$toc-collapsible-width: 1.75rem;
+$toc-width: 17.5rem;
+//////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+//
+// Scrollbar variables
+//
+$scrollbar-border-radius: 0;
+$scrollbar-color: functions.smooth-color($sidebar-background-color, 20);
+$scrollbar-color-hover: functions.smooth-color($sidebar-background-color, 30);
+$scrollbar-color-action: functions.smooth-color($sidebar-background-color, 40);
+$scrollbar-rail-size: 0.5rem;

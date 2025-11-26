@@ -1,0 +1,193 @@
+@use "sass:color";
+@use "../vars" as vars;
+@use "mixins.scss" as mixins;
+//
+// Main
+//
+.has-line-break {
+  white-space: pre-wrap;
+}
+.is-action-button {
+  @include mixins.static-size-height(max-content);
+  @include mixins.static-size-width(max-content);
+  align-items: center;
+  color: vars.$content-color;
+  cursor: pointer;
+  display: flex;
+  font-size: vars.$theme-h3-font-size;
+  justify-content: center;
+  padding: 0.5rem;
+  &.is-pre-copy-code {
+    color: var(--bulma-pre);
+    position: absolute !important;
+    right: 0;
+    top: 0;
+  }
+  &:hover {
+    color: vars.$theme-green-color;
+  }
+  &.copy-code {
+    position: relative;
+    &:after {
+      @include mixins.font-family(roboto-mono);
+      align-content: center;
+      color: vars.$theme-green-color;
+      content: attr(title-after);
+      font-size: vars.$theme-h6-font-size;
+      height: 100%;
+      opacity: 0;
+      overflow: hidden;
+      position: absolute;
+      right: 100%;
+      text-overflow: ellipsis;
+      top: 0;
+      transform: scale(0);
+      white-space: nowrap;
+    }
+    &:not(:active):after {
+      transition: transform 1.5s step-end;
+      animation: copied 1.5s ease-in-out;
+    }
+    &:active:after {
+      transition: transform 1.5s step-start;
+      transform: scale(1);
+    }
+  }
+}
+.is-modal {
+  cursor: zoom-in;
+}
+.is-overflow-x {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.is-overflow-y {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.notification:has(.is-pretty-link) .is-pretty-link {
+  color: color.scale(vars.$content-link-color, $blackness: 15%) !important;
+}
+.is-pretty-link {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 1px;
+  color: vars.$content-link-color !important;
+  padding-right: 0.75rem !important;
+  position: relative;
+  text-decoration: none !important;
+  transition: all 0.2s ease;
+  &:after {
+    bottom: 0.5rem;
+    content: '\f35d';
+    font: var(--fa-font-solid);
+    font-size: 0.5rem;
+    font-style: normal;
+    color: vars.$content-link-color;
+    position: absolute;
+    right: 0.125rem;
+  }
+  &:hover {
+    color: vars.$content-link-color;
+    background-size: 100% 1px;
+  }
+}
+.is-reveal-link {
+  color: vars.$content-link-color !important;
+  font-weight: bold;
+  position: relative;
+  text-decoration: none !important;
+  div {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
+    position: relative;
+    i {
+      padding: 0 0.5rem;
+    }
+    p {
+      flex-basis: 0;
+      overflow: hidden;
+      transition: flex 0.4s ease-out;
+      white-space: nowrap;
+    }
+    &:before,
+    &:after {
+      background: vars.$content-link-color;
+      content: '';
+      height: 0.125rem;
+      left: 50%;
+      position: absolute;
+      right: 50%;
+      transition: left 0.4s ease, right 0.4s ease;
+    }
+    &:before {
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+    }
+  }
+  &:before,
+  &:after {
+    background: vars.$content-link-color;
+    bottom: 50%;
+    content: '';
+    position: absolute;
+    top: 50%;
+    transition: top 0.4s ease, bottom 0.4s ease;
+    width: 0.125rem;
+  }
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  }
+  @media (hover: hover) {
+    &:hover {
+      color: vars.$content-link-color;
+      &:before,
+      &:after {
+        bottom: 0;
+        top: 0;
+      }
+      div {
+        &:before,
+        &:after {
+          left: 0;
+          right: 0;
+        }
+        p {
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+  @media (hover: none) {
+    color: vars.$content-link-color;
+    &:before,
+    &:after {
+      bottom: 0;
+      top: 0;
+    }
+    div {
+      &:before,
+      &:after {
+        left: 0;
+        right: 0;
+      }
+      p {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+.is-scroll-smooth {
+  scroll-behavior: smooth;
+}
+.is-transition-disabled {
+  transition: none !important;
+}

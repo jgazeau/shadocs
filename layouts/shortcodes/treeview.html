@@ -21,14 +21,14 @@
     {{- $pages = (partial "theme/helpers/sortedPagesArray.html" (dict "input" . "this" $)) -}}
   {{- end -}}
 {{- end -}}
-<div class="sc-treeview">
+<div class="sc-treeview is-overflow-x">
   {{- with .Inner -}}
     {{- template "innerList" dict "this" (. | transform.Unmarshal) "context" $ -}}
   {{- else -}}
     {{- with $pages -}}
       {{- template "pathList" dict "this" . "context" $ -}}
     {{- else -}}
-      <div class="sc-alert sc-alert-warning">
+      <div class="notification is-warning">
         {{- i18n "no_data" -}}
       </div>
     {{- end -}}
@@ -45,7 +45,7 @@
   {{- with .this -}}
     <ul
       {{ with $scratch.Get "displayClass" -}}
-        class='{{- . -}}'
+        class='{{- . }} marginless'
       {{- end -}}
     >
       {{- range $page := . -}}
@@ -72,17 +72,17 @@
           {{- end -}}
         {{- end -}}
         <li class="{{- delimit $treeviewLiClasses " " -}}">
-          <div class="sc-treeview-label">
+          <div class="sc-treeview-label is-flex is-align-items-center">
             {{- with $scratch.Get "kind" -}}
-              {{- $treeviewIconClasses := slice "sc-treeview-icon" -}}
+              {{- $treeviewIconClasses := slice "sc-treeview-icon" "is-flex" "is-align-items-center" "is-justify-content-center" -}}
               {{- with $page.Page.Pages -}}
                 {{- $treeviewIconClasses = $treeviewIconClasses | append "sc-treeview-coll-trigger" -}}
               {{- end -}}
               <div class="{{- delimit $treeviewIconClasses " " -}}">
-                <i class="{{- . -}}"></i>
+                <i class="{{- . }} fa-fw"></i>
               </div>
             {{- end -}}
-            <p class="is-marginless">
+            <p>
               <a
                 href="{{- with $page.RelPermalink | safeURL -}}
                   {{- . -}}
@@ -113,7 +113,11 @@
   {{- end -}}
   {{- $optMd := dict "markup" "goldmark" -}}
   {{- with .this -}}
-    <ul class="{{- with $scratch.Get "displayClass" -}}{{- . -}}{{- end -}}">
+    <ul
+      {{ with $scratch.Get "displayClass" -}}
+        class='{{- . }} marginless'
+      {{- end -}}
+    >
       {{- range $element := . -}}
         {{- with .kind -}}
           {{- with (index $.context.Site.Data.themeParams.shortcodes.treeview.kinds .) -}}
@@ -145,15 +149,15 @@
             class="{{- delimit $treeviewLiClasses " " -}}"
           {{- end -}}
         >
-          <div class="sc-treeview-label">
-            {{- $treeviewIconClasses := slice "sc-treeview-icon" -}}
+          <div class="sc-treeview-label is-flex is-align-items-center">
+            {{- $treeviewIconClasses := slice "sc-treeview-icon" "is-flex" "is-align-items-center" "is-justify-content-center" -}}
             {{- with $element.content -}}
               {{- $treeviewIconClasses = $treeviewIconClasses | append "sc-treeview-coll-trigger" -}}
             {{- end -}}
             <div class="{{- delimit $treeviewIconClasses " " -}}">
-              <i class="{{- $scratch.Get "kind" -}}"></i>
+              <i class="{{- $scratch.Get "kind" }} fa-fw"></i>
             </div>
-            <p class="is-marginless">{{- $scratch.Get "label" -}}</p>
+            <p>{{- $scratch.Get "label" -}}</p>
           </div>
           {{- with $element.content -}}
             {{- template "innerList" dict "this" . "context" $.context -}}
