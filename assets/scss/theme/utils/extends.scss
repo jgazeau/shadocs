@@ -1,0 +1,378 @@
+@use "../vars" as vars;
+@use "mixins.scss" as mixins;
+@use "functions.scss" as functions;
+@use "../../bulma/sass/utilities" as bulma_utilities;
+@use "../../bulma/sass/components/navbar.scss" as bulma_navbar;
+//
+%sidebar {
+  color: bulma_utilities.bulmaFindColorInvert(vars.$sidebar-background);
+  padding: vars.$theme-gap-medium-size;
+  width: vars.$sidebar-width;
+  .is-fs-expandable-icon,
+  .is-uncollapse-action {
+    display: none;
+    .card-header-title {
+      border-radius: vars.$theme-border-radius !important;
+    }
+  }
+  .card {
+    color: bulma_utilities.bulmaFindColorInvert(vars.$sidebar-background);
+    @include mixins.static-size-height(vars.$sidebar-entry-height);
+    width: 100%;
+    .card-header {
+      color: bulma_utilities.bulmaFindColorInvert(vars.$sidebar-background);
+      border-radius: vars.$theme-border-radius;
+      transition: width 0.2s ease;
+      align-items: center;
+      text-align: center;
+      .card-header-title {
+        color: bulma_utilities.bulmaFindColorInvert(vars.$sidebar-background);
+        @include mixins.static-size-height(vars.$sidebar-entry-height);
+        padding: vars.$theme-gap-medium-size 0;
+        white-space: nowrap;
+        overflow: hidden;
+        border-radius: 0;
+        max-width: 100%;
+        display: flex;
+        flex: auto;
+        i {
+          @include mixins.static-size-width(calc((#{vars.$sidebar-width} / 10) + (2 * #{vars.$theme-gap-small-size})));
+          line-height: vars.$theme-icon-line-height;
+        }
+        p {
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          text-align: left;
+          overflow: hidden;
+        }
+      }
+      .card-header-icon {
+        @extend %unselectable;
+        @include mixins.static-size-width(calc(#{vars.$sidebar-width} / 10));
+        color: bulma_utilities.bulmaFindColorInvert(vars.$sidebar-background);
+        @include mixins.static-size-height(vars.$sidebar-entry-height);
+        border-radius: 0;
+        display: flex;
+      }
+    }
+    &.is-sidebar-active {
+      .card-header {
+        background: functions.smooth-color(bulma_utilities.bulmaFindColorInvert(vars.$sidebar-background), 25);
+        .card-header-title,
+        .card-header-icon {
+          color: vars.$sidebar-background;
+        }
+      }
+    }
+    .is-sidebar-disable {
+      .card-header-title {
+        color: functions.smooth-color(vars.$sidebar-background, 35);
+      }
+    }
+  }
+}
+%sidebar-effects {
+  @media (hover: hover) {
+    .card:not(.is-sidebar-active) {
+      .card-header {
+        &:not(.is-sidebar-disable):hover {
+          background: functions.smooth-color(vars.$sidebar-background, 15);
+        }
+      }
+    }
+  }
+  .is-icon-expandable {
+    .icon {
+      &:after {
+        font: var(--fa-font-solid);
+        content: "\f107";
+      }
+      &:hover:after {
+        content: "\f103";
+      }
+    }
+    &.is-icon-expanded {
+      .icon {
+        &:after,
+        &:hover:after {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
+%navbar-item-standard {
+  padding: vars.$theme-gap-small-size vars.$theme-gap-medium-size;
+  background-color: transparent !important;
+  border-radius: vars.$theme-gap-small-size;
+  color: bulma_utilities.bulmaFindColorInvert(vars.$theme-color);
+  @extend %navbar-item-generic;
+  min-width: bulma_utilities.$control-height;
+  @extend %navbar-item-hover;
+  flex-wrap: nowrap;
+  display: flex;
+  &:focus {
+    box-shadow: unset;
+    border: unset;
+  }
+  .icon-text {
+    @include mixins.font-family(lato);
+    font-weight: 700;
+    &:not(:last-child) {
+      padding-right: vars.$theme-gap-small-size;
+    }
+  }
+  .icon {
+    margin: unset;
+  }
+}
+%navbar-item-generic {
+  transition: all 0.2s ease;
+  box-shadow: unset;
+  border: unset;
+}
+%navbar-item-hover {
+  &:hover:not([disabled]) {
+    background-color: functions.smooth-color(vars.$theme-color, 40) !important;
+    color: bulma_utilities.bulmaFindColorInvert(functions.smooth-color(vars.$theme-color, 40));
+    box-shadow: unset;
+    border: unset;
+    &::placeholder {
+      color: functions.smooth-color(bulma_utilities.bulmaFindColorInvert(functions.smooth-color(vars.$theme-color, 40)), 30);
+      font-style: italic;
+    }
+  }
+}
+%navbar-content-full-border {
+  box-shadow: 0 0 0 vars.$theme-gap-small-size functions.smooth-color(vars.$theme-color, 50);
+}
+%navbar-content-partial-border {
+  box-shadow: -#{vars.$theme-gap-small-half-size} vars.$theme-gap-small-half-size 0 vars.$theme-gap-small-half-size functions.smooth-color(vars.$theme-color, 50), vars.$theme-gap-small-half-size vars.$theme-gap-small-half-size 0 vars.$theme-gap-small-half-size functions.smooth-color(vars.$theme-color, 50);
+}
+%search-content-colors {
+  border-color: vars.$content-background;
+  background: vars.$content-background;
+  color: vars.$content-writing-color;
+}
+%unselectable {
+  user-select: none;
+}
+%disable {
+  pointer-events: none;
+}
+%clean {
+  @extend %unselectable;
+  text-decoration: none;
+  outline: none;
+}
+%transparent {
+  opacity: 0;
+}
+%opaque {
+  opacity: 1;
+}
+%sticky {
+  position: sticky;
+  top: 0;
+}
+%close {
+  right: calc((#{bulma_navbar.$navbar-height} / 2) - (#{vars.$theme-icon-size} / 2));
+  top: calc((#{bulma_navbar.$navbar-height} / 2) - (#{vars.$theme-icon-size} / 2));
+  @include mixins.static-size-height(vars.$theme-icon-size);
+  @include mixins.static-size-width(vars.$theme-icon-size);
+  transition: all 0.4s ease;
+  display: inline-block;
+  border-radius: 100%;
+  position: absolute;
+  background: red;
+  &:before,
+  &:after {
+    border-radius: vars.$theme-gap-small-size;
+    height: vars.$theme-gap-small-size;
+    position: absolute;
+    background: white;
+    margin: auto;
+    content: '';
+    width: 75%;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+  }
+  &:before {
+    transform-origin: center center;
+    transition: all 0.2s linear;
+    transform: rotate(45deg);
+    transition-delay: 0.1s;
+  }
+  &:after {
+    transform-origin: center center;
+    transition: all 0.2s linear;
+    transform: rotate(-45deg);
+    transition-delay: 0s;
+  }
+  &:hover {
+    box-shadow: 0 0 0 vars.$theme-border-width white;
+  }
+  &:hover:before {
+    transform: rotate(225deg);
+    transition-delay: 0s;
+  }
+  &:hover:after {
+    transform: rotate(135deg);
+    transition-delay: 0.1s;
+  }
+}
+%toc-link-effect {
+  &:after {
+    transition: transform 0.3s, opacity 0.2s;
+    margin: 0 vars.$theme-gap-medium-size;
+    transform: translateX(0.5rem);
+    font: var(--fa-font-solid);
+    display: inline-block;
+    content: "\f060";
+    opacity: 0;
+  }
+  &:hover:after {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+%pretty-link-effect {
+  background-image: linear-gradient(currentColor, currentColor);
+  padding-right: vars.$theme-gap-size !important;
+  color: vars.$content-link-color !important;
+  text-decoration: none !important;
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  transition: all 0.2s ease;
+  background-size: 0% 1px;
+  padding-bottom: 1px;
+  position: relative;
+  &:after {
+    font: var(--fa-font-solid);
+    font-size: calc(#{vars.$theme-gap-large-size} / 2);
+    bottom: calc(#{vars.$theme-gap-large-size} / 2);
+    margin-left: vars.$theme-gap-small-half-size;
+    color: vars.$content-link-color;
+    font-style: normal;
+    position: absolute;
+    content: '\f35d';
+  }
+  &:hover {
+    color: vars.$content-link-color;
+    background-size: 100% 1px;
+  }
+}
+%itext-link-effect {
+  color: vars.$content-link-color;
+  justify-content: center;
+  align-content: center;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  flex-wrap: nowrap;
+  div {
+    padding: vars.$theme-gap-medium-size;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    position: relative;
+    flex-wrap: nowrap;
+    display: flex;
+    i {
+      padding: 0 vars.$theme-gap-medium-size;
+    }
+    p {
+      transition: flex 0.4s ease-out;
+      white-space: nowrap;
+      overflow: hidden;
+      flex-basis: 0;
+    }
+    &:before,
+    &:after {
+      transition: left 0.4s ease, right 0.4s ease;
+      background: vars.$content-link-color;
+      height: vars.$theme-border-width;
+      position: absolute;
+      content: '';
+      right: 50%;
+      left: 50%;
+    }
+    &:before {
+      top: 0;
+    }
+    &:after {
+      bottom: 0;
+    }
+  }
+  &:before,
+  &:after {
+    transition: top 0.4s ease, bottom 0.4s ease;
+    background: vars.$content-link-color;
+    width: vars.$theme-border-width;
+    position: absolute;
+    content: '';
+    bottom: 50%;
+    top: 50%;
+  }
+  &:before {
+    left: 0;
+  }
+  &:after {
+    right: 0;
+  }
+  @media (hover: hover) {
+    &:hover {
+      color: vars.$content-link-color;
+      &:before,
+      &:after {
+        bottom: 0;
+        top: 0;
+      }
+      div {
+        &:before,
+        &:after {
+          right: 0;
+          left: 0;
+        }
+        p {
+          flex-basis: 100%;
+        }
+      }
+    }
+  }
+  @media (hover: none) {
+    color: vars.$content-link-color;
+    &:before,
+    &:after {
+      bottom: 0;
+      top: 0;
+    }
+    div {
+      &:before,
+      &:after {
+        right: 0;
+        left: 0;
+      }
+      p {
+        flex-basis: 100%;
+      }
+    }
+  }
+}
+%action-button {
+  font-size: vars.$theme-action-button-size;
+  height: vars.$theme-gap-extra-large-size;
+  width: vars.$theme-gap-extra-large-size;
+  color: vars.$content-writing-color;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  &:hover {
+    color: forestgreen;
+  }
+}

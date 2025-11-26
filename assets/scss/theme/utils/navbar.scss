@@ -1,0 +1,138 @@
+@use "../vars" as vars;
+@use "extends.scss";
+@use "mixins.scss" as mixins;
+@use "functions.scss" as functions;
+@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+@use "../../bulma/sass/components/navbar.scss" as bulma_navbar;
+//
+// Navbar styles
+//
+#navbar {
+  background: linear-gradient(vars.$theme-color, functions.smooth-color(vars.$theme-color, 20));
+  flex: 0 1 bulma_navbar.$navbar-height;
+  #navbarItemsContainer {
+    width: 100%;
+  }
+  #globalLogoContainer {
+    padding: vars.$theme-gap-medium-size;
+    .navbar-item {
+      width: calc(#{vars.$sidebar-width} - (2 * #{vars.$theme-gap-medium-size}));
+      border-radius: vars.$theme-border-radius;
+      img {
+        max-width: calc(#{vars.$sidebar-width} - (2 * #{vars.$theme-gap-medium-size}));
+        padding: vars.$theme-border-width;
+        max-height: vars.$control-height;
+        margin: auto;
+      }
+    }
+    #globalLogo {
+      @include bulma_mixins.touch {
+        display: none;
+      }
+    }
+    #globalTouchLogo {
+      display: none;
+      @include bulma_mixins.touch {
+        max-width: calc(#{vars.$sidebar-width-collapsed} - (2 * #{vars.$theme-gap-medium-size}));
+        display: flex;
+        img {
+          max-width: calc(#{vars.$sidebar-width-collapsed} - (2 * #{vars.$theme-gap-medium-size}));
+        }
+      }
+    }
+  }
+  #navbarItems {
+    justify-content: space-between;
+    flex-flow: row nowrap;
+    width: 100%;
+  }
+  #navbarItemsEnd {
+    justify-content: flex-end;
+    min-width: bulma_navbar.$navbar-height;
+    > .navbar-item {
+      padding: vars.$theme-gap-medium-size vars.$theme-gap-medium-size vars.$theme-gap-medium-size 0;
+      &:first-of-type {
+        padding-left: vars.$theme-gap-small-size;
+      }
+    }
+  }
+  #navbarExtend {
+    #navbarExtendWrapper {
+      position: relative;
+      &.is-hovered,
+      &:hover {
+        #navbarExtendItemsContainer {
+          display: block;
+          @include mixins.navbar-content-effects-visible(100% vars.$navbar-item-padding);
+        }
+      }
+    }
+    #navbarExtendItemsContainer {
+      padding: vars.$navbar-item-padding 0 0 0;
+      right: -#{vars.$theme-gap-small-size};
+      position: absolute;
+      display: none;
+      top: 100%;
+      @include mixins.navbar-content-effects-hidden(100% vars.$navbar-item-padding);
+    }
+    #navbarExtendItemsWrapper {
+      background: linear-gradient(45deg, vars.$theme-color, functions.smooth-color(vars.$theme-color, 20));
+      @extend %navbar-content-partial-border;
+      .dropdown-content {
+        @extend %navbar-content-full-border;
+      }
+      > .navbar-item {
+        padding: vars.$theme-gap-medium-size vars.$theme-gap-small-size;
+      }
+    }
+  }
+  .navbar-item-standard {
+    @extend %navbar-item-standard;
+  }
+  .navbar-item {
+    justify-content: center;
+    .dropdown {
+      .button {
+        height: vars.$control-height;
+      }
+      .dropdown-menu {
+        @include mixins.navbar-content-effects-hidden(100% vars.$navbar-item-padding);
+        padding: vars.$navbar-item-padding 0 0 0;
+      }
+      .dropdown-content {
+        padding: vars.$theme-gap-small-size 0 vars.$theme-gap-small-size 0;
+        @extend %navbar-content-partial-border;
+        border-radius: 0;
+        .dropdown-item {
+          font-size: vars.$theme-gap-large-size;
+          padding: vars.$theme-gap-medium-size;
+          font-style: italic;
+          &:not(.is-selected) {
+            color: functions.smooth-color(vars.$content-writing-color, 50);
+            background: vars.$content-background;
+            &:hover {
+              background: functions.smooth-color(vars.$content-background,10);
+              color: vars.$content-writing-color;
+            }
+          }
+          &.is-selected {
+            background: vars.$content-background;
+            color: vars.$content-writing-color;
+            @extend %unselectable;
+            @extend %disable;
+          }
+          i {
+            width: vars.$theme-icon-size;
+            text-align: center;
+          }
+        }
+      }
+      &.is-hovered,
+      &:hover {
+        .dropdown-menu {
+          @include mixins.navbar-content-effects-visible(100% vars.$navbar-item-padding);
+        }
+      }
+    }
+  }
+}

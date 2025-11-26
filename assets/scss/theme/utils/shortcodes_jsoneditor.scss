@@ -1,0 +1,148 @@
+@use "../vars" as vars;
+@use "mixins.scss" as mixins;
+@use "functions.scss" as functions;
+//
+// Treeview
+//
+.sc-jsoneditor-container {
+  border: 1px solid smooth-color(vars.$content-background, 30);
+  background: smooth-color(vars.$content-background, 10);
+  padding: vars.$theme-gap-medium-size;
+  color: vars.$content-writing-color;
+  @include mixins.font-family(roboto-mono);
+  position: relative;
+  .je-indented-panel {
+    border: 1px solid functions.smooth-color(vars.$content-background, 20);
+    padding: vars.$theme-gap-medium-size;
+    margin: 0;
+  }
+  .je-tabholder--top {
+    padding: vars.$theme-gap-medium-size vars.$theme-gap-medium-size 0 vars.$theme-gap-medium-size;
+    justify-content: flex-start;
+  }
+  .je-tabholder--top,
+  .je-tabholder--clear {
+    border: 1px solid functions.smooth-color(vars.$content-background, 20);
+    margin: 0;
+  }
+  .je-tabholder--clear {
+    > .je-indented-panel {
+      border: none;
+    }
+  }
+  .row {
+    padding: vars.$theme-gap-medium-size;
+    &:not(:has(.je-indented-panel)) {
+      &:focus-within,
+      &:hover {
+        background: functions.smooth-color(vars.$content-background, 15);
+      }
+    }
+  }
+  div[data-schematype="object"].je-object__container {
+    > .je-indented-panel {
+      padding: 0;
+    }
+  }
+  div[data-schematype="array"] {
+    > .je-indented-panel {
+      div[data-schematype].je-indented-panel {
+        &:focus-within,
+        &:hover {
+          background: functions.smooth-color(vars.$content-background, 15);
+        }
+      }
+      > div {
+        >div[data-schematype]+div[data-schematype] {
+          margin: vars.$theme-gap-medium-size 0;
+        }
+        >div[data-schematype]:first-child {
+          margin-bottom: vars.$theme-gap-medium-size;
+        }
+      }
+    }
+    div:has(span > button.json-editor-btntype-delete),
+    div:has(span > button.json-editor-btntype-move) {
+      position: relative;
+      > span {
+        &:has(button.json-editor-btntype-delete),
+        &:has(button.json-editor-btntype-move) {
+          justify-content: space-between;
+          flex-direction: row;
+          position: absolute;
+          flex-wrap: nowrap;
+          display: flex;
+          right: 0;
+          top: 0;
+        }
+      }
+      div[data-schematype="object"]>span {
+        &:has(button.json-editor-btntype-delete),
+        &:has(button.json-editor-btntype-move) {
+          button {
+            margin-left: vars.$theme-gap-small-size;
+          }
+        }
+      }
+      .je-indented-panel > span {
+        &:has(button.json-editor-btntype-delete),
+        &:has(button.json-editor-btntype-move) {
+          margin: vars.$theme-gap-medium-size vars.$theme-gap-small-size;
+          button {
+            margin-right: vars.$theme-gap-small-size;
+          }
+        }
+      }
+    }
+  }
+}
+.sc-jsoneditor-action-wrapper {
+  padding: vars.$theme-gap-medium-size;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  display: flex;
+  .is-action-button {
+    position: relative;
+    &.sc-jsoneditor-copy-button:after {
+      @include mixins.responsive-size(font-size, vars.$theme-font-medium-size, 3px);
+      height: vars.$theme-gap-extra-large-size;
+      color: vars.$json-editor-success-color;
+      padding: vars.$theme-gap-medium-size;
+      content: attr(title-after);
+      @include mixins.font-family(roboto-mono);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      align-items: center;
+      transform: scale(0);
+      max-width: inherit;
+      position: absolute;
+      overflow: hidden;
+      display: inline;
+      right: 100%;
+      opacity: 0;
+    }
+    &:not(:active):after {
+      transition: transform 1.5s step-end;
+      animation: copied 1.5s ease-in-out;
+    }
+    &:active:after {
+      transition: transform 1.5s step-start;
+      transform: scale(1);
+    }
+  }
+}
+.sc-jsoneditor-toast-error {
+  background-color: vars.$alert-error-color !important;
+  color: vars.$theme-writing-color !important;
+  box-shadow: vars.$content-box-shadow;
+}
+div:has( > div.sc-jsoneditor-toast-error) {
+  padding: vars.$theme-gap-small-size !important;
+  position: absolute !important;
+  justify-content: flex-end;
+  user-select: none;
+  max-height: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}

@@ -1,0 +1,130 @@
+//
+// Imports
+//
+@charset "utf-8";
+@use "vars" as vars;
+@use "utils" as utils;
+//
+// 404 styles
+//
+// Font styles
+//
+@include utils.font-face('oswald', '../fonts/oswald/oswald-v49-latin-700', 700, normal, woff2);
+//
+body {
+  font-family: oswald !important;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  color: vars.$theme-writing-color;
+  height: 100svh;
+  width: 100vw;
+  margin: 0;
+}
+#content404 {
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  height: 100svh;
+  width: 100vw;
+  > * {
+    padding: vars.$theme-gap-medium-size;
+    max-width: 100%;
+    margin: 0;
+  }
+  #errorCode404 {
+    filter: blur(0.04rem);
+    position: relative;
+    user-select: none;
+    font-size: 5rem;
+    padding: 0;
+    span {
+      clip-path: polygon(10% 0%, 44% 0%, 70% 100%, 55% 100%);
+    }
+    &::before,
+    &::after {
+      content: attr(data-text);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    &::before {
+      clip-path: polygon(0% 0%, 11% 0%, 56% 100%, 0% 100%);
+      animation: crack1 2s linear forwards;
+    }
+    &::after {
+      clip-path: polygon(43% 0%, 100% 0%, 100% 100%, 69% 100%);
+      animation: crack2 2s linear forwards;
+    }
+  }
+  #title404,
+  #footer404 {
+    font-size: vars.$theme-h3-font-size;
+  }
+  #footer404 {
+    padding: vars.$theme-gap-medium-size calc(#{vars.$theme-gap-size} + #{vars.$theme-gap-medium-size});
+    margin: vars.$theme-gap-medium-size;
+    background: transparent;
+    text-decoration: none;
+    color: vars.$theme-color;
+    position: relative;
+    outline: none;
+    &::after,
+    &::before {
+      transition: all 0.4s cubic-bezier(0.8, 0, 0, 0.2);
+      transform: skewX(30deg);
+      position: absolute;
+      border-radius: 0;
+      height: 100%;
+      z-index: -1;
+      content: "";
+      width: 50%;
+    }
+    &::before {
+      background: linear-gradient(90deg, utils.tint(vars.$theme-color-404, 15) 0%, utils.tint(vars.$theme-color-404, 30) 100%);
+      left: vars.$theme-gap-medium-size;
+      top: -#{vars.$theme-gap-medium-size};
+    }
+    &::after {
+      background: linear-gradient(90deg, vars.$theme-color-404 0%, utils.tint(vars.$theme-color-404, 15) 100%);
+      right: vars.$theme-gap-medium-size;
+      top: vars.$theme-gap-medium-size;
+    }
+    &:hover {
+      &::before,
+      &::after {
+        transform: skewx(0deg);
+        top: 0;
+      }
+      &::before {
+        border-radius: 0 vars.$theme-gap-small-size vars.$theme-gap-small-size 0;
+        left: 50%;
+      }
+      &::after {
+        border-radius: vars.$theme-gap-small-size 0 0 vars.$theme-gap-small-size;
+        right: 50%;
+      }//
+// Animations
+//
+    }
+  }
+}
+@keyframes crack1 {
+  0%,
+  95% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(-2%, 2%);
+  }
+}
+@keyframes crack2 {
+  0%,
+  95% {
+    transform: translate(0);
+  }
+  100% {
+    transform: translate(2%, -2%);
+  }
+};

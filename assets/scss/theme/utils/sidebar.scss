@@ -1,0 +1,122 @@
+@use "../vars" as vars;
+@use "extends.scss";
+@use "mixins.scss" as mixins;
+@use "functions.scss" as functions;
+@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+@use "../../bulma/sass/components/navbar.scss" as bulma_navbar;
+//
+// Sidebar styles
+//
+#sidebar {
+  background: linear-gradient(vars.$sidebar-background, functions.smooth-color(vars.$sidebar-background, 5));
+  border-right: vars.$theme-gap-small-size solid functions.smooth-color(vars.$theme-color, 20);
+  border-left: vars.$theme-gap-small-size solid functions.smooth-color(vars.$theme-color, 20);
+  border-bottom: vars.$theme-border-width solid functions.smooth-color(vars.$theme-color, 20);
+  @extend %sidebar-effects;
+  @extend %sidebar;
+  .is-tree-active {
+    background: functions.smooth-color(vars.$sidebar-background, 7.5);
+  }
+  ul {
+    list-style-type: none;
+  }
+  ul.is-tree-active {
+    border-radius: 0 vars.$theme-border-radius vars.$theme-border-radius 0;
+  }
+  li {
+    &.is-tree-active {
+      border-radius: vars.$theme-border-radius vars.$theme-border-radius vars.$theme-border-radius 0;
+    }
+    &.is-entries-shrinked {
+      li {
+        display: none !important;
+      }
+    }
+    .is-icon-expandable {
+      .icon {
+        position: relative;
+        span {
+          border-radius: vars.$theme-border-radius;
+          transform-origin: center center;
+          height: vars.$theme-border-width;
+          position: absolute;
+          background: white;
+          width: 60%;
+        }
+      }
+    }
+    .is-icon-shrinked {
+      .icon {
+        span:nth-child(2) {
+          transform: rotate(90deg);
+        }
+      }
+    }
+  }
+}
+#sidebarCollapsible {
+  background: linear-gradient(functions.smooth-color(vars.$sidebar-background, 5), vars.$sidebar-background);
+  @include mixins.static-size-height(calc(#{vars.$sidebar-entry-height} + (2 * #{vars.$theme-gap-medium-size}) + #{vars.$theme-gap-small-size}));
+  border-bottom: vars.$theme-gap-small-size solid functions.smooth-color(vars.$theme-color, 20);
+  border-right: vars.$theme-gap-small-size solid functions.smooth-color(vars.$theme-color, 20);
+  border-left: vars.$theme-gap-small-size solid functions.smooth-color(vars.$theme-color, 20);
+  @extend %sidebar-effects;
+  @extend %sidebar;
+  a {
+    @extend %unselectable;
+  }
+}
+#sidebar {
+  @include mixins.static-size-height(calc(100svh - #{bulma_navbar.$navbar-height} - (#{vars.$sidebar-entry-height} + (2 * #{vars.$theme-gap-medium-size}) + #{vars.$theme-gap-small-size})))
+}
+#sidebar,
+#sidebarContainer,
+#sidebarCollapsible {
+  min-width: vars.$sidebar-width-collapsed;
+  transition: width 0.2s ease;
+  max-width: 100vw;
+}
+#sidebarContainer,
+.menu {
+  font-size: vars.$sidebar-font-size;
+}
+#sidebarContainer {
+  width: vars.$sidebar-width;
+  z-index: 20;
+  &.is-sidebar-collapsed {
+    width: vars.$sidebar-width-collapsed;
+    #sidebar,
+    #sidebarCollapsible {
+      @include mixins.sidebar-touch;
+    }
+  }
+  &:not(.is-sidebar-collapsed):not(.is-sidebar-uncollapsed) {
+    @include bulma_mixins.touch {
+      width: vars.$sidebar-width-collapsed;
+      #sidebar,
+      #sidebarCollapsible {
+        @include mixins.sidebar-touch;
+      }
+    }
+  }
+  @include bulma_mixins.touch {
+    position: fixed;
+  }
+  @media (hover: none) {
+    position: fixed;
+  }
+}
+#sidebarMobileWrapper {
+  @include mixins.static-size-width(#{vars.$sidebar-width-collapsed});
+  position: fixed;
+  @include bulma_mixins.touch {
+    @include mixins.static-size-width(#{vars.$sidebar-width-collapsed});
+    position: relative;
+    display: block;
+  }
+  @media (hover: none) {
+    @include mixins.static-size-width(#{vars.$sidebar-width-collapsed});
+    position: relative;
+    display: block;
+  }
+}

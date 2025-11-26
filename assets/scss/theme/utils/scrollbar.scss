@@ -1,0 +1,13 @@
+@use "../vars" as vars;
+//
+// Overlay Scrollbars styling
+//
+.os-theme-shadocs {  // The size of the scrollbar
+  --os-size: vars.$scrollbar-rail-size !important;
+  // The border radius of the scrollbar track
+  --os-track-border-radius: vars.$scrollbar-border-radius !important;
+  // The border radius of the scrollbar handle
+  --os-handle-border-radius: vars.$scrollbar-border-radius !important;
+  // The background of the scrollbar handle
+  --os-handle-bg: vars.$scrollbar-color !important;
+}

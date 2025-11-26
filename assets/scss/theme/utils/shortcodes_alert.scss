@@ -1,0 +1,45 @@
+@use "../vars" as vars;
+@use "mixins.scss" as mixins;
+@use "../../bulma/sass/utilities" as bulma_utilities;
+//
+// Alert
+//
+.sc-alert {
+  padding: vars.$theme-gap-medium-size vars.$theme-gap-large-size vars.$theme-gap-medium-size vars.$theme-gap-extra-large-size;
+  @include mixins.sc-alert-background-color(vars.$alert-info-color);
+  border-radius: vars.$theme-border-radius;
+  margin: vars.$theme-gap-medium-size 0;
+  position: relative;
+  &:before {
+    color: bulma_utilities.bulmaFindColorInvert(vars.$theme-writing-color);
+    width: vars.$theme-gap-extra-large-size;
+    font-size: vars.$theme-gap-large-size;
+    font: var(--fa-font-solid);
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    content: '\f05a';
+    display: flex;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+  &.sc-alert-success {
+    @include mixins.sc-alert-background-color(vars.$alert-success-color);
+    &:before {
+      content: '\f058';
+    }
+  }
+  &.sc-alert-warning {
+    @include mixins.sc-alert-background-color(vars.$alert-warning-color);
+    &:before {
+      content: '\f06a';
+    }
+  }
+  &.sc-alert-error {
+    @include mixins.sc-alert-background-color(vars.$alert-error-color);
+    &:before {
+      content: '\f057';
+    }
+  }
+}

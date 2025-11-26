@@ -1,0 +1,96 @@
+@use "../vars" as vars;
+@use "functions.scss" as functions;
+//
+// Treeview
+//
+.sc-treeview {
+  word-break: normal;
+  overflow-y: hidden;
+  overflow-x: auto;
+  .sc-treeview-graph {
+    border-left: solid calc(2 * #{vars.$theme-border-small-width}) functions.smooth-color(vars.$theme-writing-color, 50);
+    list-style-type: none !important;
+    .sc-treeview-label {
+      position: relative;
+      &:before {
+        width: calc(#{vars.$content-list-padding} - #{vars.$theme-gap-small-size});
+        background-color: smooth-color(vars.$theme-writing-color, 50);
+        height: calc(2 * #{vars.$theme-border-small-width});
+        left: -#{vars.$content-list-padding};
+        position: absolute;
+        margin: auto;
+        content: '';
+        bottom: 0;
+        top: 0;
+      }
+    }
+  }
+  .sc-treeview-tree {
+    padding-left: calc(((#{vars.$theme-action-button-size} + #{vars.$theme-gap-size}) / 2) + #{vars.$content-font-size}) !important;
+    list-style-type: none !important;
+    .sc-treeview-tree {
+      padding-left: calc((#{vars.$content-font-size} + #{vars.$theme-action-button-size} + #{vars.$theme-gap-size}) / 2) !important;
+      position: relative;
+      &:before {
+        border: dashed vars.$theme-border-small-width functions.smooth-color(vars.$theme-writing-color, 50);
+        height: calc(100% - (2 * #{vars.$theme-gap-small-size}));
+        left: -#{vars.$theme-border-small-width};
+        top: vars.$theme-gap-small-size;
+        position: absolute;
+        content: '';
+      }
+    }
+    .sc-treeview-label {
+      padding-left: calc(((#{vars.$theme-action-button-size} + #{vars.$theme-gap-size}) / 2) + #{vars.$theme-gap-small-size});
+      min-height: calc(#{vars.$theme-action-button-size} + #{vars.$theme-gap-size});
+      align-items: center;
+      position: relative;
+      display: flex;
+      .sc-treeview-icon {
+        left: calc(-1 * ((#{vars.$theme-action-button-size} + #{vars.$theme-gap-size}) / 2));
+        height: calc(#{vars.$theme-action-button-size} + #{vars.$theme-gap-size});
+        width: calc(#{vars.$theme-action-button-size} + #{vars.$theme-gap-size});
+        font-size: vars.$theme-action-button-size;
+        color: vars.$treeview-icon-color;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        display: flex;
+        &.sc-treeview-coll-trigger {
+          cursor: pointer;
+        }
+      }
+    }
+    .sc-treeview-coll {
+      > .sc-treeview-label {
+        .sc-treeview-icon {
+          &:before {
+            font: var(--fa-font-solid);
+            left: calc(-1 * #{vars.$content-font-size});
+            background-color: vars.$content-background;
+            font-size: vars.$content-font-size;
+            height: vars.$content-font-size;
+            width: vars.$content-font-size;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            content: "\f146";
+            display: flex;
+          }
+        }
+      }
+      &.is-collapsed {
+        > .sc-treeview-label {
+          .sc-treeview-icon {
+            &:before {
+              content: "\f0fe";
+            }
+          }
+        }
+        .sc-treeview-tree {
+          display: none;
+        }
+      }
+    }
+  }
+}
