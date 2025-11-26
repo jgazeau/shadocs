@@ -16,11 +16,11 @@ The several types of imports managed by the theme are the following ones:
 
 | Import type | Comment |
 | ----------- | ------- |
-| **SASS files** (.sass) |{{< md >}}
+| **SCSS files** (.scss) |{{< md >}}
 * Imported in `<head>` tag as `<link rel="stylesheet" type="text/css">` after being [converted as CSS by Hugo](https://gohugo.io/hugo-pipes/transform-to-css/), grouped and minified in **css/main.css** file
-* Paths used for the SASS➔CSS conversion :
+* Paths used for the SCSS conversion :
     * assets/bulma
-    * assets/sass
+    * assets/scss
 {{< /md >}}|
 | **CSS files** (.css) |{{< md >}}
 * Imported file by file in `<head>` tag as `<link rel="stylesheet" type="text/css">` and minified

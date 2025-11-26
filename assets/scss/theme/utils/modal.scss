@@ -1,0 +1,78 @@
+@use "../vars" as vars;
+@use "extends.scss";
+@use "mixins.scss" as mixins;
+@use "../../bulma/sass/utilities" as bulma_utilities;
+@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+//
+// Modal styles
+//
+.modal-container {
+  @include mixins.modal-container(rgba(0,0,0,0.9));
+  cursor: zoom-out;
+  img {
+    @extend %unselectable;
+    max-height: 100svh;
+    max-width: 100vw;
+  }
+  #modal {
+    display: flex;
+  }
+  .modal-content-box {
+    cursor: auto;
+  }
+  .modal-text-box {
+    box-shadow: 0 0 0 vars.$theme-gap-small-size vars.$theme-color;
+    @include mixins.static-size-width(vars.$modal-width);
+    background: vars.$content-background;
+    max-height: vars.$modal-max-height;
+    flex-direction: column;
+    transition: all 0.3s;
+    position: absolute;
+    display: flex;
+    .modal-title {
+      display: contents;
+      .card-header-title {
+        @include mixins.responsive-size(font-size, vars.$theme-h3-font-size, 3px);
+        background: bulma_utilities.bulmaFindColorInvert(vars.$content-background);
+        color: bulma_utilities.bulmaFindColorInvert(vars.$content-writing-color);
+        justify-content: center;
+      }
+      .card-header-icon {
+        background: bulma_utilities.bulmaFindColorInvert(vars.$content-background);
+        color: bulma_utilities.bulmaFindColorInvert(vars.$content-writing-color);
+        cursor: unset;
+      }
+    }
+    .modal-content-container {
+      overflow-x: hidden;
+      overflow-y: auto;
+      .modal-content-block,
+      .modal-content {
+        justify-content: center;
+        align-content: center;
+        flex-direction: row;
+        flex-basis: 50%;
+        flex-wrap: wrap;
+        display: flex;
+        flex-grow: 0;
+        margin: 0;
+      }
+      .modal-content-block {
+        word-break: break-word;
+        align-items: stretch;
+        text-align: center;
+      }
+      .modal-content {
+        box-shadow: inset 0 0 vars.$theme-border-width bulma_utilities.bulmaFindColorInvert(vars.$content-background), inset 0 0 vars.$theme-border-width bulma_utilities.bulmaFindColorInvert(vars.$content-background);
+        padding: vars.$theme-gap-medium-size;
+        align-items: center;
+        p {
+          padding: vars.$theme-gap-medium-size;
+        }
+      }
+      @include bulma_mixins.touch {
+        @include mixins.static-size-width(100%);
+      }
+    }
+  }
+}

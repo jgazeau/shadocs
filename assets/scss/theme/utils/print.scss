@@ -1,0 +1,37 @@
+//
+// Print styles
+//
+@media print {
+  html {
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+  }
+  body {
+    position: static !important;
+    display: block !important;
+  }
+  #sidebarMobileWrapper,
+  #sidebarContainer,
+  #tocWrapper,
+  #navbar,
+  .copy-code {
+    display: none !important;
+  }
+  #mainContainer,
+  #contentContainer,
+  #content {
+    display: block !important;
+    max-width: 100% !important;
+    min-width: 100% !important;
+    width: 100% !important;
+    overflow: unset !important;
+  }
+  table:not([style]) {
+    tr {
+      break-inside: avoid;
+    }
+    thead {
+      display: table-row-group;
+    }
+  }
+};

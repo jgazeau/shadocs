@@ -1,0 +1,52 @@
+@use "../vars" as vars;
+@use "extends.scss";
+@use "mixins.scss" as mixins;
+@use "functions.scss" as functions;
+@use "../../bulma/sass/utilities" as bulma_utilities;
+//
+// Collapsible
+//
+.sc-collapsible-container {
+  .sc-collapsible-header {
+    box-shadow: inset 0 0 vars.$theme-border-width 0 functions.smooth-color(vars.$collapsible-color, 50);
+    padding: vars.$theme-gap-medium-size vars.$theme-gap-large-size;
+    color: bulma_utilities.bulmaFindColorInvert(vars.$collapsible-color);
+    justify-content: space-between;
+    background: vars.$collapsible-color;
+    @include mixins.static-size-width(100%);
+    word-break: break-word;
+    align-content: center;
+    @extend %unselectable;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    font-weight: 700;
+    text-align: left;
+    cursor: pointer;
+    display: flex;
+    &:after {
+      padding-left: vars.$theme-gap-large-size;
+      font-size: vars.$theme-gap-large-size;
+      font: var(--fa-font-solid);
+      align-self: center;
+      content: '\f0fe';
+    }
+    &:hover {
+      background: functions.smooth-color(vars.$collapsible-color, 10);
+    }
+  }
+  .sc-collapsible-content {
+    box-shadow: inset 0 0 vars.$theme-border-width 0 functions.smooth-color(vars.$collapsible-color, 50);
+    padding: vars.$theme-gap-medium-size vars.$theme-gap-large-size;
+    color: bulma_utilities.bulmaFindColorInvert(tint(vars.$collapsible-color, 50));
+    background: tint(vars.$collapsible-color, 50);
+    display: none;
+  }
+  .sc-collapsible-header.sc-uncollapsed {
+    &:after {
+      content: '\f146';
+    }
+    + sc-collapsible-content {
+      display: block;
+    }
+  }
+}

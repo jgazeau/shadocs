@@ -12,10 +12,10 @@
       {{- with (ne $key 0) -}}
         </div>
       {{- end -}}
-      <div class='tile is-ancestor is-marginless'>
+      <div class='grid is-marginless'>
     {{- end -}}
-    <div class='tile is-parent'>
-      <article class='tile is-child message'>
+    <div class='cell'>
+      <article class='message'>
         <div class='message-header'>
           {{- $value.LinkTitle -}}
         </div>

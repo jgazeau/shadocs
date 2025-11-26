@@ -1,0 +1,122 @@
+@use "sass:map";
+@use "sass:list";
+@use "sass:string";
+@use "../vars" as vars;
+@use "functions.scss" as functions;
+@use "../../bulma/sass/utilities" as bulma_utilities;
+@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+//
+@mixin responsive-size($prop, $size, $gap) {
+  #{$prop}: $size;
+  @include bulma_mixins.touch {
+    #{$prop}: calc(#{$size} - #{$gap});
+  }
+}
+@mixin static-size-height($size) {
+  max-height: $size;
+  min-height: $size;
+  height: $size;
+}
+@mixin static-size-width($size) {
+  max-width: $size;
+  min-width: $size;
+  width: $size;
+}
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: woff2) {
+  $src: null;
+  $extmods: (eot: "?", svg: "#" + functions.str-replace($name, " ", "_"));
+  $formats: (otf: "opentype", ttf: "truetype");
+  @each $ext in $exts {
+    $extmod: if(map.has-key($extmods, $ext), $ext + map.get($extmods, $ext), $ext);
+    $format: if(map.has-key($formats, $ext), map.get($formats, $ext), $ext);
+    $src: list.append($src, url(string.quote($path + "." + $extmod)) format(string.quote($format)), comma);
+  }
+  @font-face {
+    font-family: string.quote($name);
+    font-weight: $weight;
+    font-display: block;
+    font-style: $style;
+    src: $src;
+  }
+}
+@mixin font-family($name) {
+  font-family: $name,bulma_utilities.$family-sans-serif !important;
+}
+@mixin sc-alert-background-color($color) {
+  background: functions.smooth-color($color, 10);
+}
+@mixin navbar-content-effects-hidden($origin) {
+  transform-origin: $origin;
+  transition: all 0.2s ease;
+  transform: scale(0);
+  display: block;
+  opacity: 0;
+}
+@mixin navbar-content-effects-visible($origin) {
+  transition: 0.3s cubic-bezier(.4,.2,.5,1.4);
+  transform-origin: $origin;
+  transform: scale(1);
+  opacity: 1;
+}
+@mixin modal-container($background) {
+  @include static-size-height(100%);
+  @include static-size-width(100%);
+  justify-content: center;
+  background: $background;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-basis: 50%;
+  flex-wrap: wrap;
+  position: fixed;
+  display: flex;
+  flex-grow: 0;
+  z-index: 35;
+}
+@mixin sidebar-touch {
+  width: vars.$sidebar-width-collapsed;
+  .menu {
+    .menu-list {
+      li {
+        &.is-tree-active {
+          border-radius: vars.$theme-border-radius;
+        }
+      }
+    }
+  }
+  .is-fs-expandable-icon {
+    display: block;
+  }
+  .is-collapse-action {
+    display: none;
+  }
+  .is-uncollapse-action {
+    display: block;
+  }
+  .is-expandable {
+    display: none;
+    &.is-hovered {
+      @media (hover: hover) {
+        width: calc(#{vars.$sidebar-width} + #{vars.$theme-gap-medium-size});
+        padding-left: vars.$theme-gap-medium-size;
+        position: fixed;
+        display: block;
+        .is-sidebar-list-wrapper {
+          min-height: calc(#{vars.$sidebar-entry-height} + (2 * #{vars.$theme-gap-medium-size}) + (2 * #{vars.$theme-gap-small-size}));
+          border: vars.$theme-gap-small-size solid functions.smooth-color(vars.$theme-color, 20);
+          background: vars.$sidebar-background;
+          padding: vars.$theme-gap-medium-size;
+          border-radius: 0 !important;
+          width: vars.$sidebar-width;
+          overflow-x: hidden;
+          overflow-y: auto;
+          .card-header-title {
+            i.fa-lg {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

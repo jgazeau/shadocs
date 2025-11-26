@@ -1,0 +1,173 @@
+@use "../vars" as vars;
+@use "extends.scss";
+@use "mixins.scss" as mixins;
+@use "functions.scss" as functions;
+@use "../../bulma/sass/utilities" as bulma_utilities;
+@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+@use "../../bulma/sass/components/navbar.scss" as bulma_navbar;
+//
+#searchContainer {
+  padding-left: calc(#{vars.$theme-gap-medium-size} - #{vars.$theme-gap-small-size});
+  width: 100%;
+}
+#search {
+  max-height: calc(#{bulma_navbar.$navbar-height} - (2 * #{vars.$theme-gap-medium-size}));
+  background-color: functions.smooth-color(vars.$theme-color, 30) !important;
+  color: bulma_utilities.bulmaFindColorInvert(functions.smooth-color(vars.$theme-color, 30));
+  width: vars.$navbar-search-width;
+  @extend %navbar-item-generic;
+  @extend %navbar-item-hover;
+  text-overflow: ellipsis;
+  &:focus {
+    background-color: vars.$content-background !important;
+    color: vars.$content-writing-color;
+    box-shadow: unset;
+    border: unset;
+    &::placeholder {
+      color: functions.smooth-color(vars.$content-writing-color, 30);
+      font-style: italic;
+    }
+  }
+  &::placeholder {
+    color: functions.smooth-color(bulma_utilities.bulmaFindColorInvert(functions.smooth-color(vars.$theme-color, 30)), 30);
+    font-style: italic;
+  }
+  @include bulma_mixins.mobile {
+    width: vars.$navbar-search-width-mobile;
+  }
+}
+#searchInput {
+  @include mixins.responsive-size(font-size, vars.$content-font-size, 3px);
+  width: vars.$navbar-search-width;
+  display: block;
+  @include bulma_mixins.mobile {
+    width: vars.$navbar-search-width-mobile;
+  }
+}
+#searchList {
+  @include mixins.responsive-size(font-size, vars.$content-font-size, 3px);
+  max-height: vars.$navbar-search-results-height;
+  @extend %navbar-content-partial-border;
+  margin: vars.$theme-gap-medium-size 0 0 0;
+  word-break: break-word;
+  overflow-x: hidden;
+  position: absolute;
+  border-radius: 0;
+  overflow-y: auto;
+  width: vars.$navbar-search-results-width;
+  @include bulma_mixins.touch {
+    width: vars.$navbar-search-results-width-touch;
+  }
+  z-index: 1;
+  strong {
+    color: vars.$navbar-search-highlight-color !important;
+    font-weight: 900;
+  }
+  .search-delimiter {
+    color: functions.smooth-color(vars.$content-background, 30);
+    font-weight: 900;
+  }
+  li {
+    @extend %search-content-colors;
+    min-height: vars.$control-height;
+    position: relative;
+    cursor: pointer;
+    &:hover:not(.no-result),
+    &:hover.is-selected:not(.no-result) {
+      a:not(.is-title) {
+        background: functions.smooth-color(vars.$content-background, 15) !important;
+      }
+      a.is-title {
+        background: functions.smooth-color(vars.$navbar-search-title-color, 15) !important;
+      }
+    }
+    &.is-selected:not(.no-result) {
+      a:not(.is-title) {
+        background: functions.smooth-color(vars.$content-background, 10) !important;
+      }
+      a.is-title {
+        background: functions.smooth-color(vars.$navbar-search-title-color, 10) !important;
+      }
+    }
+    &.no-result {
+      background: vars.$content-background !important;
+      padding: vars.$theme-gap-small-size;
+      text-align: center;
+      font-weight: 900;
+      cursor: unset;
+    }
+    a {
+      @extend %search-content-colors;
+      min-height: vars.$control-height;
+      @include bulma_mixins.touch {
+        max-width: vars.$navbar-search-results-width-touch;
+      }
+      .level-left {
+        width: 75%;
+        min-height: vars.$control-height;
+        position: relative;
+        .scontent {
+          width: 75%;
+          padding: vars.$theme-gap-medium-size;
+          justify-content: left;
+          flex-wrap: wrap;
+          display: block;
+        }
+        &:after {
+          background: functions.smooth-color(bulma_utilities.bulmaFindColorInvert(vars.$content-background), 50);
+          position: absolute;
+          height: 75%;
+          content: '';
+          width: 1px;
+          right: 0;
+        }
+      }
+      .level-right {
+        width: 25%;
+        min-height: vars.$control-height;
+        .spath {
+          width: 25%;
+          padding: vars.$theme-gap-medium-size;
+          justify-content: right;
+          text-align: right;
+          flex-wrap: wrap;
+        }
+      }
+      .level-item {
+        min-height: vars.$control-height;
+        &.spre {
+          margin-right: vars.$theme-gap-medium-size;
+          margin-left: vars.$theme-gap-medium-size;
+          width: vars.$theme-icon-size;
+        }
+        &.stitle {
+          width: calc(100% - #{vars.$theme-icon-size} - (2 * #{vars.$theme-gap-medium-size}));
+          justify-content: left;
+          font-weight: 900;
+        }
+      }
+      &.is-title {
+        color: bulma_utilities.bulmaFindColorInvert(vars.$navbar-search-title-color);
+        background: vars.$navbar-search-title-color;
+        &:after {
+          background: functions.smooth-color(vars.$navbar-search-title-color, 50);
+          position: absolute;
+          content: '';
+          height: 1px;
+          width: 100%;
+          bottom: 0;
+          left: 0;
+        }
+        &:not(.is-first-title):before {
+          background: functions.smooth-color(vars.$navbar-search-title-color, 50);
+          position: absolute;
+          content: '';
+          height: 1px;
+          width: 100%;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,229 @@
+@use "../vars" as vars;
+@use "extends.scss";
+@use "mixins.scss" as mixins;
+@use "functions.scss" as functions;
+@use "../../bulma/sass/utilities" as bulma_utilities;
+@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+@use "../../bulma/sass/components/navbar.scss" as bulma_navbar;
+//
+// Markdown content styles
+//
+#mainContainer {
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1 1 auto;
+}
+#contentContainer {
+  background: vars.$content-background;
+  color: vars.$content-writing-color;
+  word-break: break-word;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex: 1;
+  &.has-toc {
+    #content {
+      @include mixins.static-size-width(calc(100% - #{vars.$toc-width} - #{vars.$toc-collapsible-width}));
+    }
+    &.is-toc-collapsed {
+      #content {
+        @include mixins.static-size-width(calc(100% - #{vars.$toc-collapsible-width}));
+      }
+      #tocContainer {
+        display: none;
+      }
+      #tocCollapsible {
+        i {
+          transform: rotate(180deg);
+        }
+      }
+    }
+    &:not(.is-toc-collapsed):not(.is-toc-uncollapsed) {
+      @include bulma_mixins.touch {
+        #content {
+          @include mixins.static-size-width(calc(100% - #{vars.$toc-collapsible-width}));
+        }
+        #tocContainer {
+          display: none;
+        }
+        #tocCollapsible {
+          i {
+            transform: rotate(180deg);
+          }
+        }
+      }
+    }
+    @include bulma_mixins.until-widescreen {
+      #content {
+        @include mixins.static-size-width(calc(100% - #{vars.$toc-collapsible-width}));
+      }
+    }
+  }
+  #contentTitle {
+    margin-bottom: vars.$theme-gap-large-size;
+    font-size: vars.$theme-title-font-size;
+    padding: vars.$theme-gap-large-size;
+    color: vars.$content-writing-color;
+    text-decoration: underline;
+    text-transform: uppercase;
+    word-break: break-word;
+    @include mixins.font-family(oswald);
+    text-align: center;
+    font-weight: 700;
+  }
+  #content {
+    @include bulma_mixins.mobile {
+      padding-right: vars.$theme-gap-medium-size;
+      padding-left: vars.$theme-gap-medium-size;
+    }
+    @include bulma_mixins.tablet {
+      padding-right: bulma_navbar.$navbar-height;
+      padding-left: bulma_navbar.$navbar-height;
+    }
+    @include mixins.static-size-width(100%);
+    position: relative;
+    &:after {
+      height: vars.$theme-gap-large-size;
+      position: absolute;
+      content: '';
+      width: 100%;
+      left: 0;
+    }
+  }
+  .tabs-container {
+    margin: vars.$content-item-margin;
+    .tabs-triggers {
+      @include mixins.font-family(oswald);
+      text-align: center;
+      ul {
+        justify-content: center;
+        flex-direction: row;
+        list-style: none;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        display: flex;
+        padding: 0;
+        li {
+          padding: 0 vars.$theme-gap-large-size;
+          justify-content: center;
+          align-items: center;
+          flex-shrink: 1;
+          display: flex;
+          flex-grow: 1;
+          a {
+            @include mixins.responsive-size(font-size, vars.$theme-h3-font-size, 3px);
+            padding: vars.$theme-gap-medium-size;
+            color: vars.$content-writing-color;
+            transition: all 0.3s;
+            position: relative;
+            height: 100%;
+            width: 100%;
+            z-index: 0;
+            &:before {
+              background: functions.smooth-color(vars.$content-writing-color, 80);
+              height: vars.$theme-gap-small-size;
+              transition: all 0.3s;
+              position: absolute;
+              width: 100%;
+              z-index: -1;
+              content: '';
+              bottom: 0;
+              left: 0;
+            }
+            &:after {
+              border: vars.$theme-gap-medium-size solid transparent;
+              bottom: calc(-2 * #{vars.$theme-gap-medium-size});
+              border-top-color: vars.$theme-color;
+              transition: all 0.3s;
+              position: absolute;
+              margin: auto;
+              content: '';
+              opacity: 0;
+              height: 0;
+              width: 0;
+              right: 0;
+              left: 0;
+            }
+            &:hover {
+              color: vars.$theme-color;
+              &:before {
+                background: vars.$theme-color;
+              }
+              &:after {
+                opacity: 1;
+              }
+            }
+            &.is-active {
+              color: bulma_utilities.bulmaFindColorInvert(vars.$theme-color);
+              &:before {
+                background: vars.$theme-color;
+                height: 100%;
+              }
+              &:after {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+    .tabs-results {
+      padding: vars.$theme-gap-large-size;
+      .tabs-results-list {
+        padding: 0 vars.$theme-gap-large-size;
+        position: relative;
+        display: none;
+        &:before {
+          width: vars.$theme-gap-small-size;
+          background: vars.$theme-color;
+          position: absolute;
+          height: 100%;
+          content: '';
+          left: 0;
+          top: 0;
+        }
+        &.is-active {
+          display: block;
+        }
+        .tabs-title {
+          @include mixins.responsive-size(font-size, vars.$theme-h4-font-size, 3px);
+          color: vars.$content-writing-color;
+          transition: all 0.2s;
+          display: inline-flex;
+          @include mixins.font-family(oswald);
+          position: relative;
+          &:before,
+          &:after {
+            border: vars.$theme-gap-small-size solid vars.$theme-color;
+            transition: transform 0.2s, opacity 0.1s;
+            width: vars.$theme-gap-medium-size;
+            position: absolute;
+            height: 100%;
+            content: '';
+          }
+          &:before {
+            transform: translateX(-#{vars.$theme-gap-medium-size});
+            margin-left: -#{vars.$theme-gap-medium-size};
+            border-right: unset;
+            opacity: 0;
+            left: 0;
+          }
+          &:after {
+            transform: translateX(vars.$theme-gap-medium-size);
+            margin-right: -#{vars.$theme-gap-medium-size};
+            border-left: unset;
+            opacity: 0;
+            right: 0;
+          }
+          &:hover {
+            color: vars.$theme-color;
+          }
+          &:hover:before,
+          &:hover:after {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

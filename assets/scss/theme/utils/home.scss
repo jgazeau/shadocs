@@ -1,0 +1,30 @@
+@use "../vars" as vars;
+@use "extends.scss";
+@use "mixins.scss" as mixins;
+@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+@use "../../bulma/sass/components/navbar.scss" as bulma_navbar;
+//
+#contentHome {
+  @include bulma_mixins.mobile {
+    padding-right: vars.$theme-gap-medium-size;
+    padding-left: vars.$theme-gap-medium-size;
+  }
+  @include bulma_mixins.tablet {
+    padding-right: bulma_navbar.$navbar-height;
+    padding-left: bulma_navbar.$navbar-height;
+  }
+  @include mixins.static-size-width(100%);
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  display: flex;
+  #contentHomeTitle {
+    @extend %unselectable;
+    @include mixins.responsive-size(font-size, vars.$theme-font-extra-large-size, 3px);
+    margin-bottom: vars.$theme-gap-large-size;
+    padding: vars.$theme-gap-large-size 0;
+    @include mixins.font-family(permanent-marker);
+    text-align: center;
+  }
+}

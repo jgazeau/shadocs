@@ -45,7 +45,7 @@
       icon = "fa-solid fa-table-cells"
   # Assets list (https://gohugo.io/hugo-pipes/resource-from-template/) to include
   # Managed assets:
-  # - sass                  = [List of SASS files]
+  # - scss                  = [List of SCSS files]
   # - css                   = [List of CSS files]
   # - js                    = [List of javascript files]
   # - jsModules             = [List of javascript modules]
@@ -57,9 +57,9 @@
   # - fencedcodes.jsModules = [List of javascript module files to includes when the associated language of fenced code exist in the page content]
   #
   [params.includes]
-    sass = [
-      "sass/file1.sass",
-      "sass/fileX.sass"
+    scss = [
+      "scss/file1.scss",
+      "scss/fileX.scss"
     ]
     css = [
       "css/file1.css",
@@ -73,12 +73,12 @@
       "js/modules/file1.js",
       "js/modules/fileX.js"
     ]
-  [params.includes.shortcodes.sass]
+  [params.includes.shortcodes.scss]
     shortcode1 = [
-        "sass/shortcodes/shortcode1.sass"
+        "scss/shortcodes/shortcode1.scss"
       ]
     shortcodeX = [
-        "sass/shortcodes/shortcodeX.sass"
+        "scss/shortcodes/shortcodeX.scss"
       ]
   [params.includes.shortcodes.css]
     shortcode1 = [

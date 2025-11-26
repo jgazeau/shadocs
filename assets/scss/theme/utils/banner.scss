@@ -1,0 +1,21 @@
+@use "../vars" as vars;
+//
+// Banner styles
+//
+.banner {
+  border: vars.$theme-border-width solid vars.$banner-border-color;
+  background-color: vars.$banner-background;
+  justify-content: space-between;
+  padding: vars.$theme-gap-large-size;
+  align-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: nowrap;
+  display: flex;
+  > * {
+    padding: 0 vars.$theme-gap-large-size;
+  }
+  i {
+    color: vars.$banner-border-color;
+  }
+}
