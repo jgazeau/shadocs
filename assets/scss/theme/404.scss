@@ -3,13 +3,14 @@
 //
 @charset "utf-8";
 @use "vars" as vars;
-@use "utils" as utils;
+@use "utils/functions" as functions;
+@use "utils/mixins" as mixins;
 //
 // 404 styles
 //
 // Font styles
 //
-@include utils.font-face('oswald', '../fonts/oswald/oswald-v49-latin-700', 700, normal, woff2);
+@include mixins.font-face('oswald', '../fonts/oswald/oswald-v49-latin-700', 700, normal, woff2);
 //
 body {
   font-family: oswald !important;
@@ -82,12 +83,12 @@ body {
       width: 50%;
     }
     &::before {
-      background: linear-gradient(90deg, utils.tint(vars.$theme-color-404, 15) 0%, utils.tint(vars.$theme-color-404, 30) 100%);
+      background: linear-gradient(90deg, functions.tint(vars.$theme-color-404, 15) 0%, functions.tint(vars.$theme-color-404, 30) 100%);
       left: vars.$theme-gap-medium-size;
       top: -#{vars.$theme-gap-medium-size};
     }
     &::after {
-      background: linear-gradient(90deg, vars.$theme-color-404 0%, utils.tint(vars.$theme-color-404, 15) 100%);
+      background: linear-gradient(90deg, vars.$theme-color-404 0%, functions.tint(vars.$theme-color-404, 15) 100%);
       right: vars.$theme-gap-medium-size;
       top: vars.$theme-gap-medium-size;
     }

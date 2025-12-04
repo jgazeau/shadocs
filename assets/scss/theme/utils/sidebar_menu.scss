@@ -1,0 +1,10 @@
+.menu-list {
+  li {
+    ul {
+      display: none;
+    }
+    &.is-open > ul {
+      display: block;
+    }
+  }
+}
