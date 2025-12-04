@@ -321,26 +321,6 @@ export function enableSmoothScroll() {
   let cc = document.getElementById('contentContainer');
   cc.classList.toggle('is-scroll-smooth', true);
 }
-// Function to toggle the sidebar entry at desired state
-// - force (true to expand entry, false to shrink entry)
-export function toggleSidebarEntry(e, force) {
-  if (typeof force === 'undefined') {
-    force = e.classList.contains('is-icon-shrinked');
-  }
-  let entriesTitle = getFirstAncestorByClass(e, 'is-entries-expandable');
-  entriesTitle.classList.toggle('is-entries-shrinked', !force);
-  entriesTitle.classList.toggle('is-entries-expanded', force);
-  e.classList.toggle('is-icon-shrinked', !force);
-  e.classList.toggle('is-icon-expanded', force);
-}
-// Function to toggle the sidebar entries at desired state
-// - force (true to expand all entries, false to shrink all entries)
-export function toggleSidebarEntries(force) {
-  let iie = document.getElementsByClassName('is-icon-expandable');
-  for (let i = 0; i < iie.length; i++) {
-    toggleSidebarEntry(iie[i], force);
-  }
-}
 // Function that manage the navbar menu
 export function manageNavbarMenu() {
   const navbarExtendWidth = document.getElementById('navbarExtend').offsetWidth;

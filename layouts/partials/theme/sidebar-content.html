@@ -1,156 +1,35 @@
-{{- $sidebarRoot := . -}}
-{{- range (partial "theme/helpers/sortedPagesArray.html" (dict "input" .Site.Home.Sections "this" .)) -}}
-  {{- template "sidebarLinks" dict "this" . "sidebarroot" $sidebarRoot "inTreeActive" false -}}
-{{- end -}}
-<!-- TEMPLATES -->
-{{- define "sidebarLinks" -}}
-  {{- $sidebarRoot := .sidebarroot -}}
-  {{- $sidebarRoot.Scratch.Set "inTreeActive" .inTreeActive -}}
-  {{- if (and (eq $sidebarRoot.FirstSection .this.FirstSection) (not ($sidebarRoot.Scratch.Get "inTreeActive"))) -}}
-    {{- $sidebarRoot.Scratch.Set "isTreeActive" true -}}
-    {{- $sidebarRoot.Scratch.Set "inTreeActive" true -}}
-  {{- else -}}
-    {{- $sidebarRoot.Scratch.Set "isTreeActive" false -}}
-  {{- end -}}
-  {{- with .this -}}
-    {{- with .Content -}}
-      {{- $sidebarRoot.Scratch.Set "isEmptyContent" false -}}
-    {{- else -}}
-      {{- $sidebarRoot.Scratch.Set "isEmptyContent" true -}}
-    {{- end -}}
-    {{- with .File -}}
-      {{- $current := . -}}
-      {{- with $sidebarRoot.File -}}
-        {{- if eq $current.UniqueID $sidebarRoot.File.UniqueID -}}
-          {{- $sidebarRoot.Scratch.Set "isSidebarActive" true -}}
-        {{- else -}}
-          {{- $sidebarRoot.Scratch.Set "isSidebarActive" false -}}
-        {{- end -}}
-      {{- end -}}
-    {{- end -}}
-    {{- $linkWeight := (add (len .Pages) (len .Sections)) -}}
-    {{- if .Params.titleIcon -}}
-      {{- $sidebarRoot.Scratch.Set "titleIcon" .Params.titleIcon -}}
-    {{- else -}}
-      {{- if eq .FirstSection . -}}
-        {{- $sidebarRoot.Scratch.Set "titleIcon" .Site.Data.themeParams.sidebar.firstSectionIconDefault -}}
-      {{- else -}}
-        {{- $sidebarRoot.Scratch.Set "titleIcon" .Site.Data.themeParams.sidebar.nestedSectionIconDefault -}}
-      {{- end -}}
-    {{- end -}}
-    {{- if eq .FirstSection . -}}
-      {{- $sidebarRoot.Scratch.Set "titleIcon" (print ($sidebarRoot.Scratch.Get "titleIcon") " fa-lg") -}}
-    {{- end -}}
-    {{- if eq .FirstSection . -}}
-      {{- $firstSectionClasses := slice "card" "is-fs-expandable-icon" -}}
-      {{- if $sidebarRoot.Scratch.Get "isTreeActive" -}}
-        {{- $firstSectionClasses = $firstSectionClasses | append "is-sidebar-active" -}}
-      {{- end -}}
-      <div class="{{- delimit $firstSectionClasses " " -}}">
-        {{- template "sidebarSectionIcon" dict "this" . "sidebarroot" $sidebarRoot "linkWeight" $linkWeight "isLabel" false -}}
-        </div>
-      </div>
-    {{- end -}}
-    <div class="{{- if eq .FirstSection . -}}is-expandable{{- end -}}">
-      <div class="{{- if eq .FirstSection . -}}is-sidebar-list-wrapper{{- end -}}">
-        {{- $sidebarLiClasses := slice "is-marginless" -}}
-        {{- if $sidebarRoot.Scratch.Get "isTreeActive" -}}
-          {{- $sidebarLiClasses = $sidebarLiClasses | append "is-tree-active" -}}
-        {{- end -}}
-        {{- if gt $linkWeight 0 -}}
-          {{- $sidebarLiClasses = $sidebarLiClasses | append "is-entries-expandable" -}}
-          {{- if .IsAncestor $sidebarRoot | or (eq $sidebarRoot .)  -}}
-            {{- $sidebarLiClasses = $sidebarLiClasses | append "is-entries-expanded" -}}
-          {{- else -}}
-            {{- $sidebarLiClasses = $sidebarLiClasses | append "is-entries-shrinked" -}}
-          {{- end -}}
-        {{- end -}}
-        <li class="{{- delimit $sidebarLiClasses " " -}}">
-          {{- $sidebarEntryClasses := slice "card" -}}
-          {{- if $sidebarRoot.Scratch.Get "isSidebarActive" -}}
-            {{- $sidebarEntryClasses = $sidebarEntryClasses | append "is-sidebar-active" -}}
-          {{- end -}}
-          <div
-            class="{{- delimit $sidebarEntryClasses " " -}}"
-            {{- if $sidebarRoot.Scratch.Get "isSidebarActive" -}}
-              id='sidebarActiveEntry'
-            {{- end -}}
-          >
-            {{- template "sidebarSectionIcon" dict "this" . "sidebarroot" $sidebarRoot "linkWeight" $linkWeight "isLabel" true -}}
-            {{- if gt $linkWeight 0 -}}
-              {{- $sidebarEntryIconClasses := slice "card-header-icon" "is-icon-expandable" "is-paddingless" -}}
-              {{- if gt $linkWeight 0 -}}
-                {{- if .IsAncestor $sidebarRoot -}}
-                  {{- $sidebarEntryIconClasses = $sidebarEntryIconClasses | append "is-icon-expanded" -}}
-                {{- else -}}
-                  {{- $sidebarEntryIconClasses = $sidebarEntryIconClasses | append "is-icon-shrinked" -}}
-                {{- end -}}
-              {{- end -}}
-              <a class="{{- delimit $sidebarEntryIconClasses " " -}}">
-                <span class='icon'></span>
-              </a>
-            </div>
-          </div>
-          {{- $sidebarUlClasses := slice "is-marginless" -}}
-          {{- if $sidebarRoot.Scratch.Get "isTreeActive" -}}
-            {{- $sidebarUlClasses = $sidebarUlClasses | append "is-tree-active" -}}
-          {{- end -}}
-          <ul class="{{- delimit $sidebarUlClasses " " -}}">
-            {{- if .Sections -}}
-              {{- $sidebarRoot.Scratch.Set "sidebarChild" (.Pages | union .Sections) -}}
-            {{- else -}}
-              {{- $sidebarRoot.Scratch.Set "sidebarChild" .Pages -}}
-            {{- end -}}
-            {{- $sidebarChild := ($sidebarRoot.Scratch.Get "sidebarChild") -}}
-            {{- range (partial "theme/helpers/sortedPagesArray.html" (dict "input" $sidebarChild "this" .)) -}}
-              {{- template "sidebarLinks" dict "this" . "sidebarroot" $sidebarRoot "inTreeActive" ($sidebarRoot.Scratch.Get "inTreeActive") -}}
-            {{- end -}}
-          </ul>
-          {{- else -}}
-            </div>
-          </div>
-          {{- end -}}
+{{- define "sidebar-menu" }}
+  {{- $parent := .parent }}
+  {{- $pages := .pages }}
+  <ul class="menu-list">
+    {{- range $pages }}
+      {{- if .IsPage }}
+        <li>
+          <a href="{{ .RelPermalink }}" class="{{ if $parent.IsAncestor . }}is-active{{ end }}">
+            <span class="icon-text">
+              <span class="icon"><i class="{{ .Params.titleIcon }}"></i></span>
+              <span>{{ .LinkTitle }}</span>
+            </span>
+          </a>
         </li>
-      </div>
-    </div>
-  {{- end -}}
-{{- end -}}
-<!---->
-{{- define "sidebarSectionIcon" -}}
-  {{- $sidebarRoot := .sidebarroot -}}
-  {{- if or (.this.Params.sidebardisabled) ($sidebarRoot.Scratch.Get "isEmptyContent") -}}
-    <div class='card-header is-sidebar-disable'>
-      <div class='card-header-title' href='{{- .this.RelPermalink | safeURL -}}'>
-        <i class='{{- $sidebarRoot.Scratch.Get "titleIcon" -}}'></i>
-        {{- $sidebarEntryLabelClasses := slice "pt-0" "pb-0" "pr-2" -}}
-        {{- if eq .this.FirstSection .this -}}
-          {{- $sidebarEntryLabelClasses = $sidebarEntryLabelClasses | append "pl-1" -}}
-        {{- else -}}
-          {{- $sidebarEntryLabelClasses = $sidebarEntryLabelClasses | append "pl-0" -}}
-        {{- end -}}
-        {{- if .isLabel -}}<p class="{{- delimit $sidebarEntryLabelClasses " " -}}" title='{{- .this.LinkTitle -}}'>{{- .this.LinkTitle -}}</p>{{- end -}}
-      </div>
-  {{- else -}}
-    {{- $sidebarEntryClasses := slice "card-header" -}}
-    {{- if eq .linkWeight 0 -}}
-      {{- $sidebarEntryClasses = $sidebarEntryClasses | append "is-single-link" -}}
-    {{- end -}}
-    <div class="{{- delimit $sidebarEntryClasses " " -}}">
-      <a
-        href='{{- .this.RelPermalink | safeURL -}}'
-        class='card-header-title'
-        {{- if .isLabel }}
-          title='{{- .this.LinkTitle -}}'
-        {{- end -}}
-      >
-        <i class='{{- $sidebarRoot.Scratch.Get "titleIcon" -}}'></i>
-        {{- $sidebarEntryLabelClasses := slice "pt-0" "pb-0" "pr-2" -}}
-        {{- if eq .this.FirstSection .this -}}
-          {{- $sidebarEntryLabelClasses = $sidebarEntryLabelClasses | append "pl-1" -}}
-        {{- else -}}
-          {{- $sidebarEntryLabelClasses = $sidebarEntryLabelClasses | append "pl-0" -}}
-        {{- end -}}
-        {{- if .isLabel -}}<p class="{{- delimit $sidebarEntryLabelClasses " " -}}">{{- .this.LinkTitle -}}</p>{{- end -}}
-      </a>
-  {{- end -}}
-{{- end -}}
+      {{- else if .IsSection }}
+        <li>
+          <a href="{{ .RelPermalink }}" class="{{ if $parent.IsAncestor . }}is-active{{ end }}">
+            <span class="icon-text">
+              <span class="icon"><i class="{{ .Params.titleIcon }}"></i></span>
+              <span>{{ .LinkTitle }}</span>
+            </span>
+          </a>
+          {{- if .Sections }}
+            {{- template "sidebar-menu" (dict "parent" $parent "pages" .Sections) }}
+          {{- end }}
+          {{- if .Pages }}
+            {{- template "sidebar-menu" (dict "parent" $parent "pages" .Pages) }}
+          {{- end }}
+        </li>
+      {{- end }}
+    {{- end }}
+  </ul>
+{{- end }}
+
+{{- template "sidebar-menu" (dict "parent" . "pages" .Site.Home.Sections) }}

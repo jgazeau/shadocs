@@ -1,20 +1,18 @@
 <div class="navbar-item{{ with not (default true $.Site.Params.navbarPrintEntry ) }} is-enforced-hidden{{ end }}">
-  <a
-    id="printButton{{- $.Scratch.Get "navbarExtendIdSuffix" -}}"
-    class="button navbar-item-standard"
-  >
-    <span class="icon-text">{{- i18n "navbar_label_print" -}}</span>
+  <a id="printButton{{- $.Scratch.Get "navbarExtendIdSuffix" -}}" class="button">
+    <span class="icon-text has-text-weight-bold">
+      {{- i18n "navbar_label_print" -}}
+    </span>
     <span class="icon">
       <i class="fa-solid fa-print fa-lg"></i>
     </span>
   </a>
 </div>
 <div class="navbar-item{{ with not (default true $.Site.Params.navbarQRCodeEntry ) }} is-enforced-hidden{{ end }}">
-  <a
-    id="qrCodeButton{{- $.Scratch.Get "navbarExtendIdSuffix" -}}"
-    class="button navbar-item-standard"
-  >
-    <span class="icon-text">{{- i18n "navbar_label_qrcode" -}}</span>
+  <a id="qrCodeButton{{- $.Scratch.Get "navbarExtendIdSuffix" -}}" class="button">
+    <span class="icon-text has-text-weight-bold">
+      {{- i18n "navbar_label_qrcode" -}}
+    </span>
     <span class="icon">
       <i class="fa-solid fa-qrcode fa-lg"></i>
     </span>
@@ -24,10 +22,12 @@
   <a
     id="shortcutsInfo{{- $.Scratch.Get "navbarExtendIdSuffix" -}}"
     trigger="navbarShortcuts"
-    class="button navbar-item-standard navbar-trigger"
+    class="button navbar-trigger"
     title="{{- i18n "navbarshortcuts_title" -}}"
   >
-    <span class="icon-text">{{- i18n "navbar_label_shortcuts" -}}</span>
+    <span class="icon-text has-text-weight-bold">
+      {{- i18n "navbar_label_shortcuts" -}}
+    </span>
     <span class="icon">
       <i class="fa-solid fa-keyboard fa-lg"></i>
     </span>
@@ -60,10 +60,12 @@
   <a
     id="siteInfo{{- $.Scratch.Get "navbarExtendIdSuffix" -}}"
     trigger="navbarInfo"
-    class="button navbar-item-standard navbar-trigger"
+    class="button navbar-trigger"
     title="{{- i18n "navbarinfo_title" -}}"
   >
-    <span class="icon-text">{{- i18n "navbar_label_info" -}}</span>
+    <span class="icon-text has-text-weight-bold">
+      {{- i18n "navbar_label_info" -}}
+    </span>
     <span class="icon">
       <i class="fa-solid fa-circle-question fa-lg"></i>
     </span>
