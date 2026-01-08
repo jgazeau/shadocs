@@ -6,13 +6,19 @@
 // Main
 //
 @function shade($color, $percent) {
-  $weight: if(math.is-unitless($percent), $percent * 1%, $percent);
+  $weight: $percent;
+  @if math.is-unitless($percent) {
+    $weight: $percent * 1%;
+  }
   @return color.mix(black, $color, $weight);
-};
+}
 @function tint($color, $percent) {
-  $weight: if(math.is-unitless($percent), $percent * 1%, $percent);
+  $weight: $percent;
+  @if math.is-unitless($percent) {
+    $weight: $percent * 1%;
+  }
   @return color.mix(white, $color, $weight);
-};
+}
 @function smooth-color($color, $percent) {
   @if bulma_utilities.bulmaColorLuminance($color) > 0.55 {
     @return shade($color, $percent);

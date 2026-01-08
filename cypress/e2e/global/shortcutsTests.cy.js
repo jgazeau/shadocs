@@ -16,7 +16,7 @@ describe('for: shortcuts', () => {
     cy.window().its('scGoHome');
     cy.get('body').type('{shift+h}', { delay: 0 });
     cy.location().should((loc) => {
-      expect(loc.toString()).to.eq(Cypress.env('HOMEPAGE_URL'));
+      expect(loc.href).to.eq(Cypress.env('HOMEPAGE_URL'));
     });
   });
   it('[shift+f] should focus on search', () => {

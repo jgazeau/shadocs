@@ -8,7 +8,7 @@ describe('for: 404 page', () => {
   it('link back to homepage should redirect to homepage', () => {
     cy.get('#footer404').click();
     cy.location().should((loc) => {
-      expect(loc.toString()).to.eq(Cypress.env('HOMEPAGE_URL'));
+      expect(loc.href).to.eq(Cypress.env('HOMEPAGE_URL'));
     });
   });
 });

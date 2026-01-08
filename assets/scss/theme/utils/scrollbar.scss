@@ -1,13 +1,30 @@
 @use "../vars" as vars;
+@use "functions.scss" as functions;
 //
 // Main
 //
-.os-theme-shadocs {  // The size of the scrollbar
-  --os-size: vars.$scrollbar-rail-size !important;
-  // The border radius of the scrollbar track
-  --os-track-border-radius: vars.$scrollbar-border-radius !important;
-  // The border radius of the scrollbar handle
-  --os-handle-border-radius: vars.$scrollbar-border-radius !important;
-  // The background of the scrollbar handle
-  --os-handle-bg: vars.$scrollbar-color !important;
+.os-theme-shadocs.os-scrollbar {
+  --os-size: 0.5rem;
+  --os-padding-perpendicular: 0;
+  --os-padding-axis: 0;
+  --os-track-border-radius: 0;
+  --os-track-bg: none;
+  --os-track-bg-hover: none;
+  --os-track-bg-active: none;
+  --os-track-border: none;
+  --os-track-border-hover: none;
+  --os-track-border-active: none;
+  --os-handle-border-radius: 0;
+  --os-handle-bg: #{functions.smooth-color(vars.$theme-color, 30)};
+  --os-handle-bg-hover: #{functions.smooth-color(vars.$theme-color, 40)};
+  --os-handle-bg-active: #{functions.smooth-color(vars.$theme-color, 30)};
+  --os-handle-border: none;
+  --os-handle-border-hover: none;
+  --os-handle-border-active: none;
+  --os-handle-min-size: none;
+  --os-handle-max-size: none;
+  --os-handle-perpendicular-size: 100%;
+  --os-handle-perpendicular-size-hover: 100%;
+  --os-handle-perpendicular-size-active: 100%;
+  --os-handle-interactive-area-offset: 0;
 }

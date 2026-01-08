@@ -12,8 +12,14 @@
   $extmods: (eot: "?", svg: "#" + functions.str-replace($name, " ", "_"));
   $formats: (otf: "opentype", ttf: "truetype");
   @each $ext in $exts {
-    $extmod: if(map.has-key($extmods, $ext), $ext + map.get($extmods, $ext), $ext);
-    $format: if(map.has-key($formats, $ext), map.get($formats, $ext), $ext);
+    $extmod: $ext;
+    @if map.has-key($extmods, $ext) {
+      $extmod: $ext + map.get($extmods, $ext);
+    }
+    $format: $ext;
+    @if map.has-key($formats, $ext) {
+      $extmod: map.get($formats, $ext);
+    }
     $src: list.append($src, url(string.quote($path + "." + $extmod)) format(string.quote($format)), comma);
   }
   @font-face {
@@ -32,7 +38,10 @@
     @if ($i % 2 == 0) {
       $selector: "";
       @for $j from 1 through $i {
-        $selector: if($j == 1, "#{$element}", "#{$selector} #{$element}");
+        $selector: "#{$selector} #{$element}";
+        @if ($j == 1) {
+          $selector: "#{$element}";
+        }
       }
       #{$selector} {
         @content;
@@ -45,7 +54,10 @@
     @if ($i % 2 == 1) {
       $selector: "";
       @for $j from 1 through $i {
-        $selector: if($j == 1, "#{$element}", "#{$selector} #{$element}");
+        $selector: "#{$selector} #{$element}";
+        @if ($j == 1) {
+          $selector: "#{$element}";
+        }
       }
       #{$selector} {
         @content;

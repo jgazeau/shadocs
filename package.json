@@ -2,31 +2,17 @@
   "name": "shadocs",
   "version": "1.3.0",
   "description": "Shadocs Hugo theme",
-  "config": {
-    "HUGO_BIN": "hugo",
-    "HUGO_PORT": 1313,
-    "TEST_BASE_URL": "http://localhost:1313/",
-    "TEST_BIND_URL": "http://127.0.0.1:1313/"
-  },
   "scripts": {
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
-    "start": "cross-env HUGO_PORT=${npm_package_config_HUGO_PORT} HUGO_BIN=${npm_package_config_HUGO_BIN} TEST_BASE_URL=${npm_package_config_TEST_BASE_URL} npm run start:child",
-    "start:child": "cross-env-shell \"${HUGO_BIN} --source exampleSite serve --baseURL ${TEST_BASE_URL} --port ${HUGO_PORT} --disableLiveReload\"",
-    "cypress:info": "cypress info",
+    "serve": "hugo --source exampleSite serve --renderToMemory --disableLiveReload --baseURL http://localhost:1313 --port 1313",
+    "cy:open": "start-server-and-test serve http://localhost:1313 cypress:open",
+    "cy:run": "start-server-and-test serve http://localhost:1313 cypress:run",
+    "cy:run:chrome": "start-server-and-test serve http://localhost:1313 \"cypress run --browser chrome\"",
+    "cy:run:firefox": "start-server-and-test serve http://localhost:1313 \"cypress run --browser firefox\"",
+    "cy:run:edge": "start-server-and-test serve http://localhost:1313 \"cypress run --browser edge\"",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "cypress:run:chrome": "cypress run --headless --browser chrome",
-    "cypress:run:firefox": "cypress run --headless --browser firefox",
-    "cypress:run:edge": "cypress run --headless --browser edge",
-    "cy:open": "cross-env-shell TEST_BIND_URL=${npm_package_config_TEST_BIND_URL} \"start-server-and-test ${TEST_BIND_URL} cypress:open\"",
-    "cy:run": "cross-env-shell TEST_BIND_URL=${npm_package_config_TEST_BIND_URL} \"start-server-and-test ${TEST_BIND_URL} cypress:run\"",
-    "cy:run:chrome": "cross-env TEST_BIND_URL=${npm_package_config_TEST_BIND_URL} npm run cy:run:chrome:child",
-    "cy:run:chrome:child": "cross-env-shell \"start-server-and-test ${TEST_BIND_URL} 'cypress:run:chrome'\"",
-    "cy:run:firefox": "cross-env TEST_BIND_URL=${npm_package_config_TEST_BIND_URL} npm run cy:run:firefox:child",
-    "cy:run:firefox:child": "cross-env-shell \"start-server-and-test ${TEST_BIND_URL} cypress:run:firefox\"",
-    "cy:run:edge": "cross-env TEST_BIND_URL=${npm_package_config_TEST_BIND_URL} npm run cy:run:edge:child",
-    "cy:run:edge:child": "cross-env-shell \"start-server-and-test ${TEST_BIND_URL} cypress:run:edge\""
+    "cypress:run": "cypress run"
   },
   "repository": {
     "type": "git",
@@ -40,9 +26,8 @@
   "homepage": "https://github.com/jgazeau/shadocs",
   "devDependencies": {
     "bmyc": "^0.5.8",
-    "cross-env": "^10.1.0",
-    "cypress": "^15.7.0",
-    "prettier": "^3.7.0",
+    "cypress": "^15.8.2",
+    "prettier": "^3.7.4",
     "prettier-plugin-go-template": "^0.0.15",
     "start-server-and-test": "^2.1.3"
   }

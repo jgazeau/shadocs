@@ -1,0 +1,6 @@
+<div class="mermaid-wrapper is-loading loader-container">
+  <pre class="mermaid">
+    {{ .Inner | htmlEscape | safeHTML }}
+  </pre>
+  {{- partial "theme/loader.html" -}}
+</div>

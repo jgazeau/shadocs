@@ -3,7 +3,7 @@ describe('for: jsoneditor shortcode', () => {
     cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_JSONEDITOR_PATH'));
   });
   it('five jsoneditor should be displayed', () => {
-    cy.get('#content .sc-jsoneditor-wrapper > .sc-jsoneditor-container').should(
+    cy.get('#content .sc-jsoneditor-wrapper .sc-jsoneditor-container').should(
       'have.length',
       5
     );
@@ -33,45 +33,55 @@ describe('for: jsoneditor shortcode', () => {
     const path = require('path');
     cy.get('.sc-jsoneditor-wrapper .sc-jsoneditor-action-wrapper .sc-jsoneditor-download-button')
       .first()
-      .click({ force: true })
-      .then(($jsoneditorLink) => {
-        const fileName = $jsoneditorLink[0].download;
-        cy.readFile(
-          path.join(Cypress.config('downloadsFolder'), fileName)
-        ).then((fileContent) => {
-          cy.fixture('jsoneditor/example.json', 'utf8').should(
-            'deep.equal',
-            fileContent
-          );
-        });
+      .then(($btn) => {
+        cy.clickWithoutDownload($btn);
+        cy.wrap($btn)
+          .should('have.attr', 'href')
+          .then((blobUrl) => {
+            cy.window().then((win) => {
+              return win.fetch(blobUrl).then((response) => response.text());
+            }).then((text) => {
+              cy.fixture('jsoneditor/example.json', 'utf8').then((expected) => {
+                expect(JSON.parse(text)).to.deep.equal(JSON.parse(expected));
+              });
+            });
+          });
       });
   });
   it('copy link should copy jsoneditor with specific post process', { browser: '!firefox', defaultCommandTimeout: 10000 }, () => {
     cy.allowClipBoardAndFocus();
-    cy.get('.sc-jsoneditor-wrapper .sc-jsoneditor-container[post-process-function]~.sc-jsoneditor-action-wrapper .sc-jsoneditor-copy-button')
+    cy.get('.sc-jsoneditor-wrapper .sc-jsoneditor-container[post-process-function] .sc-jsoneditor-action-wrapper .sc-jsoneditor-copy-button')
       .first()
       .click({ force: true });
-    cy.assertJsonValueFromClipboard('An example post process JSON');
+    cy.assertJsonValueFromClipboard('"An example post process JSON"');
   });
   it('export link should export jsoneditor with specific post process', { browser: '!firefox', defaultCommandTimeout: 10000 }, () => {
     const path = require('path');
-    cy.get('.sc-jsoneditor-wrapper .sc-jsoneditor-container[post-process-function]~.sc-jsoneditor-action-wrapper .sc-jsoneditor-download-button')
+    cy.get('.sc-jsoneditor-wrapper .sc-jsoneditor-container[post-process-function] .sc-jsoneditor-action-wrapper .sc-jsoneditor-download-button')
       .first()
-      .click({ force: true })
-      .then(($jsoneditorLink) => {
-        const fileName = $jsoneditorLink[0].download;
-        cy
-          .readFile(path.join(Cypress.config('downloadsFolder'), fileName))
-          .should('equal','An example post process JSON');
+      .then(($btn) => {
+        cy.clickWithoutDownload($btn);
+        cy.wrap($btn)
+          .should('have.attr', 'href')
+          .then((blobUrl) => {
+            cy.window().then((win) => {
+              return win.fetch(blobUrl).then((response) => response.text());
+            }).then((text) => {
+              expect(text).to.equal('"An example post process JSON"');
+            });
+          });
       });
   });
   it('export link should export jsoneditor with specific filename', { browser: '!firefox', defaultCommandTimeout: 10000 }, () => {
-    cy.get('.sc-jsoneditor-wrapper .sc-jsoneditor-container[filename-to-download-function]~.sc-jsoneditor-action-wrapper .sc-jsoneditor-download-button')
+    cy.get('.sc-jsoneditor-wrapper .sc-jsoneditor-container[filename-to-download-function] .sc-jsoneditor-action-wrapper .sc-jsoneditor-download-button')
       .first()
-      .click({ force: true })
-      .then(($jsoneditorLink) => {
-        const fileName = $jsoneditorLink[0].download;
-        expect(fileName).to.equal('exampleFile.json');
+      .then(($btn) => {
+        cy.clickWithoutDownload($btn);
+        cy.wrap($btn)
+          .should('have.attr', 'download')
+          .then((fileName) => {
+            expect(fileName).to.equal('exampleFile.json');
+          });
       });
   });
 });

@@ -6,16 +6,14 @@ import { closeModals, isFocusable } from './modules/helpers.min.js';
 window.scShowInfo = scShowInfo;
 function scShowInfo() {
   closeModals();
-  document.getElementById('navbarInfo').classList.toggle('is-hidden', false);
+  document.getElementById('navbarInfo').classList.toggle('is-active', true);
   document.getElementById('search').blur();
 }
 // Function to display shortcuts modal
 window.scShowShortcuts = scShowShortcuts;
 function scShowShortcuts() {
   closeModals();
-  document
-    .getElementById('navbarShortcuts')
-    .classList.toggle('is-active', true);
+  document.getElementById('navbarShortcuts').classList.toggle('is-active', true);
   document.getElementById('search').blur();
 }
 // Function to go to homepage
