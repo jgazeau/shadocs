@@ -160,6 +160,12 @@ $navbar-entry-height: vars.$navbar-height - (2 * vars.$navbar-padding);
     }
   }
 }
+#search {
+  width: vars.$navbar-search-width;
+  @include bulma_mixins.touch {
+    width: vars.$navbar-search-width-touch;
+  }
+}
 #searchList {
   border-bottom: 0.25rem solid functions.smooth-color(vars.$theme-color, 20);
   border-left: 0.25rem solid functions.smooth-color(vars.$theme-color, 20);

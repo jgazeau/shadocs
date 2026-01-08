@@ -1,173 +1,143 @@
 name: Check
+
 on:
   workflow_dispatch:
   push:
-    branches:
-      - '**'
-    tags-ignore:
-      - '**'
-    paths:
-      - '**'
-env:
-  HUGO_BIN_NAME: 'hugo'
-  HUGO_CACHE_NAME: 'hugo-bin-cache'
-  HUGO_BIN_PATH: ci_hugo_bin
-  HTMLTEST_BIN_NAME: htmltest
-  HTMLTEST_CACHE_NAME: 'htmltest-bin-cache'
-  HTMLTEST_BIN_PATH: ci_htmltest_bin
-  HUGO_TESTS_VERSIONS: '0.141.0 0.145.0'
-  CYPRESS_CACHE_NAME: 'cypress-cache'
-  CYPRESS_CACHE_PATH: '~/.cache'
-  NPM_CACHE_NAME: 'npm-cache'
-  NPM_CACHE_PATH: '~/.npm'
+    branches: ["**"]
+
 jobs:
-  hugo-binaries:
-    name: Manage Hugo binaries
+  hugo-build:
+    name: Hugo build
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        hugo_version: [0.141.0, 0.154.5]
     steps:
-      - name: Manage Hugo cache key
-        run: echo ${HUGO_TESTS_VERSIONS} > ${HUGO_CACHE_NAME}
-      - name: Cache Hugo binaries
+      - name: Checkout theme repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Cache Homebrew dependencies
         uses: actions/cache@v4
         with:
-          path: ${{ env.HUGO_BIN_PATH }}
-          key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
-      - name: Add temporary binaries to PATH
-        run: echo "${HUGO_BIN_PATH}" >> ${GITHUB_PATH}
+          key: brew-${{ runner.os }}
+          path: |
+            /home/linuxbrew/.linuxbrew/
+      - name: Cache Hugo dependencies
+        uses: actions/cache@v4
+        with:
+          key: hugo-${{ runner.os }}
+          path: |
+            /home/runner/.local/bin/
+            /home/runner/.cache/hugo_cache/
       - name: Download Hugo binaries
         run: |
-          ABS_HUGO_BIN_PATH=${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}
-          for hugoVersion in ${HUGO_TESTS_VERSIONS[@]}; do
-            if [ ! -d "${ABS_HUGO_BIN_PATH}" ]; then
-              mkdir -p ${ABS_HUGO_BIN_PATH}
-            fi
-            if [ ! -f "${ABS_HUGO_BIN_PATH}/${HUGO_BIN_NAME}_${hugoVersion}" ]; then
-              printf "%70s\n" | tr ' ' '-'
-              printf "%-60s%10s\n" "-> Downloading Hugo version:" "${hugoVersion}"
-              printf "%70s\n" | tr ' ' '-'
-              HUGO_BIN="hugo_extended_${hugoVersion}_linux-amd64.tar.gz"
-              HUGO_URL_BIN="https://github.com/gohugoio/hugo/releases/download/v${hugoVersion}/${HUGO_BIN}"
-              (cd ${ABS_HUGO_BIN_PATH} && curl -sLO -H "Accept: application/octet-stream" ${HUGO_URL_BIN})
-              tar -xf ${ABS_HUGO_BIN_PATH}/${HUGO_BIN} -C ${ABS_HUGO_BIN_PATH}
-              mv ${ABS_HUGO_BIN_PATH}/${HUGO_BIN_NAME} ${ABS_HUGO_BIN_PATH}/${HUGO_BIN_NAME}_${hugoVersion}
-              cd ${GITHUB_WORKSPACE}
-              rm -f ${ABS_HUGO_BIN_PATH}/${HUGO_BIN}
-            fi
+          if [ ! -f /home/runner/.local/bin/hugo_${{ matrix.hugo_version }} ]; then
             printf "%70s\n" | tr ' ' '-'
-            ${HUGO_BIN_NAME}_${hugoVersion} version
+            printf "%-60s%10s\n" "-> Downloading Hugo version:" "${{ matrix.hugo_version }}"
             printf "%70s\n" | tr ' ' '-'
-          done
-  test-theme-hugo:
-    needs: hugo-binaries
-    name: Test theme against Hugo versions
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout theme repository
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 1
-      - name: Manage Hugo cache key
-        run: echo ${HUGO_TESTS_VERSIONS} > ${HUGO_CACHE_NAME}
-      - name: Cache Hugo binaries
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.HUGO_BIN_PATH }}
-          key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
-      - name: Add temporary binaries to PATH
-        run: echo "${HUGO_BIN_PATH}" >> ${GITHUB_PATH}
-      - name: Build theme against Hugo versions
-        run: |
-          for hugoVersion in ${HUGO_TESTS_VERSIONS[@]}; do
-            printf "%70s\n" | tr ' ' '-'
-            printf "%-60s%10s\n" "-> Checking theme against Hugo version:" "${hugoVersion}"
-            printf "%70s\n" | tr ' ' '-'
-            ${HUGO_BIN_NAME}_${hugoVersion} version
-            ${HUGO_BIN_NAME}_${hugoVersion} -s exampleSite
-          done
-  test-theme-links:
-    needs: hugo-binaries
-    name: Test theme links
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout theme repository
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 1
-      - name: Manage Hugo cache key
-        run: echo ${HUGO_TESTS_VERSIONS} > ${HUGO_CACHE_NAME}
-      - name: Cache Hugo binaries
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.HUGO_BIN_PATH }}
-          key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
-      - name: Cache Htmltest
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.HTMLTEST_BIN_PATH }}
-          key: ${{ env.HTMLTEST_CACHE_NAME }}-${{ hashFiles(format('{0}{1}{2}', env.HTMLTEST_CACHE_NAME, '/', env.HTMLTEST_BIN_NAME)) }}
-      - name: Add temporary binaries to PATH
-        run: |
-          echo "${HUGO_BIN_PATH}" >> ${GITHUB_PATH}
-          echo "${HTMLTEST_BIN_PATH}" >> ${GITHUB_PATH}
-      - name: Download Htmltest binary
-        run: |
-          ABS_HTMLTEST_BIN_PATH=${GITHUB_WORKSPACE}/${HTMLTEST_BIN_PATH}
-          if [ ! -d "${ABS_HTMLTEST_BIN_PATH}" ]; then
-            mkdir -p ${ABS_HTMLTEST_BIN_PATH}
-          fi
-          if [ ! -f "${ABS_HTMLTEST_BIN_PATH}/${HTMLTEST_BIN_NAME}" ]; then
-            printf "%70s\n" | tr ' ' '-'
-            printf "%-60s%10s\n" "-> Downloading Htmltest"
-            printf "%70s\n" | tr ' ' '-'
-            HTMLTEST_URL_BIN=$(curl -XGET -H 'authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' -s https://api.github.com/repos/wjdp/htmltest/releases/latest | jq -r '.assets[]|select(.name | test(".*_linux_amd64.tar.gz")).browser_download_url')
-            HTMLTEST_BIN=${HTMLTEST_URL_BIN##*/}
-            (cd ${ABS_HTMLTEST_BIN_PATH} && curl -sLO -H "Accept: application/octet-stream" ${HTMLTEST_URL_BIN})
-            tar -xf ${ABS_HTMLTEST_BIN_PATH}/${HTMLTEST_BIN} -C ${ABS_HTMLTEST_BIN_PATH}
-            cd ${GITHUB_WORKSPACE}
-            rm -f ${ABS_HTMLTEST_BIN_PATH}/${HTMLTEST_BIN}
+            HUGO_ARCHIVE="hugo_extended_${{ matrix.hugo_version }}_linux-amd64.tar.gz"
+            curl --create-dirs --output-dir /home/runner/.local/bin -H "Accept: application/octet-stream" -sLO "https://github.com/gohugoio/hugo/releases/download/v${{ matrix.hugo_version }}/${HUGO_ARCHIVE}"
+            tar -xf /home/runner/.local/bin/${HUGO_ARCHIVE} -C /home/runner/.local/bin
+            cp /home/runner/.local/bin/hugo /home/runner/.local/bin/hugo_${{ matrix.hugo_version }}
+            rm -f /home/runner/.local/bin/${HUGO_ARCHIVE}
+            echo "/home/runner/.local/bin" >> ${GITHUB_PATH}
           fi
           printf "%70s\n" | tr ' ' '-'
-          ${HTMLTEST_BIN_NAME} --version
+          hugo_${{ matrix.hugo_version }} version
           printf "%70s\n" | tr ' ' '-'
-      - name: Build Hugo static files
+      - name: Install dependencies
         run: |
-          mv ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}_${HUGO_TESTS_VERSIONS##* } ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}
-          hugo -s exampleSite/ -b "localhost:1313"
-      - name: Run htmltest
-        run: htmltest
-  test-theme-chrome:
-    needs: hugo-binaries
-    name: Test theme against Chrome
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          brew update
+          brew install sass/sass/sass htmltest
+          brew cleanup
+      - name: Build theme
+        run: |
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          go version
+          printf "%70s\n" | tr ' ' '-'
+          sass --version
+          printf "%70s\n" | tr ' ' '-'
+          hugo_${{ matrix.hugo_version }} version
+          printf "%70s\n" | tr ' ' '-'
+          hugo_${{ matrix.hugo_version }} -s exampleSite
+  link-check:
+    name: Link check
     runs-on: ubuntu-latest
+    needs: hugo-build
     steps:
       - name: Checkout theme repository
         uses: actions/checkout@v4
         with:
           submodules: recursive
-          fetch-depth: 1
-      - name: Manage Hugo cache key
-        run: echo ${HUGO_TESTS_VERSIONS} > ${HUGO_CACHE_NAME}
-      - name: Cache Hugo binaries
+          fetch-depth: 0
+      - name: Cache Homebrew dependencies
         uses: actions/cache@v4
         with:
-          path: ${{ env.HUGO_BIN_PATH }}
-          key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
-      - name: Cache node modules
+          fail-on-cache-miss: true
+          key: brew-${{ runner.os }}
+          path: |
+            /home/linuxbrew/.linuxbrew/
+      - name: Cache Hugo dependencies
         uses: actions/cache@v4
         with:
-          path: ${{ env.NPM_CACHE_PATH }}
-          key: ${{ runner.os }}-${{ env.NPM_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
-      - name: Cache Cypress binary
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.CYPRESS_CACHE_PATH }}
-          key: ${{ runner.os }}-${{ env.CYPRESS_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
-      - name: Add temporary binaries to PATH
-        run: echo "${HUGO_BIN_PATH}" >> ${GITHUB_PATH}
-      - name: Prepare e2e tests
+          fail-on-cache-miss: true
+          key: hugo-${{ runner.os }}
+          path: |
+            /home/runner/.local/bin/
+            /home/runner/.cache/hugo_cache/
+      - name: Check links
         run: |
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          htmltest --version
+          printf "%70s\n" | tr ' ' '-'
+          hugo -s exampleSite -b http://localhost:1313
+          printf "%70s\n" | tr ' ' '-'
+          htmltest
+  e2e:
+    name: E2E tests (${{ matrix.browser }})
+    runs-on: ubuntu-latest
+    needs: hugo-build
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chrome, firefox, edge]
+    steps:
+      - name: Checkout theme repository
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Cache Homebrew dependencies
+        uses: actions/cache@v4
+        with:
+          fail-on-cache-miss: true
+          key: brew-${{ runner.os }}
+          path: |
+            /home/linuxbrew/.linuxbrew/
+      - name: Cache Hugo dependencies
+        uses: actions/cache@v4
+        with:
+          fail-on-cache-miss: true
+          key: hugo-${{ runner.os }}
+          path: |
+            /home/runner/.local/bin/
+            /home/runner/.cache/hugo_cache/
+      - name: Cache npm
+        uses: actions/cache@v4
+        with:
+          key: npm-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          path: ~/.npm
+      - name: Cache Cypress
+        uses: actions/cache@v4
+        with:
+          key: cypress-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+          path: ~/.cache/Cypress
+      - name: Execute E2E tests (${{ matrix.browser }})
+        run: |
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           printf "%70s\n" | tr ' ' '-'
           npm ci
           printf "%70s\n" | tr ' ' '-'
@@ -179,105 +149,4 @@ jobs:
           npx cypress version --component electron
           npx cypress version --component node
           printf "%70s\n" | tr ' ' '-'
-      - name: Execute e2e tests (Chrome)
-        run: |
-          printf "%70s\n" | tr ' ' '-'
-          mv ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}_${HUGO_TESTS_VERSIONS##* } ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}
-          npm run cy:run:chrome
-          printf "%70s\n" | tr ' ' '-'
-  test-theme-firefox:
-    needs: hugo-binaries
-    name: Test theme against Firefox
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout theme repository
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 1
-      - name: Manage Hugo cache key
-        run: echo ${HUGO_TESTS_VERSIONS} > ${HUGO_CACHE_NAME}
-      - name: Cache Hugo binaries
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.HUGO_BIN_PATH }}
-          key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
-      - name: Cache node modules
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.NPM_CACHE_PATH }}
-          key: ${{ runner.os }}-${{ env.NPM_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
-      - name: Cache Cypress binary
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.CYPRESS_CACHE_PATH }}
-          key: ${{ runner.os }}-${{ env.CYPRESS_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
-      - name: Add temporary binaries to PATH
-        run: echo "${HUGO_BIN_PATH}" >> ${GITHUB_PATH}
-      - name: Prepare e2e tests
-        run: |
-          printf "%70s\n" | tr ' ' '-'
-          npm ci
-          printf "%70s\n" | tr ' ' '-'
-          npx cypress verify
-          npx cypress info
-          npx cypress version
-          npx cypress version --component package
-          npx cypress version --component binary
-          npx cypress version --component electron
-          npx cypress version --component node
-          printf "%70s\n" | tr ' ' '-'
-      - name: Execute e2e tests (Firefox)
-        run: |
-          printf "%70s\n" | tr ' ' '-'
-          mv ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}_${HUGO_TESTS_VERSIONS##* } ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}
-          npm run cy:run:firefox
-          printf "%70s\n" | tr ' ' '-'
-  test-theme-edge:
-    needs: hugo-binaries
-    name: Test theme against Edge
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout theme repository
-        uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 1
-      - name: Manage Hugo cache key
-        run: echo ${HUGO_TESTS_VERSIONS} > ${HUGO_CACHE_NAME}
-      - name: Cache Hugo binaries
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.HUGO_BIN_PATH }}
-          key: ${{ env.HUGO_CACHE_NAME }}-${{ hashFiles(format('{0}', env.HUGO_CACHE_NAME)) }}
-      - name: Cache node modules
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.NPM_CACHE_PATH }}
-          key: ${{ runner.os }}-${{ env.NPM_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
-      - name: Cache Cypress binary
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.CYPRESS_CACHE_PATH }}
-          key: ${{ runner.os }}-${{ env.CYPRESS_CACHE_NAME }}-${{ hashFiles('package-lock.json') }}
-      - name: Add temporary binaries to PATH
-        run: echo "${HUGO_BIN_PATH}" >> ${GITHUB_PATH}
-      - name: Prepare e2e tests
-        run: |
-          printf "%70s\n" | tr ' ' '-'
-          npm ci
-          printf "%70s\n" | tr ' ' '-'
-          npx cypress verify
-          npx cypress info
-          npx cypress version
-          npx cypress version --component package
-          npx cypress version --component binary
-          npx cypress version --component electron
-          npx cypress version --component node
-          printf "%70s\n" | tr ' ' '-'
-      - name: Execute e2e tests (Edge)
-        run: |
-          printf "%70s\n" | tr ' ' '-'
-          mv ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}_${HUGO_TESTS_VERSIONS##* } ${GITHUB_WORKSPACE}/${HUGO_BIN_PATH}/${HUGO_BIN_NAME}
-          npm run cy:run:edge
-          printf "%70s\n" | tr ' ' '-'
+          npm run cy:run:${{ matrix.browser }}

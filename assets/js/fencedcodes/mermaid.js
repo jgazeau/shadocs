@@ -1,7 +1,7 @@
 import {
   addElementToModal,
   displayModal,
-  getLoader,
+  getFirstAncestorByClass
 } from '../theme/modules/helpers.min.js';
 
 // VARS //
@@ -18,13 +18,12 @@ document.addEventListener('DOMContentLoaded', async function () {
 });
 // Render all mermaid graphs of the page
 async function renderMermaids() {
-  let divm = document.getElementsByClassName('language-mermaid');
+  let divm = document.getElementsByClassName('mermaid');
   for (let i = 0; i < divm.length; i++) {
-    const mermaidId = `scMermaid${i}`;
+    let mermaidWrapper = getFirstAncestorByClass(divm[i], 'mermaid-wrapper');
+    const mermaidId = `mermaid${i}`;
     const graphDefinition = divm[i].textContent;
-    divm[i].parentElement.replaceWith(
-      getLoader('sc-mermaid-wrapper', mermaidId)
-    );
+    mermaidWrapper.id = mermaidId;
     await renderMermaid(mermaidId, graphDefinition);
   }
 }
@@ -35,7 +34,7 @@ async function renderMermaid(mermaidId, graphDefinition) {
   const mermaidContainer = document.createElement('div');
   const mermaidSvgExport = document.createElement('a');
   const mermaidSvgExportIcon = document.createElement('i');
-  mermaidContainer.classList.add('sc-mermaid-container');
+  mermaidContainer.classList.add('mermaid-container', 'is-flex', 'is-justify-content-center', 'is-align-items-center');
   mermaidSvgExport.classList.add('is-action-button');
   mermaidSvgExportIcon.classList.add('fa-solid', 'fa-download');
   mermaidSvgExport.id = `${mermaidId}-export-svg`;
@@ -54,7 +53,7 @@ async function renderMermaid(mermaidId, graphDefinition) {
     URL.revokeObjectURL(mermaidSvgExport.href);
     mermaidSvgExport.href = URL.createObjectURL(svgBlob);
     mermaidSvgExport.download = mermaidId;
-    mermaidRendered.classList.toggle('sc-mermaid-svg', true);
+    mermaidRendered.classList.toggle('mermaid-svg', true);
     mermaidRendered.classList.toggle('is-modal', true);
     mermaidRendered.addEventListener('click', function (e) {
       if (!e.target.closest('a')) {

@@ -13,7 +13,7 @@ describe('for: highcharts shortcode', () => {
   });
   it(
     'highcharts should have a loader',
-    { defaultCommandTimeout: 60000 },
+    { defaultCommandTimeout: 10000 },
     () => {
       cy.get('#content .sc-highcharts-wrapper').each(($elem) => {
         cy.get($elem)
@@ -24,7 +24,7 @@ describe('for: highcharts shortcode', () => {
   );
   it(
     'highcharts should not have a loader once loaded',
-    { defaultCommandTimeout: 60000 },
+    { defaultCommandTimeout: 10000 },
     () => {
       cy.get('#content .sc-highcharts-wrapper.loader-container').each(
         ($elem) => {

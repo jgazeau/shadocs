@@ -21,25 +21,21 @@ describe('for: openapi shortcode', () => {
     );
   });
   it('export link should export openapi', { browser: '!firefox', defaultCommandTimeout: 10000 }, () => {
-    const path = require('path');
     cy.get('.sc-openapi-iframe')
       .first()
-      .its('0.contentDocument')
-      .its('body')
+      .its('0.contentDocument.body')
       .find('.information-container .link')
       .first()
-      .click({ force: true })
-      .then(($openapiLink) => {
-        const fileName = $openapiLink[0].href.substring(
-          $openapiLink[0].href.lastIndexOf('/') + 1
-        );
-        cy.readFile(
-          path.join(Cypress.config('downloadsFolder'), fileName)
-        ).then((fileContent) => {
-          cy.fixture('openapi/example.yaml', 'utf8').should(
-            'be.equal',
-            fileContent
-          );
+      .should('have.attr', 'href')
+      .then((href) => {
+        cy.request({
+          url: href,
+          encoding: 'utf8',
+        }).then((response) => {
+          expect(response.status).to.eq(200);
+          cy.fixture('openapi/example.yaml', 'utf8').then((expected) => {
+            expect(response.body).to.eq(expected);
+          });
         });
       });
   });

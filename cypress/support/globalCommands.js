@@ -98,6 +98,10 @@ Cypress.Commands.add('assertJsonValueFromClipboard', value => {
           .catch(reject))
     )
     .then((clipboard) => {
-      return JSON.parse(clipboard);
+      return clipboard;
     }).should('deep.equal', value);
+});
+Cypress.Commands.add('clickWithoutDownload', ($elem) => {
+  $elem[0].addEventListener('click', (e) => e.preventDefault(), { once: true });
+  $elem[0].click();
 });

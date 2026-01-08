@@ -16,13 +16,10 @@ ignoreLogs             = ['warning-goldmark-raw-html']
   name = "Jordan GAZEAU"
 
 [module]
-  # uncomment line below for local development of module
-  # needs hugo v0.109.0 or higher and go 1.18 or higher
-  workspace = "hugo.work"
   [module.hugoVersion]
     extended = true
     min = '0.141.0'
-    max = '0.152.2'
+    max = '0.154.5'
   [[module.mounts]]
     source = 'static'
     target = 'static'
@@ -119,4 +116,4 @@ ignoreLogs             = ['warning-goldmark-raw-html']
     ]
   [params.versions]
     hugo_min         = "[0.141.0](https://github.com/gohugoio/hugo/releases/tag/v0.141.0)"
-    bulma            = "[0.9.4](https://github.com/jgthms/bulma/releases/tag/0.9.4)"
+    bulma            = "[1.0.4](https://github.com/jgthms/bulma/releases/tag/1.0.4)"

@@ -22,7 +22,7 @@ export const flexSearchOptions = {
     store: ['title','content','rootTitleIndex','rootTitle','rootTitleIcon','rootTitlePath','rootTitleTitle','permalink','permalinkTitle']
   }
 }
-export const overlayOptions = {
+export const overlayScrollbarOptions = {
   paddingAbsolute: true,
   overflow: {
     x: 'hidden',
@@ -32,7 +32,7 @@ export const overlayOptions = {
     theme: 'os-theme-shadocs',
     autoHideDelay: 300,
     autoHide: 'leave',
-    dragScroll: false,
+    dragScroll: true,
     clickScroll: false,
     pointers: ['mouse', 'touch', 'pen']
   }
