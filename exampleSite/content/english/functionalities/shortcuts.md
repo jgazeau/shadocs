@@ -20,10 +20,10 @@ To define a shortcut, follow this process (example with the **example** (`Maj + 
 
 1. Define the general configuration of the shortcut in the site specific configuration file (*Cf. highlighted lines below*):
 {{< snippet
-    file="templates/configuration/config.en.toml"
-    caption="config.toml ([params] section)"
+    file="templates/configuration/hugo.en.toml"
+    caption="hugo.toml ([params] section)"
     codelang="toml"
-    codeparam="linenos=inline,hl_lines=[\"23-31\"]"
+    codeparam="linenos=inline,hl_lines=[\"31-39\"]"
 />}}
 2. Define shortcut labels that will appear in the shortcut help menu (in the appropriate *i18n* translation file):
 {{< snippet

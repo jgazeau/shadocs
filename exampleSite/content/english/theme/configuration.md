@@ -14,16 +14,16 @@ To configure a Hugo website using the theme, there are three types of configurat
 
 | Type | Configuration file |
 | ---- | ------------------------ |
-| [Standard Hugo configuration](https://gohugo.io/getting-started/configuration/) | ./config.toml |
-| Specific configuration using [site variables](https://gohugo.io/variables/site/) | ./config.toml |
+| [Standard Hugo configuration](https://gohugo.io/getting-started/configuration/) | ./hugo.toml |
+| Specific configuration using [site variables](https://gohugo.io/variables/site/) | ./hugo.toml |
 | Default theme configuration | .themes/shadocs/data/themeParams.toml |
 
 # Specific configuration
 ---
 
 {{< snippet
-    file="templates/configuration/config.en.toml"
-    caption="config.toml ([params] section)"
+    file="templates/configuration/hugo.en.toml"
+    caption="hugo.toml ([params] section)"
     codelang="toml"
 />}}
 

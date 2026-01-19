@@ -42,10 +42,10 @@ Les fichiers à importer doivent obligatoirement être définis en tant qu'[asse
 Pour définir un fichier à importer il faut utliser la configuration suivante (*Cf. lignes surlignées ci-dessous*):
 
 {{< snippet
-    file="templates/configuration/config.fr.toml"
-    caption="config.toml ([params] section)"
+    file="templates/configuration/hugo.fr.toml"
+    caption="hugo.toml ([params] section)"
     codelang="toml"
-    codeparam="linenos=inline,hl_lines=[\"38-43\",\"51-67\"]"
+    codeparam="linenos=inline,hl_lines=[\"46-112\"]"
 />}}
 
 # Définition d'imports tiers pour les shortcodes
@@ -56,8 +56,8 @@ Le thème offre de plus la possibilité d'importer des librairies ou du code tie
 Pour définir un fichier à importer, associé à un shortcode, il faut utliser la configuration suivante (*Cf. lignes surlignées ci-dessous*):
 
 {{< snippet
-    file="templates/configuration/config.fr.toml"
-    caption="config.toml ([params] section)"
+    file="templates/configuration/hugo.fr.toml"
+    caption="hugo.toml ([params] section)"
     codelang="toml"
     codeparam="linenos=inline,hl_lines=[\"38-39\",\"44-49\",\"68-116\"]"
 />}}

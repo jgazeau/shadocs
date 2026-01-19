@@ -20,7 +20,7 @@ The possible values ​​of this parameter is linked to the different Hugo sort
 ---
 
 {{< snippet
-    caption="config.toml ([params] section)"
+    caption="hugo.toml ([params] section)"
     codelang="toml"
-    file="templates/configuration/config_siteorder.en.toml"
+    file="templates/configuration/hugo_siteorder.en.toml"
 />}}

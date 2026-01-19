@@ -42,10 +42,10 @@ Files to import must be defined as [Hugo assets](https://gohugo.io/hugo-pipes/in
 To define a file to import you must use the following configuration (*Cf. highlighted lines below*):
 
 {{< snippet
-    file="templates/configuration/config.en.toml"
-    caption="config.toml ([params] section)"
+    file="templates/configuration/hugo.en.toml"
+    caption="hugo.toml ([params] section)"
     codelang="toml"
-    codeparam="linenos=inline,hl_lines=[\"38-43\",\"51-67\"]"
+    codeparam="linenos=inline,hl_lines=[\"46-112\"]"
 />}}
 
 # Define third-party imports for shortcodes
@@ -56,8 +56,8 @@ The theme also offers the possibility to import libraries or third-party code as
 To define a file to import, associated with a shortcode, you must use the following configuration (*Cf. highlighted lines below*):
 
 {{< snippet
-    file="templates/configuration/config.en.toml"
-    caption="config.toml ([params] section)"
+    file="templates/configuration/hugo.en.toml"
+    caption="hugo.toml ([params] section)"
     codelang="toml"
     codeparam="linenos=inline,hl_lines=[\"38-39\",\"44-49\",\"68-116\"]"
 />}}

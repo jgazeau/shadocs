@@ -20,7 +20,7 @@ Les valeurs possibles de ce paramètre correspondent aux différentes méthodes 
 ---
 
 {{< snippet
-    caption="config.toml (section [params])"
+    caption="hugo.toml (section [params])"
     codelang="toml"
-    file="templates/configuration/config_siteorder.fr.toml"
+    file="templates/configuration/hugo_siteorder.fr.toml"
 />}}
