@@ -9,7 +9,7 @@ updates:
       include: 'scope'
     labels:
       - 'internal'
-    open-pull-requests-limit: 1
+    open-pull-requests-limit: 10
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
@@ -19,5 +19,5 @@ updates:
       include: 'scope'
     labels:
       - 'internal'
-    open-pull-requests-limit: 1
+    open-pull-requests-limit: 10
     versioning-strategy: increase
