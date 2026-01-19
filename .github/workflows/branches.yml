@@ -19,13 +19,13 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       - name: Cache Homebrew dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           key: brew-${{ runner.os }}
           path: |
             /home/linuxbrew/.linuxbrew/
       - name: Cache Hugo dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           key: hugo-${{ runner.os }}
           path: |
@@ -74,14 +74,14 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       - name: Cache Homebrew dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           fail-on-cache-miss: true
           key: brew-${{ runner.os }}
           path: |
             /home/linuxbrew/.linuxbrew/
       - name: Cache Hugo dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           fail-on-cache-miss: true
           key: hugo-${{ runner.os }}
@@ -111,14 +111,14 @@ jobs:
           submodules: recursive
           fetch-depth: 0
       - name: Cache Homebrew dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           fail-on-cache-miss: true
           key: brew-${{ runner.os }}
           path: |
             /home/linuxbrew/.linuxbrew/
       - name: Cache Hugo dependencies
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           fail-on-cache-miss: true
           key: hugo-${{ runner.os }}
@@ -126,12 +126,12 @@ jobs:
             /home/runner/.local/bin/
             /home/runner/.cache/hugo_cache/
       - name: Cache npm
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           key: npm-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
           path: ~/.npm
       - name: Cache Cypress
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           key: cypress-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
           path: ~/.cache/Cypress
