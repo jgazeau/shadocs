@@ -12,3 +12,5 @@ layouts/_default/index.json
 layouts/_default/_markup/render-heading.html
 layouts/partials/theme/sidebar-content.html
 layouts/partials/theme/taxonomy-content.html
+# Test ignores
+cypress/fixtures/*
