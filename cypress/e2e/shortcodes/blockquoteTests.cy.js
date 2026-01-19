@@ -8,7 +8,7 @@ describe('for: blockquote shortcode', () => {
   it('one blockquote should have a source', () => {
     cy.get('#content .sc-blockquote .sc-blockquote-source').should(
       'have.length',
-      1
+      1,
     );
   });
 });

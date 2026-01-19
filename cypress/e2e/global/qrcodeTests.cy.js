@@ -17,7 +17,7 @@ describe('for: QR code', () => {
     cy.get('#currentPageQrCode').then(($img) => {
       cy.fixture('qrcode/' + homeQrCode, 'base64').should(
         'be.equal',
-        $img[0].src.replace(/^data:image.+;base64,/, '')
+        $img[0].src.replace(/^data:image.+;base64,/, ''),
       );
     });
   });

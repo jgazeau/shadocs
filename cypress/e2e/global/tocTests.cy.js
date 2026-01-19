@@ -39,7 +39,7 @@ describe('for: table of contents', () => {
       .children('h1,h2,h3,h4,h5,h6')
       .each(($title) => {
         cy.get(
-          '#tocWrapper #tocContainer a[href="#' + $title[0].id + '"]'
+          '#tocWrapper #tocContainer a[href="#' + $title[0].id + '"]',
         ).should('be.visible');
       });
   });

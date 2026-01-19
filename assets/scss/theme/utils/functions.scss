@@ -1,7 +1,7 @@
-@use "sass:color";
-@use "sass:string";
-@use "sass:math";
-@use "../../bulma/sass/utilities" as bulma_utilities;
+@use 'sass:color';
+@use 'sass:string';
+@use 'sass:math';
+@use '../../bulma/sass/utilities' as bulma_utilities;
 //
 // Main
 //
@@ -25,11 +25,16 @@
   } @else {
     @return tint($color, $percent);
   }
-};
-@function str-replace($string, $search, $replace: "") {
+}
+@function str-replace($string, $search, $replace: '') {
   $index: string.index($string, $search);
   @if $index {
-    @return string.slice($string, 1, $index - 1) + $replace + str-replace(string.slice($string, $index + string.length($search)), $search, $replace);
+    @return string.slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        string.slice($string, $index + string.length($search)),
+        $search,
+        $replace
+      );
   }
   @return $string;
-};
+}

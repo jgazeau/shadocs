@@ -32,7 +32,8 @@ function renderOpenAPI(oc) {
     openapiError.remove();
   }
   const oi = document.createElement('iframe');
-  const cssRef = new URL('css/external/swagger-ui/swagger-ui.min.css', baseUrl).href;
+  const cssRef = new URL('css/external/swagger-ui/swagger-ui.min.css', baseUrl)
+    .href;
   const cssRel = 'stylesheet';
   const cssType = 'text/css';
   const oiCss = 'html,body { overflow: hidden; }';

@@ -1,4 +1,9 @@
-<nav id="navbar" class="navbar is-flex-grow-0 is-flex-shrink-1" role="navigation" aria-label="main navigation">
+<nav
+  id="navbar"
+  class="navbar is-flex-grow-0 is-flex-shrink-1"
+  role="navigation"
+  aria-label="main navigation"
+>
   <div id="navbarItemsContainer" class="navbar-brand">
     {{- partial "theme/logo.html" . -}}
     <div id="navbarItems" class="is-flex is-justify-content-space-between">
@@ -7,7 +12,10 @@
           {{- partial "theme/search.html" . -}}
         </div>
       </div>
-      <div id="navbarItemsEnd" class="is-flex is-justify-content-flex-end is-invisible">
+      <div
+        id="navbarItemsEnd"
+        class="is-flex is-justify-content-flex-end is-invisible"
+      >
         {{- $.Scratch.Set "navbarExtendIdSuffix" "" -}}
         {{- partial "theme/navbar-items.html" . -}}
         {{- $.Scratch.Set "navbarExtendIdSuffix" "Extend" -}}

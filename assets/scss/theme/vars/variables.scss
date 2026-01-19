@@ -1,6 +1,6 @@
-@use "theme_variables.scss" as theme_variables;
-@use "../utils/functions.scss" as functions;
-@use "../../bulma/sass/utilities" as bulma_utilities;
+@use 'theme_variables.scss' as theme_variables;
+@use '../utils/functions.scss' as functions;
+@use '../../bulma/sass/utilities' as bulma_utilities;
 //
 // Content
 //
@@ -50,7 +50,10 @@ $sidebar-border-color: functions.smooth-color(theme_variables.$theme-color, 20);
 $sidebar-border-width: 0.25rem;
 $sidebar-entry-padding: 0.5rem;
 $sidebar-width: 18.75rem;
-$sidebar-collapsed-width: calc(theme_variables.$theme-icon-size + (4 * $sidebar-entry-padding) + (2 * $sidebar-border-width));
+$sidebar-collapsed-width: calc(
+  theme_variables.$theme-icon-size + (4 * $sidebar-entry-padding) +
+    (2 * $sidebar-border-width)
+);
 //
 // Toc variables
 //
@@ -58,10 +61,6 @@ $toc-background-color: $content-background-color;
 $toc-collapsible-width: 1.75rem;
 $toc-width: 17.5rem;
 //////////////////////////////////////////////////////////////////////////
-
-
-
-
 
 //
 // Scrollbar variables

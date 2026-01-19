@@ -9,10 +9,10 @@ describe('for: multilingual', () => {
         const parser = new DOMParser();
         const xmlSitemapindex = parser.parseFromString(
           sitemapindex,
-          'text/xml'
+          'text/xml',
         );
         expect(xmlSitemapindex.getElementsByTagName('sitemap')).to.have.length(
-          2
+          2,
         );
       });
   });
@@ -25,25 +25,25 @@ describe('for: multilingual', () => {
           .parseFromString(sitemapindex, 'text/xml')
           .getElementsByTagName('sitemap');
         cy.request(
-          sitemaps[0].getElementsByTagName('loc')[0].childNodes[0].nodeValue
+          sitemaps[0].getElementsByTagName('loc')[0].childNodes[0].nodeValue,
         )
           .its('body')
           .then(
             (urlset) =>
               parser
                 .parseFromString(urlset, 'text/xml')
-                .getElementsByTagName('url').length
+                .getElementsByTagName('url').length,
           )
           .then((urlCount) => {
             for (let sitemap of sitemaps) {
               cy.request(
-                sitemap.getElementsByTagName('loc')[0].childNodes[0].nodeValue
+                sitemap.getElementsByTagName('loc')[0].childNodes[0].nodeValue,
               )
                 .its('body')
                 .then((urlset) =>
                   parser
                     .parseFromString(urlset, 'text/xml')
-                    .getElementsByTagName('url')
+                    .getElementsByTagName('url'),
                 )
                 .should((urlset) => {
                   expect(urlset.length).to.equal(urlCount);
@@ -51,7 +51,8 @@ describe('for: multilingual', () => {
                 .then((urlset) => {
                   for (let url of urlset) {
                     cy.request(
-                      url.getElementsByTagName('loc')[0].childNodes[0].nodeValue
+                      url.getElementsByTagName('loc')[0].childNodes[0]
+                        .nodeValue,
                     );
                   }
                 });

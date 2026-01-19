@@ -14,22 +14,22 @@ describe('for: homepage', () => {
     cy.get('#contentHome #introHome').each(($elem) => {
       cy.scrollAndClickElem($elem);
       cy.get(
-        '.introjs-tooltipReferenceLayer .introjs-tooltip ul[role=tablist] li[role=presentation]'
+        '.introjs-tooltipReferenceLayer .introjs-tooltip ul[role=tablist] li[role=presentation]',
       ).then(($bullets) => {
         for (let i = 1; i < $bullets.length; i++) {
           cy.get('.introjs-tooltipReferenceLayer .introjs-tooltip')
             .should('exist')
             .should('be.visible');
           cy.get(
-            '.introjs-tooltipReferenceLayer .introjs-button.introjs-nextbutton'
+            '.introjs-tooltipReferenceLayer .introjs-button.introjs-nextbutton',
           ).scrollAndClick();
         }
       });
       cy.get(
-        '.introjs-tooltipReferenceLayer .introjs-button.introjs-donebutton'
+        '.introjs-tooltipReferenceLayer .introjs-button.introjs-donebutton',
       ).scrollAndClick();
       cy.get('.introjs-tooltipReferenceLayer .introjs-tooltip').should(
-        'not.exist'
+        'not.exist',
       );
     });
   });

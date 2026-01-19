@@ -1,12 +1,15 @@
-@use "../vars" as vars;
-@use "mixins.scss" as mixins;
-@use "functions.scss" as functions;
-@use "../../bulma/sass/utilities" as bulma_utilities;
+@use '../vars' as vars;
+@use 'mixins.scss' as mixins;
+@use 'functions.scss' as functions;
+@use '../../bulma/sass/utilities' as bulma_utilities;
 //
 // Variables
 //
 $taxonomies-body-background-color: vars.$theme-color;
-$taxonomies-header-background-color: functions.smooth-color(vars.$theme-color, 15);
+$taxonomies-header-background-color: functions.smooth-color(
+  vars.$theme-color,
+  15
+);
 $terms-background-color: vars.$theme-color;
 $terms-padding: vars.$content-padding;
 $terms-border-width: 0.25rem;
@@ -18,11 +21,17 @@ $terms-header-pointer-size: 0.5rem;
 #taxonomyGrid {
   .message-header {
     background-color: $taxonomies-header-background-color;
-    color: functions.smooth-color(bulma_utilities.bulmaFindColorInvert($taxonomies-header-background-color), 20);
+    color: functions.smooth-color(
+      bulma_utilities.bulmaFindColorInvert($taxonomies-header-background-color),
+      20
+    );
   }
   .message-body {
     background-color: $taxonomies-body-background-color;
-    color: functions.smooth-color(bulma_utilities.bulmaFindColorInvert($taxonomies-body-background-color), 20);
+    color: functions.smooth-color(
+      bulma_utilities.bulmaFindColorInvert($taxonomies-body-background-color),
+      20
+    );
   }
 }
 .tabs-container {
@@ -73,7 +82,9 @@ $terms-header-pointer-size: 0.5rem;
             }
           }
           &.is-active {
-            color: bulma_utilities.bulmaFindColorInvert($terms-background-color);
+            color: bulma_utilities.bulmaFindColorInvert(
+              $terms-background-color
+            );
             &:before {
               background: $terms-background-color;
               height: 100%;

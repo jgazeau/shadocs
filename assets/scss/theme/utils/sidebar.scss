@@ -1,16 +1,23 @@
-@use "../vars" as vars;
-@use "mixins.scss" as mixins;
-@use "functions.scss" as functions;
-@use "../../bulma/sass/utilities" as bulma_utilities;
-@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+@use '../vars' as vars;
+@use 'mixins.scss' as mixins;
+@use 'functions.scss' as functions;
+@use '../../bulma/sass/utilities' as bulma_utilities;
+@use '../../bulma/sass/utilities/mixins.scss' as bulma_mixins;
 //
 // Variables
 //
 $sidebar-border: vars.$sidebar-border-width solid vars.$sidebar-border-color;
 $sidebar-entry-border-radius: 0.75rem;
-$sidebar-entry-height: calc(vars.$theme-icon-size + (2 * vars.$sidebar-entry-padding));
-$sidebar-entry-icon-width: calc(vars.$theme-icon-size + (2 * vars.$sidebar-entry-padding));
-$sidebar-collapsible-height: calc($sidebar-entry-height + (2 * vars.$sidebar-entry-padding) + vars.$sidebar-border-width);
+$sidebar-entry-height: calc(
+  vars.$theme-icon-size + (2 * vars.$sidebar-entry-padding)
+);
+$sidebar-entry-icon-width: calc(
+  vars.$theme-icon-size + (2 * vars.$sidebar-entry-padding)
+);
+$sidebar-collapsible-height: calc(
+  $sidebar-entry-height + (2 * vars.$sidebar-entry-padding) +
+    vars.$sidebar-border-width
+);
 //
 // Mixins
 //
@@ -80,7 +87,9 @@ $sidebar-collapsible-height: calc($sidebar-entry-height + (2 * vars.$sidebar-ent
     width: 100%;
     .card-header {
       .card-header-title {
-        color: bulma_utilities.bulmaFindColorInvert(vars.$sidebar-background-color);
+        color: bulma_utilities.bulmaFindColorInvert(
+          vars.$sidebar-background-color
+        );
         padding: vars.$sidebar-entry-padding 0;
         white-space: nowrap;
         i {
@@ -95,13 +104,18 @@ $sidebar-collapsible-height: calc($sidebar-entry-height + (2 * vars.$sidebar-ent
       }
       .card-header-icon {
         @include mixins.static-size-width($sidebar-entry-icon-width);
-        color: bulma_utilities.bulmaFindColorInvert(vars.$sidebar-background-color);
+        color: bulma_utilities.bulmaFindColorInvert(
+          vars.$sidebar-background-color
+        );
         user-select: none;
       }
     }
     &.is-sidebar-active {
       .card-header {
-        background: functions.smooth-color(bulma_utilities.bulmaFindColorInvert(vars.$sidebar-background-color), 25);
+        background: functions.smooth-color(
+          bulma_utilities.bulmaFindColorInvert(vars.$sidebar-background-color),
+          25
+        );
         .card-header-title,
         .card-header-icon {
           color: vars.$sidebar-background-color;
@@ -118,10 +132,10 @@ $sidebar-collapsible-height: calc($sidebar-entry-height + (2 * vars.$sidebar-ent
     .icon {
       &:after {
         font: var(--fa-font-solid);
-        content: "\f107";
+        content: '\f107';
       }
       &:hover:after {
-        content: "\f103";
+        content: '\f103';
       }
     }
     &.is-icon-expanded {
@@ -133,19 +147,27 @@ $sidebar-collapsible-height: calc($sidebar-entry-height + (2 * vars.$sidebar-ent
       }
     }
   }
-    @media (hover: hover) {
+  @media (hover: hover) {
     .card:not(.is-sidebar-active) {
       .card-header {
         &:not(.is-sidebar-disable):hover {
-          background: functions.smooth-color(vars.$sidebar-background-color, 15);
+          background: functions.smooth-color(
+            vars.$sidebar-background-color,
+            15
+          );
         }
       }
     }
   }
 }
 #sidebar {
-  @include mixins.static-size-height(calc(100svh - vars.$navbar-height - $sidebar-collapsible-height));
-  background: linear-gradient(vars.$sidebar-background-color, functions.smooth-color(vars.$sidebar-background-color, 5));
+  @include mixins.static-size-height(
+    calc(100svh - vars.$navbar-height - $sidebar-collapsible-height)
+  );
+  background: linear-gradient(
+    vars.$sidebar-background-color,
+    functions.smooth-color(vars.$sidebar-background-color, 5)
+  );
   border: $sidebar-border;
   .is-tree-active {
     background: functions.smooth-color(vars.$sidebar-background-color, 7.5);
@@ -158,7 +180,8 @@ $sidebar-collapsible-height: calc($sidebar-entry-height + (2 * vars.$sidebar-ent
   }
   li {
     &.is-tree-active {
-      border-radius: $sidebar-entry-border-radius $sidebar-entry-border-radius $sidebar-entry-border-radius 0;
+      border-radius: $sidebar-entry-border-radius $sidebar-entry-border-radius
+        $sidebar-entry-border-radius 0;
     }
     &.is-entries-shrinked {
       li {
@@ -175,7 +198,10 @@ $sidebar-collapsible-height: calc($sidebar-entry-height + (2 * vars.$sidebar-ent
 }
 #sidebarCollapsible {
   @include mixins.static-size-height($sidebar-collapsible-height);
-  background: linear-gradient(functions.smooth-color(vars.$sidebar-background-color, 5), vars.$sidebar-background-color);
+  background: linear-gradient(
+    functions.smooth-color(vars.$sidebar-background-color, 5),
+    vars.$sidebar-background-color
+  );
   border-bottom: $sidebar-border;
   border-left: $sidebar-border;
   border-right: $sidebar-border;

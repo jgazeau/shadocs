@@ -136,7 +136,7 @@ import {
         addResultToSearchList(
           item,
           highlightedTitle.output,
-          highlightedContent.output
+          highlightedContent.output,
         );
         isResults = true;
       }
@@ -254,7 +254,7 @@ import {
           function (match, offset, string) {
             isHighlightedResult = true;
             return '<strong>' + match + '</strong>';
-          }
+          },
         ) +
         '</span>',
     };
@@ -605,7 +605,7 @@ import {
             stringRegExp = stringRegExp.concat(
               '[',
               defaultDiacriticsRemovalMap[j].letters,
-              ']'
+              ']',
             );
             isLetterFound = true;
             break diacriticsLoop;

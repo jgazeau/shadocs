@@ -1,16 +1,22 @@
-@use "sass:map";
-@use "sass:list";
-@use "sass:string";
-@use "functions.scss" as functions;
-@use "../../bulma/sass/utilities" as bulma_utilities;
-@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+@use 'sass:map';
+@use 'sass:list';
+@use 'sass:string';
+@use 'functions.scss' as functions;
+@use '../../bulma/sass/utilities' as bulma_utilities;
+@use '../../bulma/sass/utilities/mixins.scss' as bulma_mixins;
 //
 // Main
 //
 @mixin font-face($name, $path, $weight: null, $style: null, $exts: woff2) {
   $src: null;
-  $extmods: (eot: "?", svg: "#" + functions.str-replace($name, " ", "_"));
-  $formats: (otf: "opentype", ttf: "truetype");
+  $extmods: (
+    eot: '?',
+    svg: '#' + functions.str-replace($name, ' ', '_'),
+  );
+  $formats: (
+    otf: 'opentype',
+    ttf: 'truetype',
+  );
   @each $ext in $exts {
     $extmod: $ext;
     @if map.has-key($extmods, $ext) {
@@ -20,7 +26,11 @@
     @if map.has-key($formats, $ext) {
       $extmod: map.get($formats, $ext);
     }
-    $src: list.append($src, url(string.quote($path + "." + $extmod)) format(string.quote($format)), comma);
+    $src: list.append(
+      $src,
+      url(string.quote($path + '.' + $extmod)) format(string.quote($format)),
+      comma
+    );
   }
   @font-face {
     font-family: string.quote($name);
@@ -31,16 +41,16 @@
   }
 }
 @mixin font-family($name) {
-  font-family: $name,bulma_utilities.$family-sans-serif !important;
+  font-family: $name, bulma_utilities.$family-sans-serif !important;
 }
 @mixin nested-even-content($element, $max-depth) {
   @for $i from 1 through $max-depth {
     @if ($i % 2 == 0) {
-      $selector: "";
+      $selector: '';
       @for $j from 1 through $i {
-        $selector: "#{$selector} #{$element}";
+        $selector: '#{$selector} #{$element}';
         @if ($j == 1) {
-          $selector: "#{$element}";
+          $selector: '#{$element}';
         }
       }
       #{$selector} {
@@ -52,11 +62,11 @@
 @mixin nested-odd-content($element, $max-depth) {
   @for $i from 1 through $max-depth {
     @if ($i % 2 == 1) {
-      $selector: "";
+      $selector: '';
       @for $j from 1 through $i {
-        $selector: "#{$selector} #{$element}";
+        $selector: '#{$selector} #{$element}';
         @if ($j == 1) {
-          $selector: "#{$element}";
+          $selector: '#{$element}';
         }
       }
       #{$selector} {

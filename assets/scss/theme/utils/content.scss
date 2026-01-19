@@ -1,6 +1,6 @@
-@use "../vars" as vars;
-@use "mixins.scss" as mixins;
-@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+@use '../vars' as vars;
+@use 'mixins.scss' as mixins;
+@use '../../bulma/sass/utilities/mixins.scss' as bulma_mixins;
 //
 // Main
 //
@@ -17,11 +17,15 @@
   overflow-y: auto;
   &.has-toc {
     #content {
-      @include mixins.static-size-width(calc(100% - vars.$toc-width - vars.$toc-collapsible-width));
+      @include mixins.static-size-width(
+        calc(100% - vars.$toc-width - vars.$toc-collapsible-width)
+      );
     }
     &.is-toc-collapsed {
       #content {
-        @include mixins.static-size-width(calc(100% - vars.$toc-collapsible-width));
+        @include mixins.static-size-width(
+          calc(100% - vars.$toc-collapsible-width)
+        );
       }
       #tocContainer {
         display: none !important;
@@ -35,7 +39,9 @@
     &:not(.is-toc-collapsed):not(.is-toc-uncollapsed) {
       @include bulma_mixins.touch {
         #content {
-          @include mixins.static-size-width(calc(100% - vars.$toc-collapsible-width));
+          @include mixins.static-size-width(
+            calc(100% - vars.$toc-collapsible-width)
+          );
         }
         #tocContainer {
           display: none;
@@ -49,7 +55,9 @@
     }
     @include bulma_mixins.until-widescreen {
       #content {
-        @include mixins.static-size-width(calc(100% - #{vars.$toc-collapsible-width}));
+        @include mixins.static-size-width(
+          calc(100% - #{vars.$toc-collapsible-width})
+        );
       }
     }
   }
@@ -64,7 +72,7 @@
     @include mixins.static-size-width(100%);
     position: relative;
     @include bulma_mixins.mobile {
-      padding: vars.$content-padding
+      padding: vars.$content-padding;
     }
     @include bulma_mixins.tablet {
       padding: vars.$content-padding calc(4 * vars.$content-padding);

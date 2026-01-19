@@ -3,7 +3,7 @@ name: Check
 on:
   workflow_dispatch:
   push:
-    branches: ["**"]
+    branches: ['**']
 
 jobs:
   hugo-build:

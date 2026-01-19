@@ -8,13 +8,17 @@ describe('for: asyncapi shortcode', () => {
   it('asyncapi should have a loader', () => {
     cy.get('#content .sc-asyncapi-wrapper').should(
       'have.class',
-      'loader-container'
+      'loader-container',
     );
   });
-  it('asyncapi should not have a loader once loaded', { defaultCommandTimeout: 10000 }, () => {
-    cy.get('#content .sc-asyncapi-wrapper.loader-container').should(
-      'not.have.class',
-      'is-loading'
-    );
-  });
+  it(
+    'asyncapi should not have a loader once loaded',
+    { defaultCommandTimeout: 10000 },
+    () => {
+      cy.get('#content .sc-asyncapi-wrapper.loader-container').should(
+        'not.have.class',
+        'is-loading',
+      );
+    },
+  );
 });

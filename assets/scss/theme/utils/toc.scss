@@ -1,13 +1,16 @@
-@use "../vars" as vars;
-@use "mixins.scss" as mixins;
-@use "functions.scss" as functions;
-@use "../../bulma/sass/utilities" as bulma_utilities;
-@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+@use '../vars' as vars;
+@use 'mixins.scss' as mixins;
+@use 'functions.scss' as functions;
+@use '../../bulma/sass/utilities' as bulma_utilities;
+@use '../../bulma/sass/utilities/mixins.scss' as bulma_mixins;
 //
 // Variables
 //
 $toc-border-width: 0.125rem;
-$toc-color: functions.smooth-color(bulma_utilities.bulmaFindColorInvert(vars.$toc-background-color), 60);
+$toc-color: functions.smooth-color(
+  bulma_utilities.bulmaFindColorInvert(vars.$toc-background-color),
+  60
+);
 $toc-font-size: 0.875rem;
 $toc-padding: 0.5rem;
 $toc-taxonomy-background-color: functions.smooth-color(vars.$theme-color, 15);
@@ -97,13 +100,15 @@ $toc-taxonomy-background-color: functions.smooth-color(vars.$theme-color, 15);
                 }
               }
               &:after {
-                content: "\f060";
+                content: '\f060';
                 display: inline-block;
                 font: var(--fa-font-solid);
                 margin: 0 $toc-padding;
                 opacity: 0;
                 transform: translateX(0.5rem);
-                transition: transform 0.3s, opacity 0.2s;
+                transition:
+                  transform 0.3s,
+                  opacity 0.2s;
               }
               &:hover:after {
                 opacity: 1;
@@ -131,7 +136,9 @@ $toc-taxonomy-background-color: functions.smooth-color(vars.$theme-color, 15);
         }
         &:hover {
           background: $toc-taxonomy-background-color;
-          color: bulma_utilities.bulmaFindColorInvert($toc-taxonomy-background-color);
+          color: bulma_utilities.bulmaFindColorInvert(
+            $toc-taxonomy-background-color
+          );
         }
       }
     }

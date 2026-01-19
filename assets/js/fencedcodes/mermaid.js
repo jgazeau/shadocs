@@ -1,7 +1,7 @@
 import {
   addElementToModal,
   displayModal,
-  getFirstAncestorByClass
+  getFirstAncestorByClass,
 } from '../theme/modules/helpers.min.js';
 
 // VARS //
@@ -34,7 +34,12 @@ async function renderMermaid(mermaidId, graphDefinition) {
   const mermaidContainer = document.createElement('div');
   const mermaidSvgExport = document.createElement('a');
   const mermaidSvgExportIcon = document.createElement('i');
-  mermaidContainer.classList.add('mermaid-container', 'is-flex', 'is-justify-content-center', 'is-align-items-center');
+  mermaidContainer.classList.add(
+    'mermaid-container',
+    'is-flex',
+    'is-justify-content-center',
+    'is-align-items-center',
+  );
   mermaidSvgExport.classList.add('is-action-button');
   mermaidSvgExportIcon.classList.add('fa-solid', 'fa-download');
   mermaidSvgExport.id = `${mermaidId}-export-svg`;

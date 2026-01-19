@@ -81,9 +81,7 @@ export function addElementToModal(el) {
 }
 // Display modal container
 export function displayModal() {
-  document
-    .getElementById('modalContainer')
-    .classList.toggle('is-active', true);
+  document.getElementById('modalContainer').classList.toggle('is-active', true);
 }
 // Check if an element is in the viewport
 export function isInViewport(e) {
@@ -345,13 +343,13 @@ export function toggleSidebarEntries(force) {
 export function manageNavbarMenu() {
   const navbarExtendWidth = document.getElementById('navbarExtend').offsetWidth;
   const navbarLogoWidth = document.getElementById(
-    'globalLogoContainer'
+    'globalLogoContainer',
   ).offsetWidth;
   const searchWidth = document.getElementById('searchContainer').offsetWidth;
   const maxLength = document.body.clientWidth - navbarLogoWidth - searchWidth;
   const navbarItems = document.getElementById('navbarItemsEnd').children;
   const navbarExtendItems = document.getElementById(
-    'navbarExtendItemsWrapper'
+    'navbarExtendItemsWrapper',
   ).children;
   let tempLength = navbarExtendWidth;
   for (let i = 0; i < navbarItems.length - 1; i++) {
@@ -385,11 +383,7 @@ export function getLoader(wrapperClass, wrapperId) {
   const dots = document.createElement('div');
   const dot = document.createElement('div');
   container.id = wrapperId;
-  container.classList.add(
-    'loader-container',
-    'is-loading',
-    wrapperClass
-  );
+  container.classList.add('loader-container', 'is-loading', wrapperClass);
   loader.classList.add('loader-wrapper');
   title.classList.add('loader-title');
   title.innerHTML = loaderLabel;

@@ -1,6 +1,6 @@
-@use "../vars" as vars;
-@use "functions.scss" as functions;
-@use "../../bulma/sass/utilities" as bulma_utilities;
+@use '../vars' as vars;
+@use 'functions.scss' as functions;
+@use '../../bulma/sass/utilities' as bulma_utilities;
 //
 // Variables
 //
@@ -17,11 +17,17 @@ $modal-header-background-color: functions.smooth-color(vars.$theme-color, 15);
 .modal-content {
   .message-header {
     background-color: $modal-header-background-color;
-    color: functions.smooth-color(bulma_utilities.bulmaFindColorInvert($modal-header-background-color), 20);
+    color: functions.smooth-color(
+      bulma_utilities.bulmaFindColorInvert($modal-header-background-color),
+      20
+    );
   }
   .message-body {
     background-color: $modal-body-background-color;
-    color: functions.smooth-color(bulma_utilities.bulmaFindColorInvert($modal-body-background-color), 20);
+    color: functions.smooth-color(
+      bulma_utilities.bulmaFindColorInvert($modal-body-background-color),
+      20
+    );
     .shortcut-entry {
       flex-basis: 100%;
       .shortcut-keys,

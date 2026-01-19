@@ -25,7 +25,9 @@
         {{- if gt (len $taxonomy) 0 -}}
           {{- $.Scratch.Set "taxonomyUrl" (urls.JoinPath (.Site.BaseURL | relLangURL) ($taxonomyname | urlize) "/") -}}
           {{- if eq $.Page.RelPermalink ($.Scratch.Get "taxonomyUrl") -}}
-            <div class="dropdown-item is-selected is-flex is-align-items-center has-text-weight-bold">
+            <div
+              class="dropdown-item is-selected is-flex is-align-items-center has-text-weight-bold"
+            >
               {{- with $.Site.Params.taxonomies -}}
                 {{- with (index . $taxonomyname).icon -}}
                   <i class="{{- . -}}"></i>

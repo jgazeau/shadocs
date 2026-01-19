@@ -13,29 +13,29 @@ describe('for: treeview shortcode', () => {
   it('one treeview with warning alert should be displayed', () => {
     cy.get('#content .sc-treeview .notification.is-warning').should(
       'have.length',
-      1
+      1,
     );
   });
   it('one graph treeview should be displayed', () => {
     cy.get('#content .sc-treeview > .sc-treeview-graph').should(
       'have.length',
-      1
+      1,
     );
   });
   it('three tree treeviews should be displayed', () => {
     cy.get('#content .sc-treeview > .sc-treeview-tree').should(
       'have.length',
-      3
+      3,
     );
   });
   it('one treeview should be fully collapsed by default', () => {
     cy.get(
-      '#content .sc-treeview > .sc-treeview-tree > .sc-treeview-coll.is-collapsed'
+      '#content .sc-treeview > .sc-treeview-tree > .sc-treeview-coll.is-collapsed',
     ).should('have.length', 1);
   });
   it('uncollapsed treeview colls should collapse', () => {
     cy.get(
-      '#content .sc-treeview > .sc-treeview-tree > .sc-treeview-coll:not(.is-collapsed) .sc-treeview-coll-trigger'
+      '#content .sc-treeview > .sc-treeview-tree > .sc-treeview-coll:not(.is-collapsed) .sc-treeview-coll-trigger',
     ).each(($elem) => {
       cy.scrollAndClickElem($elem)
         .closest('.sc-treeview-coll')
@@ -44,7 +44,7 @@ describe('for: treeview shortcode', () => {
   });
   it('collapsed treeview colls should uncollapse', () => {
     cy.get(
-      '#content .sc-treeview > .sc-treeview-tree > .sc-treeview-coll.is-collapsed .sc-treeview-coll-trigger'
+      '#content .sc-treeview > .sc-treeview-tree > .sc-treeview-coll.is-collapsed .sc-treeview-coll-trigger',
     ).each(($elem) => {
       cy.scrollAndClickElem($elem)
         .closest('.sc-treeview-coll')

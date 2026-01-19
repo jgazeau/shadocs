@@ -1,6 +1,4 @@
-import {
-  getFirstAncestorByClass
-} from '../theme/modules/helpers.min.js';
+import { getFirstAncestorByClass } from '../theme/modules/helpers.min.js';
 
 // VARS //
 // MAIN //
@@ -16,8 +14,8 @@ function initBulmaToast() {
     pauseOnHover: true,
     position: 'bottom-right',
     type: 'is-danger',
-    extraClasses: 'sc-jsoneditor-toast-error'
-  })
+    extraClasses: 'sc-jsoneditor-toast-error',
+  });
 }
 function renderAllJsoneditor() {
   let divj = document.getElementsByClassName('sc-jsoneditor-container');
@@ -26,18 +24,25 @@ function renderAllJsoneditor() {
   }
 }
 function renderJsoneditor(jc) {
-  const jsoneditorActionWrapper = document.getElementById(jc.id + '-action-wrapper');
+  const jsoneditorActionWrapper = document.getElementById(
+    jc.id + '-action-wrapper',
+  );
   const jsoneditorCopy = document.getElementById(jc.id + '-copy');
   const jsoneditorDownload = document.getElementById(jc.id + '-download');
   const jsoneditorErrorId = jc.id + '-error';
   const jsoneditorError = document.getElementById(jsoneditorErrorId);
   const jsonPostAnalyzeFunction = jc.getAttribute('post-analyze-function');
   const jsonPostProcessFunction = jc.getAttribute('post-process-function');
-  const filenameToDownloadFunction = jc.getAttribute('filename-to-download-function');
+  const filenameToDownloadFunction = jc.getAttribute(
+    'filename-to-download-function',
+  );
   if (jsoneditorError) {
     jsoneditorError.remove();
   }
-  const jsoneditorWrapper = getFirstAncestorByClass(jc, 'sc-jsoneditor-wrapper');
+  const jsoneditorWrapper = getFirstAncestorByClass(
+    jc,
+    'sc-jsoneditor-wrapper',
+  );
   const jsoneditorPromise = new Promise((resolve) => resolve());
   jsoneditorPromise
     .then(() => {
@@ -56,21 +61,42 @@ function renderJsoneditor(jc) {
         prompt_before_delete: false,
         remove_button_labels: true,
         schema: schema,
-        theme: "barebones"
+        theme: 'barebones',
       });
       jsoneditorCopy.addEventListener('click', () => {
         if (validateSchema(jsonPostAnalyzeFunction, jsoneditor, jc.id)) {
-          jsoneditorCopy.setAttribute('title-after', codeCopyAfter)
-          navigator.clipboard.writeText(JSON.stringify(maybePostProcessJson(jsonPostProcessFunction, jsoneditor), null, 2));
+          jsoneditorCopy.setAttribute('title-after', codeCopyAfter);
+          navigator.clipboard.writeText(
+            JSON.stringify(
+              maybePostProcessJson(jsonPostProcessFunction, jsoneditor),
+              null,
+              2,
+            ),
+          );
         } else {
-          jsoneditorCopy.removeAttribute('title-after', codeCopyAfter)
+          jsoneditorCopy.removeAttribute('title-after', codeCopyAfter);
         }
       });
       jsoneditorDownload.addEventListener('click', () => {
         if (validateSchema(jsonPostAnalyzeFunction, jsoneditor, jc.id)) {
           URL.revokeObjectURL(jsoneditorDownload.href);
-          jsoneditorDownload.href = URL.createObjectURL(new Blob([JSON.stringify(maybePostProcessJson(jsonPostProcessFunction, jsoneditor), null, 2)], { type: 'application/json' }));
-          jsoneditorDownload.download = getFilenameToDownload(filenameToDownloadFunction, jsoneditor, jc.id);
+          jsoneditorDownload.href = URL.createObjectURL(
+            new Blob(
+              [
+                JSON.stringify(
+                  maybePostProcessJson(jsonPostProcessFunction, jsoneditor),
+                  null,
+                  2,
+                ),
+              ],
+              { type: 'application/json' },
+            ),
+          );
+          jsoneditorDownload.download = getFilenameToDownload(
+            filenameToDownloadFunction,
+            jsoneditor,
+            jc.id,
+          );
         } else {
           jsoneditorDownload.removeAttribute('href');
           jsoneditorDownload.removeAttribute('download');
@@ -99,20 +125,24 @@ function getJsonSchema(url) {
   if (xhr.status === 200) {
     return xhr.responseText;
   } else {
-    throw new Error(`Error getting content at ${url} ${xhr.status} ${xhr.statusText}`);
+    throw new Error(
+      `Error getting content at ${url} ${xhr.status} ${xhr.statusText}`,
+    );
   }
 }
 function validateSchema(jsonPostAnalyzeFunction, jsoneditor, containerId) {
   let errors = jsoneditor.validate();
   if (typeof window[jsonPostAnalyzeFunction] === 'function') {
-    errors = errors.concat(window[jsonPostAnalyzeFunction](jsoneditor.schema, jsoneditor.getValue()));
+    errors = errors.concat(
+      window[jsonPostAnalyzeFunction](jsoneditor.schema, jsoneditor.getValue()),
+    );
   }
   if (errors.length) {
     errors.forEach((error) =>
       bulmaToast.toast({
         message: `${jsoneditorValidateError}: ${error.message} at \'${error.path}\'`,
         appendTo: document.getElementById(containerId),
-      })
+      }),
     );
     return false;
   } else {
@@ -121,15 +151,27 @@ function validateSchema(jsonPostAnalyzeFunction, jsoneditor, containerId) {
 }
 function maybePostProcessJson(jsonPostProcessFunction, jsoneditor) {
   if (typeof window[jsonPostProcessFunction] === 'function') {
-    return window[jsonPostProcessFunction](jsoneditor.schema, jsoneditor.getValue());
+    return window[jsonPostProcessFunction](
+      jsoneditor.schema,
+      jsoneditor.getValue(),
+    );
   } else {
     return jsoneditor.getValue();
   }
 }
-function getFilenameToDownload(filenameToDownloadFunction, jsoneditor, jsoneditorContainerId) {
+function getFilenameToDownload(
+  filenameToDownloadFunction,
+  jsoneditor,
+  jsoneditorContainerId,
+) {
   if (typeof window[filenameToDownloadFunction] === 'function') {
-    return window[filenameToDownloadFunction](jsoneditor.schema, jsoneditor.getValue());
+    return window[filenameToDownloadFunction](
+      jsoneditor.schema,
+      jsoneditor.getValue(),
+    );
   } else {
-    return (jsoneditor.schema.title) ?  `${jsoneditor.schema.title}.json` : `${jsoneditorContainerId}.json`
+    return jsoneditor.schema.title
+      ? `${jsoneditor.schema.title}.json`
+      : `${jsoneditorContainerId}.json`;
   }
 }

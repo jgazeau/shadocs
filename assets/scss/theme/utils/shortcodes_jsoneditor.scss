@@ -1,7 +1,7 @@
-@use "../vars" as vars;
-@use "mixins.scss" as mixins;
-@use "functions.scss" as functions;
-@use "../../bulma/sass/utilities" as bulma_utilities;
+@use '../vars' as vars;
+@use 'mixins.scss' as mixins;
+@use 'functions.scss' as functions;
+@use '../../bulma/sass/utilities' as bulma_utilities;
 //
 // Variables
 //
@@ -38,18 +38,21 @@ $jsoneditor-content-padding: 0.5rem;
       }
     }
   }
-  div[data-schematype="object"].je-object__container {
+  div[data-schematype='object'].je-object__container {
     > .je-indented-panel {
       padding: 0;
     }
   }
-  div[data-schematype="array"] {
+  div[data-schematype='array'] {
     > .je-indented-panel {
       div[data-schematype].je-indented-panel {
         margin-bottom: 0.5rem;
         &:focus-within,
         &:hover {
-          background: functions.smooth-color(vars.$content-background-color, 15);
+          background: functions.smooth-color(
+            vars.$content-background-color,
+            15
+          );
         }
       }
     }
@@ -83,7 +86,7 @@ $jsoneditor-content-padding: 0.5rem;
       color: bulma_utilities.bulmaFindColorInvert(vars.$theme-color);
       padding: 0.5rem 0.75rem;
       &:before {
-        content: "\f0c9";
+        content: '\f0c9';
         font: var(--fa-font-solid);
         padding-right: 0.5rem;
       }
@@ -94,7 +97,7 @@ $jsoneditor-content-padding: 0.5rem;
     }
     &.je-object__title {
       button:before {
-        content: "\f1b2";
+        content: '\f1b2';
       }
     }
   }
@@ -145,7 +148,7 @@ $jsoneditor-content-padding: 0.5rem;
     line-height: 2rem;
     margin: 0 0 $jsoneditor-content-padding 0 !important;
     &:after {
-      content: ":";
+      content: ':';
     }
   }
   p {
@@ -156,7 +159,7 @@ $jsoneditor-content-padding: 0.5rem;
     font-style: italic;
     margin: $jsoneditor-content-padding 0 0 0 !important;
   }
-  p[style="color: red;"] {
+  p[style='color: red;'] {
     font-style: italic;
   }
   input,
@@ -171,10 +174,11 @@ $jsoneditor-content-padding: 0.5rem;
     &:hover,
     &:focus,
     &:focus-visible {
-      border: 1px solid functions.smooth-color(vars.$content-background-color, 50);
+      border: 1px solid
+        functions.smooth-color(vars.$content-background-color, 50);
     }
   }
-  div:has( > div.sc-jsoneditor-toast-error) {
+  div:has(> div.sc-jsoneditor-toast-error) {
     cursor: pointer;
     justify-content: flex-end;
     max-height: 100%;
@@ -188,7 +192,13 @@ $jsoneditor-content-padding: 0.5rem;
   padding: var(--bulma-notification-padding) !important;
 }
 .sc-jsoneditor-action-wrapper {
-  border-image: linear-gradient(to right,transparent 25%, functions.smooth-color(vars.$theme-color, 0) 50%, transparent 75%) 1 0 0 0;
+  border-image: linear-gradient(
+      to right,
+      transparent 25%,
+      functions.smooth-color(vars.$theme-color, 0) 50%,
+      transparent 75%
+    )
+    1 0 0 0;
   border-top: 1px solid;
   margin-top: $jsoneditor-content-padding;
   padding-top: $jsoneditor-content-padding;

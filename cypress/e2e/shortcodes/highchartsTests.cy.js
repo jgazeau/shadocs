@@ -8,7 +8,7 @@ describe('for: highcharts shortcode', () => {
   it('four highcharts should be displayed', () => {
     cy.get('#content .sc-highcharts-wrapper > .sc-highcharts-container').should(
       'have.length',
-      4
+      4,
     );
   });
   it(
@@ -16,11 +16,9 @@ describe('for: highcharts shortcode', () => {
     { defaultCommandTimeout: 10000 },
     () => {
       cy.get('#content .sc-highcharts-wrapper').each(($elem) => {
-        cy.get($elem)
-          .scrollIntoView()
-          .should('have.class', 'loader-container');
+        cy.get($elem).scrollIntoView().should('have.class', 'loader-container');
       });
-    }
+    },
   );
   it(
     'highcharts should not have a loader once loaded',
@@ -29,8 +27,8 @@ describe('for: highcharts shortcode', () => {
       cy.get('#content .sc-highcharts-wrapper.loader-container').each(
         ($elem) => {
           cy.get($elem).scrollIntoView().should('not.have.class', 'is-loading');
-        }
+        },
       );
-    }
+    },
   );
 });

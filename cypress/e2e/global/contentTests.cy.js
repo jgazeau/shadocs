@@ -24,7 +24,7 @@ describe('for: content', () => {
           Cypress.env('HOMEPAGE_URL') +
             Cypress.env('FUNC_TOC_PATH') +
             '#' +
-            encodeURI($title[0].id).toLowerCase()
+            encodeURI($title[0].id).toLowerCase(),
         );
       });
   });

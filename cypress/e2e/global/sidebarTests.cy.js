@@ -7,7 +7,7 @@ describe('for: sidebar', () => {
       cy.viewportDesktop('min');
       cy.get('#sidebarContainer').should(
         'have.class',
-        'is-sidebar-uncollapsed'
+        'is-sidebar-uncollapsed',
       );
     });
     it('sidebar should be collapsed by default on touch', () => {
@@ -72,7 +72,7 @@ describe('for: sidebar', () => {
       cy.get('#sidebarUncollapse').click();
       cy.get('#sidebarContainer').should(
         'have.class',
-        'is-sidebar-uncollapsed'
+        'is-sidebar-uncollapsed',
       );
     });
     it('menu item should appear on hover', () => {
@@ -87,7 +87,7 @@ describe('for: sidebar', () => {
       cy.viewportDesktop('min');
       cy.get('#sidebarContainer').should(
         'have.class',
-        'is-sidebar-uncollapsed'
+        'is-sidebar-uncollapsed',
       );
     });
   });

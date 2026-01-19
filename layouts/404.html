@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <script type='text/javascript'>
     let text404 = '{{- with .Site.Params.text404 -}}{{- . -}}{{- else -}}404{{- end -}}';
@@ -26,7 +26,10 @@
           {{- "images/404.gif" | relURL -}}
         {{- end -}}"
       />
-      <a id="footer404" href="{{- urls.JoinPath (.Site.BaseURL | relLangURL) "/" -}}">
+      <a
+        id="footer404"
+        href="{{- urls.JoinPath (.Site.BaseURL | relLangURL) "/" -}}"
+      >
         {{- i18n "404_footer" -}}
       </a>
     </div>

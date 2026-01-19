@@ -1,4 +1,8 @@
-<div class="navbar-item{{ with not (default true $.Site.Params.navbarPrintEntry ) }} is-hidden{{ end }}">
+<div
+  class="navbar-item{{ with not (default true $.Site.Params.navbarPrintEntry ) }}
+    is-hidden
+  {{ end }}"
+>
   <a
     id="printButton{{- $.Scratch.Get "navbarExtendIdSuffix" -}}"
     class="button navbar-item-standard"
@@ -9,7 +13,11 @@
     </span>
   </a>
 </div>
-<div class="navbar-item{{ with not (default true $.Site.Params.navbarQRCodeEntry ) }} is-hidden{{ end }}">
+<div
+  class="navbar-item{{ with not (default true $.Site.Params.navbarQRCodeEntry ) }}
+    is-hidden
+  {{ end }}"
+>
   <a
     id="qrCodeButton{{- $.Scratch.Get "navbarExtendIdSuffix" -}}"
     class="button navbar-item-standard"
@@ -20,7 +28,11 @@
     </span>
   </a>
 </div>
-<div class="navbar-item{{ with not (default true $.Site.Params.navbarSchortcutsEntry ) }} is-hidden{{ end }}">
+<div
+  class="navbar-item{{ with not (default true $.Site.Params.navbarSchortcutsEntry ) }}
+    is-hidden
+  {{ end }}"
+>
   <a
     id="shortcutsInfo{{- $.Scratch.Get "navbarExtendIdSuffix" -}}"
     trigger="navbarShortcuts"
@@ -56,7 +68,11 @@
     {{- partial "theme/version-selector.html" $ -}}
   </div>
 {{- end -}}
-<div class="navbar-item{{ with not (default true $.Site.Params.navbarInfo ) }} is-hidden{{ end }}">
+<div
+  class="navbar-item{{ with not (default true $.Site.Params.navbarInfo ) }}
+    is-hidden
+  {{ end }}"
+>
   <a
     id="siteInfo{{- $.Scratch.Get "navbarExtendIdSuffix" -}}"
     trigger="navbarInfo"

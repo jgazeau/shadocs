@@ -6,13 +6,13 @@ Cypress.Commands.add('viewportWidescreen', ($size) => {
     cy.viewport(
       Cypress.env('VIEWPORT_WIDESCREEN_MINWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true
+      true,
     );
   else
     cy.viewport(
       Cypress.env('VIEWPORT_WIDESCREEN_MAXWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true
+      true,
     );
 });
 Cypress.Commands.add('viewportDesktop', ($size) => {
@@ -20,13 +20,13 @@ Cypress.Commands.add('viewportDesktop', ($size) => {
     cy.viewport(
       Cypress.env('VIEWPORT_DESKTOP_MINWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true
+      true,
     );
   else
     cy.viewport(
       Cypress.env('VIEWPORT_DESKTOP_MAXWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true
+      true,
     );
 });
 Cypress.Commands.add('viewportTouch', ($size) => {
@@ -34,13 +34,13 @@ Cypress.Commands.add('viewportTouch', ($size) => {
     cy.viewport(
       Cypress.env('VIEWPORT_TOUCH_MINWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true
+      true,
     );
   else
     cy.viewport(
       Cypress.env('VIEWPORT_TOUCH_MAXWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true
+      true,
     );
 });
 Cypress.Commands.add('viewportMobile', ($size) => {
@@ -48,13 +48,13 @@ Cypress.Commands.add('viewportMobile', ($size) => {
     cy.viewport(
       Cypress.env('VIEWPORT_MOBILE_MINWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true
+      true,
     );
   else
     cy.viewport(
       Cypress.env('VIEWPORT_MOBILE_MAXWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true
+      true,
     );
 });
 Cypress.Commands.add('toggleSidebar', ($force, $noTransition) => {
@@ -87,19 +87,18 @@ Cypress.Commands.add('allowClipBoardAndFocus', () => {
   );
   cy.window().focus();
 });
-Cypress.Commands.add('assertJsonValueFromClipboard', value => {
+Cypress.Commands.add('assertJsonValueFromClipboard', (value) => {
   cy.window()
-    .then((win) =>
-      new Cypress.Promise((resolve, reject) =>
-        win.navigator
-          .clipboard
-          .readText()
-          .then(resolve)
-          .catch(reject))
+    .then(
+      (win) =>
+        new Cypress.Promise((resolve, reject) =>
+          win.navigator.clipboard.readText().then(resolve).catch(reject),
+        ),
     )
     .then((clipboard) => {
       return clipboard;
-    }).should('deep.equal', value);
+    })
+    .should('deep.equal', value);
 });
 Cypress.Commands.add('clickWithoutDownload', ($elem) => {
   $elem[0].addEventListener('click', (e) => e.preventDefault(), { once: true });

@@ -1,6 +1,6 @@
 @charset "utf-8";
-@use "vars/theme_variables.scss" as theme_variables;
-@use "../bulma/sass/utilities" as bulma_utilities with (
+@use 'vars/theme_variables.scss' as theme_variables;
+@use '../bulma/sass/utilities' as bulma_utilities with (
   $block-spacing: theme_variables.$theme-content-spacing,
   $size-1: theme_variables.$theme-h1-font-size,
   $size-2: theme_variables.$theme-h2-font-size,
@@ -8,11 +8,11 @@
   $size-4: theme_variables.$theme-h4-font-size,
   $size-5: theme_variables.$theme-h5-font-size,
   $size-6: theme_variables.$theme-h6-font-size,
-  $control-height: theme_variables.$theme-control-height,
+  $control-height: theme_variables.$theme-control-height
 );
-@use "vars" as vars;
-@use "utils";
-@use "../bulma/sass" with (
+@use 'vars' as vars;
+@use 'utils';
+@use '../bulma/sass' with (
   // CARD
   $card-background-color: transparent,
   $card-header-background-color: transparent,
@@ -25,13 +25,18 @@
   $content-blockquote-padding: 1rem 1rem,
   $content-heading-color: vars.$content-color,
   $content-table-body-last-row-cell-border-bottom-width: 1px,
-  $content-table-cell-border: solid utils.smooth-color(vars.$content-table-ends-cell-background-color, 20),
+  $content-table-cell-border: solid
+    utils.smooth-color(vars.$content-table-ends-cell-background-color, 20),
   $content-table-cell-border-width: 1px,
   $content-table-cell-padding: 0.75rem 1rem,
   $content-table-foot-cell-border-width: 1px,
-  $content-table-foot-cell-color: bulma_utilities.bulmaFindColorInvert(vars.$content-table-ends-cell-background-color),
+  $content-table-foot-cell-color: bulma_utilities.bulmaFindColorInvert(
+      vars.$content-table-ends-cell-background-color
+    ),
   $content-table-head-cell-border-width: 1px,
-  $content-table-head-cell-color: bulma_utilities.bulmaFindColorInvert(vars.$content-table-ends-cell-background-color),
+  $content-table-head-cell-color: bulma_utilities.bulmaFindColorInvert(
+      vars.$content-table-ends-cell-background-color
+    ),
   // GLOBAL
   $strong-color: vars.$content-color,
   $strong-weight: vars.$content-strong-weight,
@@ -49,14 +54,45 @@
   $input-color-l: 100%,
   $input-background-l: vars.$navbar-search-input-color-l,
   $input-shadow: none,
-  $input-placeholder-color: utils.smooth-color(bulma_utilities.bulmaFindColorInvert(hsl(vars.$navbar-search-input-color-h, vars.$navbar-search-input-color-s, vars.$navbar-search-input-color-l)), 30),
+  $input-placeholder-color: utils.smooth-color(
+      bulma_utilities.bulmaFindColorInvert(
+        hsl(
+          vars.$navbar-search-input-color-h,
+          vars.$navbar-search-input-color-s,
+          vars.$navbar-search-input-color-l
+        )
+      ),
+      30
+    ),
   $input-focus-h: vars.$navbar-search-input-color-h,
   $input-focus-s: vars.$navbar-search-input-color-s,
-  $input-focus-l: vars.$navbar-search-input-color-l + vars.$navbar-search-input-border-l-delta,
+  $input-focus-l: vars.$navbar-search-input-color-l +
+    vars.$navbar-search-input-border-l-delta,
   $input-focus-shadow-size: 0 0 0 0.125rem,
-  $input-icon-color: utils.smooth-color(bulma_utilities.bulmaFindColorInvert(hsl(vars.$navbar-search-input-color-h, vars.$navbar-search-input-color-s, vars.$navbar-search-input-color-l)), 30),
-  $input-icon-hover-color: bulma_utilities.bulmaFindColorInvert(hsl(vars.$navbar-search-input-color-h, vars.$navbar-search-input-color-s, vars.$navbar-search-input-color-l)),
-  $input-icon-focus-color: bulma_utilities.bulmaFindColorInvert(hsl(vars.$navbar-search-input-color-h, vars.$navbar-search-input-color-s, vars.$navbar-search-input-color-l)),
+  $input-icon-color: utils.smooth-color(
+      bulma_utilities.bulmaFindColorInvert(
+        hsl(
+          vars.$navbar-search-input-color-h,
+          vars.$navbar-search-input-color-s,
+          vars.$navbar-search-input-color-l
+        )
+      ),
+      30
+    ),
+  $input-icon-hover-color: bulma_utilities.bulmaFindColorInvert(
+      hsl(
+        vars.$navbar-search-input-color-h,
+        vars.$navbar-search-input-color-s,
+        vars.$navbar-search-input-color-l
+      )
+    ),
+  $input-icon-focus-color: bulma_utilities.bulmaFindColorInvert(
+      hsl(
+        vars.$navbar-search-input-color-h,
+        vars.$navbar-search-input-color-s,
+        vars.$navbar-search-input-color-l
+      )
+    ),
   $input-radius: 0.75rem,
   // MENU
   $menu-list-border-left: 1px solid utils.smooth-color(vars.$theme-color, 50),
@@ -77,6 +113,6 @@
   $notification-padding: 0.75rem 1rem 0.75rem 2.5rem,
   // TITLE
   $title-color: vars.$content-color,
-  $title-family: "lato",
-  $title-line-height: 1.5,
+  $title-family: 'lato',
+  $title-line-height: 1.5
 );

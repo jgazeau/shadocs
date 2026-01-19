@@ -56,7 +56,9 @@
     {{- $scratch.Set "wording" $shortcutName -}}
   {{- end -}}
   <div class="shortcut-entry is-flex">
-    <div class="shortcut-keys is-flex is-align-items-center is-justify-content-center p-2">
+    <div
+      class="shortcut-keys is-flex is-align-items-center is-justify-content-center p-2"
+    >
       {{- range $index, $keyWording := ($scratch.Get "keysWording") -}}
         {{- if ne $index 0 -}}
           <p class="p-2">+</p>
@@ -64,7 +66,9 @@
         <kbd>{{- $keyWording -}}</kbd>
       {{- end -}}
     </div>
-    <div class="shortcut-wording is-flex is-align-items-center is-justify-content-center p-2">
+    <div
+      class="shortcut-wording is-flex is-align-items-center is-justify-content-center p-2"
+    >
       <p>{{- $scratch.Get "wording" -}}</p>
     </div>
   </div>

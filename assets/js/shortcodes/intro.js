@@ -58,13 +58,13 @@ const themeCommonOptions = {
   disableInteraction: true,
 };
 const introErrorTitle = atou(
-  document.getElementById('intro-error-title').getAttribute('data-intro')
+  document.getElementById('intro-error-title').getAttribute('data-intro'),
 );
 const introError = atou(
-  document.getElementById('intro-error').getAttribute('data-intro')
+  document.getElementById('intro-error').getAttribute('data-intro'),
 );
 const introEmpty = atou(
-  document.getElementById('intro-empty').getAttribute('data-intro')
+  document.getElementById('intro-empty').getAttribute('data-intro'),
 );
 const introErrorStep = {
   showBullets: false,
@@ -90,11 +90,11 @@ for (let i = 0; i < divi.length; i++) {
   divi[i].addEventListener('click', function () {
     disableSmoothScroll();
     let introOptions = parseIntroOptions(
-      atou(divi[i].getAttribute('data-intro'))
+      atou(divi[i].getAttribute('data-intro')),
     );
     introOptions.steps = manageTriggeredSteps(
       introOptions.steps,
-      getTriggers()
+      getTriggers(),
     );
     let intro = introJs();
     intro.setOptions(themeCommonOptions);
@@ -143,7 +143,7 @@ function manageElements(input) {
       } catch {
         try {
           input.steps[i].element = Function(
-            'return ' + input.steps[i].element
+            'return ' + input.steps[i].element,
           )();
         } catch {
           introErrorStep.steps[0].intro =

@@ -18,7 +18,10 @@ var { OverlayScrollbars } = OverlayScrollbarsGlobal;
 document.addEventListener('DOMContentLoaded', function () {
   manageDefaultCollapsibleSidebar();
   //Create perfect scrollbar instances
-  OverlayScrollbars(document.getElementById('sidebar'), overlayScrollbarOptions);
+  OverlayScrollbars(
+    document.getElementById('sidebar'),
+    overlayScrollbarOptions,
+  );
   //Manage expand function for sidebar entries
   let iie = document.getElementsByClassName('is-icon-expandable');
   for (let i = 0; i < iie.length; i++) {
@@ -34,12 +37,12 @@ document.addEventListener('DOMContentLoaded', function () {
       if (e.relatedTarget !== entriesContainer) {
         let sidebarContainer = document.getElementById('sidebarContainer');
         let sidebarCurrentWidth = parseFloat(
-          getComputedStyle(sidebarContainer).getPropertyValue('width')
+          getComputedStyle(sidebarContainer).getPropertyValue('width'),
         );
         let sidebarMinimumWidth = parseFloat(
           getComputedStyle(
-            document.getElementById('sidebarMobileWrapper')
-          ).getPropertyValue('max-width')
+            document.getElementById('sidebarMobileWrapper'),
+          ).getPropertyValue('max-width'),
         );
         if (
           sidebarContainer.classList.contains('is-sidebar-collapsed') &&
@@ -50,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
           entriesContainer.classList.toggle('is-invisible', true);
           let sidebar = document.getElementById('sidebar');
           let entriesWrapper = entriesContainer.getElementsByClassName(
-            'is-sidebar-list-wrapper'
+            'is-sidebar-list-wrapper',
           )[0];
           // Scroll the sidebar to make the element fully visible
           if (!isInScrollContainer(this, sidebar)) {
@@ -62,15 +65,15 @@ document.addEventListener('DOMContentLoaded', function () {
             }
           }
           const sidebarPadding = parseFloat(
-            getComputedStyle(sidebar).getPropertyValue('padding-top')
+            getComputedStyle(sidebar).getPropertyValue('padding-top'),
           );
           const sidebarBorder = parseFloat(
-            getComputedStyle(sidebar).getPropertyValue('border-right-width')
+            getComputedStyle(sidebar).getPropertyValue('border-right-width'),
           );
           const logoBorder = parseFloat(
             getComputedStyle(
-              document.getElementById('globalLogo')
-            ).getPropertyValue('margin-bottom')
+              document.getElementById('globalLogo'),
+            ).getPropertyValue('margin-bottom'),
           );
           const sidebarTop =
             sidebarContainer.getBoundingClientRect().top - logoBorder;
@@ -94,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function () {
           entriesWrapper.style.maxHeight = entriesMaxHeight + 'px';
           OverlayScrollbars(entriesWrapper, overlayScrollbarOptions);
           manageActiveEntryScroll(
-            document.getElementById('sidebarActiveEntry')
+            document.getElementById('sidebarActiveEntry'),
           );
           entriesContainer.classList.toggle('is-invisible', false);
         }
@@ -104,7 +107,7 @@ document.addEventListener('DOMContentLoaded', function () {
       let sidebarContainer = document.getElementById('sidebarContainer');
       let entriesContainer = this.nextElementSibling;
       let entriesWrapper = entriesContainer.getElementsByClassName(
-        'is-sidebar-list-wrapper'
+        'is-sidebar-list-wrapper',
       )[0];
       if (
         sidebarContainer.classList.contains('is-sidebar-collapsed') &&
@@ -135,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
           this.style.bottom = '';
           this.style.left = '';
           this.getElementsByClassName(
-            'is-sidebar-list-wrapper'
+            'is-sidebar-list-wrapper',
           )[0].style.maxHeight = '';
         }
       }

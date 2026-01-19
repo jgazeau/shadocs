@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 new Intl.Collator([], {
                   usage: 'search',
                   sensitivity: 'base',
-                }).compare(k, keyBuffer[i]) === 0
+                }).compare(k, keyBuffer[i]) === 0,
             )
           ) {
             if (

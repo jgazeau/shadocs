@@ -16,7 +16,11 @@ describe('for: alert shortcode', () => {
   });
   it('alerts should be visible', () => {
     cy.get('#content .notification').each(($elem) => {
-      cy.get('#contentContainer').scrollTo(0, $elem[0].getBoundingClientRect().top,{ensureScrollable: false});
+      cy.get('#contentContainer').scrollTo(
+        0,
+        $elem[0].getBoundingClientRect().top,
+        { ensureScrollable: false },
+      );
       cy.get($elem).should('be.visible');
     });
   });

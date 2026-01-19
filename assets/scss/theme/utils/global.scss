@@ -1,21 +1,81 @@
-@use "../vars" as vars;
-@use "functions.scss" as functions;
-@use "mixins.scss" as mixins;
-@use "../../bulma/sass/utilities" as bulma_utilities;
-@use "../../bulma/sass/utilities/mixins.scss" as bulma_mixins;
+@use '../vars' as vars;
+@use 'functions.scss' as functions;
+@use 'mixins.scss' as mixins;
+@use '../../bulma/sass/utilities' as bulma_utilities;
+@use '../../bulma/sass/utilities/mixins.scss' as bulma_mixins;
 //
 // Fonts
 //
-@include mixins.font-face('lato', '../fonts/lato/lato-v23-latin-regular', 400, normal, woff2);
-@include mixins.font-face('lato', '../fonts/lato/lato-v23-latin-italic', 400, italic, woff2);
-@include mixins.font-face('lato', '../fonts/lato/lato-v23-latin-700', 700, normal, woff2);
-@include mixins.font-face('lato', '../fonts/lato/lato-v23-latin-700italic', 700, italic, woff2);
-@include mixins.font-face('lato', '../fonts/lato/lato-v23-latin-900', 900, normal, woff2);
-@include mixins.font-face('lato', '../fonts/lato/lato-v23-latin-900italic', 900, italic, woff2);
-@include mixins.font-face('oswald', '../fonts/oswald/oswald-v49-latin-700', 700, normal, woff2);
-@include mixins.font-face('roboto-mono', '../fonts/roboto-mono/roboto-mono-v22-latin-700', 700, normal, woff2);
-@include mixins.font-face('roboto-mono', '../fonts/roboto-mono/roboto-mono-v22-latin-regular', 400, normal, woff2);
-@include mixins.font-face('permanent-marker', '../fonts/permanent-marker/permanent-marker-v16-latin-regular', 400, normal, woff2);
+@include mixins.font-face(
+  'lato',
+  '../fonts/lato/lato-v23-latin-regular',
+  400,
+  normal,
+  woff2
+);
+@include mixins.font-face(
+  'lato',
+  '../fonts/lato/lato-v23-latin-italic',
+  400,
+  italic,
+  woff2
+);
+@include mixins.font-face(
+  'lato',
+  '../fonts/lato/lato-v23-latin-700',
+  700,
+  normal,
+  woff2
+);
+@include mixins.font-face(
+  'lato',
+  '../fonts/lato/lato-v23-latin-700italic',
+  700,
+  italic,
+  woff2
+);
+@include mixins.font-face(
+  'lato',
+  '../fonts/lato/lato-v23-latin-900',
+  900,
+  normal,
+  woff2
+);
+@include mixins.font-face(
+  'lato',
+  '../fonts/lato/lato-v23-latin-900italic',
+  900,
+  italic,
+  woff2
+);
+@include mixins.font-face(
+  'oswald',
+  '../fonts/oswald/oswald-v49-latin-700',
+  700,
+  normal,
+  woff2
+);
+@include mixins.font-face(
+  'roboto-mono',
+  '../fonts/roboto-mono/roboto-mono-v22-latin-700',
+  700,
+  normal,
+  woff2
+);
+@include mixins.font-face(
+  'roboto-mono',
+  '../fonts/roboto-mono/roboto-mono-v22-latin-regular',
+  400,
+  normal,
+  woff2
+);
+@include mixins.font-face(
+  'permanent-marker',
+  '../fonts/permanent-marker/permanent-marker-v16-latin-regular',
+  400,
+  normal,
+  woff2
+);
 //
 // Main
 //
@@ -58,7 +118,10 @@ h6 {
     margin-left: 0.25rem;
     opacity: 0;
     transform: translateX(0.75rem);
-    transition: transform 0.3s, opacity 0.2s, color 0.2s;
+    transition:
+      transform 0.3s,
+      opacity 0.2s,
+      color 0.2s;
     &:hover {
       color: vars.$content-link-color;
     }
@@ -85,15 +148,22 @@ html {
   overflow: hidden !important;
   @include mixins.static-size-width(100%);
 }
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
   vertical-align: middle !important;
 }
 kbd {
-  background: linear-gradient(functions.smooth-color(bulma_utilities.$grey-darker, 20), bulma_utilities.$grey-darker);
+  background: linear-gradient(
+    functions.smooth-color(bulma_utilities.$grey-darker, 20),
+    bulma_utilities.$grey-darker
+  );
   border: 1px solid bulma_utilities.$grey-darker;
   border-radius: 0.5rem;
-  box-shadow: inset 0 0.1rem 0.2rem bulma_utilities.$grey, inset 0 -0.1rem 0.2rem bulma_utilities.$grey-darker, 0 0.1rem 0 bulma_utilities.$black-bis, 0 0.1rem 0.1rem bulma_utilities.$black-bis;
+  box-shadow:
+    inset 0 0.1rem 0.2rem bulma_utilities.$grey,
+    inset 0 -0.1rem 0.2rem bulma_utilities.$grey-darker,
+    0 0.1rem 0 bulma_utilities.$black-bis,
+    0 0.1rem 0.1rem bulma_utilities.$black-bis;
   color: bulma_utilities.bulmaFindColorInvert(bulma_utilities.$grey-darker);
   padding: 0.25rem 0.5rem;
   user-select: none;
@@ -101,11 +171,17 @@ kbd {
 img {
   justify-self: center;
 }
-@include mixins.nested-even-content("blockquote", 10) {
-  background: functions.smooth-color(vars.$content-background-color, 20) !important;
+@include mixins.nested-even-content('blockquote', 10) {
+  background: functions.smooth-color(
+    vars.$content-background-color,
+    20
+  ) !important;
 }
-@include mixins.nested-odd-content("blockquote", 10) {
-  background: functions.smooth-color(vars.$content-background-color, 10) !important;
+@include mixins.nested-odd-content('blockquote', 10) {
+  background: functions.smooth-color(
+    vars.$content-background-color,
+    10
+  ) !important;
 }
 *:not(pre) {
   > code {

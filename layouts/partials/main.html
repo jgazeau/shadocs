@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     {{- partial "theme/meta.html" .root -}}
@@ -7,10 +7,7 @@
   </head>
   <body class="is-flex is-flex-direction-column">
     {{- partial "theme/header.html" .root -}}
-    <div
-      class="columns is-mobile paddingless marginless"
-      id="mainContainer"
-    >
+    <div class="columns is-mobile paddingless marginless" id="mainContainer">
       {{- partial "theme/sidebar.html" .root -}}
       {{- partial .contentTemplate .root -}}
     </div>

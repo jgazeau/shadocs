@@ -23,7 +23,7 @@ describe('for: intro shortcode', () => {
       cy.scrollAndClickElem($elem);
       cy.get('body').type('{esc}');
       cy.get('.introjs-tooltipReferenceLayer .introjs-tooltip').should(
-        'not.exist'
+        'not.exist',
       );
     });
   });
@@ -32,7 +32,7 @@ describe('for: intro shortcode', () => {
       cy.scrollAndClickElem($elem);
       cy.get('.introjs-overlay').click({ force: true });
       cy.get('.introjs-tooltipReferenceLayer .introjs-tooltip').should(
-        'not.exist'
+        'not.exist',
       );
     });
   });
@@ -40,10 +40,10 @@ describe('for: intro shortcode', () => {
     cy.get('#content #introTest').each(($elem) => {
       cy.scrollAndClickElem($elem);
       cy.get(
-        '.introjs-tooltipReferenceLayer .introjs-tooltip .introjs-skipbutton'
+        '.introjs-tooltipReferenceLayer .introjs-tooltip .introjs-skipbutton',
       ).click({ force: true });
       cy.get('.introjs-tooltipReferenceLayer .introjs-tooltip').should(
-        'not.exist'
+        'not.exist',
       );
     });
   });
@@ -53,7 +53,7 @@ describe('for: intro shortcode', () => {
       cy.scrollAndClickElem($elem);
       cy.viewportTouch();
       cy.get('.introjs-tooltipReferenceLayer .introjs-tooltip').should(
-        'not.exist'
+        'not.exist',
       );
     });
   });

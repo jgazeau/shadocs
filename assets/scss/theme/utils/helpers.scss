@@ -1,6 +1,6 @@
-@use "sass:color";
-@use "../vars" as vars;
-@use "mixins.scss" as mixins;
+@use 'sass:color';
+@use '../vars' as vars;
+@use 'mixins.scss' as mixins;
 //
 // Main
 //
@@ -121,7 +121,9 @@
       left: 50%;
       position: absolute;
       right: 50%;
-      transition: left 0.4s ease, right 0.4s ease;
+      transition:
+        left 0.4s ease,
+        right 0.4s ease;
     }
     &:before {
       top: 0;
@@ -137,7 +139,9 @@
     content: '';
     position: absolute;
     top: 50%;
-    transition: top 0.4s ease, bottom 0.4s ease;
+    transition:
+      top 0.4s ease,
+      bottom 0.4s ease;
     width: 0.125rem;
   }
   &:before {

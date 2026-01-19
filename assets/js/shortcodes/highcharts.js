@@ -48,7 +48,7 @@ function manageHighchartsResize(cc) {
 async function renderHighcharts(hc) {
   const highchartsWrapper = getFirstAncestorByClass(
     hc,
-    'sc-highcharts-wrapper'
+    'sc-highcharts-wrapper',
   );
   const highchartsPromise = new Promise((resolve) => resolve());
   await highchartsPromise
@@ -63,7 +63,7 @@ async function renderHighcharts(hc) {
           } else {
             throw new Error('{{- i18n "highcharts_error" -}}');
           }
-        }
+        },
       );
     })
     .catch((error) => {

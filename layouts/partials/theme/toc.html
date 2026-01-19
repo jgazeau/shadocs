@@ -1,6 +1,8 @@
 <div class="column is-flex paddingless" id="tocWrapper">
   <div class="is-flex is-flex-direction-column paddingless" id="tocContainer">
-    <div class="toc-header is-flex is-justify-content-space-between is-align-items-center">
+    <div
+      class="toc-header is-flex is-justify-content-space-between is-align-items-center"
+    >
       <h6 class="toc-title has-text-weight-bold">{{- i18n "toc_title" -}}</h6>
       <i
         title="{{- i18n "toc_backtotop" -}}"
@@ -8,7 +10,10 @@
         class="fa-solid fa-circle-arrow-up"
       ></i>
     </div>
-    <div class="is-flex is-flex-direction-column is-justify-content-space-between is-overflow-y has-text-weight-bold" id="tocContent">
+    <div
+      class="is-flex is-flex-direction-column is-justify-content-space-between is-overflow-y has-text-weight-bold"
+      id="tocContent"
+    >
       <div id="toc">
         {{- if in (string .TableOfContents) "<ul>" -}}
           {{- .TableOfContents -}}
@@ -29,7 +34,9 @@
                   </h6>
                 </div>
                 {{- range . -}}
-                  <a href="{{- .RelPermalink | safeURL -}}" class="taxonomy is-flex is-justify-content-center is-align-items-center"
+                  <a
+                    href="{{- .RelPermalink | safeURL -}}"
+                    class="taxonomy is-flex is-justify-content-center is-align-items-center"
                     ><i class="fa-solid fa-circle-dot"></i>{{- .Title -}}</a
                   >
                 {{- end -}}

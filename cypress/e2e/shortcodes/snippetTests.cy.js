@@ -13,19 +13,19 @@ describe('for: snippet shortcode', () => {
   it('at least one snippet with caption should be displayed', () => {
     cy.get('#content .sc-snippet-wrapper .sc-snippet-caption').should(
       'have.length.at.least',
-      1
+      1,
     );
   });
   it('at least one md snippet should be displayed', () => {
     cy.get('#content .sc-snippet-wrapper .sc-snippet-md').should(
       'have.length.at.least',
-      1
+      1,
     );
   });
   it('at least one plaintext snippet should be displayed', () => {
     cy.get('#content .sc-snippet-wrapper .sc-snippet-plaintext').should(
       'have.length.at.least',
-      1
+      1,
     );
   });
   it('2 snippets wrapper with 3 tabs should be displayed', () => {

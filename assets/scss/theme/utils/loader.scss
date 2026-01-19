@@ -1,5 +1,5 @@
-@use "../vars" as vars;
-@use "functions.scss" as functions;
+@use '../vars' as vars;
+@use 'functions.scss' as functions;
 //
 // Variables
 //
@@ -25,7 +25,7 @@ $loader-padding: 0.75rem;
   }
   100%,
   0% {
-    transform: scale(1.0);
+    transform: scale(1);
   }
 }
 //
@@ -74,14 +74,14 @@ $loader-padding: 0.75rem;
           position: relative;
           width: 70%;
           .loader-dot {
-            animation: loader-dot 2.0s infinite ease-in-out both;
+            animation: loader-dot 2s infinite ease-in-out both;
             height: 100%;
             left: 0;
             position: absolute;
             top: 0;
             width: 100%;
             &:before {
-              animation: loader-dot-before 2.0s infinite ease-in-out both;
+              animation: loader-dot-before 2s infinite ease-in-out both;
               background-color: vars.$loader-background-color;
               border-radius: 100%;
               content: '';
@@ -95,7 +95,7 @@ $loader-padding: 0.75rem;
             }
             &:nth-child(2),
             &:nth-child(2):before {
-              animation-delay: -1.0s;
+              animation-delay: -1s;
             }
             &:nth-child(3),
             &:nth-child(3):before {
@@ -114,22 +114,40 @@ $loader-padding: 0.75rem;
               animation-delay: -0.6s;
             }
             &:nth-child(1):before {
-              background-color: functions.smooth-color(vars.$loader-background-color, 60);
+              background-color: functions.smooth-color(
+                vars.$loader-background-color,
+                60
+              );
             }
             &:nth-child(2):before {
-              background-color: functions.smooth-color(vars.$loader-background-color, 50);
+              background-color: functions.smooth-color(
+                vars.$loader-background-color,
+                50
+              );
             }
             &:nth-child(3):before {
-              background-color: functions.smooth-color(vars.$loader-background-color, 40);
+              background-color: functions.smooth-color(
+                vars.$loader-background-color,
+                40
+              );
             }
             &:nth-child(4):before {
-              background-color: functions.smooth-color(vars.$loader-background-color, 30);
+              background-color: functions.smooth-color(
+                vars.$loader-background-color,
+                30
+              );
             }
             &:nth-child(5):before {
-              background-color: functions.smooth-color(vars.$loader-background-color, 20);
+              background-color: functions.smooth-color(
+                vars.$loader-background-color,
+                20
+              );
             }
             &:nth-child(6):before {
-              background-color: functions.smooth-color(vars.$loader-background-color, 10);
+              background-color: functions.smooth-color(
+                vars.$loader-background-color,
+                10
+              );
             }
           }
         }

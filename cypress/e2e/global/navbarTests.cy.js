@@ -15,7 +15,7 @@ for (const testCase of testCases) {
       it('should have 2 languages', () => {
         cy.get(`#dropdown-menu-langs${extendId} .dropdown-item`).should(
           'have.length',
-          2
+          2,
         );
       });
     });
@@ -29,7 +29,7 @@ for (const testCase of testCases) {
       it('should have 2 tag', () => {
         cy.get(`#dropdown-menu-taxonomies${extendId} .dropdown-item`).should(
           'have.length',
-          2
+          2,
         );
       });
     });
@@ -84,7 +84,7 @@ for (const testCase of testCases) {
       it('should have 2 versions', () => {
         cy.get(`#dropdown-menu-versions${extendId} .dropdown-item`).should(
           'have.length',
-          2
+          2,
         );
       });
     });

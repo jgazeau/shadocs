@@ -1,7 +1,7 @@
 @charset "utf-8";
-@use "sass:color";
-@use "vars" as vars;
-@use "utils/mixins.scss" as mixins;
+@use 'sass:color';
+@use 'vars' as vars;
+@use 'utils/mixins.scss' as mixins;
 //
 // Animations
 //
@@ -22,11 +22,17 @@
   100% {
     transform: translate(2%, -2%);
   }
-};
+}
 //
 // Fonts
 //
-@include mixins.font-face('oswald', '../fonts/oswald/oswald-v49-latin-700', 700, normal, woff2);
+@include mixins.font-face(
+  'oswald',
+  '../fonts/oswald/oswald-v49-latin-700',
+  700,
+  normal,
+  woff2
+);
 //
 // Main
 //
@@ -92,7 +98,7 @@ body {
     &::after,
     &::before {
       border-radius: 0;
-      content: "";
+      content: '';
       height: 100%;
       position: absolute;
       transform: skewX(30deg);
@@ -101,12 +107,20 @@ body {
       z-index: -1;
     }
     &::before {
-      background: linear-gradient(90deg, color.scale(vars.$theme-color-404, $lightness: 15%) 0%, color.scale(vars.$theme-color-404, $lightness: 30%) 100%);
+      background: linear-gradient(
+        90deg,
+        color.scale(vars.$theme-color-404, $lightness: 15%) 0%,
+        color.scale(vars.$theme-color-404, $lightness: 30%) 100%
+      );
       left: 0.75rem;
       top: -0.5rem;
     }
     &::after {
-      background: linear-gradient(90deg, vars.$theme-color-404 0%, color.scale(vars.$theme-color-404, $lightness: 15%) 100%);
+      background: linear-gradient(
+        90deg,
+        vars.$theme-color-404 0%,
+        color.scale(vars.$theme-color-404, $lightness: 15%) 100%
+      );
       right: 0.75rem;
       top: 0.5rem;
     }

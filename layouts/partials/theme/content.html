@@ -18,7 +18,10 @@
   {{- $contentContainerClasses = $contentContainerClasses | append "has-toc" -}}
 {{- end -}}
 <div class="{{- delimit $contentContainerClasses " " -}}" id="contentContainer">
-  <div class="{{- delimit ($.Scratch.Get "contentClasses") " " -}}" id="{{- $.Scratch.Get "contentId" -}}">
+  <div
+    class="{{- delimit ($.Scratch.Get "contentClasses") " " -}}"
+    id="{{- $.Scratch.Get "contentId" -}}"
+  >
     {{- with (or .Site.Params.globalBanner .Params.banner) -}}
       {{- $bannerContent := i18n "banner_default_content" $ -}}
       {{- with $.Params.bannerContent -}}

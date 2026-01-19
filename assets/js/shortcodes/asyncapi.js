@@ -15,7 +15,7 @@ function renderAsyncapi(ac) {
   setTimeout(function () {
     getFirstAncestorByClass(ac, 'sc-asyncapi-wrapper').classList.toggle(
       'is-loading',
-      false
+      false,
     );
   }, 600);
 }
