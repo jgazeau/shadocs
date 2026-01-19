@@ -19,7 +19,7 @@ $toc-taxonomy-background-color: functions.smooth-color(vars.$theme-color, 15);
   position: sticky;
   right: 0;
   top: 0;
-  z-index: 20;
+  z-index: 15;
 }
 #tocCollapsible {
   @include mixins.static-size-height(calc(100svh - vars.$navbar-height));
