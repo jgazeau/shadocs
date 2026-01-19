@@ -27,7 +27,7 @@ Function managing modal closing:
 Function deactivating smooth scrolling on main content.
 {{< /md >}}|
 | enableSmoothScroll(); |{{< md >}}
-Fonction activating smooth scrolling on main content.
+Function activating smooth scrolling on main content.
 {{< /md >}}|
 | getFirstVisibleElement(selector); |{{< md >}}
 Function getting the first visible element from a CSS selector:
@@ -65,13 +65,13 @@ Function managing the sidebar entry:
     * menu entry that can expand or shrink its elements (\<a> elements containing *is-icon-expandable* class)
 * force
     * true: entry is expanded
-    * false: entry is shrinked
+    * false: entry is shrunk
 {{< /md >}}|
 | toggleSidebarEntries(force); |{{< md >}}
 Function managing the sidebar entries:
 * force
     * true: all entries are expanded
-    * false: all entries are shrinked
+    * false: all entries are shrunk
 {{< /md >}}|
 | toggleToc(force); |{{< md >}}
 Function managing the table of contents behavior:
