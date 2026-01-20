@@ -43,17 +43,18 @@
   [params.taxonomies]
     [params.taxonomies.categories]
       icon = "fa-solid fa-table-cells"
+  #
   # Assets list (https://gohugo.io/hugo-pipes/resource-from-template/) to include
   # Managed assets:
   # - css                   = [List of CSS files]
   # - js                    = [List of javascript files]
   # - jsModules             = [List of javascript modules]
-  # - shortcodes.css        = [List of CSS files to includes when the associated shortcode exist in the page content]
-  # - shortcodes.js         = [List of javascript files to includes when the associated shortcode exist in the page content]
-  # - shortcodes.jsModules  = [List of javascript module files to includes when the associated shortcode exist in the page content]
   # - fencedcodes.css       = [List of CSS files to includes when the associated language of fenced code exist in the page content]
   # - fencedcodes.js        = [List of javascript files to includes when the associated language of fenced code exist in the page content]
   # - fencedcodes.jsModules = [List of javascript module files to includes when the associated language of fenced code exist in the page content]
+  # - shortcodes.css        = [List of CSS files to includes when the associated shortcode exist in the page content]
+  # - shortcodes.js         = [List of javascript files to includes when the associated shortcode exist in the page content]
+  # - shortcodes.jsModules  = [List of javascript module files to includes when the associated shortcode exist in the page content]
   #
   [params.includes]
     css = [
@@ -68,6 +69,27 @@
       "js/modules/file1.js",
       "js/modules/fileX.js"
     ]
+  [params.includes.fencedcodes.css]
+    fencedcode1 = [
+        "css/fencedcodes/fencedcode1.css"
+      ]
+    fencedcodeX = [
+        "css/fencedcodes/fencedcodeX.css"
+      ]
+  [params.includes.fencedcodes.js]
+    fencedcode1 = [
+        "js/fencedcodes/fencedcode1.js"
+      ]
+    fencedcodeX = [
+        "js/fencedcodes/fencedcodeX.js"
+      ]
+  [params.includes.fencedcodes.jsModules]
+    fencedcode1 = [
+        "js/fencedcodes/modules/fencedcode1.js"
+      ]
+    fencedcodeX = [
+        "js/fencedcodes/modules/fencedcodeX.js"
+      ]
   [params.includes.shortcodes.css]
     shortcode1 = [
         "css/shortcodes/shortcode1.css"
@@ -88,25 +110,4 @@
       ]
     shortcodeX = [
         "js/shortcodes/modules/shortcodeX.js"
-      ]
-  [params.includes.fencedcodes.css]
-    shortcode1 = [
-        "css/fencedcodes/shortcode1.css"
-      ]
-    shortcodeX = [
-        "css/fencedcodes/shortcodeX.css"
-      ]
-  [params.includes.fencedcodes.js]
-    shortcode1 = [
-        "js/fencedcodes/shortcode1.js"
-      ]
-    shortcodeX = [
-        "js/fencedcodes/shortcodeX.js"
-      ]
-  [params.includes.fencedcodes.jsModules]
-    shortcode1 = [
-        "js/fencedcodes/modules/shortcode1.js"
-      ]
-    shortcodeX = [
-        "js/fencedcodes/modules/shortcodeX.js"
       ]

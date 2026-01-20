@@ -45,7 +45,7 @@ To define a file to import you must use the following configuration (*Cf. highli
     file="templates/configuration/hugo.en.toml"
     caption="hugo.toml ([params] section)"
     codelang="toml"
-    codeparam="linenos=inline,hl_lines=[\"46-112\"]"
+    codeparam="linenos=inline,hl_lines=[\"46-54\",\"59-92\"]"
 />}}
 
 # Define third-party imports for shortcodes
@@ -59,5 +59,5 @@ To define a file to import, associated with a shortcode, you must use the follow
     file="templates/configuration/hugo.en.toml"
     caption="hugo.toml ([params] section)"
     codelang="toml"
-    codeparam="linenos=inline,hl_lines=[\"38-39\",\"44-49\",\"68-116\"]"
+    codeparam="linenos=inline,hl_lines=[\"55-57\",\"93-113\"]"
 />}}

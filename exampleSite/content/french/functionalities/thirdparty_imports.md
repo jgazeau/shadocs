@@ -45,7 +45,7 @@ Pour définir un fichier à importer il faut utliser la configuration suivante (
     file="templates/configuration/hugo.fr.toml"
     caption="hugo.toml ([params] section)"
     codelang="toml"
-    codeparam="linenos=inline,hl_lines=[\"46-112\"]"
+    codeparam="linenos=inline,hl_lines=[\"46-54\",\"59-92\"]"
 />}}
 
 # Définition d'imports tiers pour les shortcodes
@@ -59,5 +59,5 @@ Pour définir un fichier à importer, associé à un shortcode, il faut utliser 
     file="templates/configuration/hugo.fr.toml"
     caption="hugo.toml ([params] section)"
     codelang="toml"
-    codeparam="linenos=inline,hl_lines=[\"38-39\",\"44-49\",\"68-116\"]"
+    codeparam="linenos=inline,hl_lines=[\"55-57\",\"93-113\"]"
 />}}
