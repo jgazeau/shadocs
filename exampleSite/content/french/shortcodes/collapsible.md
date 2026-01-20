@@ -37,13 +37,13 @@ Je suis caché
 |{{< md >}}
 ```
 {{</*/* collapsible
-    title="Sésame, ouvre-toi!"
+  title="Sésame, ouvre-toi!"
 */*/>}}
 Je suis caché
 {{</*/* /collapsible */*/>}}
 ```
 {{< /md >}}|{{< collapsible
-    title="Sésame, ouvre-toi!"
+  title="Sésame, ouvre-toi!"
 >}}
 Je suis caché
 {{< /collapsible >}}|

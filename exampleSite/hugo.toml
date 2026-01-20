@@ -21,8 +21,8 @@ ignoreLogs             = ['warning-goldmark-raw-html']
     min = '0.141.0'
     max = '0.154.5'
   [[module.mounts]]
-    source = 'static'
-    target = 'static'
+    source = 'asciinema'
+    target = 'static/asciinema'
   [[module.mounts]]
     source = 'assets'
     target = 'static/assets'
@@ -30,11 +30,11 @@ ignoreLogs             = ['warning-goldmark-raw-html']
     source = 'asyncapi'
     target = 'static/asyncapi'
   [[module.mounts]]
-    source = 'openapi'
-    target = 'static/openapi'
-  [[module.mounts]]
     source = 'jsoneditor'
     target = 'static/jsoneditor'
+  [[module.mounts]]
+    source = 'openapi'
+    target = 'static/openapi'
   [[module.imports]]
     path = 'github.com/jgazeau/shadocs'
 

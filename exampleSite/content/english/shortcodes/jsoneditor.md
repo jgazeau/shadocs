@@ -44,9 +44,9 @@ Name of the global Javascript method to define filename to download.
 {{< /md >}}|
 
 {{< snippet
-    file="assets/js/jsoneditor.js"
-    caption="jsoneditor.js"
-    codelang="js"
+  file="assets/js/jsoneditor.js"
+  caption="jsoneditor.js"
+  codelang="js"
 />}}
 
 # Examples
@@ -56,9 +56,13 @@ Name of the global Javascript method to define filename to download.
 | -------- | --------- |
 |{{< md >}}
 ```
-{{</*/* jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" */*/>}}
+{{</*/* jsoneditor
+  source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json"
+*/*/>}}
 ```
-{{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" >}}|
+{{< /md >}}|{{< jsoneditor
+  source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json"
+>}}|
 |{{< md >}}
 ```
 {{</*/* jsoneditor
@@ -66,7 +70,10 @@ Name of the global Javascript method to define filename to download.
   postAnalyzeFunction="examplePostAnalyzeFunction"
 */*/>}}
 ```
-{{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" postAnalyzeFunction="examplePostAnalyzeFunction" >}}|
+{{< /md >}}|{{< jsoneditor
+  source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json"
+  postAnalyzeFunction="examplePostAnalyzeFunction"
+>}}|
 |{{< md >}}
 ```
 {{</*/* jsoneditor
@@ -74,7 +81,10 @@ Name of the global Javascript method to define filename to download.
   postProcessFunction="examplePostProcessFunction"
 */*/>}}
 ```
-{{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" postProcessFunction="examplePostProcessFunction" >}}|
+{{< /md >}}|{{< jsoneditor
+  source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json"
+  postProcessFunction="examplePostProcessFunction"
+>}}|
 |{{< md >}}
 ```
 {{</*/* jsoneditor
@@ -82,9 +92,16 @@ Name of the global Javascript method to define filename to download.
   filenameToDownloadFunction="exampleFilenameToDownloadFunction"
 */*/>}}
 ```
-{{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" filenameToDownloadFunction="exampleFilenameToDownloadFunction" >}}|
+{{< /md >}}|{{< jsoneditor
+  source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json"
+  filenameToDownloadFunction="exampleFilenameToDownloadFunction"
+>}}|
 |{{< md >}}
 ```
-{{</*/* jsoneditor source="jsoneditor/example.json" */*/>}}
+{{</*/* jsoneditor
+  source="jsoneditor/example.json"
+*/*/>}}
 ```
-{{< /md >}}|{{< jsoneditor source="jsoneditor/example.json" >}}|
+{{< /md >}}|{{< jsoneditor
+  source="jsoneditor/example.json"
+>}}|

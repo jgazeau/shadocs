@@ -37,13 +37,13 @@ I'm hidden
 |{{< md >}}
 ```
 {{</*/* collapsible
-    title="Open sesame!"
+  title="Open sesame!"
 */*/>}}
 I'm hidden
 {{</*/* /collapsible */*/>}}
 ```
 {{< /md >}}|{{< collapsible
-    title="Open sesame!"
+  title="Open sesame!"
 >}}
 I'm hidden
 {{< /collapsible >}}|

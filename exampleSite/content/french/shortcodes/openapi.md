@@ -27,11 +27,19 @@ Source de la documentation OpenAPI.
 | -------- | ----- |
 |{{< md >}}
 ```
-{{</*/* openapi source="openapi/example.yaml" */*/>}}
+{{</*/* openapi
+  source="openapi/example.yaml"
+*/*/>}}
 ```
-{{< /md >}}|{{< openapi source="openapi/example.yaml" >}}|
+{{< /md >}}|{{< openapi
+  source="openapi/example.yaml"
+>}}|
 |{{< md >}}
 ```
-{{</*/* openapi source="https://petstore.swagger.io/v2/swagger.json" */*/>}}
+{{</*/* openapi
+  source="https://petstore.swagger.io/v2/swagger.json"
+*/*/>}}
 ```
-{{< /md >}}|{{< openapi source="https://petstore.swagger.io/v2/swagger.json" >}}|
+{{< /md >}}|{{< openapi
+  source="https://petstore.swagger.io/v2/swagger.json"
+>}}|

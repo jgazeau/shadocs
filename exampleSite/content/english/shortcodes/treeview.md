@@ -49,207 +49,263 @@ Possible values:
 |{{< md >}}
 ```
 {{</*/* treeview
-    rootpath="/shortcodes"
+  rootpath="/shortcodes"
 /*/*/>}}
 ```
 {{< /md >}}|{{< treeview 
-    rootpath="/shortcodes"
+  rootpath="/shortcodes"
 />}}|
 |{{< md >}}
 ```
 {{</*/* treeview
-    rootpath="/shortcodes"
-    display="graph"
+  rootpath="/shortcodes"
+  display="graph"
 /*/*/>}}
 ```
 {{< /md >}}|{{< treeview 
-    rootpath="/shortcodes"
-    display="graph"
+  rootpath="/shortcodes"
+  display="graph"
 />}}|
 |{{< md >}}
 ```
 {{</*/* treeview
-    rootpath="/shortcodes"
-    display="tree"
+  rootpath="/shortcodes"
+  display="tree"
 /*/*/>}}
 ```
 {{< /md >}}|{{< treeview 
-    rootpath="/shortcodes"
-    display="tree"
+  rootpath="/shortcodes"
+  display="tree"
 />}}|
 |{{< md >}}
 ```
 {{</*/* treeview
-    rootpath="/shortcodes"
-    display="tree"
-    init="collapse"
+  rootpath="/shortcodes"
+  display="tree"
+  init="collapse"
 /*/*/>}}
 ```
 {{< /md >}}|{{< treeview 
-    rootpath="/shortcodes"
-    display="tree"
-    init="collapse"
+  rootpath="/shortcodes"
+  display="tree"
+  init="collapse"
 />}}|
 |{{< md >}}
 ```
 {{</*/* treeview
-    display="tree"
+  display="tree"
 */*/>}}
-[{
+[
+  {
     "kind": "dir",
     "label": "***Directory***",
-    "content": [{
-            "kind": "archive",
-            "label": "***Archive***",
-            "content": [{
-                    "kind": "dir",
-                    "label": "***Directory** in an archive*",
-                    "content": [{
-                            "kind": "file",
-                            "label": "***Flat file** in a directory in an archive*"
-                        }]
-                },{
-                    "kind": "file",
-                    "label": "***Flat file** in an archive*"
-                }]
-        },{
+    "content": [
+      {
+        "kind": "archive",
+        "label": "***Archive***",
+        "content": [
+          {
+            "kind": "dir",
+            "label": "***Directory** in an archive*",
+            "content": [
+              {
+                "kind": "file",
+                "label": "***Flat file** in a directory in an archive*"
+              }
+            ]
+          },
+          {
             "kind": "file",
-            "label": "***Flat file** in a directory*"
-        }]
-},{
+            "label": "***Flat file** in an archive*"
+          }
+        ]
+      },
+      {
+        "kind": "file",
+        "label": "***Flat file** in a directory*"
+      }
+    ]
+  },
+  {
     "kind": "default",
     "label": "***Default***"
-},{
+  },
+  {
     "kind": "dir",
     "label": "***Directory***"
-},{
+  },
+  {
     "kind": "file",
     "label": "***File***"
-},{
+  },
+  {
     "kind": "home",
     "label": "***Home***"
-},{
+  },
+  {
     "kind": "page",
     "label": "***Page***"
-},{
+  },
+  {
     "kind": "section",
     "label": "***Section***"
-},{
+  },
+  {
     "kind": "taxonomy",
     "label": "***Taxonomy***"
-},{
+  },
+  {
     "kind": "term",
     "label": "***Taxonomy's term***"
-},{
+  },
+  {
     "kind": "archive",
     "label": "***Archive***"
-},{
+  },
+  {
     "kind": "image",
     "label": "***Image file***"
-},{
+  },
+  {
     "kind": "video",
     "label": "***Video file***"
-},{
+  },
+  {
     "kind": "script",
     "label": "***Script***"
-},{
+  },
+  {
     "kind": "dockerfile",
     "label": "***Dockerfile***"
-},{
+  },
+  {
     "kind": "pdf",
     "label": "***PDF file***"
-},{
+  },
+  {
     "kind": "powerpoint",
     "label": "***PowerPoint file***"
-},{
+  },
+  {
     "kind": "excel",
     "label": "***Excel file***"
-},{
+  },
+  {
     "kind": "csv",
     "label": "***CSV file***"
-},{
+  },
+  {
     "kind": "word",
     "label": "***Word file***"
-}]
+  }
+]
 {{</*/* /treeview */*/>}}
 ```
 {{< /md >}}|{{< treeview
-    display="tree"
+  display="tree"
 >}}
-[{
+[
+  {
     "kind": "dir",
     "label": "***Directory***",
-    "content": [{
-            "kind": "archive",
-            "label": "***Archive***",
-            "content": [{
-                    "kind": "dir",
-                    "label": "***Directory** in an archive*",
-                    "content": [{
-                            "kind": "file",
-                            "label": "***Flat file** in a directory in an archive*"
-                        }]
-                },{
-                    "kind": "file",
-                    "label": "***Flat file** in an archive*"
-                }]
-        },{
+    "content": [
+      {
+        "kind": "archive",
+        "label": "***Archive***",
+        "content": [
+          {
+            "kind": "dir",
+            "label": "***Directory** in an archive*",
+            "content": [
+              {
+                "kind": "file",
+                "label": "***Flat file** in a directory in an archive*"
+              }
+            ]
+          },
+          {
             "kind": "file",
-            "label": "***Flat file** in a directory*"
-        }]
-},{
+            "label": "***Flat file** in an archive*"
+          }
+        ]
+      },
+      {
+        "kind": "file",
+        "label": "***Flat file** in a directory*"
+      }
+    ]
+  },
+  {
     "kind": "default",
     "label": "***Default***"
-},{
+  },
+  {
     "kind": "dir",
     "label": "***Directory***"
-},{
+  },
+  {
     "kind": "file",
     "label": "***File***"
-},{
+  },
+  {
     "kind": "home",
     "label": "***Home***"
-},{
+  },
+  {
     "kind": "page",
     "label": "***Page***"
-},{
+  },
+  {
     "kind": "section",
     "label": "***Section***"
-},{
+  },
+  {
     "kind": "taxonomy",
     "label": "***Taxonomy***"
-},{
+  },
+  {
     "kind": "term",
     "label": "***Taxonomy's term***"
-},{
+  },
+  {
     "kind": "archive",
     "label": "***Archive***"
-},{
+  },
+  {
     "kind": "image",
     "label": "***Image file***"
-},{
+  },
+  {
     "kind": "video",
     "label": "***Video file***"
-},{
+  },
+  {
     "kind": "script",
     "label": "***Script***"
-},{
+  },
+  {
     "kind": "dockerfile",
     "label": "***Dockerfile***"
-},{
+  },
+  {
     "kind": "pdf",
     "label": "***PDF file***"
-},{
+  },
+  {
     "kind": "powerpoint",
     "label": "***PowerPoint file***"
-},{
+  },
+  {
     "kind": "excel",
     "label": "***Excel file***"
-},{
+  },
+  {
     "kind": "csv",
     "label": "***CSV file***"
-},{
+  },
+  {
     "kind": "word",
     "label": "***Word file***"
-}]
+  }
+]
 {{< /treeview >}}|

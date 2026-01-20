@@ -229,28 +229,28 @@ Tab title.
 |{{< md >}}
 ```
 {{</*/* snippet
-    file="templates/snippet.go"
-    type="md"
-    caption="I'm a legend"
-    codelang="go"
-    codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
+  file="templates/snippet.go"
+  type="md"
+  caption="I'm a legend"
+  codelang="go"
+  codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
 */*/>}}
 {{</*/* tab
-    title="first tab"
-    type="code"
-    caption="I'm an other legend"
-    codelang="go"
-    codeparam="linenos=table,hl_lines=[1,3],linenostart=20"
+  title="first tab"
+  type="code"
+  caption="I'm an other legend"
+  codelang="go"
+  codeparam="linenos=table,hl_lines=[1,3],linenostart=20"
 /*/*/>}}
 {{</*/* tab
-    file="templates/snippet.en.md"
-    title="second tab"
-    codelang="md"
+  file="templates/snippet.en.md"
+  title="second tab"
+  codelang="md"
 /*/*/>}}
 {{</*/* tab
-    title="third tab"
-    type="plaintext"
-    caption=""
+  title="third tab"
+  type="plaintext"
+  caption=""
 */*/>}}
 # Hello, World!
 ---
@@ -259,28 +259,28 @@ Tab title.
 {{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet
-    file="templates/snippet.go"
-    type="md"
-    caption="I'm a legend"
-    codelang="go"
-    codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
+  file="templates/snippet.go"
+  type="md"
+  caption="I'm a legend"
+  codelang="go"
+  codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
 >}}
 {{< tab
-    title="first tab"
-    type="code"
-    caption="I'm an other legend"
-    codelang="go"
-    codeparam="linenos=table,hl_lines=[1,3],linenostart=20"
+  title="first tab"
+  type="code"
+  caption="I'm an other legend"
+  codelang="go"
+  codeparam="linenos=table,hl_lines=[1,3],linenostart=20"
 />}}
 {{< tab
-    file="templates/snippet.en.md"
-    title="second tab"
-    codelang="md"
+  file="templates/snippet.en.md"
+  title="second tab"
+  codelang="md"
 />}}
 {{< tab
-    title="third tab"
-    type="plaintext"
-    caption=""
+  title="third tab"
+  type="plaintext"
+  caption=""
 >}}
 # Hello, World!
 ---

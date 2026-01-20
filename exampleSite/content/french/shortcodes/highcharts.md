@@ -42,7 +42,7 @@ Source du graphe Highcharts.
 */*/>}}
 ```
 {{< /md >}}|{{< highcharts
-id="highcharts1"
+  id="highcharts1"
   assets=""
   source="/highcharts/example-default.json"
 >}}|

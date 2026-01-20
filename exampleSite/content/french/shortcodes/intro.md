@@ -15,8 +15,8 @@ Le shortcode **intro** permet d'utiliser la librairie [intro.js](https://introjs
 Le contenu du shortcode définit la configuration au **format JSON** de l'intro. De plus, des paramètres ont été ajoutés dans le thème afin de permettre un paramétrage simplifié et adapté.
 
 {{< snippet
-    caption="Configuration JSON du contenu du shortcode intro"
-    codelang="json"
+  caption="Configuration JSON du contenu du shortcode intro"
+  codelang="json"
 >}}
 {
   "[...]",
@@ -36,7 +36,8 @@ Le contenu du shortcode définit la configuration au **format JSON** de l'intro.
       "onafterchange": "Code javascript a executer après le changement de l'étape (lié à l'API onafterchange standard de intro.js)",
       "triggeronly": "Liste des déclencheurs permettant l'execution de l'étape (Cf. liste des déclencheurs ci-dessous)",
       "triggerexcept": "Liste des déclencheurs ne permettant pas l'execution de l'étape (Cf. liste des déclencheurs ci-dessous)"
-    }]
+    }
+  ]
 }
 {{< /snippet >}}
 
@@ -56,8 +57,8 @@ Si un des déclencheurs est défini dans l'étape et que celui-ci est aussi acti
 ## Options par défaut
 
 {{< snippet
-    caption="Options intro.js par défaut du thème"
-    codelang="javascript"
+  caption="Options intro.js par défaut du thème"
+  codelang="javascript"
 >}}
 const themeCommonOptions = {
   nextLabel:          {{i18n "intro_nextlabel"}},
@@ -116,38 +117,54 @@ Identifiant donné à l'élément HTML du bouton de lancement de l'intro.
       "title": "Etape 1",
       "intro": "Je suis l'étape 1 pour tout le monde",
       "onchange": "console.log(\"J'arrive dans l'étape 1 pour tout le monde\");"
-    },{
+    },
+    {
       "title": "Etape 2",
       "intro": "Je suis l'étape 2 pour le déclencheur desktop",
       "onchange": "console.log(\"J'arrive dans l'étape 2 pour le déclencheur desktop\");",
-      "triggeronly": ["desktop"]
-    },{
+      "triggeronly": [
+        "desktop"
+      ]
+    },
+    {
       "title": "Etape 2",
       "intro": "Je suis l'étape 2 pour les déclencheurs mobile et touch",
       "onchange": "console.log(\"J'arrive dans l'étape 2 pour les déclencheurs mobile et touch\");",
-      "triggeronly": ["mobile","touch"]
-    },{
+      "triggeronly": [
+        "mobile",
+        "touch"
+      ]
+    },
+    {
       "title": "Etape 3",
       "intro": "Je suis l'étape 3 pour tout le monde sauf le déclencheur hover",
       "onchange": "console.log(\"J'arrive dans l'étape 3 pour tout le monde sauf le déclencheur hover\");",
-      "triggerexcept": ["hover"]
-    },{
+      "triggerexcept": [
+        "hover"
+      ]
+    },
+    {
       "title": "Etape 3",
       "intro": "Je suis l'étape 3 pour tout le monde sauf le déclencheur nohover",
       "onchange": "console.log(\"J'arrive dans l'étape 3 pour tout le monde sauf le déclencheur nohover\");",
-      "triggerexcept": ["nohover"]
-    },{
+      "triggerexcept": [
+        "nohover"
+      ]
+    },
+    {
       "title": "Etape 4",
       "element": "#globalLogo",
       "intro": "Je suis l'étape 4 pour tout le monde sur l'élément #globalLogo",
       "onchange": "console.log(\"J'arrive dans l'étape 4 pour tout le monde sur l'élément #globalLogo\");"
-    },{
+    },
+    {
       "title": "Etape 5",
       "element": "#globalLogo",
       "intro": "Je suis l'étape 5 pour tout le monde sur l'élément #globalLogo en position droite",
       "position": "right",
       "onchange": "console.log(\"J'arrive dans l'étape 5 pour tout le monde sur l'élément #globalLogo en position droite\");"
-    }]
+    }
+  ]
 }
 {{</*/* /intro */*/>}}
 ```
@@ -165,37 +182,53 @@ Identifiant donné à l'élément HTML du bouton de lancement de l'intro.
       "title": "Etape 1",
       "intro": "Je suis l'étape 1 pour tout le monde",
       "onchange": "console.log(\"J'arrive dans l'étape 1 pour tout le monde\");"
-    },{
+    },
+    {
       "title": "Etape 2",
       "intro": "Je suis l'étape 2 pour le déclencheur desktop",
       "onchange": "console.log(\"J'arrive dans l'étape 2 pour le déclencheur desktop\");",
-      "triggeronly": ["desktop"]
-    },{
+      "triggeronly": [
+        "desktop"
+      ]
+    },
+    {
       "title": "Etape 2",
       "intro": "Je suis l'étape 2 pour les déclencheurs mobile et touch",
       "onchange": "console.log(\"J'arrive dans l'étape 2 pour les déclencheurs mobile et touch\");",
-      "triggeronly": ["mobile","touch"]
-    },{
+      "triggeronly": [
+        "mobile",
+        "touch"
+      ]
+    },
+    {
       "title": "Etape 3",
       "intro": "Je suis l'étape 3 pour tout le monde sauf le déclencheur hover",
       "onchange": "console.log(\"J'arrive dans l'étape 3 pour tout le monde sauf le déclencheur hover\");",
-      "triggerexcept": ["hover"]
-    },{
+      "triggerexcept": [
+        "hover"
+      ]
+    },
+    {
       "title": "Etape 3",
       "intro": "Je suis l'étape 3 pour tout le monde sauf le déclencheur nohover",
       "onchange": "console.log(\"J'arrive dans l'étape 3 pour tout le monde sauf le déclencheur nohover\");",
-      "triggerexcept": ["nohover"]
-    },{
+      "triggerexcept": [
+        "nohover"
+      ]
+    },
+    {
       "title": "Etape 4",
       "element": "#globalLogo",
       "intro": "Je suis l'étape 4 pour tout le monde sur l'élément #globalLogo",
       "onchange": "console.log(\"J'arrive dans l'étape 4 pour tout le monde sur l'élément #globalLogo\");"
-    },{
+    },
+    {
       "title": "Etape 5",
       "element": "#globalLogo",
       "intro": "Je suis l'étape 5 pour tout le monde sur l'élément #globalLogo en position droite",
       "position": "right",
       "onchange": "console.log(\"J'arrive dans l'étape 5 pour tout le monde sur l'élément #globalLogo en position droite\");"
-    }]
+    }
+  ]
 }
 {{< /intro >}}|

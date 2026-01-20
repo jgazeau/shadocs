@@ -1,0 +1,19 @@
+{{- .Page.Scratch.Add "asciinemaUid" 1 -}}
+{{- with (.Get "id") -}}
+  {{- $.Scratch.Set "asciinemaId" (replace . "'" "") -}}
+{{- else -}}
+  {{- $.Scratch.Set "asciinemaId" (printf "%s%s" "asciinema-" (string (.Page.Scratch.Get "asciinemaUid"))) -}}
+{{- end -}}
+{{ with (.Get "source") -}}
+  <div
+    class="sc-asciinema-container"
+    id="{{- $.Scratch.Get "asciinemaId" -}}"
+    asciinema-url="{{- . | relURL -}}"
+    asciinema-options="{{ with ($.Get "options") -}}
+      {{- . | unmarshal  | jsonify -}}
+    {{- end -}}"
+  ></div>
+{{- end -}}
+{{ with (.Get "embedded-player") -}}
+  {{- . | safeHTML -}}
+{{- end -}}

@@ -37,13 +37,13 @@ I'm a quote without source
 |{{< md >}}
 ```
 {{</*/* blockquote
-    source="Shadocs"
+  source="Shadocs"
 */*/>}}
 I'm a quote with source
 {{</*/* /blockquote */*/>}}
 ```
 {{< /md >}}|{{< blockquote
-    source="Shadocs"
+  source="Shadocs"
 >}}
 I'm a quote with source
 {{< /blockquote >}}|
