@@ -37,13 +37,13 @@ Je suis une citation sans source
 |{{< md >}}
 ```
 {{</*/* blockquote
-    source="Shadocs"
+  source="Shadocs"
 */*/>}}
 Je suis une citation avec source
 {{</*/* /blockquote */*/>}}
 ```
 {{< /md >}}|{{< blockquote
-    source="Shadocs"
+  source="Shadocs"
 >}}
 Je suis une citation avec source
 {{< /blockquote >}}|

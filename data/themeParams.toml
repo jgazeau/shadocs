@@ -66,12 +66,14 @@
 [includes]
   css = [
     "css/external/fontawesome.all.min.css",
-    "css/external/overlay-scrollbars/overlayscrollbars.min.css"
+    "css/external/overlay-scrollbars/overlayscrollbars.min.css",
+    "css/external/asciinema/asciinema-player.css"
   ]
   js = [
     "js/external/flexsearch/flexsearch.bundle.min.js",
     "js/external/qrious/qrious.min.js",
-    "js/external/overlay-scrollbars/overlayscrollbars.min.js"
+    "js/external/overlay-scrollbars/overlayscrollbars.min.js",
+    "js/external/asciinema/asciinema-player.min.js"
   ]
   jsModules = [
     "js/theme/modules/const.js",
@@ -87,6 +89,9 @@
     "js/theme/toc.js"
   ]
   [includes.shortcodes.jsModules]
+    asciinema = [
+      "js/shortcodes/asciinema.js",
+    ]
     asyncapi = [
       "js/shortcodes/asyncapi.js",
       "js/external/asyncapi/asyncapi-web-component.min.js"

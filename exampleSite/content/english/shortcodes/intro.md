@@ -15,8 +15,8 @@ The **intro** shortcode allows to use the [intro.js](https://introjs.com/) libra
 The content of the shortcode sets the configuration in **JSON format** of the intro. In addition, parameters have been added into the theme to allow simplified and adapted settings.
 
 {{< snippet
-    caption="JSON configuration of intro shortcode content"
-    codelang="json"
+  caption="JSON configuration of intro shortcode content"
+  codelang="json"
 >}}
 {
   "[...]",
@@ -36,7 +36,8 @@ The content of the shortcode sets the configuration in **JSON format** of the in
       "onafterchange": "JavaScript code to execute after changing the step (linked to the standard onafterchange API of intro.js)",
       "triggeronly": "Step triggers list allowing execution of the step (See step triggers list below)",
       "triggerexcept": "Step triggers list not allowing execution of the step (See step triggers list below)"
-    }]
+    }
+  ]
 }
 {{< /snippet >}}
 
@@ -56,8 +57,8 @@ If one of the triggers is defined in the step and is also active on the website,
 ## Default options
 
 {{< snippet
-    caption="Theme default intro.js options"
-    codelang="javascript"
+  caption="Theme default intro.js options"
+  codelang="javascript"
 >}}
 const themeCommonOptions = {
   nextLabel:          {{i18n "intro_nextlabel"}},
@@ -116,38 +117,54 @@ Identifier given to the global HTML element of the intro launch button.
       "title": "Step 1",
       "intro": "I'm step 1 for everyone",
       "onchange": "console.log(\"I'm entering step 1 for everyone\");"
-    },{
+    },
+    {
       "title": "Step 2",
       "intro": "I'm step 2 for the desktop trigger",
       "onchange": "console.log(\"I'm entering step 2 for the desktop trigger\");",
-      "triggeronly": ["desktop"]
-    },{
+      "triggeronly": [
+        "desktop"
+      ]
+    },
+    {
       "title": "Step 2",
       "intro": "I'm step 2 for the mobile and touch triggers",
       "onchange": "console.log(\"I'm entering step 2 for the mobile and touch triggers\");",
-      "triggeronly": ["mobile","touch"]
-    },{
+      "triggeronly": [
+        "mobile",
+        "touch"
+      ]
+    },
+    {
       "title": "Step 3",
       "intro": "I'm step 3 for everyone except the hover trigger",
       "onchange": "console.log(\"I'm entering step 3 for everyone except the hover trigger\");",
-      "triggerexcept": ["hover"]
-    },{
+      "triggerexcept": [
+        "hover"
+      ]
+    },
+    {
       "title": "Step 3",
       "intro": "I'm step 3 for everyone except the nohover trigger",
       "onchange": "console.log(\"I'm entering step 3 for everyone except the nohover trigger\");",
-      "triggerexcept": ["nohover"]
-    },{
+      "triggerexcept": [
+        "nohover"
+      ]
+    },
+    {
       "title": "Step 4",
       "element": "#globalLogo",
       "intro": "I'm step 4 for everyone on the #globalLogo element",
       "onchange": "console.log(\"I'm entering step 4 for everyone on the #globalLogo element\");"
-    },{
+    },
+    {
       "title": "Step 5",
       "element": "#globalLogo",
       "intro": "I'm step 5 for everyone on the #globalLogo element on right position",
       "position": "right",
       "onchange": "console.log(\"I'm entering step 5 for everyone on the #globalLogo element on right position\");"
-    }]
+    }
+  ]
 }
 {{</*/* /intro */*/>}}
 ```
@@ -165,37 +182,53 @@ Identifier given to the global HTML element of the intro launch button.
       "title": "Step 1",
       "intro": "I'm step 1 for everyone",
       "onchange": "console.log(\"I'm entering step 1 for everyone\");"
-    },{
+    },
+    {
       "title": "Step 2",
       "intro": "I'm step 2 for the desktop trigger",
       "onchange": "console.log(\"I'm entering step 2 for the desktop trigger\");",
-      "triggeronly": ["desktop"]
-    },{
+      "triggeronly": [
+        "desktop"
+      ]
+    },
+    {
       "title": "Step 2",
       "intro": "I'm step 2 for the mobile and touch triggers",
       "onchange": "console.log(\"I'm entering step 2 for the mobile and touch triggers\");",
-      "triggeronly": ["mobile","touch"]
-    },{
+      "triggeronly": [
+        "mobile",
+        "touch"
+      ]
+    },
+    {
       "title": "Step 3",
       "intro": "I'm step 3 for everyone except the hover trigger",
       "onchange": "console.log(\"I'm entering step 3 for everyone except the hover trigger\");",
-      "triggerexcept": ["hover"]
-    },{
+      "triggerexcept": [
+        "hover"
+      ]
+    },
+    {
       "title": "Step 3",
       "intro": "I'm step 3 for everyone except the nohover trigger",
       "onchange": "console.log(\"I'm entering step 3 for everyone except the nohover trigger\");",
-      "triggerexcept": ["nohover"]
-    },{
+      "triggerexcept": [
+        "nohover"
+      ]
+    },
+    {
       "title": "Step 4",
       "element": "#globalLogo",
       "intro": "I'm step 4 for everyone on the #globalLogo element",
       "onchange": "console.log(\"I'm entering step 4 for everyone on the #globalLogo element\");"
-    },{
+    },
+    {
       "title": "Step 5",
       "element": "#globalLogo",
       "intro": "I'm step 5 for everyone on the #globalLogo element on right position",
       "position": "right",
       "onchange": "console.log(\"I'm entering step 5 for everyone on the #globalLogo element on right position\");"
-    }]
+    }
+  ]
 }
 {{< /intro >}}|

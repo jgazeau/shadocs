@@ -44,9 +44,9 @@ Nom de la méthode globale Javascript utilisée pour définir le nom du fichier 
 {{< /md >}}|
 
 {{< snippet
-    file="assets/js/jsoneditor.js"
-    caption="jsoneditor.js"
-    codelang="js"
+  file="assets/js/jsoneditor.js"
+  caption="jsoneditor.js"
+  codelang="js"
 />}}
 
 # Exemples
@@ -56,9 +56,13 @@ Nom de la méthode globale Javascript utilisée pour définir le nom du fichier 
 | -------- | ----- |
 |{{< md >}}
 ```
-{{</*/* jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" */*/>}}
+{{</*/* jsoneditor
+  source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json"
+*/*/>}}
 ```
-{{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" >}}|
+{{< /md >}}|{{< jsoneditor
+  source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json"
+>}}|
 |{{< md >}}
 ```
 {{</*/* jsoneditor
@@ -66,7 +70,10 @@ Nom de la méthode globale Javascript utilisée pour définir le nom du fichier 
   postAnalyzeFunction="examplePostAnalyzeFunction"
 */*/>}}
 ```
-{{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" postAnalyzeFunction="examplePostAnalyzeFunction" >}}|
+{{< /md >}}|{{< jsoneditor
+  source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json"
+  postAnalyzeFunction="examplePostAnalyzeFunction"
+>}}|
 |{{< md >}}
 ```
 {{</*/* jsoneditor
@@ -74,7 +81,10 @@ Nom de la méthode globale Javascript utilisée pour définir le nom du fichier 
   postProcessFunction="examplePostProcessFunction"
 */*/>}}
 ```
-{{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" postProcessFunction="examplePostProcessFunction" >}}|
+{{< /md >}}|{{< jsoneditor
+  source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json"
+  postProcessFunction="examplePostProcessFunction"
+>}}|
 |{{< md >}}
 ```
 {{</*/* jsoneditor
@@ -82,9 +92,16 @@ Nom de la méthode globale Javascript utilisée pour définir le nom du fichier 
   filenameToDownloadFunction="exampleFilenameToDownloadFunction"
 */*/>}}
 ```
-{{< /md >}}|{{< jsoneditor source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json" filenameToDownloadFunction="exampleFilenameToDownloadFunction" >}}|
+{{< /md >}}|{{< jsoneditor
+  source="https://raw.githubusercontent.com/json-schema-org/website/main/public/data/getting-started-examples/schemas/default.json"
+  filenameToDownloadFunction="exampleFilenameToDownloadFunction"
+>}}|
 |{{< md >}}
 ```
-{{</*/* jsoneditor source="jsoneditor/example.json" */*/>}}
+{{</*/* jsoneditor
+  source="jsoneditor/example.json"
+*/*/>}}
 ```
-{{< /md >}}|{{< jsoneditor source="jsoneditor/example.json" >}}|
+{{< /md >}}|{{< jsoneditor
+  source="jsoneditor/example.json"
+>}}|

@@ -73,7 +73,7 @@ Titre de l'onglet.
 |{{< md >}}
 ```
 {{</*/* snippet
-    type="code"
+  type="code"
 */*/>}}
 # Hello, World!
 ---
@@ -81,7 +81,7 @@ Titre de l'onglet.
 {{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet
-    type="code"
+  type="code"
 >}}
 # Hello, World!
 ---
@@ -90,7 +90,7 @@ Titre de l'onglet.
 |{{< md >}}
 ```
 {{</*/* snippet
-    type="md"
+  type="md"
 */*/>}}
 # Hello, World!
 ---
@@ -98,7 +98,7 @@ Titre de l'onglet.
 {{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet
-    type="md"
+  type="md"
 >}}
 # Hello, World!
 ---
@@ -107,7 +107,7 @@ Titre de l'onglet.
 |{{< md >}}
 ```
 {{</*/* snippet
-    type="plaintext"
+  type="plaintext"
 */*/>}}
 # Hello, World!
 ---
@@ -115,7 +115,7 @@ Titre de l'onglet.
 {{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet
-    type="plaintext"
+  type="plaintext"
 >}}
 # Hello, World!
 ---
@@ -124,76 +124,76 @@ Titre de l'onglet.
 |{{< md >}}
 ```
 {{</*/* snippet
-    file="templates/snippet.fr.md"
-    caption="Je suis une légende"
+  file="templates/snippet.fr.md"
+  caption="Je suis une légende"
 /*/*/>}}
 ```
 {{< /md >}}|{{< snippet
-    file="templates/snippet.fr.md"
-    caption="Je suis une légende"
+  file="templates/snippet.fr.md"
+  caption="Je suis une légende"
 />}}|
 |{{< md >}}
 ```
 {{</*/* snippet
-    file="templates/snippet.fr.md"
-    type="md"
-    caption="Je suis une légende"
+  file="templates/snippet.fr.md"
+  type="md"
+  caption="Je suis une légende"
 /*/*/>}}
 ```
 {{< /md >}}|{{< snippet
-    file="templates/snippet.fr.md"
-    type="md"
-    caption="Je suis une légende"
+  file="templates/snippet.fr.md"
+  type="md"
+  caption="Je suis une légende"
 />}}|
 |{{< md >}}
 ```
 {{</*/* snippet
-    file="templates/snippet.fr.md"
-    type="plaintext"
-    caption="Je suis une légende"
+  file="templates/snippet.fr.md"
+  type="plaintext"
+  caption="Je suis une légende"
 /*/*/>}}
 ```
 {{< /md >}}|{{< snippet
-    file="templates/snippet.fr.md"
-    type="plaintext"
-    caption="Je suis une légende"
+  file="templates/snippet.fr.md"
+  type="plaintext"
+  caption="Je suis une légende"
 />}}|
 |{{< md >}}
 ```
 {{</*/* snippet
-    file="templates/snippet.go"
-    caption="Je suis une légende"
-    codelang="go"
-    codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
+  file="templates/snippet.go"
+  caption="Je suis une légende"
+  codelang="go"
+  codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
 /*/*/>}}
 ```
 {{< /md >}}|{{< snippet
-    file="templates/snippet.go"
-    caption="Je suis une légende"
-    codelang="go"
-    codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
+  file="templates/snippet.go"
+  caption="Je suis une légende"
+  codelang="go"
+  codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
 />}}|
 |{{< md >}}
 ```
 {{</*/* snippet */*/>}}
 {{</*/* tab
-    title="code"
+  title="code"
 */*/>}}
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
 {{</*/* /tab */*/>}}
 {{</*/* tab
-    title="md"
-    type="md"
+  title="md"
+  type="md"
 */*/>}}
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
 {{</*/* /tab */*/>}}
 {{</*/* tab
-    title="plaintext"
-    type="plaintext"
+  title="plaintext"
+  type="plaintext"
 */*/>}}
 # Hello, World!
 ---
@@ -203,23 +203,23 @@ Titre de l'onglet.
 ```
 {{< /md >}}|{{< snippet >}}
 {{< tab
-    title="code"
+  title="code"
 >}}
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
 {{< /tab >}}
 {{< tab
-    title="md"
-    type="md"
+  title="md"
+  type="md"
 >}}
 # Hello, World!
 ---
 *Je suis* **un template** ***réutilisable*** à inclure dans le contenu d'une page.
 {{< /tab >}}
 {{< tab
-    title="plaintext"
-    type="plaintext"
+  title="plaintext"
+  type="plaintext"
 >}}
 # Hello, World!
 ---
@@ -229,28 +229,28 @@ Titre de l'onglet.
 |{{< md >}}
 ```
 {{</*/* snippet
-    file="templates/snippet.go"
-    type="md"
-    caption="Je suis une légende"
-    codelang="go"
-    codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
+  file="templates/snippet.go"
+  type="md"
+  caption="Je suis une légende"
+  codelang="go"
+  codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
 */*/>}}
 {{</*/* tab
-    title="first tab"
-    type="code"
-    caption="Je suis une autre légende"
-    codelang="go"
-    codeparam="linenos=table,hl_lines=[1,3],linenostart=20"
+  title="first tab"
+  type="code"
+  caption="Je suis une autre légende"
+  codelang="go"
+  codeparam="linenos=table,hl_lines=[1,3],linenostart=20"
 /*/*/>}}
 {{</*/* tab
-    file="templates/snippet.fr.md"
-    title="second tab"
-    codelang="md"
+  file="templates/snippet.fr.md"
+  title="second tab"
+  codelang="md"
 /*/*/>}}
 {{</*/* tab
-    title="third tab"
-    type="plaintext"
-    caption=""
+  title="third tab"
+  type="plaintext"
+  caption=""
 */*/>}}
 # Hello, World!
 ---
@@ -259,28 +259,28 @@ Titre de l'onglet.
 {{</*/* /snippet */*/>}}
 ```
 {{< /md >}}|{{< snippet
-    file="templates/snippet.go"
-    type="md"
-    caption="Je suis une légende"
-    codelang="go"
-    codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
+  file="templates/snippet.go"
+  type="md"
+  caption="Je suis une légende"
+  codelang="go"
+  codeparam="linenos=table,hl_lines=[1,3,\"5-7\"],linenostart=10"
 >}}
 {{< tab
-    title="first tab"
-    type="code"
-    caption="Je suis une autre légende"
-    codelang="go"
-    codeparam="linenos=table,hl_lines=[1,3],linenostart=20"
+  title="first tab"
+  type="code"
+  caption="Je suis une autre légende"
+  codelang="go"
+  codeparam="linenos=table,hl_lines=[1,3],linenostart=20"
 />}}
 {{< tab
-    file="templates/snippet.fr.md"
-    title="second tab"
-    codelang="md"
+  file="templates/snippet.fr.md"
+  title="second tab"
+  codelang="md"
 />}}
 {{< tab
-    title="third tab"
-    type="plaintext"
-    caption=""
+  title="third tab"
+  type="plaintext"
+  caption=""
 >}}
 # Hello, World!
 ---

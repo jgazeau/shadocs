@@ -42,52 +42,52 @@ I'm a **info** type alert by default
 |{{< md >}}
 ```
 {{</*/* alert
-    type="info"
+  type="info"
 */*/>}}
 I'm a **info** type alert
 {{</*/* /alert */*/>}}
 ```
 {{< /md >}}|{{< alert
-    type="info"
+  type="info"
 >}}
 I'm a **info** type alert
 {{< /alert >}}|
 |{{< md >}}
 ```
 {{</*/* alert
-    type="success"
+  type="success"
 */*/>}}
 I'm a **success** type alert
 {{</*/* /alert */*/>}}
 ```
 {{< /md >}}|{{< alert
-    type="success"
+  type="success"
 >}}
 I'm a **success** type alert
 {{< /alert >}}|
 |{{< md >}}
 ```
 {{</*/* alert
-    type="warning"
+  type="warning"
 */*/>}}
 I'm a **warning** type alert
 {{</*/* /alert */*/>}}
 ```
 {{< /md >}}|{{< alert
-    type="warning"
+  type="warning"
 >}}
 I'm a **warning** type alert
 {{< /alert >}}|
 |{{< md >}}
 ```
 {{</*/* alert
-    type="danger"
+  type="danger"
 */*/>}}
 I'm a **danger** type alert
 {{</*/* /alert */*/>}}
 ```
 {{< /md >}}|{{< alert
-    type="danger"
+  type="danger"
 >}}
 I'm a **danger** type alert
 {{< /alert >}}|

@@ -24,6 +24,7 @@ module.exports = defineConfig({
     NULL_STRING: 'bnVsbFN0cmluZw==',
     SEARCH_TEST_INPUT: 'theme',
     SC_PATH: 'shortcodes/',
+    SC_ASCIINEMA_PATH: 'asciinema/',
     SC_ALERT_PATH: 'alert/',
     SC_ASYNCAPI_PATH: 'asyncapi/',
     SC_BLOCKQUOTE_PATH: 'blockquote/',

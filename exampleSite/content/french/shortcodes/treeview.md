@@ -49,207 +49,263 @@ Valeurs possibles:
 |{{< md >}}
 ```
 {{</*/* treeview
-    rootpath="/shortcodes"
+  rootpath="/shortcodes"
 /*/*/>}}
 ```
 {{< /md >}}|{{< treeview 
-    rootpath="/shortcodes"
+  rootpath="/shortcodes"
 />}}|
 |{{< md >}}
 ```
 {{</*/* treeview
-    rootpath="/shortcodes"
-    display="graph"
+  rootpath="/shortcodes"
+  display="graph"
 /*/*/>}}
 ```
 {{< /md >}}|{{< treeview 
-    rootpath="/shortcodes"
-    display="graph"
+  rootpath="/shortcodes"
+  display="graph"
 />}}|
 |{{< md >}}
 ```
 {{</*/* treeview
-    rootpath="/shortcodes"
-    display="tree"
+  rootpath="/shortcodes"
+  display="tree"
 /*/*/>}}
 ```
 {{< /md >}}|{{< treeview 
-    rootpath="/shortcodes"
-    display="tree"
+  rootpath="/shortcodes"
+  display="tree"
 />}}|
 |{{< md >}}
 ```
 {{</*/* treeview
-    rootpath="/shortcodes"
-    display="tree"
-    init="collapse"
+  rootpath="/shortcodes"
+  display="tree"
+  init="collapse"
 /*/*/>}}
 ```
 {{< /md >}}|{{< treeview 
-    rootpath="/shortcodes"
-    display="tree"
-    init="collapse"
+  rootpath="/shortcodes"
+  display="tree"
+  init="collapse"
 />}}|
 |{{< md >}}
 ```
 {{</*/* treeview
-    display="tree"
+  display="tree"
 */*/>}}
-[{
+[
+  {
     "kind": "dir",
     "label": "***Répertoire***",
-    "content": [{
-            "kind": "archive",
-            "label": "***Archive***",
-            "content": [{
-                    "kind": "dir",
-                    "label": "***Répertoire** dans une archive*",
-                    "content": [{
-                            "kind": "file",
-                            "label": "***Fichier plat** dans un répertoire dans une archive*"
-                        }]
-                },{
-                    "kind": "file",
-                    "label": "***Fichier plat** dans une archive*"
-                }]
-        },{
+    "content": [
+      {
+        "kind": "archive",
+        "label": "***Archive***",
+        "content": [
+          {
+            "kind": "dir",
+            "label": "***Répertoire** dans une archive*",
+            "content": [
+              {
+                "kind": "file",
+                "label": "***Fichier plat** dans un répertoire dans une archive*"
+              }
+            ]
+          },
+          {
             "kind": "file",
-            "label": "***Fichier plat** dans un répertoire*"
-        }]
-},{
+            "label": "***Fichier plat** dans une archive*"
+          }
+        ]
+      },
+      {
+        "kind": "file",
+        "label": "***Fichier plat** dans un répertoire*"
+      }
+    ]
+  },
+  {
     "kind": "default",
     "label": "***Par défaut***"
-},{
+  },
+  {
     "kind": "dir",
     "label": "***Répertoire***"
-},{
+  },
+  {
     "kind": "file",
     "label": "***Fichier***"
-},{
+  },
+  {
     "kind": "home",
     "label": "***Accueil***"
-},{
+  },
+  {
     "kind": "page",
     "label": "***Page***"
-},{
+  },
+  {
     "kind": "section",
     "label": "***Section***"
-},{
+  },
+  {
     "kind": "taxonomy",
     "label": "***Taxonomie***"
-},{
+  },
+  {
     "kind": "term",
     "label": "***Terme de taxonomie***"
-},{
+  },
+  {
     "kind": "archive",
     "label": "***Archive***"
-},{
+  },
+  {
     "kind": "image",
     "label": "***Fichier image***"
-},{
+  },
+  {
     "kind": "video",
     "label": "***Fichier vidéo***"
-},{
+  },
+  {
     "kind": "script",
     "label": "***Script***"
-},{
+  },
+  {
     "kind": "dockerfile",
     "label": "***Dockerfile***"
-},{
+  },
+  {
     "kind": "pdf",
     "label": "***Fichier PDF***"
-},{
+  },
+  {
     "kind": "powerpoint",
     "label": "***Fichier PowerPoint***"
-},{
+  },
+  {
     "kind": "excel",
     "label": "***Fichier Excel***"
-},{
+  },
+  {
     "kind": "csv",
     "label": "***Fichier CSV***"
-},{
+  },
+  {
     "kind": "word",
     "label": "***Fichier Word***"
-}]
+  }
+]
 {{</*/* /treeview */*/>}}
 ```
 {{< /md >}}|{{< treeview
-    display="tree"
+  display="tree"
 >}}
-[{
+[
+  {
     "kind": "dir",
     "label": "***Répertoire***",
-    "content": [{
-            "kind": "archive",
-            "label": "***Archive***",
-            "content": [{
-                    "kind": "dir",
-                    "label": "***Répertoire** dans une archive*",
-                    "content": [{
-                            "kind": "file",
-                            "label": "***Fichier plat** dans un répertoire dans une archive*"
-                        }]
-                },{
-                    "kind": "file",
-                    "label": "***Fichier plat** dans une archive*"
-                }]
-        },{
+    "content": [
+      {
+        "kind": "archive",
+        "label": "***Archive***",
+        "content": [
+          {
+            "kind": "dir",
+            "label": "***Répertoire** dans une archive*",
+            "content": [
+              {
+                "kind": "file",
+                "label": "***Fichier plat** dans un répertoire dans une archive*"
+              }
+            ]
+          },
+          {
             "kind": "file",
-            "label": "***Fichier plat** dans un répertoire*"
-        }]
-},{
+            "label": "***Fichier plat** dans une archive*"
+          }
+        ]
+      },
+      {
+        "kind": "file",
+        "label": "***Fichier plat** dans un répertoire*"
+      }
+    ]
+  },
+  {
     "kind": "default",
     "label": "***Par défaut***"
-},{
+  },
+  {
     "kind": "dir",
     "label": "***Répertoire***"
-},{
+  },
+  {
     "kind": "file",
     "label": "***Fichier***"
-},{
+  },
+  {
     "kind": "home",
     "label": "***Accueil***"
-},{
+  },
+  {
     "kind": "page",
     "label": "***Page***"
-},{
+  },
+  {
     "kind": "section",
     "label": "***Section***"
-},{
+  },
+  {
     "kind": "taxonomy",
     "label": "***Taxonomie***"
-},{
+  },
+  {
     "kind": "term",
     "label": "***Terme de taxonomie***"
-},{
+  },
+  {
     "kind": "archive",
     "label": "***Archive***"
-},{
+  },
+  {
     "kind": "image",
     "label": "***Fichier image***"
-},{
+  },
+  {
     "kind": "video",
     "label": "***Fichier vidéo***"
-},{
+  },
+  {
     "kind": "script",
     "label": "***Script***"
-},{
+  },
+  {
     "kind": "dockerfile",
     "label": "***Dockerfile***"
-},{
+  },
+  {
     "kind": "pdf",
     "label": "***Fichier PDF***"
-},{
+  },
+  {
     "kind": "powerpoint",
     "label": "***Fichier PowerPoint***"
-},{
+  },
+  {
     "kind": "excel",
     "label": "***Fichier Excel***"
-},{
+  },
+  {
     "kind": "csv",
     "label": "***Fichier CSV***"
-},{
+  },
+  {
     "kind": "word",
     "label": "***Fichier Word***"
-}]
+  }
+]
 {{< /treeview >}}|

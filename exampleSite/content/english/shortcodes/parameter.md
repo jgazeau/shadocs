@@ -21,7 +21,7 @@ The parameter to display can be set using two different ways:
 * [Website specific data file](https://gohugo.io/templates/data-templates/), using **the named parameter** of the shortcode.
 
 {{< alert
-    type="warning"
+  type="warning"
 >}}
 The parameter to display is read as a markdown and converted accordingly.
 {{< /alert >}}
@@ -44,16 +44,16 @@ Specific parameter path to display, relative to the *data* folder (the parameter
 Given the following parameters definitions:
 
 {{< snippet
-    caption="hugo.toml"
-    codelang="toml"
+  caption="hugo.toml"
+  codelang="toml"
 >}}
 [params]
   logo      = "images/logo.png"
   faviconmd = "![Favicon](/images/favicon.png)"
 {{< /snippet >}}
 {{< snippet
-    caption="./data/dir/exampleTemplate.json"
-    codelang="json"
+  caption="./data/dir/exampleTemplate.json"
+  codelang="json"
 >}}
 {
   "exampleMap": {
@@ -63,8 +63,8 @@ Given the following parameters definitions:
 }
 {{< /snippet >}}
 {{< snippet
-    caption="./theme/data/themeParams.toml"
-    codelang="toml"
+  caption="./theme/data/themeParams.toml"
+  codelang="toml"
 >}}
 [navbar]
   [navbar.shortcuts.1_info]
@@ -72,8 +72,8 @@ Given the following parameters definitions:
     function = "scShowInfo"
 {{< /snippet >}}
 {{< snippet
-    caption="./theme/i18n/en.yaml"
-    codelang="yaml"
+  caption="./theme/i18n/en.yaml"
+  codelang="yaml"
 >}}
 - id: homepage_title
   translation: "Homepage"
@@ -99,45 +99,45 @@ Given the following parameters definitions:
 |{{< md >}}
 ```
 {{</*/* parameter
-    path="dir.exampleTemplate.exampleMap"
+  path="dir.exampleTemplate.exampleMap"
 /*/*/>}}
 ```
 {{< /md >}}|{{< parameter
-    path="dir.exampleTemplate.exampleMap"
+  path="dir.exampleTemplate.exampleMap"
 />}}|
 |{{< md >}}
 ```
 {{</*/* parameter
-    path="dir.exampleTemplate.exampleMap.exampleArray"
+  path="dir.exampleTemplate.exampleMap.exampleArray"
 /*/*/>}}
 ```
 {{< /md >}}|{{< parameter
-    path="dir.exampleTemplate.exampleMap.exampleArray"
+  path="dir.exampleTemplate.exampleMap.exampleArray"
 />}}|
 |{{< md >}}
 ```
 {{</*/* parameter
-    path="dir.exampleTemplate.exampleMap.exampleString"
+  path="dir.exampleTemplate.exampleMap.exampleString"
 /*/*/>}}
 ```
 {{< /md >}}|{{< parameter
-    path="dir.exampleTemplate.exampleMap.exampleString"
+  path="dir.exampleTemplate.exampleMap.exampleString"
 />}}|
 |{{< md >}}
 ```
 {{</*/* parameter
-    path="themeParams.navbar.shortcuts.1_info"
+  path="themeParams.navbar.shortcuts.1_info"
 /*/*/>}}
 ```
 {{< /md >}}|{{< parameter
-    path="themeParams.navbar.shortcuts.1_info"
+  path="themeParams.navbar.shortcuts.1_info"
 />}}|
 |{{< md >}}
 ```
 {{</*/* parameter
-    i18n="homepage_title"
+  i18n="homepage_title"
 /*/*/>}}
 ```
 {{< /md >}}|{{< parameter
-    i18n="homepage_title"
+  i18n="homepage_title"
 />}}|
