@@ -2,10 +2,5 @@
   "prettier.prettierPath": "./node_modules/prettier",
   "prettier.configPath": ".prettierrc.json",
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "[markdown]": {
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true,
-    "editor.detectIndentation": false
-  }
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

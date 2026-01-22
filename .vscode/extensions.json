@@ -1,7 +1,8 @@
 {
   "recommendations": [
-    "tamasfe.even-better-toml",
+    "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
-    "redhat.vscode-yaml"
+    "redhat.vscode-yaml",
+    "tamasfe.even-better-toml"
   ]
 }

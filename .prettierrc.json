@@ -1,5 +1,5 @@
 {
-  "singleQuote": true,
+  "endOfLine": "lf",
   "plugins": ["prettier-plugin-go-template"],
   "overrides": [
     {
@@ -8,5 +8,7 @@
         "parser": "go-template"
       }
     }
-  ]
+  ],
+  "singleQuote": true,
+  "tabWidth": 2
 }
