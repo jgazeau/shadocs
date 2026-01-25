@@ -23,7 +23,7 @@
   // CONTENT
   $content-blockquote-border-left: 0.25rem solid vars.$content-blockquote-color,
   $content-blockquote-padding: 1rem 1rem,
-  $content-heading-color: vars.$content-color,
+  $content-pre-padding: vars.$content-pre-padding,
   $content-table-body-last-row-cell-border-bottom-width: 1px,
   $content-table-cell-border: solid
     utils.smooth-color(vars.$content-table-ends-cell-background-color, 20),
@@ -38,7 +38,6 @@
       vars.$content-table-ends-cell-background-color
     ),
   // GLOBAL
-  $strong-color: vars.$content-color,
   $strong-weight: vars.$content-strong-weight,
   // HR
   $hr-background-color: transparent,
@@ -112,7 +111,8 @@
   $notification-radius: 0.75rem,
   $notification-padding: 0.75rem 1rem 0.75rem 2.5rem,
   // TITLE
-  $title-color: vars.$content-color,
   $title-family: 'lato',
   $title-line-height: 1.5
 );
+// Color styles
+@use 'bulma-custom.scss';

@@ -5,10 +5,7 @@
 //
 // Variables
 //
-$collapsible-background-color: functions.smooth-color(
-  bulma_utilities.bulmaFindColorInvert(vars.$content-background-color),
-  60
-);
+$collapsible-background-color: bulma_utilities.$grey-dark;
 //
 // Main
 //
@@ -33,14 +30,12 @@ $collapsible-background-color: functions.smooth-color(
     }
   }
   .sc-collapsible-content {
-    background-color: vars.$content-background-color;
     border-bottom: 0.1rem solid
       functions.smooth-color($collapsible-background-color, 10);
     border-left: 0.1rem solid
       functions.smooth-color($collapsible-background-color, 10);
     border-right: 0.1rem solid
       functions.smooth-color($collapsible-background-color, 10);
-    color: vars.$content-color;
     display: none;
     padding: 0.75rem 1rem;
   }

@@ -94,12 +94,3 @@ function setOpenAPIHeight(oi) {
     oi.contentWindow.document.documentElement.getBoundingClientRect().height +
     'px';
 }
-function combinePaths(basePath, relativePath) {
-  if (!basePath.endsWith('/')) {
-    basePath += '/';
-  }
-  if (relativePath.startsWith('/')) {
-    relativePath = relativePath.substring(1);
-  }
-  return basePath + relativePath;
-}

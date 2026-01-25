@@ -4,11 +4,11 @@
 //
 // Main
 //
-.notification {
+.notification:not(.banner) {
   position: relative;
   &:before {
     align-items: center;
-    color: bulma_utilities.bulmaFindColorInvert(vars.$content-color);
+    color: var(--bulma-body-background-color);
     content: '\f05a';
     display: flex;
     font: var(--fa-font-solid);

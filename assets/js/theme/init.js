@@ -70,7 +70,8 @@ document.addEventListener('DOMContentLoaded', function () {
         tdiv.setAttribute('title', codeCopyBefore);
         tdiv.setAttribute('title-after', codeCopyAfter);
       }
-      if (!getFirstAncestorByClass(p[i], 'highlight')) {
+      let wrapper = getFirstAncestorByClass(p[i], 'highlight');
+      if (!wrapper) {
         let elem = p[i];
         let wrapper = document.createElement('div');
         wrapper.classList.add('highlight');

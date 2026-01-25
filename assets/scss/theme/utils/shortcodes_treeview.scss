@@ -3,7 +3,7 @@
 //
 // Variables
 //
-$treeview-separator-color: functions.smooth-color(vars.$content-color, 40);
+$treeview-separator-color: var(--bulma-text-weak);
 //
 // Main
 //
@@ -51,7 +51,7 @@ $treeview-separator-color: functions.smooth-color(vars.$content-color, 40);
     .sc-treeview-label {
       position: relative;
       .sc-treeview-icon {
-        color: vars.$theme-color;
+        color: vars.$theme-blue-color;
         font-size: vars.$theme-h3-font-size;
         padding: 0.25rem 0.5rem;
         &.sc-treeview-coll-trigger {
