@@ -44,6 +44,12 @@ Fonction qui gère le comportement par défaut du menu latéral:
 * Si la fenêtre est supérieure ou égale à 1216 pixels de large, le menu est développé
 * Si la fenêtre est inférieure à 1216 pixels de large, le menu est réduit
 {{< /md >}}|
+| toggleColorMode(force); |{{< md >}}
+Function qui gère le mode clair/sombre:
+* force
+    * true: le mode sombre est appliqué
+    * false: le mode clair est appliqué
+{{< /md >}}|
 | toggleExtendMenu(force); |{{< md >}}
 Fonction qui gère le comportement du menu d'extension de la barre de navigation (uniquement si celui-ci est visible):
 * force

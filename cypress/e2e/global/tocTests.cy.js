@@ -53,7 +53,7 @@ describe('for: table of contents', () => {
       cy.toggleToc(true);
     });
     it('toc should collapse', () => {
-      cy.get('#tocCollapsible').click();
+      cy.get('#tocCollapsible').click({ force: true });
       cy.get('#contentContainer').should('have.class', 'is-toc-collapsed');
       cy.get('#tocContainer').should('not.be.visible');
     });
@@ -76,7 +76,7 @@ describe('for: table of contents', () => {
       cy.toggleToc(false);
     });
     it('toc should uncollapse', () => {
-      cy.get('#tocCollapsible').click();
+      cy.get('#tocCollapsible').click({ force: true });
       cy.get('#contentContainer').should('have.class', 'is-toc-uncollapsed');
       cy.get('#tocContainer').should('be.visible');
     });

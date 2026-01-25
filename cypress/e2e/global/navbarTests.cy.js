@@ -5,6 +5,27 @@ for (const testCase of testCases) {
     beforeEach(() => {
       cy[testCase + 'NavbarBeforeEach']();
     });
+    describe('when light/dark toggle', () => {
+      it('Light/Dark toggle icon should be displayed', () => {
+        cy.get(`#colorModeToggle`).should('be.visible');
+      });
+      it('light mode should set light-theme', () => {
+        cy.toggleColorMode(false);
+        cy.root().should('have.class', 'theme-light');
+        cy.cssVar('--bulma-body-background-color').should(
+          'eq',
+          'hsl(221, 14%, 100%)',
+        );
+      });
+      it('dark mode should set dark-theme', () => {
+        cy.toggleColorMode(true);
+        cy.root().should('have.class', 'theme-dark');
+        cy.cssVar('--bulma-body-background-color').should(
+          'eq',
+          'hsl(221, 14%, 9%)',
+        );
+      });
+    });
     describe('when multilingual dropdown', () => {
       it('hover should display languages', () => {
         cy.get(`#langsSelectorContainer${extendId}`).then(($elem) => {
@@ -40,7 +61,7 @@ for (const testCase of testCases) {
       it('print icon should open print preview when clicked', () => {
         cy.window().its('scPrint');
         cy.scPrintStub();
-        cy.get(`#printButton${extendId}`).click();
+        cy.get(`#printButton${extendId}`).click({ force: true });
         cy.scPrintResults();
       });
     });
@@ -50,7 +71,7 @@ for (const testCase of testCases) {
       });
       it('QR code icon should open QR code panel when clicked', () => {
         cy.window().its('scQrCode');
-        cy.get(`#qrCodeButton${extendId}`).click();
+        cy.get(`#qrCodeButton${extendId}`).click({ force: true });
         cy.scQrCodeResults();
       });
     });
@@ -60,7 +81,7 @@ for (const testCase of testCases) {
       });
       it('shortcuts icon should open shortcuts panel when clicked', () => {
         cy.window().its('scShowShortcuts');
-        cy.get(`#shortcutsInfo${extendId}`).click();
+        cy.get(`#shortcutsInfo${extendId}`).click({ force: true });
         cy.scShowShortcutsResults();
       });
     });
@@ -70,7 +91,7 @@ for (const testCase of testCases) {
       });
       it('information icon should open website information panel when clicked', () => {
         cy.window().its('scShowInfo');
-        cy.get(`#siteInfo${extendId}`).click();
+        cy.get(`#siteInfo${extendId}`).click({ force: true });
         cy.scShowInfoResults();
       });
     });

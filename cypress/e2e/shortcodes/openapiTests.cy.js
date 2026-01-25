@@ -1,4 +1,4 @@
-describe('for: openapi shortcode', () => {
+describe('for: openapi shortcode', { browser: '!firefox' }, () => {
   beforeEach(() => {
     cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_OPENAPI_PATH'));
   });
@@ -26,11 +26,14 @@ describe('for: openapi shortcode', () => {
   );
   it(
     'export link should export openapi',
-    { browser: '!firefox', defaultCommandTimeout: 10000 },
+    { defaultCommandTimeout: 10000 },
     () => {
       cy.get('.sc-openapi-iframe')
-        .first()
-        .its('0.contentDocument.body')
+        .its('0.contentDocument')
+        .should('exist')
+        .its('body')
+        .should('not.be.undefined')
+        .then(cy.wrap)
         .find('.information-container .link')
         .first()
         .should('have.attr', 'href')

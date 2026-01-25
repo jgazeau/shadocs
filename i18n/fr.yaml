@@ -8,7 +8,8 @@
   translation: 'Réduire le menu latéral'
 - id: banner_default_content
   translation: |
-    Vous consultez la version ***{{- .Site.Params.currentversion -}}*** de ce site.  
+    Vous consultez la version ***{{- .Site.Params.currentversion -}}*** de ce site.
+
     Pour une version à jour de la documentation, merci de se référer à la [dernière version]({{- .Site.Params.latestversionurl -}}).
 - id: toc_title
   translation: 'Sur cette page:'
@@ -74,6 +75,10 @@
   translation: 'Echap'
 - id: 11_closemodals_wording
   translation: 'Fermer les fenêtres modales'
+- id: 12_togglecolormode_keys_wording
+  translation: 'Shift,d'
+- id: 12_togglecolormode_wording
+  translation: 'Basculer en mode Clair/Sombre'
 - id: shortcode_collapsible
   translation: 'Développer/Réduire'
 - id: no_data

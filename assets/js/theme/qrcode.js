@@ -6,7 +6,6 @@ import { addElementToModal, displayModal } from './modules/helpers.min.js';
 document.addEventListener('DOMContentLoaded', function () {
   let qrcs = document.querySelectorAll('[id^="qrCodeButton"]');
   for (const qrc of qrcs) {
-    qrc.setAttribute('title', qrCodeLabel);
     qrc.addEventListener('click', function (e) {
       let qrImg = document.createElement('img');
       qrImg.id = 'currentPageQrCode';

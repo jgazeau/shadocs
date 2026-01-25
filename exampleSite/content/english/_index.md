@@ -35,6 +35,12 @@ categories: ["Theme"]
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(false);"
     },{
+      "title": "Light/Dark mode",
+      "intro": "The Light/Dark mode allows to toggle website display to Light or Dark mode.</i>",
+      "element": "#colorModeToggle",
+      "position": "left",
+      "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(false);"
+    },{
       "title": "Print",
       "intro": "The print function allows to print the current page content.",
       "element": "getFirstVisibleElement('#printButton, #printButtonExtend');",

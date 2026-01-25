@@ -37,7 +37,8 @@ describe('for: treeview shortcode', () => {
     cy.get(
       '#content .sc-treeview > .sc-treeview-tree > .sc-treeview-coll:not(.is-collapsed) .sc-treeview-coll-trigger',
     ).each(($elem) => {
-      cy.scrollAndClickElem($elem)
+      cy.get($elem)
+        .scrollAndClick()
         .closest('.sc-treeview-coll')
         .should('have.class', 'is-collapsed');
     });
@@ -46,7 +47,8 @@ describe('for: treeview shortcode', () => {
     cy.get(
       '#content .sc-treeview > .sc-treeview-tree > .sc-treeview-coll.is-collapsed .sc-treeview-coll-trigger',
     ).each(($elem) => {
-      cy.scrollAndClickElem($elem)
+      cy.get($elem)
+        .scrollAndClick()
         .closest('.sc-treeview-coll')
         .should('not.have.class', 'is-collapsed');
     });

@@ -5,6 +5,7 @@ import {
   getFirstVisibleElement,
   manageDefaultCollapsibleSidebar,
   manageDefaultToc,
+  toggleColorMode,
   toggleExtendMenu,
   toggleSidebar,
   toggleSidebarEntry,
@@ -20,6 +21,7 @@ window.enableSmoothScroll = enableSmoothScroll;
 window.getFirstVisibleElement = getFirstVisibleElement;
 window.manageDefaultCollapsibleSidebar = manageDefaultCollapsibleSidebar;
 window.manageDefaultToc = manageDefaultToc;
+window.toggleColorMode = toggleColorMode;
 window.toggleExtendMenu = toggleExtendMenu;
 window.toggleSidebar = toggleSidebar;
 window.toggleSidebarEntry = toggleSidebarEntry;

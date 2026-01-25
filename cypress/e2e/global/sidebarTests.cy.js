@@ -37,19 +37,19 @@ describe('for: sidebar', () => {
       cy.toggleSidebar(true, true);
     });
     it('sidebar should collapse', () => {
-      cy.get('#sidebarCollapse').click();
+      cy.get('#sidebarCollapse').click({ force: true });
       cy.get('#sidebarContainer').should('have.class', 'is-sidebar-collapsed');
     });
     it('expandable entries should expand', () => {
       cy.toggleSidebarEntries(false);
       cy.get('.is-icon-expandable').each(($elem) => {
-        cy.scrollAndClickElem($elem).should('have.class', 'is-icon-expanded');
+        cy.get($elem).scrollAndClick().should('have.class', 'is-icon-expanded');
       });
     });
     it('expandable entries should shrink', () => {
       cy.toggleSidebarEntries(true);
       cy.get('.is-icon-expandable').each(($elem) => {
-        cy.scrollAndClickElem($elem).should('have.class', 'is-icon-shrinked');
+        cy.get($elem).scrollAndClick().should('have.class', 'is-icon-shrinked');
       });
     });
     it('sidebar should collapse when resized from desktop to touch', () => {
@@ -69,7 +69,7 @@ describe('for: sidebar', () => {
       cy.toggleSidebar(false, true);
     });
     it('sidebar should uncollapse', () => {
-      cy.get('#sidebarUncollapse').click();
+      cy.get('#sidebarUncollapse').click({ force: true });
       cy.get('#sidebarContainer').should(
         'have.class',
         'is-sidebar-uncollapsed',

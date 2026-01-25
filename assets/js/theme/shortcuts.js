@@ -1,4 +1,8 @@
-import { closeModals, isFocusable } from './modules/helpers.min.js';
+import {
+  closeModals,
+  isFocusable,
+  toggleColorMode,
+} from './modules/helpers.min.js';
 
 // VARS //
 // MAIN //
@@ -74,4 +78,9 @@ function scQrCode() {
 window.scCloseModals = scCloseModals;
 function scCloseModals() {
   closeModals();
+}
+// Function to toggle color mode
+window.scToggleColorMode = scToggleColorMode;
+function scToggleColorMode() {
+  toggleColorMode();
 }

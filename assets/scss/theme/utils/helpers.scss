@@ -11,14 +11,13 @@
   @include mixins.static-size-height(max-content);
   @include mixins.static-size-width(max-content);
   align-items: center;
-  color: vars.$content-color;
+  color: var(--bulma-text-weak);
   cursor: pointer;
   display: flex;
   font-size: vars.$theme-h3-font-size;
   justify-content: center;
   padding: 0.5rem;
   &.is-pre-copy-code {
-    color: var(--bulma-pre);
     position: absolute !important;
     right: 0;
     top: 0;

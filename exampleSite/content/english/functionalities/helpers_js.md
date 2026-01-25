@@ -44,6 +44,12 @@ Function managing the default behavior of the table of contents:
 * If the window is greater than or equal to 1216 pixels wide, table of contents is uncollapsed
 * If the window is less than 1216 pixels wide, table of contents is collapsed
 {{< /md >}}|
+| toggleColorMode(force); |{{< md >}}
+Function managing the light/dark mode:
+* force
+    * true: the dark mode is enforced
+    * false: the light mode is enforced
+{{< /md >}}|
 | toggleExtendMenu(force); |{{< md >}}
 Function managing the extend menu of the navigation bar (only if it is displayed):
 * force

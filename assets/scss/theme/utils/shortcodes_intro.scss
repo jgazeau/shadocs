@@ -1,9 +1,11 @@
 @use '../vars' as vars;
 @use 'mixins.scss' as mixins;
 @use 'functions.scss' as functions;
+@use '../../bulma/sass/utilities' as bulma_utilities;
 //
 // Variables
 //
+$intro-background-color: bulma_utilities.$grey-lightest;
 $intro-arrow-size: 0.3125rem;
 $intro-border-radius: 0.75rem;
 //
@@ -82,7 +84,7 @@ $intro-border-radius: 0.75rem;
   z-index: 99;
 }
 .introjs-disableInteraction {
-  background-color: vars.$content-background-color;
+  background-color: $intro-background-color;
   opacity: 0;
   position: absolute;
   z-index: 99 !important;
@@ -107,7 +109,7 @@ $intro-border-radius: 0.75rem;
   @include mixins.font-family(lato);
   background-color: transparent;
   box-sizing: content-box;
-  color: vars.$content-color;
+  color: bulma_utilities.bulmaFindColorInvert($intro-background-color);
   position: absolute;
   transition: all 0.5s ease-out;
   visibility: hidden;
@@ -123,12 +125,12 @@ $intro-border-radius: 0.75rem;
 }
 .introjs-helperNumberLayer {
   @extend %clean;
-  color: smooth-color(vars.$content-background-color, 20);
+  color: smooth-color($intro-background-color, 20);
   padding: 0.75rem;
   text-align: center;
 }
 .introjs-arrow {
-  border: $intro-arrow-size solid vars.$content-background-color;
+  border: $intro-arrow-size solid $intro-background-color;
   box-shadow: 0 0 0.125rem 0.125rem vars.$theme-color;
   content: '';
   position: absolute;
@@ -198,7 +200,7 @@ $intro-border-radius: 0.75rem;
 .introjs-tooltip {
   animation: 0.4s delayed;
   animation-fill-mode: forwards;
-  background-color: vars.$content-background-color;
+  background-color: $intro-background-color;
   border-radius: $intro-border-radius;
   box-shadow: 0 0 0.125rem 0.125rem vars.$theme-color;
   max-width: 22rem;
@@ -229,7 +231,7 @@ $intro-border-radius: 0.75rem;
 }
 .introjs-skipbutton {
   @extend %clean;
-  color: vars.$content-color;
+  color: bulma_utilities.bulmaFindColorInvert($intro-background-color);
   transition: all 0.2s ease;
   cursor: pointer;
   &:hover,
@@ -244,18 +246,17 @@ $intro-border-radius: 0.75rem;
 .introjs-tooltipbuttons {
   justify-content: space-between;
   &:not(:empty) {
-    border-top: 1px solid
-      functions.smooth-color(vars.$content-background-color, 10);
+    border-top: 1px solid functions.smooth-color($intro-background-color, 10);
   }
 }
 .introjs-button {
   @include mixins.font-family(oswald);
   @extend %clean;
   align-items: center;
-  background-color: functions.smooth-color(vars.$content-background-color, 10);
-  border: 1px solid functions.smooth-color(vars.$content-background-color, 15);
+  background-color: functions.smooth-color($intro-background-color, 10);
+  border: 1px solid functions.smooth-color($intro-background-color, 15);
   border-radius: $intro-border-radius;
-  color: vars.$content-color;
+  color: bulma_utilities.bulmaFindColorInvert($intro-background-color);
   cursor: pointer;
   display: flex;
   flex-basis: 50%;
@@ -267,10 +268,7 @@ $intro-border-radius: 0.75rem;
   word-break: break-word;
   &.active,
   &:hover {
-    background-color: functions.smooth-color(
-      vars.$content-background-color,
-      15
-    );
+    background-color: functions.smooth-color($intro-background-color, 15);
   }
 }
 .introjs-prevbutton {
@@ -282,10 +280,10 @@ $intro-border-radius: 0.75rem;
 .introjs-disabled,
 .introjs-disabled:hover,
 .introjs-disabled:focus {
-  background-color: functions.smooth-color(vars.$content-background-color, 5);
-  border-color: functions.smooth-color(vars.$content-background-color, 10);
+  background-color: functions.smooth-color($intro-background-color, 5);
+  border-color: functions.smooth-color($intro-background-color, 10);
   box-shadow: none;
-  color: functions.smooth-color(vars.$content-background-color, 20);
+  color: functions.smooth-color($intro-background-color, 20);
   cursor: not-allowed;
 }
 .introjs-hidden {
@@ -305,7 +303,7 @@ $intro-border-radius: 0.75rem;
       margin: 0 0.125rem;
       a {
         @extend %clean;
-        background: functions.smooth-color(vars.$content-background-color, 15);
+        background: functions.smooth-color($intro-background-color, 15);
         border-radius: $intro-border-radius;
         cursor: pointer;
         display: block;
@@ -315,10 +313,7 @@ $intro-border-radius: 0.75rem;
         &.active,
         &:hover,
         &:focus {
-          background: functions.smooth-color(
-            vars.$content-background-color,
-            50
-          );
+          background: functions.smooth-color($intro-background-color, 50);
           width: 1rem;
         }
       }
@@ -326,7 +321,7 @@ $intro-border-radius: 0.75rem;
   }
 }
 .introjs-progress {
-  background-color: functions.smooth-color(vars.$content-background-color, 15);
+  background-color: functions.smooth-color($intro-background-color, 15);
   border-radius: $intro-border-radius;
   height: 0.5rem;
   margin: 0.75rem;

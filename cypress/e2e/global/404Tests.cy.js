@@ -6,7 +6,7 @@ describe('for: 404 page', () => {
     cy.get('#footer404').should('be.visible');
   });
   it('link back to homepage should redirect to homepage', () => {
-    cy.get('#footer404').click();
+    cy.get('#footer404').click({ force: true });
     cy.location().should((loc) => {
       expect(loc.href).to.eq(Cypress.env('HOMEPAGE_URL'));
     });

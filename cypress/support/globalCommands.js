@@ -57,6 +57,9 @@ Cypress.Commands.add('viewportMobile', ($size) => {
       true,
     );
 });
+Cypress.Commands.add('toggleColorMode', ($force) => {
+  cy.window().then((window) => window.toggleColorMode($force));
+});
 Cypress.Commands.add('toggleSidebar', ($force, $noTransition) => {
   cy.window().then((window) => window.toggleSidebar($force, $noTransition));
 });
@@ -69,12 +72,15 @@ Cypress.Commands.add('toggleToc', ($force) => {
 Cypress.Commands.add('disableSmoothScroll', () => {
   cy.window().then((window) => window.disableSmoothScroll());
 });
-Cypress.Commands.add('scrollAndClickElem', ($elem) => {
-  cy.get($elem).scrollIntoView().click({ force: true });
-});
-Cypress.Commands.add('scrollAndClick', { prevSubject: true }, ($elem) => {
-  cy.wrap($elem).scrollIntoView().click({ force: true });
-});
+Cypress.Commands.add(
+  'scrollAndClick',
+  { prevSubject: 'optional' },
+  ($elem, force = true) => {
+    cy.disableSmoothScroll();
+    cy.get($elem).scrollIntoView();
+    cy.get($elem).click({ force: force });
+  },
+);
 Cypress.Commands.add('allowClipBoardAndFocus', () => {
   cy.wrap(
     Cypress.automation('remote:debugger:protocol', {
@@ -102,5 +108,13 @@ Cypress.Commands.add('assertJsonValueFromClipboard', (value) => {
 });
 Cypress.Commands.add('clickWithoutDownload', ($elem) => {
   $elem[0].addEventListener('click', (e) => e.preventDefault(), { once: true });
-  $elem[0].click();
+  $elem[0].click({ force: true });
+});
+Cypress.Commands.add('cssVar', (cssVarName) => {
+  return cy.document().then((doc) => {
+    return window
+      .getComputedStyle(doc.body)
+      .getPropertyValue(cssVarName)
+      .trim();
+  });
 });

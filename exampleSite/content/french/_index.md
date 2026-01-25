@@ -35,6 +35,12 @@ categories: ["Thème"]
       "position": "left",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(false);"
     },{
+      "title": "Mode Clair/Sombre",
+      "intro": "Le mode Clair/Sombre permet de faire basculer l'affichage entre le mode Clair et le mode Sombre.</i>",
+      "element": "#colorModeToggle",
+      "position": "left",
+      "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(false);"
+    },{
       "title": "Impression",
       "intro": "La fonction d'impression permet d'imprimer le contenu de la page courante.",
       "element": "getFirstVisibleElement('#printButton, #printButtonExtend');",

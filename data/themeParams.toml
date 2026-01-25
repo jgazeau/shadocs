@@ -53,6 +53,9 @@
   [navbar.shortcuts.11_closemodals]
     keys = ["Escape"]
     function = "scCloseModals"
+  [navbar.shortcuts.12_togglecolormode]
+    keys = ["Shift","d"]
+    function = "scToggleColorMode"
 #
 # Assets list (https://gohugo.io/hugo-pipes/resource-from-template/) to include
 # Managed assets:
