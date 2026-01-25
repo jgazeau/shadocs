@@ -38,7 +38,8 @@ describe('for: snippet shortcode', () => {
   it('tabs should be visible when clicked', () => {
     cy.get('#content .sc-snippet-wrapper .sc-snippet-label').each(($elem) => {
       let tabContentId = $elem[0].getAttribute('for');
-      cy.scrollAndClickElem($elem)
+      cy.get($elem)
+        .scrollAndClick()
         .get(`#${tabContentId}-content`)
         .should('be.visible');
     });

@@ -69,8 +69,11 @@ $navbar-entry-height: vars.$navbar-height - (2 * vars.$navbar-padding);
   #navbarItems {
     width: 100%;
   }
-  #navbarItemsEnd > .navbar-item {
-    padding-left: 0;
+  .navbar-item {
+    padding: vars.$navbar-padding vars.$navbar-padding vars.$navbar-padding 0;
+  }
+  #navbarItemsStart:first-child {
+    padding-left: vars.$navbar-padding;
   }
   #navbarExtend {
     #navbarExtendWrapper {
@@ -98,13 +101,15 @@ $navbar-entry-height: vars.$navbar-height - (2 * vars.$navbar-padding);
         functions.smooth-color(vars.$theme-color, 20)
       );
       border: 0.25rem solid functions.smooth-color(vars.$theme-color, 20);
+      .navbar-item {
+        padding-left: vars.$navbar-padding;
+      }
       .dropdown-content {
+        border-radius: $navbar-border-radius 0 $navbar-border-radius
+          $navbar-border-radius;
         border-top: 0.25rem solid functions.smooth-color(vars.$theme-color, 20);
       }
     }
-  }
-  .navbar-item {
-    padding: vars.$navbar-padding;
   }
   .navbar-item-standard {
     @include mixins.static-size-height($navbar-entry-height);
@@ -146,30 +151,32 @@ $navbar-entry-height: vars.$navbar-height - (2 * vars.$navbar-padding);
         padding: vars.$navbar-padding 0 0 0;
       }
       .dropdown-content {
-        border-bottom: 0.25rem solid
-          functions.smooth-color(vars.$theme-color, 20);
-        border-left: 0.25rem solid functions.smooth-color(vars.$theme-color, 20);
-        border-radius: 0;
-        border-right: 0.25rem solid
-          functions.smooth-color(vars.$theme-color, 20);
+        background: functions.smooth-color(vars.$theme-color, 20);
+        border-radius: 0 0 $navbar-border-radius $navbar-border-radius;
+        padding: vars.$navbar-padding;
         .dropdown-item {
+          border-radius: $navbar-border-radius;
           font-size: vars.$theme-h6-font-size;
           font-style: italic;
           padding: vars.$navbar-padding;
           &:not(.is-selected) {
-            background: vars.$content-background-color;
-            color: functions.smooth-color(vars.$content-color, 50);
+            background: functions.smooth-color(vars.$theme-color, 20);
+            color: bulma_utilities.bulmaFindColorInvert(
+              functions.smooth-color(vars.$theme-color, 20)
+            );
             &:hover {
-              background: functions.smooth-color(
-                vars.$content-background-color,
-                10
+              background: functions.smooth-color(vars.$theme-color, 30);
+              color: bulma_utilities.bulmaFindColorInvert(
+                functions.smooth-color(vars.$theme-color, 30)
               );
-              color: vars.$content-color;
             }
           }
           &.is-selected {
-            background: vars.$content-background-color;
-            color: vars.$content-color;
+            background: functions.smooth-color(
+              bulma_utilities.bulmaFindColorInvert(vars.$theme-color),
+              25
+            );
+            color: vars.$theme-color;
             pointer-events: none;
             user-select: none;
           }
@@ -217,27 +224,35 @@ $navbar-entry-height: vars.$navbar-height - (2 * vars.$navbar-padding);
     }
   }
   .search-result {
-    background: vars.$content-background-color;
+    background: vars.$navbar-search-background-color;
     &:hover {
-      background: functions.smooth-color(vars.$content-background-color, 10);
+      background: functions.smooth-color(
+        vars.$navbar-search-background-color,
+        5
+      );
     }
     .sleft {
       border-image: linear-gradient(
           to top,
           transparent 10%,
-          functions.smooth-color(vars.$content-color, 50) 50%,
+          bulma_utilities.bulmaFindColorInvert(
+              vars.$navbar-search-background-color
+            )
+            50%,
           transparent 90%
         )
         0 1 0 0;
       border-right: 1px solid;
-      color: functions.smooth-color(vars.$content-color, 50);
+      color: functions.smooth-color(vars.$navbar-search-background-color, 50);
       flex-basis: 20%;
       font-style: italic;
       font-weight: bold;
       padding: vars.$navbar-padding;
     }
     .sright {
-      color: vars.$content-color;
+      color: bulma_utilities.bulmaFindColorInvert(
+        vars.$navbar-search-background-color
+      );
       font-size: 0.875rem;
       padding: vars.$navbar-padding;
     }
@@ -246,11 +261,58 @@ $navbar-entry-height: vars.$navbar-height - (2 * vars.$navbar-padding);
     padding: vars.$navbar-padding;
   }
   strong {
-    color: vars.$theme-green-color;
+    color: vars.$navbar-search-title-results-background-color;
+    background-color: functions.smooth-color(
+      vars.$navbar-search-background-color,
+      10
+    );
     font-weight: 900;
   }
   .search-delimiter {
-    color: functions.smooth-color(vars.$content-background-color, 30);
+    color: functions.smooth-color(vars.$navbar-search-background-color, 30);
     font-weight: 900;
+  }
+  .no-result {
+    background: vars.$navbar-search-background-color !important;
+    color: vars.$theme-red-darker-color;
+    cursor: not-allowed;
+    font-style: italic;
+    font-weight: 900;
+    padding: vars.$navbar-padding;
+  }
+}
+#themeToggle {
+  .fa-sun,
+  .fa-moon {
+    position: absolute;
+    transition:
+      transform 0.2s linear,
+      opacity 0s linear 0.1s;
+  }
+  .fa-sun {
+    color: gold;
+  }
+  .fa-moon {
+    color: antiquewhite;
+  }
+}
+.theme-light #themeToggle {
+  .fa-sun,
+  .fa-moon {
+    transform: rotateY(180deg);
+  }
+  .fa-sun {
+    opacity: 1;
+  }
+  .fa-moon {
+    opacity: 0;
+  }
+}
+.theme-dark #themeToggle {
+  .fa-sun {
+    opacity: 0;
+  }
+  .fa-moon {
+    opacity: 1;
   }
 }

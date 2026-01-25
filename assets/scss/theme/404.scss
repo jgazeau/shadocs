@@ -2,6 +2,8 @@
 @use 'sass:color';
 @use 'vars' as vars;
 @use 'utils/mixins.scss' as mixins;
+@use '../bulma/sass/utilities' as bulma_utilities;
+@use '../bulma/sass';
 //
 // Animations
 //
@@ -37,7 +39,6 @@
 // Main
 //
 body {
-  color: vars.$content-color;
   font-family: oswald !important;
   height: 100svh;
   margin: 0;
@@ -83,13 +84,17 @@ body {
       clip-path: polygon(43% 0%, 100% 0%, 100% 100%, 69% 100%);
     }
   }
+  #image404 {
+    background: vars.$theme-color-404;
+    margin: 0.5rem 0 1rem 0;
+  }
   #title404,
   #footer404 {
     font-size: 1.5rem;
   }
   #footer404 {
     background: transparent;
-    color: vars.$theme-color;
+    color: bulma_utilities.bulmaFindColorInvert(vars.$theme-color-404);
     margin: 0.5rem;
     outline: none;
     padding: 0.5rem 2rem;

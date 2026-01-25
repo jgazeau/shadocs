@@ -1,0 +1,34 @@
+@use 'vars/theme_variables.scss' as theme_variables;
+//
+// Main
+//
+:root {
+  --bulma-text-weak: #{theme_variables.$bulma-text-weak-light};
+  --bulma-pre-background: #{theme_variables.$bulma-pre-background-light};
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bulma-text-weak: #{theme_variables.$bulma-text-weak-light};
+    --bulma-pre-background: #{theme_variables.$bulma-pre-background-light};
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bulma-text-weak: #{theme_variables.$bulma-text-weak-dark};
+    --bulma-pre-background: #{theme_variables.$bulma-pre-background-dark};
+  }
+}
+
+[data-theme='light'],
+.theme-light {
+  --bulma-text-weak: #{theme_variables.$bulma-text-weak-light};
+  --bulma-pre-background: #{theme_variables.$bulma-pre-background-light};
+}
+
+[data-theme='dark'],
+.theme-dark {
+  --bulma-text-weak: #{theme_variables.$bulma-text-weak-dark};
+  --bulma-pre-background: #{theme_variables.$bulma-pre-background-dark};
+}

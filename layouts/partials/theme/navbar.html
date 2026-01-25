@@ -7,9 +7,28 @@
   <div id="navbarItemsContainer" class="navbar-brand">
     {{- partial "theme/logo.html" . -}}
     <div id="navbarItems" class="is-flex is-justify-content-space-between">
-      <div id="navbarItemsStart">
+      <div id="navbarItemsStart" class="is-flex">
         <div id="searchContainer" class="navbar-item">
           {{- partial "theme/search.html" . -}}
+        </div>
+        <div
+          class="navbar-item{{ with not (default true $.Site.Params.navbarColorModeToggle ) }}
+            is-hidden
+          {{ end }}"
+        >
+          <a
+            id="colorModeToggle"
+            class="button navbar-item-standard"
+            title="{{- i18n "12_togglecolormode_wording" -}}"
+          >
+            <span
+              class="icon marginless is-inline-flex is-justify-content-center is-align-items-center"
+              id="themeToggle"
+            >
+              <i class="fa-duotone fa-solid fa-sun fa-xl"></i>
+              <i class="fa-duotone fa-solid fa-moon fa-xl"></i>
+            </span>
+          </a>
         </div>
       </div>
       <div

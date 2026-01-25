@@ -87,4 +87,14 @@ describe('for: shortcuts', () => {
     cy.get('body').type('{shift+1}');
     cy.get('#modalContainer').should('be.visible');
   });
+  it('[shift+d] should toggle light/dark mode', () => {
+    cy.toggleColorMode(false);
+    cy.window().its('scToggleColorMode');
+    cy.get('body').type('{shift+d}');
+    cy.root().should('have.class', 'theme-dark');
+    cy.cssVar('--bulma-body-background-color').should(
+      'eq',
+      'hsl(221, 14%, 9%)',
+    );
+  });
 });

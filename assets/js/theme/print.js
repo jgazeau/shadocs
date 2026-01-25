@@ -4,7 +4,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   let pbs = document.querySelectorAll('[id^="printButton"]');
   for (const pb of pbs) {
-    pb.setAttribute('title', printLabel);
     pb.addEventListener('click', function (e) {
       try {
         window.print();

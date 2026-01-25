@@ -1,4 +1,4 @@
-describe('for: jsoneditor shortcode', () => {
+describe('for: jsoneditor shortcode', { browser: '!firefox' }, () => {
   beforeEach(() => {
     cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_JSONEDITOR_PATH'));
   });
@@ -26,7 +26,7 @@ describe('for: jsoneditor shortcode', () => {
   );
   it(
     'copy link should copy jsoneditor',
-    { browser: '!firefox', defaultCommandTimeout: 10000 },
+    { defaultCommandTimeout: 10000 },
     () => {
       cy.allowClipBoardAndFocus();
       cy.get(
@@ -41,9 +41,8 @@ describe('for: jsoneditor shortcode', () => {
   );
   it(
     'export link should export jsoneditor',
-    { browser: '!firefox', defaultCommandTimeout: 10000 },
+    { defaultCommandTimeout: 10000 },
     () => {
-      const path = require('path');
       cy.get(
         '.sc-jsoneditor-wrapper .sc-jsoneditor-action-wrapper .sc-jsoneditor-download-button',
       )
@@ -72,7 +71,7 @@ describe('for: jsoneditor shortcode', () => {
   );
   it(
     'copy link should copy jsoneditor with specific post process',
-    { browser: '!firefox', defaultCommandTimeout: 10000 },
+    { defaultCommandTimeout: 10000 },
     () => {
       cy.allowClipBoardAndFocus();
       cy.get(
@@ -85,9 +84,8 @@ describe('for: jsoneditor shortcode', () => {
   );
   it(
     'export link should export jsoneditor with specific post process',
-    { browser: '!firefox', defaultCommandTimeout: 10000 },
+    { defaultCommandTimeout: 10000 },
     () => {
-      const path = require('path');
       cy.get(
         '.sc-jsoneditor-wrapper .sc-jsoneditor-container[post-process-function] .sc-jsoneditor-action-wrapper .sc-jsoneditor-download-button',
       )
@@ -110,7 +108,7 @@ describe('for: jsoneditor shortcode', () => {
   );
   it(
     'export link should export jsoneditor with specific filename',
-    { browser: '!firefox', defaultCommandTimeout: 10000 },
+    { defaultCommandTimeout: 10000 },
     () => {
       cy.get(
         '.sc-jsoneditor-wrapper .sc-jsoneditor-container[filename-to-download-function] .sc-jsoneditor-action-wrapper .sc-jsoneditor-download-button',

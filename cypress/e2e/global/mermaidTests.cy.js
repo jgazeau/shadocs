@@ -1,4 +1,4 @@
-describe('for: mermaid', () => {
+describe('for: mermaid', { browser: '!firefox' }, () => {
   beforeEach(() => {
     cy.visit(Cypress.env('FUNC_MERMAID_PATH'));
   });
@@ -42,7 +42,7 @@ describe('for: mermaid', () => {
       );
     });
   });
-  it('export button should export mermaid', { browser: '!firefox' }, () => {
+  it('export button should export mermaid', () => {
     const path = require('path');
     cy.get('#content .mermaid-wrapper.loader-container').each(($elem) => {
       let elId = $elem[0].id;

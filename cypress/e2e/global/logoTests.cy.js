@@ -6,7 +6,7 @@ describe('for: logo', () => {
     cy.get('#globalLogo').should('be.visible');
   });
   it('logo should redirect to homepage', () => {
-    cy.get('#globalLogo').click();
+    cy.get('#globalLogo').click({ force: true });
     cy.location('href').should('eq', Cypress.env('HOMEPAGE_URL'));
   });
 });

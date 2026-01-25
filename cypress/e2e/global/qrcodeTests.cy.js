@@ -13,7 +13,7 @@ describe('for: QR code', () => {
     if (Cypress.browser.name === 'electron') {
       homeQrCode = 'homeQrCode_electron.png';
     }
-    cy.get('#qrCodeButton').click();
+    cy.get('#qrCodeButton').click({ force: true });
     cy.get('#currentPageQrCode').then(($img) => {
       cy.fixture('qrcode/' + homeQrCode, 'base64').should(
         'be.equal',

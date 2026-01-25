@@ -8,7 +8,8 @@
   translation: 'Seitenleiste einklappen'
 - id: banner_default_content
   translation: |
-    Sie betrachten gerade Version ***{{- .Site.Params.currentversion -}}*** dieser Webseite.  
+    Sie betrachten gerade Version ***{{- .Site.Params.currentversion -}}*** dieser Webseite.
+
     Nutzen Sie die [neueste Version]({{- .Site.Params.latestversionurl -}}) um den aktuellen Stand der Webseite anzuzeigen.
 - id: toc_title
   translation: 'Auf dieser Seite:'
@@ -74,6 +75,10 @@
   translation: 'Escape'
 - id: 11_closemodals_wording
   translation: 'Übergeordnete Fenster schließen'
+- id: 12_togglecolormode_keys_wording
+  translation: 'Shift,d'
+- id: 12_togglecolormode_wording
+  translation: 'Hell-/Dunkelmodus umschalten'
 - id: shortcode_collapsible
   translation: 'Ein-/ausklappen'
 - id: no_data

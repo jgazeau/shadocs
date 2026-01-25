@@ -341,37 +341,48 @@ export function toggleSidebarEntries(force) {
 }
 // Function that manage the navbar menu
 export function manageNavbarMenu() {
-  const navbarExtendWidth = document.getElementById('navbarExtend').offsetWidth;
-  const navbarLogoWidth = document.getElementById(
-    'globalLogoContainer',
-  ).offsetWidth;
-  const searchWidth = document.getElementById('searchContainer').offsetWidth;
-  const maxLength = document.body.clientWidth - navbarLogoWidth - searchWidth;
-  const navbarItems = document.getElementById('navbarItemsEnd').children;
-  const navbarExtendItems = document.getElementById(
+  const extend = document.getElementById('navbarExtend');
+  const extendWidth = getVisibleWidth(extend);
+  const logoWidth = document.getElementById('globalLogoContainer').offsetWidth;
+  const itemsStartWidth =
+    document.getElementById('navbarItemsStart').offsetWidth;
+  const maxLength = document.body.clientWidth - logoWidth - itemsStartWidth;
+  const items = document.getElementById('navbarItemsEnd').children;
+  const extendItems = document.getElementById(
     'navbarExtendItemsWrapper',
   ).children;
-  let tempLength = navbarExtendWidth;
-  for (let i = 0; i < navbarItems.length - 1; i++) {
-    tempLength =
-      tempLength +
-      (navbarItems[i].offsetWidth
-        ? navbarItems[i].offsetWidth
-        : navbarExtendItems[i].offsetWidth);
-    if (tempLength > maxLength) {
-      navbarItems[i].classList.toggle('is-hidden', true);
-      navbarExtendItems[i].classList.toggle('is-hidden', false);
+  let usedWidth = extendWidth;
+  for (let i = 0; i < items.length - 1; i++) {
+    usedWidth += items[i].offsetWidth
+      ? items[i].offsetWidth
+      : extendItems[i].offsetWidth;
+    if (usedWidth > maxLength) {
+      items[i].classList.toggle('is-hidden', true);
+      extendItems[i].classList.toggle('is-hidden', false);
     } else {
-      navbarItems[i].classList.toggle('is-hidden', false);
-      navbarExtendItems[i].classList.toggle('is-hidden', true);
+      items[i].classList.toggle('is-hidden', false);
+      extendItems[i].classList.toggle('is-hidden', true);
     }
   }
-  document
-    .getElementById('navbarExtend')
-    .classList.toggle('is-hidden', maxLength >= tempLength);
+  extend.classList.toggle('is-hidden', maxLength >= usedWidth);
   document
     .getElementById('navbarItemsEnd')
     .classList.toggle('is-invisible', false);
+}
+// Function returning the width of element as if it was not hidden
+export function getVisibleWidth(el) {
+  const isHidden = el.classList.contains('is-hidden');
+  if (isHidden) {
+    el.classList.toggle('is-hidden', false);
+    el.style.visibility = 'hidden';
+    el.style.position = 'absolute';
+  }
+  const width = el.offsetWidth;
+  if (isHidden) {
+    el.classList.toggle('is-hidden', true);
+    el.removeAttribute('style');
+  }
+  return width;
 }
 // Function returning a loader
 export function getLoader(wrapperClass, wrapperId) {
@@ -431,4 +442,13 @@ export function toggleToc(force) {
   document
     .getElementById('contentContainer')
     .classList.toggle('is-toc-uncollapsed', force);
+}
+// Function to toggle the light/dark mode
+// - force (true is dark, false is light, because you only know light when you know darkness...)
+export function toggleColorMode(force) {
+  document.documentElement.classList.toggle('theme-dark', force);
+  document.documentElement.classList.toggle(
+    'theme-light',
+    typeof force === 'undefined' ? force : !force,
+  );
 }

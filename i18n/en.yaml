@@ -9,6 +9,7 @@
 - id: banner_default_content
   translation: |
     You are viewing version ***{{- .Site.Params.currentversion -}}*** of this website.
+
     For an up-to-date documentation, please check the [latest version]({{- .Site.Params.latestversionurl -}}).
 - id: toc_title
   translation: 'On this page:'
@@ -74,6 +75,10 @@
   translation: 'Escape'
 - id: 11_closemodals_wording
   translation: 'Close modals'
+- id: 12_togglecolormode_keys_wording
+  translation: 'Shift,d'
+- id: 12_togglecolormode_wording
+  translation: 'Toggle Light/Dark mode'
 - id: shortcode_collapsible
   translation: 'Expand/Collapse'
 - id: no_data

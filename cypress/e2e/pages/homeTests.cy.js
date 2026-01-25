@@ -6,31 +6,35 @@ describe('for: homepage', () => {
     cy.get('#contentHome #introHome').should('have.length', 1);
   });
   it('home intro should be visible', () => {
-    cy.get('#contentHome #introHome').each(($elem) => {
-      cy.get($elem).scrollIntoView().should('be.visible');
-    });
+    cy.get('#contentHome #introHome')
+      .first()
+      .scrollIntoView()
+      .should('be.visible');
   });
   it('home intro should display and follow all steps', () => {
-    cy.get('#contentHome #introHome').each(($elem) => {
-      cy.scrollAndClickElem($elem);
-      cy.get(
-        '.introjs-tooltipReferenceLayer .introjs-tooltip ul[role=tablist] li[role=presentation]',
-      ).then(($bullets) => {
-        for (let i = 1; i < $bullets.length; i++) {
-          cy.get('.introjs-tooltipReferenceLayer .introjs-tooltip')
-            .should('exist')
-            .should('be.visible');
-          cy.get(
-            '.introjs-tooltipReferenceLayer .introjs-button.introjs-nextbutton',
-          ).scrollAndClick();
-        }
+    cy.get('#contentHome #introHome').first().scrollAndClick(false);
+    cy.get('.introjs-tooltipReferenceLayer .introjs-tooltip', {
+      timeout: Cypress.env('MAX_ANIMATION_TIMEOUT'),
+    })
+      .should('exist')
+      .should('be.visible')
+      .then(() => {
+        cy.get(
+          '.introjs-tooltipReferenceLayer .introjs-tooltip ul[role=tablist] li[role=presentation]',
+        )
+          .each(() => {
+            cy.get('.introjs-tooltipReferenceLayer .introjs-tooltip')
+              .should('exist')
+              .should('be.visible')
+              .then(() => {
+                cy.get(
+                  '.introjs-tooltipReferenceLayer .introjs-button.introjs-nextbutton',
+                ).scrollAndClick(false);
+              });
+          })
+          .then(() => {
+            cy.get('.introjs-helperLayer').should('not.exist');
+          });
       });
-      cy.get(
-        '.introjs-tooltipReferenceLayer .introjs-button.introjs-donebutton',
-      ).scrollAndClick();
-      cy.get('.introjs-tooltipReferenceLayer .introjs-tooltip').should(
-        'not.exist',
-      );
-    });
   });
 });

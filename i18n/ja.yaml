@@ -9,6 +9,7 @@
 - id: banner_default_content
   translation: |
     あなたはこのサイトの ***{{- .Site.Params.currentversion -}}*** バージョンを見ています。
+
     最新のドキュメントについては [最新バージョン]({{- .Site.Params.latestversionurl -}}) をチェックしてください。
 - id: toc_title
   translation: '目次:'
@@ -74,6 +75,10 @@
   translation: 'Escape'
 - id: 11_closemodals_wording
   translation: 'ダイアログを閉じる'
+- id: 12_togglecolormode_keys_wording
+  translation: 'Shift,d'
+- id: 12_togglecolormode_wording
+  translation: 'ライト/ダークモードを切り替える'
 - id: shortcode_collapsible
   translation: '展開／省略'
 - id: no_data

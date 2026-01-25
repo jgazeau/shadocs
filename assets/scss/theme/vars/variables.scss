@@ -5,11 +5,10 @@
 // Content
 //
 $content-blockquote-color: theme_variables.$theme-blue-darker-color;
-$content-color: hsl(0, 0%, 21%);
-$content-background-color: bulma_utilities.bulmaFindColorInvert($content-color);
 $content-footnote-color: theme_variables.$theme-blue-darker-color;
 $content-link-color: theme_variables.$theme-blue-color;
 $content-padding: 0.75rem;
+$content-pre-padding: theme_variables.$theme-h3-font-size + 1rem;
 $content-strong-weight: 800;
 $content-table-ends-cell-background-color: theme_variables.$theme-blue-darker-color;
 //
@@ -30,12 +29,12 @@ $loader-background-color: mediumseagreen;
 //
 $navbar-padding: 0.5rem;
 $navbar-height: theme_variables.$theme-control-height + (2 * $navbar-padding);
+$navbar-search-background-color: bulma_utilities.$grey-lightest;
 $navbar-search-input-border-l-delta: 10%;
-$navbar-search-input-color-h: 207;
-$navbar-search-input-color-s: 44%;
-$navbar-search-input-color-l: 49%;
+$navbar-search-input-color-h: theme_variables.$theme-blue-darker-color-h;
+$navbar-search-input-color-s: theme_variables.$theme-blue-darker-color-s;
+$navbar-search-input-color-l: theme_variables.$theme-blue-darker-color-l;
 $navbar-search-mobile-width: 9;
-$navbar-search-no-results-background-color: theme_variables.$theme-red-darker-color;
 $navbar-search-title-results-background-color: theme_variables.$theme-green-darker-color;
 $navbar-search-results-height: 40vh;
 $navbar-search-results-width: 60vw;
@@ -57,16 +56,5 @@ $sidebar-collapsed-width: calc(
 //
 // Toc variables
 //
-$toc-background-color: $content-background-color;
 $toc-collapsible-width: 1.75rem;
 $toc-width: 17.5rem;
-//////////////////////////////////////////////////////////////////////////
-
-//
-// Scrollbar variables
-//
-$scrollbar-border-radius: 0;
-$scrollbar-color: functions.smooth-color($sidebar-background-color, 20);
-$scrollbar-color-hover: functions.smooth-color($sidebar-background-color, 30);
-$scrollbar-color-action: functions.smooth-color($sidebar-background-color, 40);
-$scrollbar-rail-size: 0.5rem;

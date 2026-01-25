@@ -5,7 +5,7 @@ $theme-color-h: 200;
 $theme-color-s: 100%;
 $theme-color-l: 15%;
 $theme-color: hsl($theme-color-h, $theme-color-s, $theme-color-l);
-$theme-color-404: hsl(120, 50%, 60%);
+$theme-color-404: darkgreen;
 $theme-content-spacing: 1rem;
 $theme-control-height: 2.25rem;
 $theme-icon-size: 1.375rem;
@@ -16,8 +16,29 @@ $theme-h4-font-size: 1.25rem;
 $theme-h5-font-size: 1.125rem;
 $theme-h6-font-size: 1rem;
 $theme-blue-color: deepskyblue;
-$theme-blue-darker-color: steelblue;
+$theme-blue-darker-color-h: 200;
+$theme-blue-darker-color-s: 100%;
+$theme-blue-darker-color-l: 30%;
+$theme-blue-darker-color: hsl(
+  $theme-blue-darker-color-h,
+  $theme-blue-darker-color-s,
+  $theme-blue-darker-color-l
+);
 $theme-green-color: limegreen;
 $theme-green-darker-color: darkgreen;
 $theme-red-color: red;
 $theme-red-darker-color: darkred;
+// Bulma overrides for Dark/Light mode
+// Names are set as Bulma variables with -light or -dark suffixes
+$bulma-text-weak-light: color-mix(in hsl, var(--bulma-text), 50% white);
+$bulma-text-weak-dark: color-mix(in hsl, var(--bulma-text), 50% black);
+$bulma-pre-background-light: color-mix(
+  in hsl,
+  var(--bulma-background),
+  15% grey
+);
+$bulma-pre-background-dark: color-mix(
+  in hsl,
+  var(--bulma-background),
+  15% grey
+);
