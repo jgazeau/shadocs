@@ -1,6 +1,10 @@
+@use '../../bulma/sass/utilities' as bulma_utilities;
 //
 // Main
 //
+.sc-openapi-wrapper {
+  background-color: bulma_utilities.$grey-lightest;
+}
 .sc-openapi-wrapper,
 .sc-openapi-container,
 .sc-openapi-iframe {

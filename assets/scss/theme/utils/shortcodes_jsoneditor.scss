@@ -11,15 +11,16 @@ $jsoneditor-content-padding: 0.5rem;
 // Main
 //
 .sc-jsoneditor-container {
-  background: functions.smooth-color(vars.$content-background-color, 10);
-  border: 1px solid functions.smooth-color(vars.$content-background-color, 30);
+  background: color-mix(in hsl, var(--bulma-body-background-color), 20% grey);
+  border: 1px solid
+    color-mix(in hsl, var(--bulma-body-background-color), 60% grey);
   border-radius: $jsoneditor-content-border-radius;
-  color: vars.$content-color;
   padding: $jsoneditor-content-padding;
   position: relative;
   .je-indented-panel {
     border-radius: $jsoneditor-content-border-radius;
-    border: 1px solid functions.smooth-color(vars.$content-background-color, 20);
+    border: 1px solid
+      color-mix(in hsl, var(--bulma-body-background-color), 40% grey);
     padding: $jsoneditor-content-padding;
     margin: 0;
   }
@@ -34,7 +35,11 @@ $jsoneditor-content-padding: 0.5rem;
     &:not(:has(.je-indented-panel)) {
       &:focus-within,
       &:hover {
-        background: functions.smooth-color(vars.$content-background-color, 15);
+        background: color-mix(
+          in hsl,
+          var(--bulma-body-background-color),
+          30% grey
+        );
       }
     }
   }
@@ -49,9 +54,10 @@ $jsoneditor-content-padding: 0.5rem;
         margin-bottom: 0.5rem;
         &:focus-within,
         &:hover {
-          background: functions.smooth-color(
-            vars.$content-background-color,
-            15
+          background: color-mix(
+            in hsl,
+            var(--bulma-body-background-color),
+            30% grey
           );
         }
       }
@@ -165,17 +171,18 @@ $jsoneditor-content-padding: 0.5rem;
   input,
   select {
     @include mixins.static-size-width(100%);
-    background: vars.$content-background-color;
-    border: 1px solid functions.smooth-color(vars.$content-background-color, 25);
+    background: var(--bulma-body-background-color);
+    border: 1px solid
+      color-mix(in hsl, var(--bulma-body-background-color), 50% grey);
     box-shadow: unset;
-    color: vars.$content-color;
+    color: var(--bulma-text);
     outline: unset;
     padding: $jsoneditor-content-padding;
     &:hover,
     &:focus,
     &:focus-visible {
       border: 1px solid
-        functions.smooth-color(vars.$content-background-color, 50);
+        color-mix(in hsl, var(--bulma-body-background-color), 100% grey);
     }
   }
   div:has(> div.sc-jsoneditor-toast-error) {

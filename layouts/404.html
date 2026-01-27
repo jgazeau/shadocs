@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html data-theme="dark">
   <script type='text/javascript'>
     let text404 = '{{- with .Site.Params.text404 -}}{{- . -}}{{- else -}}404{{- end -}}';
   </script> {{- partial "theme/meta.html" . -}}
@@ -19,6 +19,7 @@
       <div id="errorCode404" data-text="404"><span>404</span></div>
       <p id="title404">{{- i18n "404_title" -}}</p>
       <img
+        id="image404"
         alt="{{- i18n "404_title" -}}"
         src="{{- with .Site.Params.image404 -}}
           {{- . | relURL -}}

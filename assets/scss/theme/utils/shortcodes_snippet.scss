@@ -26,13 +26,13 @@ $snippet-header-background-color: silver;
     }
   }
   .sc-snippet-input[type='radio']:not(:checked) + .sc-snippet-label:hover {
-    background: functions.smooth-color(vars.$content-background-color, 30);
+    background: color-mix(in hsl, var(--bulma-body-background-color), 60% grey);
   }
   .sc-snippet-label {
     @include mixins.font-family(roboto-mono);
     border-radius: 0.5rem 0.5rem 0 0;
-    background: functions.smooth-color(vars.$content-background-color, 20);
-    color: vars.$content-color;
+    background: color-mix(in hsl, var(--bulma-body-background-color), 40% grey);
+    color: var(--bulma-text);
     cursor: pointer;
     flex: 1;
     font-weight: bold;
