@@ -82,6 +82,7 @@ ignoreLogs             = ['warning-goldmark-raw-html']
   # globalBanner            = true
   currentVersion          = "latest"
   latestVersionUrl        = "https://jgazeau.github.io/shadocs/"
+  # darkMode                = true
   # enforceRefrelLinks      = true
   # navbarPrintEntry        = false
   # navbarQRCodeEntry       = false

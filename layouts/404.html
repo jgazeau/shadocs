@@ -1,5 +1,11 @@
 <!doctype html>
-<html data-theme="dark">
+<html
+  class="{{- with .Site.Params.darkMode -}}
+    theme-dark
+  {{- else -}}
+    theme-light
+  {{- end -}}"
+>
   <script type='text/javascript'>
     let text404 = '{{- with .Site.Params.text404 -}}{{- . -}}{{- else -}}404{{- end -}}';
   </script> {{- partial "theme/meta.html" . -}}

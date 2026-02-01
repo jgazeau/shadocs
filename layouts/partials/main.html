@@ -1,5 +1,11 @@
 <!doctype html>
-<html class="theme-light">
+<html
+  class="{{- with .root.Site.Params.darkMode -}}
+    theme-dark
+  {{- else -}}
+    theme-light
+  {{- end -}}"
+>
   <head>
     {{- partial "theme/meta.html" .root -}}
     {{- partial "theme/includes-head.html" .root -}}

@@ -18,6 +18,8 @@
   currentVersion          = "latest"
   # Url of the latest version of the website
   latestVersionUrl        = "https://jgazeau.github.io/shadocs/"
+  # Activate dark mode by default
+  darkMode                = true
   # Enforce Link resolution using relref function (https://gohugo.io/content-management/cross-references/)
   enforceRefrelLinks      = true
   # Disable "Print" button in navbar
