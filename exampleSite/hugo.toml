@@ -116,5 +116,5 @@ ignoreLogs             = ['warning-goldmark-raw-html']
       "scss/example.scss"
     ]
   [params.versions]
-    hugo_min         = "[0.141.0](https://github.com/gohugoio/hugo/releases/tag/v0.141.0)"
-    bulma            = "[1.0.4](https://github.com/jgthms/bulma/releases/tag/1.0.4)"
+    hugo_min = "[0.141.0](https://github.com/gohugoio/hugo/releases/tag/v0.141.0)"
+    bulma    = "[1.0.4](https://github.com/jgthms/bulma/releases/tag/1.0.4)"
