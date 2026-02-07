@@ -58,7 +58,7 @@ describe('for: table of contents', () => {
       cy.get('#tocContainer').should('not.be.visible');
     });
     it('toc should collapse when resized from widescreen to desktop', () => {
-      cy.viewportWidescreen('min').wait(Cypress.env('WAIT_FOR_ANIMATION'));
+      cy.viewportWidescreen('min');
       cy.viewportDesktop();
       cy.get('#contentContainer').should('have.class', 'is-toc-collapsed');
       cy.get('#tocContainer').should('not.be.visible');
@@ -81,7 +81,7 @@ describe('for: table of contents', () => {
       cy.get('#tocContainer').should('be.visible');
     });
     it('toc should uncollapse when resized from desktop to widescreen', () => {
-      cy.viewportDesktop().wait(Cypress.env('WAIT_FOR_ANIMATION'));
+      cy.viewportDesktop();
       cy.viewportWidescreen('min');
       cy.get('#contentContainer').should('have.class', 'is-toc-uncollapsed');
       cy.get('#tocContainer').should('be.visible');

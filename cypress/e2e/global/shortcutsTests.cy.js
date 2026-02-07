@@ -26,13 +26,13 @@ describe('for: shortcuts', () => {
   });
   it('[shift+m] should collapse sidebar when uncollapsed', () => {
     cy.window().its('scToggleSidebar').wait(Cypress.env('WAIT_FOR_ANIMATION'));
-    cy.toggleSidebar(true, true);
+    cy.toggleSidebar(true, true).wait(Cypress.env('WAIT_FOR_ANIMATION'));
     cy.get('body').type('{shift+m}', { delay: 0 });
     cy.get('#sidebarContainer').should('have.class', 'is-sidebar-collapsed');
   });
   it('[shift+m] should uncollapse sidebar when collapsed', () => {
     cy.window().its('scToggleSidebar').wait(Cypress.env('WAIT_FOR_ANIMATION'));
-    cy.toggleSidebar(false, true);
+    cy.toggleSidebar(false, true).wait(Cypress.env('WAIT_FOR_ANIMATION'));
     cy.get('body').type('{shift+m}', { delay: 0 });
     cy.get('#sidebarContainer').should('have.class', 'is-sidebar-uncollapsed');
   });

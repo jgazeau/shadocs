@@ -7,13 +7,13 @@ Cypress.Commands.add('viewportWidescreen', ($size) => {
       Cypress.env('VIEWPORT_WIDESCREEN_MINWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
       true,
-    );
+    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
   else
     cy.viewport(
       Cypress.env('VIEWPORT_WIDESCREEN_MAXWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
       true,
-    );
+    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
 });
 Cypress.Commands.add('viewportDesktop', ($size) => {
   if ($size === 'min')
@@ -21,13 +21,13 @@ Cypress.Commands.add('viewportDesktop', ($size) => {
       Cypress.env('VIEWPORT_DESKTOP_MINWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
       true,
-    );
+    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
   else
     cy.viewport(
       Cypress.env('VIEWPORT_DESKTOP_MAXWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
       true,
-    );
+    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
 });
 Cypress.Commands.add('viewportTouch', ($size) => {
   if ($size === 'min')
@@ -35,13 +35,13 @@ Cypress.Commands.add('viewportTouch', ($size) => {
       Cypress.env('VIEWPORT_TOUCH_MINWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
       true,
-    );
+    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
   else
     cy.viewport(
       Cypress.env('VIEWPORT_TOUCH_MAXWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
       true,
-    );
+    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
 });
 Cypress.Commands.add('viewportMobile', ($size) => {
   if ($size === 'min')
@@ -49,13 +49,13 @@ Cypress.Commands.add('viewportMobile', ($size) => {
       Cypress.env('VIEWPORT_MOBILE_MINWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
       true,
-    );
+    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
   else
     cy.viewport(
       Cypress.env('VIEWPORT_MOBILE_MAXWIDTH'),
       Cypress.env('VIEWPORT_COMMON_HEIGHT'),
       true,
-    );
+    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
 });
 Cypress.Commands.add('toggleColorMode', ($force) => {
   cy.window().then((window) => window.toggleColorMode($force));
