@@ -63,13 +63,17 @@
   {{- end -}}
 {{- end -}}
 {{- define "includeScss" -}}
+  {{- $filesArray := slice -}}
+  {{- range .this | uniq -}}
+    {{- $filesArray = $filesArray | append (resources.Get .) -}}
+  {{- end -}}
   {{- $options := dict
     "outputStyle" "compressed"
     "includePaths" (slice "assets/bulma" "assets/scss/theme")
     "targetPath" "css/main.css"
     "transpiler" "dartsass"
   -}}
-  {{- $cssFile := (resources.Get "scss/theme/main.scss") | resources.ExecuteAsTemplate "css/main.scss" . | css.Sass $options -}}
+  {{- $cssFile := $filesArray | resources.Concat "scss/theme/bundle.scss" | resources.ExecuteAsTemplate "css/main.scss" . | css.Sass $options -}}
   <link
     rel="stylesheet"
     rel="preload"

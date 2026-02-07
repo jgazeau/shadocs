@@ -56,6 +56,7 @@
 #
 # Liste des assets (https://gohugo.io/hugo-pipes/resource-from-template/) à inclures
 # Assets gérés:
+# - scss                  = [Liste des fichiers SCSS]
 # - css                   = [Liste des fichiers CSS]
 # - js                    = [Liste des fichiers javascript]
 # - jsModules             = [Liste des fichiers modules javascript]
@@ -64,6 +65,9 @@
 # - shortcodes.jsModules  = [Liste des fichiers modules javascript à inclure quand le shortcode associé est présent dans le contenu de la page]
 #
 [includes]
+  scss = [
+    "scss/theme/main.scss"
+  ]
   css = [
     "css/external/fontawesome.all.min.css",
     "css/external/overlay-scrollbars/overlayscrollbars.min.css"

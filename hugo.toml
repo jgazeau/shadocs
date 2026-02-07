@@ -3,8 +3,5 @@
     path = "github.com/jgthms/bulma"
     version = "1.0.4"
   [[module.imports.mounts]]
-    source = "."
-    target = "assets/scss"
-  [[module.imports.mounts]]
     source = "sass"
     target = "assets/scss/bulma/sass"
