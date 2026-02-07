@@ -34,6 +34,7 @@ describe('for: sidebar', () => {
   });
   describe('when sidebar uncollapsed', () => {
     beforeEach(() => {
+      cy.viewportTouch().wait(Cypress.env('WAIT_FOR_ANIMATION'));
       cy.toggleSidebar(true, true);
     });
     it('sidebar should collapse', () => {
@@ -54,7 +55,11 @@ describe('for: sidebar', () => {
     });
     it('sidebar should collapse when resized from desktop to touch', () => {
       cy.viewportDesktop('min').wait(Cypress.env('WAIT_FOR_ANIMATION'));
-      cy.viewportTouch();
+      cy.get('#sidebarContainer').should(
+        'have.class',
+        'is-sidebar-uncollapsed',
+      );
+      cy.viewportTouch().wait(Cypress.env('WAIT_FOR_ANIMATION'));
       cy.get('#sidebarContainer').should('have.class', 'is-sidebar-collapsed');
     });
     it('sidebar should collapse when resized from touch (with sidebar uncollapsed) to mobile', () => {
@@ -66,6 +71,7 @@ describe('for: sidebar', () => {
   });
   describe('when sidebar collapsed', () => {
     beforeEach(() => {
+      cy.viewportTouch().wait(Cypress.env('WAIT_FOR_ANIMATION'));
       cy.toggleSidebar(false, true);
     });
     it('sidebar should uncollapse', () => {
@@ -76,14 +82,17 @@ describe('for: sidebar', () => {
       );
     });
     it('menu item should appear on hover', () => {
-      cy.get('.is-fs-expandable-icon').first().trigger('mouseenter');
+      cy.get('.is-fs-expandable-icon')
+        .first()
+        .should('be.visible')
+        .trigger('mouseenter');
       cy.get('.is-fs-expandable-icon')
         .siblings('.is-expandable')
         .first()
+        .should('be.visible')
         .should('have.class', 'is-hovered');
     });
     it('sidebar should uncollapse when resized from touch to desktop', () => {
-      cy.viewportTouch().wait(Cypress.env('WAIT_FOR_ANIMATION'));
       cy.viewportDesktop('min');
       cy.get('#sidebarContainer').should(
         'have.class',
