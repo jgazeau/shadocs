@@ -177,10 +177,10 @@ jobs:
             /home/runner/.cache/hugo_cache/
       - name: Set archive name
         id: archive-name
-        run: echo "::set-output name=zip_name::${GITHUB_REPOSITORY##*/}-${TAG_NAME}.zip"
+        run: echo "zip_name=${GITHUB_REPOSITORY##*/}-${GITHUB_REF_NAME}.zip" >> "$GITHUB_OUTPUT"
       - name: Create archive
         run: cd exampleSite && hugo mod vendor && zip -r ${{ steps.archive-name.outputs.zip_name }} _vendor
       - name: Release
         uses: softprops/action-gh-release@v2
         with:
-          files: ${{ steps.archive-name.outputs.zip_name }}
+          files: exampleSite/${{ steps.archive-name.outputs.zip_name }}
