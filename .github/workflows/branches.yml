@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        hugo_version: [0.141.0, 0.155.2]
+        hugo_version: [0.141.0, 0.155.3]
     steps:
       - name: Checkout theme repository
         uses: actions/checkout@v6
