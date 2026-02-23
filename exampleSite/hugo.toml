@@ -19,7 +19,7 @@ ignoreLogs             = ['warning-goldmark-raw-html']
   [module.hugoVersion]
     extended = true
     min = '0.141.0'
-    max = '0.155.3'
+    max = '0.156.0'
   [[module.mounts]]
     source = 'asciinema'
     target = 'static/asciinema'
