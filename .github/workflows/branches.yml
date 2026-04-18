@@ -181,6 +181,6 @@ jobs:
       - name: Create archive
         run: cd exampleSite && hugo mod vendor && zip -r ${{ steps.archive-name.outputs.zip_name }} _vendor
       - name: Release
-        uses: softprops/action-gh-release@v2
+        uses: softprops/action-gh-release@v3
         with:
           files: exampleSite/${{ steps.archive-name.outputs.zip_name }}
