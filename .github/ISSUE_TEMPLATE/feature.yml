@@ -1,17 +1,35 @@
 name: Feature
 description: Request a new feature
 title: '[feature_request]: '
-labels: ['enhancement']
+labels: ['feature']
 body:
-  - type: textarea
-    id: request
+  - type: markdown
     attributes:
-      label: What is missing in the project?
-      description: Please provide what is missing in the project and why it should be added?
+      value: |
+        # Feature request
+        ---
+        *Please describe your request as clearly as possible and explain why it would be useful!*
+  - type: textarea
+    id: motivation
+    attributes:
+      label: What problem does this solve?
+      description: Describe the problem or limitation you are facing and why this feature should be added.
     validations:
       required: true
   - type: textarea
+    id: request
+    attributes:
+      label: Proposed feature
+      description: Describe the feature you would like to see added.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Have you considered any alternative solutions or workarounds?
+  - type: textarea
     id: solution
     attributes:
-      label: Solution?
-      description: Got a solution, or an idea to implement the feature? Feel free to provide it!
+      label: Proposed solution
+      description: Got a solution or an idea to implement the feature? Feel free to provide it!

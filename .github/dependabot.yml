@@ -1,23 +1,30 @@
 version: 2
 updates:
-  - package-ecosystem: 'github-actions'
-    directory: '/'
-    schedule:
-      interval: 'weekly'
-    commit-message:
-      prefix: 'chore:'
-      include: 'scope'
-    labels:
-      - 'internal'
-    open-pull-requests-limit: 10
   - package-ecosystem: 'npm'
     directory: '/'
     schedule:
       interval: 'weekly'
+      day: 'monday'
+      time: '09:00'
+    open-pull-requests-limit: 10
+    pull-request-branch-name:
+      separator: '/'
     commit-message:
-      prefix: 'chore:'
+      prefix: 'chore(deps):'
       include: 'scope'
     labels:
       - 'internal'
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '10:00'
     open-pull-requests-limit: 10
-    versioning-strategy: increase
+    pull-request-branch-name:
+      separator: '/'
+    commit-message:
+      prefix: 'chore(ci):'
+      include: 'scope'
+    labels:
+      - 'internal'

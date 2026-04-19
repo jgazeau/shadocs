@@ -1,7 +1,7 @@
 name: Bug Report
 description: Create a bug report
-title: '[bug]: '
-labels: ['bug']
+title: "[bug]: "
+labels: ["bug"]
 body:
   - type: markdown
     attributes:
@@ -18,6 +18,13 @@ body:
     validations:
       required: true
   - type: textarea
+    id: issue-actual-behavior
+    attributes:
+      label: Actual behavior
+      description: What actually happened?
+    validations:
+      required: true
+  - type: textarea
     id: issue-expected-behavior
     attributes:
       label: Expected behavior
@@ -28,11 +35,11 @@ body:
     id: issue-reproducer
     attributes:
       label: Reproducer
-      description: Provide a reproducer so we can easily and quickly help you.
+      description: Provide a reproducer so we can help you more quickly.
     validations:
       required: true
   - type: textarea
     id: solution
     attributes:
-      label: Solution?
-      description: Got a solution, or an idea to solve the issue? Feel free to provide it!
+      label: Proposed solution
+      description: Got a solution or an idea to solve the issue? Feel free to provide it!
