@@ -1,0 +1,75 @@
+name: Bump Go dependencies
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 10 * * 1'
+
+jobs:
+  hugo-build:
+    name: Hugo build
+    runs-on: ubuntu-latest
+    env:
+      HUGO_VERSION: 0.160.1
+    steps:
+      - name: Checkout theme repository
+        uses: actions/checkout@v6
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Cache Homebrew dependencies
+        uses: actions/cache@v5
+        with:
+          key: brew-${{ runner.os }}
+          path: |
+            /home/linuxbrew/.linuxbrew/
+      - name: Cache Hugo dependencies
+        uses: actions/cache@v5
+        with:
+          key: hugo-${{ runner.os }}
+          path: |
+            /home/runner/.local/bin/
+            /home/runner/.cache/hugo_cache/
+      - name: Download Hugo binaries
+        run: |
+          printf "%70s\n" | tr ' ' '-'
+          printf "%-60s%10s\n" "-> Downloading Hugo version:" "${HUGO_VERSION}"
+          printf "%70s\n" | tr ' ' '-'
+          HUGO_ARCHIVE="hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
+          curl --create-dirs --output-dir /home/runner/.local/bin -H "Accept: application/octet-stream" -sLO "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/${HUGO_ARCHIVE}"
+          tar -xf /home/runner/.local/bin/${HUGO_ARCHIVE} -C /home/runner/.local/bin
+          cp /home/runner/.local/bin/hugo /home/runner/.local/bin/hugo_${HUGO_VERSION}
+          rm -f /home/runner/.local/bin/${HUGO_ARCHIVE}
+          echo "/home/runner/.local/bin" >> ${GITHUB_PATH}
+          printf "%70s\n" | tr ' ' '-'
+          hugo_${HUGO_VERSION} version
+          printf "%70s\n" | tr ' ' '-'
+      - name: Bump Go dependencies, build theme and create PR
+        env:
+          PR_TITLE: 'build: bump Go dependencies'
+          BRANCH_NAME: 'build/bump_go_dependencies'
+          GH_TOKEN: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
+        run: |
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          go version
+          printf "%70s\n" | tr ' ' '-'
+          sass --version
+          printf "%70s\n" | tr ' ' '-'
+          hugo_${HUGO_VERSION} version
+          printf "%70s\n" | tr ' ' '-'
+          hugo mod get -u
+          printf "%70s\n" | tr ' ' '-'
+          hugo mod clean
+          hugo mod tidy
+          printf "%70s\n" | tr ' ' '-'
+          hugo_${HUGO_VERSION} -s exampleSite
+          printf "%70s\n" | tr ' ' '-'
+          if [[ $(git status --porcelain | wc -l) -gt 0 ]];then
+            git checkout -b ${BRANCH_NAME}
+            git add -u .
+            git config --local user.name "GitHub Action"
+            git config --local user.email "action@github.com"
+            git commit -m "${PR_TITLE}"
+            git push -f origin ${BRANCH_NAME}
+            gh pr create --title "chore:(ci): bump Go dependencies" --label "internal" --base main --head ${BRANCH_NAME} --fill
+          fi

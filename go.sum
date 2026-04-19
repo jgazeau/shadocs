@@ -1,2 +1,4 @@
 github.com/jgthms/bulma v0.0.0-20260126235018-210b6f03b7e0 h1:J7W3e8RsePK0tjxr8mScp3msle0ZBLgFtbi33ZHkuNA=
 github.com/jgthms/bulma v0.0.0-20260126235018-210b6f03b7e0/go.mod h1:89FLBKXYFKfOKAoDeUT26V0pHGwzr205cMXAEqtAVOI=
+github.com/jgthms/bulma v0.0.0-20260301201300-741da22368cd h1:XeROAQGcqG0kJNA7jYYqsD7lI1P3Dx1Eboo1XNAA+Cc=
+github.com/jgthms/bulma v0.0.0-20260301201300-741da22368cd/go.mod h1:89FLBKXYFKfOKAoDeUT26V0pHGwzr205cMXAEqtAVOI=

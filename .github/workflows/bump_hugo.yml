@@ -3,10 +3,10 @@ name: Bump Hugo
 on:
   workflow_dispatch:
   schedule:
-    - cron: '30 2 * * 1'
+    - cron: '0 9 * * 1'
 
 jobs:
-  Bump:
+  bump_hugo:
     name: Bump Hugo
     runs-on: ubuntu-latest
     steps:
@@ -16,7 +16,7 @@ jobs:
           submodules: recursive
           fetch-depth: 0
           token: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
-      - name: Bump thirdparties and create PR
+      - name: Bump Hugo and create PR
         env:
           PR_TITLE: 'build: bump Hugo'
           BRANCH_NAME: 'build/bump_hugo'
@@ -36,6 +36,7 @@ jobs:
           sed -i 's|max.*|max = '\'"${latestHugoVersion}"\''|' exampleSite/hugo.toml
           sed -i 's|hugo_min.*|hugo_min = \"['"${minHugoVersion}"'](https://github.com/gohugoio/hugo/releases/tag/v'"${minHugoVersion}"')\"|' exampleSite/hugo.toml
           sed -i 's|HUGO_VERSION:.*|HUGO_VERSION: '"${latestHugoVersion}"'|' .github/workflows/hugo.yml
+          sed -i 's|HUGO_VERSION:.*|HUGO_VERSION: '"${latestHugoVersion}"'|' .github/workflows/bump_go_dependencies.yml
           if [[ $(git status --porcelain | wc -l) -gt 0 ]];then
             git checkout -b ${BRANCH_NAME}
             git add -u .
@@ -43,5 +44,5 @@ jobs:
             git config --local user.email "action@github.com"
             git commit -m "${PR_TITLE}"
             git push -f origin ${BRANCH_NAME}
-            gh pr create --title "chore:(bmyc): bump latest hugo version to ${latestHugoVersion}" --label "internal" --base main --head ${BRANCH_NAME} --fill
+            gh pr create --title "chore:(ci): bump latest hugo version to ${latestHugoVersion}" --label "internal" --base main --head ${BRANCH_NAME} --fill
           fi
