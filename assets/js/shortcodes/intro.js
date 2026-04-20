@@ -96,7 +96,7 @@ for (let i = 0; i < divi.length; i++) {
       introOptions.steps,
       getTriggers(),
     );
-    let intro = introJs();
+    let intro = introJs.tour();
     intro.setOptions(themeCommonOptions);
     intro.setOptions(manageEmptySteps(introOptions));
     for (const key in INTRO_THEME_FUNCTIONS) {
@@ -104,8 +104,8 @@ for (let i = 0; i < divi.length; i++) {
         intro[key](function () {
           if (INTRO_THEME_FUNCTIONS[key].applyOnStep) {
             Function(INTRO_THEME_FUNCTIONS[key].callBack)();
-            if (this._introItems[this.currentStep()].hasOwnProperty(key)) {
-              Function(this._introItems[this.currentStep()][key])();
+            if (this._steps[this.currentStep()].hasOwnProperty(key)) {
+              Function(this._steps[this.currentStep()][key])();
             }
           } else {
             Function(INTRO_THEME_FUNCTIONS[key].callBack)();
