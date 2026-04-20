@@ -5,7 +5,7 @@
   {{- with .Get "assets" -}}
     {{- $.Page.Scratch.Add "highchartsAssets" (split . ",") -}}
   {{- else -}}
-    {{- $.Page.Scratch.Add "highchartsAssets" (slice "js/external/highcharts/highcharts.min.js") -}}
+    {{- errorf "Highcharts assets must be set in highcharts shortcode in %q" $.Page.RelPermalink -}}
   {{- end -}}
   {{- with try resources.GetRemote ($.Get "source") -}}
     {{- with .Err -}}

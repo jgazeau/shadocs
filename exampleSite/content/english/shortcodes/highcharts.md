@@ -37,51 +37,51 @@ Source of the Highcharts chart.
 ```
 {{</*/* highcharts
   id="highcharts1"
-  assets=""
+  assets="js/external/highcharts/highcharts.min.js"
   source="/highcharts/example-default.json"
 */*/>}}
 ```
 {{< /md >}}|{{< highcharts
   id="highcharts1"
-  assets=""
+  assets="js/external/highcharts/highcharts.min.js"
   source="/highcharts/example-default.json"
 >}}|
 |{{< md >}}
 ```
 {{</*/* highcharts
   id="highcharts2"
-  assets="js/external/highcharts/modules/gantt.min.js"
+  assets="js/external/highcharts/highcharts.min.js,js/external/highcharts/modules/gantt.min.js"
   source="/highcharts/example-gantt.json"
 */*/>}}
 ```
 {{< /md >}}|{{< highcharts
   id="highcharts2"
-  assets="js/external/highcharts/modules/gantt.min.js"
+  assets="js/external/highcharts/highcharts.min.js,js/external/highcharts/modules/gantt.min.js"
   source="/highcharts/example-gantt.json"
 >}}|
 |{{< md >}}
 ```
 {{</*/* highcharts
   id="highcharts3"
-  assets="js/external/highcharts/modules/map.min.js,js/external/highcharts/modules/exporting.min.js"
+  assets="js/external/highcharts/highcharts.min.js,js/external/highcharts/modules/map.min.js"
   source="/highcharts/example-maps.json"
 */*/>}}
 ```
 {{< /md >}}|{{< highcharts
   id="highcharts3"
-  assets="js/external/highcharts/modules/map.min.js,js/external/highcharts/modules/exporting.min.js"
+  assets="js/external/highcharts/highcharts.min.js,js/external/highcharts/modules/map.min.js"
   source="/highcharts/example-maps.json"
 >}}|
 |{{< md >}}
 ```
 {{</*/* highcharts
   id="highcharts4"
-  assets="js/external/highcharts/modules/stock.min.js,js/external/highcharts/modules/data.min.js,js/external/highcharts/indicators/indicators-all.min.js,js/external/highcharts/modules/drag-panes.min.js,js/external/highcharts/modules/annotations-advanced.min.js,js/external/highcharts/modules/price-indicator.min.js,js/external/highcharts/modules/full-screen.min.js,js/external/highcharts/modules/stock-tools.min.js,js/external/highcharts/modules/heikinashi.min.js,js/external/highcharts/modules/hollowcandlestick.min.js,js/external/highcharts/modules/accessibility.min.js"
+  assets="js/external/highcharts/highcharts.min.js,js/external/highcharts/modules/stock.min.js,js/external/highcharts/highcharts-more.min.js,js/external/highcharts/modules/exporting.min.js,js/external/highcharts/modules/export-data.min.js,js/external/highcharts/modules/accessibility.min.js,js/external/highcharts/themes/adaptive.min.js"
   source="/highcharts/example-stock.json"
 */*/>}}
 ```
 {{< /md >}}|{{< highcharts
   id="highcharts4"
-  assets="js/external/highcharts/modules/stock.min.js,js/external/highcharts/modules/data.min.js,js/external/highcharts/indicators/indicators-all.min.js,js/external/highcharts/modules/drag-panes.min.js,js/external/highcharts/modules/annotations-advanced.min.js,js/external/highcharts/modules/price-indicator.min.js,js/external/highcharts/modules/full-screen.min.js,js/external/highcharts/modules/stock-tools.min.js,js/external/highcharts/modules/heikinashi.min.js,js/external/highcharts/modules/hollowcandlestick.min.js,js/external/highcharts/modules/accessibility.min.js"
+  assets="js/external/highcharts/highcharts.min.js,js/external/highcharts/modules/stock.min.js,js/external/highcharts/highcharts-more.min.js,js/external/highcharts/modules/exporting.min.js,js/external/highcharts/modules/export-data.min.js,js/external/highcharts/modules/accessibility.min.js,js/external/highcharts/themes/adaptive.min.js"
   source="/highcharts/example-stock.json"
 >}}|

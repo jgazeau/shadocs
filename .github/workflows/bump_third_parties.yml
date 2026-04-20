@@ -1,0 +1,42 @@
+name: Bump third parties
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 10 * * 1'
+
+jobs:
+  bump_third_party:
+    name: Bump third parties using Bmyc
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.14'
+          cache: 'pip'
+      - name: Bump third party and create PR
+        env:
+          LOG_FILE: 'workflow.log'
+          PR_TITLE: 'build: bump third_party dependencies'
+          BRANCH_NAME: 'build/bump_third_party_dependencies'
+          GITHUB_TOKEN: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
+          BMYC_GITHUB_TOKEN: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
+        run: |
+          printf "%70s\n" | tr ' ' '-'
+          bmyc -vvvv -s ${LOG_FILE}
+          printf "%70s\n" | tr ' ' '-'
+          if [[ $(git status --porcelain | wc -l) -gt 0 && -f ${LOG_FILE} ]];then
+            git checkout -b ${BRANCH_NAME}
+            git add -u .
+            git config --local user.name "GitHub Action"
+            git config --local user.email "action@github.com"
+            git commit -m "${PR_TITLE}"
+            git push -f origin ${BRANCH_NAME}
+            gh pr create --title "chore:(ci): bump third party dependencies" --body "$(cat ${LOG_FILE})" --label "internal" --base main --head ${BRANCH_NAME} --fill
+          fi
