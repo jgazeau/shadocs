@@ -28,3 +28,17 @@ updates:
       include: 'scope'
     labels:
       - 'internal'
+  - package-ecosystem: 'pip'
+    directory: '/'
+    schedule:
+      interval: 'weekly'
+      day: 'monday'
+      time: '11:00'
+    open-pull-requests-limit: 10
+    pull-request-branch-name:
+      separator: '/'
+    commit-message:
+      prefix: 'chore(deps):'
+      include: 'scope'
+    labels:
+      - 'internal'
