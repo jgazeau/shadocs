@@ -10,7 +10,7 @@ jsonschema==4.26.0
 jsonschema-specifications==2025.9.1
 pip_system_certs==5.3
 prettytable==3.17.0
-pydantic==2.13.2
+pydantic==2.13.3
 pydantic_core==2.46.2
 PyYAML==6.0.3
 referencing==0.37.0
