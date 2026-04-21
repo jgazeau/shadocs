@@ -20,6 +20,8 @@ jobs:
         with:
           python-version: '3.14'
           cache: 'pip'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
       - name: Bump third party and create PR
         env:
           LOG_FILE: 'workflow.log'
