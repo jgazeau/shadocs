@@ -20,6 +20,8 @@ jobs:
         with:
           python-version: '3.14'
           cache: 'pip'
+      - name: Install bmyc
+        run: pip install bmyc
       - name: Bump third party and create PR
         env:
           LOG_FILE: 'workflow.log'
