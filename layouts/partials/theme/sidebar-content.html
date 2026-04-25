@@ -33,9 +33,9 @@
       {{- $sidebarRoot.Scratch.Set "titleIcon" .Params.titleIcon -}}
     {{- else -}}
       {{- if eq .FirstSection . -}}
-        {{- $sidebarRoot.Scratch.Set "titleIcon" .Site.Data.themeParams.sidebar.firstSectionIconDefault -}}
+        {{- $sidebarRoot.Scratch.Set "titleIcon" hugo.Data.themeParams.sidebar.firstSectionIconDefault -}}
       {{- else -}}
-        {{- $sidebarRoot.Scratch.Set "titleIcon" .Site.Data.themeParams.sidebar.nestedSectionIconDefault -}}
+        {{- $sidebarRoot.Scratch.Set "titleIcon" hugo.Data.themeParams.sidebar.nestedSectionIconDefault -}}
       {{- end -}}
     {{- end -}}
     {{- if eq .FirstSection . -}}

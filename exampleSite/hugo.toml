@@ -18,7 +18,7 @@ ignoreLogs             = ['warning-goldmark-raw-html']
 [module]
   [module.hugoVersion]
     extended = true
-    min = '0.141.0'
+    min = '0.156.0'
     max = '0.160.1'
   [[module.mounts]]
     source = 'asciinema'
@@ -116,5 +116,5 @@ ignoreLogs             = ['warning-goldmark-raw-html']
       "scss/example.scss"
     ]
   [params.versions]
-    hugo_min = "[0.141.0](https://github.com/gohugoio/hugo/releases/tag/v0.141.0)"
+    hugo_min = "[0.156.0](https://github.com/gohugoio/hugo/releases/tag/v0.156.0)"
     bulma    = "[1.0.4](https://github.com/jgthms/bulma/releases/tag/1.0.4)"

@@ -54,13 +54,13 @@
             {{- $scratch.Set "kind" . -}}
           {{- else -}}
             {{- with $page.Kind -}}
-              {{- with (index $.context.Site.Data.themeParams.shortcodes.treeview.kinds .) -}}
+              {{- with (index hugo.Data.themeParams.shortcodes.treeview.kinds .) -}}
                 {{- $scratch.Set "kind" . -}}
               {{- else -}}
-                {{- $scratch.Set "kind" $.context.Site.Data.themeParams.shortcodes.treeview.kinds.default -}}
+                {{- $scratch.Set "kind" hugo.Data.themeParams.shortcodes.treeview.kinds.default -}}
               {{- end -}}
             {{- else -}}
-              {{- $scratch.Set "kind" $.context.Site.Data.themeParams.shortcodes.treeview.kinds.default -}}
+              {{- $scratch.Set "kind" hugo.Data.themeParams.shortcodes.treeview.kinds.default -}}
             {{- end -}}
           {{- end -}}
         {{- end -}}
@@ -120,16 +120,16 @@
     >
       {{- range $element := . -}}
         {{- with .kind -}}
-          {{- with (index $.context.Site.Data.themeParams.shortcodes.treeview.kinds .) -}}
+          {{- with (index hugo.Data.themeParams.shortcodes.treeview.kinds .) -}}
             {{- $scratch.Set "kind" . -}}
           {{- else -}}
-            {{- $scratch.Set "kind" $.context.Site.Data.themeParams.shortcodes.treeview.kinds.default -}}
+            {{- $scratch.Set "kind" hugo.Data.themeParams.shortcodes.treeview.kinds.default -}}
           {{- end -}}
         {{- else -}}
           {{- with .content -}}
-            {{- $scratch.Set "kind" $.context.Site.Data.themeParams.shortcodes.treeview.kinds.dir -}}
+            {{- $scratch.Set "kind" hugo.Data.themeParams.shortcodes.treeview.kinds.dir -}}
           {{- else -}}
-            {{- $scratch.Set "kind" $.context.Site.Data.themeParams.shortcodes.treeview.kinds.file -}}
+            {{- $scratch.Set "kind" hugo.Data.themeParams.shortcodes.treeview.kinds.file -}}
           {{- end -}}
         {{- end -}}
         {{- with $element.label -}}

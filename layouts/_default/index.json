@@ -31,12 +31,12 @@
     {{- end -}}
     {{- if $.Scratch.Get "isStandardPage" -}}
       {{- if .IsHome -}}
-        {{- $.Scratch.Set "rootTitleIcon" (print .Site.Data.themeParams.sidebar.homeSectionIconDefault " fa-lg") -}}
+        {{- $.Scratch.Set "rootTitleIcon" (print hugo.Data.themeParams.sidebar.homeSectionIconDefault " fa-lg") -}}
       {{- else -}}
         {{- if .FirstSection.Params.titleIcon -}}
           {{- $.Scratch.Set "rootTitleIcon" (print .FirstSection.Params.titleIcon " fa-lg") -}}
         {{- else -}}
-          {{- $.Scratch.Set "rootTitleIcon" (print .Site.Data.themeParams.sidebar.firstSectionIconDefault " fa-lg") -}}
+          {{- $.Scratch.Set "rootTitleIcon" (print hugo.Data.themeParams.sidebar.firstSectionIconDefault " fa-lg") -}}
         {{- end -}}
       {{- end -}}
       {{- if $first -}}{{- $first = false -}}{{- else -}},{{- end -}}{

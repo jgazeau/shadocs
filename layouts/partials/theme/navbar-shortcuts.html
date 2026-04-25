@@ -1,7 +1,7 @@
 <div id="navbarShortcuts" class="modal">
   <div class="modal-background"></div>
   <div class="modal-content marginless is-flex">
-    {{- with $.Site.Data.themeParams.navbar.shortcuts -}}
+    {{- with hugo.Data.themeParams.navbar.shortcuts -}}
       {{- $.Scratch.Set "isThemeShortcuts" true -}}
     {{- else -}}
       {{- $.Scratch.Set "isThemeShortcuts" false -}}
@@ -17,7 +17,7 @@
           <p>{{- i18n "navbarshortcuts_title" -}}</p>
         </div>
         <div class="message-body is-overflow-y">
-          {{- with $.Site.Data.themeParams.navbar.shortcuts -}}
+          {{- with hugo.Data.themeParams.navbar.shortcuts -}}
             {{- range $shortcutName, $parameters := . -}}
               {{- with $parameters.function -}}
                 {{- template "shortcuts" dict "shortcutName" $shortcutName "parameters" $parameters -}}

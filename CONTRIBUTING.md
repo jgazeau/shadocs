@@ -28,7 +28,7 @@ Make sure the following tools are installed before working on the project:
 
 | Tool                                             | Minimum version      | Notes                                             |
 | ------------------------------------------------ | -------------------- | ------------------------------------------------- |
-| [Hugo Extended](https://gohugo.io/installation/) | `0.141.0`            | **Extended** edition required (Dart Sass support) |
+| [Hugo Extended](https://gohugo.io/installation/) | `0.156.0`            | **Extended** edition required (Dart Sass support) |
 | [Dart Sass](https://sass-lang.com/install/)      | any recent           | Used for SCSS compilation                         |
 | [Go](https://go.dev/doc/install)                 | `1.25`               | Required for Hugo module management               |
 | [Node.js](https://nodejs.org/)                   | LTS                  | Required for tooling and end-to-end tests         |
