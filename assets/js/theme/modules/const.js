@@ -1,4 +1,4 @@
-{{- with $.Site.Data.themeParams.navbar.shortcuts -}}
+{{- with hugo.Data.Data.themeParams.navbar.shortcuts -}}
   {{- template "setShortcutsMap" dict "this" . "context" $ -}}
 {{- end -}}
 {{- with $.Site.Params.navbar.shortcuts -}}

@@ -4,7 +4,7 @@
 {{- if .IsNamedParams -}}
   {{- with .Get "path" -}}
     {{- $keyRange = (split . ".") -}}
-    {{- $keyValues = $.Site.Data -}}
+    {{- $keyValues = hugo.Data -}}
   {{- end -}}
   {{- with .Get "i18n" -}}
     {{- $keyValues = i18n . -}}

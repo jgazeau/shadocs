@@ -14,7 +14,7 @@
 </script>
 <!-- JS Modules includes -->
 {{- $jsModulesFiles := slice -}}
-{{- with .Site.Data.themeParams.includes.jsModules -}}
+{{- with hugo.Data.themeParams.includes.jsModules -}}
   {{- range . -}}{{- $jsModulesFiles = $jsModulesFiles | append . -}}{{- end -}}
 {{- end -}}
 {{- with .Site.Params.includes.jsModules -}}
@@ -23,7 +23,7 @@
 {{- with .Page.Params.includes.jsModules -}}
   {{- range . -}}{{- $jsModulesFiles = $jsModulesFiles | append . -}}{{- end -}}
 {{- end -}}
-{{- range $key, $value := .Site.Data.themeParams.includes.shortcodes.jsModules -}}
+{{- range $key, $value := hugo.Data.themeParams.includes.shortcodes.jsModules -}}
   {{- with $.Page.HasShortcode $key -}}
     {{- range $value -}}
       {{- $jsModulesFiles = $jsModulesFiles | append . -}}
@@ -37,7 +37,7 @@
     {{- end -}}
   {{- end -}}
 {{- end -}}
-{{- range $key, $value := .Site.Data.themeParams.includes.fencedcodes.jsModules -}}
+{{- range $key, $value := hugo.Data.themeParams.includes.fencedcodes.jsModules -}}
   {{- with len (findRE (printf "%s%s" "[[:space:]]*(```)?" $key) $.Page.RawContent) -}}
     {{- range $value -}}
       {{- $jsModulesFiles = $jsModulesFiles | append . -}}
@@ -64,7 +64,7 @@
 {{- end -}}
 <!-- JS includes -->
 {{- $jsFiles := slice -}}
-{{- with .Site.Data.themeParams.includes.js -}}
+{{- with hugo.Data.themeParams.includes.js -}}
   {{- range . -}}{{- $jsFiles = $jsFiles | append . -}}{{- end -}}
 {{- end -}}
 {{- with .Site.Params.includes.js -}}
@@ -73,7 +73,7 @@
 {{- with .Page.Params.includes.js -}}
   {{- range . -}}{{- $jsFiles = $jsFiles | append . -}}{{- end -}}
 {{- end -}}
-{{- range $key, $value := .Site.Data.themeParams.includes.shortcodes.js -}}
+{{- range $key, $value := hugo.Data.themeParams.includes.shortcodes.js -}}
   {{- with $.Page.HasShortcode $key -}}
     {{- range $value -}}{{- $jsFiles = $jsFiles | append . -}}{{- end -}}
   {{- end -}}
@@ -83,7 +83,7 @@
     {{- range $value -}}{{- $jsFiles = $jsFiles | append . -}}{{- end -}}
   {{- end -}}
 {{- end -}}
-{{- range $key, $value := .Site.Data.themeParams.includes.fencedcodes.js -}}
+{{- range $key, $value := hugo.Data.themeParams.includes.fencedcodes.js -}}
   {{- with len (findRE (printf "%s%s" "[[:space:]]*(```)?" $key) $.Page.RawContent) -}}
     {{- range $value -}}{{- $jsFiles = $jsFiles | append . -}}{{- end -}}
   {{- end -}}

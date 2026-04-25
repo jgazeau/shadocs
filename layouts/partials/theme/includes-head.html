@@ -1,6 +1,6 @@
 <!-- SCSS includes -->
 {{- $scssFiles := slice -}}
-{{- with .Site.Data.themeParams.includes.scss -}}
+{{- with hugo.Data.themeParams.includes.scss -}}
   {{- range . -}}{{- $scssFiles = $scssFiles | append . -}}{{- end -}}
 {{- end -}}
 {{- with .Site.Params.includes.scss -}}
@@ -14,7 +14,7 @@
 {{- end -}}
 <!-- CSS includes -->
 {{- $cssFiles := slice -}}
-{{- with .Site.Data.themeParams.includes.css -}}
+{{- with hugo.Data.themeParams.includes.css -}}
   {{- range . -}}{{- $cssFiles = $cssFiles | append . -}}{{- end -}}
 {{- end -}}
 {{- with .Site.Params.includes.css -}}
@@ -23,7 +23,7 @@
 {{- with .Page.Params.includes.css -}}
   {{- range . -}}{{- $cssFiles = $cssFiles | append . -}}{{- end -}}
 {{- end -}}
-{{- range $key, $value := .Site.Data.themeParams.includes.shortcodes.css -}}
+{{- range $key, $value := hugo.Data.themeParams.includes.shortcodes.css -}}
   {{- with $.Page.HasShortcode $key -}}
     {{- range $value -}}{{- $cssFiles = $cssFiles | append . -}}{{- end -}}
   {{- end -}}
@@ -33,7 +33,7 @@
     {{- range $value -}}{{- $cssFiles = $cssFiles | append . -}}{{- end -}}
   {{- end -}}
 {{- end -}}
-{{- range $key, $value := .Site.Data.themeParams.includes.fencedcodes.css -}}
+{{- range $key, $value := hugo.Data.themeParams.includes.fencedcodes.css -}}
   {{- with len (findRE (printf "%s%s" "[[:space:]]*(```)?" $key) $.Page.RawContent) -}}
     {{- range $value -}}{{- $cssFiles = $cssFiles | append . -}}{{- end -}}
   {{- end -}}
