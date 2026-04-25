@@ -26,11 +26,11 @@ Plusieurs autres assets sont utilisés dans Shadocs. Leurs versions sont disponi
 
 ## Création d'un site Hugo
 
-Pour créer un site Hugo, la documentation Hugo propose un [Quickstart](https://gohugo.io/getting-started/quick-start/) complet qui reprend l'ensemble des étapes necessaires afin de créer facilement et rapidement un site Hugo.
+Pour créer un site Hugo, la documentation Hugo propose un [Quickstart](https://gohugo.io/getting-started/quick-start/) complet qui reprend l'ensemble des étapes nécessaires afin de créer facilement et rapidement un site Hugo.
 
 ## Ajout du thème
 
-1. Pour pouvoir ajouter et utiliser le thème Shadocs avec un site Hugo il utiliser l'une des possibilités suivantes:
+1. Pour ajouter et utiliser le thème Shadocs avec un site Hugo, il faut utiliser l'une des possibilités suivantes:
     * Ajouter le thème en tant que sous-module Git au projet du site (Méthode recommandée)
         ```Bash
         cd ${REPERTOIRE_PROJET}

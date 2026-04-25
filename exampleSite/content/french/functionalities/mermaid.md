@@ -14,8 +14,8 @@ Par défaut le thème prend en charge le format [Mermaid](https://mermaid-js.git
 
 Les différentes caractéristiques et fonctionnalités du thème liées à Mermaid sont :
 * rendu obtenu à partir d'un bloc de code cloisonné et language de surlignage à `mermaid`
-* bouton d'export associé a chaque svg généré
-* aperçu (clic sur l'image généré)
+* bouton d'export associé à chaque svg généré
+* aperçu (clic sur l'image générée)
 
 # Exemples
 ---

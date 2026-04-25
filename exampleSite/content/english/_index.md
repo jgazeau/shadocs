@@ -19,7 +19,7 @@ categories: ["Theme"]
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(false);"
     },{
       "title": "The logo",
-      "intro": "The website logo allows to go back to the homepage.",
+      "intro": "The website logo allows you to go back to the homepage.",
       "element": "#globalLogo",
       "position": "right",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(false);"

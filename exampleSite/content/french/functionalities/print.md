@@ -1,7 +1,7 @@
 ---
 weight: 10000
 title: "Impression"
-description: "Comment gérér l'impression d'une page ?"
+description: "Comment gérer l'impression d'une page ?"
 titleIcon: "fa-solid fa-print"
 categories: ["Fonctionnalités"]
 ---

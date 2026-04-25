@@ -10,7 +10,7 @@ tags: ["Configuration"]
 # Généralités
 ---
 
-Pour configurer un site Hugo utilisant le thème, il existe trois type de configuration:
+Pour configurer un site Hugo utilisant le thème, il existe trois types de configuration:
 
 | Type | Fichier de configuration |
 | ---- | ------------------------ |

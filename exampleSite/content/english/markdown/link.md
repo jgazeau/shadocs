@@ -92,7 +92,7 @@ To define a link, **use the following syntax**:
 {{< /md >}}|
 
 {{< alert type="warning" >}}
-Links that does not contain a URL scheme are all prefixed depending on the `baseURL` configuration.  
+Links that do not contain a URL scheme are all prefixed depending on the `baseURL` configuration.  
 For example:  
 | baseURL | Markdown | Rendering |
 | ------- | -------- | --------- |
