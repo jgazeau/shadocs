@@ -1,7 +1,7 @@
 ---
 weight: 6000
 title: "Recherche"
-description: "Comment gérér la recherche ?"
+description: "Comment gérer la recherche ?"
 titleIcon: "fa-solid fa-magnifying-glass"
 categories: ["Fonctionnalités"]
 ---

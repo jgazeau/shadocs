@@ -18,12 +18,12 @@ Pour définir un fragment de code, il faut **ajouter une apostrophe inversée (\
 | -------- | ---- | ----- |
 |{{< md >}}
 ```
-Tapez `hugo version` pour connaitre la version Hugo
+Tapez `hugo version` pour connaître la version Hugo
 ```
 {{< /md >}}|{{< plaintext >}}
-<p>Tapez <code>hugo version</code> pour connaitre la version Hugo</p>
+<p>Tapez <code>hugo version</code> pour connaître la version Hugo</p>
 {{< /plaintext >}}|{{< md >}}
-Tapez `hugo version` pour connaitre la version Hugo
+Tapez `hugo version` pour connaître la version Hugo
 {{< /md >}}|
 
 ## Fragment de code imbriqué
@@ -34,12 +34,12 @@ Pour définir un fragment de code imbriqué dans un autre, il faut **ajouter deu
 | -------- | ---- | ----- |
 |{{< md >}}
 ```
-``Tapez `hugo version` pour connaitre la version Hugo``
+``Tapez `hugo version` pour connaître la version Hugo``
 ```
 {{< /md >}}|{{< plaintext >}}
-<p><code>Tapez `hugo version` pour connaitre la version Hugo</code></p>
+<p><code>Tapez `hugo version` pour connaître la version Hugo</code></p>
 {{< /plaintext >}}|{{< md >}}
-``Tapez `hugo version` pour connaitre la version Hugo``
+``Tapez `hugo version` pour connaître la version Hugo``
 {{< /md >}}|
 
 ## Bloc de code

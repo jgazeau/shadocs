@@ -12,7 +12,7 @@ tags: ["Gestion du contenu"]
 
 ## Texte en italique
 
-Pour définir un texte en italique, il faut **l'inclure entre 1 étoile (\*) ou 1 traits de soulignement (\_)**.
+Pour définir un texte en italique, il faut **l'inclure entre 1 étoile (\*) ou 1 trait de soulignement (\_)**.
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |
@@ -52,7 +52,7 @@ Attention, pour des raisons de compatibilité entre les différentes syntaxes ma
 
 ## Texte en italique et en gras
 
-Pour définir un texte en italique et en gras, il faut **l'inclure entre 3 étoile (\*) ou 3 traits de soulignement (\_)**.
+Pour définir un texte en italique et en gras, il faut **l'inclure entre 3 étoiles (\*) ou 3 traits de soulignement (\_)**.
 
 | Markdown | HTML | Rendu |
 | -------- | ---- | ----- |

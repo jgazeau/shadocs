@@ -19,7 +19,7 @@ categories: ["Thème"]
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(false);"
     },{
       "title": "Le logo",
-      "intro": "Le logo du site permet de retourner directement à l'accueil du site.",
+      "intro": "Le logo permet de retourner directement à l'accueil.",
       "element": "#globalLogo",
       "position": "right",
       "onbeforechange": "toggleSidebar(false,true);toggleExtendMenu(false);"

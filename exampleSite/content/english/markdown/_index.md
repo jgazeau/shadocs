@@ -16,7 +16,7 @@ The Markdown has been created by John Gruber to make it easier writing text and 
 The overriding design goal for Markdown’s formatting syntax is to make it as readable as possible. The idea is that a Markdown-formatted document should be publishable as-is, as plain text, without looking like it’s been marked up with tags or formatting instructions. While Markdown’s syntax has been influenced by several existing text-to-HTML filters, the single biggest source of inspiration for Markdown’s syntax is the format of plain text email.
 {{< /blockquote >}}
 
-Although John Gruber have defined generally the markdown syntax, there is no detailed specification of this language and therefore ambiguities in its implementation. As a consequence several types of markdowns exists, each with its own specificities.
+Although John Gruber has defined generally the markdown syntax, there is no detailed specification of this language and therefore ambiguities in its implementation. As a consequence several types of markdowns exists, each with its own specificities.
 
 # The Markdown in Hugo
 ---
