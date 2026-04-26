@@ -56,8 +56,6 @@ Pour plus d'information, se référer au fichier du [site de documentation custo
 # Personnalisation SCSS
 ---
 
-TODO
-
 La mise en page CSS du thème est implémentée en utilisant le langage [SASS](https://sass-lang.com/).
 
 Tout comme les fichiers de mise en page spécifique HTML, des fichiers de mise en page spécifique SASS sont disponibles dans le thème.

@@ -56,8 +56,6 @@ For more information, check the [documentation website custom-info.html](https:/
 # SCSS customization
 ---
 
-TODO
-
 CSS layout of the theme is implemented using [SASS](https://sass-lang.com/).
 
 The same way as HTML custom layout files, custom SASS layout files are available in the theme.
