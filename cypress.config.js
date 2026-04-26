@@ -36,6 +36,7 @@ module.exports = defineConfig({
     SC_PAGEBREAK_PATH: 'pagebreak/',
     SC_PARAMETER_PATH: 'parameter/',
     SC_SNIPPET_PATH: 'snippet/',
+    SC_TAB_CONTAINER_PATH: 'tab-container/',
     SC_TREEVIEW_PATH: 'treeview/',
     SITEMAP_PATH: 'sitemap/',
     TAXONOMY_PATH: 'categories/',

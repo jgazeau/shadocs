@@ -83,6 +83,8 @@
   translation: 'Développer/Réduire'
 - id: no_data
   translation: 'Aucune donnée disponible'
+- id: no_title
+  translation: 'Aucun titre disponible'
 - id: empty_description
   translation: 'Aucune description disponible'
 - id: read_more

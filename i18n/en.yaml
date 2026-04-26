@@ -83,6 +83,8 @@
   translation: 'Expand/Collapse'
 - id: no_data
   translation: 'No data available'
+- id: no_title
+  translation: 'No title available'
 - id: empty_description
   translation: 'No description available'
 - id: read_more

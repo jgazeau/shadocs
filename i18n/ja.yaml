@@ -83,6 +83,8 @@
   translation: '展開／省略'
 - id: no_data
   translation: 'データはありません'
+- id: no_title
+  translation: 'タイトルはありません'
 - id: empty_description
   translation: '説明文がありません'
 - id: read_more

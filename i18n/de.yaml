@@ -83,6 +83,8 @@
   translation: 'Ein-/ausklappen'
 - id: no_data
   translation: 'Keine Daten verfügbar'
+- id: no_title
+  translation: 'Kein Titel verfügbar'
 - id: empty_description
   translation: 'Keine Beschreibung verfügbar'
 - id: read_more
