@@ -16,90 +16,16 @@
     {{- $snippetContent = $snippetContent | append . -}}
   {{- end -}}
 {{- end -}}
-{{- with $.Scratch.Get "snippetTabsContent" -}}
-  {{- $tempSlice := slice -}}
-  {{- range . -}}
-    {{- with . -}}
-      {{- $tempSlice = $tempSlice | append . -}}
-    {{- else -}}
-      {{- with (index $snippetContent 0) -}}
-        {{- $tempSlice = $tempSlice | append . -}}
-      {{- end -}}
-    {{- end -}}
-  {{- end -}}
-  {{- $.Scratch.Set "contentArray" $tempSlice -}}
-{{- else -}}
-  {{- $.Scratch.Set "contentArray" $snippetContent -}}
-{{- end -}}
-{{- with $.Scratch.Get "contentArray" -}}
-  {{- $.Page.Scratch.Add "snippetGroupUid" 1 -}}
-  {{- $snippetGroupId := (printf "%s%s" "snippetGroup-" (string ($.Page.Scratch.Get "snippetGroupUid"))) -}}
-  {{- $snippetWrapperClasses := slice "sc-snippet-wrapper" "is-flex" "is-flex-wrap-wrap" "my-4" -}}
-  {{- with gt (len .) 1 -}}
-    {{- $snippetWrapperClasses = $snippetWrapperClasses | append "sc-snippet-tabs" -}}
-  {{- end -}}
-  <div class="{{- delimit $snippetWrapperClasses " " -}}">
+{{- with $snippetContent -}}
+  <div class="sc-snippet-wrapper is-flex is-flex-wrap-wrap my-4">
     {{- range $key, $value := . -}}
-      {{- $.Page.Scratch.Add "snippetTabUid" 1 -}}
-      {{- $snippetTabId := (printf "%s%s" "snippetTab-" (string ($.Page.Scratch.Get "snippetTabUid"))) -}}
-      {{- $tempTitle := "" -}}
-      {{- $tempType := $type -}}
-      {{- $tempCaption := $caption -}}
-      {{- $tempCodelang := $codelang -}}
-      {{- $tempCodeparam := $codeparam -}}
-      {{- with $.Scratch.Get "snippetTabsTitle" -}}
-        {{- if ne (index . $key) "null" -}}
-          {{- $tempTitle = index . $key -}}
-        {{- end -}}
-      {{- end -}}
-      {{- with $.Scratch.Get "snippetTabsType" -}}
-        {{- if ne (index . $key) "null" -}}
-          {{- $tempType = index . $key -}}
-        {{- end -}}
-      {{- end -}}
-      {{- with $.Scratch.Get "snippetTabsCaption" -}}
-        {{- if ne (index . $key) "null" -}}
-          {{- $tempCaption = index . $key -}}
-        {{- end -}}
-      {{- end -}}
-      {{- with $.Scratch.Get "snippetTabsCodelang" -}}
-        {{- if ne (index . $key) "null" -}}
-          {{- $tempCodelang = index . $key -}}
-        {{- end -}}
-      {{- end -}}
-      {{- with $.Scratch.Get "snippetTabsCodeparam" -}}
-        {{- if ne (index . $key) "null" -}}
-          {{- $tempCodeparam = index . $key -}}
-        {{- end -}}
-      {{- end -}}
-      {{- template "getSnippetContentWrapper" dict "groupId" $snippetGroupId "tabId" $snippetTabId "key" $key "content" $value "title" $tempTitle "type" $tempType "caption" $tempCaption "codelang" $tempCodelang "codeparam" $tempCodeparam "optMd" $optMd "context" $ -}}
+      {{- template "getSnippetContentWrapper" dict "content" $value "type" $type "caption" $caption "codelang" $codelang "codeparam" $codeparam "optMd" $optMd "context" $ -}}
     {{- end -}}
   </div>
 {{- end -}}
 <!-- TEMPLATES -->
 {{- define "getSnippetContentWrapper" -}}
-  {{- $isChecked := "" -}}
-  {{- if eq $.key 0 -}}{{- $isChecked = "checked" -}}{{- end -}}
-  {{- with .title -}}
-    <input
-      id="{{- $.tabId -}}"
-      class="sc-snippet-input"
-      type="radio"
-      name="{{- $.groupId -}}"
-      {{ $isChecked }}
-    />
-    <label class="sc-snippet-label" for="{{- $.tabId -}}">{{- . -}}</label>
-  {{- end -}}
-  {{- $snippetContainerClasses := slice "sc-snippet-container" -}}
-  {{- with .title -}}
-    {{- $snippetContainerClasses = $snippetContainerClasses | append "sc-snippet-tab" -}}
-  {{- end -}}
-  <div
-    class="{{- delimit $snippetContainerClasses " " -}}"
-    {{- with .title -}}
-      id='{{- $.tabId -}}-content'
-    {{- end -}}
-  >
+  <div class="sc-snippet-container">
     {{- with .caption -}}
       <div class="sc-snippet">
         <div class="sc-snippet-caption">{{- . -}}</div>

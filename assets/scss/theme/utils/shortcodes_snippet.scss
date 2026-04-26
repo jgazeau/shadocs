@@ -5,53 +5,13 @@
 //
 // Variables
 //
-$snippet-active-tab-background-color: vars.$theme-blue-darker-color;
 $snippet-header-background-color: silver;
 //
 // Main
 //
 .sc-snippet-wrapper {
-  .sc-snippet-input[type='radio'],
-  .sc-snippet-tab {
-    display: none;
-  }
-  .sc-snippet-input[type='radio']:checked + .sc-snippet-label {
-    background: $snippet-active-tab-background-color;
-    box-shadow: unset;
-    color: bulma_utilities.bulmaFindColorInvert(
-      $snippet-active-tab-background-color
-    );
-    & + .sc-snippet-tab {
-      display: block;
-    }
-  }
-  .sc-snippet-input[type='radio']:not(:checked) + .sc-snippet-label:hover {
-    background: color-mix(in hsl, var(--bulma-body-background-color), 60% grey);
-  }
-  .sc-snippet-label {
-    @include mixins.font-family(roboto-mono);
-    border-radius: 0.5rem 0.5rem 0 0;
-    background: color-mix(in hsl, var(--bulma-body-background-color), 40% grey);
-    color: var(--bulma-text);
-    cursor: pointer;
-    flex: 1;
-    font-weight: bold;
-    margin: 0 0.5rem;
-    order: 1;
-    padding: 0.5rem 0.75rem;
-    position: relative;
-    text-align: center;
-    user-select: none;
-  }
-  .sc-snippet-tab {
-    order: 2;
-    padding: var(--bulma-content-table-cell-padding);
-  }
   .sc-snippet-container {
     @include mixins.static-size-width(100%);
-    &.sc-snippet-tab {
-      border: 1px solid $snippet-active-tab-background-color;
-    }
     .sc-snippet {
       .sc-snippet-caption {
         @include mixins.font-family(roboto-mono);

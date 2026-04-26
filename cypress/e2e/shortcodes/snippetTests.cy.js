@@ -2,10 +2,11 @@ describe('for: snippet shortcode', () => {
   beforeEach(() => {
     cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_SNIPPET_PATH'));
   });
-  it('ten snippets wrapper should be displayed', () => {
-    cy.get('#content .sc-snippet-wrapper').should('have.length', 10);
+  it('eight snippets wrapper should be displayed', () => {
+    cy.get('#content .sc-snippet-wrapper').should('have.length', 8);
   });
   it('snippets wrapper should be visible', () => {
+    cy.disableSmoothScroll();
     cy.get('#content .sc-snippet-wrapper').each(($elem) => {
       cy.get($elem).scrollIntoView().should('be.visible');
     });
@@ -27,21 +28,5 @@ describe('for: snippet shortcode', () => {
       'have.length.at.least',
       1,
     );
-  });
-  it('2 snippets wrapper with 3 tabs should be displayed', () => {
-    cy.get('#content .sc-snippet-wrapper.sc-snippet-tabs')
-      .should('have.length', 2)
-      .each(($elem) => {
-        cy.get($elem).children('.sc-snippet-label').should('have.length', 3);
-      });
-  });
-  it('tabs should be visible when clicked', () => {
-    cy.get('#content .sc-snippet-wrapper .sc-snippet-label').each(($elem) => {
-      let tabContentId = $elem[0].getAttribute('for');
-      cy.get($elem)
-        .scrollAndClick()
-        .get(`#${tabContentId}-content`)
-        .should('be.visible');
-    });
   });
 });
