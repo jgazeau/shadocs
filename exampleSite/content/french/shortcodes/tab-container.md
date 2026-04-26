@@ -8,8 +8,12 @@ tags: ["Gestion du contenu"]
 # Description
 ---
 
-Le shortcode **tab-container** permet d'organiser du contenu en onglets. Pour cela, il suffit d'imbriquer autant de shortcodes **tab** que d'onglets voulus dans un shortcode **tab-container** parent.  
-Par exemple: afficher des instructions en fonction du système d'exploitation utilisé.
+Le shortcode **tab-container** permet d'organiser du contenu en onglets. Pour cela, il suffit d'imbriquer autant de shortcodes **tab** que d'onglets souhaités dans un shortcode **tab-container** parent.  
+Par exemple, pour afficher des instructions en fonction du système d'exploitation utilisé.
+
+{{< alert>}}
+Le rendu des **tabs** est toujours en markdown.
+{{< /alert >}}
 
 {{< alert type="warning" >}}
 Le shortcode **tab** doit toujours être imbriqué dans un shortcode **tab-container**.
@@ -50,9 +54,7 @@ Je suis le contenu du **premier** onglet.
 */*/>}}
 Je suis le contenu du **deuxième** onglet.
 {{</*/* /tab */*/>}}
-{{</*/* tab
-    title="Troisième onglet"
-*/*/>}}
+{{</*/* tab */*/>}}
 Je suis le contenu du **troisième** onglet.
 {{</*/* /tab */*/>}}
 {{</*/* /tab-container */*/>}}
@@ -68,9 +70,7 @@ Je suis le contenu du **premier** onglet.
 >}}
 Je suis le contenu du **deuxième** onglet.
 {{< /tab >}}
-{{< tab
-    title="Troisième onglet"
->}}
+{{< tab >}}
 Je suis le contenu du **troisième** onglet.
 {{< /tab >}}
 {{< /tab-container >}}|

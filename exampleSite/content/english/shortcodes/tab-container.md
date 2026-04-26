@@ -8,8 +8,12 @@ tags: ["Content management"]
 # Description
 ---
 
-The **tab-container** shortcode allows to organise content in tabs. To do so, nest as many **tab** shortcodes as needed inside a parent **tab-container** shortcode.  
-For example: display instructions depending on the operating system used.
+The **tab-container** shortcode allows you to organize content in tabs. To do so, nest as many **tab** shortcodes as needed inside a parent **tab-container** shortcode.  
+For example, display instructions depending on the operating system used.
+
+{{< alert>}}
+The rendering of **tabs** is always in markdown.
+{{< /alert >}}
 
 {{< alert type="warning" >}}
 The **tab** shortcode must always be nested inside a **tab-container** shortcode.
@@ -20,8 +24,8 @@ The **tab** shortcode must always be nested inside a **tab-container** shortcode
 
 ## *tab-container*
 
-| Nom | Type(nommé/positionnel) | Description |
-| --- | ----------------------- | ----------- |
+| Name | Type(named/positional) | Description |
+| ---- | ---------------------- | ----------- |
 
 ## *tab*
 
@@ -50,9 +54,7 @@ I am the **first** tab content.
 */*/>}}
 I am the **second** tab content.
 {{</*/* /tab */*/>}}
-{{</*/* tab
-    title="Third tab"
-*/*/>}}
+{{</*/* tab */*/>}}
 I am the **third** tab content.
 {{</*/* /tab */*/>}}
 {{</*/* /tab-container */*/>}}
@@ -68,9 +70,7 @@ I am the **first** tab content.
 >}}
 I am the **second** tab content.
 {{< /tab >}}
-{{< tab
-    title="Third tab"
->}}
+{{< tab >}}
 I am the **third** tab content.
 {{< /tab >}}
 {{< /tab-container >}}|
