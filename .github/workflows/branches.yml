@@ -4,13 +4,27 @@ on:
   workflow_dispatch:
   push:
 
+env:
+  HUGO_MIN_VERSION: 0.156.0
+  HUGO_MAX_VERSION: 0.160.1
+
 jobs:
+  define-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      hugo_versions: ${{ steps.hugo-versions.outputs.hugo_versions }}
+    steps:
+      - name: Define Hugo versions
+        id: hugo-versions
+        run: |
+          echo "hugo_versions=[\"$HUGO_MIN_VERSION\", \"$HUGO_MAX_VERSION\"]" >> "$GITHUB_OUTPUT"
   hugo-build:
     name: Hugo build
+    needs: define-matrix
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        hugo_version: [0.156.0, 0.160.1]
+        hugo_version: ${{fromJson(needs.define-matrix.outputs.hugo_versions)}}
     steps:
       - name: Checkout theme repository
         uses: actions/checkout@v6
@@ -20,13 +34,13 @@ jobs:
       - name: Cache Homebrew dependencies
         uses: actions/cache@v5
         with:
-          key: brew-${{ runner.os }}
+          key: brew-${{ runner.os }}-${{ matrix.hugo_version }}
           path: |
             /home/linuxbrew/.linuxbrew/
       - name: Cache Hugo dependencies
         uses: actions/cache@v5
         with:
-          key: hugo-${{ runner.os }}
+          key: hugo-${{ runner.os }}-${{ matrix.hugo_version }}
           path: |
             /home/runner/.local/bin/
             /home/runner/.cache/hugo_cache/
@@ -50,6 +64,7 @@ jobs:
         run: |
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew update
+          brew tap dart-lang/dart
           brew install sass/sass/sass htmltest
           brew cleanup
       - name: Build theme
@@ -76,14 +91,14 @@ jobs:
         uses: actions/cache@v5
         with:
           fail-on-cache-miss: true
-          key: brew-${{ runner.os }}
+          key: brew-${{ runner.os }}-${{ env.HUGO_MAX_VERSION }}
           path: |
             /home/linuxbrew/.linuxbrew/
       - name: Cache Hugo dependencies
         uses: actions/cache@v5
         with:
           fail-on-cache-miss: true
-          key: hugo-${{ runner.os }}
+          key: hugo-${{ runner.os }}-${{ env.HUGO_MAX_VERSION }}
           path: |
             /home/runner/.local/bin/
             /home/runner/.cache/hugo_cache/
@@ -113,14 +128,14 @@ jobs:
         uses: actions/cache@v5
         with:
           fail-on-cache-miss: true
-          key: brew-${{ runner.os }}
+          key: brew-${{ runner.os }}-${{ env.HUGO_MAX_VERSION }}
           path: |
             /home/linuxbrew/.linuxbrew/
       - name: Cache Hugo dependencies
         uses: actions/cache@v5
         with:
           fail-on-cache-miss: true
-          key: hugo-${{ runner.os }}
+          key: hugo-${{ runner.os }}-${{ env.HUGO_MAX_VERSION }}
           path: |
             /home/runner/.local/bin/
             /home/runner/.cache/hugo_cache/
@@ -164,14 +179,14 @@ jobs:
         uses: actions/cache@v5
         with:
           fail-on-cache-miss: true
-          key: brew-${{ runner.os }}
+          key: brew-${{ runner.os }}-${{ env.HUGO_MAX_VERSION }}
           path: |
             /home/linuxbrew/.linuxbrew/
       - name: Cache Hugo dependencies
         uses: actions/cache@v5
         with:
           fail-on-cache-miss: true
-          key: hugo-${{ runner.os }}
+          key: hugo-${{ runner.os }}-${{ env.HUGO_MAX_VERSION }}
           path: |
             /home/runner/.local/bin/
             /home/runner/.cache/hugo_cache/
