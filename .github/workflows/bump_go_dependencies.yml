@@ -20,13 +20,13 @@ jobs:
       - name: Cache Homebrew dependencies
         uses: actions/cache@v5
         with:
-          key: brew-${{ runner.os }}
+          key: brew-${{ runner.os }}-{{ env.HUGO_VERSION }}
           path: |
             /home/linuxbrew/.linuxbrew/
       - name: Cache Hugo dependencies
         uses: actions/cache@v5
         with:
-          key: hugo-${{ runner.os }}
+          key: hugo-${{ runner.os }}-{{ env.HUGO_VERSION }}
           path: |
             /home/runner/.local/bin/
             /home/runner/.cache/hugo_cache/
