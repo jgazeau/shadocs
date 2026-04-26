@@ -1,0 +1,23 @@
+<!doctype html>
+<html
+  class="{{- with .Site.Params.darkMode -}}
+    theme-dark
+  {{- else -}}
+    theme-light
+  {{- end -}}"
+>
+  <head>
+    {{- partial "theme/meta.html" . -}}
+    {{- partial "theme/includes-head.html" . -}}
+    {{- partial "custom/custom-head.html" . -}}
+  </head>
+  <body class="is-flex is-flex-direction-column">
+    {{- partial "theme/header.html" . -}}
+    <div class="columns is-mobile paddingless marginless" id="mainContainer">
+      {{- partial "theme/sidebar.html" . -}}
+      {{- block "main" . -}}{{ end -}}
+    </div>
+    {{- partial "theme/includes-end.html" . -}}
+    {{- partial "custom/custom-footer.html" . -}}
+  </body>
+</html>
