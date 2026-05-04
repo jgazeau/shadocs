@@ -12,7 +12,7 @@
     "css/styles/default": {
       "local_path": "assets/css/external/asyncapi/default.min.css",
       "hold": false,
-      "current_version": "3.1.0",
+      "current_version": "3.1.2",
       "unpkg": {
         "library": "@asyncapi/react-component",
         "file_path": "styles/default.min.css"
