@@ -6,7 +6,7 @@ on:
 
 env:
   HUGO_MIN_VERSION: 0.156.0
-  HUGO_MAX_VERSION: 0.160.1
+  HUGO_MAX_VERSION: 0.161.1
 
 jobs:
   define-matrix:
