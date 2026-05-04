@@ -10,7 +10,7 @@ jobs:
     name: Hugo build
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.160.1
+      HUGO_VERSION: 0.161.1
     steps:
       - name: Checkout theme repository
         uses: actions/checkout@v6
