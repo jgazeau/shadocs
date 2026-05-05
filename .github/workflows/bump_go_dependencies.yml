@@ -44,6 +44,13 @@ jobs:
           printf "%70s\n" | tr ' ' '-'
           hugo_${HUGO_VERSION} version
           printf "%70s\n" | tr ' ' '-'
+      - name: Install dependencies
+        run: |
+          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+          brew update
+          brew tap dart-lang/dart
+          brew install sass/sass/sass htmltest
+          brew cleanup
       - name: Bump Go dependencies, build theme and create PR
         env:
           PR_TITLE: 'build: bump Go dependencies'
