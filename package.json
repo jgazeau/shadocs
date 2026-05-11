@@ -29,6 +29,6 @@
     "cypress": "^15.14.2",
     "prettier": "^3.8.3",
     "prettier-plugin-go-template": "^0.0.15",
-    "start-server-and-test": "^3.0.2"
+    "start-server-and-test": "^3.0.4"
   }
 }
