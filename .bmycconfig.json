@@ -3,7 +3,7 @@
     "js/asyncapi-web-component": {
       "local_path": "assets/js/external/asyncapi/asyncapi-web-component.min.js",
       "hold": false,
-      "current_version": "2.6.5",
+      "current_version": "3.1.3",
       "unpkg": {
         "library": "@asyncapi/web-component",
         "file_path": "lib/asyncapi-web-component.js"
@@ -12,7 +12,7 @@
     "css/styles/default": {
       "local_path": "assets/css/external/asyncapi/default.min.css",
       "hold": false,
-      "current_version": "3.1.2",
+      "current_version": "3.1.3",
       "unpkg": {
         "library": "@asyncapi/react-component",
         "file_path": "styles/default.min.css"
