@@ -23,7 +23,7 @@ Afin de définir un raccourci, il faut suivre le processus suivant (exemple avec
     file="templates/configuration/hugo.fr.toml"
     caption="hugo.toml (section [params])"
     codelang="toml"
-    codeparam="linenos=inline,hl_lines=[\"33-41\"]"
+    codeparam="linenos=inline,hl_lines=[\"35-43\"]"
 />}}
 2. Définir les libellés du raccourci qui apparaîtront dans le menu d'aide des raccourcis (dans le fichier de traduction *i18n* adéquat):
 {{< snippet

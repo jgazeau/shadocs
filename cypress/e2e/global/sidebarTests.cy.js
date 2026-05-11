@@ -100,4 +100,34 @@ describe('for: sidebar', () => {
       );
     });
   });
+  describe('when desktop trigger is active', () => {
+    beforeEach(() => {
+      cy.viewportDesktop();
+    });
+    it('sidebar should store its state in localStorage when sidebar is uncollapsed', () => {
+      cy.toggleSidebar(false, true).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+      cy.get('#sidebarCollapse').click({ force: true });
+      cy.window().then((window) => {
+        expect(window.localStorage.getItem('isSidebarCollapsed')).to.equal(
+          'false',
+        );
+      });
+      cy.visit(Cypress.env('HOMEPAGE_URL'));
+      cy.get('#sidebarContainer').should(
+        'have.class',
+        'is-sidebar-uncollapsed',
+      );
+    });
+    it('sidebar should store its state in localStorage when sidebar is collapsed', () => {
+      cy.toggleSidebar(true, true).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+      cy.get('#sidebarCollapse').click({ force: true });
+      cy.window().then((window) => {
+        expect(window.localStorage.getItem('isSidebarCollapsed')).to.equal(
+          'true',
+        );
+      });
+      cy.visit(Cypress.env('HOMEPAGE_URL'));
+      cy.get('#sidebarContainer').should('have.class', 'is-sidebar-collapsed');
+    });
+  });
 });

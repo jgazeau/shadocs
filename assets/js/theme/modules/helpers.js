@@ -12,7 +12,6 @@ import {
 } from './const.min.js';
 
 // VARS //
-let isManualCollapsedSidebar = false;
 let isManualCollapsedToc = false;
 // MAIN //
 // Function that manage modals closing
@@ -267,15 +266,21 @@ export function toggleSidebar(force, noTransition) {
 // Manage click on collapsible sidebar
 export function manageClickCollapsibleSidebar() {
   if (getTriggers().includes(sizeTriggerDesktop)) {
-    isManualCollapsedSidebar = !document
-      .getElementById('sidebarContainer')
-      .classList.contains('is-sidebar-collapsed');
+    localStorage.setItem(
+      'isSidebarCollapsed',
+      !document
+        .getElementById('sidebarContainer')
+        .classList.contains('is-sidebar-collapsed'),
+    );
   }
   toggleSidebar();
 }
 // Manage collapsible sidebar depending on window size
 export function manageDefaultCollapsibleSidebar() {
-  if (!getTriggers().includes(sizeTriggerDesktop) || isManualCollapsedSidebar) {
+  if (
+    !getTriggers().includes(sizeTriggerDesktop) ||
+    localStorage.getItem('isSidebarCollapsed') === 'true'
+  ) {
     toggleSidebar(false);
   } else {
     toggleSidebar(true);
@@ -414,15 +419,21 @@ export function getLoader(wrapperClass, wrapperId) {
 // Manage click on TOC
 export function manageClickCollapsibleToc() {
   if (getTriggers().includes(sizeTriggerWidescreen)) {
-    isManualCollapsedToc = !document
-      .getElementById('contentContainer')
-      .classList.contains('is-toc-collapsed');
+    localStorage.setItem(
+      'isTocCollapsed',
+      !document
+        .getElementById('contentContainer')
+        .classList.contains('is-toc-collapsed'),
+    );
   }
   toggleToc();
 }
 // Manage TOC depending on window size
 export function manageDefaultToc() {
-  if (!getTriggers().includes(sizeTriggerWidescreen) || isManualCollapsedToc) {
+  if (
+    !getTriggers().includes(sizeTriggerWidescreen) ||
+    localStorage.getItem('isTocCollapsed') === 'true'
+  ) {
     toggleToc(false);
   } else {
     toggleToc(true);

@@ -9,7 +9,7 @@
       aria-haspopup="true"
       aria-controls="dropdown-menu"
     >
-      <span class="icon-text">{{- $.Site.Language.LanguageName -}}</span>
+      <span class="icon-text">{{- $.Site.Language.Label -}}</span>
       <span class="icon marginless">
         <i class="fa-solid fa-globe fa-lg"></i>
       </span>
@@ -22,16 +22,16 @@
   >
     <div class="dropdown-content">
       {{- range $.Page.AllTranslations -}}
-        {{- if eq $.Site.Language.LanguageName .Language.LanguageName -}}
+        {{- if eq $.Site.Language.Label .Language.Label -}}
           <div class="dropdown-item is-selected has-text-weight-bold">
-            {{- .Language.LanguageName -}}
+            {{- .Language.Label -}}
           </div>
         {{- else -}}
           <a
             href="{{- .RelPermalink | safeURL -}}"
             class="dropdown-item has-text-weight-bold"
           >
-            {{- .Language.LanguageName -}}
+            {{- .Language.Label -}}
           </a>
         {{- end -}}
       {{- end -}}

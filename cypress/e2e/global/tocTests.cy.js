@@ -87,4 +87,27 @@ describe('for: table of contents', () => {
       cy.get('#tocContainer').should('be.visible');
     });
   });
+  describe('when widescreen trigger is active', () => {
+    beforeEach(() => {
+      cy.viewportWidescreen();
+    });
+    it('toc should store its state in localStorage when toc is uncollapsed', () => {
+      cy.toggleToc(false, true).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+      cy.get('#tocCollapsible').click({ force: true });
+      cy.window().then((window) => {
+        expect(window.localStorage.getItem('isTocCollapsed')).to.equal('false');
+      });
+      cy.visit(Cypress.env('HOMEPAGE_URL'));
+      cy.get('#contentContainer').should('have.class', 'is-toc-uncollapsed');
+    });
+    it('toc should store its state in localStorage when toc is collapsed', () => {
+      cy.toggleToc(true, true).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+      cy.get('#tocCollapsible').click({ force: true });
+      cy.window().then((window) => {
+        expect(window.localStorage.getItem('isTocCollapsed')).to.equal('true');
+      });
+      cy.visit(Cypress.env('HOMEPAGE_URL'));
+      cy.get('#contentContainer').should('have.class', 'is-toc-collapsed');
+    });
+  });
 });

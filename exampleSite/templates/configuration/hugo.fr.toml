@@ -30,6 +30,8 @@
   navbarSchortcutsEntry   = false
   # Désactive le bouton "À propos" dans la barre de navigation
   navbarInfo              = false
+  # Développe les entrées de la barre latérale par défaut
+  sidebarEntriesExpanded  = true
   # Liste des raccourcis clavier
   # Pour chaque raccourci il faut renseigner les clés suivantes:
   # - keys     = [Table des touches de clavier du raccourci](https://developer.mozilla.org/fr/docs/Web/API/KeyboardEvent/key/Key_Values)

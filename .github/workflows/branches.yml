@@ -5,7 +5,7 @@ on:
   push:
 
 env:
-  HUGO_MIN_VERSION: 0.156.0
+  HUGO_MIN_VERSION: 0.158.0
   HUGO_MAX_VERSION: 0.161.1
 
 jobs:

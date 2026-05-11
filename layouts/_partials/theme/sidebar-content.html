@@ -59,10 +59,14 @@
         {{- end -}}
         {{- if gt $linkWeight 0 -}}
           {{- $sidebarLiClasses = $sidebarLiClasses | append "is-entries-expandable" -}}
-          {{- if .IsAncestor $sidebarRoot | or (eq $sidebarRoot .)  -}}
+          {{- with $sidebarRoot.Site.Params.sidebarEntriesExpanded -}}
             {{- $sidebarLiClasses = $sidebarLiClasses | append "is-entries-expanded" -}}
           {{- else -}}
-            {{- $sidebarLiClasses = $sidebarLiClasses | append "is-entries-shrinked" -}}
+            {{- if .IsAncestor $sidebarRoot | or (eq $sidebarRoot .)  -}}
+              {{- $sidebarLiClasses = $sidebarLiClasses | append "is-entries-expanded" -}}
+            {{- else -}}
+              {{- $sidebarLiClasses = $sidebarLiClasses | append "is-entries-shrinked" -}}
+            {{- end -}}
           {{- end -}}
         {{- end -}}
         <li class="{{- delimit $sidebarLiClasses " " -}}">
@@ -80,10 +84,14 @@
             {{- if gt $linkWeight 0 -}}
               {{- $sidebarEntryIconClasses := slice "card-header-icon" "is-flex" "is-icon-expandable" "paddingless" "fa-fw" -}}
               {{- if gt $linkWeight 0 -}}
-                {{- if .IsAncestor $sidebarRoot -}}
+                {{- with $sidebarRoot.Site.Params.sidebarEntriesExpanded -}}
                   {{- $sidebarEntryIconClasses = $sidebarEntryIconClasses | append "is-icon-expanded" -}}
                 {{- else -}}
-                  {{- $sidebarEntryIconClasses = $sidebarEntryIconClasses | append "is-icon-shrinked" -}}
+                  {{- if .IsAncestor $sidebarRoot -}}
+                    {{- $sidebarEntryIconClasses = $sidebarEntryIconClasses | append "is-icon-expanded" -}}
+                  {{- else -}}
+                    {{- $sidebarEntryIconClasses = $sidebarEntryIconClasses | append "is-icon-shrinked" -}}
+                  {{- end -}}
                 {{- end -}}
               {{- end -}}
               <a class="{{- delimit $sidebarEntryIconClasses " " -}}">

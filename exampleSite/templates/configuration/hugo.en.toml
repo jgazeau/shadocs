@@ -30,6 +30,8 @@
   navbarSchortcutsEntry   = false
   # Disable "About" button in navbar
   navbarInfo              = false
+  # Expand sidebar entries by default
+  sidebarEntriesExpanded  = true
   # Keyboard shortcuts list
   # For each shortcut following keys must be sets:
   # - keys     = [Keyboard shortcuts table](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/key/Key_Values)
