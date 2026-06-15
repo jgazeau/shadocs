@@ -176,7 +176,7 @@
     "css/highcharts": {
       "local_path": "assets/css/external/highcharts/highcharts.min.css",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -186,7 +186,7 @@
     "css/annotations/popup": {
       "local_path": "assets/css/external/highcharts/annotations/popup.min.css",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -196,7 +196,7 @@
     "css/stocktools/gui": {
       "local_path": "assets/css/external/highcharts/stocktools/gui.min.css",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -206,7 +206,7 @@
     "css/themes/dark-unica": {
       "local_path": "assets/css/external/highcharts/themes/dark-unica.min.css",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -216,7 +216,7 @@
     "css/themes/grid-light": {
       "local_path": "assets/css/external/highcharts/themes/grid-light.min.css",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -226,7 +226,7 @@
     "css/themes/sand-signika": {
       "local_path": "assets/css/external/highcharts/themes/sand-signika.min.css",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -236,7 +236,7 @@
     "js/highcharts": {
       "local_path": "assets/js/external/highcharts/highcharts.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -246,7 +246,7 @@
     "js/highcharts-3d": {
       "local_path": "assets/js/external/highcharts/highcharts-3d.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -256,7 +256,7 @@
     "js/highcharts-gantt": {
       "local_path": "assets/js/external/highcharts/highcharts-gantt.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -266,7 +266,7 @@
     "js/highcharts-more": {
       "local_path": "assets/js/external/highcharts/highcharts-more.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -276,7 +276,7 @@
     "js/highmaps": {
       "local_path": "assets/js/external/highcharts/highmaps.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -286,7 +286,7 @@
     "js/highstock": {
       "local_path": "assets/js/external/highcharts/highstock.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -296,7 +296,7 @@
     "js/standalone-navigator": {
       "local_path": "assets/js/external/highcharts/standalone-navigator.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -306,7 +306,7 @@
     "js/modules/accessibility": {
       "local_path": "assets/js/external/highcharts/modules/accessibility.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -316,7 +316,7 @@
     "js/modules/annotations": {
       "local_path": "assets/js/external/highcharts/modules/annotations.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -326,7 +326,7 @@
     "js/modules/annotations-advanced": {
       "local_path": "assets/js/external/highcharts/modules/annotations-advanced.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -336,7 +336,7 @@
     "js/modules/arc-diagram": {
       "local_path": "assets/js/external/highcharts/modules/arc-diagram.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -346,7 +346,7 @@
     "js/modules/arrow-symbols": {
       "local_path": "assets/js/external/highcharts/modules/arrow-symbols.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -356,7 +356,7 @@
     "js/modules/boost": {
       "local_path": "assets/js/external/highcharts/modules/boost.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -366,7 +366,7 @@
     "js/modules/boost-canvas": {
       "local_path": "assets/js/external/highcharts/modules/boost-canvas.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -376,7 +376,7 @@
     "js/modules/broken-axis": {
       "local_path": "assets/js/external/highcharts/modules/broken-axis.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -386,7 +386,7 @@
     "js/modules/bullet": {
       "local_path": "assets/js/external/highcharts/modules/bullet.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -396,7 +396,7 @@
     "js/modules/coloraxis": {
       "local_path": "assets/js/external/highcharts/modules/coloraxis.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -406,7 +406,7 @@
     "js/modules/contour": {
       "local_path": "assets/js/external/highcharts/modules/contour.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -416,7 +416,7 @@
     "js/modules/current-date-indicator": {
       "local_path": "assets/js/external/highcharts/modules/current-date-indicator.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -426,7 +426,7 @@
     "js/modules/cylinder": {
       "local_path": "assets/js/external/highcharts/modules/cylinder.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -436,7 +436,7 @@
     "js/modules/data": {
       "local_path": "assets/js/external/highcharts/modules/data.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -446,7 +446,7 @@
     "js/modules/data-tools": {
       "local_path": "assets/js/external/highcharts/modules/data-tools.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -456,7 +456,7 @@
     "js/modules/datagrouping": {
       "local_path": "assets/js/external/highcharts/modules/datagrouping.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -466,7 +466,7 @@
     "js/modules/debugger": {
       "local_path": "assets/js/external/highcharts/modules/debugger.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -476,7 +476,7 @@
     "js/modules/dependency-wheel": {
       "local_path": "assets/js/external/highcharts/modules/dependency-wheel.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -486,7 +486,7 @@
     "js/modules/dotplot": {
       "local_path": "assets/js/external/highcharts/modules/dotplot.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -496,7 +496,7 @@
     "js/modules/drag-panes": {
       "local_path": "assets/js/external/highcharts/modules/drag-panes.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -506,7 +506,7 @@
     "js/modules/draggable-points": {
       "local_path": "assets/js/external/highcharts/modules/draggable-points.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -516,7 +516,7 @@
     "js/modules/drilldown": {
       "local_path": "assets/js/external/highcharts/modules/drilldown.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -526,7 +526,7 @@
     "js/modules/dumbbell": {
       "local_path": "assets/js/external/highcharts/modules/dumbbell.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -536,7 +536,7 @@
     "js/modules/export-data": {
       "local_path": "assets/js/external/highcharts/modules/export-data.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -546,7 +546,7 @@
     "js/modules/exporting": {
       "local_path": "assets/js/external/highcharts/modules/exporting.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -556,7 +556,7 @@
     "js/modules/flowmap": {
       "local_path": "assets/js/external/highcharts/modules/flowmap.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -566,7 +566,7 @@
     "js/modules/full-screen": {
       "local_path": "assets/js/external/highcharts/modules/full-screen.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -576,7 +576,7 @@
     "js/modules/funnel": {
       "local_path": "assets/js/external/highcharts/modules/funnel.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -586,7 +586,7 @@
     "js/modules/funnel3d": {
       "local_path": "assets/js/external/highcharts/modules/funnel3d.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -596,7 +596,7 @@
     "js/modules/gantt": {
       "local_path": "assets/js/external/highcharts/modules/gantt.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -606,7 +606,7 @@
     "js/modules/geoheatmap": {
       "local_path": "assets/js/external/highcharts/modules/geoheatmap.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -616,7 +616,7 @@
     "js/modules/grid-axis": {
       "local_path": "assets/js/external/highcharts/modules/grid-axis.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -626,7 +626,7 @@
     "js/modules/heatmap": {
       "local_path": "assets/js/external/highcharts/modules/heatmap.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -636,7 +636,7 @@
     "js/modules/heikinashi": {
       "local_path": "assets/js/external/highcharts/modules/heikinashi.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -646,7 +646,7 @@
     "js/modules/histogram-bellcurve": {
       "local_path": "assets/js/external/highcharts/modules/histogram-bellcurve.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -656,7 +656,7 @@
     "js/modules/hollowcandlestick": {
       "local_path": "assets/js/external/highcharts/modules/hollowcandlestick.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -666,7 +666,7 @@
     "js/modules/item-series": {
       "local_path": "assets/js/external/highcharts/modules/item-series.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -676,7 +676,7 @@
     "js/modules/lollipop": {
       "local_path": "assets/js/external/highcharts/modules/lollipop.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -686,7 +686,7 @@
     "js/modules/map": {
       "local_path": "assets/js/external/highcharts/modules/map.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -696,7 +696,7 @@
     "js/modules/marker-clusters": {
       "local_path": "assets/js/external/highcharts/modules/marker-clusters.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -706,7 +706,7 @@
     "js/modules/mouse-wheel-zoom": {
       "local_path": "assets/js/external/highcharts/modules/mouse-wheel-zoom.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -716,7 +716,7 @@
     "js/modules/navigator": {
       "local_path": "assets/js/external/highcharts/modules/navigator.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -726,7 +726,7 @@
     "js/modules/networkgraph": {
       "local_path": "assets/js/external/highcharts/modules/networkgraph.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -736,7 +736,7 @@
     "js/modules/no-data-to-display": {
       "local_path": "assets/js/external/highcharts/modules/no-data-to-display.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -746,7 +746,7 @@
     "js/modules/non-cartesian-zoom": {
       "local_path": "assets/js/external/highcharts/modules/non-cartesian-zoom.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -756,7 +756,7 @@
     "js/modules/offline-exporting": {
       "local_path": "assets/js/external/highcharts/modules/offline-exporting.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -766,7 +766,7 @@
     "js/modules/organization": {
       "local_path": "assets/js/external/highcharts/modules/organization.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -776,7 +776,7 @@
     "js/modules/parallel-coordinates": {
       "local_path": "assets/js/external/highcharts/modules/parallel-coordinates.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -786,7 +786,7 @@
     "js/modules/pareto": {
       "local_path": "assets/js/external/highcharts/modules/pareto.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -796,7 +796,7 @@
     "js/modules/pathfinder": {
       "local_path": "assets/js/external/highcharts/modules/pathfinder.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -806,7 +806,7 @@
     "js/modules/pattern-fill": {
       "local_path": "assets/js/external/highcharts/modules/pattern-fill.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -816,7 +816,7 @@
     "js/modules/pictorial": {
       "local_path": "assets/js/external/highcharts/modules/pictorial.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -826,7 +826,7 @@
     "js/modules/pointandfigure": {
       "local_path": "assets/js/external/highcharts/modules/pointandfigure.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -836,7 +836,7 @@
     "js/modules/price-indicator": {
       "local_path": "assets/js/external/highcharts/modules/price-indicator.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -846,7 +846,7 @@
     "js/modules/pyramid3d": {
       "local_path": "assets/js/external/highcharts/modules/pyramid3d.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -856,7 +856,7 @@
     "js/modules/renko": {
       "local_path": "assets/js/external/highcharts/modules/renko.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -866,7 +866,7 @@
     "js/modules/sankey": {
       "local_path": "assets/js/external/highcharts/modules/sankey.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -876,7 +876,7 @@
     "js/modules/series-label": {
       "local_path": "assets/js/external/highcharts/modules/series-label.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -886,7 +886,7 @@
     "js/modules/series-on-point": {
       "local_path": "assets/js/external/highcharts/modules/series-on-point.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -896,7 +896,7 @@
     "js/modules/solid-gauge": {
       "local_path": "assets/js/external/highcharts/modules/solid-gauge.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -906,7 +906,7 @@
     "js/modules/sonification": {
       "local_path": "assets/js/external/highcharts/modules/sonification.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -916,7 +916,7 @@
     "js/modules/static-scale": {
       "local_path": "assets/js/external/highcharts/modules/static-scale.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -926,7 +926,7 @@
     "js/modules/stock": {
       "local_path": "assets/js/external/highcharts/modules/stock.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -936,7 +936,7 @@
     "js/modules/stock-tools": {
       "local_path": "assets/js/external/highcharts/modules/stock-tools.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -946,7 +946,7 @@
     "js/modules/streamgraph": {
       "local_path": "assets/js/external/highcharts/modules/streamgraph.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -956,7 +956,7 @@
     "js/modules/sunburst": {
       "local_path": "assets/js/external/highcharts/modules/sunburst.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -966,7 +966,7 @@
     "js/modules/textpath": {
       "local_path": "assets/js/external/highcharts/modules/textpath.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -976,7 +976,7 @@
     "js/modules/tiledwebmap": {
       "local_path": "assets/js/external/highcharts/modules/tiledwebmap.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -986,7 +986,7 @@
     "js/modules/tilemap": {
       "local_path": "assets/js/external/highcharts/modules/tilemap.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -996,7 +996,7 @@
     "js/modules/timeline": {
       "local_path": "assets/js/external/highcharts/modules/timeline.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1006,7 +1006,7 @@
     "js/modules/treegraph": {
       "local_path": "assets/js/external/highcharts/modules/treegraph.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1016,7 +1016,7 @@
     "js/modules/treegrid": {
       "local_path": "assets/js/external/highcharts/modules/treegrid.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1026,7 +1026,7 @@
     "js/modules/treemap": {
       "local_path": "assets/js/external/highcharts/modules/treemap.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1036,7 +1036,7 @@
     "js/modules/variable-pie": {
       "local_path": "assets/js/external/highcharts/modules/variable-pie.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1046,7 +1046,7 @@
     "js/modules/variwide": {
       "local_path": "assets/js/external/highcharts/modules/variwide.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1056,7 +1056,7 @@
     "js/modules/vector": {
       "local_path": "assets/js/external/highcharts/modules/vector.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1066,7 +1066,7 @@
     "js/modules/venn": {
       "local_path": "assets/js/external/highcharts/modules/venn.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1076,7 +1076,7 @@
     "js/modules/windbarb": {
       "local_path": "assets/js/external/highcharts/modules/windbarb.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1086,7 +1086,7 @@
     "js/modules/wordcloud": {
       "local_path": "assets/js/external/highcharts/modules/wordcloud.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1096,7 +1096,7 @@
     "js/modules/xrange": {
       "local_path": "assets/js/external/highcharts/modules/xrange.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1106,7 +1106,7 @@
     "js/indicators/acceleration-bands": {
       "local_path": "assets/js/external/highcharts/indicators/acceleration-bands.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1116,7 +1116,7 @@
     "js/indicators/accumulation-distribution": {
       "local_path": "assets/js/external/highcharts/indicators/accumulation-distribution.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1126,7 +1126,7 @@
     "js/indicators/ao": {
       "local_path": "assets/js/external/highcharts/indicators/ao.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1136,7 +1136,7 @@
     "js/indicators/apo": {
       "local_path": "assets/js/external/highcharts/indicators/apo.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1146,7 +1146,7 @@
     "js/indicators/aroon": {
       "local_path": "assets/js/external/highcharts/indicators/aroon.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1156,7 +1156,7 @@
     "js/indicators/aroon-oscillator": {
       "local_path": "assets/js/external/highcharts/indicators/aroon-oscillator.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1166,7 +1166,7 @@
     "js/indicators/atr": {
       "local_path": "assets/js/external/highcharts/indicators/atr.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1176,7 +1176,7 @@
     "js/indicators/bollinger-bands": {
       "local_path": "assets/js/external/highcharts/indicators/bollinger-bands.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1186,7 +1186,7 @@
     "js/indicators/cci": {
       "local_path": "assets/js/external/highcharts/indicators/cci.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1196,7 +1196,7 @@
     "js/indicators/chaikin": {
       "local_path": "assets/js/external/highcharts/indicators/chaikin.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1206,7 +1206,7 @@
     "js/indicators/cmf": {
       "local_path": "assets/js/external/highcharts/indicators/cmf.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1216,7 +1216,7 @@
     "js/indicators/cmo": {
       "local_path": "assets/js/external/highcharts/indicators/cmo.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1226,7 +1226,7 @@
     "js/indicators/dema": {
       "local_path": "assets/js/external/highcharts/indicators/dema.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1236,7 +1236,7 @@
     "js/indicators/disparity-index": {
       "local_path": "assets/js/external/highcharts/indicators/disparity-index.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1246,7 +1246,7 @@
     "js/indicators/dmi": {
       "local_path": "assets/js/external/highcharts/indicators/dmi.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1256,7 +1256,7 @@
     "js/indicators/dpo": {
       "local_path": "assets/js/external/highcharts/indicators/dpo.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1266,7 +1266,7 @@
     "js/indicators/ichimoku-kinko-hyo": {
       "local_path": "assets/js/external/highcharts/indicators/ichimoku-kinko-hyo.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1276,7 +1276,7 @@
     "js/indicators/indicators": {
       "local_path": "assets/js/external/highcharts/indicators/indicators.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1286,7 +1286,7 @@
     "js/indicators/indicators-all": {
       "local_path": "assets/js/external/highcharts/indicators/indicators-all.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1296,7 +1296,7 @@
     "js/indicators/keltner-channels": {
       "local_path": "assets/js/external/highcharts/indicators/keltner-channels.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1306,7 +1306,7 @@
     "js/indicators/klinger": {
       "local_path": "assets/js/external/highcharts/indicators/klinger.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1316,7 +1316,7 @@
     "js/indicators/macd": {
       "local_path": "assets/js/external/highcharts/indicators/macd.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1326,7 +1326,7 @@
     "js/indicators/mfi": {
       "local_path": "assets/js/external/highcharts/indicators/mfi.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1336,7 +1336,7 @@
     "js/indicators/momentum": {
       "local_path": "assets/js/external/highcharts/indicators/momentum.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1346,7 +1346,7 @@
     "js/indicators/natr": {
       "local_path": "assets/js/external/highcharts/indicators/natr.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1356,7 +1356,7 @@
     "js/indicators/obv": {
       "local_path": "assets/js/external/highcharts/indicators/obv.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1366,7 +1366,7 @@
     "js/indicators/pivot-points": {
       "local_path": "assets/js/external/highcharts/indicators/pivot-points.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1376,7 +1376,7 @@
     "js/indicators/ppo": {
       "local_path": "assets/js/external/highcharts/indicators/ppo.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1386,7 +1386,7 @@
     "js/indicators/price-channel": {
       "local_path": "assets/js/external/highcharts/indicators/price-channel.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1396,7 +1396,7 @@
     "js/indicators/price-envelopes": {
       "local_path": "assets/js/external/highcharts/indicators/price-envelopes.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1406,7 +1406,7 @@
     "js/indicators/psar": {
       "local_path": "assets/js/external/highcharts/indicators/psar.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1416,7 +1416,7 @@
     "js/indicators/regressions": {
       "local_path": "assets/js/external/highcharts/indicators/regressions.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1426,7 +1426,7 @@
     "js/indicators/roc": {
       "local_path": "assets/js/external/highcharts/indicators/roc.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1436,7 +1436,7 @@
     "js/indicators/rsi": {
       "local_path": "assets/js/external/highcharts/indicators/rsi.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1446,7 +1446,7 @@
     "js/indicators/slow-stochastic": {
       "local_path": "assets/js/external/highcharts/indicators/slow-stochastic.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1456,7 +1456,7 @@
     "js/indicators/stochastic": {
       "local_path": "assets/js/external/highcharts/indicators/stochastic.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1466,7 +1466,7 @@
     "js/indicators/supertrend": {
       "local_path": "assets/js/external/highcharts/indicators/supertrend.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1476,7 +1476,7 @@
     "js/indicators/tema": {
       "local_path": "assets/js/external/highcharts/indicators/tema.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1486,7 +1486,7 @@
     "js/indicators/trendline": {
       "local_path": "assets/js/external/highcharts/indicators/trendline.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1496,7 +1496,7 @@
     "js/indicators/trix": {
       "local_path": "assets/js/external/highcharts/indicators/trix.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1506,7 +1506,7 @@
     "js/indicators/volume-by-price": {
       "local_path": "assets/js/external/highcharts/indicators/volume-by-price.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1516,7 +1516,7 @@
     "js/indicators/vwap": {
       "local_path": "assets/js/external/highcharts/indicators/vwap.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1526,7 +1526,7 @@
     "js/indicators/williams-r": {
       "local_path": "assets/js/external/highcharts/indicators/williams-r.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1536,7 +1536,7 @@
     "js/indicators/wma": {
       "local_path": "assets/js/external/highcharts/indicators/wma.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1546,7 +1546,7 @@
     "js/indicators/zigzag": {
       "local_path": "assets/js/external/highcharts/indicators/zigzag.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1556,7 +1556,7 @@
     "js/themes/adaptive": {
       "local_path": "assets/js/external/highcharts/themes/adaptive.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1566,7 +1566,7 @@
     "js/themes/avocado": {
       "local_path": "assets/js/external/highcharts/themes/avocado.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1576,7 +1576,7 @@
     "js/themes/dark-unica": {
       "local_path": "assets/js/external/highcharts/themes/dark-unica.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1586,7 +1586,7 @@
     "js/themes/grid-light": {
       "local_path": "assets/js/external/highcharts/themes/grid-light.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1596,7 +1596,7 @@
     "js/themes/sand-signika": {
       "local_path": "assets/js/external/highcharts/themes/sand-signika.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
@@ -1606,7 +1606,7 @@
     "js/themes/sunset": {
       "local_path": "assets/js/external/highcharts/themes/sunset.min.js",
       "hold": false,
-      "current_version": "12.6.0",
+      "current_version": "13.0.0",
       "jsdelivr": {
         "cdn": "npm",
         "package": "highcharts",
