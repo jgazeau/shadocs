@@ -48,6 +48,7 @@ jobs:
         run: |
           eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
           brew update
+          brew trust dart-lang/dart
           brew tap dart-lang/dart
           brew install sass/sass/sass htmltest
           brew cleanup
