@@ -1573,46 +1573,6 @@
         "file_path": "themes/avocado.min.js"
       }
     },
-    "js/themes/brand-dark": {
-      "local_path": "assets/js/external/highcharts/themes/brand-dark.min.js",
-      "hold": false,
-      "current_version": "12.6.0",
-      "jsdelivr": {
-        "cdn": "npm",
-        "package": "highcharts",
-        "file_path": "themes/brand-dark.min.js"
-      }
-    },
-    "js/themes/brand-light": {
-      "local_path": "assets/js/external/highcharts/themes/brand-light.min.js",
-      "hold": false,
-      "current_version": "12.6.0",
-      "jsdelivr": {
-        "cdn": "npm",
-        "package": "highcharts",
-        "file_path": "themes/brand-light.min.js"
-      }
-    },
-    "js/themes/dark-blue": {
-      "local_path": "assets/js/external/highcharts/themes/dark-blue.min.js",
-      "hold": false,
-      "current_version": "12.6.0",
-      "jsdelivr": {
-        "cdn": "npm",
-        "package": "highcharts",
-        "file_path": "themes/dark-blue.min.js"
-      }
-    },
-    "js/themes/dark-green": {
-      "local_path": "assets/js/external/highcharts/themes/dark-green.min.js",
-      "hold": false,
-      "current_version": "12.6.0",
-      "jsdelivr": {
-        "cdn": "npm",
-        "package": "highcharts",
-        "file_path": "themes/dark-green.min.js"
-      }
-    },
     "js/themes/dark-unica": {
       "local_path": "assets/js/external/highcharts/themes/dark-unica.min.js",
       "hold": false,
@@ -1621,26 +1581,6 @@
         "cdn": "npm",
         "package": "highcharts",
         "file_path": "themes/dark-unica.min.js"
-      }
-    },
-    "js/themes/gray": {
-      "local_path": "assets/js/external/highcharts/themes/gray.min.js",
-      "hold": false,
-      "current_version": "12.6.0",
-      "jsdelivr": {
-        "cdn": "npm",
-        "package": "highcharts",
-        "file_path": "themes/gray.min.js"
-      }
-    },
-    "js/themes/grid": {
-      "local_path": "assets/js/external/highcharts/themes/grid.min.js",
-      "hold": false,
-      "current_version": "12.6.0",
-      "jsdelivr": {
-        "cdn": "npm",
-        "package": "highcharts",
-        "file_path": "themes/grid.min.js"
       }
     },
     "js/themes/grid-light": {
@@ -1653,26 +1593,6 @@
         "file_path": "themes/grid-light.min.js"
       }
     },
-    "js/themes/high-contrast-dark": {
-      "local_path": "assets/js/external/highcharts/themes/high-contrast-dark.min.js",
-      "hold": false,
-      "current_version": "12.6.0",
-      "jsdelivr": {
-        "cdn": "npm",
-        "package": "highcharts",
-        "file_path": "themes/high-contrast-dark.min.js"
-      }
-    },
-    "js/themes/high-contrast-light": {
-      "local_path": "assets/js/external/highcharts/themes/high-contrast-light.min.js",
-      "hold": false,
-      "current_version": "12.6.0",
-      "jsdelivr": {
-        "cdn": "npm",
-        "package": "highcharts",
-        "file_path": "themes/high-contrast-light.min.js"
-      }
-    },
     "js/themes/sand-signika": {
       "local_path": "assets/js/external/highcharts/themes/sand-signika.min.js",
       "hold": false,
@@ -1681,16 +1601,6 @@
         "cdn": "npm",
         "package": "highcharts",
         "file_path": "themes/sand-signika.min.js"
-      }
-    },
-    "js/themes/skies": {
-      "local_path": "assets/js/external/highcharts/themes/skies.min.js",
-      "hold": false,
-      "current_version": "12.6.0",
-      "jsdelivr": {
-        "cdn": "npm",
-        "package": "highcharts",
-        "file_path": "themes/skies.min.js"
       }
     },
     "js/themes/sunset": {
