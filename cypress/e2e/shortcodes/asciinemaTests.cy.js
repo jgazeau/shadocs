@@ -20,20 +20,13 @@ describe('for: asciinema shortcode', () => {
     });
   });
   it(
-    'one asciinema embedded player should be displayed',
+    'embedded asciinema players should be disabled during Cypress runs',
     { defaultCommandTimeout: 10000 },
     () => {
-      cy.get('#content .asciicast').should('have.length', 1);
+      cy.get('#content .asciicast').should('have.length', 0);
     },
   );
-  it('asciinema embedded players should be visible', () => {
-    cy.get('#content .asciicast').each(($elem) => {
-      cy.get('#contentContainer').scrollTo(
-        0,
-        $elem[0].getBoundingClientRect().top,
-        { ensureScrollable: false },
-      );
-      cy.get($elem).should('be.visible');
-    });
+  it('embedded asciinema player containers should not exist', () => {
+    cy.get('#content .asciicast').should('not.exist');
   });
 });
