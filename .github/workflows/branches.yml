@@ -150,21 +150,18 @@ jobs:
         with:
           key: cypress-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
           path: ~/.cache/Cypress
-      - name: Execute E2E tests (${{ matrix.browser }})
+      - name: Add Homebrew and Hugo to PATH
         run: |
-          eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-          printf "%70s\n" | tr ' ' '-'
-          npm ci
-          printf "%70s\n" | tr ' ' '-'
-          npx cypress verify
-          npx cypress info
-          npx cypress version
-          npx cypress version --component package
-          npx cypress version --component binary
-          npx cypress version --component electron
-          npx cypress version --component node
-          printf "%70s\n" | tr ' ' '-'
-          npm run cy:run:${{ matrix.browser }}
+          echo "/home/linuxbrew/.linuxbrew/bin" >> "$GITHUB_PATH"
+          echo "/home/runner/.local/bin" >> "$GITHUB_PATH"
+      - name: Execute E2E tests (${{ matrix.browser }})
+        uses: cypress-io/github-action@v7
+        with:
+          install-command: npm ci
+          start: npm run serve
+          wait-on: http://localhost:1313
+          wait-on-timeout: 120
+          browser: ${{ matrix.browser }}
   release:
     if: github.ref_type == 'tag'
     name: Release

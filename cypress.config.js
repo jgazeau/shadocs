@@ -4,6 +4,8 @@ module.exports = defineConfig({
   chromeWebSecurity: false,
   e2e: {
     baseUrl: 'http://localhost:1313/',
+    // Prevent third-party embedded player network calls from blocking page load in CI.
+    blockHosts: ['asciinema.org', '*.asciinema.org'],
   },
   viewportWidth: 1920,
   viewportHeight: 1080,
