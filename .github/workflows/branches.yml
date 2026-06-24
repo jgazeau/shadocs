@@ -27,18 +27,18 @@ jobs:
         hugo_version: ${{fromJson(needs.define-matrix.outputs.hugo_versions)}}
     steps:
       - name: Checkout theme repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           submodules: recursive
           fetch-depth: 0
       - name: Cache Homebrew dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           key: brew-${{ runner.os }}-${{ matrix.hugo_version }}
           path: |
             /home/linuxbrew/.linuxbrew/
       - name: Cache Hugo dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           key: hugo-${{ runner.os }}-${{ matrix.hugo_version }}
           path: |
@@ -84,19 +84,19 @@ jobs:
     needs: hugo-build
     steps:
       - name: Checkout theme repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           submodules: recursive
           fetch-depth: 0
       - name: Cache Homebrew dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           fail-on-cache-miss: true
           key: brew-${{ runner.os }}-${{ env.HUGO_MAX_VERSION }}
           path: |
             /home/linuxbrew/.linuxbrew/
       - name: Cache Hugo dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           fail-on-cache-miss: true
           key: hugo-${{ runner.os }}-${{ env.HUGO_MAX_VERSION }}
@@ -121,19 +121,19 @@ jobs:
         browser: [chrome, firefox, edge]
     steps:
       - name: Checkout theme repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           submodules: recursive
           fetch-depth: 0
       - name: Cache Homebrew dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           fail-on-cache-miss: true
           key: brew-${{ runner.os }}-${{ env.HUGO_MAX_VERSION }}
           path: |
             /home/linuxbrew/.linuxbrew/
       - name: Cache Hugo dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           fail-on-cache-miss: true
           key: hugo-${{ runner.os }}-${{ env.HUGO_MAX_VERSION }}
@@ -141,12 +141,12 @@ jobs:
             /home/runner/.local/bin/
             /home/runner/.cache/hugo_cache/
       - name: Cache npm
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           key: npm-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
           path: ~/.npm
       - name: Cache Cypress
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           key: cypress-${{ runner.os }}-${{ hashFiles('package-lock.json') }}
           path: ~/.cache/Cypress
@@ -169,19 +169,19 @@ jobs:
     needs: hugo-build
     steps:
       - name: Checkout theme repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           submodules: recursive
           fetch-depth: 0
       - name: Cache Homebrew dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           fail-on-cache-miss: true
           key: brew-${{ runner.os }}-${{ env.HUGO_MAX_VERSION }}
           path: |
             /home/linuxbrew/.linuxbrew/
       - name: Cache Hugo dependencies
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           fail-on-cache-miss: true
           key: hugo-${{ runner.os }}-${{ env.HUGO_MAX_VERSION }}
