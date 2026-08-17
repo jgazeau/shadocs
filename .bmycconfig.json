@@ -3,7 +3,7 @@
     "js/asyncapi-web-component": {
       "local_path": "assets/js/external/asyncapi/asyncapi-web-component.min.js",
       "hold": false,
-      "current_version": "3.1.4",
+      "current_version": "3.1.5",
       "unpkg": {
         "library": "@asyncapi/web-component",
         "file_path": "lib/asyncapi-web-component.js"
@@ -12,7 +12,7 @@
     "css/styles/default": {
       "local_path": "assets/css/external/asyncapi/default.min.css",
       "hold": false,
-      "current_version": "3.1.4",
+      "current_version": "3.1.5",
       "unpkg": {
         "library": "@asyncapi/react-component",
         "file_path": "styles/default.min.css"
@@ -63,7 +63,7 @@
     "js/mermaid": {
       "local_path": "assets/js/external/mermaid/mermaid.min.js",
       "hold": false,
-      "current_version": "11.12.0",
+      "current_version": "11.15.0",
       "cdnjs": {
         "library": "mermaid",
         "file_path": "mermaid.min.js"
@@ -105,7 +105,7 @@
     "js/intro": {
       "local_path": "assets/js/external/intro/intro.min.js",
       "hold": false,
-      "current_version": "8.3.2",
+      "current_version": "8.5.0",
       "cdnjs": {
         "library": "intro.js",
         "file_path": "intro.min.js"
@@ -138,7 +138,7 @@
     "css/all": {
       "local_path": "assets/css/external/fontawesome.all.min.css",
       "hold": false,
-      "current_version": "7.3.0",
+      "current_version": "7.3.1",
       "cdnjs": {
         "library": "font-awesome",
         "file_path": "css/all.min.css"
@@ -147,7 +147,7 @@
     "static/css/fa_brands-400.woff2": {
       "local_path": "static/css/webfonts/fa-brands-400.woff2",
       "hold": false,
-      "current_version": "7.3.0",
+      "current_version": "7.3.1",
       "cdnjs": {
         "library": "font-awesome",
         "file_path": "webfonts/fa-brands-400.woff2"
@@ -156,7 +156,7 @@
     "static/css/fa_regular-400.woff2": {
       "local_path": "static/css/webfonts/fa-regular-400.woff2",
       "hold": false,
-      "current_version": "7.3.0",
+      "current_version": "7.3.1",
       "cdnjs": {
         "library": "font-awesome",
         "file_path": "webfonts/fa-regular-400.woff2"
@@ -165,7 +165,7 @@
     "static/css/fa_solid-900.woff2": {
       "local_path": "static/css/webfonts/fa-solid-900.woff2",
       "hold": false,
-      "current_version": "7.3.0",
+      "current_version": "7.3.1",
       "cdnjs": {
         "library": "font-awesome",
         "file_path": "webfonts/fa-solid-900.woff2"
