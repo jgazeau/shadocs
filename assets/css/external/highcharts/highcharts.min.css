@@ -1,6 +1,6 @@
 /**
  * Failed to minify the file using clean-css v5.3.3. Serving the original version.
- * Original file: /npm/highcharts@13.0.0/css/highcharts.css
+ * Original file: /npm/highcharts@13.0.1/css/highcharts.css
  *
  * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
  */
@@ -327,7 +327,7 @@
 }
 
 .highcharts-tooltip text,
-.highcharts-tooltip foreignObject div {
+.highcharts-tooltip foreignObject div:not(foreignObject > div) {
     fill: var(--highcharts-neutral-color-80);
     font-size: 0.8em;
 }
@@ -1289,6 +1289,7 @@ text.highcharts-drilldown-data-label,
     margin: 0;
     display: block;
     position: absolute;
+    pointer-events: none;
 }
 
 .highcharts-a11y-proxy-group li {
