@@ -1,6 +1,10 @@
 describe('for: collapsible shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_COLLAPSIBLE_PATH'));
+    cy.env(['SC_PATH', 'SC_COLLAPSIBLE_PATH']).then(
+      ({ SC_PATH, SC_COLLAPSIBLE_PATH }) => {
+        cy.visit(SC_PATH + SC_COLLAPSIBLE_PATH);
+      },
+    );
   });
   it('two collapsibles should be displayed', () => {
     cy.get('#content .sc-collapsible-container').should('have.length', 2);
@@ -21,14 +25,16 @@ describe('for: collapsible shortcode', () => {
     });
   });
   it('collapsibles should uncollapse when clicked', () => {
-    cy.get('#content .sc-collapsible-container').each(($elem) => {
-      cy.get($elem)
-        .scrollIntoView()
-        .children('.sc-collapsible-header')
-        .wait(Cypress.env('WAIT_FOR_ANIMATION'))
-        .click({ force: true })
-        .should('have.class', 'sc-uncollapsed');
-      cy.get($elem).children('.sc-collapsible-content').should('be.visible');
+    cy.env(['WAIT_FOR_ANIMATION']).then(({ WAIT_FOR_ANIMATION }) => {
+      cy.get('#content .sc-collapsible-container').each(($elem) => {
+        cy.get($elem)
+          .scrollIntoView()
+          .children('.sc-collapsible-header')
+          .wait(WAIT_FOR_ANIMATION)
+          .click({ force: true })
+          .should('have.class', 'sc-uncollapsed');
+        cy.get($elem).children('.sc-collapsible-content').should('be.visible');
+      });
     });
   });
 });

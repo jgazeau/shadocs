@@ -1,6 +1,10 @@
 describe('for: highcharts shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_HIGHCHARTS_PATH'));
+    cy.env(['SC_PATH', 'SC_HIGHCHARTS_PATH']).then(
+      ({ SC_PATH, SC_HIGHCHARTS_PATH }) => {
+        cy.visit(SC_PATH + SC_HIGHCHARTS_PATH);
+      },
+    );
     cy.on('uncaught:exception', (err, runnable) => {
       return false;
     });

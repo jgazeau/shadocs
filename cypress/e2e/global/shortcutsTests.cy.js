@@ -1,6 +1,8 @@
 describe('for: shortcuts', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SITEMAP_PATH'));
+    cy.env(['SITEMAP_PATH']).then(({ SITEMAP_PATH }) => {
+      cy.visit(SITEMAP_PATH);
+    });
   });
   it('[shift+i] should open website information panel', () => {
     cy.window().its('scShowInfo');
@@ -15,8 +17,10 @@ describe('for: shortcuts', () => {
   it('[shift+h] should redirect to homepage', () => {
     cy.window().its('scGoHome');
     cy.get('body').type('{shift+h}', { delay: 0 });
-    cy.location().should((loc) => {
-      expect(loc.href).to.eq(Cypress.env('HOMEPAGE_URL'));
+    cy.env(['HOMEPAGE_URL']).then(({ HOMEPAGE_URL }) => {
+      cy.location().should((loc) => {
+        expect(loc.href).to.eq(HOMEPAGE_URL);
+      });
     });
   });
   it('[shift+f] should focus on search', () => {
@@ -25,25 +29,33 @@ describe('for: shortcuts', () => {
     cy.get('#search').should('be.focused');
   });
   it('[shift+m] should collapse sidebar when uncollapsed', () => {
-    cy.window().its('scToggleSidebar').wait(Cypress.env('WAIT_FOR_ANIMATION'));
-    cy.toggleSidebar(true, true).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+    cy.env(['WAIT_FOR_ANIMATION']).then(({ WAIT_FOR_ANIMATION }) => {
+      cy.window().its('scToggleSidebar').wait(WAIT_FOR_ANIMATION);
+      cy.toggleSidebar(true, true).wait(WAIT_FOR_ANIMATION);
+    });
     cy.get('body').type('{shift+m}', { delay: 0 });
     cy.get('#sidebarContainer').should('have.class', 'is-sidebar-collapsed');
   });
   it('[shift+m] should uncollapse sidebar when collapsed', () => {
-    cy.window().its('scToggleSidebar').wait(Cypress.env('WAIT_FOR_ANIMATION'));
-    cy.toggleSidebar(false, true).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+    cy.env(['WAIT_FOR_ANIMATION']).then(({ WAIT_FOR_ANIMATION }) => {
+      cy.window().its('scToggleSidebar').wait(WAIT_FOR_ANIMATION);
+      cy.toggleSidebar(false, true).wait(WAIT_FOR_ANIMATION);
+    });
     cy.get('body').type('{shift+m}', { delay: 0 });
     cy.get('#sidebarContainer').should('have.class', 'is-sidebar-uncollapsed');
   });
   it('[shift+t] should collapse toc when uncollapsed', () => {
-    cy.window().its('scToggleToc').wait(Cypress.env('WAIT_FOR_ANIMATION'));
+    cy.env(['WAIT_FOR_ANIMATION']).then(({ WAIT_FOR_ANIMATION }) => {
+      cy.window().its('scToggleToc').wait(WAIT_FOR_ANIMATION);
+    });
     cy.toggleToc(true);
     cy.get('body').type('{shift+t}', { delay: 0 });
     cy.get('#contentContainer').should('have.class', 'is-toc-collapsed');
   });
   it('[shift+t] should uncollapse toc when collapsed', () => {
-    cy.window().its('scToggleToc').wait(Cypress.env('WAIT_FOR_ANIMATION'));
+    cy.env(['WAIT_FOR_ANIMATION']).then(({ WAIT_FOR_ANIMATION }) => {
+      cy.window().its('scToggleToc').wait(WAIT_FOR_ANIMATION);
+    });
     cy.toggleToc(false);
     cy.get('body').type('{shift+t}', { delay: 0 });
     cy.get('#contentContainer').should('have.class', 'is-toc-uncollapsed');

@@ -1,8 +1,12 @@
 Cypress.Commands.add('defaultNavbarBeforeEach', () => {
-  cy.visit(Cypress.env('HOMEPAGE_URL'));
+  cy.env(['HOMEPAGE_URL']).then(({ HOMEPAGE_URL }) => {
+    cy.visit(HOMEPAGE_URL);
+  });
 });
 Cypress.Commands.add('mobileNavbarBeforeEach', () => {
-  cy.visit(Cypress.env('HOMEPAGE_URL'));
+  cy.env(['HOMEPAGE_URL']).then(({ HOMEPAGE_URL }) => {
+    cy.visit(HOMEPAGE_URL);
+  });
   cy.viewportMobile('min');
   cy.get('#navbarExtendWrapper').then(($elem) => {
     $elem.get(0).classList.toggle('is-hovered', true);

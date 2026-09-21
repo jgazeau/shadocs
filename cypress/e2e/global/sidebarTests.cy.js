@@ -1,6 +1,8 @@
 describe('for: sidebar', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('HOMEPAGE_URL'));
+    cy.env(['HOMEPAGE_URL']).then(({ HOMEPAGE_URL }) => {
+      cy.visit(HOMEPAGE_URL);
+    });
   });
   describe('when onload', () => {
     it('sidebar should be uncollapsed by default on desktop', () => {
@@ -23,7 +25,9 @@ describe('for: sidebar', () => {
       cy.get('.is-icon-expandable').should('have.class', 'is-icon-shrinked');
     });
     it('sidebar entries should be uncollapsed when current page is a section', () => {
-      cy.visit(Cypress.env('THEME_PATH'));
+      cy.env(['THEME_PATH']).then(({ THEME_PATH }) => {
+        cy.visit(THEME_PATH);
+      });
       cy.viewportDesktop('min');
       cy.get('#sidebarActiveEntry').as('sidebarActiveEntry');
       cy.get('@sidebarActiveEntry')
@@ -35,20 +39,26 @@ describe('for: sidebar', () => {
   describe('when sidebar uncollapsed', () => {
     beforeEach(() => {
       cy.viewportTouch();
-      cy.toggleSidebar(true, true).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+      cy.env(['WAIT_FOR_ANIMATION']).then(({ WAIT_FOR_ANIMATION }) => {
+        cy.toggleSidebar(true, true).wait(WAIT_FOR_ANIMATION);
+      });
     });
     it('sidebar should collapse', () => {
       cy.get('#sidebarCollapse').click({ force: true });
       cy.get('#sidebarContainer').should('have.class', 'is-sidebar-collapsed');
     });
     it('expandable entries should expand', () => {
-      cy.toggleSidebarEntries(false).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+      cy.env(['WAIT_FOR_ANIMATION']).then(({ WAIT_FOR_ANIMATION }) => {
+        cy.toggleSidebarEntries(false).wait(WAIT_FOR_ANIMATION);
+      });
       cy.get('.is-icon-expandable').each(($elem) => {
         cy.get($elem).scrollAndClick().should('have.class', 'is-icon-expanded');
       });
     });
     it('expandable entries should shrink', () => {
-      cy.toggleSidebarEntries(true).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+      cy.env(['WAIT_FOR_ANIMATION']).then(({ WAIT_FOR_ANIMATION }) => {
+        cy.toggleSidebarEntries(true).wait(WAIT_FOR_ANIMATION);
+      });
       cy.get('.is-icon-expandable').each(($elem) => {
         cy.get($elem).scrollAndClick().should('have.class', 'is-icon-shrinked');
       });
@@ -64,7 +74,9 @@ describe('for: sidebar', () => {
     });
     it('sidebar should collapse when resized from touch (with sidebar uncollapsed) to mobile', () => {
       cy.viewportTouch('min');
-      cy.toggleSidebar(true, true).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+      cy.env(['WAIT_FOR_ANIMATION']).then(({ WAIT_FOR_ANIMATION }) => {
+        cy.toggleSidebar(true, true).wait(WAIT_FOR_ANIMATION);
+      });
       cy.viewportMobile();
       cy.get('#sidebarContainer').should('have.class', 'is-sidebar-collapsed');
     });
@@ -72,7 +84,9 @@ describe('for: sidebar', () => {
   describe('when sidebar collapsed', () => {
     beforeEach(() => {
       cy.viewportTouch();
-      cy.toggleSidebar(false, true).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+      cy.env(['WAIT_FOR_ANIMATION']).then(({ WAIT_FOR_ANIMATION }) => {
+        cy.toggleSidebar(false, true).wait(WAIT_FOR_ANIMATION);
+      });
     });
     it('sidebar should uncollapse', () => {
       cy.get('#sidebarUncollapse').click({ force: true });

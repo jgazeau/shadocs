@@ -3,59 +3,151 @@
 // ***********************************************
 Cypress.Commands.add('viewportWidescreen', ($size) => {
   if ($size === 'min')
-    cy.viewport(
-      Cypress.env('VIEWPORT_WIDESCREEN_MINWIDTH'),
-      Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true,
-    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+    cy.env([
+      'VIEWPORT_WIDESCREEN_MINWIDTH',
+      'VIEWPORT_COMMON_HEIGHT',
+      'WAIT_FOR_ANIMATION',
+    ]).then(
+      ({
+        VIEWPORT_WIDESCREEN_MINWIDTH,
+        VIEWPORT_COMMON_HEIGHT,
+        WAIT_FOR_ANIMATION,
+      }) => {
+        cy.viewport(
+          VIEWPORT_WIDESCREEN_MINWIDTH,
+          VIEWPORT_COMMON_HEIGHT,
+          true,
+        ).wait(WAIT_FOR_ANIMATION);
+      },
+    );
   else
-    cy.viewport(
-      Cypress.env('VIEWPORT_WIDESCREEN_MAXWIDTH'),
-      Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true,
-    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+    cy.env([
+      'VIEWPORT_WIDESCREEN_MAXWIDTH',
+      'VIEWPORT_COMMON_HEIGHT',
+      'WAIT_FOR_ANIMATION',
+    ]).then(
+      ({
+        VIEWPORT_WIDESCREEN_MAXWIDTH,
+        VIEWPORT_COMMON_HEIGHT,
+        WAIT_FOR_ANIMATION,
+      }) => {
+        cy.viewport(
+          VIEWPORT_WIDESCREEN_MAXWIDTH,
+          VIEWPORT_COMMON_HEIGHT,
+          true,
+        ).wait(WAIT_FOR_ANIMATION);
+      },
+    );
 });
 Cypress.Commands.add('viewportDesktop', ($size) => {
   if ($size === 'min')
-    cy.viewport(
-      Cypress.env('VIEWPORT_DESKTOP_MINWIDTH'),
-      Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true,
-    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+    cy.env([
+      'VIEWPORT_DESKTOP_MINWIDTH',
+      'VIEWPORT_COMMON_HEIGHT',
+      'WAIT_FOR_ANIMATION',
+    ]).then(
+      ({
+        VIEWPORT_DESKTOP_MINWIDTH,
+        VIEWPORT_COMMON_HEIGHT,
+        WAIT_FOR_ANIMATION,
+      }) => {
+        cy.viewport(
+          VIEWPORT_DESKTOP_MINWIDTH,
+          VIEWPORT_COMMON_HEIGHT,
+          true,
+        ).wait(WAIT_FOR_ANIMATION);
+      },
+    );
   else
-    cy.viewport(
-      Cypress.env('VIEWPORT_DESKTOP_MAXWIDTH'),
-      Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true,
-    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+    cy.env([
+      'VIEWPORT_DESKTOP_MAXWIDTH',
+      'VIEWPORT_COMMON_HEIGHT',
+      'WAIT_FOR_ANIMATION',
+    ]).then(
+      ({
+        VIEWPORT_DESKTOP_MAXWIDTH,
+        VIEWPORT_COMMON_HEIGHT,
+        WAIT_FOR_ANIMATION,
+      }) => {
+        cy.viewport(
+          VIEWPORT_DESKTOP_MAXWIDTH,
+          VIEWPORT_COMMON_HEIGHT,
+          true,
+        ).wait(WAIT_FOR_ANIMATION);
+      },
+    );
 });
 Cypress.Commands.add('viewportTouch', ($size) => {
   if ($size === 'min')
-    cy.viewport(
-      Cypress.env('VIEWPORT_TOUCH_MINWIDTH'),
-      Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true,
-    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+    cy.env([
+      'VIEWPORT_TOUCH_MINWIDTH',
+      'VIEWPORT_COMMON_HEIGHT',
+      'WAIT_FOR_ANIMATION',
+    ]).then(
+      ({
+        VIEWPORT_TOUCH_MINWIDTH,
+        VIEWPORT_COMMON_HEIGHT,
+        WAIT_FOR_ANIMATION,
+      }) => {
+        cy.viewport(VIEWPORT_TOUCH_MINWIDTH, VIEWPORT_COMMON_HEIGHT, true).wait(
+          WAIT_FOR_ANIMATION,
+        );
+      },
+    );
   else
-    cy.viewport(
-      Cypress.env('VIEWPORT_TOUCH_MAXWIDTH'),
-      Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true,
-    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+    cy.env([
+      'VIEWPORT_TOUCH_MAXWIDTH',
+      'VIEWPORT_COMMON_HEIGHT',
+      'WAIT_FOR_ANIMATION',
+    ]).then(
+      ({
+        VIEWPORT_TOUCH_MAXWIDTH,
+        VIEWPORT_COMMON_HEIGHT,
+        WAIT_FOR_ANIMATION,
+      }) => {
+        cy.viewport(VIEWPORT_TOUCH_MAXWIDTH, VIEWPORT_COMMON_HEIGHT, true).wait(
+          WAIT_FOR_ANIMATION,
+        );
+      },
+    );
 });
 Cypress.Commands.add('viewportMobile', ($size) => {
   if ($size === 'min')
-    cy.viewport(
-      Cypress.env('VIEWPORT_MOBILE_MINWIDTH'),
-      Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true,
-    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+    cy.env([
+      'VIEWPORT_MOBILE_MINWIDTH',
+      'VIEWPORT_COMMON_HEIGHT',
+      'WAIT_FOR_ANIMATION',
+    ]).then(
+      ({
+        VIEWPORT_MOBILE_MINWIDTH,
+        VIEWPORT_COMMON_HEIGHT,
+        WAIT_FOR_ANIMATION,
+      }) => {
+        cy.viewport(
+          VIEWPORT_MOBILE_MINWIDTH,
+          VIEWPORT_COMMON_HEIGHT,
+          true,
+        ).wait(WAIT_FOR_ANIMATION);
+      },
+    );
   else
-    cy.viewport(
-      Cypress.env('VIEWPORT_MOBILE_MAXWIDTH'),
-      Cypress.env('VIEWPORT_COMMON_HEIGHT'),
-      true,
-    ).wait(Cypress.env('WAIT_FOR_ANIMATION'));
+    cy.env([
+      'VIEWPORT_MOBILE_MAXWIDTH',
+      'VIEWPORT_COMMON_HEIGHT',
+      'WAIT_FOR_ANIMATION',
+    ]).then(
+      ({
+        VIEWPORT_MOBILE_MAXWIDTH,
+        VIEWPORT_COMMON_HEIGHT,
+        WAIT_FOR_ANIMATION,
+      }) => {
+        cy.viewport(
+          VIEWPORT_MOBILE_MAXWIDTH,
+          VIEWPORT_COMMON_HEIGHT,
+          true,
+        ).wait(WAIT_FOR_ANIMATION);
+      },
+    );
 });
 Cypress.Commands.add('toggleColorMode', ($force) => {
   cy.window().then((window) => window.toggleColorMode($force));

@@ -1,6 +1,10 @@
 describe('for: snippet shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_SNIPPET_PATH'));
+    cy.env(['SC_PATH', 'SC_SNIPPET_PATH']).then(
+      ({ SC_PATH, SC_SNIPPET_PATH }) => {
+        cy.visit(SC_PATH + SC_SNIPPET_PATH);
+      },
+    );
   });
   it('eight snippets wrapper should be displayed', () => {
     cy.get('#content .sc-snippet-wrapper').should('have.length', 8);

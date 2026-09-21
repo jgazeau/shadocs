@@ -1,6 +1,8 @@
 describe('for: alert shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_ALERT_PATH'));
+    cy.env(['SC_PATH', 'SC_ALERT_PATH']).then(({ SC_PATH, SC_ALERT_PATH }) => {
+      cy.visit(SC_PATH + SC_ALERT_PATH);
+    });
   });
   it('two info alerts should be displayed', () => {
     cy.get('#content .notification.is-info').should('have.length', 2);

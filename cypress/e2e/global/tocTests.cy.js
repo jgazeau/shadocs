@@ -1,6 +1,8 @@
 describe('for: table of contents', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('FUNC_TOC_PATH'));
+    cy.env(['FUNC_TOC_PATH']).then(({ FUNC_TOC_PATH }) => {
+      cy.visit(FUNC_TOC_PATH);
+    });
   });
   it('toc should be uncollapsed by default on widescreen', () => {
     cy.viewportWidescreen('min');
@@ -23,15 +25,21 @@ describe('for: table of contents', () => {
     cy.get('#tocContainer').should('not.be.visible');
   });
   it('toc should not be displayed on homepage', () => {
-    cy.visit(Cypress.env('HOMEPAGE_URL'));
+    cy.env(['HOMEPAGE_URL']).then(({ HOMEPAGE_URL }) => {
+      cy.visit(HOMEPAGE_URL);
+    });
     cy.get('#tocWrapper').should('not.exist');
   });
   it('toc should not be displayed on term pages', () => {
-    cy.visit(Cypress.env('TERM_PATH'));
+    cy.env(['TERM_PATH']).then(({ TERM_PATH }) => {
+      cy.visit(TERM_PATH);
+    });
     cy.get('#tocWrapper').should('not.exist');
   });
   it('toc should not be displayed on taxonomy pages', () => {
-    cy.visit(Cypress.env('TAXONOMY_PATH'));
+    cy.env(['TAXONOMY_PATH']).then(({ TAXONOMY_PATH }) => {
+      cy.visit(TAXONOMY_PATH);
+    });
     cy.get('#tocWrapper').should('not.exist');
   });
   it('toc should contain all titles types and they should be visible', () => {
