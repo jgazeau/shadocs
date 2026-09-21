@@ -31,7 +31,7 @@ jobs:
           BMYC_GITHUB_TOKEN: ${{ secrets.WORKFLOW_GITHUB_TOKEN }}
         run: |
           printf "%70s\n" | tr ' ' '-'
-          bmyc -vvvv -s ${LOG_FILE}
+          bmyc -vvvv --compact-summary -s ${LOG_FILE}
           printf "%70s\n" | tr ' ' '-'
           if [[ $(git status --porcelain | wc -l) -gt 0 && -f ${LOG_FILE} ]];then
             git checkout -b ${BRANCH_NAME}
