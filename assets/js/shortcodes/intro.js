@@ -104,8 +104,10 @@ for (let i = 0; i < divi.length; i++) {
         intro[key](function () {
           if (INTRO_THEME_FUNCTIONS[key].applyOnStep) {
             Function(INTRO_THEME_FUNCTIONS[key].callBack)();
-            if (this._steps[this.currentStep()].hasOwnProperty(key)) {
-              Function(this._steps[this.currentStep()][key])();
+            if (this.getCurrentStep()) {
+              if (this._steps[this.getCurrentStep()].hasOwnProperty(key)) {
+                Function(this._steps[this.getCurrentStep()][key])();
+              }
             }
           } else {
             Function(INTRO_THEME_FUNCTIONS[key].callBack)();
