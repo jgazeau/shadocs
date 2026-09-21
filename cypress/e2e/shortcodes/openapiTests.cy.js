@@ -1,6 +1,10 @@
 describe('for: openapi shortcode', { browser: '!firefox' }, () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_OPENAPI_PATH'));
+    cy.env(['SC_PATH', 'SC_OPENAPI_PATH']).then(
+      ({ SC_PATH, SC_OPENAPI_PATH }) => {
+        cy.visit(SC_PATH + SC_OPENAPI_PATH);
+      },
+    );
   });
   it('two openapi should be displayed', () => {
     cy.get('#content .sc-openapi-wrapper > .sc-openapi-container').should(

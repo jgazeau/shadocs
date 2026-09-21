@@ -1,6 +1,10 @@
 describe('for: blockquote shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_BLOCKQUOTE_PATH'));
+    cy.env(['SC_PATH', 'SC_BLOCKQUOTE_PATH']).then(
+      ({ SC_PATH, SC_BLOCKQUOTE_PATH }) => {
+        cy.visit(SC_PATH + SC_BLOCKQUOTE_PATH);
+      },
+    );
   });
   it('two blockquotes should be displayed', () => {
     cy.get('#content .sc-blockquote').should('have.length', 2);

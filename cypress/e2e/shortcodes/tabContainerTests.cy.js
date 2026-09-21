@@ -1,6 +1,10 @@
 describe('for: tab-container shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_TAB_CONTAINER_PATH'));
+    cy.env(['SC_PATH', 'SC_TAB_CONTAINER_PATH']).then(
+      ({ SC_PATH, SC_TAB_CONTAINER_PATH }) => {
+        cy.visit(SC_PATH + SC_TAB_CONTAINER_PATH);
+      },
+    );
   });
   it('four tab-container wrapper should be displayed', () => {
     cy.get('#content .sc-tab-container-wrapper').should('have.length', 4);

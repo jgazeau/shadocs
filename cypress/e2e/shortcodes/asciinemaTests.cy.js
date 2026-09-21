@@ -1,6 +1,10 @@
 describe('for: asciinema shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_ASCIINEMA_PATH'));
+    cy.env(['SC_PATH', 'SC_ASCIINEMA_PATH']).then(
+      ({ SC_PATH, SC_ASCIINEMA_PATH }) => {
+        cy.visit(SC_PATH + SC_ASCIINEMA_PATH);
+      },
+    );
   });
   it(
     'two asciinema local players should be displayed',

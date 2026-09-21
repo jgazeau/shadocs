@@ -1,6 +1,10 @@
 describe('for: treeview shortcode', () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_TREEVIEW_PATH'));
+    cy.env(['SC_PATH', 'SC_TREEVIEW_PATH']).then(
+      ({ SC_PATH, SC_TREEVIEW_PATH }) => {
+        cy.visit(SC_PATH + SC_TREEVIEW_PATH);
+      },
+    );
   });
   it('six treeviews should be displayed', () => {
     cy.get('#content .sc-treeview').should('have.length', 6);

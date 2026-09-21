@@ -17,10 +17,6 @@ module.exports = defineConfig({
     FRENCH_URL_PREFIX: '/fr',
     FUNC_TOC_PATH: 'functionalities/toc/',
     FUNC_TOC_DISABLED_PATH: 'functionalities/toc/toc_disabled/',
-    FUNC_BANNER_PATHS: [
-      'functionalities/banner/global/',
-      'functionalities/banner/single/',
-    ],
     FUNC_MERMAID_PATH: 'functionalities/mermaid/',
     HOMEPAGE_URL: 'http://localhost:1313/',
     NULL_STRING: 'bnVsbFN0cmluZw==',

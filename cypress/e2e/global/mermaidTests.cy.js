@@ -1,6 +1,8 @@
 describe('for: mermaid', { browser: '!firefox' }, () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('FUNC_MERMAID_PATH'));
+    cy.env(['FUNC_MERMAID_PATH']).then(({ FUNC_MERMAID_PATH }) => {
+      cy.visit(FUNC_MERMAID_PATH);
+    });
   });
   it('one mermaid should be displayed', () => {
     cy.get('#content .mermaid-wrapper > .mermaid-container').should(

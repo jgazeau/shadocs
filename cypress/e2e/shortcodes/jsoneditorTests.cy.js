@@ -1,6 +1,10 @@
 describe('for: jsoneditor shortcode', { browser: '!firefox' }, () => {
   beforeEach(() => {
-    cy.visit(Cypress.env('SC_PATH') + Cypress.env('SC_JSONEDITOR_PATH'));
+    cy.env(['SC_PATH', 'SC_JSONEDITOR_PATH']).then(
+      ({ SC_PATH, SC_JSONEDITOR_PATH }) => {
+        cy.visit(SC_PATH + SC_JSONEDITOR_PATH);
+      },
+    );
   });
   it('five jsoneditor should be displayed', () => {
     cy.get('#content .sc-jsoneditor-wrapper .sc-jsoneditor-container').should(
