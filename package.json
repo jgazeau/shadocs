@@ -27,7 +27,7 @@
   "devDependencies": {
     "bmyc": "^0.5.8",
     "cypress": "^16.1.0",
-    "prettier": "^3.9.8",
+    "prettier": "^3.9.9",
     "prettier-plugin-go-template": "^0.0.15",
     "start-server-and-test": "^3.0.12",
     "typescript": "^7.0.2"
