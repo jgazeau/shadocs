@@ -116,7 +116,7 @@
     "js/json-editor": {
       "local_path": "assets/js/external/json-editor/jsoneditor.min.js",
       "hold": false,
-      "current_version": "2.17.2",
+      "current_version": "2.17.3",
       "cdnjs": {
         "library": "json-editor",
         "file_path": "jsoneditor.min.js"
