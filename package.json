@@ -26,8 +26,8 @@
   "homepage": "https://github.com/jgazeau/shadocs",
   "devDependencies": {
     "bmyc": "^0.5.8",
-    "cypress": "^16.1.1",
-    "prettier": "^3.9.9",
+    "cypress": "^16.2.0",
+    "prettier": "^3.9.10",
     "prettier-plugin-go-template": "^0.0.15",
     "start-server-and-test": "^3.0.13",
     "typescript": "^7.0.2"
