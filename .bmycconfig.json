@@ -63,7 +63,7 @@
     "js/mermaid": {
       "local_path": "assets/js/external/mermaid/mermaid.min.js",
       "hold": false,
-      "current_version": "11.15.0",
+      "current_version": "12.1.0",
       "cdnjs": {
         "library": "mermaid",
         "file_path": "mermaid.min.js"
@@ -85,7 +85,7 @@
     "js/overlayscrollbars": {
       "local_path": "assets/js/external/overlay-scrollbars/overlayscrollbars.min.js",
       "hold": false,
-      "current_version": "2.16.0",
+      "current_version": "2.17.0",
       "cdnjs": {
         "library": "overlayscrollbars",
         "file_path": "browser/overlayscrollbars.browser.es6.min.js"
@@ -94,7 +94,7 @@
     "css/overlayscrollbars": {
       "local_path": "assets/css/external/overlay-scrollbars/overlayscrollbars.min.css",
       "hold": false,
-      "current_version": "2.16.0",
+      "current_version": "2.17.0",
       "cdnjs": {
         "library": "overlayscrollbars",
         "file_path": "styles/overlayscrollbars.min.css"
@@ -116,7 +116,7 @@
     "js/json-editor": {
       "local_path": "assets/js/external/json-editor/jsoneditor.min.js",
       "hold": false,
-      "current_version": "2.17.3",
+      "current_version": "2.17.4",
       "cdnjs": {
         "library": "json-editor",
         "file_path": "jsoneditor.min.js"
