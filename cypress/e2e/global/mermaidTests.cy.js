@@ -34,6 +34,7 @@ describe('for: mermaid', { browser: '!firefox' }, () => {
     });
   });
   it('mermaid should open modal containing svg when clicked', () => {
+    cy.get('#content .loader-wrapper').children().should('not.be.visible');
     cy.get('#content .mermaid-wrapper.loader-container').each(($elem) => {
       let elId = $elem[0].id;
       cy.get('#' + elId + '-svg')
@@ -46,6 +47,7 @@ describe('for: mermaid', { browser: '!firefox' }, () => {
   });
   it('export button should export mermaid', () => {
     const path = require('path');
+    cy.get('#content .loader-wrapper').children().should('not.be.visible');
     cy.get('#content .mermaid-wrapper.loader-container').each(($elem) => {
       let elId = $elem[0].id;
       cy.get('#' + elId + '-svg').then(($svg) => {
