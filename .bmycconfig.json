@@ -23,7 +23,7 @@
     "js/swagger-ui-bundle": {
       "local_path": "assets/js/external/swagger-ui/swagger-ui-bundle.min.js",
       "hold": false,
-      "current_version": "5.29.1",
+      "current_version": "5.35.0",
       "cdnjs": {
         "library": "swagger-ui",
         "file_path": "swagger-ui-bundle.min.js"
@@ -32,7 +32,7 @@
     "js/swagger-ui-standalone-preset": {
       "local_path": "assets/js/external/swagger-ui/swagger-ui-standalone-preset.min.js",
       "hold": false,
-      "current_version": "5.29.1",
+      "current_version": "5.35.0",
       "cdnjs": {
         "library": "swagger-ui",
         "file_path": "swagger-ui-standalone-preset.min.js"
@@ -41,7 +41,7 @@
     "css/swagger-ui": {
       "local_path": "assets/css/external/swagger-ui/swagger-ui.min.css",
       "hold": false,
-      "current_version": "5.29.1",
+      "current_version": "5.35.0",
       "cdnjs": {
         "library": "swagger-ui",
         "file_path": "swagger-ui.min.css"
